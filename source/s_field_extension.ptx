@@ -34,7 +34,7 @@
             <title>Towers and subextensions</title>
             <statement>
                 <p>
-                    A <term>tower</term> of fields is a chain of one or more field extensions <m>K_0\leq K_1\leq\dots \leq K_n</m>. Similar notational conventions as in <xref ref="d_field_extension"/> apply to tower of fields. 
+                    A <term>tower</term> of fields is a chain of one or more field extensions <m>K_0\leq K_1\leq\dots \leq K_n</m>. Similar notational conventions as in <xref ref="d_field_extension"/> apply to towers of fields. 
                 </p>
                 <p>
                     Given a tower of fields <m>L/K/F</m>, we call <m>K</m> an <term>intermediate</term> field of the field extension <m>L/F</m>, and we call <m>K/F</m> a <term>subextension</term> of <m>L/F</m>. 
