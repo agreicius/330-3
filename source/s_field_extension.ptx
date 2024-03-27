@@ -153,7 +153,10 @@
                         <li>
                             <title>Linear independence</title>
                             <p>
-                                A set <m>S\subseteq V</m> is <term>linearly independent</term> if for any distinct elements <m>\boldv_1,\boldv_2,\dots, \boldv_n\in S</m> and scalars <m>a_1,a_2,\dots, a_n\in F</m>, if <m>a_1\boldv_1+a_2\boldv_2+\cdots+a_n\boldv_n=\boldzero</m>, then <m>a_i=0</m> for all <m>1\leq i\leq n</m>.
+                                A set <m>S\subseteq V</m> is <term>linearly independent</term> if for any distinct elements <m>\boldv_1,\boldv_2,\dots, \boldv_n\in S</m> and scalars <m>a_1,a_2,\dots, a_n\in F</m>, if <m>a_1\boldv_1+a_2\boldv_2+\cdots+a_n\boldv_n=\boldzero</m>, then <m>a_i=0</m> for all <m>1\leq i\leq n</m>. 
+                            </p>
+                            <p>
+                                A set <m>S</m> is <term>linearly dependent</term> if and only if it is not linearly independent. 
                             </p>
                         </li>
                         <li>
@@ -231,15 +234,10 @@
                 <li>
                   <title>Street smarts</title>
                   <p>
-                  If <m>S\subseteq V</m> and <m>\val{S} &lt; n</m>, then <m>S</m> does not span <m>V</m>.
+                  Let <m>S</m> be a subset of <m>V</m>. If <m>\val{S} &lt; n</m>, then <m>S</m> does not span <m>V</m>; if <m>\val{S} &gt; n</m>, then <m>S</m> is linearly dependent; if <m>\val{S}=n</m>, then <m>S</m> spans <m>V</m> if and only if <m>S</m> is linearly independent if and only if <m>S</m> is a basis. 
                   </p>
                 </li>
-                <li>
-                    <title>Street smarts</title>
-                    <p>
-                    If <m>S\subseteq V</m> and <m>\val{S} &gt; n</m>, then <m>S</m> is linearly dependent.
-                    </p>
-                  </li>
+            
                 <li>
                   <title>Dimension of subspaces</title>
                   <p>
