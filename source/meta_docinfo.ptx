@@ -85,6 +85,7 @@
       \DeclareMathOperator{\flux}{flux}
       \DeclareMathOperator{\Hom}{Hom}
       \DeclareMathOperator{\ab}{ab}
+      \DeclareMathOperator{\character}{char}
 
 
       \newcommand{\surjects}{\twoheadrightarrow}

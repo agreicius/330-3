@@ -50,10 +50,12 @@
     <!-- The next elements say how the levels deep to break up the    -->
     <!-- numbering of the respective elements. Can't be more than the -->
     <!-- @level on divisions above.                                   -->
-    <blocks level="2" />
-    <projects level="2" />
-    <equations level="2" />
-    <footnotes level="2" />
+    <divisions chapter-start="0" level="2"/>
+    <blocks level="2"/>
+    <examples leve="1"/>
+    <projects level="0"/>
+    <equations level="1"/>
+    <footnotes level="1"/>
   </numbering>
 
   <!-- LaTeX specific options: set @print="yes" to get pdf set up   -->
@@ -82,7 +84,7 @@
       theorem="no"
       proof="yes"
       definition="no"
-      example="yes"
+      example="no"
       example-solution="yes"
       project="no"
       task="no"

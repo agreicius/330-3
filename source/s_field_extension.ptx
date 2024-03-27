@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_field_extension" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Field extension</title>
+
+    <subsection xml:id="ss_field_extension">
+        <title>Field extension</title>
+        <definition xml:id="d_field_extension">
+            <title>Subfield and field extension</title>
+            <notation>
+                <usage><m>F\leq K, K/F</m></usage>
+              <description>field extension</description>
+            </notation>
+            <statement>
+                <p>
+                 A <term>field extension</term> is a pair of fields <m>(F,K)</m> such that <m>F</m> is a subring of <m>K</m>. We say <m>F</m> is a <term>subfield</term> of <m>K</m> in this case, and that <m>K</m> is an <term>extension</term> of <m>F</m>, and denote this relation as <m>F\leq K</m>.
+                </p>
+                <p>
+                    As alternative notation to <m>F\leq K</m> we will also write <m>K/F</m>, and more graphically, 
+                 <image xml:id="im_field_extensions" width="30%">
+                    <shortdescription>Field extension notation</shortdescription>
+                    <latex-image xml:id="cd_field_extensions">
+                        \begin{tikzcd}
+                            K \amp \amp K \\
+                            F\arrow[u,-] \amp F \arrow[ur,-]
+                        \end{tikzcd}
+                    </latex-image>
+                 </image>
+                 to indicate that <m>K</m> is a field extension of <m>F</m>. 
+                </p>
+            </statement>
+        </definition>
+        <definition xml:id="d_field_tower">
+            <title>Towers and subextensions</title>
+            <statement>
+                <p>
+                    A <term>tower</term> of fields is a chain of one or more field extensions <m>K_0\leq K_1\leq\dots \leq K_n</m>. Similar notational conventions as in <xref ref="d_field_extension"/> apply to tower of fields. 
+                </p>
+                <p>
+                    Given a tower of fields <m>L/K/F</m>, we call <m>K</m> an <term>intermediate</term> field of the field extension <m>L/F</m>, and we call <m>K/F</m> a <term>subextension</term> of <m>L/F</m>. 
+                </p>
+            </statement>
+        </definition>
+        <example xml:id="eg_field_ext">
+            <title>Tower of fields</title>    
+                        <p>
+                            The rational, real, and complex comprise a familiar tower of fields 
+                            <me>\Q\leq \R\leq \C</me>.
+                        </p>            
+        </example>
+        <definition xml:id="d_field_generated">
+            <title>Generated field</title>
+            <notation>
+                <usage><m>F(A)</m></usage>
+              <description>field generated over <m>F</m> by <m>A</m></description>
+            </notation>
+            <statement>
+                <p>
+                    Given a field extension <m>F\leq K</m> and a subset <m>A\subseteq K</m> the field <term>generated</term> over <m>F</m> by <m>A</m>, denoted <m>F(A)</m>, is defined as
+                    <me>
+                        F(A)=\bigcap_{\substack{F\leq K'\leq K\\ A\subseteq K'}}K'
+                    </me>.
+                    Equivalently, <m>F(A)</m> is the <q>smallest</q> subfield of <m>K</m> containing the set <m>F</m> and <m>A</m>: that is, if <m>F\leq K'\leq K</m> and <m>A\subseteq K'</m>, then <m>F(A)\leq K'</m>.
+                </p>
+                <p>
+                    When <m>A=\{\alpha_1, \alpha_2,\dots, \alpha_n\}</m> (resp., <m>A=\{\alpha_1, \alpha_2,\dots, \}</m>), we denote <m>F(A)</m> as <m>F(\alpha_1, \alpha_2,\dots, \alpha_n)</m> (resp. <m>F(\alpha_1, \alpha_2,\dots)</m>). 
+                </p>
+            </statement>
+        </definition>
+        <algorithm xml:id="proc_generated_field">
+            <title>Generated field</title>
+            <statement>
+                <p>
+                   Given an extension <m>F\leq K</m> and subset <m>A\subseteq K</m>, to prove <m>F(A)=L</m>, proceed as follows: 
+                   <ol>
+                    <li>
+                        <title><m>L</m> contains <m>F</m> and <m>A</m></title>
+                        <p>
+                            Show that <m>L</m> is a subfield of <m>K</m> containing <m>F</m> and <m>A</m>. 
+                        </p>
+                    </li>
+                    <li>
+                        <title><m>L</m> is the smallest such field</title>
+                        <p>
+                            Show that for any subfield <m>K'</m> of <m>K</m> containing <m>F</m> and <m>A</m>, we have <m>L\subseteq K'</m>.
+                        </p>
+                    </li>
+                   </ol> 
+                </p>
+            </statement>
+        </algorithm>
+        <example xml:id="eg_field_generated">
+            <title>Field generated by element</title>
+            <statement>
+                <p>
+                    Consider the extension <m>\R/\Q</m>. Show that <m>\Q(\sqrt{2})=\{a+b\sqrt{2}\colon a,b\in \Q\}</m>. 
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    Let <m>L=\{a+b\sqrt{2}\colon a,b\in \Q\}</m>. We follow <xref ref="proc_generated_field"/> to show <m>\Q(\sqrt{2})=L</m>.  
+                <ol>
+                    <li>
+                        <p>
+                            We have seen earlier that <m>L</m> is a subfield of <m>\R</m>, and clearly it contains <m>\Q</m> and <m>\sqrt{2}</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Suppose <m>K'</m> is a subfield of <m>\R</m> containing <m>\Q</m> and <m>\sqrt{2}</m>. We must show that <m>L\subseteq K'</m>. Take any <m>a+b\sqrt{2}\in L</m>. Since by definition <m>a,b\in \Q</m>, and since by assumption <m>K'</m> contains <m>\Q</m> and <m>\sqrt{2}</m>, we have <m>a,b,\sqrt{2}\in K'</m>. Since <m>K'</m> is a subring of <m>\R</m>, and hence closed under addition and multiplication, we have <m>a+b\sqrt{2}\in K'</m>, as desired. 
+                        </p>
+                    </li>
+                </ol>
+                </p>
+            </solution>
+        </example>
+    </subsection>
+    <subsection xml:id="ss_vector_spaces">
+        <title>Vector spaces</title>
+        <p>
+            In general, given a ring extension <m>R\leq S</m>, the ring <m>S</m> is naturally a module over the ring <m>R</m>, where the module addition operation is just the ring addition of <m>S</m>, and where scalar multiplication of a <q>scalar</q> <m>r\in R</m> and <q>module element</q> <m>s\in S</m> is defined as the ring product <m>rs</m>. In the special case of a field extension <m>F\leq K</m>, the field <m>K</m> is a module over the the field <m>F</m>, and is thus an <em><m>F</m>-vector space</em>.
+        </p>
+        <definition xml:id="d_vector_space">
+            <title>Vector space</title>
+            <statement>
+                <p>
+                    Let <m>F</m> be a field. We call an <m>F</m>-module <m>V</m> a <term>vector space over <m>F</m></term> (or an <term><m>F</m>-vector space</term>).
+                </p>
+            </statement>
+        </definition>
+        <definition xml:id="d_vector_space_notions">
+            <title>Vector space notions</title>
+            <statement>
+                <p>
+                    Let <m>V</m> be an <m>F</m>-vector space. 
+                    <ul>
+                        <li>
+                            <title>Subspace</title>
+                            <p>
+                                A subset <m>W\subseteq V</m> is a <term>subspace</term> of <m>V</m>, denoted <m>W\leq V</m>, if it is an <m>F</m>-submodule: <ie/>, it is closed under addition and scalar multiplication. 
+                            </p>
+                        </li>
+                        <li>
+                            <title>Span</title>
+                            <p>
+                                Given a set <m>S\subseteq V</m> the <term>span</term> of <m>S</m>, denoted <m>\Span S</m>is the set of all <m>F</m>-linear combinations of elements of <m>S</m>: <ie/>, 
+                                <me>
+                                    \Span S=\{ \boldv\in V\colon \boldv=a_1\boldv_1+a_2\boldv_2+\cdots +a_n\boldv_n \text{ for some } n\in \Z_+, a_i\in F, \boldv_i\in S\} 
+                                </me>.
+                                A set <m>S</m> <term>spans</term> the vector space <m>V</m> if <m>\Span S=V</m>. 
+                            </p>
+                        </li>
+                        <li>
+                            <title>Linear independence</title>
+                            <p>
+                                A set <m>S\subseteq V</m> is <term>linearly independent</term> if for any distinct elements <m>\boldv_1,\boldv_2,\dots, \boldv_n\in S</m> and scalars <m>a_1,a_2,\dots, a_n\in F</m>, if <m>a_1\boldv_1+a_2\boldv_2+\cdots+a_n\boldv_n=\boldzero</m>, then <m>a_i=0</m> for all <m>1\leq i\leq n</m>.
+                            </p>
+                        </li>
+                        <li>
+                            <title>Basis</title>
+                            <p>
+                                A set  <m>B\subseteq V</m> is a <term>basis</term> of <m>V</m> if it spans <m>V</m> and is linearly independent.
+                            </p>
+                        </li>
+                        <li>
+                            <title>Dimension</title>
+                            <p>
+                                The space <m>V</m> is <term>finite dimensional</term> if it contains a finite basis <m>B</m>. If <m>\abs{B}=n</m>, then given any other basis <m>B'</m> of <m>V</m>, we have <m>\abs{B'}=n</m>. We define the <term>dimension</term> of <m>V</m> to be <m>n</m>, denoted <m>\dim_F V=n</m>.  
+                            </p>
+                            <p>
+                                The space <m>V</m> is <term>infinite dimensional</term> if it does not contain a finite basis. We write <m>\dim_F V=\infty</m> in this case. 
+                            </p>
+                        </li>
+                    </ul>
+                </p>
+            </statement>
+        </definition>
+        <algorithm xml:id="proc_dimension">
+            <title>Computing dimension</title>
+            <statement>
+              <p>
+                To compute the dimension of an <m>F</m>-vector space <m>V</m> proceed as follows. 
+                <ol>
+                  <li>
+                    <title>Basis</title>
+                    <p>
+                      Attempt to produce a basis <m>B</m> of <m>V</m>.
+                    </p>
+                  </li>
+                  <li>
+                    <title>Dimension</title>
+                    <p>
+                      <ul>
+                        <li>
+                          <p>
+                            If you found a finite basis <m>B</m> in Step 1, then <m>\dim_F V=\abs{B}</m>. 
+                          </p>
+                        </li>
+                      </ul>
+                      <ul>
+                        <li>
+                          <p>
+                            If you found an infinite basis in Step 1, or were able to show that no finite basis exists, then <m>\dim_F V=\infty</m>. 
+                          </p>
+                        </li>
+                      </ul>
+                    </p>
+                  </li>
+                </ol> 
+              </p>
+            </statement>
+          </algorithm>
+        <theorem xml:id="th_dimension_compendium">
+            <title>Dimension theory compendium</title>
+            <statement>
+              <p>
+              Let <m>V</m> be an <m>F</m>-vector space of dimension <m>n</m>.
+              <ol>
+                <li>
+                    <title>Contract</title>
+                    <p>
+                    If <m>S</m> spans V, then it can be contracted to a basis of <m>V</m>: <ie/>, we can find a basis <m>B</m> with <m>B\subseteq S</m>.
+                    </p>
+                </li>
+                <li>
+                  <title>Expand</title>
+                  <p>
+                  If <m>S</m> is a linearly independent set, then it can be expanded to a basis of <m>V</m>: <ie/>, we can find a basis <m>B</m> with <m>S\subseteq B</m>.
+                  </p>
+                </li>
+                <li>
+                  <title>Street smarts</title>
+                  <p>
+                  If <m>S\subseteq V</m> and <m>\val{S} &lt; n</m>, then <m>S</m> does not span <m>V</m>.
+                  </p>
+                </li>
+                <li>
+                    <title>Street smarts</title>
+                    <p>
+                    If <m>S\subseteq V</m> and <m>\val{S} &gt; n</m>, then <m>S</m> is linearly dependent.
+                    </p>
+                  </li>
+                <li>
+                  <title>Dimension of subspaces</title>
+                  <p>
+                  If <m>W\subseteq V</m> is a subspace, then
+                  <ol>
+                    <li>
+                      <p>
+                        <m>\dim W\leq \dim V</m>, and
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <m>\dim W=\dim V</m> if and only if <m>W=V</m>.
+                      </p>
+                    </li>
+                  </ol>
+                  </p>
+                </li>
+              </ol>
+            </p>
+            </statement>
+          </theorem>
+        
+        
+    </subsection>
+    <subsection xml:id="ss_degree">
+        <title>Degree of an extension</title>
+        <definition xml:id="d_degree">
+            <title>Degree of an extension</title>
+            <notation>
+                <usage><m>[K\colon F]</m></usage>
+              <description>degree of the extension <m>K/F</m></description>
+            </notation>
+            <statement>
+                <p>
+                   The <term>degree</term> of a field extension <m>K/F</m>, denoted <m>[K\colon F]</m>, is the dimension of <m>K</m> as an <m>F</m>-vector space: <ie/>, 
+                   <me>
+                    [K\colon F]=\dim_F K
+                   </me>.
+                   An extension <m>K/F</m> is <term>finite</term> if <m>[K\colon F]=n&lt; \infty</m> and <term>infinite</term> if <m>[K\colon F]=\infty</m>. 
+                </p>
+            </statement>
+        </definition>
+        <example xml:id="eg_degree_complex">
+            <title>Degree of <m>\C</m> over <m>\R</m></title>
+            <p>
+                Consider the extension <m>\C/\R</m>. Essentially by definition, the set <m>B=\{1, i\}</m> is a basis of <m>\C</m> over <m>\R</m>, and thus <m>[\C\colon \R]=\dim_\R \C=\abs{B}=2</m>. 
+            </p>
+        </example>
+        <example xml:id="eg_degree_quad">
+            <title>Degree of quadratic extension</title>
+        <statement>
+            <p>
+                Let <m>K=\Q(\sqrt{d})</m>, where <m>d</m> is a square-free positive integer. Compute <m>[K\colon \Q]</m>. 
+            </p>
+        </statement>
+            <solution>
+                <p>
+                    First we claim that <m>K=\Q(\sqrt{d})=\{a+b\sqrt{d}\colon a,b\in \Q\}</m>. This is shown in much the same manner as in <xref ref="eg_field_generated"/>. First we show that <m>\{a+b\sqrt{d}\colon a,b\in \Q\}</m> is indeed a field (easy), and then we follow <xref ref="proc_generated_field"/>.
+                </p>
+                <p> Next we will show that <m>[K\colon \Q]=\dim_\Q K=2</m>, following <xref ref="proc_dimension"/>. We claim that the set <m>B=\{1, \sqrt{d}\}</m> is basis of <m>K</m> over <m>\Q</m>. Since <m>K=\{a+b\sqrt{d}\colon a,b\in \Q\}</m>, we see that <m>\Span B=K</m>. To see that <m>B</m> is linearly independent, assume we have <m>a+b\sqrt{d}=0</m> for some <m>a,b\in \Q</m>. If <m>a\ne 0</m>, then <m>\sqrt{d}=-b/a\in \Q</m>, and thus <m>\sqrt{d}</m> is a rational root of the primitive integer polynomial <m>x^2-d</m>. Gauss's lemma then implies that <m>\sqrt{d}</m> is an <em>integer</em>; but this is clearly impossible, since <m>(\sqrt{d})^2=d</m>, and <m>d</m> is assumed to be a square-free integer. Thus we must have <m>a=0</m>. But then <m>b\sqrt{d}=0</m> implies <m>b=0</m>, since <m>\sqrt{d}\ne 0</m>. 
+                </p>
+                <p>
+                    Having shown that <m>B=\{1,\sqrt{d}\}</m> is a basis of <m>K</m> over <m>\Q</m>, we conclude that 
+                    <m>[K\colon \Q]=\dim_\Q K=\abs{B}=2</m>. 
+                </p>
+            </solution>
+        </example>
+        
+        
+    </subsection>
+
+</section>

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="s_intro" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Introduction to Galois theory</title>
+    <subsection xml:id="ss_intro">
+        <title>Finding roots of polynomials</title>
+        
+	<p>
+		Given a degree-2 polynomial <m>f(x)=ax^2+bx+c</m> with coefficients in <m>\R</m> (or <m>\Q</m>, or <m>\C</m>), we may compute its roots using the <em>quadratic formula</em>:
+		<men xml:id="eq_quad_formula">
+			x=\frac{-b\pm \sqrt{b^2-4ac}}{2a}
+		</men>.
+		The question naturally arises whether we can derive a formula of a similar nature to <xref ref="eq_quad_formula"/> for the roots of polynomials of <em>higher degree</em>.
+		For example, if <m>f(x)=ax^3+bx^2+cx+d</m>, then the roots of <m>f</m> can be expressed in the form
+		<mdn>
+			<mrow number="no">x \amp = \frac{b}{3a}+\sqrt[3]{-\frac{1}{2}\left(\frac{2b^3}{27a^3}-\frac{bc}{a^2}+\frac{d}{a}\right)+\sqrt{\frac{1}{4}\left(\frac{2b^3}{27a^3}-\frac{bc}{a^2}+\frac{d}{a}\right)^2+\frac{1}{27}\left(\frac{c}{a}-\frac{b^2}{3a^2}\right)^3}}</mrow>
+			<mrow xml:id="eq_cubic_formula"> \amp + \sqrt[3]{-\frac{1}{2}\left(\frac{2b^3}{27a^3}-\frac{bc}{a^2}+\frac{d}{a}\right)-\sqrt{\frac{1}{4}\left(\frac{2b^3}{27a^3}-\frac{bc}{a^2}+\frac{d}{a}\right)^2+\frac{1}{27}\left(\frac{c}{a}-\frac{b^2}{3a^2}\right)^3}}</mrow>
+		</mdn>.
+		This formula, along with similar formulas for quartic polynomials, was published in Geralamo Cardano's <em>Ars Magna</em> in the 16th century.
+		As such these formulas are called <em>Cardano's formulas</em>.
+		However, Cardano was building off work of a number of other Italian mathematicians: <eg/>, Scipione del Ferro, Niccolo Tartaglia, and Lodovico Ferrari.
+		See <url href="https://www.quantamagazine.org/the-scandalous-history-of-the-cubic-formula-20220630/">The sordid past of the cubic formula</url> for an amusing history of the attribution struggle around these results.
+	</p>
+
+	<p>
+		Comparing <xref ref="eq_quad_formula"/> and <xref ref="eq_cubic_formula"/>, it is clear that though the second formula is quite a deal more complicated than the first, it is indeed similar in nature.
+		Namely, the root <m>x</m> is expressed in terms of iterated radical expressions (radicals of radicals): we say that the polynomial <m>f</m> is <em>solvable by radicals</em> in this case. 
+	</p>
+    <p>
+        So are all polynomials solvable by radicals? Although the answer is yes for any quadratic, cubic, or quartic polynomial, Niels Henrik Abel was able to show in the early 19th century that the answer is no for certain quintic (degree-5) polynomials. Around the same time Évariste Galois characterized exactly which polynomials <m>f</m> were solvable by radicals in terms of a group <m>G_f</m> of automorphisms of a certain field <m>K_f</m> associated to <m>f</m>. The theory he developed to this end, now called <em>Galois theory</em>, established an extremely powerful dictionary between field extensions and groups of field automorphisms. Galois's work is often heralded as the beginning of group theory itself, so in taking up Galois theory now we come wonderfully full circle.    
+    </p>
+
+</subsection>
+<subsection xml:id="ss_field_extensions">
+    <title>Fields</title>
+    
+    <assumption xml:id="fiat_rings">
+        <title>Rings have identity</title>
+        <statement>
+            <p>
+                In this course all rings <m>R</m> are assumed to have a multiplicative identity element. By default the additive identity element of <m>R</m> is denoted <m>0</m> (or <m>0_R</m>), and the multiplicative identity element is denoted <m>1</m> (or <m>1_R</m>).  
+            </p>
+            <p>
+                Furthermore, our definition of a ring homomorphism <m>\phi\colon R\rightarrow S</m> includes the condition that <m>\phi(1_R)=1_S</m>: <ie/>, by definition a ring homomorphism must map the multiplicative identity to the multiplicative identity. 
+            </p>
+        </statement>
+    </assumption>
+    <definition xml:id="d_units">
+        <title>Units of a ring</title>
+        <notation>
+            <usage><m>R^*</m></usage>
+          <description>group of units of ring <m>R</m></description>
+        </notation>
+        <statement>
+            <p>
+                Let <m>R</m> be a ring. An element <m>r\in R</m> is a <term>unit</term> (or <term>invertible</term>) if there is an element <m>s\in R</m> satisfying <m>rs=sr=1</m>. The set of all units of <m>R</m>, denoted <m>R^*</m>, is a group under the ring multiplication operation and is called the <term>group of units</term> of <m>R</m>. 
+            </p>
+        </statement>
+    </definition>
+    <definition xml:id="d_field">
+        <title>Field</title>
+        <statement>
+            <p>
+                A <term>field</term> is a nonzero commutative ring <m>F</m> satisfying <m>F^*=F-\{0\}</m>: <ie/>, all nonzero elements of <m>F</m> are invertible. 
+            </p>
+        </statement>
+    </definition>
+    <theorem xml:id="th_field_homomorphism">
+        <title>Ring homomorphism from field</title>
+        <statement>
+            <p>
+                Let <m>F</m> be a field and let <m>R</m> be a nonzero ring. If <m>\phi\colon F\rightarrow R</m> is a ring homomorphism, then <m>\phi</m> is injective. 
+            </p>
+        </statement>
+        <proof>
+            <p>
+                Since <m>\phi</m> is a ring homomorphism, its kernel <m>\ker \phi</m> is an ideal in <m>F</m>. Since <m>F</m> is a field, its only ideals are <m>(0)</m> and <m>F</m>. Since <m>\phi(1_F)=1_R\ne 0_R</m> (see <xref ref="fiat_rings"/>), we cannot have <m>\ker\phi=F</m>. Thus <m>\ker\phi=(0)</m> and <m>\phi</m> is injective. 
+            </p>
+        </proof>
+    </theorem>
+    <example>
+        <title>Familiar fields</title>
+        <p>
+            We recall here some familiar fields, along with their notation. 
+            <ul>
+                <li>
+                    <title>Reals</title>
+                    <p>
+                        The field of all real numbers is denoted <m>\R</m>. 
+                    </p>
+                </li>
+                <li>
+                    <title>Complex numbers</title>
+                    <p>
+                        The complex numbers <m>\C=\{a+bi\colon a,b\in \R\}</m> form a field under complex addition and multiplication. 
+                    </p>
+                </li>
+                <li>
+                    <title>Rational numbers</title>
+                    <p>
+                        The rational numbers <m>\Q</m> can be defined as a subfield of <m>\R</m> as follows: 
+                        <me>
+                        \Q=\{q\in \R\colon q=m/n \text{ for some } m,n\in \Z, n\ne 0\}
+                        </me>.
+                    </p>
+                </li>
+                <li>
+                    <title>Finite field of cardinality <m>p</m></title>
+                    <notation>
+                        <usage><m>\F_p</m></usage>
+                      <description>field of cardinality <m>p</m></description>
+                    </notation>
+                    <p>
+                        Let <m>p</m> be a prime integer. The quotient ring <m>\Z/p\Z</m> is a field, denoted <m>\F_p</m>. 
+                    </p>
+                </li>
+                <li>
+                    <title>Field of rational functions</title>
+                    <notation>
+                        <usage><m>F(x_1,x_2,\dots, x_n)</m></usage>
+                      <description>rational functions in <m>n</m> variables</description>
+                    </notation>
+                    <p>
+                        Let <m>F</m> be a field, and let <m>R=F[x_1,x_2,\dots, x_n]</m> be the ring of polynomials over <m>F</m> in <m>n</m> variables. We denote by <m>F(x_1,x_2,\dots, x_n)</m> the corresponding field of rational functions: <ie/>, 
+                        <me>
+                            F(x_1,x_2,\dots, x_n)=\{f/g \colon f,g\in R, g\ne 0\}
+                        </me>.
+                        This is the fraction field <m>\Frac R</m> of the polynomial ring <m>R</m>. 
+                    </p>
+                </li>
+            </ul>
+        </p>
+    </example>
+<assumption xml:id="fiat_finite_field">
+    <title>Finite field notation</title>
+    <statement>
+        <p>
+            In contrast to the official course textbook, we will denote the finite field <m>\Z/p\Z</m> as <m>\F_p</m>, and not as <m>\Z_p</m>. 
+        </p>
+    </statement>
+</assumption>
+
+
+<remark xml:id="rm_frac_R">
+    <title>Field of fractions</title>
+    <notation>
+        <usage><m>\Frac R</m></usage>
+      <description>field of fractions of <m>R</m></description>
+    </notation>
+    <p>
+        Recall that if <m>R</m> is an integral domain, then its <term>field of fractions</term> <m>\Frac R</m> is defined formally as 
+        <me>
+            \Frac R=\left\{\frac{r}{s}\colon r,s\in R, s\ne 0\right\}
+        </me>,
+        where we declare <m>r/s=r'/s'</m> if and only if <m>rs'=r's</m>, and we define addition and multiplication as follows: 
+        <md>
+            <mrow>\frac{r}{s}+\frac{r'}{s'} \amp = \frac{rs'+r's}{ss'} \amp \frac{r}{s}\, \frac{r'}{s'}\amp =\frac{rr'}{ss'}</mrow>
+        </md>.
+        The map <m>i\colon R\hookrightarrow \Frac R</m> defined as <m>i(r)=r/1</m> is an injective ring homomorphism, and we often identify <m>R</m> with its isomorphic image <m>i(R)</m> in <m>\Frac R</m>, allowing us to think of <m>R</m> as a subring of <m>\Frac R</m>. When we make this identification, we identify the map <m>i</m> with the inclusion map. 
+    </p>
+</remark>
+<theorem xml:id="th_frac_field_universal">
+    <title>Universal mapping property of <m>\Frac R</m></title>
+    <statement>
+        <p>
+            Let <m>R</m> be an integral domain, and let <m>i\colon R\rightarrow \Frac R</m> be the ring homomorphism defined as <m>i(r)=r/1</m>.  If <m>\phi\colon R\injects F</m> is an injective ring homomorphism, then there is a unique injective ring homomorphism <m>\widetilde{\phi}\colon \Frac R\rightarrow F</m> satisfying
+            <men xml:id="eq_frac_field_universal">
+                \widetilde{\phi}\circ i=\phi
+            </men>.
+            In fact, the map <m>\widetilde{\phi}</m> is defined as 
+            <me>
+                \widetilde{\phi}(r/s)=\phi(r)/\phi(s)
+            </me>.
+            This property is nicely summarized by the diagram below.
+
+            <image xml:id="im_frac_field" width="40%">
+                <shortdescription>Universal mapping property of fraction field</shortdescription>
+                <latex-image xml:id="cd_frac_field">
+                    \begin{tikzcd}
+                        R \arrow[rr, hookrightarrow, "\phi"] \arrow[rd, hookrightarrow, "i"'] \amp \amp F \\
+                        \amp \Frac R \arrow[ru, hookrightarrow, dotted, "\exists\, ! \,  \widetilde{\phi}"']
+                    \end{tikzcd}
+                </latex-image>
+            </image>
+        </p>    
+    </statement>
+</theorem>
+<remark>
+    <title>Universal mapping property of <m>\Frac R</m></title>
+    <p>
+        When we identify <m>R</m> with its isomorphic image <m>i(R)</m> in <m>\Frac R</m>, and thus think of <m>R</m> as a subring of <m>\Frac R</m>,  <xref ref="th_frac_field_universal"/> takes the following form: if <m>F</m> is a field, then any injective homomorphism <m>\phi\colon R\rightarrow F</m> <em>extends</em> uniquely to an injective homomorphism <m>\widetilde{\phi}\colon \Frac R\rightarrow F</m>. 
+    </p>
+</remark>
+
+<definition xml:id="d_ring_characteristic">
+    <title>Characteristic of a ring</title>
+    <notation>
+        <usage><m>\character R</m></usage>
+      <description>characteristic of a ring</description>
+    </notation>
+    <statement>
+        <p>
+            We define the <term>characteristic</term> of a ring <m>R</m>, denoted <m>\character R</m>, as follows: 
+            <ul>
+                <li>
+                    <p>
+                        If there exists a positive integer <m>m</m> such that 
+                        <me>
+                            m\cdot 1=\underset{m \text{ times }}{\underbrace{1+1+\cdots +1}}=0
+                        </me>,
+                        then we define <m>\character R</m> to be the smallest positive integer for which this is the case. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        If <m>m\cdot 1\ne 0</m> for all <m>m\in \Z_+</m>, then we define <m>\character R=0</m>. 
+                    </p>
+                </li>
+            </ul>
+        </p>
+    </statement>
+</definition>
+<definition xml:id="d_prime_subfield">
+    <title>Prime subfield</title>
+    <statement>
+        <p>
+            Let <m>K</m> be a field. The <term>prime subfield</term> of <m>K</m> is the subfield <m>F\leq K</m> defined as the intersection of all subfields of <m>K</m>: <ie/>, 
+            <me>
+                F=\bigcap_{\substack{K'\leq K \\ K' \text{ a field}}} K'
+            </me>.
+        </p>
+    </statement>
+</definition>
+<theorem xml:id="th_prime_subfield">
+    <title>Prime subfields and characteristic</title>
+    <statement>
+        <p>
+            Let <m>K</m> be a field, and let <m>F</m> be its prime subfield.
+            <ol>
+                <li>
+                    <p>
+                        We have <m>\character K=0</m> or <m>\character K=p</m>, where <m>p</m> is a prime integer.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        If <m>\character K=0</m>, then <m>F\cong \Q</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        If <m>\character K=p&gt; 0</m>, then <m>F\cong \F_p</m>. 
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </statement>
+    <proof>
+        <p>
+            Let <m>\phi\colon \Z\rightarrow K</m> be the unique ring homomorphism from <m>\Z</m> to <m>F</m>. 
+        </p>
+    </proof>
+</theorem>
+
+</subsection>
+
+</section>

@@ -14,7 +14,7 @@
   <!-- to some short (non-spaced) description of your book         -->
   <book xml:id="kursobjekt">
     <!-- The book needs a title and can have a subtitle  -->
-    <title>Math 344-1</title>
+    <title>Math 330-3</title>
     <subtitle>Kursobjekt</subtitle>
 
     <!-- Now we include files containing each main devision.       -->
@@ -23,9 +23,8 @@
     <!-- out for now and write this when the book is more complete -->
     <xi:include href="./meta_frontmatter.ptx" />
     <xi:include href="./c_foundations.ptx" />
-    <xi:include href="./c_top_spaces.ptx" />
+    <xi:include href="./c_Galois_theory.ptx" />
     <!-- <xi:include href="./c_algebraic_topology.ptx" /> -->
-    
     <backmatter>
         <appendix xml:id="appendix-notation">
           <title>Notation</title>
@@ -39,10 +38,6 @@
           <title>Theory</title>
           <list-of elements="theorem corollary algorithm lemma" divisions="section" />
         </appendix>
-        <appendix xml:id="appendix-specimens" >
-          <title>Topological specimens</title>
-          <list-of elements="project" divisions="section" />
-      </appendix>
         <appendix xml:id="appendix-egs">
           <title>Examples</title>
           <list-of elements="example" divisions="section" />
