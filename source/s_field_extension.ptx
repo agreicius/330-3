@@ -215,43 +215,7 @@
 			</statement>
 		</definition>
 
-		<algorithm xml:id="proc_dimension">
-			<title>Computing dimension</title>
-			<statement>
-				<p>
-					To compute the dimension of an <m>F</m>-vector space <m>V</m> proceed as follows.
-					<ol>
-						<li>
-							<title>Basis</title>
-							<p>
-								Attempt to produce a basis <m>B</m> of <m>V</m>.
-							</p>
-						</li>
-
-						<li>
-							<title>Dimension</title>
-							<p>
-								<ul>
-									<li>
-										<p>
-											If you found a finite basis <m>B</m> in Step 1, then <m>\dim_F V=\abs{B}</m>.
-										</p>
-									</li>
-								</ul>
-
-								<ul>
-									<li>
-										<p>
-											If you found an infinite basis in Step 1, or were able to show that no finite basis exists, then <m>\dim_F V=\infty</m>.
-										</p>
-									</li>
-								</ul>
-							</p>
-						</li>
-					</ol>
-				</p>
-			</statement>
-		</algorithm>
+		
 
 		<theorem xml:id="th_dimension_compendium">
 			<title>Dimension theory compendium</title>
@@ -304,6 +268,47 @@
 				</p>
 			</statement>
 		</theorem>
+
+		<algorithm xml:id="proc_dimension">
+			<title>Computing dimension</title>
+			<statement>
+				<p>
+					To compute the dimension of an <m>F</m>-vector space <m>V</m> proceed as follows.
+					<ol>
+						<li>
+							<title>Basis</title>
+							<p>
+								Attempt to produce a basis <m>B</m> of <m>V</m>.
+							</p>
+						</li>
+
+						<li>
+							<title>Dimension</title>
+							<p>
+								<ul>
+									<li>
+										<p>
+											If you found a finite basis <m>B</m> in Step 1, then <m>\dim_F V=\abs{B}</m>.
+										</p>
+									</li>
+								</ul>
+
+								<ul>
+									<li>
+										<p>
+											If you found an infinite basis in Step 1, or were able to show that no finite basis exists, then <m>\dim_F V=\infty</m>.  
+										</p>
+										<p>
+											A common technique for showing that no finite basis exists is to exhibit an infinite linearly independent set. 
+										</p>
+									</li>
+								</ul>
+							</p>
+						</li>
+					</ol>
+				</p>
+			</statement>
+		</algorithm>
 	</subsection>
 
 	<subsection xml:id="ss_degree">
@@ -364,6 +369,23 @@
 				<p>
 					Having shown that <m>B=\{1,\sqrt{d}\}</m> is a basis of <m>K</m> over <m>\Q</m>, we conclude that
 					<m>[K\colon \Q]=\dim_\Q K=\abs{B}=2</m>.
+				</p>
+			</solution>
+		</example>
+		<example xml:id="eg_degree_rational">
+			<title>Degree of rational functions</title>
+			<statement>
+				<p>
+					Let <m>F</m> be a field and consider the field extension <m>F\leq F(x)</m>, where <m>F(x)</m> is the field of rational functions in one variable over <m>F</m>. Compute <m>[F(x)\colon F]</m>. 
+				</p>
+			</statement>
+			<solution>
+				<p>
+					We claim <m>[F(x)\colon F]=\infty</m>. To prove the claim it is enough, thanks to <xref ref="th_dimension_compendium"/>, to show that there is an infinite linearly independent set. To this end, we claim that the set <m>S=\{1,x,x^2\dots \}\subseteq F(x)</m> of all nonnegative powers of <m>x</m> is linearly independent over <m>F</m>. Indeed, a <em>finite</em> linear combination of elements of $x$ is nothing more than a polynomial <m>f(x)=\anpoly</m>, where <m>a_i\in F</m> for all <m>1\leq i\leq n</m>. By definition of the polynomial ring <m>F[x]</m>, which we think of as a subset of <m>F(x)</m>, we have 
+					<me>
+						\anpoly=0\iff a_i=0 \text{ for all } 1\leq i\leq n
+					</me>.
+					This proves <m>S</m> is linearly independent, and hence that <m>F(x)/F</m> is an infinite extension. 	
 				</p>
 			</solution>
 		</example>
