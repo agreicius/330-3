@@ -38,6 +38,10 @@
           <title>Theory</title>
           <list-of elements="theorem corollary algorithm lemma" divisions="section" />
         </appendix>
+        <appendix xml:id="appendix-procs">
+          <title>Procedures</title>
+          <list-of elements="algorithm" divisions="section" />
+        </appendix>
         <appendix xml:id="appendix-egs">
           <title>Examples</title>
           <list-of elements="example" divisions="section" />
@@ -47,11 +51,11 @@
         <!-- <appendix xml:id="appendix-mantras">
           <title>Video examples and figures</title>
           <list-of elements="figure" divisions="section" />
-        </appendix>
-        <appendix xml:id="appendix-vids">
+        </appendix> -->
+        <appendix xml:id="appendix-fiats">
           <title>Mantras and fiats</title>
           <list-of elements="principle assumption"  />
-        </appendix> -->
+        </appendix>
         <!-- <xi:include href="./bibliography.ptx"/> -->
 
         <index>
