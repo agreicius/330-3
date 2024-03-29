@@ -72,6 +72,17 @@
             </ol>
             </p>
     </convention>
+    <convention xml:id="not_poly_maps">
+        <title>Maps between polynomial rings</title>
+        <p>
+            A ring homomorphism <m>\phi\colon R\rightarrow S</m> extends naturally to a ring homomorphism 
+           <m>R[x] \longrightarrow S[x]</m> that sends an <m>R</m>-polynomial <m>\anpoly</m>  to the <m>S</m>-polynomial <m>\phi(a_n)x^n+\phi(a_{n-1})x^{n-1}+\cdots +\phi(a_1)x+\phi(a_0)</m>. 
+            By abuse of notation, we will also denote this map of polynonmial rings as <m>\phi</m>. Thus, given <m>f(x)=\anpoly</m> we will write 
+            <me>
+                \phi(f)=\phi(a_n)x^n+\phi(a_{n-1})x^{n-1}+\cdots +\phi(a_1)x+\phi(a_0)
+            </me>.
+        </p>
+    </convention>
     <theorem xml:id="th_quot_poly">
         <title>Quotients of polynomial rings</title>
         <statement>
@@ -87,7 +98,7 @@
                     <li>
                         <title>Dimension</title>
                         <p>
-                            Let <m>n=\deg f</m>. The set <m>B=\{\overline{x}^{n-1}, \overline{x}^{n-1}, \dots, \overline{x}, 1\}</m> is a basis of <m>F[x]/(f)</m> as a vector space over <m>F</m>. In particular, <m>\dim_F F[x]/(f)=\abs{B}=n</m>.  
+                            Let <m>n=\deg f</m>. The set <m>B=\{1,\overline{x},\dots, \overline{x}^{n-1}\}</m> is a basis of <m>F[x]/(f)</m> as a vector space over <m>F</m>, and thus <m>\dim_F F[x]/(f)=\abs{B}=n</m>.  
                         </p>
                     </li>
                     <li>
@@ -129,14 +140,101 @@
                             We have <m>[K\colon F]=\deg f=n</m>. 
                         </p>
                     </li>
-                    <li>
-                        <p>
-                            
-                        </p>
-                    </li>
                 </ol>
             </p>
         </statement>
     </corollary>
-
+    <example>
+        <title>Field of cardinality four</title>
+        <statement>
+            <p>
+                Let <m>f(x)=x^2+x+1\in \F_2[x]</m>. Prove that <m>\F_2[x]/(f)</m> is a field of cardinality four. 
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Denote <m>\F_2=\{0,1\}</m>. Since <m>\deg f=2</m>, it is irreducible over <m>\F_2</m> if and only if it has a root in <m>\F_2</m>. Since <m>f(0)=f(1)=1\ne 0 </m>, we see that <m>f</m> is irreducible. Using <xref ref="cor_quot_poly"/>, we conclude that <m>K=\F_2[x]/(f)</m> is  field, and that <m>B=\{\overline{x}, 1\}</m> is a basis of <m>K</m> over <m>\F_2</m>. It follows that every element of <m>K</m> can be uniquely expressed as <m>a\overline{x}+b</m>, with <m>a,b\in \F_2</m>. There are exactly four such expressions: 
+                <me>
+                   0=0\overline{x}+0, 1=0\overline{x}+1, \overline{x}=1\overline{x}+0, \overline{x}+1=1\overline{x}+1  
+                </me>.    
+            </p>
+        </solution>
+    </example>
+    <example>
+        <title>Quotients of <m>\R[x]</m></title>
+        <statement>
+            <p>
+                Let <m>f(x)\in \R[x]</m> be any irreducible quadratic polynomial. Prove that <m>\R[x]/(f)\cong \C</m>.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Since <m>f</m> is irreducible, the quotient <m>K=\R[x]/(f)</m> is a field. Since <m>\deg f=2</m>, we have <m>K=\{r+s\overline{x}\colon r,s\in\R\}</m>. Let <m>z_0\in \C</m> be a root of <m>f(x)</m>. Using <xref ref="th_quot_poly"/>, the map <m>\phi\colon K\rightarrow \C</m> defined as <m>\phi(r+s\overline{x})=r+sz_0</m> is a ring homomorphism. Furthermore, since <m>K</m> is a field, the map <m>\phi</m> is injective, and thus we have <m>K\cong \phi(K)\leq \C</m>. We claim <m>\phi(K)=\C</m>. This is a result of the fact that <m>\phi</m> is a linear transformation of <m>\R</m>-vector spaces: <ie/>, for any <m>r,s\in \R</m> and <m>\alpha=r_1+s_1\overline{x}, \beta=r_2+s_2\overline{x}</m>, we have <m>\phi(r\alpha+s\beta)=r\phi(\alpha)+s\phi(\beta)</m>, as you can easily check. It then follows that <m>K\cong \phi(K)</m> as <m>\R</m>-vector spaces, and thus that <m>\dim_\R \phi(K)=2</m>. Since <m>\phi(K)\leq \C</m> and <m>\dim_\R \phi(K)=\dim_\R \C=2</m>, we conclude that <m>\phi(K)=\C</m>.     
+            </p>
+        </solution>
+    </example>
+    <definition xml:id="d_algebraic">
+        <title>Algebraic and transcendental elements</title>
+        <statement>
+            <p>
+                Let <m>K/F</m> be a field extension. An element <m>\alpha\in K</m> is <term>algebraic</term> over <m>F</m> if there is a nonzero polynomial <m>f(x)\in F[x]</m> such that <m>f(\alpha)=0</m>; an element <m>\alpha\in K</m> is <term>transcendental</term> over <m>F</m> if it is not algebraic over <m>F</m>. 
+            </p>
+        </statement>
+    </definition>
+    <theorem xml:id="th_simple_ext">
+        <title>Simple extensions</title>
+        <statement>
+            <p>
+                Let <m>K/F</m> be a field extension and let <m>\alpha\in K</m>.
+            <ol>
+                <li>
+                    <p>
+                        The following statements are equivalent.
+                        <ol marker="(i)">
+                            <li>
+                                <p>
+                                    <m>\alpha</m> is algebraic.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <m>F(\alpha)\cong F[x]/(f)</m> for some irreducible polynomial <m>f(x)\in F[x]</m>.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <m>F(\alpha)/F</m> is finite: <ie/>, <m>[F(\alpha)\colon F]&lt; \infty</m>.
+                                </p>
+                            </li>
+                        </ol>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        The following statements are equivalent.
+                        <ol marker="(i)">
+                            <li>
+                                <p>
+                                    <m>\alpha</m> is transcendental.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <m>F(\alpha)\cong F(x)</m>, where <m>F(x)</m> is the field of rational functions in one variable over <m>F</m>. 
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <m>F(\alpha)/F</m> is infinite: <ie/>, <m>[F(\alpha)\colon F]=\infty</m>.
+                                </p>
+                            </li>
+                        </ol>
+                    </p>
+                </li>
+                
+            </ol>
+            </p>
+        </statement>
+    </theorem>
+    
 </section>
