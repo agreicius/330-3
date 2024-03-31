@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.17</span><span class="period">.</span><span class="space"> </span><span class="title">Minimal polynomial of root of unity.</span>
+</h3>
+<div class="para logical">
+<div class="para">Consider the extension <span class="process-math">\(\C/\Q\text{,}\)</span> and let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\zeta=e^{2\pi i/8}=e^{\pi i/4}=\cos \pi/4+i\, \sin \pi/4\text{,}
+\end{equation*}
+</div>
+<div class="para">a primitive <span class="process-math">\(8\)</span>-th root of unity.</div>
+<ol class="decimal">
+<li><div class="para">Compute <span class="process-math">\(m_{\zeta,\R}(x)\text{.}\)</span>
+</div></li>
+<li><div class="para">Compute <span class="process-math">\(m_{\zeta, \Q}(x)\text{.}\)</span>
+</div></li>
+</ol>
+</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical"><ol class="decimal">
+<li><div class="para logical">
+<div class="para">Following <a href="s_simple_extension.html#eg_min_poly_R" class="xref" data-knowl="./knowl/xref/eg_min_poly_R.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.4.17: Minimal polynomial of root of unity">Example 1.4.17</a>, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_min_poly_R.html">
+\begin{equation*}
+m_{\zeta,\R}(x)=x^2-2\cos \pi/4 x+(\cos^2 \pi/4+\sin^2 \pi/4)=x^2-\sqrt{2}x+1\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Since <span class="process-math">\(\zeta^8=1\text{,}\)</span> we have <span class="process-math">\(f(\zeta)=0\text{,}\)</span> where <span class="process-math">\(f(x)=x^8-1\text{.}\)</span> According to <a href="s_simple_extension.html#cor_min_poly" class="xref" data-knowl="./knowl/xref/cor_min_poly.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.4.15: Minimal poylnomial">Corollary 1.4.15</a>, the minimal polynomial of <span class="process-math">\(\zeta\)</span> is one of the monic irreducible polynomials appearing in the factorization of <span class="process-math">\(f(x)\)</span> over <span class="process-math">\(\Q\text{.}\)</span> Let’s factor:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_min_poly.html">
+\begin{align*}
+x^8-1 \amp = (x^4-1)(x^4+1)\\
+\amp = (x^2-1)(x^2+1)(x^4+1)\\
+\amp = (x-1)(x+1)(x^2+1)(x^4+1)\text{.}
+\end{align*}
+</div>
+<div class="para">It is not difficult to show that <span class="process-math">\(x^4+1\)</span> is irreducible over <span class="process-math">\(\Q\text{.}\)</span> (By Gauss’s lemma we need only show that it is irreducible over <span class="process-math">\(\Z\text{.}\)</span>) Since <span class="process-math">\(\zeta\)</span> is not a root of <span class="process-math">\((x-1)\text{,}\)</span><span class="process-math">\((x+1)\text{,}\)</span> or <span class="process-math">\(x^2+1\)</span> (whose roots are <span class="process-math">\(\pm i\)</span>), we conclude that <span class="process-math">\(m_{\zeta,\Q}(x)=x^4+1\text{.}\)</span>
+</div>
+</div></li>
+</ol></div></div></details></div></article><span class="incontext"><a class="internal" href="s_simple_extension.html#eg_min_poly_R">in-context</a></span>
+</body>
+</html>

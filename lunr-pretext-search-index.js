@@ -520,7 +520,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.1",
   "title": "Introduction to Galois theory",
-  "body": " Introduction to Galois theory   Finding roots of polynomials  Given a degree-2 polynomial with coefficients in (or , or ), we may compute its roots using the quadratic formula : . The question naturally arises whether we can derive a formula of a similar nature to for the roots of polynomials of higher degree . For example, if , then the roots of can be expressed in the form . This formula, along with similar formulas for quartic polynomials, was published in Geralamo Cardano's Ars Magna in the 16th century. As such these formulas are called Cardano's formulas . However, Cardano was building off work of a number of other Italian mathematicians: , Scipione del Ferro, Niccolo Tartaglia, and Lodovico Ferrari. See The sordid past of the cubic formula for an amusing history of the attribution struggle around these results.  Comparing and , it is clear that though the second formula is quite a deal more complicated than the first, it is indeed similar in nature. Namely, the root is expressed in terms of iterated radical expressions (radicals of radicals): we say that the polynomial is solvable by radicals in this case.  So are all polynomials solvable by radicals? Although the answer is yes for any quadratic, cubic, or quartic polynomial, Niels Henrik Abel was able to show in the early 19th century that the answer is no for certain quintic (degree-5) polynomials. Around the same time Évariste Galois characterized exactly which polynomials were solvable by radicals in terms of a group of automorphisms of a certain field associated to . The theory he developed to this end, now called Galois theory , established an extremely powerful dictionary between field extensions and groups of field automorphisms. Galois's work is often heralded as the beginning of group theory itself, so in taking up Galois theory now we come wonderfully full circle.    Fields   Rings have identity   In this course all rings are assumed to have a multiplicative identity element. By default the additive identity element of is denoted (or ), and the multiplicative identity element is denoted (or ).  Furthermore, our definition of a ring homomorphism includes the condition that : , by definition a ring homomorphism must map the multiplicative identity to the multiplicative identity.     Units of a ring    group of units of ring    Let be a ring. An element is a unit (or invertible ) if there is an element satisfying . The set of all units of , denoted , is a group under the ring multiplication operation and is called the group of units of .     Field   A field is a nonzero commutative ring satisfying : , all nonzero elements of are invertible.     Ring homomorphism from field   Let be a field and let be a nonzero ring. If is a ring homomorphism, then is injective.    Since is a ring homomorphism, its kernel is an ideal in . Since is a field, its only ideals are and . Since (see ), we cannot have . Thus and is injective.     Familiar fields  We recall here some familiar fields, along with their notation.   Reals  The field of all real numbers is denoted .    Complex numbers  The complex numbers form a field under complex addition and multiplication.    Rational numbers  The rational numbers can be defined as a subfield of as follows: .    Finite field of cardinality    field of cardinality   Let be a prime integer. The quotient ring is a field, denoted .    Field of rational functions    rational functions in variables   Let be a field, and let be the ring of polynomials over in variables. We denote by the corresponding field of rational functions: , . This is the fraction field of the polynomial ring .       Finite field notation   In contrast to the official course textbook, we will denote the finite field as , and not as .     Field of fractions    field of fractions of   Recall that if is an integral domain, then its field of fractions  is defined formally as , where we declare if and only if , and we define addition and multiplication as follows: . The map defined as is an injective ring homomorphism, and we often identify with its isomorphic image in , allowing us to think of as a subring of . When we make this identification, we identify the map with the inclusion map.    Universal mapping property of   Let be an integral domain, and let be the ring homomorphism defined as . If is an injective ring homomorphism, then there is a unique injective ring homomorphism satisfying . In fact, the map is defined as . This property is nicely summarized by the diagram below.  Universal mapping property of fraction field       This is a result covered in the ring theory section of the course.     Universal mapping property of  When we identify with its isomorphic image in , and thus think of as a subring of , takes the following form: if is a field, then any injective homomorphism  extends uniquely to an injective homomorphism .    Characteristic of a ring    characteristic of a ring    We define the characteristic of a ring , denoted , as follows:   If there exists a positive integer such that , then we define to be the smallest positive integer for which this is the case.    If for all , then we define .        Prime subfield   Let be a field. The prime subfield of is the subfield defined as the intersection of all subfields of : , .     Prime subfields and characteristic   Let be a field, and let be its prime subfield.   We have or , where is a prime integer.    If , then .    If , then .       Let be defined as . (Recall that there is a unique ring homomorphism from to any other ring.) Since is a subring of , it is an integral domain; since , we see that is a prime ideal of . It follows that or , where is a prime integer.   If , then is injective, and thus for all positive integers . We see that in this case.  If , then is the smallest positive element of , from which it follows that is the smallest positive integer satisfying . We see that in this case.    If , then from the analysis above we see that is injective. Using , since , we see that extends to an injective map , defined as . Its image is a subfield of isomorphic to . We claim that is in fact the prime subfield of . Indeed, any subfield must contain , and hence for all ; since also contains inverses of all nonzero elements, it also contains elements of the form , , and hence all elements of the form , . It follows from that , as desired.    Assume . In this case and . Thus is a subfield of isomorphic to . It is easy to see that in fact is the prime subfield of , since any subfield contains , and hence also .        "
+  "body": " Introduction to Galois theory   Finding roots of polynomials  Given a degree-2 polynomial with coefficients in (or , or ), we may compute its roots using the quadratic formula : . The question naturally arises whether we can derive a formula of a similar nature to for the roots of polynomials of higher degree . For example, if , then the roots of can be expressed in the form . This formula, along with similar formulas for quartic polynomials, was published in Geralamo Cardano's Ars Magna in the 16th century. As such these formulas are called Cardano's formulas . However, Cardano was building off work of a number of other Italian mathematicians: , Scipione del Ferro, Niccolo Tartaglia, and Lodovico Ferrari. See The sordid past of the cubic formula for an amusing history of the attribution struggle around these results.  Comparing and , it is clear that though the second formula is quite a deal more complicated than the first, it is indeed similar in nature. Namely, the root is expressed in terms of iterated radical expressions (radicals of radicals): we say that the polynomial is solvable by radicals in this case.  So are all polynomials solvable by radicals? Although the answer is yes for any quadratic, cubic, or quartic polynomial, Niels Henrik Abel was able to show in the early 19th century that the answer is no for certain quintic (degree-5) polynomials. Around the same time Évariste Galois characterized exactly which polynomials were solvable by radicals in terms of a group of automorphisms of a certain field associated to . The theory he developed to this end, now called Galois theory , established an extremely powerful dictionary between field extensions and groups of field automorphisms. Galois's work is often heralded as the beginning of group theory itself, so in taking up Galois theory now we come wonderfully full circle.    Fields   Rings have identity   In this course all rings are assumed to have a multiplicative identity element. By default the additive identity element of is denoted (or ), and the multiplicative identity element is denoted (or ).  Furthermore, our definition of a ring homomorphism includes the condition that : , by definition a ring homomorphism must map the multiplicative identity to the multiplicative identity.     Units of a ring    group of units of ring    Let be a ring. An element is a unit (or invertible ) if there is an element satisfying . The set of all units of , denoted , is a group under the ring multiplication operation and is called the group of units of .     Field   A field is a nonzero commutative ring satisfying : , all nonzero elements of are invertible.     Ring homomorphism from field   Let be a field and let be a nonzero ring. If is a ring homomorphism, then is injective.    Since is a ring homomorphism, its kernel is an ideal in . Since is a field, its only ideals are and . Since (see ), we cannot have . Thus and is injective.     Familiar fields  We recall here some familiar fields, along with their notation.   Reals  The field of all real numbers is denoted .    Complex numbers  The complex numbers form a field under complex addition and multiplication.    Rational numbers  The rational numbers can be defined as a subfield of as follows: .    Finite field of cardinality    field of cardinality   Let be a prime integer. The quotient ring is a field, denoted .    Field of rational functions    rational functions in variables   Let be a field, and let be the ring of polynomials over in variables. We denote by the corresponding field of rational functions: , . This is the fraction field of the polynomial ring .       Finite field notation   In contrast to the official course textbook, we will denote the finite field as , and not as .     Characteristic of a ring    characteristic of a ring    We define the characteristic of a ring , denoted , as follows:   If there exists a positive integer such that , then we define to be the smallest positive integer for which this is the case.    If for all , then we define .        Field of fractions    field of fractions of   Recall that if is an integral domain, then its field of fractions  is defined formally as , where we declare if and only if , and we define addition and multiplication as follows: . The map defined as is an injective ring homomorphism, and we often identify with its isomorphic image in , allowing us to think of as a subring of . When we make this identification, we identify the map with the inclusion map.    Universal mapping property of   Let be an integral domain, and let be the ring homomorphism defined as . If is an injective ring homomorphism, then there is a unique injective ring homomorphism satisfying . In fact, the map is defined as . This property is nicely summarized by the diagram below.  Universal mapping property of fraction field       This is a result covered in the ring theory section of the course.     Universal mapping property of  When we identify with its isomorphic image in , and thus think of as a subring of , takes the following form: if is a field, then any injective homomorphism  extends uniquely to an injective homomorphism .    "
 },
 {
   "id": "fiat_rings",
@@ -577,11 +577,20 @@ var ptx_lunr_docs = [
   "body": " Finite field notation   In contrast to the official course textbook, we will denote the finite field as , and not as .   "
 },
 {
+  "id": "d_ring_characteristic",
+  "level": "2",
+  "url": "s_intro.html#d_ring_characteristic",
+  "type": "Definition",
+  "number": "1.1.7",
+  "title": "Characteristic of a ring.",
+  "body": " Characteristic of a ring    characteristic of a ring    We define the characteristic of a ring , denoted , as follows:   If there exists a positive integer such that , then we define to be the smallest positive integer for which this is the case.    If for all , then we define .      "
+},
+{
   "id": "rm_frac_R",
   "level": "2",
   "url": "s_intro.html#rm_frac_R",
   "type": "Remark",
-  "number": "1.1.7",
+  "number": "1.1.8",
   "title": "Field of fractions.",
   "body": " Field of fractions    field of fractions of   Recall that if is an integral domain, then its field of fractions  is defined formally as , where we declare if and only if , and we define addition and multiplication as follows: . The map defined as is an injective ring homomorphism, and we often identify with its isomorphic image in , allowing us to think of as a subring of . When we make this identification, we identify the map with the inclusion map.  "
 },
@@ -590,45 +599,18 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_intro.html#th_frac_field_universal",
   "type": "Theorem",
-  "number": "1.1.8",
+  "number": "1.1.9",
   "title": "Universal mapping property of <span class=\"process-math\">\\(\\Frac R\\)<\/span>.",
   "body": " Universal mapping property of   Let be an integral domain, and let be the ring homomorphism defined as . If is an injective ring homomorphism, then there is a unique injective ring homomorphism satisfying . In fact, the map is defined as . This property is nicely summarized by the diagram below.  Universal mapping property of fraction field       This is a result covered in the ring theory section of the course.   "
 },
 {
-  "id": "ss_field_extensions-10",
+  "id": "ss_field_extensions-11",
   "level": "2",
-  "url": "s_intro.html#ss_field_extensions-10",
+  "url": "s_intro.html#ss_field_extensions-11",
   "type": "Remark",
-  "number": "1.1.9",
+  "number": "1.1.10",
   "title": "Universal mapping property of <span class=\"process-math\">\\(\\Frac R\\)<\/span>.",
   "body": " Universal mapping property of  When we identify with its isomorphic image in , and thus think of as a subring of , takes the following form: if is a field, then any injective homomorphism  extends uniquely to an injective homomorphism .  "
-},
-{
-  "id": "d_ring_characteristic",
-  "level": "2",
-  "url": "s_intro.html#d_ring_characteristic",
-  "type": "Definition",
-  "number": "1.1.10",
-  "title": "Characteristic of a ring.",
-  "body": " Characteristic of a ring    characteristic of a ring    We define the characteristic of a ring , denoted , as follows:   If there exists a positive integer such that , then we define to be the smallest positive integer for which this is the case.    If for all , then we define .      "
-},
-{
-  "id": "d_prime_subfield",
-  "level": "2",
-  "url": "s_intro.html#d_prime_subfield",
-  "type": "Definition",
-  "number": "1.1.11",
-  "title": "Prime subfield.",
-  "body": " Prime subfield   Let be a field. The prime subfield of is the subfield defined as the intersection of all subfields of : , .   "
-},
-{
-  "id": "th_prime_subfield",
-  "level": "2",
-  "url": "s_intro.html#th_prime_subfield",
-  "type": "Theorem",
-  "number": "1.1.12",
-  "title": "Prime subfields and characteristic.",
-  "body": " Prime subfields and characteristic   Let be a field, and let be its prime subfield.   We have or , where is a prime integer.    If , then .    If , then .       Let be defined as . (Recall that there is a unique ring homomorphism from to any other ring.) Since is a subring of , it is an integral domain; since , we see that is a prime ideal of . It follows that or , where is a prime integer.   If , then is injective, and thus for all positive integers . We see that in this case.  If , then is the smallest positive element of , from which it follows that is the smallest positive integer satisfying . We see that in this case.    If , then from the analysis above we see that is injective. Using , since , we see that extends to an injective map , defined as . Its image is a subfield of isomorphic to . We claim that is in fact the prime subfield of . Indeed, any subfield must contain , and hence for all ; since also contains inverses of all nonzero elements, it also contains elements of the form , , and hence all elements of the form , . It follows from that , as desired.    Assume . In this case and . Thus is a subfield of isomorphic to . It is easy to see that in fact is the prime subfield of , since any subfield contains , and hence also .      "
 },
 {
   "id": "s_field_extension",
@@ -637,7 +619,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.2",
   "title": "Field extension",
-  "body": " Field extension   Field extensions   Subfield and field extension    field extension    A field extension is a pair of fields such that is a subring of . We say is a subfield of in this case, and that is an extension of , and denote this relation as .  As alternative notation to we will also write , and more graphically,   Field extension notation    to indicate that is a field extension of .     Towers and subextensions   A tower of fields is a chain of one or more field extensions . Similar notational conventions as in apply to towers of fields.  Given a tower of fields , we call an intermediate field of the field extension , and we call a subextension of .     Tower of fields  The rational, real, and complex comprise a familiar tower of fields .    Generated field    field generated over by    Given a field extension and a subset the field generated over by , denoted , is defined as . Equivalently, is the smallest subfield of containing the set and : that is, if and , then .  When (resp., ), we denote as (resp. ).     Generated field   Given an extension and subset , to prove , proceed as follows:   contains and  Show that is a subfield of containing and .    is the smallest such field  Show that for any subfield of containing and , we have .        Field generated by element   Consider the extension . Show that .    Let . We follow to show .   We have seen earlier that is a subfield of , and clearly it contains and .    Suppose is a subfield of containing and . We must show that . Take any . Since by definition , and since by assumption contains and , we have . Since is a subring of , and hence closed under addition and multiplication, we have , as desired.         Vector spaces  In general, given a ring extension , the ring is naturally a module over the ring , where the module addition operation is just the ring addition of , and where scalar multiplication of a scalar  and module element  is defined as the ring product . In the special case of a field extension , the field is a module over the the field , and is thus an -vector space .   Vector space   Let be a field. We call an -module a vector space over (or an -vector space ).     Vector space notions   Let be an -vector space.   Subspace  A subset is a subspace of , denoted , if it is an -submodule: , it is closed under addition and scalar multiplication.    Span  Given a set the span of , denoted is the set of all -linear combinations of elements of : , . A set  spans the vector space if .    Linear independence  A set is linearly independent if for any distinct elements and scalars , if , then for all .  A set is linearly dependent if and only if it is not linearly independent.    Basis  A set is a basis of if it spans and is linearly independent.    Dimension  The space is finite dimensional if it contains a finite basis . If , then given any other basis of , we have . We define the dimension of to be , denoted .  The space is infinite dimensional if it does not contain a finite basis. We write in this case.        Dimension theory compendium   Let be an -vector space of dimension .   Contract  If spans V, then it can be contracted to a basis of : , we can find a basis with .    Expand  If is a linearly independent set, then it can be expanded to a basis of : , we can find a basis with .    Street smarts  Let be a subset of . If , then does not span ; if , then is linearly dependent; if , then spans if and only if is linearly independent if and only if is a basis.    Dimension of subspaces  If is a subspace, then    , and     if and only if .           Computing dimension   To compute the dimension of an -vector space proceed as follows.   Basis  Attempt to produce a basis of .    Dimension     If you found a finite basis in Step 1, then .      If you found an infinite basis in Step 1, or were able to show that no finite basis exists, then .  A common technique for showing that no finite basis exists is to exhibit an infinite linearly independent set.            Degree of an extension   Degree of an extension    degree of the extension    The degree of a field extension , denoted , is the dimension of as an -vector space: , . An extension is finite if and infinite if .     Degree of over  Consider the extension . Essentially by definition, the set is a basis of over , and thus .    Degree of quadratic extension   Let , where is a square-free positive integer. Compute .    First we claim that . This is shown in much the same manner as in . First we show that is indeed a field (easy), and then we follow .  Next we will show that , following . We claim that the set is basis of over . Since , we see that . To see that is linearly independent, assume we have for some . If , then , and thus is a rational root of the primitive integer polynomial . Gauss's lemma then implies that is an integer ; but this is clearly impossible, since , and is assumed to be a square-free integer. Thus we must have . But then implies , since .  Having shown that is a basis of over , we conclude that .     Degree of rational functions   Let be a field and consider the field extension , where is the field of rational functions in one variable over . Compute .    We claim . To prove the claim it is enough, thanks to , to show that there is an infinite linearly independent set. To this end, we claim that the set of all nonnegative powers of is linearly independent over . Indeed, a finite linear combination of elements of $x$ is nothing more than a polynomial , where for all . By definition of the polynomial ring , which we think of as a subset of , we have . This proves is linearly independent, and hence that is an infinite extension.     "
+  "body": " Field extension   Field extensions   Subfield and field extension    field extension    A field extension is a pair of fields such that is a subring of . We say is a subfield of in this case, and that is an extension of , and denote this relation as .  As alternative notation to we will also write , and more graphically,   Field extension notation    to indicate that is a field extension of .     Towers and subextensions   A tower of fields is a chain of one or more field extensions . Similar notational conventions as in apply to towers of fields.  Given a tower of fields , we call an intermediate field of the field extension , and we call a subextension of .     Tower of fields  The rational, real, and complex comprise a familiar tower of fields .    Prime subfield   Let be a field. The prime subfield of is the subfield defined as the intersection of all subfields of : , .     Prime subfields and characteristic   Let be a field, and let be its prime subfield.   We have or , where is a prime integer.    If , then .    If , then .       Let be defined as . (Recall that there is a unique ring homomorphism from to any other ring.) Since is a subring of , it is an integral domain; since , we see that is a prime ideal of . It follows that or , where is a prime integer.   If , then is injective, and thus for all positive integers . We see that in this case.  If , then is the smallest positive element of , from which it follows that is the smallest positive integer satisfying . We see that in this case.    If , then from the analysis above we see that is injective. Using , since , we see that extends to an injective map , defined as . Its image is a subfield of isomorphic to . We claim that is in fact the prime subfield of . Indeed, any subfield must contain , and hence for all ; since also contains inverses of all nonzero elements, it also contains elements of the form , , and hence all elements of the form , . It follows from that , as desired.    Assume . In this case and . Thus is a subfield of isomorphic to . It is easy to see that in fact is the prime subfield of , since any subfield contains , and hence also .        Generated field    field generated over by    Given a field extension and a subset the field generated over by , denoted , is defined as . Equivalently, is the smallest subfield of containing the set and : that is, if and , then .  When (resp., ), we denote as (resp. ).     Generated field   Given an extension and subset , to prove , proceed as follows:   contains and  Show that is a subfield of containing and .    is the smallest such field  Show that for any subfield of containing and , we have .        Field generated by element   Consider the extension . Show that .    Let . We follow to show .   We have seen earlier that is a subfield of , and clearly it contains and .    Suppose is a subfield of containing and . We must show that . Take any . Since by definition , and since by assumption contains and , we have . Since is a subring of , and hence closed under addition and multiplication, we have , as desired.        "
 },
 {
   "id": "d_field_extension",
@@ -667,11 +649,29 @@ var ptx_lunr_docs = [
   "body": " Tower of fields  The rational, real, and complex comprise a familiar tower of fields .  "
 },
 {
+  "id": "d_prime_subfield",
+  "level": "2",
+  "url": "s_field_extension.html#d_prime_subfield",
+  "type": "Definition",
+  "number": "1.2.4",
+  "title": "Prime subfield.",
+  "body": " Prime subfield   Let be a field. The prime subfield of is the subfield defined as the intersection of all subfields of : , .   "
+},
+{
+  "id": "th_prime_subfield",
+  "level": "2",
+  "url": "s_field_extension.html#th_prime_subfield",
+  "type": "Theorem",
+  "number": "1.2.5",
+  "title": "Prime subfields and characteristic.",
+  "body": " Prime subfields and characteristic   Let be a field, and let be its prime subfield.   We have or , where is a prime integer.    If , then .    If , then .       Let be defined as . (Recall that there is a unique ring homomorphism from to any other ring.) Since is a subring of , it is an integral domain; since , we see that is a prime ideal of . It follows that or , where is a prime integer.   If , then is injective, and thus for all positive integers . We see that in this case.  If , then is the smallest positive element of , from which it follows that is the smallest positive integer satisfying . We see that in this case.    If , then from the analysis above we see that is injective. Using , since , we see that extends to an injective map , defined as . Its image is a subfield of isomorphic to . We claim that is in fact the prime subfield of . Indeed, any subfield must contain , and hence for all ; since also contains inverses of all nonzero elements, it also contains elements of the form , , and hence all elements of the form , . It follows from that , as desired.    Assume . In this case and . Thus is a subfield of isomorphic to . It is easy to see that in fact is the prime subfield of , since any subfield contains , and hence also .      "
+},
+{
   "id": "d_field_generated",
   "level": "2",
   "url": "s_field_extension.html#d_field_generated",
   "type": "Definition",
-  "number": "1.2.4",
+  "number": "1.2.6",
   "title": "Generated field.",
   "body": " Generated field    field generated over by    Given a field extension and a subset the field generated over by , denoted , is defined as . Equivalently, is the smallest subfield of containing the set and : that is, if and , then .  When (resp., ), we denote as (resp. ).   "
 },
@@ -680,7 +680,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_field_extension.html#proc_generated_field",
   "type": "Procedure",
-  "number": "1.2.5",
+  "number": "1.2.7",
   "title": "Generated field.",
   "body": " Generated field   Given an extension and subset , to prove , proceed as follows:   contains and  Show that is a subfield of containing and .    is the smallest such field  Show that for any subfield of containing and , we have .      "
 },
@@ -689,79 +689,88 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_field_extension.html#eg_field_generated",
   "type": "Example",
-  "number": "1.2.6",
+  "number": "1.2.8",
   "title": "Field generated by element.",
   "body": " Field generated by element   Consider the extension . Show that .    Let . We follow to show .   We have seen earlier that is a subfield of , and clearly it contains and .    Suppose is a subfield of containing and . We must show that . Take any . Since by definition , and since by assumption contains and , we have . Since is a subring of , and hence closed under addition and multiplication, we have , as desired.      "
 },
 {
+  "id": "s_degree",
+  "level": "1",
+  "url": "s_degree.html",
+  "type": "Section",
+  "number": "1.3",
+  "title": "Degree of a field extension",
+  "body": " Degree of a field extension   Vector spaces  In general, given a ring extension , the ring is naturally a module over the ring , where the module addition operation is just the ring addition of , and where scalar multiplication of a scalar  and module element  is defined as the ring product . In the special case of a field extension , the field is a module over the the field , and is thus an -vector space .   Vector space   Let be a field. We call an -module a vector space over (or an -vector space ).     Vector space notions   Let be an -vector space.   Subspace  A subset is a subspace of , denoted , if it is an -submodule: , it is closed under addition and scalar multiplication.    Span  Given a set the span of , denoted is the set of all -linear combinations of elements of : , . A set  spans the vector space if .    Linear independence  A set is linearly independent if for any distinct elements and scalars , if , then for all .  A set is linearly dependent if and only if it is not linearly independent.    Basis  A set is a basis of if it spans and is linearly independent.    Dimension  The space is finite dimensional if it contains a finite basis . If , then given any other basis of , we have . We define the dimension of to be , denoted .  The space is infinite dimensional if it does not contain a finite basis. We write in this case.        Dimension theory compendium   Let be an -vector space of dimension .   Contract  If spans V, then it can be contracted to a basis of : , we can find a basis with .    Expand  If is a linearly independent set, then it can be expanded to a basis of : , we can find a basis with .    Street smarts  Let be a subset of . If , then does not span ; if , then is linearly dependent; if , then spans if and only if is linearly independent if and only if is a basis.    Dimension of subspaces  If is a subspace, then    , and     if and only if .           Computing dimension   To compute the dimension of an -vector space proceed as follows.   Basis  Attempt to produce a basis of .    Dimension     If you found a finite basis in Step 1, then .      If you found an infinite basis in Step 1, or were able to show that no finite basis exists, then .  A common technique for showing that no finite basis exists is to exhibit an infinite linearly independent set.            Degree of an extension   Degree of an extension    degree of the extension    The degree of a field extension , denoted , is the dimension of as an -vector space: , . An extension is finite if and infinite if .     Degree of over  Consider the extension . Essentially by definition, the set is a basis of over , and thus .    Degree of quadratic extension   Let , where is a square-free positive integer. Compute .    First we claim that . This is shown in much the same manner as in . First we show that is indeed a field (easy), and then we follow .  Next we will show that , following . We claim that the set is basis of over . Since , we see that . To see that is linearly independent, assume we have for some . If , then , and thus is a rational root of the primitive integer polynomial . Gauss's lemma then implies that is an integer ; but this is clearly impossible, since , and is assumed to be a square-free integer. Thus we must have . But then implies , since .  Having shown that is a basis of over , we conclude that .     Degree of rational functions   Let be a field and consider the field extension , where is the field of rational functions in one variable over . Compute .    We claim . To prove the claim it is enough, thanks to , to show that there is an infinite linearly independent set. To this end, we claim that the set of all nonnegative powers of is linearly independent over . Indeed, a finite linear combination of elements of $x$ is nothing more than a polynomial , where for all . By definition of the polynomial ring , which we think of as a subset of , we have . This proves is linearly independent, and hence that is an infinite extension.     "
+},
+{
   "id": "d_vector_space",
   "level": "2",
-  "url": "s_field_extension.html#d_vector_space",
+  "url": "s_degree.html#d_vector_space",
   "type": "Definition",
-  "number": "1.2.7",
+  "number": "1.3.1",
   "title": "Vector space.",
   "body": " Vector space   Let be a field. We call an -module a vector space over (or an -vector space ).   "
 },
 {
   "id": "d_vector_space_notions",
   "level": "2",
-  "url": "s_field_extension.html#d_vector_space_notions",
+  "url": "s_degree.html#d_vector_space_notions",
   "type": "Definition",
-  "number": "1.2.8",
+  "number": "1.3.2",
   "title": "Vector space notions.",
   "body": " Vector space notions   Let be an -vector space.   Subspace  A subset is a subspace of , denoted , if it is an -submodule: , it is closed under addition and scalar multiplication.    Span  Given a set the span of , denoted is the set of all -linear combinations of elements of : , . A set  spans the vector space if .    Linear independence  A set is linearly independent if for any distinct elements and scalars , if , then for all .  A set is linearly dependent if and only if it is not linearly independent.    Basis  A set is a basis of if it spans and is linearly independent.    Dimension  The space is finite dimensional if it contains a finite basis . If , then given any other basis of , we have . We define the dimension of to be , denoted .  The space is infinite dimensional if it does not contain a finite basis. We write in this case.      "
 },
 {
   "id": "th_dimension_compendium",
   "level": "2",
-  "url": "s_field_extension.html#th_dimension_compendium",
+  "url": "s_degree.html#th_dimension_compendium",
   "type": "Theorem",
-  "number": "1.2.9",
+  "number": "1.3.3",
   "title": "Dimension theory compendium.",
   "body": " Dimension theory compendium   Let be an -vector space of dimension .   Contract  If spans V, then it can be contracted to a basis of : , we can find a basis with .    Expand  If is a linearly independent set, then it can be expanded to a basis of : , we can find a basis with .    Street smarts  Let be a subset of . If , then does not span ; if , then is linearly dependent; if , then spans if and only if is linearly independent if and only if is a basis.    Dimension of subspaces  If is a subspace, then    , and     if and only if .         "
 },
 {
   "id": "proc_dimension",
   "level": "2",
-  "url": "s_field_extension.html#proc_dimension",
+  "url": "s_degree.html#proc_dimension",
   "type": "Procedure",
-  "number": "1.2.10",
+  "number": "1.3.4",
   "title": "Computing dimension.",
   "body": " Computing dimension   To compute the dimension of an -vector space proceed as follows.   Basis  Attempt to produce a basis of .    Dimension     If you found a finite basis in Step 1, then .      If you found an infinite basis in Step 1, or were able to show that no finite basis exists, then .  A common technique for showing that no finite basis exists is to exhibit an infinite linearly independent set.         "
 },
 {
   "id": "d_degree",
   "level": "2",
-  "url": "s_field_extension.html#d_degree",
+  "url": "s_degree.html#d_degree",
   "type": "Definition",
-  "number": "1.2.11",
+  "number": "1.3.5",
   "title": "Degree of an extension.",
   "body": " Degree of an extension    degree of the extension    The degree of a field extension , denoted , is the dimension of as an -vector space: , . An extension is finite if and infinite if .   "
 },
 {
   "id": "eg_degree_complex",
   "level": "2",
-  "url": "s_field_extension.html#eg_degree_complex",
+  "url": "s_degree.html#eg_degree_complex",
   "type": "Example",
-  "number": "1.2.12",
+  "number": "1.3.6",
   "title": "Degree of <span class=\"process-math\">\\(\\C\\)<\/span> over <span class=\"process-math\">\\(\\R\\)<\/span>.",
   "body": " Degree of over  Consider the extension . Essentially by definition, the set is a basis of over , and thus .  "
 },
 {
   "id": "eg_degree_quad",
   "level": "2",
-  "url": "s_field_extension.html#eg_degree_quad",
+  "url": "s_degree.html#eg_degree_quad",
   "type": "Example",
-  "number": "1.2.13",
+  "number": "1.3.7",
   "title": "Degree of quadratic extension.",
   "body": " Degree of quadratic extension   Let , where is a square-free positive integer. Compute .    First we claim that . This is shown in much the same manner as in . First we show that is indeed a field (easy), and then we follow .  Next we will show that , following . We claim that the set is basis of over . Since , we see that . To see that is linearly independent, assume we have for some . If , then , and thus is a rational root of the primitive integer polynomial . Gauss's lemma then implies that is an integer ; but this is clearly impossible, since , and is assumed to be a square-free integer. Thus we must have . But then implies , since .  Having shown that is a basis of over , we conclude that .   "
 },
 {
   "id": "eg_degree_rational",
   "level": "2",
-  "url": "s_field_extension.html#eg_degree_rational",
+  "url": "s_degree.html#eg_degree_rational",
   "type": "Example",
-  "number": "1.2.14",
+  "number": "1.3.8",
   "title": "Degree of rational functions.",
   "body": " Degree of rational functions   Let be a field and consider the field extension , where is the field of rational functions in one variable over . Compute .    We claim . To prove the claim it is enough, thanks to , to show that there is an infinite linearly independent set. To this end, we claim that the set of all nonnegative powers of is linearly independent over . Indeed, a finite linear combination of elements of $x$ is nothing more than a polynomial , where for all . By definition of the polynomial ring , which we think of as a subset of , we have . This proves is linearly independent, and hence that is an infinite extension.   "
 },
@@ -770,16 +779,16 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "s_simple_extension.html",
   "type": "Section",
-  "number": "1.3",
+  "number": "1.4",
   "title": "Simple extensions",
-  "body": " Simple extensions   Simple extension   Let be a field extension. A subextension is called a simple extension of if for some .  In plain English, a simple extension of is one generated over by a single element.     Generated fields convention   Let be a field. In order to speak of a field of the form or , we technically need to introduce a larger ambient field where these elements and are drawn from.  In situations where this ambient field does not play an important role, we reserve the right to omit it from our discussion. For example, if introducing a simple field extension without further details, it is assumed that in fact for some larger field .     Simple extensions     The extension is simple, since .    For any field , the field of rational functions in one variable is a simple field extension of .  On the other hand it is possible to show that the field of rational functions in two variables is not simple: , we do not have for any rational function .       Generated ring versus generated field   Let be a field extension, and let . Recall that denotes the subring of generated by over .         if and only if is a field.          By definition is the intersection of all sub rings containing and , and thus is a subset of which is, the intersection of all sub fields containing and .    Clearly, if , then is a field. Assume on the other hand that is a field. Since is a field containing and , and since is the smallest such field, we have . But by (1) we always have . Thus .        Quotients of polynomial rings  Let be a field, let be a nonconstant polynomial in , and let be the corresponding quotient ring homomorphism.   Since , we have , and hence the restriction of to is injective. As such , and we identify with its isomorphic image .    Given we denote for short. We have .       Maps between polynomial rings  A ring homomorphism extends naturally to a ring homomorphism that sends an -polynomial to the -polynomial . By abuse of notation, we will also denote this map of polynonmial rings as . Thus, given we will write .    Quotients of polynomial rings   Let be a field and let be a nonconstant polynomial in . Following , given , we denote by its image in under the quotient map.   Simply generated  We have : , is generated over as a ring by , the image of under the quotient map.    Dimension  Let . The set is a basis of as a vector space over , and thus .    Mapping property  Let be a nonzero ring. The set of all ring homomorphisms is in bijective correspondence with pairs where is a ring homomorphism and is a root of . Indeed, given such a pair , we define .       The proof of this result relies on various bits of theory from general ring theory. It is left as an (excellent) exercises.     Quotients of polynomial rings   Let be a field, let be an irreducible polynomial of degree , and let . Following , we identify with its image in under the quotient map.    is a field and the extension is simple. In fact, we have .    We have .       The corollary is a direct consequence of .     Field of cardinality four   Let . Prove that is a field of cardinality four.    Denote . Since , it is irreducible over if and only if it has a root in . Since , we see that is irreducible. Using , we conclude that is field, and that is a basis of over . It follows that every element of can be uniquely expressed as , with . There are exactly four such expressions: .     Quotients of   Let be any irreducible quadratic polynomial. Prove that .    Since is irreducible, the quotient is a field. Since , we have . Let be a root of . Using , the map defined as is a ring homomorphism. Furthermore, since is a field, the map is injective, and thus we have . We claim . This is a result of the fact that is a linear transformation of -vector spaces: , for any and , we have , as you can easily check. It then follows that as -vector spaces, and thus that . Since and , we conclude that .     Algebraic and transcendental elements   Let be a field extension. An element is algebraic over if there is a nonzero polynomial such that ; an element is transcendental over if it is not algebraic over .     Simple extensions   Let be a field extension and let .   The following statements are equivalent.    is algebraic.     for some irreducible polynomial .     is finite: , .       The following statements are equivalent.    is transcendental.     and .     is infinite: , .          The key to proving both statements of the theorem lies in understanding the evaluation at ring homomorphism . Note first that we have , which implies is a prime ideal of (since is an integral domain). It follows that or for some irreducible polynomial . Furthermore, since . we see immediately that the element is transcendental if and only if if and only if is injective. Similarly, is algebraic if and only if for some irreducible polynomial .  Lastly, observe that , the subring of generated over by .  Having given a rather thorough analysis of we are ready to prove statements (1) and (2).   Proof of (1)  We have , where the last equivalence uses the fact that if and only if is a field. ( ) This proves (i) (ii).  Next, (ii) (iii) since if is irreducible, the quotient is a finite field extension of of degree .  Lastly (iii) (i) since if , then the set must be linearly dependent, in which case there is a nontrivial linear combination . But then we have , where is the nonzero polynomial . Thus is algebraic, as desired.    Proof of (2)  First observe that the equivalence (i) (iii) follows from (1) above simply by taking negations. Furthermore, we have (ii) (iii) since , as we saw in . Thus it remains only to show (i) (ii).  Assume is transcendental. We saw above that this is equivalent to our evaluation map being injective. Thus we have . Since , we may use to get an injective map . Thus is a subfield of containing and . Since in turn any field containing and must also contain all elements of the form , where and are polynomials, we see that in fact the smallest such field: , we have , as desired.     "
+  "body": " Simple extensions   Simple extension   Let be a field extension. A subextension is called a simple extension of if for some .  In plain English, a simple extension of is one generated over by a single element.     Generated fields convention   Let be a field. In order to speak of a field of the form or , we technically need to introduce a larger ambient field where these elements and are drawn from.  In situations where this ambient field does not play an important role, we reserve the right to omit it from our discussion. For example, if introducing a simple field extension without further details, it is assumed that in fact for some larger field .     Simple extensions     The extension is simple, since .    For any field , the field of rational functions in one variable is a simple field extension of .  On the other hand it is possible to show that the field of rational functions in two variables is not simple: , we do not have for any rational function .       Generated ring versus generated field   Let be a field extension, and let . Recall that denotes the subring of generated by over .         if and only if is a field.          By definition is the intersection of all sub rings containing and , and thus is a subset of which is, the intersection of all sub fields containing and .    Clearly, if , then is a field. Assume on the other hand that is a field. Since is a field containing and , and since is the smallest such field, we have . But by (1) we always have . Thus .        Quotients of polynomial rings  Let be a field, let be a nonconstant polynomial in , and let be the corresponding quotient ring homomorphism.   Since , we have , and hence the restriction of to is injective. As such , and we identify with its isomorphic image .    Given we denote for short. We have .       Maps between polynomial rings  A ring homomorphism extends naturally to a ring homomorphism that sends an -polynomial to the -polynomial . By abuse of notation, we will also denote this map of polynonmial rings as . Thus, given we will write .    Quotients of polynomial rings   Let be a field and let be a nonconstant polynomial in . Following , given , we denote by its image in under the quotient map.   Simply generated  We have : , is generated over as a ring by , the image of under the quotient map.    Dimension  Let . The set is a basis of as a vector space over , and thus .    Mapping property  Let be a nonzero ring. The set of all ring homomorphisms is in bijective correspondence with pairs where is a ring homomorphism and is a root of . Indeed, given such a pair , we define .       The proof of this result relies on various bits of theory from general ring theory. It is left as an (excellent) exercises.     Quotients of polynomial rings   Let be a field, let be an irreducible polynomial of degree , and let . Following , we identify with its image in under the quotient map.    is a field and the extension is simple. In fact, we have .    We have .       The corollary is a direct consequence of .     Field of cardinality four   Let . Prove that is a field of cardinality four.    Denote . Since , it is irreducible over if and only if it has a root in . Since , we see that is irreducible. Using , we conclude that is field, and that is a basis of over . It follows that every element of can be uniquely expressed as , with . There are exactly four such expressions: .     Quotients of   Let be any irreducible quadratic polynomial. Prove that .    Since is irreducible, the quotient is a field. Since , we have . Let be a root of . Using , the map defined as is a ring homomorphism. Furthermore, since is a field, the map is injective, and thus we have . We claim . This is a result of the fact that is a linear transformation of -vector spaces: , for any and , we have , as you can easily check. It then follows that as -vector spaces, and thus that . Since and , we conclude that .     Algebraic and transcendental elements   Let be a field extension. An element is algebraic over if there is a nonzero polynomial such that ; an element is transcendental over if it is not algebraic over .     Simple extensions   Let be a field extension and let .   The following statements are equivalent.    is algebraic.     for some irreducible polynomial .     is finite: , .   Furthermore, when is algebraic, there is a basis of of the form .    The following statements are equivalent.    is transcendental.     and .     is infinite: , .          The key to proving both statements of the theorem is to understand the evaluation at ring homomorphism . Note first that we have , which implies is a prime ideal of (since is an integral domain). It follows that or for some irreducible polynomial . Furthermore, since . we see immediately that the element is transcendental if and only if if and only if is injective. Similarly, is algebraic if and only if for some irreducible polynomial .  Lastly, observe that , the subring of generated over by .  Having given a rather thorough analysis of we are ready to prove statements (1) and (2).   Proof of (1)  We have , where the last equivalence uses the fact that if and only if is a field. ( ) This proves (i) (ii).  Next, (ii) (iii) since if is irreducible, the quotient is a finite field extension of of degree .  Lastly (iii) (i) since if , then the set must be linearly dependent, in which case there is a nontrivial linear combination . But then we have , where is the nonzero polynomial . Thus is algebraic, as desired.    Proof of (2)  First observe that the equivalence (i) (iii) follows from (1) above simply by taking negations. Furthermore, we have (ii) (iii) since , as we saw in . Thus it remains only to show (i) (ii).  Assume is transcendental. We saw above that this is equivalent to our evaluation map being injective. Thus we have . Since , we may use to get an injective map . Thus is a subfield of containing and . Since in turn any field containing and must also contain all elements of the form , where and are polynomials, we see that in fact the smallest such field: , we have , as desired.      Minimal polynomial   Let be a field extension, let be algebraic, and let be the evaluation at map. There is a unique polynomial satisfying the following equivalent conditions.    is monic and satisfies .     is a monic polynomial of minimal degree satisfying .     is a monic irreducible polynomial satisfying .         Minimal polynomial   Let be a field extension, and let be algebraic. The unique monic polynomial satisfying the three equivalent conditions of is called the minimal polynomial (or irreducible polynomial ) of over , and is denoted , or just if the base field is understood.     Minimal poylnomial   Let be a field extension, and let be an algebraic element with minimal polynomial .   Let . The set is an -basis of , and thus .    Given , we have if and only if . In particular, if , then is one of the monic irreducible factors of .         Minimal polynomials for  Consider the field extension and the element . Since is a root of of the polynomial , and since this polynomial is irreducible over and monic over , we have   More generally, given any , since is the root of , and since is not the root of any linear polynomial (since ), we see that .    Minimal polynomial of root of unity   Consider the extension , and let , a primitive -th root of unity.   Compute .    Compute .        "
 },
 {
   "id": "d_simple_extension",
   "level": "2",
   "url": "s_simple_extension.html#d_simple_extension",
   "type": "Definition",
-  "number": "1.3.1",
+  "number": "1.4.1",
   "title": "Simple extension.",
   "body": " Simple extension   Let be a field extension. A subextension is called a simple extension of if for some .  In plain English, a simple extension of is one generated over by a single element.   "
 },
@@ -788,7 +797,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_simple_extension.html#fiat_generated_fields",
   "type": "Fiat",
-  "number": "1.3.2",
+  "number": "1.4.2",
   "title": "Generated fields convention.",
   "body": " Generated fields convention   Let be a field. In order to speak of a field of the form or , we technically need to introduce a larger ambient field where these elements and are drawn from.  In situations where this ambient field does not play an important role, we reserve the right to omit it from our discussion. For example, if introducing a simple field extension without further details, it is assumed that in fact for some larger field .   "
 },
@@ -797,7 +806,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_simple_extension.html#eg_simple",
   "type": "Example",
-  "number": "1.3.3",
+  "number": "1.4.3",
   "title": "Simple extensions.",
   "body": " Simple extensions     The extension is simple, since .    For any field , the field of rational functions in one variable is a simple field extension of .  On the other hand it is possible to show that the field of rational functions in two variables is not simple: , we do not have for any rational function .     "
 },
@@ -806,7 +815,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_simple_extension.html#th_gen_ring_field",
   "type": "Theorem",
-  "number": "1.3.4",
+  "number": "1.4.4",
   "title": "Generated ring versus generated field.",
   "body": " Generated ring versus generated field   Let be a field extension, and let . Recall that denotes the subring of generated by over .         if and only if is a field.          By definition is the intersection of all sub rings containing and , and thus is a subset of which is, the intersection of all sub fields containing and .    Clearly, if , then is a field. Assume on the other hand that is a field. Since is a field containing and , and since is the smallest such field, we have . But by (1) we always have . Thus .      "
 },
@@ -815,7 +824,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_simple_extension.html#not_quot_poly",
   "type": "Notation",
-  "number": "1.3.5",
+  "number": "1.4.5",
   "title": "Quotients of polynomial rings.",
   "body": " Quotients of polynomial rings  Let be a field, let be a nonconstant polynomial in , and let be the corresponding quotient ring homomorphism.   Since , we have , and hence the restriction of to is injective. As such , and we identify with its isomorphic image .    Given we denote for short. We have .     "
 },
@@ -824,7 +833,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_simple_extension.html#not_poly_maps",
   "type": "Notation",
-  "number": "1.3.6",
+  "number": "1.4.6",
   "title": "Maps between polynomial rings.",
   "body": " Maps between polynomial rings  A ring homomorphism extends naturally to a ring homomorphism that sends an -polynomial to the -polynomial . By abuse of notation, we will also denote this map of polynonmial rings as . Thus, given we will write .  "
 },
@@ -833,7 +842,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_simple_extension.html#th_quot_poly",
   "type": "Theorem",
-  "number": "1.3.7",
+  "number": "1.4.7",
   "title": "Quotients of polynomial rings.",
   "body": " Quotients of polynomial rings   Let be a field and let be a nonconstant polynomial in . Following , given , we denote by its image in under the quotient map.   Simply generated  We have : , is generated over as a ring by , the image of under the quotient map.    Dimension  Let . The set is a basis of as a vector space over , and thus .    Mapping property  Let be a nonzero ring. The set of all ring homomorphisms is in bijective correspondence with pairs where is a ring homomorphism and is a root of . Indeed, given such a pair , we define .       The proof of this result relies on various bits of theory from general ring theory. It is left as an (excellent) exercises.   "
 },
@@ -842,7 +851,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_simple_extension.html#cor_quot_poly",
   "type": "Corollary",
-  "number": "1.3.8",
+  "number": "1.4.8",
   "title": "Quotients of polynomial rings.",
   "body": " Quotients of polynomial rings   Let be a field, let be an irreducible polynomial of degree , and let . Following , we identify with its image in under the quotient map.    is a field and the extension is simple. In fact, we have .    We have .       The corollary is a direct consequence of .   "
 },
@@ -851,7 +860,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_simple_extension.html#s_simple_extension-10",
   "type": "Example",
-  "number": "1.3.9",
+  "number": "1.4.9",
   "title": "Field of cardinality four.",
   "body": " Field of cardinality four   Let . Prove that is a field of cardinality four.    Denote . Since , it is irreducible over if and only if it has a root in . Since , we see that is irreducible. Using , we conclude that is field, and that is a basis of over . It follows that every element of can be uniquely expressed as , with . There are exactly four such expressions: .   "
 },
@@ -860,7 +869,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_simple_extension.html#s_simple_extension-11",
   "type": "Example",
-  "number": "1.3.10",
+  "number": "1.4.10",
   "title": "Quotients of <span class=\"process-math\">\\(\\R[x]\\)<\/span>.",
   "body": " Quotients of   Let be any irreducible quadratic polynomial. Prove that .    Since is irreducible, the quotient is a field. Since , we have . Let be a root of . Using , the map defined as is a ring homomorphism. Furthermore, since is a field, the map is injective, and thus we have . We claim . This is a result of the fact that is a linear transformation of -vector spaces: , for any and , we have , as you can easily check. It then follows that as -vector spaces, and thus that . Since and , we conclude that .   "
 },
@@ -869,7 +878,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_simple_extension.html#d_algebraic",
   "type": "Definition",
-  "number": "1.3.11",
+  "number": "1.4.11",
   "title": "Algebraic and transcendental elements.",
   "body": " Algebraic and transcendental elements   Let be a field extension. An element is algebraic over if there is a nonzero polynomial such that ; an element is transcendental over if it is not algebraic over .   "
 },
@@ -878,9 +887,54 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_simple_extension.html#th_simple_ext",
   "type": "Theorem",
-  "number": "1.3.12",
+  "number": "1.4.12",
   "title": "Simple extensions.",
-  "body": " Simple extensions   Let be a field extension and let .   The following statements are equivalent.    is algebraic.     for some irreducible polynomial .     is finite: , .       The following statements are equivalent.    is transcendental.     and .     is infinite: , .          The key to proving both statements of the theorem lies in understanding the evaluation at ring homomorphism . Note first that we have , which implies is a prime ideal of (since is an integral domain). It follows that or for some irreducible polynomial . Furthermore, since . we see immediately that the element is transcendental if and only if if and only if is injective. Similarly, is algebraic if and only if for some irreducible polynomial .  Lastly, observe that , the subring of generated over by .  Having given a rather thorough analysis of we are ready to prove statements (1) and (2).   Proof of (1)  We have , where the last equivalence uses the fact that if and only if is a field. ( ) This proves (i) (ii).  Next, (ii) (iii) since if is irreducible, the quotient is a finite field extension of of degree .  Lastly (iii) (i) since if , then the set must be linearly dependent, in which case there is a nontrivial linear combination . But then we have , where is the nonzero polynomial . Thus is algebraic, as desired.    Proof of (2)  First observe that the equivalence (i) (iii) follows from (1) above simply by taking negations. Furthermore, we have (ii) (iii) since , as we saw in . Thus it remains only to show (i) (ii).  Assume is transcendental. We saw above that this is equivalent to our evaluation map being injective. Thus we have . Since , we may use to get an injective map . Thus is a subfield of containing and . Since in turn any field containing and must also contain all elements of the form , where and are polynomials, we see that in fact the smallest such field: , we have , as desired.    "
+  "body": " Simple extensions   Let be a field extension and let .   The following statements are equivalent.    is algebraic.     for some irreducible polynomial .     is finite: , .   Furthermore, when is algebraic, there is a basis of of the form .    The following statements are equivalent.    is transcendental.     and .     is infinite: , .          The key to proving both statements of the theorem is to understand the evaluation at ring homomorphism . Note first that we have , which implies is a prime ideal of (since is an integral domain). It follows that or for some irreducible polynomial . Furthermore, since . we see immediately that the element is transcendental if and only if if and only if is injective. Similarly, is algebraic if and only if for some irreducible polynomial .  Lastly, observe that , the subring of generated over by .  Having given a rather thorough analysis of we are ready to prove statements (1) and (2).   Proof of (1)  We have , where the last equivalence uses the fact that if and only if is a field. ( ) This proves (i) (ii).  Next, (ii) (iii) since if is irreducible, the quotient is a finite field extension of of degree .  Lastly (iii) (i) since if , then the set must be linearly dependent, in which case there is a nontrivial linear combination . But then we have , where is the nonzero polynomial . Thus is algebraic, as desired.    Proof of (2)  First observe that the equivalence (i) (iii) follows from (1) above simply by taking negations. Furthermore, we have (ii) (iii) since , as we saw in . Thus it remains only to show (i) (ii).  Assume is transcendental. We saw above that this is equivalent to our evaluation map being injective. Thus we have . Since , we may use to get an injective map . Thus is a subfield of containing and . Since in turn any field containing and must also contain all elements of the form , where and are polynomials, we see that in fact the smallest such field: , we have , as desired.    "
+},
+{
+  "id": "th_min_poly",
+  "level": "2",
+  "url": "s_simple_extension.html#th_min_poly",
+  "type": "Theorem",
+  "number": "1.4.13",
+  "title": "Minimal polynomial.",
+  "body": " Minimal polynomial   Let be a field extension, let be algebraic, and let be the evaluation at map. There is a unique polynomial satisfying the following equivalent conditions.    is monic and satisfies .     is a monic polynomial of minimal degree satisfying .     is a monic irreducible polynomial satisfying .       "
+},
+{
+  "id": "d_min_poly",
+  "level": "2",
+  "url": "s_simple_extension.html#d_min_poly",
+  "type": "Definition",
+  "number": "1.4.14",
+  "title": "Minimal polynomial.",
+  "body": " Minimal polynomial   Let be a field extension, and let be algebraic. The unique monic polynomial satisfying the three equivalent conditions of is called the minimal polynomial (or irreducible polynomial ) of over , and is denoted , or just if the base field is understood.   "
+},
+{
+  "id": "cor_min_poly",
+  "level": "2",
+  "url": "s_simple_extension.html#cor_min_poly",
+  "type": "Corollary",
+  "number": "1.4.15",
+  "title": "Minimal poylnomial.",
+  "body": " Minimal poylnomial   Let be a field extension, and let be an algebraic element with minimal polynomial .   Let . The set is an -basis of , and thus .    Given , we have if and only if . In particular, if , then is one of the monic irreducible factors of .       "
+},
+{
+  "id": "eg_min_poly_R",
+  "level": "2",
+  "url": "s_simple_extension.html#eg_min_poly_R",
+  "type": "Example",
+  "number": "1.4.16",
+  "title": "Minimal polynomials for <span class=\"process-math\">\\(\\C\/\\R\\)<\/span>.",
+  "body": " Minimal polynomials for  Consider the field extension and the element . Since is a root of of the polynomial , and since this polynomial is irreducible over and monic over , we have   More generally, given any , since is the root of , and since is not the root of any linear polynomial (since ), we see that .  "
+},
+{
+  "id": "eg_min_poly_Q",
+  "level": "2",
+  "url": "s_simple_extension.html#eg_min_poly_Q",
+  "type": "Example",
+  "number": "1.4.17",
+  "title": "Minimal polynomial of root of unity.",
+  "body": " Minimal polynomial of root of unity   Consider the extension , and let , a primitive -th root of unity.   Compute .    Compute .       "
 },
 {
   "id": "appendix-notation",

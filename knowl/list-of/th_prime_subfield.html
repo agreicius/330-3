@@ -12,7 +12,7 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.1.12</span><span class="period">.</span><span class="space"> </span><span class="title">Prime subfields and characteristic.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Prime subfields and characteristic.</span>
 </h4>
 <div class="para logical">
 <div class="para">Let <span class="process-math">\(K\)</span> be a field, and let <span class="process-math">\(F\)</span> be its prime subfield.</div>
@@ -31,13 +31,13 @@
 <div class="para">If <span class="process-math">\(\ker\phi=(p)\text{,}\)</span> then <span class="process-math">\(p\)</span> is the smallest positive element of <span class="process-math">\(\ker \phi\text{,}\)</span> from which it follows that <span class="process-math">\(p\)</span> is the smallest positive integer satisfying <span class="process-math">\(p\cdot 1_K=0\text{.}\)</span> We see that <span class="process-math">\(\character K=p\)</span> in this case.</div>
 </li>
 <li><div class="para logical">
-<div class="para">If <span class="process-math">\(\character K=0\text{,}\)</span> then from the analysis above we see that <span class="process-math">\(\phi\)</span> is injective. Using <a href="s_intro.html#th_frac_field_universal" class="xref" data-knowl="./knowl/xref/th_frac_field_universal.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.1.8: Universal mapping property of \Frac R">Theorem 1.1.8</a>, since <span class="process-math">\(\Q=\Frac \Z\text{,}\)</span> we see that <span class="process-math">\(\phi\)</span> extends to an injective map <span class="process-math">\(\widetilde{\phi}\colon \Q\rightarrow K\text{,}\)</span> defined as <span class="process-math">\(\widetilde{\phi}(m/n)=\phi(m)/\phi(n)=(m\cdot 1_K)/(n\cdot 1_K)\text{.}\)</span> Its image</div>
+<div class="para">If <span class="process-math">\(\character K=0\text{,}\)</span> then from the analysis above we see that <span class="process-math">\(\phi\)</span> is injective. Using <a href="s_intro.html#th_frac_field_universal" class="xref" data-knowl="./knowl/xref/th_frac_field_universal.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.1.9: Universal mapping property of \Frac R">Theorem 1.1.9</a>, since <span class="process-math">\(\Q=\Frac \Z\text{,}\)</span> we see that <span class="process-math">\(\phi\)</span> extends to an injective map <span class="process-math">\(\widetilde{\phi}\colon \Q\rightarrow K\text{,}\)</span> defined as <span class="process-math">\(\widetilde{\phi}(m/n)=\phi(m)/\phi(n)=(m\cdot 1_K)/(n\cdot 1_K)\text{.}\)</span> Its image</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_frac_field_universal.html ./knowl/xref/eq_im_Q.html">
 \begin{equation}
 \widetilde{\phi}(\Q)=\{(m\cdot 1_K)/(n\cdot 1_K)\colon m,n\in \Z, n\ne 0\}\tag{1.4}
 \end{equation}
 </div>
-<div class="para">is a subfield of <span class="process-math">\(K\)</span> isomorphic to <span class="process-math">\(\Q\text{.}\)</span> We claim that <span class="process-math">\(\widetilde{\phi}(\Q)\)</span> is in fact the prime subfield of <span class="process-math">\(K\text{.}\)</span> Indeed, any subfield <span class="process-math">\(K'\leq K\)</span> must contain <span class="process-math">\(1_K\text{,}\)</span> and hence <span class="process-math">\(m\cdot 1_K\)</span> for all <span class="process-math">\(\in \Z\text{;}\)</span> since <span class="process-math">\(K'\)</span> also contains inverses of all nonzero elements, it also contains elements of the form <span class="process-math">\(1_K/(n\cdot 1_K)\text{,}\)</span> <span class="process-math">\(n\ne 0\text{,}\)</span> and hence all elements of the form <span class="process-math">\((m\cdot 1_K)/(n\cdot 1_K)\text{,}\)</span> <span class="process-math">\(n\ne 0\text{.}\)</span> It follows from <a href="s_intro.html#eq_im_Q" class="xref" data-knowl="./knowl/xref/eq_im_Q.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.4">(1.4)</a> that <span class="process-math">\(\widetilde{\phi}(\Q)\leq K'\text{,}\)</span> as desired.</div>
+<div class="para">is a subfield of <span class="process-math">\(K\)</span> isomorphic to <span class="process-math">\(\Q\text{.}\)</span> We claim that <span class="process-math">\(\widetilde{\phi}(\Q)\)</span> is in fact the prime subfield of <span class="process-math">\(K\text{.}\)</span> Indeed, any subfield <span class="process-math">\(K'\leq K\)</span> must contain <span class="process-math">\(1_K\text{,}\)</span> and hence <span class="process-math">\(m\cdot 1_K\)</span> for all <span class="process-math">\(\in \Z\text{;}\)</span> since <span class="process-math">\(K'\)</span> also contains inverses of all nonzero elements, it also contains elements of the form <span class="process-math">\(1_K/(n\cdot 1_K)\text{,}\)</span> <span class="process-math">\(n\ne 0\text{,}\)</span> and hence all elements of the form <span class="process-math">\((m\cdot 1_K)/(n\cdot 1_K)\text{,}\)</span> <span class="process-math">\(n\ne 0\text{.}\)</span> It follows from <a href="s_field_extension.html#eq_im_Q" class="xref" data-knowl="./knowl/xref/eq_im_Q.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.4">(1.4)</a> that <span class="process-math">\(\widetilde{\phi}(\Q)\leq K'\text{,}\)</span> as desired.</div>
 </div></li>
 <li><div class="para logical">
 <div class="para">Assume <span class="process-math">\(\character K=p\text{.}\)</span> In this case <span class="process-math">\(\ker \phi=(p)\)</span> and</div>
@@ -50,6 +50,6 @@
 </div>
 </div></li>
 </ol>
-</div></article></details><span class="incontext"><a class="internal" href="s_intro.html#th_prime_subfield">in-context</a></span>
+</div></article></details><span class="incontext"><a class="internal" href="s_field_extension.html#th_prime_subfield">in-context</a></span>
 </body>
 </html>
