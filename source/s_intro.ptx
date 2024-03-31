@@ -130,6 +130,7 @@
             </ul>
         </p>
     </example>
+    
 <assumption xml:id="fiat_finite_field">
     <title>Finite field notation</title>
     <statement>
@@ -138,6 +139,35 @@
         </p>
     </statement>
 </assumption>
+
+<definition xml:id="d_ring_characteristic">
+    <title>Characteristic of a ring</title>
+    <notation>
+        <usage><m>\character R</m></usage>
+      <description>characteristic of a ring</description>
+    </notation>
+    <statement>
+        <p>
+            We define the <term>characteristic</term> of a ring <m>R</m>, denoted <m>\character R</m>, as follows: 
+            <ul>
+                <li>
+                    <p>
+                        If there exists a positive integer <m>m</m> such that 
+                        <me>
+                            m\cdot 1=\underset{m \text{ times }}{\underbrace{1+1+\cdots +1}}=0
+                        </me>,
+                        then we define <m>\character R</m> to be the smallest positive integer for which this is the case. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        If <m>m\cdot 1\ne 0</m> for all <m>m\in \Z_+</m>, then we define <m>\character R=0</m>. 
+                    </p>
+                </li>
+            </ul>
+        </p>
+    </statement>
+</definition>
 
 
 <remark xml:id="rm_frac_R">
@@ -196,103 +226,8 @@
     </p>
 </remark>
 
-<definition xml:id="d_ring_characteristic">
-    <title>Characteristic of a ring</title>
-    <notation>
-        <usage><m>\character R</m></usage>
-      <description>characteristic of a ring</description>
-    </notation>
-    <statement>
-        <p>
-            We define the <term>characteristic</term> of a ring <m>R</m>, denoted <m>\character R</m>, as follows: 
-            <ul>
-                <li>
-                    <p>
-                        If there exists a positive integer <m>m</m> such that 
-                        <me>
-                            m\cdot 1=\underset{m \text{ times }}{\underbrace{1+1+\cdots +1}}=0
-                        </me>,
-                        then we define <m>\character R</m> to be the smallest positive integer for which this is the case. 
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        If <m>m\cdot 1\ne 0</m> for all <m>m\in \Z_+</m>, then we define <m>\character R=0</m>. 
-                    </p>
-                </li>
-            </ul>
-        </p>
-    </statement>
-</definition>
-<definition xml:id="d_prime_subfield">
-    <title>Prime subfield</title>
-    <statement>
-        <p>
-            Let <m>K</m> be a field. The <term>prime subfield</term> of <m>K</m> is the subfield <m>F\leq K</m> defined as the intersection of all subfields of <m>K</m>: <ie/>, 
-            <me>
-                F=\bigcap_{\substack{K'\leq K \\ K' \text{ a field}}} K'
-            </me>.
-        </p>
-    </statement>
-</definition>
-<theorem xml:id="th_prime_subfield">
-    <title>Prime subfields and characteristic</title>
-    <statement>
-        <p>
-            Let <m>K</m> be a field, and let <m>F</m> be its prime subfield.
-            <ol>
-                <li>
-                    <p>
-                        We have <m>\character K=0</m> or <m>\character K=p</m>, where <m>p</m> is a prime integer.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        If <m>\character K=0</m>, then <m>F\cong \Q</m>.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        If <m>\character K=p&gt; 0</m>, then <m>F\cong \F_p</m>. 
-                    </p>
-                </li>
-            </ol>
-        </p>
-    </statement>
-    <proof>
-        <p>
-            Let <m>\phi\colon \Z\rightarrow K</m> be defined as <m>\phi(m)=m\cdot 1_K</m>. (Recall that there is a unique ring homomorphism from <m>\Z</m> to any other ring.) Since <m>\phi(\Z)</m> is a subring of <m>K</m>, it is an integral domain; since <m>\Z/\ker\phi\cong \phi(\Z)</m>, we see that <m>\ker \phi</m> is a prime ideal of <m>\Z</m>. It follows that <m>\ker\phi=(0)</m> or <m>\ker\phi=(p)</m>, where <m>p</m> is a prime integer. 
-            <ol>
-                <li>
-                    <p>
-                        If <m>\ker\phi=(0)</m>, then <m>\phi</m> is injective, and thus <m>m\cdot 1_K=\phi(m)\ne 0</m> for all positive integers <m>m</m>. We see that <m>\character K=0</m> in this case. 
-                    </p>
-                    <p>
-                        If <m>\ker\phi=(p)</m>, then <m>p</m> is the smallest positive element of <m>\ker \phi</m>, from which it follows that <m>p</m> is the smallest positive integer satisfying <m>p\cdot 1_K=0</m>. We see that <m>\character K=p</m> in this case.  
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        If <m>\character K=0</m>, then from the analysis above we see that <m>\phi</m> is injective. Using <xref ref="th_frac_field_universal"/>, since <m>\Q=\Frac \Z</m>, we see that <m>\phi</m> extends to an injective map <m>\widetilde{\phi}\colon \Q\rightarrow K</m>, defined as <m>\widetilde{\phi}(m/n)=\phi(m)/\phi(n)=(m\cdot 1_K)/(n\cdot 1_K)</m>. Its image 
-                        <men xml:id="eq_im_Q">
-                            \widetilde{\phi}(\Q)=\{(m\cdot 1_K)/(n\cdot 1_K)\colon m,n\in \Z, n\ne 0\}
-                        </men>
-                        is a subfield of <m>K</m> isomorphic to <m>\Q</m>. We claim that <m>\widetilde{\phi}(\Q)</m> is in fact the prime subfield of <m>K</m>. Indeed, any subfield <m>K'\leq K</m> must contain <m>1_K</m>, and hence <m>m\cdot 1_K</m> for all <m>\in \Z</m>; since <m>K'</m> also contains inverses of all nonzero elements, it also contains elements of the form <m>1_K/(n\cdot 1_K)</m>, <m>n\ne 0</m>, and hence all elements of the form <m>(m\cdot 1_K)/(n\cdot 1_K)</m>, <m>n\ne 0</m>. It follows from <xref ref="eq_im_Q"/> that <m>\widetilde{\phi}(\Q)\leq K'</m>, as desired. 
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Assume <m>\character K=p</m>. In this case <m>\ker \phi=(p)</m> and 
-                        <me>
-                            \phi(\Z)\cong \Z/\ker\phi =\Z/p\Z=\F_p
-                        </me>.
-                        Thus <m>\phi(\Z)</m> is a subfield of <m>K</m> isomorphic to <m>\F_p</m>. It is easy to see that in fact <m>\phi(\Z)</m> is the prime subfield of <m>K</m>, since any subfield <m>K'</m> contains <m>1_K</m>, and hence also <m>\{m\cdot 1_K\colon m\in \Z\}=\phi(Z)</m>.    
-                    </p>
-                </li>
-            </ol>
-        </p>
-    </proof>
-</theorem>
+
+
 
 </subsection>
 

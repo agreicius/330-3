@@ -3,6 +3,7 @@
   <title>Galois theory</title>
   <xi:include  href="s_intro.ptx"/>
   <xi:include  href="s_field_extension.ptx"/>
+  <xi:include  href="s_degree.ptx"/>
   <xi:include  href="s_simple_extension.ptx"/>
 
 </chapter>
