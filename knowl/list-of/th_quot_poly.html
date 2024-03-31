@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.3.7</span><span class="period">.</span><span class="space"> </span><span class="title">Quotients of polynomial rings.</span>
+</h3>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(F\)</span> be a field and let <span class="process-math">\(f(x)=\anpoly\)</span> be a nonconstant polynomial in <span class="process-math">\(F[x]\text{.}\)</span> Following <a href="s_simple_extension.html#not_quot_poly" class="xref" data-knowl="./knowl/xref/not_quot_poly.html" data-reveal-label="Reveal" data-close-label="Close" title="Notation 1.3.5: Quotients of polynomial rings">Notation 1.3.5</a>, given <span class="process-math">\(g\in F[x]\text{,}\)</span> we denote by <span class="process-math">\(\overline{g}\)</span> its image in <span class="process-math">\(F[x]/(f)\)</span> under the quotient map.</div>
+<ol class="decimal">
+<li>
+<span class="heading"><span class="title">Simply generated.</span></span><div class="para">We have <span class="process-math">\(F[x]/(f(x))=F[\overline{x}]\text{:}\)</span> i.e., <span class="process-math">\(F[x]/(f)\)</span> is generated over <span class="process-math">\(F\)</span> as a ring by <span class="process-math">\(\overline{x}\text{,}\)</span> the image of <span class="process-math">\(x\)</span> under the quotient map.</div>
+</li>
+<li>
+<span class="heading"><span class="title">Dimension.</span></span><div class="para">Let <span class="process-math">\(n=\deg f\text{.}\)</span> The set <span class="process-math">\(B=\{1,\overline{x},\dots, \overline{x}^{n-1}\}\)</span> is a basis of <span class="process-math">\(F[x]/(f)\)</span> as a vector space over <span class="process-math">\(F\text{,}\)</span> and thus <span class="process-math">\(\dim_F F[x]/(f)=\abs{B}=n\text{.}\)</span>
+</div>
+</li>
+<li>
+<span class="heading"><span class="title">Mapping property.</span></span><div class="para logical">
+<div class="para">Let <span class="process-math">\(S\)</span> be a nonzero ring. The set of all ring homomorphisms <span class="process-math">\(\overline{\phi}\colon F[x]/(f)\rightarrow S\)</span> is in bijective correspondence with pairs <span class="process-math">\((\phi, s)\)</span> where <span class="process-math">\(\phi\colon F\rightarrow S\)</span> is a ring homomorphism and <span class="process-math">\(s\in S\)</span> is a root of</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\phi(f)=\phi(a_n)x^n+\phi(a_{n-1})x^{n-1}+\cdots +\phi(a_1)x+\phi(a_0)\text{.}
+\end{equation*}
+</div>
+<div class="para">Indeed, given such a pair <span class="process-math">\((\phi, s)\text{,}\)</span> we define</div>
+<div class="displaymath process-math">
+\begin{align*}
+\overline{\phi}\colon F[x]/(f) \amp \longrightarrow S\\
+b_m\overline{x}^m+b_{m-1}\overline{x}^{m-1}+\cdots +b_1\overline{x}+b_0 \amp\longmapsto \phi(b_m)s^m+\phi(b_{m-1})s^{m-1}+\cdots  +\phi(b_1)s+\phi(b_0) \text{.}
+\end{align*}
+</div>
+</div>
+</li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para">The proof of this result relies on various bits of theory from general ring theory. It is left as an (excellent) exercises.</div></article></details><span class="incontext"><a class="internal" href="s_simple_extension.html#th_quot_poly">in-context</a></span>
+</body>
+</html>

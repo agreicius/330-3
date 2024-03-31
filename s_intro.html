@@ -95,7 +95,7 @@ window.MathJax = {
 <h1 class="heading"><a href="kursobjekt.html"><span class="title">Math 330-3:</span> <span class="subtitle">Kursobjekt</span></a></h1>
 <p class="byline">Aaron Greicius</p>
 </div>
-</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="kursobjekt-6-5.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="kursobjekt-6-7.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
 <div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
 <div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
 <div class="search-results-controls">
@@ -290,6 +290,7 @@ window.MathJax = {
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_field_extension.html#ss_degree" class="internal"><span class="title">Degree of an extension</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_simple_extension.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Simple extensions</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -298,8 +299,10 @@ window.MathJax = {
 <li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-notation.html" class="internal"><span class="codenumber">A</span> <span class="title">Notation</span></a></div></li>
 <li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-defs.html" class="internal"><span class="codenumber">B</span> <span class="title">Definitions</span></a></div></li>
 <li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-thms.html" class="internal"><span class="codenumber">C</span> <span class="title">Theory</span></a></div></li>
-<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-egs.html" class="internal"><span class="codenumber">D</span> <span class="title">Examples</span></a></div></li>
-<li class="toc-item toc-index"><div class="toc-title-box"><a href="kursobjekt-6-5.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-procs.html" class="internal"><span class="codenumber">D</span> <span class="title">Procedures</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-egs.html" class="internal"><span class="codenumber">E</span> <span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-fiats.html" class="internal"><span class="codenumber">F</span> <span class="title">Mantras and fiats</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="kursobjekt-6-7.html" class="internal"><span class="title">Index</span></a></div></li>
 </ul>
 </li>
 </ul></nav></div>
@@ -417,7 +420,7 @@ F(x_1,x_2,\dots, x_n)=\{f/g \colon f,g\in R, g\ne 0\}\text{.}
 </div>
 <div class="para">This property is nicely summarized by the diagram below. <div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="generated/latex-image/cd_frac_field.svg" role="img" class="contained" alt="Universal mapping property of fraction field"></div>
 </div>
-</div></article><article class="remark remark-like" id="ss_field_extensions-10"><h4 class="heading">
+</div></article><details id="th_frac_field_universal-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_frac_field_universal-3-1">This is a result covered in the ring theory section of the course.</div></article></details><article class="remark remark-like" id="ss_field_extensions-10"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">Universal mapping property of <span class="process-math">\(\Frac R\)</span>.</span>
 </h4> <div class="para" id="ss_field_extensions-10-2">When we identify <span class="process-math">\(R\)</span> with its isomorphic image <span class="process-math">\(i(R)\)</span> in <span class="process-math">\(\Frac R\text{,}\)</span> and thus think of <span class="process-math">\(R\)</span> as a subring of <span class="process-math">\(\Frac R\text{,}\)</span>  <a href="s_intro.html#th_frac_field_universal" class="xref" data-knowl="./knowl/xref/th_frac_field_universal.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.1.8: Universal mapping property of \Frac R">Theorem 1.1.8</a> takes the following form: if <span class="process-math">\(F\)</span> is a field, then any injective homomorphism <span class="process-math">\(\phi\colon R\rightarrow F\)</span> <em class="emphasis">extends</em> uniquely to an injective homomorphism <span class="process-math">\(\widetilde{\phi}\colon \Frac R\rightarrow F\text{.}\)</span>
 </div></article><article class="definition definition-like" id="d_ring_characteristic"><h4 class="heading">
@@ -458,7 +461,33 @@ F=\bigcap_{\substack{K'\leq K \\ K' \text{ a field}}} K'\text{.}
 <li id="th_prime_subfield-2-1-3-3"><div class="para" id="th_prime_subfield-2-1-3-3-1">If <span class="process-math">\(\character K=p&gt; 0\text{,}\)</span> then <span class="process-math">\(F\cong \F_p\text{.}\)</span>
 </div></li>
 </ol>
-</div></article><details id="th_prime_subfield-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para" id="th_prime_subfield-3-1">Let <span class="process-math">\(\phi\colon \Z\rightarrow K\)</span> be the unique ring homomorphism from <span class="process-math">\(\Z\)</span> to <span class="process-math">\(F\text{.}\)</span>
+</div></article><details id="th_prime_subfield-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_prime_subfield-3-1">
+<div class="para">Let <span class="process-math">\(\phi\colon \Z\rightarrow K\)</span> be defined as <span class="process-math">\(\phi(m)=m\cdot 1_K\text{.}\)</span> (Recall that there is a unique ring homomorphism from <span class="process-math">\(\Z\)</span> to any other ring.) Since <span class="process-math">\(\phi(\Z)\)</span> is a subring of <span class="process-math">\(K\text{,}\)</span> it is an integral domain; since <span class="process-math">\(\Z/\ker\phi\cong \phi(\Z)\text{,}\)</span> we see that <span class="process-math">\(\ker \phi\)</span> is a prime ideal of <span class="process-math">\(\Z\text{.}\)</span> It follows that <span class="process-math">\(\ker\phi=(0)\)</span> or <span class="process-math">\(\ker\phi=(p)\text{,}\)</span> where <span class="process-math">\(p\)</span> is a prime integer.</div>
+<ol class="decimal">
+<li id="th_prime_subfield-3-1-12-1">
+<div class="para" id="th_prime_subfield-3-1-12-1-1">If <span class="process-math">\(\ker\phi=(0)\text{,}\)</span> then <span class="process-math">\(\phi\)</span> is injective, and thus <span class="process-math">\(m\cdot 1_K=\phi(m)\ne 0\)</span> for all positive integers <span class="process-math">\(m\text{.}\)</span> We see that <span class="process-math">\(\character K=0\)</span> in this case.</div>
+<div class="para" id="th_prime_subfield-3-1-12-1-2">If <span class="process-math">\(\ker\phi=(p)\text{,}\)</span> then <span class="process-math">\(p\)</span> is the smallest positive element of <span class="process-math">\(\ker \phi\text{,}\)</span> from which it follows that <span class="process-math">\(p\)</span> is the smallest positive integer satisfying <span class="process-math">\(p\cdot 1_K=0\text{.}\)</span> We see that <span class="process-math">\(\character K=p\)</span> in this case.</div>
+</li>
+<li id="th_prime_subfield-3-1-12-2"><div class="para logical" id="th_prime_subfield-3-1-12-2-1">
+<div class="para">If <span class="process-math">\(\character K=0\text{,}\)</span> then from the analysis above we see that <span class="process-math">\(\phi\)</span> is injective. Using <a href="s_intro.html#th_frac_field_universal" class="xref" data-knowl="./knowl/xref/th_frac_field_universal.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.1.8: Universal mapping property of \Frac R">Theorem 1.1.8</a>, since <span class="process-math">\(\Q=\Frac \Z\text{,}\)</span> we see that <span class="process-math">\(\phi\)</span> extends to an injective map <span class="process-math">\(\widetilde{\phi}\colon \Q\rightarrow K\text{,}\)</span> defined as <span class="process-math">\(\widetilde{\phi}(m/n)=\phi(m)/\phi(n)=(m\cdot 1_K)/(n\cdot 1_K)\text{.}\)</span> Its image</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_frac_field_universal.html ./knowl/xref/eq_im_Q.html" id="eq_im_Q">
+\begin{equation}
+\widetilde{\phi}(\Q)=\{(m\cdot 1_K)/(n\cdot 1_K)\colon m,n\in \Z, n\ne 0\}\tag{1.4}
+\end{equation}
+</div>
+<div class="para">is a subfield of <span class="process-math">\(K\)</span> isomorphic to <span class="process-math">\(\Q\text{.}\)</span> We claim that <span class="process-math">\(\widetilde{\phi}(\Q)\)</span> is in fact the prime subfield of <span class="process-math">\(K\text{.}\)</span> Indeed, any subfield <span class="process-math">\(K'\leq K\)</span> must contain <span class="process-math">\(1_K\text{,}\)</span> and hence <span class="process-math">\(m\cdot 1_K\)</span> for all <span class="process-math">\(\in \Z\text{;}\)</span> since <span class="process-math">\(K'\)</span> also contains inverses of all nonzero elements, it also contains elements of the form <span class="process-math">\(1_K/(n\cdot 1_K)\text{,}\)</span> <span class="process-math">\(n\ne 0\text{,}\)</span> and hence all elements of the form <span class="process-math">\((m\cdot 1_K)/(n\cdot 1_K)\text{,}\)</span> <span class="process-math">\(n\ne 0\text{.}\)</span> It follows from <a href="s_intro.html#eq_im_Q" class="xref" data-knowl="./knowl/xref/eq_im_Q.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.4">(1.4)</a> that <span class="process-math">\(\widetilde{\phi}(\Q)\leq K'\text{,}\)</span> as desired.</div>
+</div></li>
+<li id="th_prime_subfield-3-1-12-3"><div class="para logical" id="th_prime_subfield-3-1-12-3-1">
+<div class="para">Assume <span class="process-math">\(\character K=p\text{.}\)</span> In this case <span class="process-math">\(\ker \phi=(p)\)</span> and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\phi(\Z)\cong \Z/\ker\phi =\Z/p\Z=\F_p\text{.}
+\end{equation*}
+</div>
+<div class="para">Thus <span class="process-math">\(\phi(\Z)\)</span> is a subfield of <span class="process-math">\(K\)</span> isomorphic to <span class="process-math">\(\F_p\text{.}\)</span> It is easy to see that in fact <span class="process-math">\(\phi(\Z)\)</span> is the prime subfield of <span class="process-math">\(K\text{,}\)</span> since any subfield <span class="process-math">\(K'\)</span> contains <span class="process-math">\(1_K\text{,}\)</span> and hence also <span class="process-math">\(\{m\cdot 1_K\colon m\in \Z\}=\phi(Z)\text{.}\)</span>
+</div>
+</div></li>
+</ol>
 </div></article></details></section></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="c_Galois_theory.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_field_extension.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
