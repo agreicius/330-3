@@ -183,6 +183,11 @@
             </image>
         </p>    
     </statement>
+    <proof>
+        <p>
+            This is a result covered in the ring theory section of the course. 
+        </p>
+    </proof>
 </theorem>
 <remark>
     <title>Universal mapping property of <m>\Frac R</m></title>
@@ -256,7 +261,35 @@
     </statement>
     <proof>
         <p>
-            Let <m>\phi\colon \Z\rightarrow K</m> be the unique ring homomorphism from <m>\Z</m> to <m>F</m>. 
+            Let <m>\phi\colon \Z\rightarrow K</m> be defined as <m>\phi(m)=m\cdot 1_K</m>. (Recall that there is a unique ring homomorphism from <m>\Z</m> to any other ring.) Since <m>\phi(\Z)</m> is a subring of <m>K</m>, it is an integral domain; since <m>\Z/\ker\phi\cong \phi(\Z)</m>, we see that <m>\ker \phi</m> is a prime ideal of <m>\Z</m>. It follows that <m>\ker\phi=(0)</m> or <m>\ker\phi=(p)</m>, where <m>p</m> is a prime integer. 
+            <ol>
+                <li>
+                    <p>
+                        If <m>\ker\phi=(0)</m>, then <m>\phi</m> is injective, and thus <m>m\cdot 1_K=\phi(m)\ne 0</m> for all positive integers <m>m</m>. We see that <m>\character K=0</m> in this case. 
+                    </p>
+                    <p>
+                        If <m>\ker\phi=(p)</m>, then <m>p</m> is the smallest positive element of <m>\ker \phi</m>, from which it follows that <m>p</m> is the smallest positive integer satisfying <m>p\cdot 1_K=0</m>. We see that <m>\character K=p</m> in this case.  
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        If <m>\character K=0</m>, then from the analysis above we see that <m>\phi</m> is injective. Using <xref ref="th_frac_field_universal"/>, since <m>\Q=\Frac \Z</m>, we see that <m>\phi</m> extends to an injective map <m>\widetilde{\phi}\colon \Q\rightarrow K</m>, defined as <m>\widetilde{\phi}(m/n)=\phi(m)/\phi(n)=(m\cdot 1_K)/(n\cdot 1_K)</m>. Its image 
+                        <men xml:id="eq_im_Q">
+                            \widetilde{\phi}(\Q)=\{(m\cdot 1_K)/(n\cdot 1_K)\colon m,n\in \Z, n\ne 0\}
+                        </men>
+                        is a subfield of <m>K</m> isomorphic to <m>\Q</m>. We claim that <m>\widetilde{\phi}(\Q)</m> is in fact the prime subfield of <m>K</m>. Indeed, any subfield <m>K'\leq K</m> must contain <m>1_K</m>, and hence <m>m\cdot 1_K</m> for all <m>\in \Z</m>; since <m>K'</m> also contains inverses of all nonzero elements, it also contains elements of the form <m>1_K/(n\cdot 1_K)</m>, <m>n\ne 0</m>, and hence all elements of the form <m>(m\cdot 1_K)/(n\cdot 1_K)</m>, <m>n\ne 0</m>. It follows from <xref ref="eq_im_Q"/> that <m>\widetilde{\phi}(\Q)\leq K'</m>, as desired. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Assume <m>\character K=p</m>. In this case <m>\ker \phi=(p)</m> and 
+                        <me>
+                            \phi(\Z)\cong \Z/\ker\phi =\Z/p\Z=\F_p
+                        </me>.
+                        Thus <m>\phi(\Z)</m> is a subfield of <m>K</m> isomorphic to <m>\F_p</m>. It is easy to see that in fact <m>\phi(\Z)</m> is the prime subfield of <m>K</m>, since any subfield <m>K'</m> contains <m>1_K</m>, and hence also <m>\{m\cdot 1_K\colon m\in \Z\}=\phi(Z)</m>.    
+                    </p>
+                </li>
+            </ol>
         </p>
     </proof>
 </theorem>
