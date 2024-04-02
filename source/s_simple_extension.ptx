@@ -547,6 +547,9 @@
 				Let <m>K/F</m> be a field extension, and let <m>\alpha\in K</m> be algebraic.
 				The unique monic polynomial satisfying the three equivalent conditions of <xref ref="th_min_poly"/> is called the <term>minimal polynomial</term> (or <term>irreducible polynomial</term>) of <m>\alpha</m> over <m>F</m>, and is denoted <m>m_{\alpha, F}(x)</m>, or just <m>m_\alpha(x)</m> if the base field <m>F</m> is understood.
 			</p>
+			<p>
+				The <term>degree</term> of the algebraic element <m>\alpha</m> over <m>F</m>, denoted <m>\deg_F \alpha</m>, is defined as the degree of the minimal polynomial of <m>\alpha</m>: <ie/>, <m>\deg_F\alpha=\deg m_{\alpha, F}(x)</m>. 
+			</p>
 		</statement>
 	</definition>
 

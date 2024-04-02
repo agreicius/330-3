@@ -87,6 +87,21 @@
             Statment (1) of <xref ref="th_degree_towers"/> is just as important as (2), as it gives us a procedure for building a basis for <m>L/F</m> from bases <m>B_1</m> of <m>L/K</m> and <m>B_2</m> of <m>K/F</m>: namely, we simply take the set of all products of elements in <m>B_1</m> and <m>B_2</m>. 
         </p>
     </remark>
+    <corollary xml:id="cor_degree_towers">
+        <title>Degree in towers</title>
+        <statement>
+            <p>
+                Let <m>L/F</m> be a field extension. 
+                <ol>
+                    <li>
+                        <p>
+                            If <m>K/F</m> is a subextension of <m>L/F</m>, then <m>[K\colon F]\mid [L\colon F]</m> and <m>[L\colon K]\mid [L\colon F]</m>. 
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+    </corollary>
     <theorem xml:id="th_finite_ext">
         <title>Finite extension theorem</title>
         <statement>
