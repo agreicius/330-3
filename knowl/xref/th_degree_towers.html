@@ -21,10 +21,10 @@
 <div class="para">If <span class="process-math">\(B_1\)</span> is a basis of <span class="process-math">\(K\)</span> and <span class="process-math">\(B_2\)</span> is a basis of <span class="process-math">\(L\)</span> as a <span class="process-math">\(K\)</span>-vector space, then the set</div>
 <div class="displaymath process-math">
 \begin{equation}
-B=\{\alpha\cdot \beta\colon \alpha\in B_1, \beta\in B_2\}\tag{1.5}
+B=\{\alpha\beta\colon \alpha\in B_1, \beta\in B_2\}\tag{1.5}
 \end{equation}
 </div>
-<div class="para">is a basis of <span class="process-math">\(L\)</span> as an <span class="process-math">\(F\)</span>-vector space.</div>
+<div class="para">of all pairwise products of elements of <span class="process-math">\(B_1\)</span> and <span class="process-math">\(B_2\)</span> is a basis of <span class="process-math">\(L\)</span> as an <span class="process-math">\(F\)</span>-vector space.</div>
 </div></li>
 <li><div class="para logical">
 <div class="para">We have</div>
@@ -35,6 +35,93 @@ B=\{\alpha\cdot \beta\colon \alpha\in B_1, \beta\in B_2\}\tag{1.5}
 </div>
 </div></li>
 </ol>
-</div></article><span class="incontext"><a class="internal" href="s_algebraic.html#th_degree_towers">in-context</a></span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="title">Proof of (1).</span></h3></summary><article class="hiddenproof"> <div class="para">Let <span class="process-math">\(B=\{\alpha\beta\colon \alpha\in B_1, \beta\in B_2\}\text{,}\)</span> as in the theorem statement. We will show directly that <span class="process-math">\(B\)</span> is a basis of <span class="process-math">\(L\)</span> as an <span class="process-math">\(F\)</span>-vector space, by showing that it spans and is linearly independent.</div> <article class="case"><h4 class="heading">
+<span class="process-math">\(B\)</span> spans.</h4> <div class="para logical">
+<div class="para">Given any <span class="process-math">\(\alpha\in L\text{,}\)</span> since <span class="process-math">\(B_2\)</span> is a <span class="process-math">\(K\)</span>-basis of <span class="process-math">\(L\text{,}\)</span> we can write</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\alpha=c_1\beta_1+c_2\beta_2+\cdots +c_n\beta_n=\sum_{j=1}^nc_j\beta_j
+\end{equation*}
+</div>
+<div class="para">for some elements <span class="process-math">\(\beta_j\in B_2\)</span> and scalars <span class="process-math">\(c_j\in K\text{.}\)</span> Next since <span class="process-math">\(B_1\)</span> is a basis of <span class="process-math">\(K\)</span> over <span class="process-math">\(F\text{,}\)</span> we can find a finite set <span class="process-math">\(\{\alpha_1,\alpha_2,\dots, \alpha_m\}\subseteq B_1\)</span> such that for each <span class="process-math">\(1\leq j\leq n\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+c_j=d_{1j}\alpha_1+d_{2j}\alpha_2+\cdots +d_{mj}\alpha_m=\sum_{i=1}^md_{ij}\alpha_i
+\end{equation*}
+</div>
+<div class="para">for some elements <span class="process-math">\(d_{ij}\in F\text{.}\)</span> Substituting these expressions for <span class="process-math">\(c_j\)</span> into the first linear combination above, we conclude that</div>
+<div class="displaymath process-math">
+\begin{align*}
+\alpha\amp = \sum_{j=1}^nc_j\beta_j \\
+\amp = \sum_{j=1}^n (\sum_{i=1}^md_{ij}\alpha_i)\beta_j\\
+\amp =\sum_{\substack{1\leq i\leq m\\ 1\leq j\leq n }}d_{ij}\, \alpha_i\, \beta_j 
+\end{align*}
+</div>
+<div class="para">for some scalars <span class="process-math">\(d_{ij}\in F\)</span> and elements <span class="process-math">\(\alpha_i\beta_j\in B\text{.}\)</span> This shows that every element of <span class="process-math">\(L\)</span> can be written as a <span class="process-math">\(F\)</span>-linear combination of elements of <span class="process-math">\(B\text{,}\)</span> and hence that <span class="process-math">\(\Span_F B=L\text{.}\)</span>
+</div>
+</div></article> <article class="case"><h4 class="heading">
+<span class="process-math">\(B\)</span> is linearly independent.</h4> <div class="para logical">
+<div class="para">Assume we have an  <span class="process-math">\(F\)</span>-linear combination</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{\substack{1\leq i\leq m\\ 1\leq j\leq n }}d_{ij}\alpha_i\, \beta_j=0\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\alpha_i\in B_1\text{,}\)</span> <span class="process-math">\(\beta_j\in B_2\text{,}\)</span> <span class="process-math">\(d_{ij}\in F\)</span> and the elements <span class="process-math">\(\alpha_i\beta_j\)</span> are distinct. Grouping terms, we can re-write this as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{j=1}^nc_j\beta_j=0\text{,}
+\end{equation*}
+</div>
+<div class="para">where for each <span class="process-math">\(1\leq j\leq n\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+c_j=\sum_{i=1}^md_{ij}\alpha_j \in K\text{.}
+\end{equation*}
+</div>
+<div class="para">Firstly, since <span class="process-math">\(\alpha_i\beta_j\ne \alpha_{i'}\beta_{j'}\)</span> for all <span class="process-math">\((i,j)\ne (i',j')\text{,}\)</span> it follows easily that <span class="process-math">\(\beta_j\ne \beta_{j'}\)</span> for <span class="process-math">\(j\ne j'\text{.}\)</span> Since <span class="process-math">\(B_2\)</span> is linearly independent over <span class="process-math">\(K\text{,}\)</span> we conclude that <span class="process-math">\(c_j=0\)</span> for all <span class="process-math">\(1\leq j\leq n\text{.}\)</span> But then, since <span class="process-math">\(B_1\)</span> is linearly independent over <span class="process-math">\(F\text{,}\)</span> for all <span class="process-math">\(1\leq j\leq n\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+c_j=\sum_{i=1}^md_{ij}\alpha_j=0\implies d_{ij}=0 \text{ for all } 1\leq i\leq m\text{.}
+\end{equation*}
+</div>
+<div class="para">We conclude that <span class="process-math">\(d_{ij}=0\)</span> for all <span class="process-math">\(1\leq i\leq m\)</span> and <span class="process-math">\(1\leq j\leq n\text{.}\)</span> This proves <span class="process-math">\(B\)</span> is linearly independent over <span class="process-math">\(F\text{.}\)</span>
+</div>
+</div></article></article></details><details class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="title">Proof of (2).</span></h3></summary><article class="hiddenproof"> <div class="para">We treat two cases: (a) <span class="process-math">\(K/F\)</span> and <span class="process-math">\(L/K\)</span> are both finite extensions, and (b) at least one of <span class="process-math">\(K/F\)</span> and <span class="process-math">\(L/K\)</span> is an infinite extension.</div> <article class="case"><h4 class="heading">Case (a).</h4> <div class="para logical">
+<div class="para">Assume <span class="process-math">\([K\colon F]=n_1\)</span> and <span class="process-math">\([L\colon K]=n_2\text{,}\)</span> for positive integers <span class="process-math">\(n_1, n_2\text{.}\)</span> By definition we can find bases</div>
+<div class="displaymath process-math">
+\begin{align*}
+B_1 \amp =\{\alpha_1,\alpha_2,\dots, \alpha_{n_1}\}\\
+B_2 \amp =\{\beta_1,\beta_2,\dots, \beta_{n_2}\}
+\end{align*}
+</div>
+<div class="para">for <span class="process-math">\(K\)</span> as an <span class="process-math">\(F\)</span>-vector space, and <span class="process-math">\(L\)</span> as a <span class="process-math">\(K\)</span>-vector space, respectively. By statement (1) of this theorem, we conclude that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B=\{\alpha_i\beta_j\colon 1\leq i\leq n_1, 1\leq j\leq n_2\}
+\end{equation*}
+</div>
+<div class="para">is a basis of <span class="process-math">\(L\)</span> as an <span class="process-math">\(F\)</span>-vector space. It remains only to show that <span class="process-math">\(\abs{B}=n_1n_2\text{,}\)</span> since then we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[L\colon F]=\dim_F L=\abs{B}=n_1n_2=[K\colon F][L\colon K]=[L\colon K][K\colon F]\text{.}
+\end{equation*}
+</div>
+<div class="para">To see that <span class="process-math">\(\abs{B}=n_1n_2\text{,}\)</span> we show that the map</div>
+<div class="displaymath process-math">
+\begin{align*}
+B_1\times B_2 \amp rightarrow B\\
+(\alpha, \beta) \amp \mapsto \alpha\beta
+\end{align*}
+</div>
+<div class="para">is a bijection, whence <span class="process-math">\(\abs{B}=\abs{B_1}\times \abs{B_2}=n_1n_2\text{.}\)</span> The map is surjective by definition of <span class="process-math">\(B\text{.}\)</span> That the map is injective follows from the following chain of implications:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\alpha\beta=\alpha'\beta' \amp \implies \alpha\beta-\alpha'\beta' \\
+\amp \implies \beta=\beta' \text{ or } \alpha=\alpha'=0 \amp (B_2 \text{ lin. ind. over } K) \\
+\amp\implies \beta=\beta' \amp (B_1 \text{ basis } \implies \alpha\ne 0, \alpha'\ne 0) 
+\end{align*}
+</div>
+</div></article> <article class="case"><h4 class="heading">Case (b).</h4> <div class="para"></div></article></article></details><span class="incontext"><a class="internal" href="s_algebraic.html#th_degree_towers">in-context</a></span>
 </body>
 </html>
