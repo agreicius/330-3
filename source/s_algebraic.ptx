@@ -179,11 +179,12 @@
 			<case>
 			<title>Case (b)</title>
 			<p>
-			Assume first that <m>L/K</m> is infinite. In this case we can find an infinite set <m>S</m> of the form <m>S=\{\alpha_1,\alpha_2,\dots,\}\subseteq L</m> that is linearly independent over <m>K</m>. But then clearly <m>S</m> is also linearly independent over the smaller field <m>F</m>. Thus <m>L/F</m> also has infinite dimension. 
+				Assume first that <m>K/F</m> is infinite. In this case we can find an infinite set <m>S</m> of the form <m>S=\{\alpha_1,\alpha_2,\dots,\}\subseteq K</m> that is linearly independent over <m>F</m>. But <m>S</m> is also a subset of <m>L</m>, and thus <m>L/F</m> has an infinite linearly independent set, making it an infinite extension. 
 			</p>
 			<p>
-				Now assume <m>K/F</m> is infinite. 
+			Now assume that <m>L/K</m> is infinite. In this case we can find an infinite set <m>S</m> of the form <m>S=\{\alpha_1,\alpha_2,\dots,\}\subseteq L</m> that is linearly independent over <m>K</m>. But then <m>S</m> is also linearly independent over the smaller field <m>F</m>, since an <m>F</m>-linear combination of elements of <m>S</m> is also a <m>K</m>-linear combination. Thus <m>L/F</m> also has infinite dimension. 
 			</p>
+			
 			</case>
 			
 		</proof>
@@ -212,11 +213,14 @@
 		<title>Tower law</title>
 		<statement>
 			<p>
-				Let <m>L/F</m> be a  field extension.
 				<ol>
 					<li>
 						<p>
-							If <m>K/F</m> is a subextension of <m>L/F</m>, then <m>[K\colon F]\mid [L\colon F]</m> and <m>[L\colon K]\mid [L\colon F]</m>.
+							Let <m>L/K/F</m> be a tower of finite field extensions. The integers <m>[K\colon F]</m> and <m>[L\colon K]</m> divide the integer <m>[L\colon F]</m>: <ie/>, we have 
+							<me>
+								[K\colon F]\, \mid [L\colon F] \text{ and } [L\colon K]\, \mid [L\colon F]
+							</me>.
+							
 						</p>
 					</li>
 
@@ -235,6 +239,11 @@
 				</ol>
 			</p>
 		</statement>
+		<proof>
+			<p>
+				Statement (1) follows directly from <xref ref="th_degree_towers"/>; statement (2) follows from <xref ref="th_degree_towers"/> by induction. 
+			</p>
+		</proof>
 	</corollary>
 
 	<example xml:id="eg_degree_towers">
