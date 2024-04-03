@@ -110,7 +110,7 @@ B=\{\alpha_i\beta_j\colon 1\leq i\leq n_1, 1\leq j\leq n_2\}
 <div class="para">To see that <span class="process-math">\(\abs{B}=n_1n_2\text{,}\)</span> we show that the map</div>
 <div class="displaymath process-math">
 \begin{align*}
-B_1\times B_2 \amp rightarrow B\\
+B_1\times B_2 \amp \rightarrow B\\
 (\alpha, \beta) \amp \mapsto \alpha\beta
 \end{align*}
 </div>
@@ -119,9 +119,11 @@ B_1\times B_2 \amp rightarrow B\\
 \begin{align*}
 \alpha\beta=\alpha'\beta' \amp \implies \alpha\beta-\alpha'\beta' \\
 \amp \implies \beta=\beta' \text{ or } \alpha=\alpha'=0 \amp (B_2 \text{ lin. ind. over } K) \\
-\amp\implies \beta=\beta' \amp (B_1 \text{ basis } \implies \alpha\ne 0, \alpha'\ne 0) 
+\amp\implies \beta=\beta' \amp (B_1 \text{ basis } \implies \alpha\ne 0, \alpha'\ne 0) \\
+\amp \implies \alpha=\alpha' \text{ and } \beta=\beta' \amp (\alpha\beta=\alpha'\beta')\\
+\amp \implies (\alpha, \beta)=(\alpha', \beta')\text{.}
 \end{align*}
 </div>
-</div></article> <article class="case"><h4 class="heading">Case (b).</h4> <div class="para"></div></article></article></details><span class="incontext"><a class="internal" href="s_algebraic.html#th_degree_towers">in-context</a></span>
+</div></article> <article class="case"><h4 class="heading">Case (b).</h4> <div class="para">Assume first that <span class="process-math">\(K/F\)</span> is infinite. In this case we can find an infinite set <span class="process-math">\(S\)</span> of the form <span class="process-math">\(S=\{\alpha_1,\alpha_2,\dots,\}\subseteq K\)</span> that is linearly independent over <span class="process-math">\(F\text{.}\)</span> But <span class="process-math">\(S\)</span> is also a subset of <span class="process-math">\(L\text{,}\)</span> and thus <span class="process-math">\(L/F\)</span> has an infinite linearly independent set, making it an infinite extension.</div> <div class="para">Now assume that <span class="process-math">\(L/K\)</span> is infinite. In this case we can find an infinite set <span class="process-math">\(S\)</span> of the form <span class="process-math">\(S=\{\alpha_1,\alpha_2,\dots,\}\subseteq L\)</span> that is linearly independent over <span class="process-math">\(K\text{.}\)</span> But then <span class="process-math">\(S\)</span> is also linearly independent over the smaller field <span class="process-math">\(F\text{,}\)</span> since an <span class="process-math">\(F\)</span>-linear combination of elements of <span class="process-math">\(S\)</span> is also a <span class="process-math">\(K\)</span>-linear combination. Thus <span class="process-math">\(L/F\)</span> also has infinite dimension.</div></article></article></details><span class="incontext"><a class="internal" href="s_algebraic.html#th_degree_towers">in-context</a></span>
 </body>
 </html>

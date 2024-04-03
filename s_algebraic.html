@@ -436,7 +436,7 @@ B=\{\alpha_i\beta_j\colon 1\leq i\leq n_1, 1\leq j\leq n_2\}
 <div class="para">To see that <span class="process-math">\(\abs{B}=n_1n_2\text{,}\)</span> we show that the map</div>
 <div class="displaymath process-math" id="th_degree_towers-4-3-2-15">
 \begin{align*}
-B_1\times B_2 \amp rightarrow B\\
+B_1\times B_2 \amp \rightarrow B\\
 (\alpha, \beta) \amp \mapsto \alpha\beta
 \end{align*}
 </div>
@@ -445,10 +445,12 @@ B_1\times B_2 \amp rightarrow B\\
 \begin{align*}
 \alpha\beta=\alpha'\beta' \amp \implies \alpha\beta-\alpha'\beta' \\
 \amp \implies \beta=\beta' \text{ or } \alpha=\alpha'=0 \amp (B_2 \text{ lin. ind. over } K) \\
-\amp\implies \beta=\beta' \amp (B_1 \text{ basis } \implies \alpha\ne 0, \alpha'\ne 0) 
+\amp\implies \beta=\beta' \amp (B_1 \text{ basis } \implies \alpha\ne 0, \alpha'\ne 0) \\
+\amp \implies \alpha=\alpha' \text{ and } \beta=\beta' \amp (\alpha\beta=\alpha'\beta')\\
+\amp \implies (\alpha, \beta)=(\alpha', \beta')\text{.}
 \end{align*}
 </div>
-</div></article> <article class="case" id="th_degree_towers-4-4"><h4 class="heading">Case (b).</h4> <div class="para" id="th_degree_towers-4-4-2"></div></article></article></details><article class="remark remark-like" id="s_algebraic-8"><h3 class="heading">
+</div></article> <article class="case" id="th_degree_towers-4-4"><h4 class="heading">Case (b).</h4> <div class="para" id="th_degree_towers-4-4-2">Assume first that <span class="process-math">\(K/F\)</span> is infinite. In this case we can find an infinite set <span class="process-math">\(S\)</span> of the form <span class="process-math">\(S=\{\alpha_1,\alpha_2,\dots,\}\subseteq K\)</span> that is linearly independent over <span class="process-math">\(F\text{.}\)</span> But <span class="process-math">\(S\)</span> is also a subset of <span class="process-math">\(L\text{,}\)</span> and thus <span class="process-math">\(L/F\)</span> has an infinite linearly independent set, making it an infinite extension.</div> <div class="para" id="th_degree_towers-4-4-3">Now assume that <span class="process-math">\(L/K\)</span> is infinite. In this case we can find an infinite set <span class="process-math">\(S\)</span> of the form <span class="process-math">\(S=\{\alpha_1,\alpha_2,\dots,\}\subseteq L\)</span> that is linearly independent over <span class="process-math">\(K\text{.}\)</span> But then <span class="process-math">\(S\)</span> is also linearly independent over the smaller field <span class="process-math">\(F\text{,}\)</span> since an <span class="process-math">\(F\)</span>-linear combination of elements of <span class="process-math">\(S\)</span> is also a <span class="process-math">\(K\)</span>-linear combination. Thus <span class="process-math">\(L/F\)</span> also has infinite dimension.</div></article></article></details><article class="remark remark-like" id="s_algebraic-8"><h3 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Tower law.</span>
 </h3> <div class="para" id="s_algebraic-8-2">Statement (1) of <a href="" class="xref" data-knowl="./knowl/xref/th_degree_towers.html" title="Theorem 1.5.5: Tower law">Theorem 1.5.5</a> is just as important as (2), as it gives us a procedure for building a basis for <span class="process-math">\(L/F\)</span> from bases <span class="process-math">\(B_1\)</span> of <span class="process-math">\(L/K\)</span> and <span class="process-math">\(B_2\)</span> of <span class="process-math">\(K/F\text{:}\)</span> namely, we simply take the set of all products of elements in <span class="process-math">\(B_1\)</span> and <span class="process-math">\(B_2\text{.}\)</span>
 </div></article><article class="remark remark-like" id="s_algebraic-9"><h3 class="heading">
@@ -465,12 +467,16 @@ B_1\times B_2 \amp rightarrow B\\
 </div></article><article class="corollary theorem-like" id="cor_degree_towers"><h3 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.5.8</span><span class="period">.</span><span class="space"> </span><span class="title">Tower law.</span>
 </h3>
-<div class="para logical" id="cor_degree_towers-2-1">
-<div class="para">Let <span class="process-math">\(L/F\)</span> be a  field extension.</div>
-<ol class="decimal">
-<li id="cor_degree_towers-2-1-2-1"><div class="para" id="cor_degree_towers-2-1-2-1-1">If <span class="process-math">\(K/F\)</span> is a subextension of <span class="process-math">\(L/F\text{,}\)</span> then <span class="process-math">\([K\colon F]\mid [L\colon F]\)</span> and <span class="process-math">\([L\colon K]\mid [L\colon F]\text{.}\)</span>
+<div class="para logical" id="cor_degree_towers-2-1"><ol class="decimal">
+<li id="cor_degree_towers-2-1-1-1"><div class="para logical" id="cor_degree_towers-2-1-1-1-1">
+<div class="para">Let <span class="process-math">\(L/K/F\)</span> be a tower of finite field extensions. The integers <span class="process-math">\([K\colon F]\)</span> and <span class="process-math">\([L\colon K]\)</span> divide the integer <span class="process-math">\([L\colon F]\text{:}\)</span> i.e., we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[K\colon F]\, \mid [L\colon F] \text{ and } [L\colon K]\, \mid [L\colon F]
+\end{equation*}
+</div>
 </div></li>
-<li id="cor_degree_towers-2-1-2-2"><div class="para logical" id="cor_degree_towers-2-1-2-2-1">
+<li id="cor_degree_towers-2-1-1-2"><div class="para logical" id="cor_degree_towers-2-1-1-2-1">
 <div class="para">Given a tower of extensions</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -484,8 +490,7 @@ F_1\leq F_2\leq \cdots \leq F_n\text{,}
 \end{equation*}
 </div>
 </div></li>
-</ol>
-</div></article><article class="example example-like" id="eg_degree_towers"><h3 class="heading">
+</ol></div></article><details id="cor_degree_towers-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="cor_degree_towers-3-1">Statement (1) follows directly from <a href="" class="xref" data-knowl="./knowl/xref/th_degree_towers.html" title="Theorem 1.5.5: Tower law">Theorem 1.5.5</a>; statement (2) follows from <a href="" class="xref" data-knowl="./knowl/xref/th_degree_towers.html" title="Theorem 1.5.5: Tower law">Theorem 1.5.5</a> by induction.</div></article></details><article class="example example-like" id="eg_degree_towers"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.9</span><span class="period">.</span><span class="space"> </span><span class="title">Tower law.</span>
 </h3> <div class="para" id="eg_degree_towers-2">Use the tower law to prove that the field extension <span class="process-math">\(\Q(\sqrt[3]{2})/\Q\)</span> has no nontrivial subextension <span class="process-math">\(K/\Q\text{:}\)</span> i.e., if <span class="process-math">\(\Q\leq K\leq \Q(\sqrt[3]{2})\text{,}\)</span> then <span class="process-math">\(K=\Q\)</span> or <span class="process-math">\(K=\Q(\sqrt[3]{2})\text{.}\)</span>
 </div></article><article class="theorem theorem-like" id="th_finite_ext"><h3 class="heading">
