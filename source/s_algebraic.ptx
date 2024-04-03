@@ -71,8 +71,9 @@
 						<p>
 							If <m>B_1</m> is a basis of <m>K</m> and <m>B_2</m> is a basis of <m>L</m> as a <m>K</m>-vector space, then the set
 							<men xml:id="eq_degree_towers_basis">
-								B=\{\alpha\cdot \beta\colon \alpha\in B_1, \beta\in B_2\}
+								B=\{\alpha\beta\colon \alpha\in B_1, \beta\in B_2\}
 							</men>
+							of all pairwise products of elements of <m>B_1</m> and <m>B_2</m>
 							is a basis of <m>L</m> as an <m>F</m>-vector space.
 						</p>
 					</li>
@@ -88,10 +89,10 @@
 				</ol>
 			</p>
 		</statement>
-		<!-- <proof>
+		<proof>
 			<title>Proof of (1)</title>
 			<p>
-				Let <m>B=\{\alpha\cdot \beta\colon \alpha\in \B_1, \beta\in B_2\}</m>, as in the theorem statement. We will show directly that <m>B</m> is a basis of <m>L</m> as an <m>F</m>-vector space, by showing that it spans and is linearly independent. 
+				Let <m>B=\{\alpha\beta\colon \alpha\in B_1, \beta\in B_2\}</m>, as in the theorem statement. We will show directly that <m>B</m> is a basis of <m>L</m> as an <m>F</m>-vector space, by showing that it spans and is linearly independent. 
 			</p>
 			<case>
 				<title><m>B</m> spans</title>
@@ -100,25 +101,92 @@
 				 <me>
 					\alpha=c_1\beta_1+c_2\beta_2+\cdots +c_n\beta_n=\sum_{j=1}^nc_j\beta_j
 				 </me>
-				 for some elements <m>c_j\in K</m>. Next since <m>B_1</m> is a basis of <m>K</m> over <m>F</m>, we can find a finite set <m>\{\alpha_1,\alpha_2,\dots, \alpha_m\}\subseteq B_1</m> such that for each <m>1\leq j\leq n</m> we have 
+				 for some elements <m>\beta_j\in B_2</m> and scalars <m>c_j\in K</m>. Next since <m>B_1</m> is a basis of <m>K</m> over <m>F</m>, we can find a finite set <m>\{\alpha_1,\alpha_2,\dots, \alpha_m\}\subseteq B_1</m> such that for each <m>1\leq j\leq n</m> we have 
 				 <me>
 					c_j=d_{1j}\alpha_1+d_{2j}\alpha_2+\cdots +d_{mj}\alpha_m=\sum_{i=1}^md_{ij}\alpha_i
 				 </me>
 				 for some elements <m>d_{ij}\in F</m>. Substituting these expressions for <m>c_j</m> into the first linear combination above, we conclude that 
 				 <md>
 					<mrow> \alpha\amp = \sum_{j=1}^nc_j\beta_j </mrow>
-					<mrow> \amp = \sum_{j=1}^n (\sum_{i=1}^md_{ij}\alpha_i)\beta_</mrow>
-					<mrow> \amp =\sum_{\substack{1\leq i\leq m\\ 1\leq j\leq n }}d_{ij} </mrow>
-				 </md><me>
-					
-				 </me>
-				 
-
-				 
-				 
+					<mrow> \amp = \sum_{j=1}^n (\sum_{i=1}^md_{ij}\alpha_i)\beta_j</mrow>
+					<mrow> \amp =\sum_{\substack{1\leq i\leq m\\ 1\leq j\leq n }}d_{ij}\, \alpha_i\, \beta_j </mrow>
+				 </md>
+				 for some scalars <m>d_{ij}\in F</m> and elements <m>\alpha_i\beta_j\in B</m>. 
+				 This shows that every element of <m>L</m> can be written as a <m>F</m>-linear combination of elements of <m>B</m>, and hence that <m>\Span_F B=L</m>. 
 				</p>
 			</case>
-		</proof> -->
+			<case>
+				<title><m>B</m> is linearly independent</title>
+				<p>
+					Assume we have an  <m>F</m>-linear combination 
+					<me>
+						\sum_{\substack{1\leq i\leq m\\ 1\leq j\leq n }}d_{ij}\alpha_i\, \beta_j=0
+					</me>,
+					where <m>\alpha_i\in B_1</m>, <m>\beta_j\in B_2</m>, <m>d_{ij}\in F</m> and the elements <m>\alpha_i\beta_j</m> are distinct. Grouping terms, we can re-write this as 
+					<me>
+						\sum_{j=1}^nc_j\beta_j=0
+					</me>,
+					where for each <m>1\leq j\leq n</m>, we have 
+					<me>
+						c_j=\sum_{i=1}^md_{ij}\alpha_j \in K
+					</me>. 
+					Firstly, since <m>\alpha_i\beta_j\ne \alpha_{i'}\beta_{j'}</m> for all <m>(i,j)\ne (i',j')</m>, it follows easily that <m>\beta_j\ne \beta_{j'}</m> for <m>j\ne j'</m>. Since <m>B_2</m> is linearly independent over <m>K</m>, we conclude that <m>c_j=0</m> for all <m>1\leq j\leq n</m>. But then, since <m>B_1</m> is linearly independent over <m>F</m>, for all <m>1\leq j\leq n</m> we have  
+					<me>
+						c_j=\sum_{i=1}^md_{ij}\alpha_j=0\implies d_{ij}=0 \text{ for all } 1\leq i\leq m
+					</me>.
+					We conclude that <m>d_{ij}=0</m> for all <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>. 
+					This proves <m>B</m> is linearly independent over <m>F</m>.
+				</p>
+				
+				</case>
+		</proof>
+		<proof>
+			<title>Proof of (2)</title>
+			<p>
+				We treat two cases: (a) <m>K/F</m> and <m>L/K</m> are both finite extensions, and (b) at least one of <m>K/F</m> and <m>L/K</m> is an infinite extension.  
+			</p>
+			<case>
+			<title>Case (a)</title>
+			<p>
+			Assume <m>[K\colon F]=n_1</m> and <m>[L\colon K]=n_2</m>, for positive integers <m>n_1, n_2</m>. By definition we can find bases 
+			<md>
+				<mrow>B_1 \amp =\{\alpha_1,\alpha_2,\dots, \alpha_{n_1}\}</mrow>
+				<mrow>B_2 \amp =\{\beta_1,\beta_2,\dots, \beta_{n_2}\}</mrow>
+			</md>
+			for <m>K</m> as an <m>F</m>-vector space, and <m>L</m> as a <m>K</m>-vector space, respectively. By statement (1) of this theorem, we conclude that 
+			<me>
+				B=\{\alpha_i\beta_j\colon 1\leq i\leq n_1, 1\leq j\leq n_2\}
+			</me>
+			is a basis of <m>L</m> as an <m>F</m>-vector space. It remains only to show that <m>\abs{B}=n_1n_2</m>, since then we have 
+			<me>
+				[L\colon F]=\dim_F L=\abs{B}=n_1n_2=[K\colon F][L\colon K]=[L\colon K][K\colon F]
+			</me>.
+			To see that <m>\abs{B}=n_1n_2</m>, we show that the map 
+			<md>
+				<mrow>B_1\times B_2 \amp \rightarrow B</mrow>
+				<mrow>(\alpha, \beta) \amp \mapsto \alpha\beta</mrow>
+			</md>
+			is a bijection, whence <m>\abs{B}=\abs{B_1}\times \abs{B_2}=n_1n_2</m>. The map is surjective by definition of <m>B</m>. That the map is injective follows from the following chain of implications: 
+			<md>
+				<mrow> \alpha\beta=\alpha'\beta' \amp \implies \alpha\beta-\alpha'\beta' </mrow>
+				<mrow> \amp \implies \beta=\beta' \text{ or } \alpha=\alpha'=0 \amp (B_2 \text{ lin. ind. over } K) </mrow>
+				<mrow> \amp\implies \beta=\beta' \amp (B_1 \text{ basis } \implies \alpha\ne 0, \alpha'\ne 0) </mrow>
+				<mrow> \amp \implies \alpha=\alpha' \text{ and } \beta=\beta' \amp (\alpha\beta=\alpha'\beta')</mrow>
+				<mrow> \amp \implies (\alpha, \beta)=(\alpha', \beta')</mrow>
+			</md>.
+			</p>
+			</case>
+			<case>
+			<title>Case (b)</title>
+			<p>
+			Assume first that <m>L/K</m> is infinite. In this case we can find an infinite set <m>S</m> of the form <m>S=\{\alpha_1,\alpha_2,\dots,\}\subseteq L</m> that is linearly independent over <m>K</m>. But then clearly <m>S</m> is also linearly independent over the smaller field <m>F</m>. Thus <m>L/F</m> also has infinite dimension. 
+			</p>
+			<p>
+				Now assume <m>K/F</m> is infinite. 
+			</p>
+			</case>
+			
+		</proof>
 	</theorem>
 
 	<remark>
