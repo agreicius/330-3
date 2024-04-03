@@ -361,7 +361,34 @@ B=\{\alpha\cdot \beta\colon \alpha\in B_1, \beta\in B_2\}\tag{1.5}
 </div>
 </div></li>
 </ol>
-</div></article><article class="remark remark-like" id="s_algebraic-8"><h3 class="heading">
+</div></article><details id="th_degree_towers-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="title">Proof of (1).</span></h3></summary><article class="hiddenproof"> <div class="para" id="th_degree_towers-3-2">Let <span class="process-math">\(B=\{\alpha\cdot \beta\colon \alpha\in \B_1, \beta\in B_2\}\text{,}\)</span> as in the theorem statement. We will show directly that <span class="process-math">\(B\)</span> is a basis of <span class="process-math">\(L\)</span> as an <span class="process-math">\(F\)</span>-vector space, by showing that it spans and is linearly independent.</div> <article class="case" id="th_degree_towers-3-3"><h4 class="heading">
+<span class="process-math">\(B\)</span> spans.</h4> <div class="para logical" id="th_degree_towers-3-3-2">
+<div class="para">Given any <span class="process-math">\(\alpha\in L\text{,}\)</span> since <span class="process-math">\(B_2\)</span> is a <span class="process-math">\(K\)</span>-basis of <span class="process-math">\(L\text{,}\)</span> we can write</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\alpha=c_1\beta_1+c_2\beta_2+\cdots +c_n\beta_n=\sum_{j=1}^nc_j\beta_j
+\end{equation*}
+</div>
+<div class="para">for some elements <span class="process-math">\(c_j\in K\text{.}\)</span> Next since <span class="process-math">\(B_1\)</span> is a basis of <span class="process-math">\(K\)</span> over <span class="process-math">\(F\text{,}\)</span> we can find a finite set <span class="process-math">\(\{\alpha_1,\alpha_2,\dots, \alpha_m\}\subseteq B_1\)</span> such that for each <span class="process-math">\(1\leq j\leq n\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+c_j=d_{1j}\alpha_1+d_{2j}\alpha_2+\cdots +d_{mj}\alpha_m=\sum_{i=1}^md_{ij}\alpha_i
+\end{equation*}
+</div>
+<div class="para">for some elements <span class="process-math">\(d_{ij}\in F\text{.}\)</span> Substituting these expressions for <span class="process-math">\(c_j\)</span> into the first linear combination above, we conclude that</div>
+<div class="displaymath process-math" id="th_degree_towers-3-3-2-15">
+\begin{align*}
+\alpha\amp = \sum_{j=1}^nc_j\beta_j \\
+\amp = \sum_{j=1}^n (\sum_{i=1}^md_{ij}\alpha_i)\beta_\\
+\amp =\sum_{\substack{1\leq i\leq m\\ 1\leq j\leq n }}d_{ij} 
+\end{align*}
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+
+\end{equation*}
+</div>
+</div></article></article></details><article class="remark remark-like" id="s_algebraic-8"><h3 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Tower law.</span>
 </h3> <div class="para" id="s_algebraic-8-2">Statement (1) of <a href="" class="xref" data-knowl="./knowl/xref/th_degree_towers.html" title="Theorem 1.5.5: Tower law">Theorem 1.5.5</a> is just as important as (2), as it gives us a procedure for building a basis for <span class="process-math">\(L/F\)</span> from bases <span class="process-math">\(B_1\)</span> of <span class="process-math">\(L/K\)</span> and <span class="process-math">\(B_2\)</span> of <span class="process-math">\(K/F\text{:}\)</span> namely, we simply take the set of all products of elements in <span class="process-math">\(B_1\)</span> and <span class="process-math">\(B_2\text{.}\)</span>
 </div></article><article class="remark remark-like" id="s_algebraic-9"><h3 class="heading">
@@ -374,8 +401,7 @@ B=\{\alpha\cdot \beta\colon \alpha\in B_1, \beta\in B_2\}\tag{1.5}
 \infty \amp\ne m\cdot n \text{ for all positive }  m,n \in \Z  \text{.}
 \end{align*}
 </div>
-<div class="para">Equivalently, we can interpret <a href="" class="xref" data-knowl="./knowl/xref/eq_degree_towers_formula.html" title="Equation 1.6">(1.6)</a> as stating that the extension <span class="process-math">\(L/F\)</span> is infinite if and only if <span class="process-math">\(L/K\)</span> is infinite or <span class="process-math">\(K/F\text{.}\)</span>
-</div>
+<div class="para">Equivalently, we can interpret <a href="" class="xref" data-knowl="./knowl/xref/eq_degree_towers_formula.html" title="Equation 1.6">(1.6)</a> as stating that the extension <span class="process-math">\(L/F\)</span> is infinite if and only if <span class="process-math">\(L/K\)</span> is infinite or <span class="process-math">\(K/F\)</span> is infinite.</div>
 </div></article><article class="corollary theorem-like" id="cor_degree_towers"><h3 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.5.8</span><span class="period">.</span><span class="space"> </span><span class="title">Tower law.</span>
 </h3>
@@ -415,7 +441,45 @@ F_1\leq F_2\leq \cdots \leq F_n\text{,}
 <li id="th_finite_ext-2-1-2-3"><div class="para" id="th_finite_ext-2-1-2-3-1">
 <span class="process-math">\(K=F(\alpha_1,\alpha_2,\dots, \alpha_m)\text{,}\)</span> where <span class="process-math">\(\alpha_i\in K\)</span> is algebraic over <span class="process-math">\(F\text{.}\)</span> In other words, <span class="process-math">\(K\)</span> is generated over <span class="process-math">\(F\)</span> by finitely many algebraic elements.</div></li>
 </ol>
-</div></article><article class="remark remark-like" id="s_algebraic-13"><h3 class="heading">
+</div></article><details id="th_finite_ext-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="th_finite_ext-3-1">We prove the “cycle of implications” (1)<span class="process-math">\(\implies\)</span>(2)<span class="process-math">\(\implies\)</span>(3)\implies (1)</div> <article class="case" id="th_finite_ext-3-2"><h4 class="heading">Implication: (1)<span class="process-math">\(\implies\)</span>(2).</h4> <div class="para logical" id="th_finite_ext-3-2-2">
+<div class="para">Assume <span class="process-math">\(K/F\)</span> is finite, of dimension <span class="process-math">\(n\text{.}\)</span>
+</div>
+<ul class="disc">
+<li id="th_finite_ext-3-2-2-3-1"><div class="para logical" id="th_finite_ext-3-2-2-3-1-1">
+<div class="para">We claim <span class="process-math">\(K/F\)</span> is finitely generated. Let <span class="process-math">\(B=\{\alpha_1,\alpha_2,\dots, \alpha_n\}\)</span> be a basis of <span class="process-math">\(K\)</span> as an <span class="process-math">\(F\)</span>-vector space. Since <span class="process-math">\(\Span_F B=K\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+K=\{c_1\alpha_1+c_2\alpha_2+\cdots +c_n\alpha_n\colon c_i\in F\}\text{.}
+\end{equation*}
+</div>
+<div class="para">It follows that <span class="process-math">\(K=F(\alpha_1,\alpha_2,\dots, \alpha_n)\text{,}\)</span> and hence is finitely generated (by the elements <span class="process-math">\(\alpha_i\)</span>). Indeed, since <span class="process-math">\(F(\alpha_1,\alpha_2,\dots, \alpha_n)\)</span> is a subfield of <span class="process-math">\(K\)</span> containing <span class="process-math">\(F\)</span> and <span class="process-math">\(\alpha_i\)</span> for all <span class="process-math">\(1\leq i\leq n\text{,}\)</span> it must contain all <span class="process-math">\(F\)</span>-linear combinations of the <span class="process-math">\(\alpha_i\text{.}\)</span> But then we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+K=\{c_1\alpha_1+c_2\alpha_2+\cdots +c_n\alpha_n\colon c_i\in F\}\leq F(\alpha_1,\alpha_2,\dots, \alpha_n)\leq K\text{,}
+\end{equation*}
+</div>
+<div class="para">and conclude that <span class="process-math">\(K=F(\alpha_1,\alpha_2,\dots, \alpha_n)\text{.}\)</span>
+</div>
+</div></li>
+<li id="th_finite_ext-3-2-2-3-2"><div class="para logical" id="th_finite_ext-3-2-2-3-2-1">
+<div class="para">We claim that <span class="process-math">\(K/F\)</span> is algebraic. Take any <span class="process-math">\(\beta\in K\text{.}\)</span> Since <span class="process-math">\(\dim_F K=n\text{,}\)</span> the set <span class="process-math">\(\{\beta^{n+1},\beta^{n},\dots, \beta, 1\}\text{,}\)</span> consisting of <span class="process-math">\(n+1\)</span> elements, is linearly independent. (Street smarts!) Thus there is a nontrivial linear combination</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a_{n+1}\beta^{n+1}+a_{n}\beta^n+\cdots +a_1\beta+1=0\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(a_i\in F\)</span> for all <span class="process-math">\(1\leq i\leq n+1\text{.}\)</span> It follows that the <span class="process-math">\(F\)</span>-polynomial <span class="process-math">\(f(x)=a_{n+1}x^{n+1}+a_nx^n+\cdots +a_1x+a_0\)</span> is nonzero and satisfies <span class="process-math">\(f(\beta=0\text{.}\)</span> Thus <span class="process-math">\(\beta\)</span> is algebraic over <span class="process-math">\(F\text{,}\)</span> as desired.</div>
+</div></li>
+</ul>
+</div></article> <article class="case" id="th_finite_ext-3-3"><h4 class="heading">Implication: (2)<span class="process-math">\(\implies\)</span>(3).</h4> <div class="para" id="th_finite_ext-3-3-2">Assume <span class="process-math">\(K/F\)</span> is finitely generated and algebraic. Since <span class="process-math">\(K/F\)</span> is finitely generated, there are elements <span class="process-math">\(\alpha_1,\alpha_2,\dots, \alpha_m\)</span> such that <span class="process-math">\(K=F(\alpha_1,\alpha_2,\dots, \alpha_m)\text{.}\)</span> Since <span class="process-math">\(K/F\)</span> is algebraic, each element <span class="process-math">\(\alpha_i\)</span> is algebraic over <span class="process-math">\(F\text{.}\)</span> Thus <span class="process-math">\(K=F(\alpha_1,\alpha_2,\dots, \alpha_m)\text{,}\)</span> and each <span class="process-math">\(\alpha_i\)</span> is algebraic over <span class="process-math">\(F\text{,}\)</span> as desired.</div></article> <article class="case" id="th_finite_ext-3-4"><h4 class="heading">Implication: (3)<span class="process-math">\(\implies\)</span>(1).</h4> <div class="para" id="th_finite_ext-3-4-2">We will show that any field extension generated by finitely many algebraic elements is finite. The proof will proceed by induction on the number <span class="process-math">\(m\)</span> of generators of the field.</div> <div class="para" id="th_finite_ext-3-4-3">Base step: <span class="process-math">\(m=1\text{.}\)</span> Assume <span class="process-math">\(K=F(\alpha)\text{,}\)</span> where <span class="process-math">\(\alpha\)</span> is algebraic over <span class="process-math">\(F\text{.}\)</span> By <a href="" class="xref" data-knowl="./knowl/xref/th_simple_ext.html" title="Theorem 1.4.14: Simple extensions">Theorem 1.4.14</a>, we have <span class="process-math">\(\dim_F K&lt; \infty\text{.}\)</span> Thus <span class="process-math">\(K/F\)</span> is finite.</div> <div class="para logical" id="th_finite_ext-3-4-4">
+<div class="para">Induction step: assume <em class="emphasis">any</em> field extension generated over the base field by <span class="process-math">\(m\)</span> algebraic elements is a finite extension. Now suppose we have <span class="process-math">\(K=F(\alpha_1,\alpha_2,\dots, \alpha_{m+1})\text{,}\)</span> where each <span class="process-math">\(\alpha_i\)</span> is algebraic over <span class="process-math">\(F\text{.}\)</span> If <span class="process-math">\(\alpha_i\in F\)</span> for all <span class="process-math">\(i\text{,}\)</span> then <span class="process-math">\(F=K\text{,}\)</span> in which case <span class="process-math">\(K\)</span> is finite over <span class="process-math">\(F\text{.}\)</span> Otherwise, we may assume without loss of generality that <span class="process-math">\(\alpha_1\in K-F\text{.}\)</span> Since <span class="process-math">\(\alpha_1\)</span> is algebraic over <span class="process-math">\(F\text{,}\)</span> the extension <span class="process-math">\(F(\alpha_1)/F\)</span> is finite by the base step. Let <span class="process-math">\(K'=F(\alpha_1)\text{.}\)</span> We have a tower of fields <span class="process-math">\(K/K'/F\text{,}\)</span> and thus by the <a href="" class="xref" data-knowl="./knowl/xref/th_degree_towers.html" title="Theorem 1.5.5: Tower law">tower law</a>, the extension <span class="process-math">\(K/F\)</span> is finite if and only if <span class="process-math">\(K/K'\)</span> is finite and <span class="process-math">\(K'/F\)</span> is finite. We know already that <span class="process-math">\(K'=F(\alpha_1)\)</span> is finite over <span class="process-math">\(F\text{.}\)</span> As for the extension <span class="process-math">\(K/K'\)</span> it is easy to see that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_degree_towers.html ./knowl/xref/th_degree_towers.html">
+\begin{equation*}
+K=F(\alpha_1,\alpha_2,\dots, \alpha_{m+1})=F(\alpha_1)(\alpha_2,\dots, \alpha_{m+1})=K'(\alpha_2,\dots, \alpha_{m+1})\text{.}
+\end{equation*}
+</div>
+<div class="para">Furthermore, since each <span class="process-math">\(\alpha_i\)</span> is satisfies a nonzero polynomial <span class="process-math">\(f_i(x)\in F[x]\subseteq K'[x]\text{,}\)</span> we see that each <span class="process-math">\(\alpha_i\)</span> is algebraic over <span class="process-math">\(K'\text{.}\)</span> Thus the extension <span class="process-math">\(K/K'\)</span> is generated over <span class="process-math">\(K'\)</span> by the <span class="process-math">\(m\)</span> algebraic elements <span class="process-math">\(\alpha_2,\dots, \alpha_{m+1}\text{.}\)</span> By induction <span class="process-math">\(K/K'\)</span> is finite. The <a href="" class="xref" data-knowl="./knowl/xref/th_degree_towers.html" title="Theorem 1.5.5: Tower law">tower law</a> now implies that <span class="process-math">\(K/F\)</span> is finite.</div>
+</div></article></article></details><article class="remark remark-like" id="s_algebraic-13"><h3 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.5.11</span><span class="period">.</span><span class="space"> </span><span class="title">Finite extension theorem.</span>
 </h3> <div class="para logical" id="s_algebraic-13-2">
 <div class="para">As we saw in the proof of <a href="" class="xref" data-knowl="./knowl/xref/th_finite_ext.html" title="Theorem 1.5.10: Finite extension theorem">Theorem 1.5.10</a>, given a field extension <span class="process-math">\(K/F\)</span> the following implications hold:</div>
