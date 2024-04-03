@@ -575,7 +575,7 @@
 				</ol>
 			</p>
 		</statement>
-		<!--
+		
 		<proof>
 			<p>
 				<ol>
@@ -600,7 +600,7 @@
 				</ol>
 			</p>
 		</proof>
-		-->
+		
 	</corollary>
 
 	<example xml:id="eg_min_poly_R">
@@ -647,7 +647,7 @@
 				</ol>
 			</p>
 		</statement>
-		<!--
+		
 		<solution>
 			<p>
 				<ol>
@@ -677,6 +677,6 @@
 				</ol>
 			</p>
 		</solution>
-		-->
+		
 	</example>
 </section>
