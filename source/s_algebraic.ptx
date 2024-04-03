@@ -1,114 +1,193 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <section xml:id="s_algebraic" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Algebraic extensions</title>
-    <definition xml:id="d_fin_gen">
-        <title>Finitely generated</title>
-        <statement>
-            <p>
-               Let <m>K/F</m> be a field extension. We say <m>K</m> is <term>finitely generated</term> over <m>F</m> if we have <m>K=F(\alpha_1,\alpha_2,\dots, \alpha_n)</m> for some finite set  <m>\{\alpha_1, \alpha_2,\dots, \alpha_n\}\subseteq K</m>.  
-            </p>
-        </statement>
-    </definition>
-    
-    <definition xml:id="d_algebraic">
-        <title>Algebraic extension</title>
-        <statement>
-            <p>
-              Let <m>K/F</m> be a field extension. We say <m>K</m> is <term>algebraic</term> over <m>F</m> if all elements of <m>K</m> are algebraic over <m>F</m>.   
-            </p>
-        </statement>
-    </definition>
-    <example xml:id="eg_alg_ext">
-        <title>Algebraic extensions</title>
+	<title>Algebraic extensions</title>
+	<definition xml:id="d_fin_gen">
+		<title>Finitely generated</title>
+		<statement>
+			<p>
+				Let <m>K/F</m> be a field extension.
+				We say <m>K</m> is <term>finitely generated</term> over <m>F</m> if we have <m>K=F(\alpha_1,\alpha_2,\dots, \alpha_n)</m> for some finite set  <m>\{\alpha_1, \alpha_2,\dots, \alpha_n\}\subseteq K</m>.
+			</p>
+		</statement>
+	</definition>
+
+	<definition xml:id="d_algebraic">
+		<title>Algebraic extension</title>
+		<statement>
+			<p>
+				Let <m>K/F</m> be a field extension.
+				We say <m>K</m> is <term>algebraic</term> over <m>F</m> if all elements of <m>K</m> are algebraic over <m>F</m>.
+			</p>
+		</statement>
+	</definition>
+
+	<example xml:id="eg_alg_ext">
+		<title>Algebraic extensions</title>
+		<p>
+			The extension <m>\R/\Q</m> is not algebraic, since <m>\pi\in \R</m> is transcendental over <m>\Q</m>.
+		</p>
+
+		<p>
+			The extension <m>\C/\R</m> is algebraic.
+			As we have shown previously, any element <m>a+bi\in \C</m> satisfies the quadratic polynomial <m>x^2+2ax+(a^2+b^2)</m>.
+		</p>
+	</example>
+
+	<example xml:id="eg_finite_simple_alg">
+		<title>Simple extension with algebraic generator</title>
+		<statement>
+			<p>
+				Let <m>K=F(\alpha)</m>, where <m>\alpha</m> is algebraic.
+				Prove that <m>K</m> is algebraic over <m>F</m>.
+			</p>
+		</statement>
+
+		<solution>
+			<p>
+				According to <xref ref="th_simple_ext"/>, we have <m>\dim_F K=[K:F]=n</m> for some finite <m>n</m>.
+				It follows that given any <m>\beta\in K</m>, the set <m>\{\beta^n,\beta^{n-1},\dots, \beta, 1\}</m> is linearly dependent, since it has more than <m>n</m> elements (<xref ref="th_dimension_compendium" text="global"/>,<q>street smarts</q>).
+				Thus there is a nontrivial linear combination
+				<me>
+					a_n\beta^n+a_{n-1}\beta^{n-1}+\cdots +a_1\beta+a_0=0
+				</me>.
+				In other words, we have <m>f(\beta)=0</m>, where <m>f(x)=\anpoly</m>.
+				This proves <m>\beta</m> is algebraic, as desired.
+			</p>
+		</solution>
+	</example>
+
+	<p>
+		The main result of this section is <xref ref="th_finite_ext"/>, which both generalizes <xref ref="eg_finite_simple_alg"/> and gives a full characterization of finite extensions in terms of finitely generated and algebraic field extensions.
+		First we treat the <xref ref="th_degree_towers" text="custom">tower law</xref>, which will be instrumental in proving <xref ref="th_finite_ext"/>, and is also quite useful in its own right.
+	</p>
+
+	<theorem xml:id="th_degree_towers">
+		<title>Tower law</title>
+		<statement>
+			<p>
+				Let <m>L/K/F</m> be a tower of (possibly infinite) field extensions.
+				<ol>
+					<li>
+						<p>
+							If <m>B_1</m> is a basis of <m>K</m> and <m>B_2</m> is a basis of <m>L</m> as a <m>K</m>-vector space, then the set
+							<men xml:id="eq_degree_towers_basis">
+								B=\{\alpha\cdot \beta\colon \alpha\in B_1, \beta\in B_2\}
+							</men>
+							is a basis of <m>L</m> as an <m>F</m>-vector space.
+						</p>
+					</li>
+
+					<li>
+						<p>
+							We have
+							<men xml:id="eq_degree_towers_formula">
+								[L\colon F]=[L\colon K][K\colon F]
+							</men>.
+						</p>
+					</li>
+				</ol>
+			</p>
+		</statement>
+	</theorem>
+
+	<remark>
+		<title>Tower law</title>
+		<p>
+			Statement (1) of <xref ref="th_degree_towers"/> is just as important as (2), as it gives us a procedure for building a basis for <m>L/F</m> from bases <m>B_1</m> of <m>L/K</m> and <m>B_2</m> of <m>K/F</m>: namely, we simply take the set of all products of elements in <m>B_1</m> and <m>B_2</m>.
+		</p>
+	</remark>
+
+	<remark>
+		<title>Tower law: infinite extensions</title>
+		<p>
+			The formula <xref ref="eq_degree_towers_formula"/> is true even when one or more of the field extensions involved is infinite, using the following rules from <q>extended arithmetic</q>:
+			<md>
+				<mrow>\infty \amp = n\cdot \infty=\infty\cdot n=\infty\cdot \infty \text{ for all positive } n\in \Z </mrow>
+				<mrow>\infty \amp\ne m\cdot n \text{ for all positive }  m,n \in \Z  </mrow>
+			</md>.
+			Equivalently, we can interpret <xref ref="eq_degree_towers_formula"/> as stating that the extension <m>L/F</m> is infinite if and only if <m>L/K</m> is infinite or <m>K/F</m>.
+		</p>
+	</remark>
+
+	<corollary xml:id="cor_degree_towers">
+		<title>Tower law</title>
+		<statement>
+			<p>
+				Let <m>L/F</m> be a  field extension.
+				<ol>
+					<li>
+						<p>
+							If <m>K/F</m> is a subextension of <m>L/F</m>, then <m>[K\colon F]\mid [L\colon F]</m> and <m>[L\colon K]\mid [L\colon F]</m>.
+						</p>
+					</li>
+
+					<li>
+						<p>
+							Given a tower of extensions
+							<me>
+								F_1\leq F_2\leq \cdots \leq F_n
+							</me>,
+							we have
+							<me>
+								[F_n\colon F_1]=\prod_{k=1}^{n-1}[F_{k+1}\colon F_k]
+							</me>.
+						</p>
+					</li>
+				</ol>
+			</p>
+		</statement>
+	</corollary>
+    <example xml:id="eg_degree_towers">
+        <title>Tower law</title>
         <p>
-            The extension <m>\R/\Q</m> is not algebraic, since <m>\pi\in \R</m> is transcendental over <m>\Q</m>. 
+            Use the tower law to prove that the field extension <m>\Q(\sqrt[3]{2})/\Q</m> has no nontrivial subextension <m>K/\Q</m>: <ie/>, if <m>\Q\leq K\leq \Q(\sqrt[3]{2})</m>, then <m>K=\Q</m> or <m>K=\Q(\sqrt[3]{2})</m>. 
         </p>
-        <p>
-            The extension <m>\C/\R</m> is algebraic. As we have shown previously, any element <m>a+bi\in \C</m> satisfies the quadratic polynomial <m>x^2+2ax+(a^2+b^2)</m>. 
-        </p>
+        
+        
     </example>
-    <example xml:id="eg_finite_simple_alg">
-        <title>Simple extension with algebraic generator</title>
-        <statement>
-            <p>
-                Let <m>K=F(\alpha)</m>, where <m>\alpha</m> is algebraic. Prove that <m>K</m> is algebraic over <m>F</m>. 
-            </p>
-        </statement>
-        <solution>
-            <p>
-                According to <xref ref="th_simple_ext"/>, we have <m>\dim_F K=[K:F]=n</m> for some finite <m>n</m>. It follows that given any <m>\beta\in K</m>, the set <m>\{\beta^n,\beta^{n-1},\dots, \beta, 1\}</m> is linearly dependent, since it has more than <m>n</m> elements (<xref ref="th_dimension_compendium" text="global"/>,<q>street smarts</q>). Thus there is a nontrivial linear combination 
-            <me>
-                a_n\beta^n+a_{n-1}\beta^{n-1}+\cdots +a_1\beta+a_0=0
-            </me>.
-            In other words, we have <m>f(\beta)=0</m>, where <m>f(x)=\anpoly</m>. This proves <m>\beta</m> is algebraic, as desired. 
-            </p>
-        </solution>
-    </example>
-    <p>
-        The main result of this section is <xref ref="th_finite_ext"/>, which both generalizes <xref ref="eg_finite_simple_alg"/> and gives a full characterization of finite extensions in terms of finitely generated and algebraic field extensions. First we treat the  <em>degree in towers theorem</em>, which will be instrumental in proving <xref ref="th_finite_ext"/>, and is also quite useful in its own right.   
-    </p>
-    <theorem xml:id="th_degree_towers">
-        <title>Degree in towers</title>
-        <statement>
-            <p>
-                Let <m>L/K/F</m> be a tower of field extensions. 
+	<theorem xml:id="th_finite_ext">
+		<title>Finite extension theorem</title>
+		<statement>
+			<p>
+                Let <m>K/F</m> be a field extension. The following statements are equivalent. 
                 <ol>
                     <li>
                         <p>
-                            If <m>B_1</m> is a basis of <m>K</m> and <m>B_2</m> is a basis of <m>L</m> as a <m>K</m>-vector space, then the set 
-                            <men xml:id="eq_degree_towers_basis">
-                                B=\{\alpha\cdot \beta\colon \alpha\in B_1, \beta\in B_2\}
-                            </men>
-                            is a basis of <m>L</m> as an <m>F</m>-vector space.
+                            <m>K/F</m> is finite.
                         </p>
                     </li>
                     <li>
                         <p>
-                            We have 
-                            <men xml:id="eq_degree_towers_formula">
-                                [L\colon F]=[L\colon K][K\colon F]
-                            </men>. 
-                            The formula is true even when one or more of the field extensions involved is infinite, using the following rules from <q>extended arithmetic</q>:
-                            <md>
-                                <mrow>\infty \amp = n\cdot \infty=\infty\cdot n=\infty\cdot \infty \text{ for all positive } n\in \Z </mrow>
-                                <mrow>\infty \amp\ne m\cdot n \text{ for all positive }  m,n \in \Z  </mrow>
-                            </md>.
-                            Alternatively, in this case we interpret <xref ref="eq_degree_towers_formula"/> as stating that the extension <m>L/F</m> is infinite if and only if <m>L/K</m> is infinite or <m>K/F</m>.
+                            <m>K/F</m> is finitely generated and algebraic. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>K=F(\alpha_1,\alpha_2,\dots, \alpha_m)</m>, where <m>\alpha_i\in K</m> is algebraic over <m>F</m>. In other words, <m>K</m> is generated over <m>F</m> by finitely many algebraic elements. 
                         </p>
                     </li>
                 </ol>
-            </p>
-        </statement>
-    </theorem>
+			</p>
+		</statement>
+	</theorem>
     <remark>
-        <title>Degree in towers</title>
+        <title>Finite extension theorem</title>
         <p>
-            Statment (1) of <xref ref="th_degree_towers"/> is just as important as (2), as it gives us a procedure for building a basis for <m>L/F</m> from bases <m>B_1</m> of <m>L/K</m> and <m>B_2</m> of <m>K/F</m>: namely, we simply take the set of all products of elements in <m>B_1</m> and <m>B_2</m>. 
+            As we saw in the proof of <xref ref="th_finite_ext"/>, given a field extension <m>K/F</m> the following implications hold:
+            <md>
+                <mrow>K/F \text{ finite} \amp\implies K/F \text{ finitely generated} </mrow>
+                <mrow>K/F \text{ finite} \amp\implies K/F \text{ algebraic} </mrow>
+            </md>.
+            On the other hand, neither of these implications goes the other way. That is, we have 
+            <md>
+                <mrow>K/F \text{ finite } \hspace{5pt} \amp\not\!\!\!\!\!\!\impliedby K/F \text{ finitely generated} </mrow>
+                <mrow>K/F \text{ finite } \hspace{5pt} \amp\not\!\!\!\!\!\!\impliedby K/F \text{ algebraic} </mrow>
+            </md>.
+            In other words, taken singly, neither of these two properties (finitely generated, algebraic) is strong enough to imply the property of being finite. <xref ref="th_finite_ext"/> tells us that the two properties taken together are in fact equivalent to being finite: <ie/>, 
+            <me>
+                K/F \text{ finite } \iff K/F \text{ finitely generated and algebraic}
+            </me>.
+            
         </p>
     </remark>
-    <corollary xml:id="cor_degree_towers">
-        <title>Degree in towers</title>
-        <statement>
-            <p>
-                Let <m>L/F</m> be a field extension. 
-                <ol>
-                    <li>
-                        <p>
-                            If <m>K/F</m> is a subextension of <m>L/F</m>, then <m>[K\colon F]\mid [L\colon F]</m> and <m>[L\colon K]\mid [L\colon F]</m>. 
-                        </p>
-                    </li>
-                </ol>
-            </p>
-        </statement>
-    </corollary>
-    <theorem xml:id="th_finite_ext">
-        <title>Finite extension theorem</title>
-        <statement>
-            <p>
-                
-            </p>
-        </statement>
-    </theorem>
-    
 </section>
