@@ -88,7 +88,7 @@
 				</ol>
 			</p>
 		</statement>
-		<proof>
+		<!-- <proof>
 			<title>Proof of (1)</title>
 			<p>
 				Let <m>B=\{\alpha\cdot \beta\colon \alpha\in \B_1, \beta\in B_2\}</m>, as in the theorem statement. We will show directly that <m>B</m> is a basis of <m>L</m> as an <m>F</m>-vector space, by showing that it spans and is linearly independent. 
@@ -118,7 +118,7 @@
 				 
 				</p>
 			</case>
-		</proof>
+		</proof> -->
 	</theorem>
 
 	<remark>
