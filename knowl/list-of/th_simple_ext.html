@@ -12,7 +12,7 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.4.12</span><span class="period">.</span><span class="space"> </span><span class="title">Simple extensions.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.4.14</span><span class="period">.</span><span class="space"> </span><span class="title">Simple extensions.</span>
 </h3>
 <div class="para logical">
 <div class="para">Let <span class="process-math">\(K/F\)</span> be a field extension and let <span class="process-math">\(\alpha\in K\text{.}\)</span>
@@ -47,7 +47,7 @@
 </ol>
 </div></li>
 </ol>
-</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical">
+</div></article><details class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical">
 <div class="para">The key to proving both statements of the theorem is to understand the “evaluation at <span class="process-math">\(\alpha\)</span>” ring homomorphism</div>
 <div class="displaymath process-math">
 \begin{align*}
@@ -78,7 +78,7 @@ f(x) \amp \mapsto f(\alpha)\text{.}
 </div>
 <div class="para">the subring of <span class="process-math">\(K\)</span> generated over <span class="process-math">\(F\)</span> by <span class="process-math">\(\alpha\text{.}\)</span>
 </div>
-</div> <div class="para">Having given a rather thorough analysis of <span class="process-math">\(\phi\)</span> we are ready to prove statements (1) and (2).</div> <details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="title">Proof of (1).</span></h4></summary><article class="hiddenproof knowl__content"> <div class="para logical">
+</div> <div class="para">Having given a rather thorough analysis of <span class="process-math">\(\phi\)</span> we are ready to prove statements (1) and (2).</div> <details class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="title">Proof of (1).</span></h4></summary><article class="hiddenproof"> <div class="para logical">
 <div class="para">We have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_gen_ring_field.html">
 \begin{align*}
@@ -87,7 +87,7 @@ f(x) \amp \mapsto f(\alpha)\text{.}
 \amp \iff F[\alpha]=F(\alpha)\cong F[x]/(f)  \text{ for some irreducible } f\text{,}
 \end{align*}
 </div>
-<div class="para">where the last equivalence uses the fact that <span class="process-math">\(F[\alpha]=F(\alpha)\)</span> if and only if <span class="process-math">\(F[\alpha]\)</span> is a field. (<a href="s_simple_extension.html#th_gen_ring_field" class="xref" data-knowl="./knowl/xref/th_gen_ring_field.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.4.4: Generated ring versus generated field">Theorem 1.4.4</a>) This proves (i)<span class="process-math">\(\iff\)</span>(ii).</div>
+<div class="para">where the last equivalence uses the fact that <span class="process-math">\(F[\alpha]=F(\alpha)\)</span> if and only if <span class="process-math">\(F[\alpha]\)</span> is a field. (<a href="" class="xref" data-knowl="./knowl/xref/th_gen_ring_field.html" title="Theorem 1.4.4: Generated ring versus generated field">Theorem 1.4.4</a>) This proves (i)<span class="process-math">\(\iff\)</span>(ii).</div>
 </div> <div class="para">Next, (ii)<span class="process-math">\(\implies\)</span>(iii) since if <span class="process-math">\(f\)</span> is irreducible, the quotient <span class="process-math">\(F[x]/(f)\)</span> is a finite field extension of <span class="process-math">\(F\)</span> of degree <span class="process-math">\(n=\deg f\text{.}\)</span>
 </div> <div class="para logical">
 <div class="para">Lastly (iii)<span class="process-math">\(\implies\)</span>(i) since if <span class="process-math">\(\dim_F F(\alpha)=n\text{,}\)</span> then the set <span class="process-math">\(\{\alpha^n, \alpha^{n-1},\dots, \alpha, 1\}\)</span> must be linearly dependent, in which case there is a nontrivial linear combination</div>
@@ -97,8 +97,8 @@ a_n\alpha^{n}+a_{n-1}\alpha^{n-1}+\cdots +a_1\alpha+a_0=0\text{.}
 \end{equation*}
 </div>
 <div class="para">But then we have <span class="process-math">\(f(\alpha)=0\text{,}\)</span> where <span class="process-math">\(f\)</span> is the nonzero polynomial <span class="process-math">\(f(x)=\anpoly\text{.}\)</span> Thus <span class="process-math">\(\alpha\)</span> is algebraic, as desired.</div>
-</div></article></details> <details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="title">Proof of (2).</span></h4></summary><article class="hiddenproof knowl__content"> <div class="para">First observe that the equivalence (i)<span class="process-math">\(\iff\)</span>(iii) follows from (1) above simply by taking negations. Furthermore, we have (ii)<span class="process-math">\(\implies\)</span>(iii) since <span class="process-math">\([F(x)\colon F]=\infty\text{,}\)</span> as we saw in <a href="s_simple_extension.html#eg_simple" class="xref" data-knowl="./knowl/xref/eg_simple.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.4.3: Simple extensions">Example 1.4.3</a>. Thus it remains only to show (i)<span class="process-math">\(\implies\)</span>(ii).</div> <div class="para logical">
-<div class="para">Assume <span class="process-math">\(\alpha\)</span> is transcendental. We saw above that this is equivalent to our evaluation map <span class="process-math">\(\phi\)</span> being injective. Thus we have <span class="process-math">\(F[\alpha]=\phi(F[x])\cong F[x]\text{.}\)</span> Since <span class="process-math">\(F(x)=\Frac F[x]\text{,}\)</span> we may use <a href="s_intro.html#th_frac_field_universal" class="xref" data-knowl="./knowl/xref/th_frac_field_universal.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.1.9: Universal mapping property of \Frac R">Theorem 1.1.9</a> to get an injective map</div>
+</div></article></details> <details class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="title">Proof of (2).</span></h4></summary><article class="hiddenproof"> <div class="para">First observe that the equivalence (i)<span class="process-math">\(\iff\)</span>(iii) follows from (1) above simply by taking negations. Furthermore, we have (ii)<span class="process-math">\(\implies\)</span>(iii) since <span class="process-math">\([F(x)\colon F]=\infty\text{,}\)</span> as we saw in <a href="" class="xref" data-knowl="./knowl/xref/eg_simple.html" title="Example 1.4.3: Simple extensions">Example 1.4.3</a>. Thus it remains only to show (i)<span class="process-math">\(\implies\)</span>(ii).</div> <div class="para logical">
+<div class="para">Assume <span class="process-math">\(\alpha\)</span> is transcendental. We saw above that this is equivalent to our evaluation map <span class="process-math">\(\phi\)</span> being injective. Thus we have <span class="process-math">\(F[\alpha]=\phi(F[x])\cong F[x]\text{.}\)</span> Since <span class="process-math">\(F(x)=\Frac F[x]\text{,}\)</span> we may use <a href="" class="xref" data-knowl="./knowl/xref/th_frac_field_universal.html" title="Theorem 1.1.9: Universal mapping property of \Frac R">Theorem 1.1.9</a> to get an injective map</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_frac_field_universal.html">
 \begin{align*}
 \widetilde{\phi}\colon F(x) \amp \rightarrow K\\

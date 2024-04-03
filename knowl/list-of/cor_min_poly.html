@@ -12,7 +12,7 @@
 </head>
 <body class="ignore-math">
 <article class="corollary theorem-like"><h3 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.4.15</span><span class="period">.</span><span class="space"> </span><span class="title">Minimal poylnomial.</span>
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.4.17</span><span class="period">.</span><span class="space"> </span><span class="title">Minimal poylnomial.</span>
 </h3>
 <div class="para logical">
 <div class="para">Let <span class="process-math">\(K/F\)</span> be a field extension, and let <span class="process-math">\(\alpha\in K\)</span> be an algebraic element with minimal polynomial <span class="process-math">\(m_{\alpha}(x)\text{.}\)</span>
@@ -23,6 +23,18 @@
 <li><div class="para">Given <span class="process-math">\(f\in F[x]\text{,}\)</span> we have <span class="process-math">\(f(\alpha)=0\)</span> if and only if <span class="process-math">\(m_{\alpha, F}(x)\mid f(x)\text{.}\)</span> In particular, if <span class="process-math">\(f(\alpha)=0\text{,}\)</span> then <span class="process-math">\(m_{\alpha,F}(x)\)</span> is one of the monic irreducible factors of <span class="process-math">\(f(x)\text{.}\)</span>
 </div></li>
 </ol>
-</div></article><span class="incontext"><a class="internal" href="s_simple_extension.html#cor_min_poly">in-context</a></span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical"><ol class="decimal">
+<li><div class="para">This follows from the fact that <span class="process-math">\(F(\alpha)\cong F[x]/(m_\alpha(x))\text{,}\)</span> according to <a href="" class="xref" data-knowl="./knowl/xref/th_quot_poly.html" title="Theorem 1.4.7: Quotients of polynomial rings">Theorem 1.4.7</a>.</div></li>
+<li><div class="para logical">
+<div class="para">Let <span class="process-math">\(\ker \phi\)</span> be the kernel of the evaluation at <span class="process-math">\(\alpha\)</span> map <span class="process-math">\(\phi\colon F[x]\rightarrow K\text{.}\)</span> By <a href="" class="xref" data-knowl="./knowl/xref/th_min_poly.html" title="Theorem 1.4.15: Minimal polynomial">Theorem 1.4.15</a>, we have <span class="process-math">\(\ker\phi=(m_\alpha(x))\text{.}\)</span> We conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_min_poly.html">
+\begin{align*}
+f(\alpha)=0 \amp \iff f\in \ker\phi\\
+\amp \iff m_{\alpha,F}(x)\mid f\text{,}
+\end{align*}
+</div>
+<div class="para">as desired.</div>
+</div></li>
+</ol></div></article></details><span class="incontext"><a class="internal" href="s_simple_extension.html#cor_min_poly">in-context</a></span>
 </body>
 </html>
