@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_alg_finite_ext" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Algebraic extensions: theory</title>
+    <p>
+		The main result of this section is <xref ref="th_finite_ext"/>, which both generalizes <xref ref="eg_finite_simple_alg"/> and gives a full characterization of finite extensions in terms of finitely generated and algebraic field extensions.
+		First we treat the <xref ref="th_degree_towers" text="custom">tower law</xref>, which will be instrumental in proving <xref ref="th_finite_ext"/>, and is also quite useful in its own right.
+	</p>
+
+    
+
+	<theorem xml:id="th_degree_towers">
+		<title>Tower law</title>
+		<statement>
+			<p>
+				Let <m>L/K/F</m> be a tower of (possibly infinite) field extensions.
+				<ol>
+					<li>
+						<p>
+							If <m>B_1</m> is a basis of <m>K</m> and <m>B_2</m> is a basis of <m>L</m> as a <m>K</m>-vector space, then the set
+							<men xml:id="eq_degree_towers_basis">
+								B=\{\alpha\beta\colon \alpha\in B_1, \beta\in B_2\}
+							</men>
+							of all pairwise products of elements of <m>B_1</m> and <m>B_2</m>
+							is a basis of <m>L</m> as an <m>F</m>-vector space.
+						</p>
+					</li>
+
+					<li>
+						<p>
+							We have
+							<men xml:id="eq_degree_towers_formula">
+								[L\colon F]=[L\colon K][K\colon F]
+							</men>.
+						</p>
+					</li>
+				</ol>
+			</p>
+		</statement>
+		<proof>
+			<title>Proof of (1)</title>
+			<p>
+				Let <m>B=\{\alpha\beta\colon \alpha\in B_1, \beta\in B_2\}</m>, as in the theorem statement. We will show directly that <m>B</m> is a basis of <m>L</m> as an <m>F</m>-vector space, by showing that it spans and is linearly independent. 
+			</p>
+			<case>
+				<title><m>B</m> spans</title>
+				<p>
+				 Given any <m>\alpha\in L</m>, since <m>B_2</m> is a <m>K</m>-basis of <m>L</m>, we can write 
+				 <me>
+					\alpha=c_1\beta_1+c_2\beta_2+\cdots +c_n\beta_n=\sum_{j=1}^nc_j\beta_j
+				 </me>
+				 for some elements <m>\beta_j\in B_2</m> and scalars <m>c_j\in K</m>. Next since <m>B_1</m> is a basis of <m>K</m> over <m>F</m>, we can find a finite set <m>\{\alpha_1,\alpha_2,\dots, \alpha_m\}\subseteq B_1</m> such that for each <m>1\leq j\leq n</m> we have 
+				 <me>
+					c_j=d_{1j}\alpha_1+d_{2j}\alpha_2+\cdots +d_{mj}\alpha_m=\sum_{i=1}^md_{ij}\alpha_i
+				 </me>
+				 for some elements <m>d_{ij}\in F</m>. Substituting these expressions for <m>c_j</m> into the first linear combination above, we conclude that 
+				 <md>
+					<mrow> \alpha\amp = \sum_{j=1}^nc_j\beta_j </mrow>
+					<mrow> \amp = \sum_{j=1}^n (\sum_{i=1}^md_{ij}\alpha_i)\beta_j</mrow>
+					<mrow> \amp =\sum_{\substack{1\leq i\leq m\\ 1\leq j\leq n }}d_{ij}\, \alpha_i\, \beta_j </mrow>
+				 </md>
+				 for some scalars <m>d_{ij}\in F</m> and elements <m>\alpha_i\beta_j\in B</m>. 
+				 This shows that every element of <m>L</m> can be written as a <m>F</m>-linear combination of elements of <m>B</m>, and hence that <m>\Span_F B=L</m>. 
+				</p>
+			</case>
+			<case>
+				<title><m>B</m> is linearly independent</title>
+				<p>
+					Assume we have an  <m>F</m>-linear combination 
+					<me>
+						\sum_{\substack{1\leq i\leq m\\ 1\leq j\leq n }}d_{ij}\alpha_i\, \beta_j=0
+					</me>,
+					where <m>\alpha_i\in B_1</m>, <m>\beta_j\in B_2</m>, <m>d_{ij}\in F</m> and the elements <m>\alpha_i\beta_j</m> are distinct. Grouping terms, we can re-write this as 
+					<me>
+						\sum_{j=1}^nc_j\beta_j=0
+					</me>,
+					where for each <m>1\leq j\leq n</m>, we have 
+					<me>
+						c_j=\sum_{i=1}^md_{ij}\alpha_j \in K
+					</me>. 
+					Firstly, since <m>\alpha_i\beta_j\ne \alpha_{i'}\beta_{j'}</m> for all <m>(i,j)\ne (i',j')</m>, it follows easily that <m>\beta_j\ne \beta_{j'}</m> for <m>j\ne j'</m>. Since <m>B_2</m> is linearly independent over <m>K</m>, we conclude that <m>c_j=0</m> for all <m>1\leq j\leq n</m>. But then, since <m>B_1</m> is linearly independent over <m>F</m>, for all <m>1\leq j\leq n</m> we have  
+					<me>
+						c_j=\sum_{i=1}^md_{ij}\alpha_j=0\implies d_{ij}=0 \text{ for all } 1\leq i\leq m
+					</me>.
+					We conclude that <m>d_{ij}=0</m> for all <m>1\leq i\leq m</m> and <m>1\leq j\leq n</m>. 
+					This proves <m>B</m> is linearly independent over <m>F</m>.
+				</p>
+				
+				</case>
+		</proof>
+		<proof>
+			<title>Proof of (2)</title>
+			<p>
+				We treat two cases: (a) <m>K/F</m> and <m>L/K</m> are both finite extensions, and (b) at least one of <m>K/F</m> and <m>L/K</m> is an infinite extension.  
+			</p>
+			<case>
+			<title>Case (a)</title>
+			<p>
+			Assume <m>[K\colon F]=n_1</m> and <m>[L\colon K]=n_2</m>, for positive integers <m>n_1, n_2</m>. By definition we can find bases 
+			<md>
+				<mrow>B_1 \amp =\{\alpha_1,\alpha_2,\dots, \alpha_{n_1}\}</mrow>
+				<mrow>B_2 \amp =\{\beta_1,\beta_2,\dots, \beta_{n_2}\}</mrow>
+			</md>
+			for <m>K</m> as an <m>F</m>-vector space, and <m>L</m> as a <m>K</m>-vector space, respectively. By statement (1) of this theorem, we conclude that 
+			<me>
+				B=\{\alpha_i\beta_j\colon 1\leq i\leq n_1, 1\leq j\leq n_2\}
+			</me>
+			is a basis of <m>L</m> as an <m>F</m>-vector space. It remains only to show that <m>\abs{B}=n_1n_2</m>, since then we have 
+			<me>
+				[L\colon F]=\dim_F L=\abs{B}=n_1n_2=[K\colon F][L\colon K]=[L\colon K][K\colon F]
+			</me>.
+			To see that <m>\abs{B}=n_1n_2</m>, we show that the map 
+			<md>
+				<mrow>B_1\times B_2 \amp \rightarrow B</mrow>
+				<mrow>(\alpha, \beta) \amp \mapsto \alpha\beta</mrow>
+			</md>
+			is a bijection, whence <m>\abs{B}=\abs{B_1}\times \abs{B_2}=n_1n_2</m>. The map is surjective by definition of <m>B</m>. That the map is injective follows from the following chain of implications: 
+			<md>
+				<mrow> \alpha\beta=\alpha'\beta' \amp \implies \alpha\beta-\alpha'\beta' </mrow>
+				<mrow> \amp \implies \beta=\beta' \text{ or } \alpha=\alpha'=0 \amp (B_2 \text{ lin. ind. over } K) </mrow>
+				<mrow> \amp\implies \beta=\beta' \amp (B_1 \text{ basis } \implies \alpha\ne 0, \alpha'\ne 0) </mrow>
+				<mrow> \amp \implies \alpha=\alpha' \text{ and } \beta=\beta' \amp (\alpha\beta=\alpha'\beta')</mrow>
+				<mrow> \amp \implies (\alpha, \beta)=(\alpha', \beta')</mrow>
+			</md>.
+			</p>
+			</case>
+			<case>
+			<title>Case (b)</title>
+			<p>
+				Assume first that <m>K/F</m> is infinite. In this case we can find an infinite set <m>S</m> of the form <m>S=\{\alpha_1,\alpha_2,\dots,\}\subseteq K</m> that is linearly independent over <m>F</m>. But <m>S</m> is also a subset of <m>L</m>, and thus <m>L/F</m> has an infinite linearly independent set, making it an infinite extension. 
+			</p>
+			<p>
+			Now assume that <m>L/K</m> is infinite. In this case we can find an infinite set <m>S</m> of the form <m>S=\{\alpha_1,\alpha_2,\dots,\}\subseteq L</m> that is linearly independent over <m>K</m>. But then <m>S</m> is also linearly independent over the smaller field <m>F</m>, since an <m>F</m>-linear combination of elements of <m>S</m> is also a <m>K</m>-linear combination. Thus <m>L/F</m> also has infinite dimension. 
+			</p>
+			
+			</case>
+			
+		</proof>
+	</theorem>
+
+	<remark>
+		<title>Tower law</title>
+		<p>
+			Statement (1) of <xref ref="th_degree_towers"/> is just as important as (2), as it gives us a procedure for building a basis for <m>L/F</m> from bases <m>B_1</m> of <m>L/K</m> and <m>B_2</m> of <m>K/F</m>: namely, we simply take the set of all products of elements in <m>B_1</m> and <m>B_2</m>.
+		</p>
+	</remark>
+
+	<remark>
+		<title>Tower law: infinite extensions</title>
+		<p>
+			The formula <xref ref="eq_degree_towers_formula"/> is true even when one or more of the field extensions involved is infinite, using the following rules from <q>extended arithmetic</q>:
+			<md>
+				<mrow>\infty \amp = n\cdot \infty=\infty\cdot n=\infty\cdot \infty \text{ for all positive } n\in \Z </mrow>
+				<mrow>\infty \amp\ne m\cdot n \text{ for all positive }  m,n \in \Z  </mrow>
+			</md>.
+			Equivalently, we can interpret <xref ref="eq_degree_towers_formula"/> as stating that the extension <m>L/F</m> is infinite if and only if <m>L/K</m> is infinite or <m>K/F</m> is infinite.
+		</p>
+	</remark>
+
+	<corollary xml:id="cor_degree_towers">
+		<title>Tower law</title>
+		<statement>
+			<p>
+				<ol>
+					<li>
+						<p>
+							Let <m>L/K/F</m> be a tower of finite field extensions. The integers <m>[K\colon F]</m> and <m>[L\colon K]</m> divide the integer <m>[L\colon F]</m>: <ie/>, we have 
+							<me>
+								[K\colon F]\, \mid [L\colon F] \text{ and } [L\colon K]\, \mid [L\colon F]
+							</me>.
+							
+						</p>
+					</li>
+
+					<li>
+						<p>
+							Given a tower of extensions
+							<me>
+								F_1\leq F_2\leq \cdots \leq F_n
+							</me>,
+							we have
+							<me>
+								[F_n\colon F_1]=\prod_{k=1}^{n-1}[F_{k+1}\colon F_k]
+							</me>.
+						</p>
+					</li>
+				</ol>
+			</p>
+		</statement>
+		<proof>
+			<p>
+				Statement (1) follows directly from <xref ref="th_degree_towers"/>; statement (2) follows from <xref ref="th_degree_towers"/> by induction. 
+			</p>
+		</proof>
+	</corollary>
+
+	<example xml:id="eg_degree_towers">
+		<title>Tower law</title>
+		<p>
+			Use the tower law to prove that the field extension <m>\Q(\sqrt[3]{2})/\Q</m> has no nontrivial subextension <m>K/\Q</m>: <ie/>, if <m>\Q\leq K\leq \Q(\sqrt[3]{2})</m>, then <m>K=\Q</m> or <m>K=\Q(\sqrt[3]{2})</m>.
+		</p>
+	</example>
+    <p>
+        Now on to the <xref ref="th_finite_ext" text="custom">finite extension theorem</xref>, which says that a field extension is finite if and only if it is algebraic and <em>finitely generated</em>. 
+    </p>
+    <definition xml:id="d_fin_gen">
+		<title>Finitely generated</title>
+		<statement>
+			<p>
+				Let <m>K/F</m> be a field extension.
+				We say <m>K</m> is <term>finitely generated</term> over <m>F</m> if we have <m>K=F(\alpha_1,\alpha_2,\dots, \alpha_n)</m> for some finite set  <m>\{\alpha_1, \alpha_2,\dots, \alpha_n\}\subseteq K</m>.
+			</p>
+		</statement>
+	</definition>
+	<theorem xml:id="th_finite_ext">
+		<title>Finite extension theorem</title>
+		<statement>
+			<p>
+				Let <m>K/F</m> be a field extension.
+				The following statements are equivalent.
+				<ol>
+					<li>
+						<p>
+							<m>K/F</m> is finite.
+						</p>
+					</li>
+
+					<li>
+						<p>
+							<m>K/F</m> is finitely generated and algebraic.
+						</p>
+					</li>
+
+					<li>
+						<p>
+							<m>K=F(\alpha_1,\alpha_2,\dots, \alpha_m)</m>, where <m>\alpha_i\in K</m> is algebraic over <m>F</m>.
+							In other words, <m>K</m> is generated over <m>F</m> by finitely many algebraic elements.
+						</p>
+					</li>
+				</ol>
+			</p>
+		</statement>
+
+
+		<proof>
+			<p>
+				We prove the <q>cycle of implications</q> (1)<m>\implies</m>(2)<m>\implies</m>(3)<m>\implies</m> (1)
+			</p>
+
+			<case>
+				<title>Implication: (1)<m>\implies</m>(2)</title>
+				<p>
+					Assume <m>K/F</m> is finite, of dimension <m>n</m>.
+					<ul>
+						<li>
+                            <p>
+                                By <xref ref="th_finite_implies_algebraic"/>, since <m>K/F</m> is finite, it is algebraic. 
+                            </p>
+                        </li>
+                        <li>
+							<p>
+								We claim <m>K/F</m> is finitely generated. Let <m>B=\{\alpha_1,\alpha_2,\dots, \alpha_n\}</m> be a basis of <m>K</m> as an <m>F</m>-vector space. Since <m>\Span_F B=K</m>, we have
+								<me>
+									K=\{c_1\alpha_1+c_2\alpha_2+\cdots +c_n\alpha_n\colon c_i\in F\}
+								</me>.
+								It follows that <m>K=F(\alpha_1,\alpha_2,\dots, \alpha_n)</m>, and hence is finitely generated (by the elements <m>\alpha_i</m>). Indeed, since <m>F(\alpha_1,\alpha_2,\dots, \alpha_n)</m> is a subfield of <m>K</m> containing <m>F</m> and <m>\alpha_i</m> for all <m>1\leq i\leq n</m>, it must contain all <m>F</m>-linear combinations of the <m>\alpha_i</m>. But then we have  
+								<me>
+									K=\{c_1\alpha_1+c_2\alpha_2+\cdots +c_n\alpha_n\colon c_i\in F\}\leq F(\alpha_1,\alpha_2,\dots, \alpha_n)\leq K
+								</me>,
+								and conclude that <m>K=F(\alpha_1,\alpha_2,\dots, \alpha_n)</m>. 
+							</p>
+						</li>
+					</ul>
+				</p>
+			</case>
+
+			<case>
+				<title>Implication: (2)<m>\implies</m>(3)</title>
+				<p>
+					Assume <m>K/F</m> is finitely generated and algebraic. Since <m>K/F</m> is finitely generated, there are elements <m>\alpha_1,\alpha_2,\dots, \alpha_m</m> such that <m>K=F(\alpha_1,\alpha_2,\dots, \alpha_m)</m>. Since <m>K/F</m> is algebraic, each element <m>\alpha_i</m> is algebraic over <m>F</m>. Thus <m>K=F(\alpha_1,\alpha_2,\dots, \alpha_m)</m>, and each <m>\alpha_i</m> is algebraic over <m>F</m>, as desired. 
+				</p>
+			</case>
+
+			<case>
+				<title>Implication: (3)<m>\implies</m>(1)</title>
+				<p>
+					We will show that any field extension generated by finitely many algebraic elements is finite. The proof will proceed by induction on the number <m>m</m> of generators of the field. 
+				</p>
+				<p>
+					Base step: <m>m=1</m>. Assume <m>K=F(\alpha)</m>, where <m>\alpha</m> is algebraic over <m>F</m>. By <xref ref="th_simple_ext"/>, we have <m>\dim_F K&lt; \infty</m>. Thus <m>K/F</m> is finite.  
+				</p>
+				<p>
+					Induction step: assume <em>any</em> field extension generated over the base field by <m>m</m> algebraic elements is a finite extension. Now suppose we have <m>K=F(\alpha_1,\alpha_2,\dots, \alpha_{m+1})</m>, where each <m>\alpha_i</m> is algebraic over <m>F</m>. If <m>\alpha_i\in F</m> for all <m>i</m>, then <m>F=K</m>, in which case <m>K</m> is finite over <m>F</m>. Otherwise, we may assume without loss of generality that <m>\alpha_1\in K-F</m>. Since <m>\alpha_1</m> is algebraic over <m>F</m>, the extension <m>F(\alpha_1)/F</m> is finite by the base step. Let <m>K'=F(\alpha_1)</m>. We have a tower of fields <m>K/K'/F</m>, and thus by the <xref ref="th_degree_towers" text="custom">tower law</xref>, the extension <m>K/F</m> is finite if and only if <m>K/K'</m> is finite and <m>K'/F</m> is finite. We know already that <m>K'=F(\alpha_1)</m> is finite over <m>F</m>. As for the extension <m>K/K'</m> it is easy to see that 
+					<me>
+						K=F(\alpha_1,\alpha_2,\dots, \alpha_{m+1})=F(\alpha_1)(\alpha_2,\dots, \alpha_{m+1})=K'(\alpha_2,\dots, \alpha_{m+1})
+					</me>.
+					Furthermore, since each <m>\alpha_i</m> is satisfies a nonzero polynomial <m>f_i(x)\in F[x]\subseteq K'[x]</m>, we see that each <m>\alpha_i</m> is algebraic over <m>K'</m>. Thus the extension <m>K/K'</m> is generated over <m>K'</m> by the <m>m</m> algebraic elements <m>\alpha_2,\dots, \alpha_{m+1}</m>. By induction <m>K/K'</m> is finite. The <xref ref="th_degree_towers" text="custom">tower law</xref> now implies that <m>K/F</m> is finite. 
+				</p>
+			</case>
+		</proof>
+	</theorem>
+
+	<remark>
+		<title>Finite extension theorem</title>
+		<p>
+			As we saw in the proof of <xref ref="th_finite_ext"/>, given a field extension <m>K/F</m> the following implications hold:
+			<md>
+				<mrow>K/F \text{ finite} \amp\implies K/F \text{ finitely generated} </mrow>
+				<mrow>K/F \text{ finite} \amp\implies K/F \text{ algebraic} </mrow>
+			</md>.
+			On the other hand, neither of these implications goes the other way.
+			That is, we have
+			<md>
+				<mrow>K/F \text{ finite } \hspace{5pt} \amp\not\!\!\!\!\!\!\impliedby K/F \text{ finitely generated} </mrow>
+				<mrow>K/F \text{ finite } \hspace{5pt} \amp\not\!\!\!\!\!\!\impliedby K/F \text{ algebraic} </mrow>
+			</md>.
+			In other words, taken singly, neither of these two properties (finitely generated, algebraic) is strong enough to imply the property of being finite.
+			<xref ref="th_finite_ext"/> tells us that the two properties taken together are in fact equivalent to being finite: <ie/>,
+			<me>
+				K/F \text{ finite } \iff K/F \text{ finitely generated and algebraic}
+			</me>.
+		</p>
+	</remark>
+    <p>
+        <xref ref="th_finite_ext"/> can be used to prove important facts about general algebraic extensions, finitely generated or not. We record a few of these now as corollaries. 
+    </p>
+    <corollary xml:id="cor_algebraic_algebraic_generated">
+        <title>Algebraically generated is algebraic</title>
+        <statement>
+            <p>
+                Let <m>K/F</m> be a field extension. The following statements are equivalent. 
+                <ol>
+                    <li>
+                        <p>
+                            <m>K/F</m> is algebraic. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>K=F(A)</m>, where <m>A</m> is a (possibly infinite) set of algebraic elements. 
+                        </p>
+                    </li>
+                </ol>
+                In plain English: the field <m>K</m> is algebraic over <m>F</m> if and only if <m>K</m> is algebraically generated over <m>F</m>. 
+            </p>
+        </statement>
+    </corollary>
+    <corollary xml:id="cor_alg_transitive">
+        <title>Algebraic towers</title>
+        <statement>
+            <p>
+                Given a tower of fields <m>L/K/F</m>, we have <m>L/F</m> algebraic if and only if <m>L/K</m> is algebraic and <m>K/F</m> is algebraic. Using logical shorthand:  
+                <men xml:id="eq_alg_transitive">
+                    L/F \text{ algebraic} \iff L/K \text{ algebraic and  } K/F \text{ algebraic}
+                </men>.  
+            </p>
+            <proof>
+                <p>
+                    Homework exercise. 
+                </p>
+            </proof>
+        </statement>
+    </corollary>
+
+    <corollary xml:id="cor_finite_ext">
+        <title>Relative algebraic closure</title>
+        <statement>
+            <p>
+                Let <m>K/F</m> be a field extension. 
+                <ol>
+                    <li>
+                        <p>
+                              If <m>\alpha, \beta\in K</m> are algebraic over <m>F</m>, then so are <m>-\alpha</m>, <m>\alpha+\beta</m>, and <m>\alpha\beta</m>. If <m>\alpha</m> is nonzero and algebraic, then so is its inverse <m>\alpha^{-1}</m>. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Let 
+                            <men xml:id="eq_rel_alg_closure">
+                                \overline{F}_K=\{\alpha\in K\colon \alpha \text{ is algebraic over } F\}
+                            </men>.
+                            <ol>
+                                <li>
+                                    <p>
+                                        <m>\overline{F}_K/F</m> is an algebraic subextension of <m>K/F</m>.  
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <m>\overline{F}_K/F</m> is the unique maximal algebraic subextension of <m>K/F</m> in the following sense: if <m>K'/F</m> is an algebraic subextension of <m>K/F</m>, then <m>K'\leq \overline{F}_K</m>. 
+                                    </p>
+                                </li>
+                            </ol>
+                            
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+    </corollary>
+    
+    <definition xml:id="d_rel_alg_closure">
+        <title>Relative algebraic closure</title>
+        <statement>
+            <p>
+                Let <m>K/F</m> be a field extension. The field <m>\overline{F}_K</m> defined in <xref ref="eq_rel_alg_closure"/> is called the <term>algebraic closure</term> of <m>F</m> in <m>K</m>. We call this a <term>relative algebraic closure</term> of <m>F</m>.    
+            </p>
+        </statement>
+    </definition>
+    <remark>
+        <title>Relative algebraic closure</title>
+        <p>
+            The field <m>\overline{F}_K</m> is called the <em>relative</em> algebraic closure of <m>F</m>, since it depends on <m>K</m>. Later we will define the plain old algebraic closure of <m>F</m>, denoted <m>\overline{F}</m>, which (up to isomorphism) depends only on <m>F</m>. 
+        </p>
+    </remark>
+    <example>
+        <title>Relative algebraic closure</title>
+        <p>
+            Let's consider some relative algebraic closures of <m>\Q</m>.
+            <ol>
+                <li>
+                    <p>
+                        Let <m>K=\Q</m>. Clearly the algebraic closure of <m>\Q</m> in <m>\Q</m> is <m>\Q</m>: that is, <m>\overline{\Q}_K=\Q</m>. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Let <m>K=\Q(\pi)</m>. As you will show in homework, every element of <m>K-\Q</m> is transcendental. Thus <m>\overline{\Q}_K=\Q</m> in this case as well. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Lastly, consider <m>\C/\Q</m> and the relative algebraic closure <m>\overline{\Q}_\C</m>. By the fundamental theorem of algebra, given any rational polynomial <m>f(x)\in \Q[x]</m>, we can factor <m>f(x)</m> over <m>\C</m> as 
+                        <me>
+                            f(x)=a(x-\alpha_1)(x-\alpha_2)\cdots (x-\alpha_n), a\in \Q, \alpha_k\in \C
+                        </me>.
+                        For all <m>1\leq k\leq n</m>, since <m>\alpha_k</m> is a root of <m>f</m>, it is algebraic, and hence is an element of <m>\overline{\Q}_\C</m>. It follows that in fact every rational polynomial <m>f(x)\in \Q[x]</m> can be factored into linear terms over the field <m>\overline{\Q}_\C</m>. The field <m>\overline{\Q}_\C</m> is a good deal more manageable than <m>\C</m> in that it is (a) algebraic over <m>\Q</m>, and (b) is countable (as opposed to uncountable), as one can show along the lines of <xref ref="eg_trans_uncount"/>.    
+                         
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </example>
+</section>

@@ -6,5 +6,6 @@
   <xi:include  href="s_degree.ptx"/>
   <xi:include  href="s_simple_extension.ptx"/>
   <xi:include  href="s_algebraic.ptx"/>
+  <xi:include  href="s_algebraic_finite.ptx"/>
 
 </chapter>
