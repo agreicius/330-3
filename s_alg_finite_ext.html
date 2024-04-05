@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Algebraic extensions: theory</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math 330-3">
+<meta property="book:author" content="Aaron Greicius">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="kursobjekt.html"><span class="title">Math 330-3:</span> <span class="subtitle">Kursobjekt</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="kursobjekt-6-7.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s_algebraic.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_Galois_theory.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
+  \newcommand{\Q}{{\mathbb Q}}
+  \newcommand{\R}{{\mathbb R}}
+  \newcommand{\C}{{\mathbb C}}
+  \newcommand{\T}{{\mathbb T}}
+  \newcommand{\F}{{\mathbb F}}
+  \newcommand{\PP}{{\mathbb P}}
+  \newcommand{\HH}{{\mathbb H}}
+  \newcommand{\compose}{\circ}
+  \newcommand{\bolda}{{\mathbf a}}
+  \newcommand{\boldb}{{\mathbf b}}
+  \newcommand{\boldc}{{\mathbf c}}
+  \newcommand{\boldd}{{\mathbf d}}
+  \newcommand{\bolde}{{\mathbf e}}
+  \newcommand{\boldi}{{\mathbf i}}
+  \newcommand{\boldj}{{\mathbf j}}
+  \newcommand{\boldk}{{\mathbf k}}
+  \newcommand{\boldn}{{\mathbf n}}
+  \newcommand{\boldp}{{\mathbf p}}
+  \newcommand{\boldq}{{\mathbf q}}
+  \newcommand{\boldr}{{\mathbf r}}
+  \newcommand{\bolds}{{\mathbf s}}
+  \newcommand{\boldt}{{\mathbf t}}
+  \newcommand{\boldu}{{\mathbf u}}
+  \newcommand{\boldv}{{\mathbf v}}
+  \newcommand{\boldw}{{\mathbf w}}
+  \newcommand{\boldx}{{\mathbf x}}
+  \newcommand{\boldy}{{\mathbf y}}
+  \newcommand{\boldz}{{\mathbf z}}
+  \newcommand{\boldzero}{{\mathbf 0}}
+  \newcommand{\boldmod}{\boldsymbol{ \bmod }}
+  \newcommand{\boldT}{{\mathbf T}}
+  \newcommand{\boldN}{{\mathbf N}}
+  \newcommand{\boldB}{{\mathbf B}}
+  \newcommand{\boldF}{{\mathbf F}}
+  \newcommand{\boldS}{{\mathbf S}}
+  \newcommand{\boldE}{{\mathbf E}}
+  \newcommand{\boldG}{{\mathbf G}}
+  \newcommand{\boldK}{{\mathbf K}}
+  \newcommand{\boldL}{{\mathbf L}}
+  \DeclareMathOperator{\lns}{lns}
+  \DeclareMathOperator{\lcm}{lcm}
+  \DeclareMathOperator{\Span}{span}
+  \DeclareMathOperator{\tr}{tr}
+  \DeclareMathOperator{\NS}{null}
+  \DeclareMathOperator{\RS}{row}
+  \DeclareMathOperator{\CS}{col}
+  \DeclareMathOperator{\im}{im}
+  \DeclareMathOperator{\range}{range}
+  \DeclareMathOperator{\rank}{rank}
+  \DeclareMathOperator{\nullity}{nullity}
+  \DeclareMathOperator{\sign}{sign}
+  \DeclareMathOperator{\Fix}{Fix}
+  \DeclareMathOperator{\Aff}{Aff}
+  \DeclareMathOperator{\Frac}{Frac}
+  \DeclareMathOperator{\Ann}{Ann}
+  \DeclareMathOperator{\Tor}{Tor}
+  \DeclareMathOperator{\id}{id}
+  \DeclareMathOperator{\mdeg}{mdeg}
+  \DeclareMathOperator{\Lt}{Lt}
+  \DeclareMathOperator{\Lc}{Lc}
+  \DeclareMathOperator{\disc}{disc}
+  \DeclareMathOperator{\Frob}{Frob}
+  \DeclareMathOperator{\adj}{adj}
+  \DeclareMathOperator{\curl}{curl}
+  \DeclareMathOperator{\grad}{grad}
+  \DeclareMathOperator{\diver}{div}
+  \DeclareMathOperator{\flux}{flux}
+  \DeclareMathOperator{\Hom}{Hom}
+  \DeclareMathOperator{\ab}{ab}
+  \DeclareMathOperator{\character}{char}
+
+
+  \newcommand{\surjects}{\twoheadrightarrow}
+  \newcommand{\injects}{\hookrightarrow}
+  \newcommand{\bijects}{\leftrightarrow}
+  \newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+  \newcommand{\floor}[1]{\lfloor#1\rfloor}
+  \newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+  \newcommand{\mclass}[2][m]{[#2]_{#1}}
+  \newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\abs}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+  \newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+  \newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+  \newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+  \newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+  \newcommand{\normalin}{\trianglelefteq}
+  \newcommand{\angvec}[1]{\langle #1\rangle}
+  \newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+  \newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+  \newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+  \newenvironment{linsys}[2][m]{
+  \begin{array}[#1]{@{}*{#2}{rc}r@{}}
+  }{
+  \end{array}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="meta_frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="c_foundations.html" class="internal"><span class="codenumber">0</span> <span class="title">Foundations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_sets_functions.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Sets and functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_functions.html#ss_sets" class="internal"><span class="title">Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_functions.html#ss_functions" class="internal"><span class="title">Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_functions.html#subsec-" class="internal"><span class="title">Cardinality and countability</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_logic.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Logic</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_propositional_calculus" class="internal"><span class="title">Propositional logic</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_predicate_logic" class="internal"><span class="title">Predicate logic</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_proof_technique.html" class="internal"><span class="codenumber">0.3</span> <span class="title">Proof techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_logical_structure" class="internal"><span class="title">Logical structure</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_implication" class="internal"><span class="title">Implication</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_disjunction" class="internal"><span class="title">Disjunction</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_equivalence" class="internal"><span class="title">Equivalence</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_logical_chains" class="internal"><span class="title">Chains of implications/equivalences</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_proof_by_contradiction" class="internal"><span class="title">Proof by contradiction</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_Equalities" class="internal"><span class="title">Equalities</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_chain_equalities" class="internal"><span class="title">Chain of equalities</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_set_properties" class="internal"><span class="title">Basic set properties</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_inclusion" class="internal"><span class="title">Set inclusion</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_equality" class="internal"><span class="title">Set equality</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_function_properties" class="internal"><span class="title">Basic function properties</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_function_equality" class="internal"><span class="title">Function equality</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_injective_surjective_bijective" class="internal"><span class="title">Injective, surjective, bijective</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_mathematical_induction" class="internal"><span class="title">Mathematical induction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_weak_induction" class="internal"><span class="title">Proof by induction</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_strong_induction" class="internal"><span class="title">Proof by strong induction</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="c_Galois_theory.html" class="internal"><span class="codenumber">1</span> <span class="title">Galois theory</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_intro.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Introduction to Galois theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_intro.html#ss_intro" class="internal"><span class="title">Finding roots of polynomials</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_intro.html#ss_field_extensions" class="internal"><span class="title">Fields</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_field_extension.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Field extension</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_field_extension.html#ss_field_extension" class="internal"><span class="title">Field extensions</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_degree.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Degree of a field extension</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_degree.html#ss_vector_spaces" class="internal"><span class="title">Vector spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_degree.html#ss_degree" class="internal"><span class="title">Degree of an extension</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_simple_extension.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Simple extensions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_algebraic.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Algebraic extensions: definition</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="s_alg_finite_ext.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Algebraic extensions: theory</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="kursobjekt-6.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-notation.html" class="internal"><span class="codenumber">A</span> <span class="title">Notation</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-defs.html" class="internal"><span class="codenumber">B</span> <span class="title">Definitions</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-thms.html" class="internal"><span class="codenumber">C</span> <span class="title">Theory</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-procs.html" class="internal"><span class="codenumber">D</span> <span class="title">Procedures</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-egs.html" class="internal"><span class="codenumber">E</span> <span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-fiats.html" class="internal"><span class="codenumber">F</span> <span class="title">Mantras and fiats</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="kursobjekt-6-7.html" class="internal"><span class="title">Index</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_alg_finite_ext"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.6</span><span class="space"> </span><span class="title">Algebraic extensions: theory</span>
+</h2>
+<div class="para" id="s_alg_finite_ext-2">The main result of this section is <a href="" class="xref" data-knowl="./knowl/xref/th_finite_ext.html" title="Theorem 1.6.9: Finite extension theorem">Theorem 1.6.9</a>, which both generalizes <a href="" class="xref" data-knowl="./knowl/xref/eg_finite_simple_alg.html" title="Example 1.5.8: Simple extension with algebraic generator">Example 1.5.8</a> and gives a full characterization of finite extensions in terms of finitely generated and algebraic field extensions. First we treat the <a href="" class="xref" data-knowl="./knowl/xref/th_degree_towers.html" title="Theorem 1.6.1: Tower law">tower law</a>, which will be instrumental in proving <a href="" class="xref" data-knowl="./knowl/xref/th_finite_ext.html" title="Theorem 1.6.9: Finite extension theorem">Theorem 1.6.9</a>, and is also quite useful in its own right.</div>
+<article class="theorem theorem-like" id="th_degree_towers"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.6.1</span><span class="period">.</span><span class="space"> </span><span class="title">Tower law.</span>
+</h3>
+<div class="para logical" id="th_degree_towers-2-1">
+<div class="para">Let <span class="process-math">\(L/K/F\)</span> be a tower of (possibly infinite) field extensions.</div>
+<ol class="decimal">
+<li id="th_degree_towers-2-1-2-1"><div class="para logical" id="th_degree_towers-2-1-2-1-1">
+<div class="para">If <span class="process-math">\(B_1\)</span> is a basis of <span class="process-math">\(K\)</span> and <span class="process-math">\(B_2\)</span> is a basis of <span class="process-math">\(L\)</span> as a <span class="process-math">\(K\)</span>-vector space, then the set</div>
+<div class="displaymath process-math" id="eq_degree_towers_basis">
+\begin{equation}
+B=\{\alpha\beta\colon \alpha\in B_1, \beta\in B_2\}\tag{1.5}
+\end{equation}
+</div>
+<div class="para">of all pairwise products of elements of <span class="process-math">\(B_1\)</span> and <span class="process-math">\(B_2\)</span> is a basis of <span class="process-math">\(L\)</span> as an <span class="process-math">\(F\)</span>-vector space.</div>
+</div></li>
+<li id="th_degree_towers-2-1-2-2"><div class="para logical" id="th_degree_towers-2-1-2-2-1">
+<div class="para">We have</div>
+<div class="displaymath process-math" id="eq_degree_towers_formula">
+\begin{equation}
+[L\colon F]=[L\colon K][K\colon F]\text{.}\tag{1.6}
+\end{equation}
+</div>
+</div></li>
+</ol>
+</div></article><details id="th_degree_towers-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="title">Proof of (1).</span></h3></summary><article class="hiddenproof"> <div class="para" id="th_degree_towers-3-2">Let <span class="process-math">\(B=\{\alpha\beta\colon \alpha\in B_1, \beta\in B_2\}\text{,}\)</span> as in the theorem statement. We will show directly that <span class="process-math">\(B\)</span> is a basis of <span class="process-math">\(L\)</span> as an <span class="process-math">\(F\)</span>-vector space, by showing that it spans and is linearly independent.</div> <article class="case" id="th_degree_towers-3-3"><h4 class="heading">
+<span class="process-math">\(B\)</span> spans.</h4> <div class="para logical" id="th_degree_towers-3-3-2">
+<div class="para">Given any <span class="process-math">\(\alpha\in L\text{,}\)</span> since <span class="process-math">\(B_2\)</span> is a <span class="process-math">\(K\)</span>-basis of <span class="process-math">\(L\text{,}\)</span> we can write</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\alpha=c_1\beta_1+c_2\beta_2+\cdots +c_n\beta_n=\sum_{j=1}^nc_j\beta_j
+\end{equation*}
+</div>
+<div class="para">for some elements <span class="process-math">\(\beta_j\in B_2\)</span> and scalars <span class="process-math">\(c_j\in K\text{.}\)</span> Next since <span class="process-math">\(B_1\)</span> is a basis of <span class="process-math">\(K\)</span> over <span class="process-math">\(F\text{,}\)</span> we can find a finite set <span class="process-math">\(\{\alpha_1,\alpha_2,\dots, \alpha_m\}\subseteq B_1\)</span> such that for each <span class="process-math">\(1\leq j\leq n\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+c_j=d_{1j}\alpha_1+d_{2j}\alpha_2+\cdots +d_{mj}\alpha_m=\sum_{i=1}^md_{ij}\alpha_i
+\end{equation*}
+</div>
+<div class="para">for some elements <span class="process-math">\(d_{ij}\in F\text{.}\)</span> Substituting these expressions for <span class="process-math">\(c_j\)</span> into the first linear combination above, we conclude that</div>
+<div class="displaymath process-math" id="th_degree_towers-3-3-2-16">
+\begin{align*}
+\alpha\amp = \sum_{j=1}^nc_j\beta_j \\
+\amp = \sum_{j=1}^n (\sum_{i=1}^md_{ij}\alpha_i)\beta_j\\
+\amp =\sum_{\substack{1\leq i\leq m\\ 1\leq j\leq n }}d_{ij}\, \alpha_i\, \beta_j 
+\end{align*}
+</div>
+<div class="para">for some scalars <span class="process-math">\(d_{ij}\in F\)</span> and elements <span class="process-math">\(\alpha_i\beta_j\in B\text{.}\)</span> This shows that every element of <span class="process-math">\(L\)</span> can be written as a <span class="process-math">\(F\)</span>-linear combination of elements of <span class="process-math">\(B\text{,}\)</span> and hence that <span class="process-math">\(\Span_F B=L\text{.}\)</span>
+</div>
+</div></article> <article class="case" id="th_degree_towers-3-4"><h4 class="heading">
+<span class="process-math">\(B\)</span> is linearly independent.</h4> <div class="para logical" id="th_degree_towers-3-4-2">
+<div class="para">Assume we have an  <span class="process-math">\(F\)</span>-linear combination</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{\substack{1\leq i\leq m\\ 1\leq j\leq n }}d_{ij}\alpha_i\, \beta_j=0\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\alpha_i\in B_1\text{,}\)</span> <span class="process-math">\(\beta_j\in B_2\text{,}\)</span> <span class="process-math">\(d_{ij}\in F\)</span> and the elements <span class="process-math">\(\alpha_i\beta_j\)</span> are distinct. Grouping terms, we can re-write this as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sum_{j=1}^nc_j\beta_j=0\text{,}
+\end{equation*}
+</div>
+<div class="para">where for each <span class="process-math">\(1\leq j\leq n\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+c_j=\sum_{i=1}^md_{ij}\alpha_j \in K\text{.}
+\end{equation*}
+</div>
+<div class="para">Firstly, since <span class="process-math">\(\alpha_i\beta_j\ne \alpha_{i'}\beta_{j'}\)</span> for all <span class="process-math">\((i,j)\ne (i',j')\text{,}\)</span> it follows easily that <span class="process-math">\(\beta_j\ne \beta_{j'}\)</span> for <span class="process-math">\(j\ne j'\text{.}\)</span> Since <span class="process-math">\(B_2\)</span> is linearly independent over <span class="process-math">\(K\text{,}\)</span> we conclude that <span class="process-math">\(c_j=0\)</span> for all <span class="process-math">\(1\leq j\leq n\text{.}\)</span> But then, since <span class="process-math">\(B_1\)</span> is linearly independent over <span class="process-math">\(F\text{,}\)</span> for all <span class="process-math">\(1\leq j\leq n\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+c_j=\sum_{i=1}^md_{ij}\alpha_j=0\implies d_{ij}=0 \text{ for all } 1\leq i\leq m\text{.}
+\end{equation*}
+</div>
+<div class="para">We conclude that <span class="process-math">\(d_{ij}=0\)</span> for all <span class="process-math">\(1\leq i\leq m\)</span> and <span class="process-math">\(1\leq j\leq n\text{.}\)</span> This proves <span class="process-math">\(B\)</span> is linearly independent over <span class="process-math">\(F\text{.}\)</span>
+</div>
+</div></article></article></details><details id="th_degree_towers-4" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="title">Proof of (2).</span></h3></summary><article class="hiddenproof"> <div class="para" id="th_degree_towers-4-2">We treat two cases: (a) <span class="process-math">\(K/F\)</span> and <span class="process-math">\(L/K\)</span> are both finite extensions, and (b) at least one of <span class="process-math">\(K/F\)</span> and <span class="process-math">\(L/K\)</span> is an infinite extension.</div> <article class="case" id="th_degree_towers-4-3"><h4 class="heading">Case (a).</h4> <div class="para logical" id="th_degree_towers-4-3-2">
+<div class="para">Assume <span class="process-math">\([K\colon F]=n_1\)</span> and <span class="process-math">\([L\colon K]=n_2\text{,}\)</span> for positive integers <span class="process-math">\(n_1, n_2\text{.}\)</span> By definition we can find bases</div>
+<div class="displaymath process-math" id="th_degree_towers-4-3-2-4">
+\begin{align*}
+B_1 \amp =\{\alpha_1,\alpha_2,\dots, \alpha_{n_1}\}\\
+B_2 \amp =\{\beta_1,\beta_2,\dots, \beta_{n_2}\}
+\end{align*}
+</div>
+<div class="para">for <span class="process-math">\(K\)</span> as an <span class="process-math">\(F\)</span>-vector space, and <span class="process-math">\(L\)</span> as a <span class="process-math">\(K\)</span>-vector space, respectively. By statement (1) of this theorem, we conclude that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+B=\{\alpha_i\beta_j\colon 1\leq i\leq n_1, 1\leq j\leq n_2\}
+\end{equation*}
+</div>
+<div class="para">is a basis of <span class="process-math">\(L\)</span> as an <span class="process-math">\(F\)</span>-vector space. It remains only to show that <span class="process-math">\(\abs{B}=n_1n_2\text{,}\)</span> since then we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[L\colon F]=\dim_F L=\abs{B}=n_1n_2=[K\colon F][L\colon K]=[L\colon K][K\colon F]\text{.}
+\end{equation*}
+</div>
+<div class="para">To see that <span class="process-math">\(\abs{B}=n_1n_2\text{,}\)</span> we show that the map</div>
+<div class="displaymath process-math" id="th_degree_towers-4-3-2-15">
+\begin{align*}
+B_1\times B_2 \amp \rightarrow B\\
+(\alpha, \beta) \amp \mapsto \alpha\beta
+\end{align*}
+</div>
+<div class="para">is a bijection, whence <span class="process-math">\(\abs{B}=\abs{B_1}\times \abs{B_2}=n_1n_2\text{.}\)</span> The map is surjective by definition of <span class="process-math">\(B\text{.}\)</span> That the map is injective follows from the following chain of implications:</div>
+<div class="displaymath process-math" id="th_degree_towers-4-3-2-18">
+\begin{align*}
+\alpha\beta=\alpha'\beta' \amp \implies \alpha\beta-\alpha'\beta' \\
+\amp \implies \beta=\beta' \text{ or } \alpha=\alpha'=0 \amp (B_2 \text{ lin. ind. over } K) \\
+\amp\implies \beta=\beta' \amp (B_1 \text{ basis } \implies \alpha\ne 0, \alpha'\ne 0) \\
+\amp \implies \alpha=\alpha' \text{ and } \beta=\beta' \amp (\alpha\beta=\alpha'\beta')\\
+\amp \implies (\alpha, \beta)=(\alpha', \beta')\text{.}
+\end{align*}
+</div>
+</div></article> <article class="case" id="th_degree_towers-4-4"><h4 class="heading">Case (b).</h4> <div class="para" id="th_degree_towers-4-4-2">Assume first that <span class="process-math">\(K/F\)</span> is infinite. In this case we can find an infinite set <span class="process-math">\(S\)</span> of the form <span class="process-math">\(S=\{\alpha_1,\alpha_2,\dots,\}\subseteq K\)</span> that is linearly independent over <span class="process-math">\(F\text{.}\)</span> But <span class="process-math">\(S\)</span> is also a subset of <span class="process-math">\(L\text{,}\)</span> and thus <span class="process-math">\(L/F\)</span> has an infinite linearly independent set, making it an infinite extension.</div> <div class="para" id="th_degree_towers-4-4-3">Now assume that <span class="process-math">\(L/K\)</span> is infinite. In this case we can find an infinite set <span class="process-math">\(S\)</span> of the form <span class="process-math">\(S=\{\alpha_1,\alpha_2,\dots,\}\subseteq L\)</span> that is linearly independent over <span class="process-math">\(K\text{.}\)</span> But then <span class="process-math">\(S\)</span> is also linearly independent over the smaller field <span class="process-math">\(F\text{,}\)</span> since an <span class="process-math">\(F\)</span>-linear combination of elements of <span class="process-math">\(S\)</span> is also a <span class="process-math">\(K\)</span>-linear combination. Thus <span class="process-math">\(L/F\)</span> also has infinite dimension.</div></article></article></details><article class="remark remark-like" id="s_alg_finite_ext-4"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.6.2</span><span class="period">.</span><span class="space"> </span><span class="title">Tower law.</span>
+</h3> <div class="para" id="s_alg_finite_ext-4-2">Statement (1) of <a href="" class="xref" data-knowl="./knowl/xref/th_degree_towers.html" title="Theorem 1.6.1: Tower law">Theorem 1.6.1</a> is just as important as (2), as it gives us a procedure for building a basis for <span class="process-math">\(L/F\)</span> from bases <span class="process-math">\(B_1\)</span> of <span class="process-math">\(L/K\)</span> and <span class="process-math">\(B_2\)</span> of <span class="process-math">\(K/F\text{:}\)</span> namely, we simply take the set of all products of elements in <span class="process-math">\(B_1\)</span> and <span class="process-math">\(B_2\text{.}\)</span>
+</div></article><article class="remark remark-like" id="s_alg_finite_ext-5"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.6.3</span><span class="period">.</span><span class="space"> </span><span class="title">Tower law: infinite extensions.</span>
+</h3> <div class="para logical" id="s_alg_finite_ext-5-2">
+<div class="para">The formula <a href="" class="xref" data-knowl="./knowl/xref/eq_degree_towers_formula.html" title="Equation 1.6">(1.6)</a> is true even when one or more of the field extensions involved is infinite, using the following rules from “extended arithmetic”:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_degree_towers_formula.html ./knowl/xref/eq_degree_towers_formula.html" id="s_alg_finite_ext-5-2-3">
+\begin{align*}
+\infty \amp = n\cdot \infty=\infty\cdot n=\infty\cdot \infty \text{ for all positive } n\in \Z \\
+\infty \amp\ne m\cdot n \text{ for all positive }  m,n \in \Z  \text{.}
+\end{align*}
+</div>
+<div class="para">Equivalently, we can interpret <a href="" class="xref" data-knowl="./knowl/xref/eq_degree_towers_formula.html" title="Equation 1.6">(1.6)</a> as stating that the extension <span class="process-math">\(L/F\)</span> is infinite if and only if <span class="process-math">\(L/K\)</span> is infinite or <span class="process-math">\(K/F\)</span> is infinite.</div>
+</div></article><article class="corollary theorem-like" id="cor_degree_towers"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.6.4</span><span class="period">.</span><span class="space"> </span><span class="title">Tower law.</span>
+</h3>
+<div class="para logical" id="cor_degree_towers-2-1"><ol class="decimal">
+<li id="cor_degree_towers-2-1-1-1"><div class="para logical" id="cor_degree_towers-2-1-1-1-1">
+<div class="para">Let <span class="process-math">\(L/K/F\)</span> be a tower of finite field extensions. The integers <span class="process-math">\([K\colon F]\)</span> and <span class="process-math">\([L\colon K]\)</span> divide the integer <span class="process-math">\([L\colon F]\text{:}\)</span> i.e., we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[K\colon F]\, \mid [L\colon F] \text{ and } [L\colon K]\, \mid [L\colon F]\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li id="cor_degree_towers-2-1-1-2"><div class="para logical" id="cor_degree_towers-2-1-1-2-1">
+<div class="para">Given a tower of extensions</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F_1\leq F_2\leq \cdots \leq F_n\text{,}
+\end{equation*}
+</div>
+<div class="para">we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[F_n\colon F_1]=\prod_{k=1}^{n-1}[F_{k+1}\colon F_k]\text{.}
+\end{equation*}
+</div>
+</div></li>
+</ol></div></article><details id="cor_degree_towers-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="cor_degree_towers-3-1">Statement (1) follows directly from <a href="" class="xref" data-knowl="./knowl/xref/th_degree_towers.html" title="Theorem 1.6.1: Tower law">Theorem 1.6.1</a>; statement (2) follows from <a href="" class="xref" data-knowl="./knowl/xref/th_degree_towers.html" title="Theorem 1.6.1: Tower law">Theorem 1.6.1</a> by induction.</div></article></details><div class="para" id="s_alg_finite_ext-7">We now make use of <a href="" class="xref" data-knowl="./knowl/xref/th_degree_towers.html" title="Theorem 1.6.1: Tower law">Theorem 1.6.1</a> to prove a nice generalization of <a href="" class="xref" data-knowl="./knowl/xref/eg_finite_simple_alg.html" title="Example 1.5.8: Simple extension with algebraic generator">Example 1.5.8</a>.</div>
+<article class="theorem theorem-like" id="th_finite_implies_algebraic"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.6.5</span><span class="period">.</span><span class="space"> </span><span class="title">Finite implies algebraic.</span>
+</h3>
+<div class="para logical" id="th_finite_implies_algebraic-2-1">
+<div class="para">Let <span class="process-math">\(K/F\)</span> be a field extension. If <span class="process-math">\(K/F\)</span> is finite, then <span class="process-math">\(K/F\)</span> is algebraic. Using logical shorthand, we have</div>
+<div class="displaymath process-math" id="eq_finite_algebraic">
+\begin{equation}
+K/F \text{ finite}\implies K/F \text{ algebraic}\text{.}\tag{1.7}
+\end{equation}
+</div>
+</div></article><details id="th_finite_implies_algebraic-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="th_finite_implies_algebraic-3-1">We could a proof much along the lines of the argument used in <a href="" class="xref" data-knowl="./knowl/xref/eg_finite_simple_alg.html" title="Example 1.5.8: Simple extension with algebraic generator">Example 1.5.8</a>, however <a href="" class="xref" data-knowl="./knowl/xref/th_degree_towers.html" title="Theorem 1.6.1: Tower law">Theorem 1.6.1</a> allows us to simplify things somewhat.</div> <div class="para" id="th_finite_implies_algebraic-3-2">Let <span class="process-math">\(\dim_F K=n\text{.}\)</span> Let <span class="process-math">\(\beta\in K\text{,}\)</span> and consider the field extension <span class="process-math">\(F(\beta)/F\text{.}\)</span> Since we have <span class="process-math">\(F\leq F(\beta)\leq K\text{,}\)</span> and since <span class="process-math">\(K/F\)</span> is finite, the <a href="" class="xref" data-knowl="./knowl/xref/th_degree_towers.html" title="Theorem 1.6.1: Tower law">tower law</a> implies <span class="process-math">\(F(\beta)/F\)</span> is finite. <a href="" class="xref" data-knowl="./knowl/xref/th_simple_ext.html" title="Theorem 1.4.14: Simple extensions">Theorem 1.4.14</a> now implies <span class="process-math">\(\beta\)</span> is algebraic. Since <span class="process-math">\(\beta\in K\)</span> was arbitrary, we see that <span class="process-math">\(K\)</span> is algebraic over <span class="process-math">\(F\text{.}\)</span>
+</div></article></details><div class="para" id="s_alg_finite_ext-9">Assume <span class="process-math">\(K/F\)</span> is algebraic. It is not true in general that <span class="process-math">\(K/F\)</span> is finite: that is,  the converse of <a href="" class="xref" data-knowl="./knowl/xref/eq_finite_algebraic.html" title="Equation 1.7">(1.7)</a> is not true. <a href="" class="xref" data-knowl="./knowl/xref/th_finite_ext.html" title="Theorem 1.6.9: Finite extension theorem">Theorem 1.6.9</a>, which we will prove in the next section, identifies an additional property <span class="process-math">\(K/F\)</span> needs to satisfy in order to be finite: namely, it must be <em class="emphasis">finitely generated</em>.  By the end of that section, we will also be able to provide an example of a field extension that is algebraic but not finite.</div>
+<article class="example example-like" id="eg_degree_towers"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.6</span><span class="period">.</span><span class="space"> </span><span class="title">Tower law.</span>
+</h3> <div class="para" id="eg_degree_towers-2">Use the tower law to prove that the field extension <span class="process-math">\(\Q(\sqrt[3]{2})/\Q\)</span> has no nontrivial subextension <span class="process-math">\(K/\Q\text{:}\)</span> i.e., if <span class="process-math">\(\Q\leq K\leq \Q(\sqrt[3]{2})\text{,}\)</span> then <span class="process-math">\(K=\Q\)</span> or <span class="process-math">\(K=\Q(\sqrt[3]{2})\text{.}\)</span>
+</div></article><div class="para" id="s_alg_finite_ext-11">Now on to the <a href="" class="xref" data-knowl="./knowl/xref/th_finite_ext.html" title="Theorem 1.6.9: Finite extension theorem">finite extension theorem</a>, which says that a field extension is finite if and only if it is algebraic and <em class="emphasis">finitely generated</em>.</div>
+<article class="definition definition-like" id="d_fin_gen"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.6.7</span><span class="period">.</span><span class="space"> </span><span class="title">Finitely generated.</span>
+</h3> <div class="para" id="d_fin_gen-2-1">Let <span class="process-math">\(K/F\)</span> be a field extension. We say <span class="process-math">\(K\)</span> is <dfn class="terminology">finitely generated</dfn> over <span class="process-math">\(F\)</span> if we have <span class="process-math">\(K=F(\alpha_1,\alpha_2,\dots, \alpha_n)\)</span> for some finite set  <span class="process-math">\(\{\alpha_1, \alpha_2,\dots, \alpha_n\}\subseteq K\text{.}\)</span>
+</div></article><div class="para" id="s_alg_finite_ext-13">It is not the case that every field extension is finitely generated: e.g., it is possible to show that <span class="process-math">\(\Q(\sqrt{2},\sqrt[3]{2}, \sqrt[4]{2}, \dots)\)</span> is not finitely generated over <span class="process-math">\(\Q\text{.}\)</span> However, according to <a href="" class="xref" data-knowl="./knowl/xref/th_fin_gen.html" title="Theorem 1.6.8: Finitely generated extensions">Theorem 1.6.8</a>, every field extension is a <em class="emphasis">union</em> of finitely generated field extensions.</div>
+<article class="theorem theorem-like" id="th_fin_gen"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.6.8</span><span class="period">.</span><span class="space"> </span><span class="title">Finitely generated extensions.</span>
+</h3>
+<div class="para logical" id="th_fin_gen-2-1">
+<div class="para">Let <span class="process-math">\(K/F\)</span> be a field extension, and suppose <span class="process-math">\(K=F(A)\)</span> for some (possibly infinite) subset <span class="process-math">\(A\subseteq K\text{.}\)</span> We have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+K=\bigcup_{\substack{A'\subseteq A\\ A' \text{ finite}}}F(A')\text{.}
+\end{equation*}
+</div>
+<div class="para">In particular, <span class="process-math">\(K\)</span> is a union of finitely generated field extensions of <span class="process-math">\(F\text{.}\)</span>
+</div>
+</div></article><details id="th_fin_gen-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="th_fin_gen-3-1">Homework exercise.</div></article></details><article class="theorem theorem-like" id="th_finite_ext"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.6.9</span><span class="period">.</span><span class="space"> </span><span class="title">Finite extension theorem.</span>
+</h3>
+<div class="para logical" id="th_finite_ext-2-1">
+<div class="para">Let <span class="process-math">\(K/F\)</span> be a field extension. The following statements are equivalent.</div>
+<ol class="decimal">
+<li id="th_finite_ext-2-1-2-1"><div class="para" id="th_finite_ext-2-1-2-1-1">
+<span class="process-math">\(K/F\)</span> is finite.</div></li>
+<li id="th_finite_ext-2-1-2-2"><div class="para" id="th_finite_ext-2-1-2-2-1">
+<span class="process-math">\(K/F\)</span> is finitely generated and algebraic.</div></li>
+<li id="th_finite_ext-2-1-2-3"><div class="para" id="th_finite_ext-2-1-2-3-1">
+<span class="process-math">\(K=F(\alpha_1,\alpha_2,\dots, \alpha_m)\text{,}\)</span> where <span class="process-math">\(\alpha_i\in K\)</span> is algebraic over <span class="process-math">\(F\text{.}\)</span> In other words, <span class="process-math">\(K\)</span> is generated over <span class="process-math">\(F\)</span> by finitely many algebraic elements.</div></li>
+</ol>
+</div></article><details id="th_finite_ext-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="th_finite_ext-3-1">We prove the “cycle of implications” (1)<span class="process-math">\(\implies\)</span>(2)<span class="process-math">\(\implies\)</span>(3)<span class="process-math">\(\implies\)</span> (1)</div> <article class="case" id="th_finite_ext-3-2"><h4 class="heading">Implication: (1)<span class="process-math">\(\implies\)</span>(2).</h4> <div class="para logical" id="th_finite_ext-3-2-2">
+<div class="para">Assume <span class="process-math">\(K/F\)</span> is finite, of dimension <span class="process-math">\(n\text{.}\)</span>
+</div>
+<ul class="disc">
+<li id="th_finite_ext-3-2-2-3-1"><div class="para" id="th_finite_ext-3-2-2-3-1-1">By <a href="" class="xref" data-knowl="./knowl/xref/th_finite_implies_algebraic.html" title="Theorem 1.6.5: Finite implies algebraic">Theorem 1.6.5</a>, since <span class="process-math">\(K/F\)</span> is finite, it is algebraic.</div></li>
+<li id="th_finite_ext-3-2-2-3-2"><div class="para logical" id="th_finite_ext-3-2-2-3-2-1">
+<div class="para">We claim <span class="process-math">\(K/F\)</span> is finitely generated. Let <span class="process-math">\(B=\{\alpha_1,\alpha_2,\dots, \alpha_n\}\)</span> be a basis of <span class="process-math">\(K\)</span> as an <span class="process-math">\(F\)</span>-vector space. Since <span class="process-math">\(\Span_F B=K\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+K=\{c_1\alpha_1+c_2\alpha_2+\cdots +c_n\alpha_n\colon c_i\in F\}\text{.}
+\end{equation*}
+</div>
+<div class="para">It follows that <span class="process-math">\(K=F(\alpha_1,\alpha_2,\dots, \alpha_n)\text{,}\)</span> and hence is finitely generated (by the elements <span class="process-math">\(\alpha_i\)</span>). Indeed, since <span class="process-math">\(F(\alpha_1,\alpha_2,\dots, \alpha_n)\)</span> is a subfield of <span class="process-math">\(K\)</span> containing <span class="process-math">\(F\)</span> and <span class="process-math">\(\alpha_i\)</span> for all <span class="process-math">\(1\leq i\leq n\text{,}\)</span> it must contain all <span class="process-math">\(F\)</span>-linear combinations of the <span class="process-math">\(\alpha_i\text{.}\)</span> But then we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+K=\{c_1\alpha_1+c_2\alpha_2+\cdots +c_n\alpha_n\colon c_i\in F\}\leq F(\alpha_1,\alpha_2,\dots, \alpha_n)\leq K\text{,}
+\end{equation*}
+</div>
+<div class="para">and conclude that <span class="process-math">\(K=F(\alpha_1,\alpha_2,\dots, \alpha_n)\text{.}\)</span>
+</div>
+</div></li>
+</ul>
+</div></article> <article class="case" id="th_finite_ext-3-3"><h4 class="heading">Implication: (2)<span class="process-math">\(\implies\)</span>(3).</h4> <div class="para" id="th_finite_ext-3-3-2">Assume <span class="process-math">\(K/F\)</span> is finitely generated and algebraic. Since <span class="process-math">\(K/F\)</span> is finitely generated, there are elements <span class="process-math">\(\alpha_1,\alpha_2,\dots, \alpha_m\)</span> such that <span class="process-math">\(K=F(\alpha_1,\alpha_2,\dots, \alpha_m)\text{.}\)</span> Since <span class="process-math">\(K/F\)</span> is algebraic, each element <span class="process-math">\(\alpha_i\)</span> is algebraic over <span class="process-math">\(F\text{.}\)</span> Thus <span class="process-math">\(K=F(\alpha_1,\alpha_2,\dots, \alpha_m)\text{,}\)</span> and each <span class="process-math">\(\alpha_i\)</span> is algebraic over <span class="process-math">\(F\text{,}\)</span> as desired.</div></article> <article class="case" id="th_finite_ext-3-4"><h4 class="heading">Implication: (3)<span class="process-math">\(\implies\)</span>(1).</h4> <div class="para" id="th_finite_ext-3-4-2">We will show that any field extension generated by finitely many algebraic elements is finite. The proof will proceed by induction on the number <span class="process-math">\(m\)</span> of generators of the field.</div> <div class="para" id="th_finite_ext-3-4-3">Base step: <span class="process-math">\(m=1\text{.}\)</span> Assume <span class="process-math">\(K=F(\alpha)\text{,}\)</span> where <span class="process-math">\(\alpha\)</span> is algebraic over <span class="process-math">\(F\text{.}\)</span> By <a href="" class="xref" data-knowl="./knowl/xref/th_simple_ext.html" title="Theorem 1.4.14: Simple extensions">Theorem 1.4.14</a>, we have <span class="process-math">\(\dim_F K&lt; \infty\text{.}\)</span> Thus <span class="process-math">\(K/F\)</span> is finite.</div> <div class="para logical" id="th_finite_ext-3-4-4">
+<div class="para">Induction step: assume <em class="emphasis">any</em> field extension generated over the base field by <span class="process-math">\(m\)</span> algebraic elements is a finite extension. Now suppose we have <span class="process-math">\(K=F(\alpha_1,\alpha_2,\dots, \alpha_{m+1})\text{,}\)</span> where each <span class="process-math">\(\alpha_i\)</span> is algebraic over <span class="process-math">\(F\text{.}\)</span> If <span class="process-math">\(\alpha_i\in F\)</span> for all <span class="process-math">\(i\text{,}\)</span> then <span class="process-math">\(F=K\text{,}\)</span> in which case <span class="process-math">\(K\)</span> is finite over <span class="process-math">\(F\text{.}\)</span> Otherwise, we may assume without loss of generality that <span class="process-math">\(\alpha_1\in K-F\text{.}\)</span> Since <span class="process-math">\(\alpha_1\)</span> is algebraic over <span class="process-math">\(F\text{,}\)</span> the extension <span class="process-math">\(F(\alpha_1)/F\)</span> is finite by the base step. Let <span class="process-math">\(K'=F(\alpha_1)\text{.}\)</span> We have a tower of fields <span class="process-math">\(K/K'/F\text{,}\)</span> and thus by the <a href="" class="xref" data-knowl="./knowl/xref/th_degree_towers.html" title="Theorem 1.6.1: Tower law">tower law</a>, the extension <span class="process-math">\(K/F\)</span> is finite if and only if <span class="process-math">\(K/K'\)</span> is finite and <span class="process-math">\(K'/F\)</span> is finite. We know already that <span class="process-math">\(K'=F(\alpha_1)\)</span> is finite over <span class="process-math">\(F\text{.}\)</span> As for the extension <span class="process-math">\(K/K'\)</span> it is easy to see that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_degree_towers.html ./knowl/xref/th_degree_towers.html">
+\begin{equation*}
+K=F(\alpha_1,\alpha_2,\dots, \alpha_{m+1})=F(\alpha_1)(\alpha_2,\dots, \alpha_{m+1})=K'(\alpha_2,\dots, \alpha_{m+1})\text{.}
+\end{equation*}
+</div>
+<div class="para">Furthermore, since each <span class="process-math">\(\alpha_i\)</span> is satisfies a nonzero polynomial <span class="process-math">\(f_i(x)\in F[x]\subseteq K'[x]\text{,}\)</span> we see that each <span class="process-math">\(\alpha_i\)</span> is algebraic over <span class="process-math">\(K'\text{.}\)</span> Thus the extension <span class="process-math">\(K/K'\)</span> is generated over <span class="process-math">\(K'\)</span> by the <span class="process-math">\(m\)</span> algebraic elements <span class="process-math">\(\alpha_2,\dots, \alpha_{m+1}\text{.}\)</span> By induction <span class="process-math">\(K/K'\)</span> is finite. The <a href="" class="xref" data-knowl="./knowl/xref/th_degree_towers.html" title="Theorem 1.6.1: Tower law">tower law</a> now implies that <span class="process-math">\(K/F\)</span> is finite.</div>
+</div></article></article></details><article class="remark remark-like" id="s_alg_finite_ext-16"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.6.10</span><span class="period">.</span><span class="space"> </span><span class="title">Finite extension theorem.</span>
+</h3> <div class="para logical" id="s_alg_finite_ext-16-2">
+<div class="para">As we saw in the proof of <a href="" class="xref" data-knowl="./knowl/xref/th_finite_ext.html" title="Theorem 1.6.9: Finite extension theorem">Theorem 1.6.9</a>, given a field extension <span class="process-math">\(K/F\)</span> the following implications hold:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_finite_ext.html ./knowl/xref/th_finite_ext.html" id="s_alg_finite_ext-16-2-3">
+\begin{align*}
+K/F \text{ finite} \amp\implies K/F \text{ finitely generated} \\
+K/F \text{ finite} \amp\implies K/F \text{ algebraic} \text{.}
+\end{align*}
+</div>
+<div class="para">On the other hand, neither of these implications goes the other way. That is, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_finite_ext.html ./knowl/xref/th_finite_ext.html" id="s_alg_finite_ext-16-2-4">
+\begin{align*}
+K/F \text{ finite } \hspace{5pt} \amp\not\!\!\!\!\!\!\impliedby K/F \text{ finitely generated} \\
+K/F \text{ finite } \hspace{5pt} \amp\not\!\!\!\!\!\!\impliedby K/F \text{ algebraic} \text{.}
+\end{align*}
+</div>
+<div class="para">In other words, taken singly, neither of these two properties (finitely generated, algebraic) is strong enough to imply the property of being finite. <a href="" class="xref" data-knowl="./knowl/xref/th_finite_ext.html" title="Theorem 1.6.9: Finite extension theorem">Theorem 1.6.9</a> tells us that the two properties taken together are in fact equivalent to being finite: i.e.,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_finite_ext.html ./knowl/xref/th_finite_ext.html">
+\begin{equation*}
+K/F \text{ finite } \iff K/F \text{ finitely generated and algebraic}\text{.}
+\end{equation*}
+</div>
+</div></article><div class="para" id="s_alg_finite_ext-17">
+<a href="" class="xref" data-knowl="./knowl/xref/th_finite_ext.html" title="Theorem 1.6.9: Finite extension theorem">Theorem 1.6.9</a> can be used to prove important facts about general algebraic extensions, finitely generated or not. We record a few of these now as corollaries.</div>
+<article class="corollary theorem-like" id="cor_algebraic_algebraic_generated"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.6.11</span><span class="period">.</span><span class="space"> </span><span class="title">Algebraically generated is algebraic.</span>
+</h3>
+<div class="para logical" id="cor_algebraic_algebraic_generated-2-1">
+<div class="para">Let <span class="process-math">\(K/F\)</span> be a field extension. The following statements are equivalent.</div>
+<ol class="decimal">
+<li id="cor_algebraic_algebraic_generated-2-1-2-1"><div class="para" id="cor_algebraic_algebraic_generated-2-1-2-1-1">
+<span class="process-math">\(K/F\)</span> is algebraic.</div></li>
+<li id="cor_algebraic_algebraic_generated-2-1-2-2"><div class="para" id="cor_algebraic_algebraic_generated-2-1-2-2-1">
+<span class="process-math">\(K=F(A)\text{,}\)</span> where <span class="process-math">\(A\)</span> is a (possibly infinite) set of algebraic elements.</div></li>
+</ol>
+<div class="para">In plain English: the field <span class="process-math">\(K\)</span> is algebraic over <span class="process-math">\(F\)</span> if and only if <span class="process-math">\(K\)</span> is algebraically generated over <span class="process-math">\(F\text{.}\)</span>
+</div>
+</div></article><details id="cor_algebraic_algebraic_generated-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="cor_algebraic_algebraic_generated-3-1">The implication (1)<span class="process-math">\(\implies\)</span>(2) is clear, since if <span class="process-math">\(K/F\)</span> is algebraic, then we have <span class="process-math">\(K=F(K)\)</span> and all elements of <span class="process-math">\(K\)</span> are algebraic over <span class="process-math">\(F\text{.}\)</span>
+</div> <div class="para logical" id="cor_algebraic_algebraic_generated-3-2">
+<div class="para">We now prove the implication (2)<span class="process-math">\(\implies\)</span> (1). Assume <span class="process-math">\(K=F(A)\text{,}\)</span> where <span class="process-math">\(A\)</span> is a set of algebraic elements of <span class="process-math">\(K\text{.}\)</span> Since by <a href="" class="xref" data-knowl="./knowl/xref/th_fin_gen.html" title="Theorem 1.6.8: Finitely generated extensions">Theorem 1.6.8</a> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_fin_gen.html ./knowl/xref/th_finite_ext.html">
+\begin{equation*}
+K=\bigcup_{\substack{A'\subseteq A\\ A' \text{ finite}}}F(A')\text{,}
+\end{equation*}
+</div>
+<div class="para">given any <span class="process-math">\(\beta\in K\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_fin_gen.html ./knowl/xref/th_finite_ext.html">
+\begin{equation*}
+\beta\in F(A')=F(\alpha_1,\alpha_2,\dots, \alpha_m)
+\end{equation*}
+</div>
+<div class="para">for some <span class="process-math">\(A'=\{\alpha_1,\alpha_2,\dots, \alpha_m\}\subseteq A\text{.}\)</span> Since each <span class="process-math">\(\alpha_i\)</span> is algebraic, <span class="process-math">\(F(A')\)</span> is finite over <span class="process-math">\(F\text{,}\)</span> hence algebraic over <span class="process-math">\(F\)</span> by <a href="" class="xref" data-knowl="./knowl/xref/th_finite_ext.html" title="Theorem 1.6.9: Finite extension theorem">Theorem 1.6.9</a>. We conclude that <span class="process-math">\(\beta\)</span> is algebraic over <span class="process-math">\(F\text{,}\)</span> as desired.</div>
+</div></article></details><article class="example example-like" id="s_alg_finite_ext-19"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.12</span><span class="period">.</span><span class="space"> </span><span class="title">Algebraically generated.</span>
+</h3>
+<div class="para" id="s_alg_finite_ext-19-2-1">Let <span class="process-math">\(K=\Q(\sqrt{2},\sqrt[3]{2},\sqrt[4]{2},\dots)\text{.}\)</span> Show that the extension <span class="process-math">\(K/\Q\)</span> is (a) infinite, (b) algebraic, and (c) not finitely generated.</div></article><article class="corollary theorem-like" id="cor_alg_transitive"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.6.13</span><span class="period">.</span><span class="space"> </span><span class="title">Algebraic towers.</span>
+</h3>
+<div class="para logical" id="cor_alg_transitive-2-1">
+<div class="para">Given a tower of fields <span class="process-math">\(L/K/F\text{,}\)</span> we have <span class="process-math">\(L/F\)</span> algebraic if and only if <span class="process-math">\(L/K\)</span> is algebraic and <span class="process-math">\(K/F\)</span> is algebraic. Using logical shorthand:</div>
+<div class="displaymath process-math" id="eq_alg_transitive">
+\begin{equation}
+L/F \text{ algebraic} \iff L/K \text{ algebraic and  } K/F \text{ algebraic}\text{.}\tag{1.8}
+\end{equation}
+</div>
+</div></article><details id="cor_alg_transitive-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="cor_alg_transitive-3-1">Homework exercise.</div></article></details><article class="corollary theorem-like" id="cor_finite_ext"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.6.14</span><span class="period">.</span><span class="space"> </span><span class="title">Relative algebraic closure.</span>
+</h3>
+<div class="para logical" id="cor_finite_ext-2-1">
+<div class="para">Let <span class="process-math">\(K/F\)</span> be a field extension.</div>
+<ol class="decimal">
+<li id="cor_finite_ext-2-1-2-1"><div class="para" id="cor_finite_ext-2-1-2-1-1">If <span class="process-math">\(\alpha, \beta\in K\)</span> are algebraic over <span class="process-math">\(F\text{,}\)</span> then so are <span class="process-math">\(-\alpha\text{,}\)</span> <span class="process-math">\(\alpha+\beta\text{,}\)</span> and <span class="process-math">\(\alpha\beta\text{.}\)</span> If <span class="process-math">\(\alpha\)</span> is nonzero and algebraic, then so is its inverse <span class="process-math">\(\alpha^{-1}\text{.}\)</span>
+</div></li>
+<li id="cor_finite_ext-2-1-2-2"><div class="para logical" id="cor_finite_ext-2-1-2-2-1">
+<div class="para">Let</div>
+<div class="displaymath process-math" id="eq_rel_alg_closure">
+\begin{equation}
+\overline{F}_K=\{\alpha\in K\colon \alpha \text{ is algebraic over } F\}\text{.}\tag{1.9}
+\end{equation}
+</div>
+<ol class="lower-alpha">
+<li id="cor_finite_ext-2-1-2-2-1-2-1"><div class="para" id="cor_finite_ext-2-1-2-2-1-2-1-1">
+<span class="process-math">\(\overline{F}_K/F\)</span> is an algebraic subextension of <span class="process-math">\(K/F\text{.}\)</span>
+</div></li>
+<li id="cor_finite_ext-2-1-2-2-1-2-2"><div class="para" id="cor_finite_ext-2-1-2-2-1-2-2-1">
+<span class="process-math">\(\overline{F}_K/F\)</span> is the unique maximal algebraic subextension of <span class="process-math">\(K/F\)</span> in the following sense: if <span class="process-math">\(K'/F\)</span> is an algebraic subextension of <span class="process-math">\(K/F\text{,}\)</span> then <span class="process-math">\(K'\leq \overline{F}_K\text{.}\)</span>
+</div></li>
+</ol>
+</div></li>
+</ol>
+</div></article><details id="cor_finite_ext-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="cor_finite_ext-3-1"><ol class="decimal">
+<li id="cor_finite_ext-3-1-1-1"><div class="para" id="cor_finite_ext-3-1-1-1-1">Fix any algebraic elements <span class="process-math">\(\alpha, \beta\in K\text{.}\)</span> That the other elements listed in this statement (<span class="process-math">\(-\alpha\text{,}\)</span> <span class="process-math">\(\alpha+\beta\text{,}\)</span> etc.) are algebraic follows from the fact that <span class="process-math">\(F(\alpha,\beta)\)</span> is algebraic (<a href="" class="xref" data-knowl="./knowl/xref/th_finite_ext.html" title="Theorem 1.6.9: Finite extension theorem">1.6.9</a>).</div></li>
+<li id="cor_finite_ext-3-1-1-2">
+<div class="para" id="cor_finite_ext-3-1-1-2-1">That <span class="process-math">\(\overline{F}_K\)</span> is a field containing <span class="process-math">\(F\)</span> follows from the fact that all elements of <span class="process-math">\(F\)</span> are algebraic over <span class="process-math">\(F\text{,}\)</span> and that the set of all algebraic elements is closed under addition, multiplication, and inverses (by (1)).</div>
+<div class="para" id="cor_finite_ext-3-1-1-2-2">Clearly, if <span class="process-math">\(K'/F\)</span> is an algebraic extension, then since all elements of <span class="process-math">\(K'\)</span> are algebraic over <span class="process-math">\(F\text{,}\)</span> we have <span class="process-math">\(K'subseteq K\text{.}\)</span>
+</div>
+</li>
+</ol></div></article></details><article class="definition definition-like" id="d_rel_alg_closure"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.6.15</span><span class="period">.</span><span class="space"> </span><span class="title">Relative algebraic closure.</span>
+</h3> <div class="para" id="d_rel_alg_closure-2-1">Let <span class="process-math">\(K/F\)</span> be a field extension. The field <span class="process-math">\(\overline{F}_K\)</span> defined in <a href="" class="xref" data-knowl="./knowl/xref/eq_rel_alg_closure.html" title="Equation 1.9">(1.9)</a> is called the <dfn class="terminology">algebraic closure</dfn> of <span class="process-math">\(F\)</span> in <span class="process-math">\(K\text{.}\)</span> We call this a <dfn class="terminology">relative algebraic closure</dfn> of <span class="process-math">\(F\text{.}\)</span>
+</div></article><article class="remark remark-like" id="s_alg_finite_ext-23"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.6.16</span><span class="period">.</span><span class="space"> </span><span class="title">Relative algebraic closure.</span>
+</h3> <div class="para" id="s_alg_finite_ext-23-2">The field <span class="process-math">\(\overline{F}_K\)</span> is called the <em class="emphasis">relative</em> algebraic closure of <span class="process-math">\(F\text{,}\)</span> since it depends on <span class="process-math">\(K\text{.}\)</span> Later we will define the plain old algebraic closure of <span class="process-math">\(F\text{,}\)</span> denoted <span class="process-math">\(\overline{F}\text{,}\)</span> which (up to isomorphism) depends only on <span class="process-math">\(F\text{.}\)</span>
+</div></article><article class="example example-like" id="s_alg_finite_ext-24"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.17</span><span class="period">.</span><span class="space"> </span><span class="title">Relative algebraic closure.</span>
+</h3> <div class="para logical" id="s_alg_finite_ext-24-2">
+<div class="para">Let’s consider some relative algebraic closures of <span class="process-math">\(\Q\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li id="s_alg_finite_ext-24-2-2-1"><div class="para" id="s_alg_finite_ext-24-2-2-1-1">Let <span class="process-math">\(K=\Q\text{.}\)</span> Clearly the algebraic closure of <span class="process-math">\(\Q\)</span> in <span class="process-math">\(\Q\)</span> is <span class="process-math">\(\Q\text{:}\)</span> that is, <span class="process-math">\(\overline{\Q}_K=\Q\text{.}\)</span>
+</div></li>
+<li id="s_alg_finite_ext-24-2-2-2"><div class="para" id="s_alg_finite_ext-24-2-2-2-1">Let <span class="process-math">\(K=\Q(\pi)\text{.}\)</span> As you will show in homework, every element of <span class="process-math">\(K-\Q\)</span> is transcendental. Thus <span class="process-math">\(\overline{\Q}_K=\Q\)</span> in this case as well.</div></li>
+<li id="s_alg_finite_ext-24-2-2-3"><div class="para logical" id="s_alg_finite_ext-24-2-2-3-1">
+<div class="para">Lastly, consider <span class="process-math">\(\C/\Q\)</span> and the relative algebraic closure <span class="process-math">\(\overline{\Q}_\C\text{.}\)</span> By the fundamental theorem of algebra, given any rational polynomial <span class="process-math">\(f(x)\in \Q[x]\text{,}\)</span> we can factor <span class="process-math">\(f(x)\)</span> over <span class="process-math">\(\C\)</span> as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_trans_uncount.html">
+\begin{equation*}
+f(x)=a(x-\alpha_1)(x-\alpha_2)\cdots (x-\alpha_n), a\in \Q, \alpha_k\in \C\text{.}
+\end{equation*}
+</div>
+<div class="para">For all <span class="process-math">\(1\leq k\leq n\text{,}\)</span> since <span class="process-math">\(\alpha_k\)</span> is a root of <span class="process-math">\(f\text{,}\)</span> it is algebraic, and hence is an element of <span class="process-math">\(\overline{\Q}_\C\text{.}\)</span> It follows that in fact every rational polynomial <span class="process-math">\(f(x)\in \Q[x]\)</span> can be factored into linear terms over the field <span class="process-math">\(\overline{\Q}_\C\text{.}\)</span> The field <span class="process-math">\(\overline{\Q}_\C\)</span> is a good deal more manageable than <span class="process-math">\(\C\)</span> in that it is (a) algebraic over <span class="process-math">\(\Q\text{,}\)</span> and (b) is countable (as opposed to uncountable), as one can show along the lines of <a href="" class="xref" data-knowl="./knowl/xref/eg_trans_uncount.html" title="Example 1.4.13: Uncountably many transcendental numbers">Example 1.4.13</a>.</div>
+</div></li>
+</ol>
+</div></article></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="s_algebraic.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

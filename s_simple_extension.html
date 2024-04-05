@@ -294,7 +294,8 @@ window.MathJax = {
 </ul>
 </li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="s_simple_extension.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Simple extensions</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_algebraic.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Algebraic extensions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_algebraic.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Algebraic extensions: definition</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_alg_finite_ext.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Algebraic extensions: theory</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -447,21 +448,21 @@ b_m\overline{x}^m+b_{m-1}\overline{x}^{m-1}+\cdots +b_1\overline{x}+b_0 \amp\lon
 </div>
 <div class="para">is transcendental over <span class="process-math">\(\Q\text{.}\)</span>
 </div>
-</div></article><article class="example example-like" id="s_simple_extension-14"><h3 class="heading">
+</div></article><article class="example example-like" id="eg_trans_uncount"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.13</span><span class="period">.</span><span class="space"> </span><span class="title">Uncountably many transcendental numbers.</span>
 </h3>
-<div class="para" id="s_simple_extension-14-2-1">Consider the field extension <span class="process-math">\(\C/\Q\text{.}\)</span> We will show that in fact <span class="process-math">\(\C\)</span> contains uncountably many elements that are transcendental over <span class="process-math">\(\Q\text{.}\)</span> (The argument below is originally due to Cantor, Godfather of uncountability arguments.)</div>
-<div class="solutions"><details id="s_simple_extension-14-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para logical" id="s_simple_extension-14-3-1">
+<div class="para" id="eg_trans_uncount-2-1">Consider the field extension <span class="process-math">\(\C/\Q\text{.}\)</span> We will show that in fact <span class="process-math">\(\C\)</span> contains uncountably many elements that are transcendental over <span class="process-math">\(\Q\text{.}\)</span> (The argument below is originally due to Cantor, Godfather of uncountability arguments.)</div>
+<div class="solutions"><details id="eg_trans_uncount-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para logical" id="eg_trans_uncount-3-1">
 <div class="para">Let</div>
-<div class="displaymath process-math" id="s_simple_extension-14-3-1-1">
+<div class="displaymath process-math" id="eg_trans_uncount-3-1-1">
 \begin{align*}
 A\amp = \{\alpha\in \C\colon \alpha \text{ algebraic over } \Q \} \\
 T \amp = \{\alpha\in \C\colon \alpha \text{ transcendental over } \Q \} \text{,}
 \end{align*}
 </div>
 <div class="para">so that <span class="process-math">\(\C\)</span> is the disjoint union of <span class="process-math">\(A\)</span> and <span class="process-math">\(T\text{.}\)</span> We will show that the set <span class="process-math">\(A\)</span> is countable, from whence it follows that <span class="process-math">\(T\)</span> must be uncountable, since <span class="process-math">\(\C=A\cup T\)</span> is uncountable.</div>
-</div> <div class="para logical" id="s_simple_extension-14-3-2">
+</div> <div class="para logical" id="eg_trans_uncount-3-2">
 <div class="para">So why is <span class="process-math">\(A\)</span> countable? Each element of <span class="process-math">\(A\)</span> is the root of a polynomial <span class="process-math">\(f\in \Q[x]\text{.}\)</span> First we show that the set <span class="process-math">\(\Q[x]\)</span> is countable. This is because <span class="process-math">\(\Q[x]=\bigcup_{n=1}^\infty P_n\text{,}\)</span> where <span class="process-math">\(P_n\)</span> is the set of all rational polynomials of degree at most <span class="process-math">\(n\text{.}\)</span> Each set <span class="process-math">\(P_n\)</span> is countable (<span class="process-math">\(P_n\)</span> is in bijection with <span class="process-math">\(\Q^n\text{,}\)</span> which is countable), and thus <span class="process-math">\(\Q[x]\text{,}\)</span> being a countable union of countable sets, is countable. Lastly, we have</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -565,105 +566,7 @@ f(x)/g(x) \amp \mapsto f(\alpha)/g(\alpha)\text{.}
 \end{align*}
 </div>
 <div class="para">Thus <span class="process-math">\(\widetilde{\phi}(F(x))\)</span> is a subfield of <span class="process-math">\(K\)</span> containing <span class="process-math">\(F\)</span> and <span class="process-math">\(\alpha\text{.}\)</span> Since in turn any field containing <span class="process-math">\(F\)</span> and <span class="process-math">\(\alpha\)</span> must also contain all elements of the form <span class="process-math">\(f(\alpha)/g(\alpha)\text{,}\)</span> where <span class="process-math">\(f\)</span> and <span class="process-math">\(g\)</span> are polynomials, we see that <span class="process-math">\(\widetilde{\phi}(F(x))\)</span> in fact the smallest such field: i.e., we have <span class="process-math">\(F(\alpha)=\widetilde{\phi}(F(x))\cong F(x)\text{,}\)</span> as desired.</div>
-</div></article></details></article></details><article class="theorem theorem-like" id="th_min_poly"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.4.15</span><span class="period">.</span><span class="space"> </span><span class="title">Minimal polynomial.</span>
-</h3>
-<div class="para logical" id="th_min_poly-2-1">
-<div class="para">Let <span class="process-math">\(K/F\)</span> be a field extension, let <span class="process-math">\(\alpha\in K\)</span> be algebraic, and let <span class="process-math">\(\phi\colon F[x]\rightarrow K\)</span> be the evaluation at <span class="process-math">\(\alpha\)</span> map. There is a unique polynomial <span class="process-math">\(f(x)=x^n+a_{n-1}x^{n-1}+\cdots +a_1x+a_0\)</span> satisfying the following equivalent conditions.</div>
-<ol class="decimal">
-<li id="th_min_poly-2-1-6-1"><div class="para" id="th_min_poly-2-1-6-1-1">
-<span class="process-math">\(f(x)\)</span> is monic and satisfies <span class="process-math">\(\ker \phi=(f)\text{.}\)</span>
-</div></li>
-<li id="th_min_poly-2-1-6-2"><div class="para" id="th_min_poly-2-1-6-2-1">
-<span class="process-math">\(f(x)\)</span> is a monic polynomial of minimal degree satisfying <span class="process-math">\(f(\alpha)=0\text{.}\)</span>
-</div></li>
-<li id="th_min_poly-2-1-6-3"><div class="para" id="th_min_poly-2-1-6-3-1">
-<span class="process-math">\(f(x)\)</span> is a monic irreducible polynomial satisfying <span class="process-math">\(f(\alpha)=0\text{.}\)</span>
-</div></li>
-</ol>
-</div></article><article class="definition definition-like" id="d_min_poly"><h3 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.4.16</span><span class="period">.</span><span class="space"> </span><span class="title">Minimal polynomial.</span>
-</h3> <div class="para" id="d_min_poly-2-1">Let <span class="process-math">\(K/F\)</span> be a field extension, and let <span class="process-math">\(\alpha\in K\)</span> be algebraic. The unique monic polynomial satisfying the three equivalent conditions of <a href="" class="xref" data-knowl="./knowl/xref/th_min_poly.html" title="Theorem 1.4.15: Minimal polynomial">Theorem 1.4.15</a> is called the <dfn class="terminology">minimal polynomial</dfn> (or <dfn class="terminology">irreducible polynomial</dfn>) of <span class="process-math">\(\alpha\)</span> over <span class="process-math">\(F\text{,}\)</span> and is denoted <span class="process-math">\(m_{\alpha, F}(x)\text{,}\)</span> or just <span class="process-math">\(m_\alpha(x)\)</span> if the base field <span class="process-math">\(F\)</span> is understood.</div> <div class="para" id="d_min_poly-2-2">The <dfn class="terminology">degree</dfn> of the algebraic element <span class="process-math">\(\alpha\)</span> over <span class="process-math">\(F\text{,}\)</span> denoted <span class="process-math">\(\deg_F \alpha\text{,}\)</span> is defined as the degree of the minimal polynomial of <span class="process-math">\(\alpha\text{:}\)</span> i.e., <span class="process-math">\(\deg_F\alpha=\deg m_{\alpha, F}(x)\text{.}\)</span>
-</div></article><article class="corollary theorem-like" id="cor_min_poly"><h3 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.4.17</span><span class="period">.</span><span class="space"> </span><span class="title">Minimal poylnomial.</span>
-</h3>
-<div class="para logical" id="cor_min_poly-2-1">
-<div class="para">Let <span class="process-math">\(K/F\)</span> be a field extension, and let <span class="process-math">\(\alpha\in K\)</span> be an algebraic element with minimal polynomial <span class="process-math">\(m_{\alpha}(x)\text{.}\)</span>
-</div>
-<ol class="decimal">
-<li id="cor_min_poly-2-1-4-1"><div class="para" id="cor_min_poly-2-1-4-1-1">Let <span class="process-math">\(n=\deg m_\alpha(x)\text{.}\)</span> The set <span class="process-math">\(B=\{1,\alpha, \dots, \alpha^{n-1}\}\)</span> is an <span class="process-math">\(F\)</span>-basis of <span class="process-math">\(F(\alpha)\text{,}\)</span> and thus <span class="process-math">\([F(\alpha)\colon F]=n\text{.}\)</span>
-</div></li>
-<li id="cor_min_poly-2-1-4-2"><div class="para" id="cor_min_poly-2-1-4-2-1">Given <span class="process-math">\(f\in F[x]\text{,}\)</span> we have <span class="process-math">\(f(\alpha)=0\)</span> if and only if <span class="process-math">\(m_{\alpha, F}(x)\mid f(x)\text{.}\)</span> In particular, if <span class="process-math">\(f(\alpha)=0\text{,}\)</span> then <span class="process-math">\(m_{\alpha,F}(x)\)</span> is one of the monic irreducible factors of <span class="process-math">\(f(x)\text{.}\)</span>
-</div></li>
-</ol>
-</div></article><details id="cor_min_poly-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="cor_min_poly-3-1"><ol class="decimal">
-<li id="cor_min_poly-3-1-1-1"><div class="para" id="cor_min_poly-3-1-1-1-1">This follows from the fact that <span class="process-math">\(F(\alpha)\cong F[x]/(m_\alpha(x))\text{,}\)</span> according to <a href="" class="xref" data-knowl="./knowl/xref/th_quot_poly.html" title="Theorem 1.4.7: Quotients of polynomial rings">Theorem 1.4.7</a>.</div></li>
-<li id="cor_min_poly-3-1-1-2"><div class="para logical" id="cor_min_poly-3-1-1-2-1">
-<div class="para">Let <span class="process-math">\(\ker \phi\)</span> be the kernel of the evaluation at <span class="process-math">\(\alpha\)</span> map <span class="process-math">\(\phi\colon F[x]\rightarrow K\text{.}\)</span> By <a href="" class="xref" data-knowl="./knowl/xref/th_min_poly.html" title="Theorem 1.4.15: Minimal polynomial">Theorem 1.4.15</a>, we have <span class="process-math">\(\ker\phi=(m_\alpha(x))\text{.}\)</span> We conclude that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_min_poly.html" id="cor_min_poly-3-1-1-2-1-6">
-\begin{align*}
-f(\alpha)=0 \amp \iff f\in \ker\phi\\
-\amp \iff m_{\alpha,F}(x)\mid f\text{,}
-\end{align*}
-</div>
-<div class="para">as desired.</div>
-</div></li>
-</ol></div></article></details><article class="example example-like" id="eg_min_poly_R"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.18</span><span class="period">.</span><span class="space"> </span><span class="title">Minimal polynomials for <span class="process-math">\(\C/\R\)</span>.</span>
-</h3> <div class="para" id="eg_min_poly_R-2">Consider the field extension <span class="process-math">\(\C/\R\)</span> and the element <span class="process-math">\(i\in \C\text{.}\)</span> Since <span class="process-math">\(i\)</span> is a root of of the polynomial <span class="process-math">\(f(x)=x^2+1\text{,}\)</span> and since this polynomial is irreducible over and monic over <span class="process-math">\(\R\text{,}\)</span> we have <span class="process-math">\(m_{i,\R}(x)=x^2+1\)</span>
-</div> <div class="para logical" id="eg_min_poly_R-3">
-<div class="para">More generally, given any <span class="process-math">\(\alpha=a+bi\in \C-\R\text{,}\)</span> since <span class="process-math">\(\alpha\)</span> is the root of</div>
-<div class="displaymath process-math">
-\begin{equation*}
-f(x)=(x-\alpha)(x+\overline{\alpha})=x^2-2a+(a^2+b^2)\in \R[x]\text{,}
-\end{equation*}
-</div>
-<div class="para">and since <span class="process-math">\(\alpha\)</span> is not the root of any linear polynomial (since <span class="process-math">\(\alpha\notin \R\)</span>), we see that</div>
-<div class="displaymath process-math">
-\begin{equation*}
-m_{\alpha,\R}(x)=x^2-2a+(a^2+b^2)\text{.}
-\end{equation*}
-</div>
-</div></article><article class="example example-like" id="eg_min_poly_Q"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.4.19</span><span class="period">.</span><span class="space"> </span><span class="title">Minimal polynomial of root of unity.</span>
-</h3>
-<div class="para logical" id="eg_min_poly_Q-2-1">
-<div class="para">Consider the extension <span class="process-math">\(\C/\Q\text{,}\)</span> and let</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\zeta=e^{2\pi i/8}=e^{\pi i/4}=\cos \pi/4+i\, \sin \pi/4\text{,}
-\end{equation*}
-</div>
-<div class="para">a primitive <span class="process-math">\(8\)</span>-th root of unity.</div>
-<ol class="decimal">
-<li id="eg_min_poly_Q-2-1-4-1"><div class="para" id="eg_min_poly_Q-2-1-4-1-1">Compute <span class="process-math">\(m_{\zeta,\R}(x)\text{.}\)</span>
-</div></li>
-<li id="eg_min_poly_Q-2-1-4-2"><div class="para" id="eg_min_poly_Q-2-1-4-2-1">Compute <span class="process-math">\(m_{\zeta, \Q}(x)\text{.}\)</span>
-</div></li>
-</ol>
-</div>
-<div class="solutions"><details id="eg_min_poly_Q-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="eg_min_poly_Q-3-1"><ol class="decimal">
-<li id="eg_min_poly_Q-3-1-1-1"><div class="para logical" id="eg_min_poly_Q-3-1-1-1-1">
-<div class="para">Following <a href="" class="xref" data-knowl="./knowl/xref/eg_min_poly_R.html" title="Example 1.4.18: Minimal polynomials for \C/\R">Example 1.4.18</a>, we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_min_poly_R.html">
-\begin{equation*}
-m_{\zeta,\R}(x)=x^2-2\cos \pi/4 x+(\cos^2 \pi/4+\sin^2 \pi/4)=x^2-\sqrt{2}x+1\text{.}
-\end{equation*}
-</div>
-</div></li>
-<li id="eg_min_poly_Q-3-1-1-2"><div class="para logical" id="eg_min_poly_Q-3-1-1-2-1">
-<div class="para">Since <span class="process-math">\(\zeta^8=1\text{,}\)</span> we have <span class="process-math">\(f(\zeta)=0\text{,}\)</span> where <span class="process-math">\(f(x)=x^8-1\text{.}\)</span> According to <a href="" class="xref" data-knowl="./knowl/xref/cor_min_poly.html" title="Corollary 1.4.17: Minimal poylnomial">Corollary 1.4.17</a>, the minimal polynomial of <span class="process-math">\(\zeta\)</span> is one of the monic irreducible polynomials appearing in the factorization of <span class="process-math">\(f(x)\)</span> over <span class="process-math">\(\Q\text{.}\)</span> Let’s factor:</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_min_poly.html" id="eg_min_poly_Q-3-1-1-2-1-8">
-\begin{align*}
-x^8-1 \amp = (x^4-1)(x^4+1)\\
-\amp = (x^2-1)(x^2+1)(x^4+1)\\
-\amp = (x-1)(x+1)(x^2+1)(x^4+1)\text{.}
-\end{align*}
-</div>
-<div class="para">It is not difficult to show that <span class="process-math">\(x^4+1\)</span> is irreducible over <span class="process-math">\(\Q\text{.}\)</span> (By Gauss’s lemma we need only show that it is irreducible over <span class="process-math">\(\Z\text{.}\)</span>) Since <span class="process-math">\(\zeta\)</span> is not a root of <span class="process-math">\((x-1)\text{,}\)</span><span class="process-math">\((x+1)\text{,}\)</span> or <span class="process-math">\(x^2+1\)</span> (whose roots are <span class="process-math">\(\pm i\)</span>), we conclude that <span class="process-math">\(m_{\zeta,\Q}(x)=x^4+1\text{.}\)</span>
-</div>
-</div></li>
-</ol></div></div></details></div></article></section></div>
+</div></article></details></article></details></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_degree.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_algebraic.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
