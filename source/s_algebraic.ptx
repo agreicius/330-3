@@ -248,41 +248,15 @@
 		<solution>
 			<p>
 				According to <xref ref="th_simple_ext"/>, we have <m>\dim_F K=[K:F]=n</m> for some finite <m>n</m>.
-				It follows that given any <m>\beta\in K</m>, the set <m>\{\beta^n,\beta^{n-1},\dots, \beta, 1\}</m> is linearly dependent, since it has more than <m>n</m> elements (<xref ref="th_dimension_compendium" text="global"/>,<q>street smarts</q>).
+				Given <m>\beta\in K</m>, consider the set <m>P=\{\beta^n,\beta^{n-1},\dots, \beta, 1\}</m> of the powers of <m>\beta</m>. If we have <m>\beta^j=\beta^k</m> for two powers <m>1\leq i&lt; j\leq n</m>, then we have <m>\beta^{k-j}=1</m>, and <m>\beta</m> satisfies the nonzero polynomial <m>f(x)=x^{k-j}-1</m>, and is thus algebraic. If the powers are all distinct, since then <m>\abs{P}=n+1&gt; n</m>, <m>P</m> is linearly dependent (<xref ref="th_dimension_compendium" text="global"/>,<q>street smarts</q>).
 				Thus there is a nontrivial linear combination
 				<me>
 					a_n\beta^n+a_{n-1}\beta^{n-1}+\cdots +a_1\beta+a_0=0
 				</me>.
-				In other words, we have <m>f(\beta)=0</m>, where <m>f(x)=\anpoly</m>.
-				This proves <m>\beta</m> is algebraic, as desired.
+				In other words, we have <m>f(\beta)=0</m>, where <m>f(x)=\anpoly</m>, and <m>f(x)\ne 0</m>. Thus <m>\beta</m> is algebraic in this case as well. Since <m>\beta</m> was arbitrary, we conclude that <m>K</m> is algebraic over <m>F</m>. 
 			</p>
 		</solution>
 	</example>
-<theorem xml:id="th_finite_implies_algebraic">
-    <title>Finite implies algebraic</title>
-    <statement>
-        <p>
-            Let <m>K/F</m> be a field extension. If <m>K/F</m> is finite, then <m>K/F</m> is algebraic. Using logical shorthand, we have 
-            <men xml:id="eq_finite_algebraic">
-                K/F \text{ finite}\implies K/F \text{ algebraic}
-            </men>.
-        </p>
-    </statement>
-    <proof>
-        <p>
-            The proof is essentially the same argument used in <xref ref="eg_finite_simple_alg"/>. We repeat it nonetheless. 
-        </p>
-        <p>
-            Let <m>\dim_F K=n</m>. Given any <m>\beta\in K</m>,  since <m>\dim_F K=n</m>, the set <m>\{\beta^{n+1},\beta^{n},\dots, \beta, 1\}</m> is linearly independent (<xref ref="th_dimension_compendium" text="custom">street smarts</xref>!). Thus there is a nontrivial linear combination 
-            <me>
-                a_{n+1}\beta^{n+1}+a_{n}\beta^n+\cdots +a_1\beta+a_0=0
-            </me>,
-            where <m>a_i\in F</m> for all <m>0\leq i\leq n+1</m>. It follows that the <m>F</m>-polynomial <m>f(x)=a_{n+1}x^{n+1}+a_nx^n+\cdots +a_1x+a_0</m> is nonzero and satisfies <m>f(\beta=0</m>. Thus <m>\beta</m> is algebraic over <m>F</m>. Since <m>\beta\in K</m> was arbitrary, we see that <m>K</m> is algebraic over <m>F</m>. 
-        </p>
-    </proof>
-</theorem>
-<p>
-    Assume <m>K/F</m> is algebraic. It is not true in general that <m>K/F</m> is finite: that is,  the converse of <xref ref="eq_finite_algebraic"/> is not true. <xref ref="th_finite_ext"/>, which we will prove in the next section, identifies an additional property <m>K/F</m> needs to satisfy in order to be finite: namely, it must be <em>finitely generated</em>.  By the end of that section, we will also be able to provide an example of a field extension that is algebraic but not finite. 
-</p>    
+
 
 </section>
