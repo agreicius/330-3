@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_splitting" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Splitting fields</title>
+    <definition xml:id="d_split_poly">
+        <title>Split completely</title>
+        <statement>
+            <p>
+                Let <m>K/F</m> be a field extension. A polynomial <m>f\in F[x]</m> <term>splits completely</term> over <m>K</m> if <m>f</m> factors over <m>K</m> as
+                <men xml:id="eq_split_completely">
+                    f(x)=c(x-\alpha_1)(x-\alpha_2)\cdots (x-\alpha_n)
+                </men>,
+                for some integer <m>n\geq 0</m>, constant <m>c\in F</m>,  and elements <m>\alpha_i\in K</m>. We say that the field <m>K</m> <term>splits</term> the polynomial <m>f</m> in this case. 
+            </p>
+            <p>
+                More generally, if <m>\mathcal{P}\subseteq F[x]</m> is a set of polynomials, we say that <m>K</m> splits <m>\mathcal{P}</m> if it splits each polynomial <m>f\in \mathcal{P}</m>.
+            </p>
+        </statement>
+    </definition>
+    <remark>
+        <title>Constant polynomials</title>
+        <p>
+            Observe that according to our definition any constant polynomial <m>f(x)=c\in F[x]</m> splits over <m>F</m> itself.  
+        </p>
+    </remark>
+    <example xml:id="eg_split_poly">
+        <title>Split completely</title>
+        <statement>
+            <p>
+                <ol>
+                    <li>
+                        <p>
+                            Show that the polynomial <m>f(x)=x^2-2</m> splits completely over the field <m>K=\Q(\sqrt{2})</m>. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Show that the polynomial <m>f(x)=x^4-1</m> splits completely over <m>\Q(i)</m>.  
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Show that the polynomial <m>f(x)=x^3-2</m> does not split completely over <m>K=\Q(\sqrt[3]{2})</m>. 
+                        </p>
+                    </li>
+                </ol>
+            </p>
+            
+        </statement>
+        <solution>
+            <p>
+                
+            </p>
+        </solution>
+    </example>
+    <definition xml:id="d_splitting_field">
+        <statement>
+            <p>
+                Let <m>F</m> be a field, and let <m>\mathcal{P}\subseteq F[x]</m> be a set of polynomials over <m>F</m>. A field extension <m>K/F</m> is called a <term>splitting field</term> of the collection <m>\mathcal{P}</m> if the following conditions hold. 
+                <ol marker="(i)">
+                    <li>
+                        <title><m>K</m> splits <m>\mathcal{P}</m></title>
+                        <p>
+                            For all <m>f\in \mathcal{P}</m>, <m>f</m> splits completely in <m>K</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <title><m>K</m> minimal</title>
+                        <p>
+                            If <m>K'/F</m> is a subextension of <m>K/F</m> such that <m>f</m> splits completely in <m>K'</m> for all <m>f\in \mathcal{P}</m>, then <m>K'=K</m>. In other words, there is no proper subextension of <m>K;</m> that splits <m>\mathcal{P}</m>. 
+                        </p>
+                    </li>
+                </ol>
+                When <m>\mathcal{P}=\{f_1,f_2,\dots, f_n\}</m> is finite, or is described as an indexed set <m>\mathcal{P}=\{f_i\colon i\in I\}</m>, we will call a splitting field of <m>\mathcal{P}</m> a splitting field of the <m>f_i</m>. 
+            </p>
+        </statement>
+    </definition>
+    <example xml:base="eg_splitting_fields">
+        <title>Splitting fields</title>
+        <statement>
+            <p>
+                <ol>
+                    <li>
+                        <p>
+                            Show that <m>\Q(\sqrt{2})</m> is a splitting field of <m>f(x)=x^2-2</m>. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Show that <m>\Q(i)</m> is a splitting field of <m>x^4-1</m>. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Show that <m>\Q(\sqrt[3]{2}, \zeta)</m> is a splitting field of <m>f(x)=x^3-2</m>, where <m>\zeta=e^{2\pi i/3}</m>, a primitive cube-root of unity. 
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+    </example>
+        <p>
+            Bit by bit we will be able to prove that (a) given any field <m>F</m> and collection of polynomials <m>\mathcal{P}\subseteq F[x]</m>, there is indeed a splitting field of <m>\mathcal{P}</m>, and furthermore (b) this splitting field is basically unique up to isomorphism. 
+        </p>
+        <theorem xml:id="th_split_to_splitting_field">
+            <title>Splitting field generated by roots</title>
+            <statement>
+                <p>
+                    Let <m>F</m> be a field, let <m>\mathcal{P}\subseteq F[x]</m> a set of polynomials, and suppose <m>K/F</m> is a field extension that splits <m>\mathcal{P}</m>. Define 
+                    <me>
+                        A=\{\alpha\in K\colon f(\alpha)=0 \text{ for some } f\in \mathcal{P}\}
+                    </me>:
+                    <ie/>, <m>A</m> is the set of all the roots of all the polynomials in <m>\mathcal{P}</m>. The field <m>F(A)</m> generated over <m>F</m> by all the roots of the polynomials in <m>\mathcal{P}</m> is a splitting field of <m>\mathcal{P}</m>. 
+                </p>
+            </statement>
+            <proof>
+                <p>
+                    It is clear that <m>F(A)</m> splits <m>\mathcal{P}</m>, since <m>A</m> contains all the roots of all the polynomials of <m>\mathcal{P}</m>. We must show that <m>F(A)/F</m> contains no proper subextension <m>K'/F</m> that splits <m>\mathcal{P}</m>. This is clear: if <m>K'/F</m> is a subextension of <m>F(A)/F</m>that splits <m>\mathcal{P}</m>, then <m>K'</m> must contain all roots of all polynomials of <m>\mathcal{P}</m>; that is, <m>K'</m> must contain <m>A</m>. Since by definition <m>F(A)</m> is the smallest extension of <m>K/F</m> containing <m>F</m> and <m>A</m>, we have <m>F(A)\leq K'</m>. Since <m>K'\leq F(A)</m>, we conclude <m>K'=F(A)</m>. 
+                </p>
+            </proof>
+        </theorem>
+        <corollary xml:id="cor_splitting_algebraic">
+            <title>Splitting fields are algebraic</title>
+            <statement>
+                <p>
+                    Let <m>F</m> be a field, let <m>\mathcal{P}\subseteq F[x]</m> be a set of polynomials. If <m>K/F</m> is a splitting field of <m>\mathcal{P}</m>, then <m>K/F</m> is algebraic. 
+                </p>
+            </statement>
+            <proof>
+                <p>
+                    Clearly <m>K</m> splits <m>\mathcal{P}</m>. By <xref ref="th_split_to_splitting_field"/>, we have <m>K=F(A)</m>, where <m>A</m> is the set of all roots of all polynomials of <m>\mathcal{P}</m>. Since each element of <m>A</m> is algebraic over <m>F</m>, we see by <xref ref="cor_algebraic_algebraic_generated"/>, that <m>K=F(A)</m> is algebraic over <m>F</m>. 
+                </p>
+            </proof>
+        </corollary>
+        <theorem xml:id="th_splitting_poly">
+            <title>Splitting field of polynomial</title>
+            <statement>
+                <p>
+                    Let <m>F</m> be a field. Any nonzero polynomial <m>f\in F[x]</m> of degree <m>n</m> has a splitting field <m>K/F</m> satisfying <m>[K\colon F]\leq n!</m>. 
+                </p>
+            </statement>
+            <proof>
+                <p>
+                    We proceed by induction on <m>n=\deg f</m>. 
+                </p>
+                <p>
+                    Base step: <m>n=0</m>. In this case <m>f(x)=c\ne 0</m> splits over <m>F</m>, in which case the splitting field of <m>f</m> is <m>K=F</m>, which satisfies <m>[F\colon F]=1=0!</m>. 
+                </p>
+                <p>
+                    Induction step: fix <m>n\geq 1</m>, and assume the result holds for any field and any polynomial <m>g</m> over that field of degree <m>n-1</m>. Suppose <m>f\in F[x]</m> satisfies <m>\deg f=n</m>. Let <m>p(x)</m> be any irreducible factor of <m>f</m> over <m>F</m>. By <xref ref="cor_quot_poly"/> the quotient <m>F[x]/(p(x))</m> is a field extension of <m>F</m>, satisfies <m>F[x]/(p(x))=F(\alpha_1)</m>, where <m>\alpha_1=\overline{x}</m> is a root of <m>p(x)</m>, and has degree <m>[F(\alpha_1)\colon F]=\deg p\leq n</m>. Since <m>\alpha_1</m> is a root of  <m>p(x)</m>, it is also a root of <m>f(x)</m>, and we have <m>f(x)=(x-\alpha_1)g(x)</m> for some nonzero polynomial <m>g(x)\in F(\alpha)[x]</m>, satisfying <m>\deg g=\deg f-1=n-1</m>. By induction there is a splitting field <m>L/F(\alpha_1)</m> of <m>g(x)</m> satisfying <m>[L\colon F(\alpha_1)]\leq (n-1)!</m>. Since <m>L</m> splits <m>g(x)</m> and contains the root <m>\alpha</m>, we have 
+                    <me>
+                        f(x)=c(x-\alpha_1)(x-\alpha_2)\cdots (x-\alpha_n)
+                    </me>
+                    for some <m>c\in F</m> and elements <m>\alpha_2,\dots, \alpha_n\in L</m>. By <xref ref="th_split_to_splitting_field"/>, the subextension <m>K=F(\alpha_1,\alpha_2,\dots, \alpha_n)</m> is a splitting field of <m>f</m> over <m>F</m> and satisfies 
+                    <me>
+                        [K\colon F]\leq [L\colon F]=[L\colon F(\alpha_1)][F(\alpha_1)\colon F]\leq (n-1)!n=n!
+                    </me>.
+                    
+                </p>
+            </proof>
+        </theorem>
+        
+       
+        <corollary xml:id="cor_splitting_finite">
+            <title>Splitting field of finite set</title>
+            <statement>
+                <p>
+                    Let <m>F</m> be a field, and let <m>\mathcal{P}=\{f_1, f_2,\dots, f_n\}</m> be a finite set of nonzero polynomials. A splitting field of <m>\mathcal{P}</m> exists. 
+                </p>
+            </statement>
+            <proof>
+                <p>
+                    By <xref ref="th_splitting_poly"/>, the nonzero polynomial 
+                    <me>
+                        f=f_1f_2\cdots f_n\in F[x]
+                    </me>
+                    has a splitting field <m>K/F</m>. It is clear that <m>K</m> is also a splitting field of <m>\{f_1,f_2,\dots, f_n\}</m>. 
+                    
+                </p>
+            </proof>
+        </corollary>
+</section>
