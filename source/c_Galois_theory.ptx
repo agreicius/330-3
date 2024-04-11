@@ -8,5 +8,7 @@
   <xi:include  href="s_algebraic.ptx"/>
   <xi:include  href="s_algebraic_finite.ptx"/>
   <xi:include  href="s_splitting.ptx"/>
+  <xi:include  href="s_algebraic_closure.ptx"/>
+
 
 </chapter>
