@@ -432,7 +432,7 @@
             </proof>
     </corollary>
 
-    <corollary xml:id="cor_finite_ext">
+    <corollary xml:id="cor_rel_alg_closure">
         <title>Relative algebraic closure</title>
         <statement>
             <p>

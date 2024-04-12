@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="Untitled-1" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Algebraic closure</title>
+    <p>
+        An <em>algebraic closure</em> of a field is in a sense an absolute version of the notion of <xref ref="d_rel_alg_closure" text="custom">relative algebraic closure</xref> introduced in <xref ref="s_algebraic"/>. 
+    </p>
+    <definition xml:id="d_algebraically_closed">
+        <title>Algebraically closed</title>
+        <statement>
+            <p>
+                A field <m>F</m> is <term>algebraically closed</term> if all polynomials <m>f\in F[x]</m> split completely over <m>F</m>. 
+            </p>
+        </statement>
+    </definition>
+    <remark xml:id="rm_alg_closed">
+        <title>Algebraically closed</title>
+        
+        <p>
+            It is easy to see that a field <m>F</m> is algebraically closed if and only if all nonconstant polynomials <m>f\in F[x]</m> have a root in <m>F</m>. 
+        </p>
+    </remark>
+    <definition xml:id="d_algebraic_closure">
+        <statement>
+            <p>
+                An <term>algebraic closure</term> of a field <m>F</m> is an extension <m>K/F</m> satisfying the following properties. 
+                <ol marker="(i)">
+                    <li>
+                        <p>
+                            <m>K</m> is algebraically closed. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>K/F</m> is algebraic. 
+                        </p>
+                    </li>
+                </ol> 
+            </p>
+        </statement>
+    </definition>
+    <p>
+       The next result articulates the relationship between algebraically closed fields, relative algebraic closure, and algebraic closure.  
+    </p>
+    <theorem xml:id="th_alg_closed_closure">
+        <title>Algebraically closed and algebraic closure</title>
+        <statement>
+            <p>
+                Let <m>K/F</m> be a field extension and assume <m>K</m> is algebraically closed. The relative algebraic closure <m>\overline{F}_K</m> of <m>F</m> in <m>K</m> is an algebraic closure of <m>F</m>. 
+            </p>
+        </statement>
+        <proof>
+            <p>
+                We know from <xref ref="cor_rel_alg_closure"/> that <m>\overline{F}_K</m> is algebraic over <m>F</m>; we must prove it is algebraically closed. 
+            </p>
+            <p>
+                Let <m>f(x)\in \overline{F}_K[x]</m> be a nonconstant polynomial. Since <m>K</m> is algebraically closed and <m>f(x)\in \overline{F}_K[x]\subseteq K[x]</m>, there is an element <m>\alpha\in K</m> such that <m>f(\alpha)=0</m>: <ie/>, <m>f</m> has a root in <m>K</m>. Since <m>f(\alpha)=0</m>, we see that <m>\alpha</m> is algebraic over <m>\overline{F}_K</m>; it follows from <xref ref="cor_algebraic_algebraic_generated"/> that <m>\overline{F}_K(\alpha)</m> is algebraic over <m>\overline{F}_K</m>. Since <m>\overline{F}_K</m> is algebraic over <m>F</m>, it follows from <xref ref="cor_alg_transitive"/> that <m>\overline{F}_K(\alpha)</m> is algebraic over <m>F</m>. Thus <m>\alpha</m> is algebraic over <m>F</m>, in which case <m>\alpha\in \overline{F}_K</m> by definition. 
+            </p>
+            <p>
+                We have shown that any nonconstant polynomial <m>f\in \overline{F}_K[x]</m> has a root in <m>\overline{F}_K</m>. We conclude (using <xref ref="rm_alg_closed"/>) that <m>\overline{F}_K</m> is algebraically closed, as desired. 
+            </p>
+        </proof>
+    </theorem>
+    <corollary xml:id="cor_alg_closed_closure">
+        <title>Algebraically closed and algebraic closure</title>
+        <statement>
+            <p>
+            Let <m>K/F</m> be a field extension. The following statements are equivalent. 
+            <ol>
+                <li>
+                    <p>
+                        <m>K</m> is an algebraic closure of <m>F</m>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>K</m> is the splitting field of <m>\mathcal{P}=F[x]</m>: <ie/>, <m>K</m> is the splitting field of the set of all polynomials over <m>F</m>. 
+                    </p>
+                </li>
+            </ol>        
+            </p>
+        </statement>
+        <proof>
+            <case>
+            <title>(1)<m>\implies</m>(2)</title>
+            <p>
+                Assume <m>K</m> is an algebraic closure of <m>F</m>. Since all polynomials over <m>K</m> split over <m>K</m>, <m>K</m> is algebraically closed. 
+            </p>
+            </case>
+            
+        </proof>
+    </corollary>
+    
+
+</section>
