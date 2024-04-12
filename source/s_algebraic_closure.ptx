@@ -39,6 +39,50 @@
             </p>
         </statement>
     </definition>
+    <example>
+        <statement>
+            <p>
+                <ol>
+                    <li>
+                        <p>
+                            Show that <m>\C</m> is an algebraic closure of <m>\R</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Show that <m>\C</m> is not an algebraic closure of <m>\Q</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Find an algebraic closure of <m>\Q</m> lying within <m>\C</m>. 
+                        </p>
+                    </li>
+                </ol>  
+            </p>
+        </statement>
+        <proof>
+            <p>
+                <ol>
+                    <li>
+                        <p>
+                            We know from the fundamental theorem of algebra that <m>\C</m> is algebraically closed. Since <m>\C=\R[i]</m> and <m>i</m> is algebraic over <m>\R</m>, the extension <m>\C/\R</m> is algebraic. Thus <m>\C</m> is an algebraic closure of <m>\R</m>. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Since <m>\C</m> is not algebraic over <m>\Q</m> (<m>\pi\in \C</m> is transcendental over <m>\Q</m>), it is not an algebraic closure. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The relative closure <m>\overline{\Q}_\C</m> is an algebraic closure of <m>\Q</m>. See proof of <xref ref="th_alg_closed_closure"/> for details. 
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </proof>
+    </example>
     <p>
        The next result articulates the relationship between algebraically closed fields, relative algebraic closure, and algebraic closure.  
     </p>
@@ -69,27 +113,64 @@
             <ol>
                 <li>
                     <p>
-                        <m>K</m> is an algebraic closure of <m>F</m>
+                        <m>K/F</m> is an algebraic closure of <m>F</m>
                     </p>
                 </li>
                 <li>
                     <p>
-                        <m>K</m> is the splitting field of <m>\mathcal{P}=F[x]</m>: <ie/>, <m>K</m> is the splitting field of the set of all polynomials over <m>F</m>. 
+                        <m>K/F</m> is the splitting field of the set <m>\mathcal{P}=F[x]</m> of all polynomials over <m>F</m>. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>K/F</m> is algebraic and splits the set <m>\mathcal{P}=F[x]</m> of all polynomials over <m>F</m>. 
                     </p>
                 </li>
             </ol>        
             </p>
         </statement>
         <proof>
-            <case>
-            <title>(1)<m>\implies</m>(2)</title>
             <p>
-                Assume <m>K</m> is an algebraic closure of <m>F</m>. Since all polynomials over <m>K</m> split over <m>K</m>, <m>K</m> is algebraically closed. 
+                Homework exercise.
             </p>
-            </case>
-            
         </proof>
     </corollary>
+    <theorem xml:id="th_alg_closure_exists">
+        <title>Algebraic closure exists</title>
+        <statement>
+            <p>
+                Given any field <m>F</m>, there is an algebraic closure <m>K/F</m>. 
+            </p>
+        </statement>
+        <proof>
+            <p>
+                Fix a field <m>F</m>. Our proof will make use of the polynomial ring
+                <me>
+                    R=F[\{ t_{f,j}\}]
+                </me>
+                 in infinitely many variables <m>t_{f,j}</m>, where <m>f\in F[x]</m> is a nonconstant polynomial, and <m>1\leq j\leq \deg f</m>. In other words, for each pair <m>(f,j)</m>, where <m>f</m> is a nonconstant polynomial, and <m>j</m> is a positive integer bounded by <m>\deg f</m>, there is a unique variable <m>t_{f,j}</m>. Without getting too technical, the polynomial ring <m>F[\{t_{f,j\}]</m> is defined as all <em>finite</em> polynomial combinations of the infinite variable set <m>\{t_{f,j}\colon f\in F[x]-F, 1\leq j\leq \deg f\}</m>. 
+            </p>
+        </proof>
+    </theorem>
+    <corollary xml:id="cor_alg_closure_exists">
+        <title>Splitting field of arbitrary set</title>
+        <statement>
+            <p>
+                Let <m>F</m> be a field. Given any set <m>\mathcal{P}\subseteq F[x]</m>, there is a splitting field <m>K/F</m> of <m>\mathcal{P}</m>. 
+            </p>
+        </statement>
+    </corollary>
+    <convention>
+        <title>Algebraic closure</title>
+        <notation>
+            <usage><m>\overline{F}</m></usage>
+          <description>Algebraic closure of <m>F</m></description>
+        </notation>
+    <p>
+        As we will see later, an algebraic closure of <m>F</m> is unique <em>up to isomorphism</em>. As such, we will often take liberties and speak of <q>the</q> algebraic closure of <m>F</m>, and will denote this as <m>\overline{F}</m>. 
+    </p>
+        
+    </convention>
     
 
 </section>
