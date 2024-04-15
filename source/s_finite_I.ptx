@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_finite_I" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Finite fields: existence and uniqueness</title>
+    <p>
+        As yet we have only seen two concrete examples of algebraic closure: the extensions <m>\C/\R</m> and <m>\overline{\Q}_\C/\Q</m>. The first example is about as simple as we could hope for: since <m>[\C\colon \R]=2</m>, elements of <m>\C</m> are easily described (<m>\alpha=r+si</m>, <m>r,s\in \R</m>), and furthermore there are no nontrivial subextensions of <m>\C/\R</m>. Contrast this with the situation for <m>\Q</m> and its algebraic closure <m>\overline{\Q}=\overline{\Q}_\C</m>. We have <m>[\overline{\Q}\colon \Q]=\infty</m>, there is no standard way of writing an arbitrary element of <m>\overline{Q}</m>, and there are infinitely many nontrivial subextensions. Indeed, there are even infinitely many subextensions of degree two!  
+    </p>
+    <p>
+        In this and the next section we will investigate what the algebraic closure <m>\overline{\F_p}/\F_p</m> of the finite field <m>\F_p</m> looks like. Despite this algebraic closure being an infinite one, you will see that we can describe the subextensions of <m>\overline{\F_p}/\F_p</m> and their interdependence more or less explicitly. As such the example of an algebraic closure <m>\overline{\F_p}/\F_p</m> occupies a nice middle position between our previous two examples. 
+    </p>
+    <p>
+        For this and the next section <m>p</m> will always denote a prime integer. 
+    </p>
+
+    <theorem xml:id="th_finite_fields">
+        <title>Finite fields</title>
+        <statement>
+            <p>
+                Let <m>\Fpbar/\F_p</m> be an algebraic closure and let <m>n</m> be a positive integer. 
+                <ol>
+                    <li>
+                        <p>
+                            There is a unique subextension <m>K/\F_p</m> of <m>\Fpbar/\F_p</m> of degree <m>n</m>.  
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            We have <m>\abs{K}=p^n</m>. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Let <m>f(x)=x^{p^n}-x</m>. We have 
+                            <men xml:id="eq_finite_explicit">
+                                K=\{\alpha\in \Fpbar\colon f(\alpha)=0\}=\{\alpha\in \Fpbar\colon \alpha^{p^n}=\alpha\}
+                            </men>.
+                            It follows that <m>K</m> is a splitting field of <m>f(x)</m>.    
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+    </theorem>
+    <p>
+        The essential tool in the proof of <xref ref="th_finite_fields"/> is the <em>Frobenius endomorphism</em>, which we now investigate.  
+    </p>
+    <definition xml:id="d_Frobenius">
+        <title>Frobenius endomorphism</title>
+        <statement>
+            <p>
+                Let <m>R</m> be a commutative ring of characteristic <m>p</m>. The <term>Frobenius endomorphism</term> of <m>R</m> is the map 
+                <md>
+                    <mrow>\phi\colon R \amp \rightarrow R</mrow>
+                    <mrow>r \amp \mapsto r^p</mrow>
+                </md>.
+            </p>
+        </statement>
+    </definition>
+    <theorem xml:id="th_Frob">
+        <title>Frobenius endomorphism</title>
+        <statement>
+            <p>
+                Let <m>R</m> be a ring of characteristic <m>p</m>, and let <m>\phi\colon R\rightarrow R</m> be the Frobenius endomorphism. 
+                <ol>
+                    <li>
+                        <p>
+                            <m>\phi</m> is a ring homomorphism. In particular, we have 
+                            <me>
+                                (r+s)^p=r^p+s^p
+                            </me>
+                            for all <m>r,s\in R</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            For all positive integers <m>n</m> the map
+                            <me>
+                                \phi^n=\underset{n \text{ times}}{\underbrace{\phi\circ\phi\circ\cdots \circ\phi}}
+                            </me>
+                            is a ring homomorphism and satisfies 
+                            <me>
+                                \phi^n(r)=r^{p^n}
+                            </me>.
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+        <proof>
+            <p>
+                Statement (2) follows easily from (1) and the fact that a composition of ring homomorphisms is a ring homomorphism. We now show that <m>\phi</m> is a ring homomorphism. First observe that 
+                <md>
+                    <mrow>\phi(1)\amp =1^p=1 \amp \phi(rs)=(rs)^p=r^ps^p </mrow>
+                </md>.
+                Furthermore, we have 
+                <md>
+                    <mrow>\phi(-r) \amp =\phi((-1)r)</mrow>
+                    <mrow> \amp = (-1)^pr^p</mrow>
+                    <mrow> \amp =(-1)r^p \amp (p=2\implies -1=1)</mrow>
+                    <mrow> \amp = -r^p</mrow>
+                    <mrow> \amp = -\phi(r)</mrow>
+                </md>.
+                It remains only to show <m>\phi(r+s)=\phi(r)+\phi(s)</m>. We have 
+                <md>
+                    <mrow>\phi(r+s) \amp = (r+s)^p</mrow>
+                    <mrow> \amp = \sum_{k=0}^p {p \choose k}r^{p-k}s^{k} \amp (\text{gen. binomial thm.})</mrow>
+                    <mrow> \amp = r^p+s^p \amp \left(k\ne 0,p \implies p\mid {p\choose k}\right)</mrow>
+                    <mrow> \amp = \phi(r)+\phi(s)</mrow>
+                </md>. 
+            </p>
+        </proof>
+    </theorem>
+    <remark>
+        <title>First-year exponentiation/first-year's dream</title>
+        <p>
+            The bogus claim that <m>(r+s)^2=r^2+s^2</m> or <m>(r+s)^3=r^3+s^3</m> for real numbers <m>r,s\in \R</m>, is often called <q>first-year exponentiation</q>, since this is a common mistake in introductory mathematics classes. Accordingly, when working in a ring <m>R</m> of characteristic <m>p</m>, the amazing fact that   
+            <men xml:id="eq_freshmens">
+                (r+s)^p=r^p+s^p
+            </men>
+            for all <m>r,s\in R</m> is sometimes referred to as <q>the first-year's dream</q>.
+            
+        </p>
+    </remark>
+    <p>
+        We are now ready to prove <xref ref="th_finite_fields"/>. 
+    </p>
+    <proof xml:base="proof_finite_fields">
+        <title>Proof of <xref ref="th_finite_fields"/></title>
+        <p>
+            Fix positive integer <m>n</m>. Suppose <m>K/\F_p</m> is a field extension of degree <m>n</m>. Since <m>\dim_{\F_p} K=n</m>, we have <m>K\cong \F_p^n</m> and thus <m>\abs{K}=p^n</m>. 
+        </p>
+    </proof>
+    
+
+</section>

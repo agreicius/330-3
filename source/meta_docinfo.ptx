@@ -23,6 +23,11 @@
       \newcommand{\F}{{\mathbb F}}
       \newcommand{\PP}{{\mathbb P}}
       \newcommand{\HH}{{\mathbb H}}
+      \newcommand{\Fpbar}{\overline{\F_p}}
+      \newcommand{\Qbar}{\overline{\Q}}
+      \newcommand{\Fbar}{\overline{F}}
+      \newcommand{\Kbar}{\overline{K}}
+      \newcommand{\Lbar}{\overline{L}}
       \newcommand{\compose}{\circ}
       \newcommand{\bolda}{{\mathbf a}}
       \newcommand{\boldb}{{\mathbf b}}
