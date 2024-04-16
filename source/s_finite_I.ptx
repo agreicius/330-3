@@ -6,7 +6,7 @@
         As yet we have only seen two concrete examples of algebraic closure: the extensions <m>\C/\R</m> and <m>\overline{\Q}_\C/\Q</m>. The first example is about as simple as we could hope for: since <m>[\C\colon \R]=2</m>, elements of <m>\C</m> are easily described (<m>\alpha=r+si</m>, <m>r,s\in \R</m>), and furthermore there are no nontrivial subextensions of <m>\C/\R</m>. Contrast this with the situation for <m>\Q</m> and its algebraic closure <m>\overline{\Q}=\overline{\Q}_\C</m>. We have <m>[\overline{\Q}\colon \Q]=\infty</m>, there is no standard way of writing an arbitrary element of <m>\overline{Q}</m>, and there are infinitely many nontrivial subextensions. Indeed, there are even infinitely many subextensions of degree two!  
     </p>
     <p>
-        In this and the next section we will investigate what the algebraic closure <m>\overline{\F_p}/\F_p</m> of the finite field <m>\F_p</m> looks like. Despite this algebraic closure being an infinite one, you will see that we can describe the subextensions of <m>\overline{\F_p}/\F_p</m> and their interdependence more or less explicitly. As such the example of an algebraic closure <m>\overline{\F_p}/\F_p</m> occupies a nice middle position between our previous two examples. 
+        In this and the next section we will investigate what the algebraic closure <m>\overline{\F_p}/\F_p</m> of the finite field <m>\F_p</m> looks like. Despite this algebraic closure being an infinite one, you will see that we can describe the subextensions of <m>\overline{\F_p}/\F_p</m> and their interdependence more or less explicitly. As such the example of an algebraic closure <m>\overline{\F_p}/\F_p</m> occupies a nice middle ground between our previous two examples. 
     </p>
     <p>
         For this and the next section <m>p</m> will always denote a prime integer. 
@@ -115,9 +115,9 @@
         <p>
             The bogus claim that <m>(r+s)^2=r^2+s^2</m> or <m>(r+s)^3=r^3+s^3</m> for real numbers <m>r,s\in \R</m>, is often called <q>first-year exponentiation</q>, since this is a common mistake in introductory mathematics classes. Accordingly, when working in a ring <m>R</m> of characteristic <m>p</m>, the amazing fact that   
             <men xml:id="eq_freshmens">
-                (r+s)^p=r^p+s^p
+                (r+s)^{p^n}=r^{p^n}+s^{p^n}
             </men>
-            for all <m>r,s\in R</m> is sometimes referred to as <q>the first-year's dream</q>.
+            for all <m>r,s\in R</m> and all positive integers <m>n</m> is sometimes referred to as <q>the first-year's dream</q>.
             
         </p>
     </remark>
@@ -127,9 +127,71 @@
     <proof xml:base="proof_finite_fields">
         <title>Proof of <xref ref="th_finite_fields"/></title>
         <p>
-            Fix positive integer <m>n</m>. Suppose <m>K/\F_p</m> is a field extension of degree <m>n</m>. Since <m>\dim_{\F_p} K=n</m>, we have <m>K\cong \F_p^n</m> and thus <m>\abs{K}=p^n</m>. 
+            Fix positive integer <m>n</m>. Suppose <m>K/\F_p</m> is a field extension of degree <m>n</m>. Since <m>\dim_{\F_p} K=n</m>, we have <m>K\cong \F_p^n</m> and thus <m>\abs{K}=p^n</m>. Next, since <m>K^*</m> is a group of order <m>p^n-1</m>, we have <m>\alpha^{p^n-1}=1</m> for all <m>\alpha\in K-\{0\}</m>, which implies <m>\alpha^{p^n}-\alpha=0</m> for <em>all</em> elements <m>\alpha\in K</m> (including <m>0</m>). Since <m>K</m> has <m>p^n</m> elements, and since <m>f(x)=x^{p^n}-x</m> has at most <m>p^n</m> distinct roots, we see that we must have 
+            <men xml:id="eq_def_K">
+                K=\{\alpha\in\Fpbar\colon \alpha^{p^n}=\alpha\}
+            </men>.
+            In particular <m>K</m> splits <m>f(x)</m> and is minimal in this regard (by a counting argument). Thus <m>K</m> is a a splitting field of <m>f</m>.  
+        </p>
+        <p>
+            So far, we have shown that there can be <em>at most</em> one subfield <m>K</m> of <m>\Fpbar</m> of degree <m>n</m>, that it is a splitting field of <m>f(x)=x^{p^n}-x</m>, and that it has the explicit description <xref ref="eq_def_K"/>. 
+            Thus it remains to show that (a) the set <m>K</m> described by <xref ref="eq_def_K"/> is indeed a subfield of <m>\Fpbar</m>, and (b) that <m>\abs{K}=p^n</m>. 
+        </p>
+        <p>
+            It follows easily from the definition <xref ref="eq_def_K"/> that <m>K</m> contains <m>0</m> and <m>1</m>, and is closed under multiplication and inverses. It suffices then to show that <m>K</m> is closed under addition. To this end, given <m>\alpha,\beta\in K</m>, we have 
+            <md>
+                <mrow>(\alpha+\beta)^{p^r} \amp = \alpha^{p^r}+\beta^{p^r} \amp (\text{first-year's dream}) </mrow>
+                <mrow> \amp =\alpha+\beta \amp (\alpha, \beta\in K)</mrow>
+            </md>.
+            This completes the proof that <m>K=\{\alpha\in\Fpbar\colon \alpha^{p^n}=\alpha\}</m> is a field. 
+        </p>
+        <p>
+            Since <m>K</m> is by definition the set of all roots of <m>f(x)=x^{p^n}-x</m> in <m>\Fpbar</m>, it remains only to show that these roots are <em>distinct</em>. 
         </p>
     </proof>
+    <p>
+        We end this portion of our investigation of <m>\Fpbar/\F_p</m> with the claim that for all positive integers <m>n</m>, the unique subfield <m>K</m> of cardinality <m>n</m> is in fact a <em>simple extension</em> of <m>\F_p</m>. To prove this claim, we need the following cute application of the structure theorem of finitely generated abelian groups. 
+    </p>
+    <theorem xml:id="th_field_units_cylic">
+        <title>Finite subgroups of <m>K^*</m> are cyclic</title>
+        <statement>
+            <p>
+                Let <m>K</m> be a field. Any finite subgroup of <m>K^*</m>, the group of units, is cyclic. 
+            </p>
+        </statement>
+        <proof>
+            <p>
+                Homework exercise. 
+            </p>
+        </proof>
+    </theorem>
+    <theorem xml:id="th_finite_cyclic">
+        <title>Finite fields are simple</title>
+        <statement>
+            <p>
+                Let <m>\Fpbar/\F_p</m> be an algebraic closure. If <m>K/\F_p</m> is a finite subextension <m>\Fpbar</m>, then <m>K=\F_p(\alpha)</m> for some <m>\alpha\in \Fpbar</m>. 
+            </p>
+        </statement>
+    </theorem>
+    <corollary xml:id="cor_finite_irr">
+        <title>Existence of irreducibles</title>
+        <statement>
+            <p>
+               For all positive integers <m>n</m>, there is an irreducible polynomial of <m>\F_p[x]</m> of degree <m>n</m>.  
+            </p>
+        </statement>
+    </corollary>
+    <corollary xml:id="cor_finite_cylcic">
+        <title>Uniqueness of finite fields</title>
+           <statement>
+            <p>
+             Fix a positive integer <m>n</m>. Any two fields of cardinality <m>p^n</m> are isomorphic. In particular, given any two irreducible polynomials <m>f,g\in \F_p[x]</m> of degree <m>n</m>, we have 
+             <me>
+                \F_p[x]/(f)\cong \F_p[x]/(g)
+             </me>.
+            </p>
+        </statement>
+    </corollary>
     
 
 </section>
