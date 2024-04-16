@@ -146,7 +146,18 @@
             This completes the proof that <m>K=\{\alpha\in\Fpbar\colon \alpha^{p^n}=\alpha\}</m> is a field. 
         </p>
         <p>
-            Since <m>K</m> is by definition the set of all roots of <m>f(x)=x^{p^n}-x</m> in <m>\Fpbar</m>, it remains only to show that these roots are <em>distinct</em>. 
+            Since <m>K</m> is by definition the set of all roots of <m>f(x)=x^{p^n}-x</m> in <m>\Fpbar</m>, it remains only to show that these roots are <em>distinct</em>: <ie/>, <m>f</m> has no repeated roots. Such polynomials are called <em>separable</em>, and we will have a lot more to say about this property in coming lectures, including some useful tools for proving that a polynomial is separable. We forego these tools for now and instead rely on some algebraic trickery.  
+        </p>
+        <p>
+            Let <m>\alpha\in K</m> be a root of <m>f(x)</m>. Since <m>\alpha^{p^n}=\alpha</m>, we have 
+            <md>
+                <mrow>f(x) \amp = x^{p^n}-x-(\alpha^{p^n}-\alpha)</mrow>
+                <mrow> \amp = x^{p^n}-\alpha^{p^n}-(x-\alpha)</mrow>
+                <mrow> \amp = (x-\alpha)^{p^n}-(x-\alpha) \amp (\text{first-year's dream!})</mrow>
+                <mrow> \amp = (x-\alpha)((x-\alpha)^{p^{n}-1}-1)</mrow>
+                <mrow> \amp =(x-\alpha)g(x)</mrow>
+            </md>,
+            where <m>g(x)=(x-\alpha)^{p^{n}-1}-1</m>. Since <m>g(\alpha)=-1\ne 0</m>, we see that <m>\alpha</m> is not a root of <m>g(x)</m>. Since <m>f(x)=(x-\alpha)g(x)</m>, and <m>\alpha</m> is not a root of <m>g(x)</m>, we see that <m>\alpha</m> is not a repeated root of <m>f</m>, as desired. 
         </p>
     </proof>
     <p>
@@ -169,9 +180,14 @@
         <title>Finite fields are simple</title>
         <statement>
             <p>
-                Let <m>\Fpbar/\F_p</m> be an algebraic closure. If <m>K/\F_p</m> is a finite subextension <m>\Fpbar</m>, then <m>K=\F_p(\alpha)</m> for some <m>\alpha\in \Fpbar</m>. 
+                If <m>K/\F_p</m> is a finite extension, then <m>K=\F_p(\alpha)</m> for some <m>\alpha\in \Fpbar</m>. 
             </p>
         </statement>
+        <proof>
+            <p>
+                Since <m>K^*</m> is cyclic, we have <m>K^*=\langle \alpha\rangle=\{1, \alpha, \alpha^2,\dots\}</m> for some <m>\alpha\in K</m>. It follows easily that <m>K=F(\alpha)</m>. 
+            </p>
+        </proof>
     </theorem>
     <corollary xml:id="cor_finite_irr">
         <title>Existence of irreducibles</title>
@@ -180,6 +196,11 @@
                For all positive integers <m>n</m>, there is an irreducible polynomial of <m>\F_p[x]</m> of degree <m>n</m>.  
             </p>
         </statement>
+        <proof>
+            <p>
+                Fix a positive integer <m>n</m>. By <xref ref="th_finite_fields"/> there is an extension <m>K/\F_p</m> of degree <m>n</m>. By <xref ref="cor_finite_cylcic"/>, we have <m>K=\F_p(\alpha)</m> for some <m>\alpha</m>. By <xref ref="th_simple_ext"/> we have <m>K\cong \F_p[x]/(f(x))</m> for some irreducible polynomial of degree <m>n</m>. In particular, there is at least one irreducible polynomial of degree <m>n</m>.  
+            </p>
+        </proof>
     </corollary>
     <corollary xml:id="cor_finite_cylcic">
         <title>Uniqueness of finite fields</title>
@@ -191,6 +212,16 @@
              </me>.
             </p>
         </statement>
+        <proof>
+            <p>
+                Fix a positive integer <m>n</m>. Let <m>\Fpbar/\F_p</m> and let <m>K/\F_p</m> be the unique subextension of <m>\Fpbar/\F_p</m> of cardinality <m>p^n</m>. Given any other field <m>K'</m> of cardinality <m>p^n</m>, we must have <m>\character K'=p</m>, and hence <m>\F_p\leq K'</m> is a finite extension. By <xref ref="cor_finite_cylcic"/>, <m>K'=\F_p(\alpha)</m> for some <m>\alpha\in K'</m>, and thus <m>K'\cong \F_p[x]/(f)</m> for some irreducible polynomial <m>f\in \F_p[x]</m> of degree <m>n</m>. Let <m>\alpha\in \Fpbar</m> be a root of <m>f</m>, and let  
+                <md>
+                    <mrow>\phi\colon \F_p[x]/(f(x)) \amp \Fpbar </mrow>
+                    <mrow> \overline{h}(x)\amp\mapsto h(\alpha) </mrow>
+                </md>. 
+                By <xref ref="th_quot_poly"/>, <m>\phi</m> is a ring homomorphism. It follows that <m>K'\cong\phi(K')\leq \Fpbar</m>, Since <m>\abs{\phi(K')}=p^n</m>, we must have <m>\phi(K')=K</m>, by the uniqueness claim in <xref ref="th_finite_fields"/>. This proves that any field of cardinality <m>p^n</m> is isomorphic to the unique subfield of <m>\Fpbar/\F_p</m> of cardinality <m>p^n</m>; we conclude by transitivity that any two such fields are isomorphic. 
+            </p>
+        </proof>
     </corollary>
     
 
