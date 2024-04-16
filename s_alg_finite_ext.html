@@ -114,6 +114,11 @@ window.MathJax = {
   \newcommand{\F}{{\mathbb F}}
   \newcommand{\PP}{{\mathbb P}}
   \newcommand{\HH}{{\mathbb H}}
+  \newcommand{\Fpbar}{\overline{\F_p}}
+  \newcommand{\Qbar}{\overline{\Q}}
+  \newcommand{\Fbar}{\overline{F}}
+  \newcommand{\Kbar}{\overline{K}}
+  \newcommand{\Lbar}{\overline{L}}
   \newcommand{\compose}{\circ}
   \newcommand{\bolda}{{\mathbf a}}
   \newcommand{\boldb}{{\mathbf b}}
@@ -297,6 +302,8 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_algebraic.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Algebraic extensions: definition</span></a></div></li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="s_alg_finite_ext.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Algebraic extensions: theory</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_splitting.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Splitting fields</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Untitled-1.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Algebraic closure</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_finite_I.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Finite fields: existence and uniqueness</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -611,15 +618,15 @@ K=\bigcup_{\substack{A'\subseteq A\\ A' \text{ finite}}}F(A')\text{,}
 L/F \text{ algebraic} \iff L/K \text{ algebraic and  } K/F \text{ algebraic}\text{.}\tag{1.8}
 \end{equation}
 </div>
-</div></article><details id="cor_alg_transitive-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="cor_alg_transitive-3-1">Homework exercise.</div></article></details><article class="corollary theorem-like" id="cor_finite_ext"><h3 class="heading">
+</div></article><details id="cor_alg_transitive-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="cor_alg_transitive-3-1">Homework exercise.</div></article></details><article class="corollary theorem-like" id="cor_rel_alg_closure"><h3 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.6.14</span><span class="period">.</span><span class="space"> </span><span class="title">Relative algebraic closure.</span>
 </h3>
-<div class="para logical" id="cor_finite_ext-2-1">
+<div class="para logical" id="cor_rel_alg_closure-2-1">
 <div class="para">Let <span class="process-math">\(K/F\)</span> be a field extension.</div>
 <ol class="decimal">
-<li id="cor_finite_ext-2-1-2-1"><div class="para" id="cor_finite_ext-2-1-2-1-1">If <span class="process-math">\(\alpha, \beta\in K\)</span> are algebraic over <span class="process-math">\(F\text{,}\)</span> then so are <span class="process-math">\(-\alpha\text{,}\)</span> <span class="process-math">\(\alpha+\beta\text{,}\)</span> and <span class="process-math">\(\alpha\beta\text{.}\)</span> If <span class="process-math">\(\alpha\)</span> is nonzero and algebraic, then so is its inverse <span class="process-math">\(\alpha^{-1}\text{.}\)</span>
+<li id="cor_rel_alg_closure-2-1-2-1"><div class="para" id="cor_rel_alg_closure-2-1-2-1-1">If <span class="process-math">\(\alpha, \beta\in K\)</span> are algebraic over <span class="process-math">\(F\text{,}\)</span> then so are <span class="process-math">\(-\alpha\text{,}\)</span> <span class="process-math">\(\alpha+\beta\text{,}\)</span> and <span class="process-math">\(\alpha\beta\text{.}\)</span> If <span class="process-math">\(\alpha\)</span> is nonzero and algebraic, then so is its inverse <span class="process-math">\(\alpha^{-1}\text{.}\)</span>
 </div></li>
-<li id="cor_finite_ext-2-1-2-2"><div class="para logical" id="cor_finite_ext-2-1-2-2-1">
+<li id="cor_rel_alg_closure-2-1-2-2"><div class="para logical" id="cor_rel_alg_closure-2-1-2-2-1">
 <div class="para">Let</div>
 <div class="displaymath process-math" id="eq_rel_alg_closure">
 \begin{equation}
@@ -627,20 +634,20 @@ L/F \text{ algebraic} \iff L/K \text{ algebraic and  } K/F \text{ algebraic}\tex
 \end{equation}
 </div>
 <ol class="lower-alpha">
-<li id="cor_finite_ext-2-1-2-2-1-2-1"><div class="para" id="cor_finite_ext-2-1-2-2-1-2-1-1">
+<li id="cor_rel_alg_closure-2-1-2-2-1-2-1"><div class="para" id="cor_rel_alg_closure-2-1-2-2-1-2-1-1">
 <span class="process-math">\(\overline{F}_K/F\)</span> is an algebraic subextension of <span class="process-math">\(K/F\text{.}\)</span>
 </div></li>
-<li id="cor_finite_ext-2-1-2-2-1-2-2"><div class="para" id="cor_finite_ext-2-1-2-2-1-2-2-1">
+<li id="cor_rel_alg_closure-2-1-2-2-1-2-2"><div class="para" id="cor_rel_alg_closure-2-1-2-2-1-2-2-1">
 <span class="process-math">\(\overline{F}_K/F\)</span> is the unique maximal algebraic subextension of <span class="process-math">\(K/F\)</span> in the following sense: if <span class="process-math">\(K'/F\)</span> is an algebraic subextension of <span class="process-math">\(K/F\text{,}\)</span> then <span class="process-math">\(K'\leq \overline{F}_K\text{.}\)</span>
 </div></li>
 </ol>
 </div></li>
 </ol>
-</div></article><details id="cor_finite_ext-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="cor_finite_ext-3-1"><ol class="decimal">
-<li id="cor_finite_ext-3-1-1-1"><div class="para" id="cor_finite_ext-3-1-1-1-1">Fix any algebraic elements <span class="process-math">\(\alpha, \beta\in K\text{.}\)</span> That the other elements listed in this statement (<span class="process-math">\(-\alpha\text{,}\)</span> <span class="process-math">\(\alpha+\beta\text{,}\)</span> etc.) are algebraic follows from the fact that <span class="process-math">\(F(\alpha,\beta)\)</span> is algebraic (<a href="s_alg_finite_ext.html#th_finite_ext" class="xref" data-knowl="./knowl/xref/th_finite_ext.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.6.9: Finite extension theorem">1.6.9</a>).</div></li>
-<li id="cor_finite_ext-3-1-1-2">
-<div class="para" id="cor_finite_ext-3-1-1-2-1">That <span class="process-math">\(\overline{F}_K\)</span> is a field containing <span class="process-math">\(F\)</span> follows from the fact that all elements of <span class="process-math">\(F\)</span> are algebraic over <span class="process-math">\(F\text{,}\)</span> and that the set of all algebraic elements is closed under addition, multiplication, and inverses (by (1)).</div>
-<div class="para" id="cor_finite_ext-3-1-1-2-2">Clearly, if <span class="process-math">\(K'/F\)</span> is an algebraic extension, then since all elements of <span class="process-math">\(K'\)</span> are algebraic over <span class="process-math">\(F\text{,}\)</span> we have <span class="process-math">\(K'subseteq K\text{.}\)</span>
+</div></article><details id="cor_rel_alg_closure-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="cor_rel_alg_closure-3-1"><ol class="decimal">
+<li id="cor_rel_alg_closure-3-1-1-1"><div class="para" id="cor_rel_alg_closure-3-1-1-1-1">Fix any algebraic elements <span class="process-math">\(\alpha, \beta\in K\text{.}\)</span> That the other elements listed in this statement (<span class="process-math">\(-\alpha\text{,}\)</span> <span class="process-math">\(\alpha+\beta\text{,}\)</span> etc.) are algebraic follows from the fact that <span class="process-math">\(F(\alpha,\beta)\)</span> is algebraic (<a href="s_alg_finite_ext.html#th_finite_ext" class="xref" data-knowl="./knowl/xref/th_finite_ext.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.6.9: Finite extension theorem">1.6.9</a>).</div></li>
+<li id="cor_rel_alg_closure-3-1-1-2">
+<div class="para" id="cor_rel_alg_closure-3-1-1-2-1">That <span class="process-math">\(\overline{F}_K\)</span> is a field containing <span class="process-math">\(F\)</span> follows from the fact that all elements of <span class="process-math">\(F\)</span> are algebraic over <span class="process-math">\(F\text{,}\)</span> and that the set of all algebraic elements is closed under addition, multiplication, and inverses (by (1)).</div>
+<div class="para" id="cor_rel_alg_closure-3-1-1-2-2">Clearly, if <span class="process-math">\(K'/F\)</span> is an algebraic extension, then since all elements of <span class="process-math">\(K'\)</span> are algebraic over <span class="process-math">\(F\text{,}\)</span> we have <span class="process-math">\(K'subseteq K\text{.}\)</span>
 </div>
 </li>
 </ol></div></article></details><article class="definition definition-like" id="d_rel_alg_closure"><h3 class="heading">
