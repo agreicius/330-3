@@ -198,11 +198,11 @@
         </statement>
         <proof>
             <p>
-                Fix a positive integer <m>n</m>. By <xref ref="th_finite_fields"/> there is an extension <m>K/\F_p</m> of degree <m>n</m>. By <xref ref="cor_finite_cylcic"/>, we have <m>K=\F_p(\alpha)</m> for some <m>\alpha</m>. By <xref ref="th_simple_ext"/> we have <m>K\cong \F_p[x]/(f(x))</m> for some irreducible polynomial of degree <m>n</m>. In particular, there is at least one irreducible polynomial of degree <m>n</m>.  
+                Fix a positive integer <m>n</m>. By <xref ref="th_finite_fields"/> there is an extension <m>K/\F_p</m> of degree <m>n</m>. By <xref ref="th_finite_cylcic"/>, we have <m>K=\F_p(\alpha)</m> for some <m>\alpha</m>. By <xref ref="th_simple_ext"/> we have <m>K\cong \F_p[x]/(f(x))</m> for some irreducible polynomial of degree <m>n</m>. In particular, there is at least one irreducible polynomial of degree <m>n</m>.  
             </p>
         </proof>
     </corollary>
-    <corollary xml:id="cor_finite_cylcic">
+    <corollary xml:id="cor_finite_unique">
         <title>Uniqueness of finite fields</title>
            <statement>
             <p>
@@ -223,6 +223,74 @@
             </p>
         </proof>
     </corollary>
+    <convention>
+        <title>Field of cardinality <m>q=p^n</m></title>
+        <notation>
+            <usage><m>\F_q</m></usage>
+          <description>finite field of cardinality <m>q^n</m></description>
+        </notation>
+        <p>
+            Fix a positive integer <m>n</m>, and let <m>q=p^n</m>. By <xref ref="cor_finite_unique"/> up to isomorphism there is exactly one field of cardinality <m>q</m>. We will use the notation <m>\F_q</m> to denote such a field.  
+        </p>
+    </convention>
+    <p>
+        We end our investigation of finite fields with a complete description of the subextension structure of <m>\Fpbar/\F_p</m>.
+    </p>
+    <theorem xml:id="th_finite_field_extension_structure">
+        <title>Subextension structure of <m>\Fpbar</m></title>
+        <statement>
+            <p>
+                Let <m>\Fpbar/\F_p</m> be an algebraic closure. For each positive integer <m>n</m>, we denote by <m>\F_{p^{n}}</m> the unique subfield of <m>\Fpbar</m> of cardinality <m>n</m>. Given positive integers <m>m</m> and <m>n</m>, we have 
+                <m>\F_{p^m}\leq \F_{p^n}</m> if and only if <m>m</m> divides <m>n</m>. Using logical shorthand: 
+                <me>
+                    \F_{p^m}\leq \F_{p^n}\iff m\mid n
+                </me>.
+            </p>
+        </statement>
+        <proof>
+            <p>
+                We prove each implication separately. 
+            </p>
+            <case>
+            <title>Implication:<m>\implies</m></title>
+            <p>
+            Assume <m>\F_{p^m}\leq \F_{p^n}</m>. Applying the tower law to the tower <m>\F_p\leq \F_{p^m}\leq \F_{p^n}</m>, we see that <m>m=[\F_{p^m}\colon \F_p]</m> divides <m>n=[\F_{p^n}\colon \F_p]</m>. 
+            </p>
+            </case>
+            <case>
+            <title>Implication: <m>\impliedby</m></title>
+            <p>
+            If  <m>m\mid n</m>, then <m>n=mr</m> for some integer <m>r\geq 1</m>. We wish to show the implication 
+            <me>
+                \alpha\in \F_{p^m}\implies \alpha\in \F_{p^n}
+            </me>.
+            Recall our explicit descriptions of the two fields as subfields of <m>\Fpbar</m>: 
+            <md>
+                <mrow> \F_{p^m}\amp = \{\alpha\in \Fpbar\colon \alpha^{p^m}=\alpha\} </mrow>
+                <mrow> \F_{p^n}\amp = \{\alpha\in \Fpbar\colon \alpha^{p^n}=\alpha\} </mrow>
+            </md>.
+             Define <m>\phi\colon \Fpbar\rightarrow \Fpbar</m> as <m>\phi(\alpha)=\alpha^{p^{m}}</m>, and let 
+             <me>
+                \phi^r=\underset{r \text{ times}}{\underbrace{\phi\circ\phi\circ\cdots \circ\phi}}
+             </me>.
+             An easy induction argument shows that <m>\phi^r(\alpha)=\alpha^{p^{mr}}</m>. Thus we have  
+            <md>
+                <mrow>\alpha\in \F_{p^m}\amp \implies \alpha^{p^{m}}=\alpha</mrow>
+                <mrow> \amp\implies \phi(\alpha)=\alpha</mrow>
+                <mrow> \amp \implies \phi^r(\alpha)=\alpha</mrow>
+                <mrow> \amp \implies \alpha^{p^{mr}}=\alpha</mrow>
+                <mrow> \amp \implies \alpha^{p^{n}}=\alpha</mrow>
+                <mrow> \amp \implies \alpha\in \F_{p^{n}}</mrow>
+            </md>,
+            as desired. 
+            </p>
+            </case>
+            
+            
+        </proof>
+    </theorem>
+    
+    
     
 
 </section>
