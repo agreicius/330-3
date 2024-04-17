@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="s_finite_I" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Finite fields: existence and uniqueness</title>
+<section xml:id="s_finite" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Finite fields</title>
     <p>
         As yet we have only seen two concrete examples of algebraic closure: the extensions <m>\C/\R</m> and <m>\overline{\Q}_\C/\Q</m>. The first example is about as simple as we could hope for: since <m>[\C\colon \R]=2</m>, elements of <m>\C</m> are easily described (<m>\alpha=r+si</m>, <m>r,s\in \R</m>), and furthermore there are no nontrivial subextensions of <m>\C/\R</m>. Contrast this with the situation for <m>\Q</m> and its algebraic closure <m>\overline{\Q}=\overline{\Q}_\C</m>. We have <m>[\overline{\Q}\colon \Q]=\infty</m>, there is no standard way of writing an arbitrary element of <m>\overline{Q}</m>, and there are infinitely many nontrivial subextensions. Indeed, there are even infinitely many subextensions of degree two!  
     </p>
     <p>
-        In this and the next section we will investigate what the algebraic closure <m>\overline{\F_p}/\F_p</m> of the finite field <m>\F_p</m> looks like. Despite this algebraic closure being an infinite one, you will see that we can describe the subextensions of <m>\overline{\F_p}/\F_p</m> and their interdependence more or less explicitly. As such the example of an algebraic closure <m>\overline{\F_p}/\F_p</m> occupies a nice middle ground between our previous two examples. 
+        In this section we will investigate what the algebraic closure <m>\overline{\F_p}/\F_p</m> of the finite field <m>\F_p</m> looks like. Despite this algebraic closure being an infinite one, you will see that we can describe the subextensions of <m>\overline{\F_p}/\F_p</m> and their interdependence more or less explicitly. As such the example of an algebraic closure <m>\overline{\F_p}/\F_p</m> occupies a nice middle ground between our previous two examples. 
     </p>
     <p>
-        For this and the next section <m>p</m> will always denote a prime integer. 
+        For this section <m>p</m> will always denote a prime integer. 
     </p>
 
     <theorem xml:id="th_finite_fields">
@@ -160,8 +160,21 @@
             where <m>g(x)=(x-\alpha)^{p^{n}-1}-1</m>. Since <m>g(\alpha)=-1\ne 0</m>, we see that <m>\alpha</m> is not a root of <m>g(x)</m>. Since <m>f(x)=(x-\alpha)g(x)</m>, and <m>\alpha</m> is not a root of <m>g(x)</m>, we see that <m>\alpha</m> is not a repeated root of <m>f</m>, as desired. 
         </p>
     </proof>
+    <corollary xml:id="cor_finite_split_irr">
+        <title>Finite fields split minimal polynomials</title>
+        <statement>
+            <p>
+                Let <m>K/\F_p</m> be a finite extension. For all <m>\alpha\in K</m> the minimal polynomial <m>m_{\alpha, \F_p}(x)</m> splits completely over <m>K</m>. 
+            </p>
+        </statement>
+        <proof>
+            <p>
+                Homework exercise.
+            </p>
+        </proof>
+    </corollary>
     <p>
-        We end this portion of our investigation of <m>\Fpbar/\F_p</m> with the claim that for all positive integers <m>n</m>, the unique subfield <m>K</m> of cardinality <m>n</m> is in fact a <em>simple extension</em> of <m>\F_p</m>. To prove this claim, we need the following cute application of the structure theorem of finitely generated abelian groups. 
+        Next we show that for all positive integers <m>n</m>, any field <m>K</m> of cardinality <m>p^n</m> is in fact a <em>simple extension</em> of <m>\F_p</m>. To prove this claim, we need the following cute application of the structure theorem of finitely generated abelian groups. 
     </p>
     <theorem xml:id="th_field_units_cylic">
         <title>Finite subgroups of <m>K^*</m> are cyclic</title>
@@ -289,6 +302,34 @@
             
         </proof>
     </theorem>
+    <p>
+        According to <xref ref="th_finite_field_extension_structure"/> the lattice of subextensions of <m>\Fpbar/\F_p</m> is effectively identical to the lattice of integers partially ordered by divisibility. This is best illustrated by the portion of this lattice exhibited in <xref ref="fig_Fpbar"/>. 
+    </p>
+    <figure xml:id="fig_Fpbar">
+        <caption>Lattice of subfields of <m>\Fpbar</m></caption>
+        <image xml:id="im_Fpbar" width="100%">
+            <shortdescription>Lattice of subfields of Fpbar</shortdescription>
+            <latex-image>
+            \begin{tikzpicture}
+\begin{tikzcd}
+\F_{p^8}	\amp\F_{p^{12}}	\amp\F_{p^{18}} \amp\F_{p^{20}} \amp \F_{p^{27}} \amp\dots \\
+\F_{p^4}\arrow[dash]{u}\arrow[dash]{ur}\arrow[dash]{urrr}	\amp\F_{p^6}	\arrow[dash]{u}\arrow[dash]{ur}\amp\F_{p^9}\arrow[dash]{u} \arrow[dash]{urr}\amp\F_{p^{10}} \arrow[dash]{u}\amp \F_{p^{14}} \amp\F_{p^{15}}\\
+\F_{p^2}\arrow[dash]{u}\arrow[dash]{ur}\arrow[dash]{urrr}	\amp\F_{p^3}	\arrow[dash]{u}\arrow[dash]{ur}\arrow[dash]{urrrr}\amp\F_{p^5}\arrow[dash]{ur}\arrow[dash]{urrr} \amp\F_{p^{7}}\arrow[dash]{ur} \amp\dots\\
+\F_p\arrow[dash,"2"]{u} \arrow[dash,"3"]{ur}\arrow[dash,"5"]{urr}\arrow[dash,"7"']{urrr}
+\end{tikzcd}
+\end{tikzpicture}
+
+                <!-- \begin{tikzpicture}
+                \begin{tikzcd}
+                \amp \amp \amp \F_{p^8} \amp \F_{p^{12}} \amp \dots \\
+                \amp \amp \F_{p^4} \arrow[dash]{ur} \arrow[dash]{urr} \amp\F_{p^6} \arrow[dash]{ur}\amp \F_{p^{9}} \amp \F_{p^{10}} \amp \F_{p^{14}} \amp  \F_{p^{15}}\\
+               \amp \F_{p^2} \arrow[dash]{ur} \arrow[dash]{urr} \arrow[dash]{urrrr} \arrow[dash]{urrrrr} \amp\F_{p^3} \arrow[dash]{ur} \arrow[dash]{urr} \arrow[dash]{urrr} \amp \F_{p^{5}} \arrow[dash]{urr} \arrow[dash]{urrrr} \amp \F_{p^7} \arrow[dash]{urr} \amp\dots \amp \\
+               \F_p\arrow[dash,"2"]{ur} \arrow[dash,"3"]{urr} \arrow[dash,"5",pos=.55]{urrr} \arrow[dash,"7"',pos=.7]{urrrr}  
+               \end{tikzcd}
+                \end{tikzpicture} -->
+            </latex-image>
+        </image>
+    </figure>
     
     
     
