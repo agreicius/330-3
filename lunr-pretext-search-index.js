@@ -1333,18 +1333,18 @@ var ptx_lunr_docs = [
   "body": " Splitting field of arbitrary set   Let be a field. Given any set , there is a splitting field of .    Let be an algebraic closure of . Since splits , tells us that the field is a splitting field of , where .   "
 },
 {
-  "id": "s_finite_I",
+  "id": "s_finite",
   "level": "1",
-  "url": "s_finite_I.html",
+  "url": "s_finite.html",
   "type": "Section",
   "number": "1.9",
-  "title": "Finite fields: existence and uniqueness",
-  "body": " Finite fields: existence and uniqueness  As yet we have only seen two concrete examples of algebraic closure: the extensions and . The first example is about as simple as we could hope for: since , elements of are easily described ( , ), and furthermore there are no nontrivial subextensions of . Contrast this with the situation for and its algebraic closure . We have , there is no standard way of writing an arbitrary element of , and there are infinitely many nontrivial subextensions. Indeed, there are even infinitely many subextensions of degree two!  In this and the next section we will investigate what the algebraic closure of the finite field looks like. Despite this algebraic closure being an infinite one, you will see that we can describe the subextensions of and their interdependence more or less explicitly. As such the example of an algebraic closure occupies a nice middle ground between our previous two examples.  For this and the next section will always denote a prime integer.   Finite fields   Let be an algebraic closure and let be a positive integer.   There is a unique subextension of of degree .    We have .    Let . We have . It follows that is a splitting field of .       The essential tool in the proof of is the Frobenius endomorphism , which we now investigate.   Frobenius endomorphism   Let be a commutative ring of characteristic . The Frobenius endomorphism of is the map .     Frobenius endomorphism   Let be a ring of characteristic , and let be the Frobenius endomorphism.    is a ring homomorphism. In particular, we have for all .    For all positive integers the map is a ring homomorphism and satisfies .       Statement (2) follows easily from (1) and the fact that a composition of ring homomorphisms is a ring homomorphism. We now show that is a ring homomorphism. First observe that . Furthermore, we have . It remains only to show . We have .     First-year exponentiation\/first-year's dream  The bogus claim that or for real numbers , is often called first-year exponentiation , since this is a common mistake in introductory mathematics classes. Accordingly, when working in a ring of characteristic , the amazing fact that for all and all positive integers is sometimes referred to as the first-year's dream .   We are now ready to prove .   Proof of  Fix positive integer . Suppose is a field extension of degree . Since , we have and thus . Next, since is a group of order , we have for all , which implies for all elements (including ). Since has elements, and since has at most distinct roots, we see that we must have . In particular splits and is minimal in this regard (by a counting argument). Thus is a a splitting field of .  So far, we have shown that there can be at most one subfield of of degree , that it is a splitting field of , and that it has the explicit description . Thus it remains to show that (a) the set described by is indeed a subfield of , and (b) that .  It follows easily from the definition that contains and , and is closed under multiplication and inverses. It suffices then to show that is closed under addition. To this end, given , we have . This completes the proof that is a field.  Since is by definition the set of all roots of in , it remains only to show that these roots are distinct : , has no repeated roots. Such polynomials are called separable , and we will have a lot more to say about this property in coming lectures, including some useful tools for proving that a polynomial is separable. We forego these tools for now and instead rely on some algebraic trickery.  Let be a root of . Since , we have , where . Since , we see that is not a root of . Since , and is not a root of , we see that is not a repeated root of , as desired.   We end this portion of our investigation of with the claim that for all positive integers , the unique subfield of cardinality is in fact a simple extension of . To prove this claim, we need the following cute application of the structure theorem of finitely generated abelian groups.   Finite subgroups of are cyclic   Let be a field. Any finite subgroup of , the group of units, is cyclic.    Homework exercise.     Finite fields are simple   If is a finite extension, then for some .    Since is cyclic, we have for some . It follows easily that .     Existence of irreducibles   For all positive integers , there is an irreducible polynomial of of degree .    Fix a positive integer . By there is an extension of degree . By , we have for some . By we have for some irreducible polynomial of degree . In particular, there is at least one irreducible polynomial of degree .     Uniqueness of finite fields   Fix a positive integer . Any two fields of cardinality are isomorphic. In particular, given any two irreducible polynomials of degree , we have .    Fix a positive integer . Let and let be the unique subextension of of cardinality . Given any other field of cardinality , we must have , and hence is a finite extension. By , for some , and thus for some irreducible polynomial of degree . Let be a root of , and let . By , is a ring homomorphism. It follows that , Since , we must have , by the uniqueness claim in . This proves that any field of cardinality is isomorphic to the unique subfield of of cardinality ; we conclude by transitivity that any two such fields are isomorphic.    "
+  "title": "Finite fields",
+  "body": " Finite fields  As yet we have only seen two concrete examples of algebraic closure: the extensions and . The first example is about as simple as we could hope for: since , elements of are easily described ( , ), and furthermore there are no nontrivial subextensions of . Contrast this with the situation for and its algebraic closure . We have , there is no standard way of writing an arbitrary element of , and there are infinitely many nontrivial subextensions. Indeed, there are even infinitely many subextensions of degree two!  In this section we will investigate what the algebraic closure of the finite field looks like. Despite this algebraic closure being an infinite one, you will see that we can describe the subextensions of and their interdependence more or less explicitly. As such the example of an algebraic closure occupies a nice middle ground between our previous two examples.  For this section will always denote a prime integer.   Finite fields   Let be an algebraic closure and let be a positive integer.   There is a unique subextension of of degree .    We have .    Let . We have . It follows that is a splitting field of .       The essential tool in the proof of is the Frobenius endomorphism , which we now investigate.   Frobenius endomorphism   Let be a commutative ring of characteristic . The Frobenius endomorphism of is the map .     Frobenius endomorphism   Let be a ring of characteristic , and let be the Frobenius endomorphism.    is a ring homomorphism. In particular, we have for all .    For all positive integers the map is a ring homomorphism and satisfies .       Statement (2) follows easily from (1) and the fact that a composition of ring homomorphisms is a ring homomorphism. We now show that is a ring homomorphism. First observe that . Furthermore, we have . It remains only to show . We have .     First-year exponentiation\/first-year's dream  The bogus claim that or for real numbers , is often called first-year exponentiation , since this is a common mistake in introductory mathematics classes. Accordingly, when working in a ring of characteristic , the amazing fact that for all and all positive integers is sometimes referred to as the first-year's dream .   We are now ready to prove .   Proof of  Fix positive integer . Suppose is a field extension of degree . Since , we have and thus . Next, since is a group of order , we have for all , which implies for all elements (including ). Since has elements, and since has at most distinct roots, we see that we must have . In particular splits and is minimal in this regard (by a counting argument). Thus is a a splitting field of .  So far, we have shown that there can be at most one subfield of of degree , that it is a splitting field of , and that it has the explicit description . Thus it remains to show that (a) the set described by is indeed a subfield of , and (b) that .  It follows easily from the definition that contains and , and is closed under multiplication and inverses. It suffices then to show that is closed under addition. To this end, given , we have . This completes the proof that is a field.  Since is by definition the set of all roots of in , it remains only to show that these roots are distinct : , has no repeated roots. Such polynomials are called separable , and we will have a lot more to say about this property in coming lectures, including some useful tools for proving that a polynomial is separable. We forego these tools for now and instead rely on some algebraic trickery.  Let be a root of . Since , we have , where . Since , we see that is not a root of . Since , and is not a root of , we see that is not a repeated root of , as desired.    Finite fields split minimal polynomials   Let be a finite extension. For all the minimal polynomial splits completely over .    Homework exercise.    Next we show that for all positive integers , any field of cardinality is in fact a simple extension of . To prove this claim, we need the following cute application of the structure theorem of finitely generated abelian groups.   Finite subgroups of are cyclic   Let be a field. Any finite subgroup of , the group of units, is cyclic.    Homework exercise.     Finite fields are simple   If is a finite extension, then for some .    Since is cyclic, we have for some . It follows easily that .     Existence of irreducibles   For all positive integers , there is an irreducible polynomial of of degree .    Fix a positive integer . By there is an extension of degree . By , we have for some . By we have for some irreducible polynomial of degree . In particular, there is at least one irreducible polynomial of degree .     Uniqueness of finite fields   Fix a positive integer . Any two fields of cardinality are isomorphic. In particular, given any two irreducible polynomials of degree , we have .    Fix a positive integer . Let and let be the unique subextension of of cardinality . Given any other field of cardinality , we must have , and hence is a finite extension. By , for some , and thus for some irreducible polynomial of degree . Let be a root of , and let . By , is a ring homomorphism. It follows that , Since , we must have , by the uniqueness claim in . This proves that any field of cardinality is isomorphic to the unique subfield of of cardinality ; we conclude by transitivity that any two such fields are isomorphic.     Field of cardinality    finite field of cardinality   Fix a positive integer , and let . By up to isomorphism there is exactly one field of cardinality . We will use the notation to denote such a field.   We end our investigation of finite fields with a complete description of the subextension structure of .   Subextension structure of   Let be an algebraic closure. For each positive integer , we denote by the unique subfield of of cardinality . Given positive integers and , we have if and only if divides . Using logical shorthand: .    We prove each implication separately.   Implication:  Assume . Applying the tower law to the tower , we see that divides .    Implication:  If , then for some integer . We wish to show the implication . Recall our explicit descriptions of the two fields as subfields of : . Define as , and let . An easy induction argument shows that . Thus we have , as desired.     According to the lattice of subextensions of is effectively identical to the lattice of integers partially ordered by divisibility. This is best illustrated by the portion of this lattice exhibited in .   Lattice of subfields of   Lattice of subfields of Fpbar     "
 },
 {
   "id": "th_finite_fields",
   "level": "2",
-  "url": "s_finite_I.html#th_finite_fields",
+  "url": "s_finite.html#th_finite_fields",
   "type": "Theorem",
   "number": "1.9.1",
   "title": "Finite fields.",
@@ -1353,7 +1353,7 @@ var ptx_lunr_docs = [
 {
   "id": "d_Frobenius",
   "level": "2",
-  "url": "s_finite_I.html#d_Frobenius",
+  "url": "s_finite.html#d_Frobenius",
   "type": "Definition",
   "number": "1.9.2",
   "title": "Frobenius endomorphism.",
@@ -1362,65 +1362,101 @@ var ptx_lunr_docs = [
 {
   "id": "th_Frob",
   "level": "2",
-  "url": "s_finite_I.html#th_Frob",
+  "url": "s_finite.html#th_Frob",
   "type": "Theorem",
   "number": "1.9.3",
   "title": "Frobenius endomorphism.",
   "body": " Frobenius endomorphism   Let be a ring of characteristic , and let be the Frobenius endomorphism.    is a ring homomorphism. In particular, we have for all .    For all positive integers the map is a ring homomorphism and satisfies .       Statement (2) follows easily from (1) and the fact that a composition of ring homomorphisms is a ring homomorphism. We now show that is a ring homomorphism. First observe that . Furthermore, we have . It remains only to show . We have .   "
 },
 {
-  "id": "s_finite_I-9",
+  "id": "s_finite-9",
   "level": "2",
-  "url": "s_finite_I.html#s_finite_I-9",
+  "url": "s_finite.html#s_finite-9",
   "type": "Remark",
   "number": "1.9.4",
   "title": "First-year exponentiation\/first-year’s dream.",
   "body": " First-year exponentiation\/first-year's dream  The bogus claim that or for real numbers , is often called first-year exponentiation , since this is a common mistake in introductory mathematics classes. Accordingly, when working in a ring of characteristic , the amazing fact that for all and all positive integers is sometimes referred to as the first-year's dream .  "
 },
 {
-  "id": "s_finite_I-11",
+  "id": "s_finite-11",
   "level": "2",
-  "url": "s_finite_I.html#s_finite_I-11",
+  "url": "s_finite.html#s_finite-11",
   "type": "Proof",
   "number": "1.9.1",
   "title": "Proof of Theorem 1.9.1.",
   "body": " Proof of  Fix positive integer . Suppose is a field extension of degree . Since , we have and thus . Next, since is a group of order , we have for all , which implies for all elements (including ). Since has elements, and since has at most distinct roots, we see that we must have . In particular splits and is minimal in this regard (by a counting argument). Thus is a a splitting field of .  So far, we have shown that there can be at most one subfield of of degree , that it is a splitting field of , and that it has the explicit description . Thus it remains to show that (a) the set described by is indeed a subfield of , and (b) that .  It follows easily from the definition that contains and , and is closed under multiplication and inverses. It suffices then to show that is closed under addition. To this end, given , we have . This completes the proof that is a field.  Since is by definition the set of all roots of in , it remains only to show that these roots are distinct : , has no repeated roots. Such polynomials are called separable , and we will have a lot more to say about this property in coming lectures, including some useful tools for proving that a polynomial is separable. We forego these tools for now and instead rely on some algebraic trickery.  Let be a root of . Since , we have , where . Since , we see that is not a root of . Since , and is not a root of , we see that is not a repeated root of , as desired.  "
 },
 {
+  "id": "cor_finite_split_irr",
+  "level": "2",
+  "url": "s_finite.html#cor_finite_split_irr",
+  "type": "Corollary",
+  "number": "1.9.5",
+  "title": "Finite fields split minimal polynomials.",
+  "body": " Finite fields split minimal polynomials   Let be a finite extension. For all the minimal polynomial splits completely over .    Homework exercise.   "
+},
+{
   "id": "th_field_units_cylic",
   "level": "2",
-  "url": "s_finite_I.html#th_field_units_cylic",
+  "url": "s_finite.html#th_field_units_cylic",
   "type": "Theorem",
-  "number": "1.9.5",
+  "number": "1.9.6",
   "title": "Finite subgroups of <span class=\"process-math\">\\(K^*\\)<\/span> are cyclic.",
   "body": " Finite subgroups of are cyclic   Let be a field. Any finite subgroup of , the group of units, is cyclic.    Homework exercise.   "
 },
 {
   "id": "th_finite_cyclic",
   "level": "2",
-  "url": "s_finite_I.html#th_finite_cyclic",
+  "url": "s_finite.html#th_finite_cyclic",
   "type": "Theorem",
-  "number": "1.9.6",
+  "number": "1.9.7",
   "title": "Finite fields are simple.",
   "body": " Finite fields are simple   If is a finite extension, then for some .    Since is cyclic, we have for some . It follows easily that .   "
 },
 {
   "id": "cor_finite_irr",
   "level": "2",
-  "url": "s_finite_I.html#cor_finite_irr",
+  "url": "s_finite.html#cor_finite_irr",
   "type": "Corollary",
-  "number": "1.9.7",
+  "number": "1.9.8",
   "title": "Existence of irreducibles.",
   "body": " Existence of irreducibles   For all positive integers , there is an irreducible polynomial of of degree .    Fix a positive integer . By there is an extension of degree . By , we have for some . By we have for some irreducible polynomial of degree . In particular, there is at least one irreducible polynomial of degree .   "
 },
 {
-  "id": "cor_finite_cylcic",
+  "id": "cor_finite_unique",
   "level": "2",
-  "url": "s_finite_I.html#cor_finite_cylcic",
+  "url": "s_finite.html#cor_finite_unique",
   "type": "Corollary",
-  "number": "1.9.8",
+  "number": "1.9.9",
   "title": "Uniqueness of finite fields.",
   "body": " Uniqueness of finite fields   Fix a positive integer . Any two fields of cardinality are isomorphic. In particular, given any two irreducible polynomials of degree , we have .    Fix a positive integer . Let and let be the unique subextension of of cardinality . Given any other field of cardinality , we must have , and hence is a finite extension. By , for some , and thus for some irreducible polynomial of degree . Let be a root of , and let . By , is a ring homomorphism. It follows that , Since , we must have , by the uniqueness claim in . This proves that any field of cardinality is isomorphic to the unique subfield of of cardinality ; we conclude by transitivity that any two such fields are isomorphic.   "
+},
+{
+  "id": "s_finite-18",
+  "level": "2",
+  "url": "s_finite.html#s_finite-18",
+  "type": "Notation",
+  "number": "1.9.10",
+  "title": "Field of cardinality <span class=\"process-math\">\\(q=p^n\\)<\/span>.",
+  "body": " Field of cardinality    finite field of cardinality   Fix a positive integer , and let . By up to isomorphism there is exactly one field of cardinality . We will use the notation to denote such a field.  "
+},
+{
+  "id": "th_finite_field_extension_structure",
+  "level": "2",
+  "url": "s_finite.html#th_finite_field_extension_structure",
+  "type": "Theorem",
+  "number": "1.9.11",
+  "title": "Subextension structure of <span class=\"process-math\">\\(\\Fpbar\\)<\/span>.",
+  "body": " Subextension structure of   Let be an algebraic closure. For each positive integer , we denote by the unique subfield of of cardinality . Given positive integers and , we have if and only if divides . Using logical shorthand: .    We prove each implication separately.   Implication:  Assume . Applying the tower law to the tower , we see that divides .    Implication:  If , then for some integer . We wish to show the implication . Recall our explicit descriptions of the two fields as subfields of : . Define as , and let . An easy induction argument shows that . Thus we have , as desired.    "
+},
+{
+  "id": "fig_Fpbar",
+  "level": "2",
+  "url": "s_finite.html#fig_Fpbar",
+  "type": "Figure",
+  "number": "1.9.12",
+  "title": "",
+  "body": " Lattice of subfields of   Lattice of subfields of Fpbar    "
 },
 {
   "id": "appendix-notation",

@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Finite fields: existence and uniqueness</title>
+<title>Finite fields</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -303,7 +303,7 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_alg_finite_ext.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Algebraic extensions: theory</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_splitting.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Splitting fields</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="Untitled-1.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Algebraic closure</span></a></div></li>
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="s_finite_I.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Finite fields: existence and uniqueness</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="s_finite.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Finite fields</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -319,12 +319,12 @@ window.MathJax = {
 </ul>
 </li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_finite_I"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.9</span><span class="space"> </span><span class="title">Finite fields: existence and uniqueness</span>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_finite"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.9</span><span class="space"> </span><span class="title">Finite fields</span>
 </h2>
-<div class="para" id="s_finite_I-2">As yet we have only seen two concrete examples of algebraic closure: the extensions <span class="process-math">\(\C/\R\)</span> and <span class="process-math">\(\overline{\Q}_\C/\Q\text{.}\)</span> The first example is about as simple as we could hope for: since <span class="process-math">\([\C\colon \R]=2\text{,}\)</span> elements of <span class="process-math">\(\C\)</span> are easily described (<span class="process-math">\(\alpha=r+si\text{,}\)</span> <span class="process-math">\(r,s\in \R\)</span>), and furthermore there are no nontrivial subextensions of <span class="process-math">\(\C/\R\text{.}\)</span> Contrast this with the situation for <span class="process-math">\(\Q\)</span> and its algebraic closure <span class="process-math">\(\overline{\Q}=\overline{\Q}_\C\text{.}\)</span> We have <span class="process-math">\([\overline{\Q}\colon \Q]=\infty\text{,}\)</span> there is no standard way of writing an arbitrary element of <span class="process-math">\(\overline{Q}\text{,}\)</span> and there are infinitely many nontrivial subextensions. Indeed, there are even infinitely many subextensions of degree two!</div>
-<div class="para" id="s_finite_I-3">In this and the next section we will investigate what the algebraic closure <span class="process-math">\(\overline{\F_p}/\F_p\)</span> of the finite field <span class="process-math">\(\F_p\)</span> looks like. Despite this algebraic closure being an infinite one, you will see that we can describe the subextensions of <span class="process-math">\(\overline{\F_p}/\F_p\)</span> and their interdependence more or less explicitly. As such the example of an algebraic closure <span class="process-math">\(\overline{\F_p}/\F_p\)</span> occupies a nice middle ground between our previous two examples.</div>
-<div class="para" id="s_finite_I-4">For this and the next section <span class="process-math">\(p\)</span> will always denote a prime integer.</div>
+<div class="para" id="s_finite-2">As yet we have only seen two concrete examples of algebraic closure: the extensions <span class="process-math">\(\C/\R\)</span> and <span class="process-math">\(\overline{\Q}_\C/\Q\text{.}\)</span> The first example is about as simple as we could hope for: since <span class="process-math">\([\C\colon \R]=2\text{,}\)</span> elements of <span class="process-math">\(\C\)</span> are easily described (<span class="process-math">\(\alpha=r+si\text{,}\)</span> <span class="process-math">\(r,s\in \R\)</span>), and furthermore there are no nontrivial subextensions of <span class="process-math">\(\C/\R\text{.}\)</span> Contrast this with the situation for <span class="process-math">\(\Q\)</span> and its algebraic closure <span class="process-math">\(\overline{\Q}=\overline{\Q}_\C\text{.}\)</span> We have <span class="process-math">\([\overline{\Q}\colon \Q]=\infty\text{,}\)</span> there is no standard way of writing an arbitrary element of <span class="process-math">\(\overline{Q}\text{,}\)</span> and there are infinitely many nontrivial subextensions. Indeed, there are even infinitely many subextensions of degree two!</div>
+<div class="para" id="s_finite-3">In this section we will investigate what the algebraic closure <span class="process-math">\(\overline{\F_p}/\F_p\)</span> of the finite field <span class="process-math">\(\F_p\)</span> looks like. Despite this algebraic closure being an infinite one, you will see that we can describe the subextensions of <span class="process-math">\(\overline{\F_p}/\F_p\)</span> and their interdependence more or less explicitly. As such the example of an algebraic closure <span class="process-math">\(\overline{\F_p}/\F_p\)</span> occupies a nice middle ground between our previous two examples.</div>
+<div class="para" id="s_finite-4">For this section <span class="process-math">\(p\)</span> will always denote a prime integer.</div>
 <article class="theorem theorem-like" id="th_finite_fields"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.9.1</span><span class="period">.</span><span class="space"> </span><span class="title">Finite fields.</span>
 </h3>
@@ -346,7 +346,7 @@ K=\{\alpha\in \Fpbar\colon f(\alpha)=0\}=\{\alpha\in \Fpbar\colon \alpha^{p^n}=\
 </div>
 </div></li>
 </ol>
-</div></article><div class="para" id="s_finite_I-6">The essential tool in the proof of <a href="" class="xref" data-knowl="./knowl/xref/th_finite_fields.html" title="Theorem 1.9.1: Finite fields">Theorem 1.9.1</a> is the <em class="emphasis">Frobenius endomorphism</em>, which we now investigate.</div>
+</div></article><div class="para" id="s_finite-6">The essential tool in the proof of <a href="" class="xref" data-knowl="./knowl/xref/th_finite_fields.html" title="Theorem 1.9.1: Finite fields">Theorem 1.9.1</a> is the <em class="emphasis">Frobenius endomorphism</em>, which we now investigate.</div>
 <article class="definition definition-like" id="d_Frobenius"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.9.2</span><span class="period">.</span><span class="space"> </span><span class="title">Frobenius endomorphism.</span>
 </h3> <div class="para logical" id="d_Frobenius-2-1">
@@ -415,9 +415,9 @@ r \amp \mapsto r^p\text{.}
 \amp = \phi(r)+\phi(s)\text{.}
 \end{align*}
 </div>
-</div></article></details><article class="remark remark-like" id="s_finite_I-9"><h3 class="heading">
+</div></article></details><article class="remark remark-like" id="s_finite-9"><h3 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.9.4</span><span class="period">.</span><span class="space"> </span><span class="title">First-year exponentiation/first-year’s dream.</span>
-</h3> <div class="para logical" id="s_finite_I-9-2">
+</h3> <div class="para logical" id="s_finite-9-2">
 <div class="para">The bogus claim that <span class="process-math">\((r+s)^2=r^2+s^2\)</span> or <span class="process-math">\((r+s)^3=r^3+s^3\)</span> for real numbers <span class="process-math">\(r,s\in \R\text{,}\)</span> is often called “first-year exponentiation”, since this is a common mistake in introductory mathematics classes. Accordingly, when working in a ring <span class="process-math">\(R\)</span> of characteristic <span class="process-math">\(p\text{,}\)</span> the amazing fact that</div>
 <div class="displaymath process-math" id="eq_freshmens">
 \begin{equation}
@@ -425,8 +425,8 @@ r \amp \mapsto r^p\text{.}
 \end{equation}
 </div>
 <div class="para">for all <span class="process-math">\(r,s\in R\)</span> and all positive integers <span class="process-math">\(n\)</span> is sometimes referred to as “the first-year’s dream”.</div>
-</div></article><div class="para" id="s_finite_I-10">We are now ready to prove <a href="" class="xref" data-knowl="./knowl/xref/th_finite_fields.html" title="Theorem 1.9.1: Finite fields">Theorem 1.9.1</a>.</div>
-<details id="s_finite_I-11" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="title">Proof of Theorem 1.9.1.</span></h3></summary><article class="hiddenproof"> <div class="para logical" id="s_finite_I-11-2">
+</div></article><div class="para" id="s_finite-10">We are now ready to prove <a href="" class="xref" data-knowl="./knowl/xref/th_finite_fields.html" title="Theorem 1.9.1: Finite fields">Theorem 1.9.1</a>.</div>
+<details id="s_finite-11" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="title">Proof of Theorem 1.9.1.</span></h3></summary><article class="hiddenproof"> <div class="para logical" id="s_finite-11-2">
 <div class="para">Fix positive integer <span class="process-math">\(n\text{.}\)</span> Suppose <span class="process-math">\(K/\F_p\)</span> is a field extension of degree <span class="process-math">\(n\text{.}\)</span> Since <span class="process-math">\(\dim_{\F_p} K=n\text{,}\)</span> we have <span class="process-math">\(K\cong \F_p^n\)</span> and thus <span class="process-math">\(\abs{K}=p^n\text{.}\)</span> Next, since <span class="process-math">\(K^*\)</span> is a group of order <span class="process-math">\(p^n-1\text{,}\)</span> we have <span class="process-math">\(\alpha^{p^n-1}=1\)</span> for all <span class="process-math">\(\alpha\in K-\{0\}\text{,}\)</span> which implies <span class="process-math">\(\alpha^{p^n}-\alpha=0\)</span> for <em class="emphasis">all</em> elements <span class="process-math">\(\alpha\in K\)</span> (including <span class="process-math">\(0\)</span>). Since <span class="process-math">\(K\)</span> has <span class="process-math">\(p^n\)</span> elements, and since <span class="process-math">\(f(x)=x^{p^n}-x\)</span> has at most <span class="process-math">\(p^n\)</span> distinct roots, we see that we must have</div>
 <div class="displaymath process-math" id="eq_def_K">
 \begin{equation}
@@ -435,19 +435,19 @@ K=\{\alpha\in\Fpbar\colon \alpha^{p^n}=\alpha\}\text{.}\tag{1.18}
 </div>
 <div class="para">In particular <span class="process-math">\(K\)</span> splits <span class="process-math">\(f(x)\)</span> and is minimal in this regard (by a counting argument). Thus <span class="process-math">\(K\)</span> is a a splitting field of <span class="process-math">\(f\text{.}\)</span>
 </div>
-</div> <div class="para" id="s_finite_I-11-3">So far, we have shown that there can be <em class="emphasis">at most</em> one subfield <span class="process-math">\(K\)</span> of <span class="process-math">\(\Fpbar\)</span> of degree <span class="process-math">\(n\text{,}\)</span> that it is a splitting field of <span class="process-math">\(f(x)=x^{p^n}-x\text{,}\)</span> and that it has the explicit description <a href="" class="xref" data-knowl="./knowl/xref/eq_def_K.html" title="Equation 1.18">(1.18)</a>. Thus it remains to show that (a) the set <span class="process-math">\(K\)</span> described by <a href="" class="xref" data-knowl="./knowl/xref/eq_def_K.html" title="Equation 1.18">(1.18)</a> is indeed a subfield of <span class="process-math">\(\Fpbar\text{,}\)</span> and (b) that <span class="process-math">\(\abs{K}=p^n\text{.}\)</span>
-</div> <div class="para logical" id="s_finite_I-11-4">
+</div> <div class="para" id="s_finite-11-3">So far, we have shown that there can be <em class="emphasis">at most</em> one subfield <span class="process-math">\(K\)</span> of <span class="process-math">\(\Fpbar\)</span> of degree <span class="process-math">\(n\text{,}\)</span> that it is a splitting field of <span class="process-math">\(f(x)=x^{p^n}-x\text{,}\)</span> and that it has the explicit description <a href="" class="xref" data-knowl="./knowl/xref/eq_def_K.html" title="Equation 1.18">(1.18)</a>. Thus it remains to show that (a) the set <span class="process-math">\(K\)</span> described by <a href="" class="xref" data-knowl="./knowl/xref/eq_def_K.html" title="Equation 1.18">(1.18)</a> is indeed a subfield of <span class="process-math">\(\Fpbar\text{,}\)</span> and (b) that <span class="process-math">\(\abs{K}=p^n\text{.}\)</span>
+</div> <div class="para logical" id="s_finite-11-4">
 <div class="para">It follows easily from the definition <a href="" class="xref" data-knowl="./knowl/xref/eq_def_K.html" title="Equation 1.18">(1.18)</a> that <span class="process-math">\(K\)</span> contains <span class="process-math">\(0\)</span> and <span class="process-math">\(1\text{,}\)</span> and is closed under multiplication and inverses. It suffices then to show that <span class="process-math">\(K\)</span> is closed under addition. To this end, given <span class="process-math">\(\alpha,\beta\in K\text{,}\)</span> we have</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_def_K.html" id="s_finite_I-11-4-7">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_def_K.html" id="s_finite-11-4-7">
 \begin{align*}
 (\alpha+\beta)^{p^r} \amp = \alpha^{p^r}+\beta^{p^r} \amp (\text{first-year's dream}) \\
 \amp =\alpha+\beta \amp (\alpha, \beta\in K)\text{.}
 \end{align*}
 </div>
 <div class="para">This completes the proof that <span class="process-math">\(K=\{\alpha\in\Fpbar\colon \alpha^{p^n}=\alpha\}\)</span> is a field.</div>
-</div> <div class="para" id="s_finite_I-11-5">Since <span class="process-math">\(K\)</span> is by definition the set of all roots of <span class="process-math">\(f(x)=x^{p^n}-x\)</span> in <span class="process-math">\(\Fpbar\text{,}\)</span> it remains only to show that these roots are <em class="emphasis">distinct</em>: i.e., <span class="process-math">\(f\)</span> has no repeated roots. Such polynomials are called <em class="emphasis">separable</em>, and we will have a lot more to say about this property in coming lectures, including some useful tools for proving that a polynomial is separable. We forego these tools for now and instead rely on some algebraic trickery.</div> <div class="para logical" id="s_finite_I-11-6">
+</div> <div class="para" id="s_finite-11-5">Since <span class="process-math">\(K\)</span> is by definition the set of all roots of <span class="process-math">\(f(x)=x^{p^n}-x\)</span> in <span class="process-math">\(\Fpbar\text{,}\)</span> it remains only to show that these roots are <em class="emphasis">distinct</em>: i.e., <span class="process-math">\(f\)</span> has no repeated roots. Such polynomials are called <em class="emphasis">separable</em>, and we will have a lot more to say about this property in coming lectures, including some useful tools for proving that a polynomial is separable. We forego these tools for now and instead rely on some algebraic trickery.</div> <div class="para logical" id="s_finite-11-6">
 <div class="para">Let <span class="process-math">\(\alpha\in K\)</span> be a root of <span class="process-math">\(f(x)\text{.}\)</span> Since <span class="process-math">\(\alpha^{p^n}=\alpha\text{,}\)</span> we have</div>
-<div class="displaymath process-math" id="s_finite_I-11-6-4">
+<div class="displaymath process-math" id="s_finite-11-6-4">
 \begin{align*}
 f(x) \amp = x^{p^n}-x-(\alpha^{p^n}-\alpha)\\
 \amp = x^{p^n}-\alpha^{p^n}-(x-\alpha)\\
@@ -461,7 +461,7 @@ f(x) \amp = x^{p^n}-x-(\alpha^{p^n}-\alpha)\\
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.9.5</span><span class="period">.</span><span class="space"> </span><span class="title">Finite fields split minimal polynomials.</span>
 </h3>
 <div class="para" id="cor_finite_split_irr-2-1">Let <span class="process-math">\(K/\F_p\)</span> be a finite extension. For all <span class="process-math">\(\alpha\in K\)</span> the minimal polynomial <span class="process-math">\(m_{\alpha, \F_p}(x)\)</span> splits completely over <span class="process-math">\(K\text{.}\)</span>
-</div></article><details id="cor_finite_split_irr-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="cor_finite_split_irr-3-1">Homework exercise.</div></article></details><div class="para" id="s_finite_I-13">We end this portion of our investigation of <span class="process-math">\(\Fpbar/\F_p\)</span> with the claim that for all positive integers <span class="process-math">\(n\text{,}\)</span> the unique subfield <span class="process-math">\(K\)</span> of cardinality <span class="process-math">\(n\)</span> is in fact a <em class="emphasis">simple extension</em> of <span class="process-math">\(\F_p\text{.}\)</span> To prove this claim, we need the following cute application of the structure theorem of finitely generated abelian groups.</div>
+</div></article><details id="cor_finite_split_irr-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para" id="cor_finite_split_irr-3-1">Homework exercise.</div></article></details><div class="para" id="s_finite-13">Next we show that for all positive integers <span class="process-math">\(n\text{,}\)</span> any field <span class="process-math">\(K\)</span> of cardinality <span class="process-math">\(p^n\)</span> is in fact a <em class="emphasis">simple extension</em> of <span class="process-math">\(\F_p\text{.}\)</span> To prove this claim, we need the following cute application of the structure theorem of finitely generated abelian groups.</div>
 <article class="theorem theorem-like" id="th_field_units_cylic"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.9.6</span><span class="period">.</span><span class="space"> </span><span class="title">Finite subgroups of <span class="process-math">\(K^*\)</span> are cyclic.</span>
 </h3>
@@ -494,9 +494,9 @@ f(x) \amp = x^{p^n}-x-(\alpha^{p^n}-\alpha)\\
 \end{align*}
 </div>
 <div class="para">By <a href="" class="xref" data-knowl="./knowl/xref/th_quot_poly.html" title="Theorem 1.4.7: Quotients of polynomial rings">Theorem 1.4.7</a>, <span class="process-math">\(\phi\)</span> is a ring homomorphism. It follows that <span class="process-math">\(K'\cong\phi(K')\leq \Fpbar\text{,}\)</span> Since <span class="process-math">\(\abs{\phi(K')}=p^n\text{,}\)</span> we must have <span class="process-math">\(\phi(K')=K\text{,}\)</span> by the uniqueness claim in <a href="" class="xref" data-knowl="./knowl/xref/th_finite_fields.html" title="Theorem 1.9.1: Finite fields">Theorem 1.9.1</a>. This proves that any field of cardinality <span class="process-math">\(p^n\)</span> is isomorphic to the unique subfield of <span class="process-math">\(\Fpbar/\F_p\)</span> of cardinality <span class="process-math">\(p^n\text{;}\)</span> we conclude by transitivity that any two such fields are isomorphic.</div>
-</div></article></details><article class="convention remark-like" id="s_finite_I-18"><h3 class="heading">
+</div></article></details><article class="convention remark-like" id="s_finite-18"><h3 class="heading">
 <span class="type">Notation</span><span class="space"> </span><span class="codenumber">1.9.10</span><span class="period">.</span><span class="space"> </span><span class="title">Field of cardinality <span class="process-math">\(q=p^n\)</span>.</span>
-</h3>  <div class="para" id="s_finite_I-18-3">Fix a positive integer <span class="process-math">\(n\text{,}\)</span> and let <span class="process-math">\(q=p^n\text{.}\)</span> By <a href="" class="xref" data-knowl="./knowl/xref/cor_finite_unique.html" title="Corollary 1.9.9: Uniqueness of finite fields">Corollary 1.9.9</a> up to isomorphism there is exactly one field of cardinality <span class="process-math">\(q\text{.}\)</span> We will use the notation <span class="process-math">\(\F_q\)</span> to denote such a field.</div></article><div class="para" id="s_finite_I-19">We end our investigation of finite fields with a complete description of the subextension structure of <span class="process-math">\(\Fpbar/\F_p\text{.}\)</span>
+</h3>  <div class="para" id="s_finite-18-3">Fix a positive integer <span class="process-math">\(n\text{,}\)</span> and let <span class="process-math">\(q=p^n\text{.}\)</span> By <a href="" class="xref" data-knowl="./knowl/xref/cor_finite_unique.html" title="Corollary 1.9.9: Uniqueness of finite fields">Corollary 1.9.9</a> up to isomorphism there is exactly one field of cardinality <span class="process-math">\(q\text{.}\)</span> We will use the notation <span class="process-math">\(\F_q\)</span> to denote such a field.</div></article><div class="para" id="s_finite-19">We end our investigation of finite fields with a complete description of the subextension structure of <span class="process-math">\(\Fpbar/\F_p\text{.}\)</span>
 </div>
 <article class="theorem theorem-like" id="th_finite_field_extension_structure"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.9.11</span><span class="period">.</span><span class="space"> </span><span class="title">Subextension structure of <span class="process-math">\(\Fpbar\)</span>.</span>
@@ -542,7 +542,9 @@ f(x) \amp = x^{p^n}-x-(\alpha^{p^n}-\alpha)\\
 \end{align*}
 </div>
 <div class="para">as desired.</div>
-</div></article></article></details></section></div>
+</div></article></article></details><div class="para" id="s_finite-21">According to <a href="" class="xref" data-knowl="./knowl/xref/th_finite_field_extension_structure.html" title="Theorem 1.9.11: Subextension structure of \Fpbar">Theorem 1.9.11</a> the lattice of subextensions of <span class="process-math">\(\Fpbar/\F_p\)</span> is effectively identical to the lattice of integers partially ordered by divisibility. This is best illustrated by the portion of this lattice exhibited in <a href="" class="xref" data-knowl="./knowl/xref/fig_Fpbar.html" title="Figure 1.9.12">Figure 1.9.12</a>.</div>
+<figure class="figure figure-like" id="fig_Fpbar"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/im_Fpbar.svg" role="img" class="contained" alt="Lattice of subfields of Fpbar"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.9.12<span class="period">.</span></span><span class="space"> </span>Lattice of subfields of <span class="process-math">\(\Fpbar\)</span></figcaption></figure></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="Untitled-1.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
