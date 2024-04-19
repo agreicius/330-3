@@ -127,11 +127,11 @@
 	<p>
 		A ring homomorphism <m>\phi\colon R\rightarrow S</m> extends naturally to a ring homomorphism
 		<m>R[x] \longrightarrow S[x]</m> that sends an <m>R</m>-polynomial <m>\anpoly</m>  to the <m>S</m>-polynomial <m>\phi(a_n)x^n+\phi(a_{n-1})x^{n-1}+\cdots +\phi(a_1)x+\phi(a_0)</m>.
-		By abuse of notation, we will also denote this map of polynonmial rings as <m>\phi</m>.
-		Thus, given <m>f(x)=\anpoly</m> we will write
+		By abuse of notation, we will also denote this map of polynonmial rings as <m>\phi</m>, and will write
 		<me>
-			\phi(f)=\phi(a_n)x^n+\phi(a_{n-1})x^{n-1}+\cdots +\phi(a_1)x+\phi(a_0)
+			f^\phi(x)=\phi(a_n)x^n+\phi(a_{n-1})x^{n-1}+\cdots +\phi(a_1)x+\phi(a_0)
 		</me>.
+		We will call this map the <q>apply <m>\phi</m> to the coefficients</q> map. 
 	</p>
 	</convention>
 
@@ -163,7 +163,7 @@
 							Let <m>S</m> be a nonzero ring.
 							The set of all ring homomorphisms <m>\overline{\phi}\colon F[x]/(f)\rightarrow S</m> is in bijective correspondence with pairs <m>(\phi, s)</m> where <m>\phi\colon F\rightarrow S</m> is a ring homomorphism and <m>s\in S</m> is a root of
 							<me>
-								\phi(f)=\phi(a_n)x^n+\phi(a_{n-1})x^{n-1}+\cdots +\phi(a_1)x+\phi(a_0)
+								f^\phi=\phi(a_n)x^n+\phi(a_{n-1})x^{n-1}+\cdots +\phi(a_1)x+\phi(a_0)
 							</me>.
 							Indeed, given such a pair <m>(\phi, s)</m>, we define
 							<md>

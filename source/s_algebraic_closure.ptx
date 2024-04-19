@@ -21,6 +21,8 @@
         </p>
     </remark>
     <definition xml:id="d_algebraic_closure">
+        <title>Algebraic closure</title>
+        
         <statement>
             <p>
                 An <term>algebraic closure</term> of a field <m>F</m> is an extension <m>K/F</m> satisfying the following properties. 

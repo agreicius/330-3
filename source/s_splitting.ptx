@@ -54,6 +54,8 @@
         </solution>
     </example>
     <definition xml:id="d_splitting_field">
+        <title>Splitting field</title>
+        
         <statement>
             <p>
                 Let <m>F</m> be a field, and let <m>\mathcal{P}\subseteq F[x]</m> be a set of polynomials over <m>F</m>. A field extension <m>K/F</m> is called a <term>splitting field</term> of the collection <m>\mathcal{P}</m> if the following conditions hold. 

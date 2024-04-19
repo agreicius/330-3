@@ -211,7 +211,7 @@
         </statement>
         <proof>
             <p>
-                Fix a positive integer <m>n</m>. By <xref ref="th_finite_fields"/> there is an extension <m>K/\F_p</m> of degree <m>n</m>. By <xref ref="th_finite_cylcic"/>, we have <m>K=\F_p(\alpha)</m> for some <m>\alpha</m>. By <xref ref="th_simple_ext"/> we have <m>K\cong \F_p[x]/(f(x))</m> for some irreducible polynomial of degree <m>n</m>. In particular, there is at least one irreducible polynomial of degree <m>n</m>.  
+                Fix a positive integer <m>n</m>. By <xref ref="th_finite_fields"/> there is an extension <m>K/\F_p</m> of degree <m>n</m>. By <xref ref="th_finite_cyclic"/>, we have <m>K=\F_p(\alpha)</m> for some <m>\alpha</m>. By <xref ref="th_simple_ext"/> we have <m>K\cong \F_p[x]/(f(x))</m> for some irreducible polynomial of degree <m>n</m>. In particular, there is at least one irreducible polynomial of degree <m>n</m>.  
             </p>
         </proof>
     </corollary>
@@ -227,7 +227,7 @@
         </statement>
         <proof>
             <p>
-                Fix a positive integer <m>n</m>. Let <m>\Fpbar/\F_p</m> and let <m>K/\F_p</m> be the unique subextension of <m>\Fpbar/\F_p</m> of cardinality <m>p^n</m>. Given any other field <m>K'</m> of cardinality <m>p^n</m>, we must have <m>\character K'=p</m>, and hence <m>\F_p\leq K'</m> is a finite extension. By <xref ref="cor_finite_cylcic"/>, <m>K'=\F_p(\alpha)</m> for some <m>\alpha\in K'</m>, and thus <m>K'\cong \F_p[x]/(f)</m> for some irreducible polynomial <m>f\in \F_p[x]</m> of degree <m>n</m>. Let <m>\alpha\in \Fpbar</m> be a root of <m>f</m>, and let  
+                Fix a positive integer <m>n</m>. Let <m>\Fpbar/\F_p</m> and let <m>K/\F_p</m> be the unique subextension of <m>\Fpbar/\F_p</m> of cardinality <m>p^n</m>. Given any other field <m>K'</m> of cardinality <m>p^n</m>, we must have <m>\character K'=p</m>, and hence <m>\F_p\leq K'</m> is a finite extension. By <xref ref="th_finite_cyclic"/>, <m>K'=\F_p(\alpha)</m> for some <m>\alpha\in K'</m>, and thus <m>K'\cong \F_p[x]/(f)</m> for some irreducible polynomial <m>f\in \F_p[x]</m> of degree <m>n</m>. Let <m>\alpha\in \Fpbar</m> be a root of <m>f</m>, and let  
                 <md>
                     <mrow>\phi\colon \F_p[x]/(f(x)) \amp \Fpbar </mrow>
                     <mrow> \overline{h}(x)\amp\mapsto h(\alpha) </mrow>

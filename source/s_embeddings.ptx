@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_embeddings" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Field embeddings</title>
+    <p>
+        In this question we investigate what looks to be a somewhat technical topic: given a ring homomorphism <m>\sigma F\rightarrow L</m> and a field extension <m>K/F</m>, how do we describe the set of all <em>extensions</em> of <m>\sigma</m> to <m>K</m>? An extension is just a ring homomorphism <m>\tau\colon K\rightarrow L</m> satisfying <m>\tau\vert_F=\sigma</m>. 
+    </p>
+    <definition xml:id="d_embedding">
+        <title>Field embedding</title>
+        <statement>
+            <p>
+                A <term>field embedding</term> (or simply <term>embedding</term>) is a ring homomorphism <m>\sigma\colon F\rightarrow K</m> between two fields. Such a map is guaranteed to be injective since its kernel is trivial. 
+            </p>
+        </statement>
+    </definition>
+    <definition xml:id="d_embed_ext">
+        <title>Extension of field embedding</title>
+        <statement>
+            <p>
+                Let <m>K/F</m> be a field extension. Given a field embedding
+                <m>\sigma\colon F\rightarrow L</m>,
+                an <term>extension</term> of <m>\sigma</m> to <m>K</m> is an embedding <m>\tau\colon K\rightarrow L</m> satisfying <m>\tau\vert_F=\sigma</m>. In other words, <m>\tau</m> is an embedding making the following diagram commutative
+                <image xml:id="im_embed_ext" width="20%">
+                    <shortdescription>Diagram of extension of embedding</shortdescription>
+                    <latex-image>
+                        \begin{tikzcd}
+                            K\arrow[dr,"\tau"] \amp \\
+                            F\arrow[u,dash]\arrow[r,"\sigma"'] \amp L
+                        \end{tikzcd}
+                    </latex-image>
+                </image>
+                Here the vertical line between <m>F</m> and <m>K</m> should be understood as the inclusion map <m>F\hookrightarrow K</m>. 
+            </p>
+        </statement>
+    </definition>
+    <p>
+        Using our new terminology, <xref ref="th_quot_poly"/> and <xref ref="th_simple_ext"/> essentially immediately imply the following elegant result. 
+    </p>
+    <theorem xml:id="th_embed_ext_simple">
+        <statement>
+            <p>
+                Let <m>F(\alpha)</m> be a simple algebraic extension of degree <m>n</m>, and let <m>f(x)=m_{\alpha,F}(x)</m>. Given a field embedding <m>\sigma\colon F\rightarrow K</m>, define 
+                <me>
+                    X=\{\tau\colon F(\alpha)\rightarrow K\ \colon \tau \text{ an embedding}, \tau\vert_F=\sigma\}
+                </me>,
+                and
+                <me>
+                    R=\{\beta\in K\colon f^\sigma(\beta)=0\}
+                </me>.
+                In other words, <m>X</m> is the set of all extensions of <m>\sigma</m> to <m>F(\alpha)</m>, and <m>R</m> is the set of all roots of <m>f^\sigma(x)</m> in <m>K</m>. 
+                <ol>
+                    <li>
+                        <p>
+                            Given any <m>\beta\in R</m>, the map <m>\tau\colon F(\alpha)\rightarrow L</m> defined as  
+                            <men xml:id="eq_sigma_ext">
+                                \tau(a_0+a_1\alpha+\cdots +a_{n-1}\alpha^{n-1})=\sigma(a_0)+\sigma(a_1)\beta+\cdots +\sigma(a_{n-1})\beta^{n-1}
+                            </men>
+                            is an extension of <m>\sigma</m> to <m>F(\alpha)</m>. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The map
+                            <md>
+                                <mrow>X \amp \rightarrow R </mrow>
+                                <mrow>\tau \amp \mapsto \tau(\alpha)</mrow>
+                            </md>
+                            defines a bijection between <m>X</m> and <m>R</m>. In other words, the distinct extensions of <m>\sigma</m> to <m>F(\alpha)</m> are in bijective correspondence with the roots of <m>f^\sigma(x)</m> in <m>K</m>. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            We have <m>\abs{X}\leq n=\deg_F\alpha</m>. In other words, there are at most <m>n</m> extensions of <m>\sigma</m> to <m>F(\alpha)</m>. 
+                        </p>
+                    </li>
+                </ol>  
+            </p>
+        </statement>
+    </theorem>
+    <definition xml:id="d_F_embedding">
+        <title><m>F</m>-embedding</title>
+        <statement>
+            <p>
+                Let <m>K/F</m> and <m>L/F</m> be field extensions of <m>F</m>. An <term><m>F</m>-embedding</term> of <m>K</m> into <m>L</m> is an embedding <m>\tau\colon K\rightarrow L</m> satisfying 
+                <me>
+                    \tau(a)=a
+                </me>
+                for all <m>a\in F</m>. In other words, an <m>F</m>-embedding of <m>K</m> is an extension to <m>K</m> of the inclusion map <m>i_L\colon F\hookrightarrow L</m>. We denote by <m>\Hom_F(K,L)</m> the set of all <m>F</m>-embeddings of <m>K</m> into <m>L</m>: <ie/>, 
+                <men xml:id="eq_F_embedding">
+                    \Hom_F(K,L)=\{\sigma\colon K\rightarrow L\ \colon \sigma \text{ an embedding}, \sigma\vert_F=i_L\}
+                </men>.
+            </p>
+            <figure xml:id="fig_F_embedding">
+                <caption>Diagram of an <m>F</m>-embedding</caption>
+                <image xml:id="im_F_embedding" width="20%">
+                    <shortdescription>Diagram of F-embedding</shortdescription>
+                    <latex-image>
+                        \begin{tikzcd}
+                        K\arrow[dr,"\sigma"] \amp \\
+                        F\arrow[u,dash]\arrow[r,dash,"i_L"']\amp L
+                        \end{tikzcd}
+                    </latex-image>
+                </image>
+            </figure>
+        </statement>
+    </definition>
+    <example>
+        <title><m>\Q</m>-embeddings</title>
+        <statement>
+            <p>
+                For each pair of extensions <m>K/\Q</m> and <m>L/\Q</m> compute <m>\Hom_\Q(K,L)</m>. 
+            <ol>
+                <li>
+                    <p>
+                        <m>K=\Q(\sqrt[3]{2})</m>, <m>L=\R</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>K=\Q(\sqrt[3]{2})</m>, <m>L=\C</m>.
+                    </p>
+                </li>
+            </ol>
+            </p>
+
+        </statement>
+        <solution>
+            <p>
+                We use <xref ref="th_embed_ext_simple"/> throughout. 
+                <ol>
+                    <li>
+                        <p>
+                            Let <m>\sqrt[3]{2}</m>. We have <m>m_{\sqrt[3]{2},\Q}(x)=x^3-2</m>. The only root of <m>x^3-2</m> in <m>\R</m> is <m>\sqrt[3]{2}</m>, and thus the only element of <m>\Hom_\Q(\Q(\sqrt[3]{2}),\R)</m> is the map <m>\tau</m> defined as 
+                            <me>
+                                \tau(a+b\sqrt[3]{2}+c\sqrt[3]{2})=a+b\sqrt[3]{2}+c\sqrt[3]{4},
+                            </me>
+                            for all <m>a,b,c\in \Q</m>. We recognize this embedding as none other than the inclusion map <m>i\colon \Q(\sqrt[3]{2})\hookrightarrow \R</m>. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            As above, we have <m>m_{\Q,\alpha}(x)=x^3-2</m>. The polynomial <m>x^3-2</m> has three distinct roots <m>\beta_1=\sqrt[3]{2}, \beta_2=\zeta\sqrt[3]{2}, \beta_3=\zeta^2\sqrt[3]{2}</m> in <m>\C</m>, where <m>\zeta=e^{2\pi i/3}</m>. These three roots give rise to exactly three <m>\Q</m>-embeddings <m>\tau_i</m>, <m>1\leq i\leq 3</m>, defined as  
+                            <me>
+                                \tau_i(a+b\alpha+c\alpha^2)=a+b\beta_i+c\beta_i^2,
+                            </me>
+                            for all <m>a,b,c\in \Q</m>. We conclude that <m>\Hom_\Q(K, \R)=\{\tau_1,\tau_2,\tau_3\}</m>. 
+                        </p>
+                    </li>
+                    
+                </ol>
+            </p>
+            
+        </solution>
+    </example>
+    <example>
+        <title><m>\Q</m>-embeddings in towers</title>
+        <statement>
+            <p>
+                Compute <m>\Hom_\Q(\Q(\sqrt{2},\sqrt{3}),\R)</m>. 
+            </p>
+        </statement>
+        <solution>
+            <p>
+                We break the extension <m>\Q(\sqrt{2},\sqrt{3})/\Q</m> into two simple towers <m>\Q\leq \Q(\sqrt{2})\leq K=\Q(\sqrt{2})(\sqrt{3})</m>. 
+            </p>
+            <p>
+                We have <m>m_{\sqrt{2},\Q}(x)=x^2-2</m>, which has two roots <m>\pm \sqrt{2}</m> in <m>\R</m>. It follows that <m>\Hom_\Q(\Q(\sqrt{2}), \R)=\{\tau_1,\tau_2\}</m>, where 
+                <md>
+                    <mrow>\tau_1(a+b\sqrt{2}) \amp = a+b\sqrt{2}</mrow>
+                    <mrow>\tau_2(a+b\sqrt{2}) \amp = a-b\sqrt{2}</mrow>
+                </md>,
+                for all <m>a,b\in \Q</m>.
+            </p>
+            <p>
+                Now look at the second subextension <m>\Q(\sqrt{2})(\sqrt{3})/\Q(\sqrt{2})</m>. Since <m>m_{\sqrt{3},\Q(\sqrt{2})}(x)=x^2-3</m>, and since <m>x^2-3</m> has two roots <m>\pm\sqrt{3}</m> in <m>\R</m>, for each <m>1\leq i\leq 2</m> the embedding <m>\tau_i\colon \Q(\sqrt{2})\rightarrow \R</m> has two extensions to <m>K=\Q(\sqrt{2})(\sqrt{3})</m>: namely <m>\tau_{i,1}</m> and <m>\tau_{i,2}</m> defined as 
+                <md>
+                    <mrow>\tau_{i1}(\alpha+\beta\sqrt{3}) \amp = \tau_{i}(\alpha)+\tau_i(\beta)\sqrt{3}</mrow>
+                    <mrow>\tau_{i2}(\alpha+\beta\sqrt{3}) \amp = \tau_{i}(\alpha)-\tau_i(\beta)\sqrt{3}</mrow>
+                </md>,
+                for all <m>\alpha,\beta\in \Q(\sqrt{2})</m>. See <xref ref="fig_Q_embed"/> for a nice visual synopsis of this argument. 
+            </p>
+            <p>
+                The four embeddings <m>\tau_{i,j}</m>, <m>1\leq i,j\leq 2</m> are easily seen to be distinct. (Compare their values at <m>\sqrt{2}</m> and <m>\sqrt{3}</m>.) Furthermore, since <m>\tau_{i,j}</m> is an extension of <m>\tau_i</m>, and <m>\tau_i</m> is a <m>\Q</m>-embedding, we have 
+                <me>
+                    \tau_{i,j}\vert_\Q=\tau_i\vert_\Q=i
+                </me>,
+                where <m>i\colon \Q\hookrightarrow \R</m> is the inclusion map. Thus each <m>\tau_{i,j}</m> is a <m>\Q</m>-embedding of <m>K=\Q(\sqrt{2},\sqrt{3})</m> into <m>\R</m>. 
+            </p>
+            <p>
+                Lastly, we prove that if <m>\tau\in \Hom_\Q(K,\R)</m> is a <m>\Q</m>-embedding, then <m>\tau=\tau_{i,j}</m> for some <m>1\leq i,j\leq 2</m>, in which case we have 
+                <me>
+                    \Hom_\Q(K,\R)=\{\tau_{1,1},\tau_{1,2}, \tau_{2,1}, \tau_{2,2}\}
+                </me>. 
+                Given <m>\tau\in \Hom_\Q(K,\R)</m>, its restriction <m>\tau\vert_{\Q(\sqrt{2})}</m> is a <m>\Q</m>-embedding of <m>\Q(\sqrt{2})</m> into <m>\R</m>: <ie/>, <m>\tau\vert_{\Q(\sqrt{2})}\in \Hom_{\Q}(\Q(\sqrt{2}), \R)</m>. Since <m>\Hom_{\Q}(\Q(\sqrt{2}),\R)=\{\tau_1,\tau_2\}</m>, we have <m>\tau\vert_{\Q(\sqrt{2})}=\tau_i</m> for some <m>1\leq i\leq 2</m>. Next, since <m>\tau</m> is an extension of <m>\tau\vert_{\Q(\sqrt{2}}</m> to <m>K</m>, and since <m>\Hom_{\Q(\sqrt{2})}(K,\R)=\{\tau_{i,j}\colon 1\leq i,j\leq 2\}</m>, we must have <m>\tau=\tau_{i,j}</m> for some <m>1\leq i,j\leq 2</m>, as claimed.   
+            </p>
+            <p>
+                Unpacking the definitions of the <m>\tau_{i,j}</m> and using the fact that these maps are ring homomorphisms, we find that  
+                <md>
+                    <mrow>\tau_{1,1}(a+b\sqrt{2}+c\sqrt{3}+d\sqrt{6}) \amp= a+b\sqrt{2}+c\sqrt{3}+d\sqrt{6}</mrow>
+                    <mrow>\tau_{1,2}(a+b\sqrt{2}+c\sqrt{3}+d\sqrt{6}) \amp= a+b\sqrt{2}-c\sqrt{3}-d\sqrt{6}</mrow>
+                    <mrow>\tau_{2,1}(a+b\sqrt{2}+c\sqrt{3}+d\sqrt{6}) \amp= a-b\sqrt{2}+c\sqrt{3}-d\sqrt{6}</mrow>
+                    <mrow>\tau_{2,2}(a+b\sqrt{2}+c\sqrt{3}+d\sqrt{6}) \amp= a-b\sqrt{2}-c\sqrt{3}+d\sqrt{6}</mrow>
+                </md>.
+            </p>
+            <figure xml:id="fig_Q_embed">
+                <caption><m>\Q</m>-embeddings and towers</caption>
+                <image xml:id="im_Q_embed" width="50%">
+                    <shortdescription><m>\Q</m>-embeddings and towers</shortdescription>
+                    <latex-image>
+                        \begin{tikzcd}
+                           K=\Q(\sqrt{2})(\sqrt{3})\arrow[ddr,"\tau_{i,j}"] \amp \\
+                           \Q(\sqrt{2})\arrow[dr,"\tau_i"',pos=.4]\arrow[dash,u]\amp \\
+                           \Q\arrow[r,"i"']\arrow[dash,u]\amp \R 
+                        \end{tikzcd}
+                    </latex-image>
+                </image>
+            </figure>
+        </solution>
+    </example>
+
+</section>
