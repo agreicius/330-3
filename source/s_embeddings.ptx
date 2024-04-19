@@ -37,6 +37,7 @@
         Using our new terminology, <xref ref="th_quot_poly"/> and <xref ref="th_simple_ext"/> essentially immediately imply the following elegant result. 
     </p>
     <theorem xml:id="th_embed_ext_simple">
+        <title>Extensions of embeddings: simple extension</title>
         <statement>
             <p>
                 Let <m>F(\alpha)</m> be a simple algebraic extension of degree <m>n</m>, and let <m>f(x)=m_{\alpha,F}(x)</m>. Given a field embedding <m>\sigma\colon F\rightarrow K</m>, define 
@@ -152,7 +153,7 @@
             
         </solution>
     </example>
-    <example>
+    <example xml:id="eg_Q_embed_tower">
         <title><m>\Q</m>-embeddings in towers</title>
         <statement>
             <p>
@@ -217,5 +218,35 @@
             </figure>
         </solution>
     </example>
+    <p>
+        An argument very similar to the one used in <xref ref="eg_Q_embed_tower"/> can be used to prove the following result. 
+    </p>
+    <corollary xml:id="cor_emb_ext_finite">
+        <title>Extensions of embeddings: finite extension</title>
+        <statement>
+            <p>
+                Let <m>K/F</m> be a field extension of degree <m>n</m>. Given a field embedding <m>\sigma\colon F\rightarrow L</m>, there are at most <m>n</m> extensions of <m>\sigma</m> to <m>K</m>. 
+            </p>
+        </statement>
+    </corollary>
+    
+    <theorem xml:id="th_emb_ext_alg">
+        <title>Algebraic extensions of embeddings</title>
+        <statement>
+            <p>
+                Let <m>K/F</m> be an algebraic extension. Given an embedding <m>\sigma\colon F\rightarrow L</m>, where <m>L</m> is an algebraically closed field, there is an extension <m>\tau</m> of <m>\sigma</m> to <m>K</m>. 
+            </p>
+            <image xml:id="im_emb_ext_alg" width="20%">
+                <shortdescription>Extension of embedding to algebraic field</shortdescription>
+                <latex-image>
+                    \begin{tikzcd}
+                        K\arrow[dr,dotted, "\exists\, \tau"]\amp \\
+                        F\arrow[u,dash]\arrow[r,"\sigma"']\amp L
+                    \end{tikzcd}
+                </latex-image>
+            </image>
+        </statement>
+    </theorem>
+    
 
 </section>
