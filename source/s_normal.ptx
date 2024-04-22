@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_normal" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Normal extensions</title>
+    <p>
+        In this section we will see that splitting field extensions <m>K/F</m> satisfy a special property with respect to extensions of field embeddings: one that will be especially important when studying Galois groups and their normal subgroups. In part because of this, these extensions will be called <term>normal</term>. 
+    </p>
+    <p>
+        Our first result, however, deals with algebraic extensions <m>K/F</m>, and assures us the existence of extensions of embeddings <m>\sigma\colon F\rightarrow L</m> into an algebraically closed field.  
+    </p>
+    <theorem xml:id="th_emb_ext_alg">
+        <title>Algebraic extensions of embeddings</title>
+        <statement>
+            <p>
+                Let <m>K/F</m> be an algebraic extension. Given an embedding <m>\sigma\colon F\rightarrow L</m>, where <m>L</m> is an algebraically closed field, there is an extension <m>\tau</m> of <m>\sigma</m> to <m>K</m>. 
+            </p>
+            <image xml:id="im_emb_ext_alg" width="20%">
+                <shortdescription>Extension of embedding to algebraic field</shortdescription>
+                <latex-image>
+                    \begin{tikzcd}
+                        K\arrow[dr,dotted, "\exists\, \tau"]\amp \\
+                        F\arrow[u,dash]\arrow[r,"\sigma"']\amp L
+                    \end{tikzcd}
+                </latex-image>
+            </image>
+        </statement>
+    </theorem>
+    <p>
+        We postpone the proof of this theorem to then end of the section, as it relies on a general version of Zorn's lemma. Two important consequences of <xref ref="th_emb_ext_alg"/> are that splitting fields of sets of polynomials and algebraic closures are unique up to isomorphism.  
+    </p>
+    <corollary xml:id="cor_">
+        <title>Uniqueness of splitting fields</title>
+        <statement>
+            <p>
+                Let <m>K/F</m> be a splitting field of a subset <m>\mathcal{P}\subseteq F[x]</m> 
+            </p>
+        </statement>
+    </corollary>
+    
+
+</section>

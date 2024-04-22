@@ -230,23 +230,7 @@
         </statement>
     </corollary>
     
-    <theorem xml:id="th_emb_ext_alg">
-        <title>Algebraic extensions of embeddings</title>
-        <statement>
-            <p>
-                Let <m>K/F</m> be an algebraic extension. Given an embedding <m>\sigma\colon F\rightarrow L</m>, where <m>L</m> is an algebraically closed field, there is an extension <m>\tau</m> of <m>\sigma</m> to <m>K</m>. 
-            </p>
-            <image xml:id="im_emb_ext_alg" width="20%">
-                <shortdescription>Extension of embedding to algebraic field</shortdescription>
-                <latex-image>
-                    \begin{tikzcd}
-                        K\arrow[dr,dotted, "\exists\, \tau"]\amp \\
-                        F\arrow[u,dash]\arrow[r,"\sigma"']\amp L
-                    \end{tikzcd}
-                </latex-image>
-            </image>
-        </statement>
-    </theorem>
+    
     
 
 </section>
