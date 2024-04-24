@@ -232,7 +232,7 @@
             </li>
             <li>
                 <p>
-                    Recall that an integer <m>m</m> divides an integer <m>n</m>, written <m>m\mid n</m>, if there is an integer <m>q</m> such that <m>n=mq</m>. The relation <m>m\leq n\iff m\mid n</m> defines a partial ordering on the set of nonnegative integers <m>\Z_{\geq 0}=\N</m>.
+                    Recall that an integer <m>m</m> divides an integer <m>n</m>, written <m>m\mid n</m>, if there is an integer <m>q</m> such that <m>n=mq</m>. The relation <m>m\leq n\iff m\mid n</m> defines a partial ordering on the set of nonnegative integers <m>\mathbb{N}=\{n\in \Z\colon n\geq 0\}</m>.
                 </p>
             </li>
         </ol>
