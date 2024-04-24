@@ -11,8 +11,5 @@
   <xi:include  href="s_algebraic_closure.ptx"/>
   <xi:include  href="s_finite.ptx"/>
   <xi:include  href="s_embeddings.ptx"/>
-  <xi:include  href="s_normal.ptx"/>
-  <xi:include  href="s_separable_I.ptx"/>
-
 
 </chapter>
