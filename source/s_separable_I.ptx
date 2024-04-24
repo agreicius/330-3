@@ -97,6 +97,19 @@
             </p>
         </solution>
     </example>
+    <example>
+        <title>Separability and derivative</title>
+        <statement>
+            <p>
+                Let <m>F</m> be a field. Show that <m>f(x)=x^n-a\in F[x]</m> is separable if and only if <m>\character F \mid n</m>. In particular, if <m>\character F=0</m>, then <m>f</m> is separable. 
+            </p>
+        </statement>
+        <solution>
+            <p>
+                
+            </p>
+        </solution>
+    </example>
     <theorem xml:id="th_">
         <statement>
             <p>
