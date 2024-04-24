@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_separable_I" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Separability</title>
+    <definition xml:id="d_multiplicity">
+        <title>Multiplicity of roots</title>
+        <statement>
+            <p>
+                Let <m>K/F</m> be an algebraic closure of <m>F</m>. Given a nonzero polynomial <m>f(x)\in F[x]</m>, we can factor <m>f(x)</m> in the form 
+                <men xml:id="eq_multiplicity">
+                    f(x)=c(x-\alpha_1)^{n_1}(x-\alpha_2)^{n_2}\cdots (x-\alpha_r)^{n_r}, c\in F, \alpha_i\in K
+                </men>
+                where <m>\alpha_i\ne \alpha_j</m> for all <m>i\ne j</m>: <ie/>, the <m>\alpha_i</m> are the distinct roots of <m>f</m> in <m>K</m>. For each <m>1\leq i\leq r</m>, we call the power <m>n_i</m> the <term>multiplicity</term> of the root <m>\alpha_i</m>.  The root <m>\alpha_i</m> is called a <term>simple root</term> if <m>n_i=1</m>; it is called a <term>repeated root</term> if <m>n_i\geq 2</m>. 
+            </p>
+        </statement>
+    </definition>
+    <remark xml:id="rm_multiplicity">
+        <title>Multiplicity of roots</title>
+        <p>
+            The multiplicities <m>n_1,n_2,\dots, n_r</m> appearing in <xref ref="d_multiplicity"/> do not depend on the choice of algebraic closure of <m>F</m>.  That is, if <m>K/F</m> are two algebraic closures of <m>F</m>, and if <m>f</m> factors over <m>K</m> as in <xref ref="eq_multiplicity"/>,  then <m>f</m> factors over <m>K'</m> as
+            <me>
+                f(x)=c(x-\beta_1)^{n_1}(x-\beta_2)^{n_2}\cdots (x-\beta_r)^{n_r}, c\in F, \beta_i\in K'
+            </me>,
+            where the <m>\beta_i</m> are distinct.
+        </p>
+        
+    </remark>
+    <definition xml:id="d_sep_poly">
+        <title>Separable polynomial</title>
+        
+        <statement>
+            <p>
+                Let <m>F</m> be a field. A nonzero polynomial <m>f(x)\in F[x]</m> is <term>separable</term> if all its roots (in some algebraic closure of <m>F</m>) are simple. Equivalently, <m>f</m> is separable if <m>f</m> has has <m>n=\deg f</m> distinct roots. A nonzero polynomial is <term>inseparable</term> if it is not separable.  
+            </p>
+        </statement>
+    </definition>
+    <example>
+        <title>Separable polynomial</title>
+        <p>
+            Let <m>\overline{\Q}</m> be the algebraic closure of <m>\Q</m> in <m>\C</m>.  The polynomials <m>x^2-1</m> and <m>x^2+x+1</m> are separable polynomials of <m>\Q[x]</m> since they factor into as 
+            <md>
+                <mrow>x^2-1 \amp= (x-1)(x+1)\amp x^2+x+1=(x-e^{2\pi i/3})(x-e^{4\pi/3})</mrow>
+            </md> 
+            over <m>\overline{Q}</m>. (Note: <m>e^{2\pi i/3}\ne e^{4\pi i/3}</m>.)
+        </p>
+        <p>
+            The polynomial <m>x^2-4x+4</m> is not separable as it has a repeated root:
+            <me>
+                x^2-4x+4=(x-2)^2
+            </me>.
+        </p>
+    </example>  
+    <definition xml:id="d_poly_der">
+        <title>Polynomial derivative</title>
+        <statement>
+            <p>
+                Let <m>F</m> be a field. Given a polynomial <m>f(x)=\anpoly\in F[x]</m>, we definite its <term>derivative</term> <m>f'</m> to be the polynomial 
+                <me>
+                    f'(x)=na_nx^{n-1}+(n-1)a_{n-1}x^{n-2}+2a_2x+a_1
+                </me>.
+            </p>
+        </statement>
+    </definition>  
+    <remark xml:base="rm_poly_der">
+        <title>Polynomial derivative</title>
+        <p>
+            Using induction on degree, you can show that the polynomial derivative operator satisfies the same arithmetic laws as the derivative operator from calculus. In other words, we have 
+            <md>
+                <mrow>(cf(x))' \amp = c\, f'(x)</mrow>
+                <mrow>(f(x)+g(x))' \amp=f'(x)+g'(x) </mrow>
+                <mrow>(f(x)g(x))' \amp = f'(x)g(x)+f(x)g'(x)</mrow>
+                <mrow>(f(g(x)))' \amp = f'(g(x))g'(x) </mrow>
+            </md>.
+        </p>
+    </remark>
+    <theorem xml:id="th_sep_poly">
+        <title>Separability and derivative</title>
+        <statement>
+            <p>
+                Let <m>F</m> be a field. A nonconstant polynomial <m>f</m> is separable if and only if <m>f</m> and <m>f'</m> are relatively prime. Using logical shorthand: 
+                <me>
+                    f \text{ separable} \iff (f,f')=1
+                </me>.
+            </p>
+        </statement>
+    </theorem>
+    <example>
+        <title>Separability and derivative</title>
+        <statement>
+            <p>
+                Let <m>p</m> be a prime integer. Use  <xref ref="th_sep_poly"/> to prove that the polynomial <m>f(x)=x^p-x\in \F_p[x]</m> is separable. 
+            </p>
+        </statement>
+        <solution>
+            <p>
+                We have <m>f'(x)=px^{p-1}-1=-1</m>, since <m>p=0\in \F_p</m>. Since <m>f'=-1</m> is a unit in <m>\F_p[x]</m>, it follows that <m>(f,f')=1</m>. 
+            </p>
+        </solution>
+    </example>
+    <theorem xml:id="th_">
+        <statement>
+            <p>
+                
+            </p>
+        </statement>
+    </theorem>
+    
+</section>

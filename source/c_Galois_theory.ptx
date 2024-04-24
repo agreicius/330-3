@@ -12,5 +12,4 @@
   <xi:include  href="s_finite.ptx"/>
   <xi:include  href="s_embeddings.ptx"/>
 
-
 </chapter>
