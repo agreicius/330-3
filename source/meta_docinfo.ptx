@@ -89,6 +89,7 @@
       \DeclareMathOperator{\diver}{div}
       \DeclareMathOperator{\flux}{flux}
       \DeclareMathOperator{\Hom}{Hom}
+      \DeclareMathOperator{\Aut}{Aut}
       \DeclareMathOperator{\ab}{ab}
       \DeclareMathOperator{\character}{char}
 

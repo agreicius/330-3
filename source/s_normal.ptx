@@ -2,12 +2,17 @@
 
 <section xml:id="s_normal" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Normal extensions</title>
-    <p>
-        In this section we will see that splitting field extensions <m>K/F</m> satisfy a special property with respect to extensions of field embeddings: one that will be especially important when studying Galois groups and their normal subgroups. In part because of this, these extensions will be called <term>normal</term>. 
-    </p>
-    <p>
-        Our first result, however, deals with algebraic extensions <m>K/F</m>, and assures us the existence of extensions of embeddings <m>\sigma\colon F\rightarrow L</m> into an algebraically closed field.  
-    </p>
+    <introduction>
+        <p>
+            As defined in <xref ref="d_normal"/>, a field extension <m>K/F</m> is  <em>normal</em> if <m>K</m> is the splitting field of some collection of polynomials over <m>F</m>. Normal fields satisfy a particularly useful property with respect to extensions of field embeddings that will be important when studying Galois groups: in particular the <em>normal</em> subgroups of these Galois groups.
+        </p>
+    </introduction>
+    <subsection xml:id="ss_split_unique">
+        <title>Uniqueness of splitting fields and algebraic closures</title>
+        
+        
+        
+    
     <theorem xml:id="th_emb_ext_alg">
         <title>Algebraic extensions of embeddings</title>
         <statement>
@@ -26,16 +31,296 @@
         </statement>
     </theorem>
     <p>
-        We postpone the proof of this theorem to then end of the section, as it relies on a general version of Zorn's lemma. Two important consequences of <xref ref="th_emb_ext_alg"/> are that splitting fields of sets of polynomials and algebraic closures are unique up to isomorphism.  
+        We postpone the proof of this theorem to the end of the section, as it relies on a general version of Zorn's lemma. Two important consequences of <xref ref="th_emb_ext_alg"/> are that splitting fields of sets of polynomials and algebraic closures are unique up to isomorphism.  
     </p>
-    <corollary xml:id="cor_">
+    <corollary xml:id="cor_split_unique">
         <title>Uniqueness of splitting fields</title>
         <statement>
             <p>
-                Let <m>K/F</m> be a splitting field of a subset <m>\mathcal{P}\subseteq F[x]</m> 
+                Let <m>F</m> be a field, and let <m>\mathcal{P}\subseteq F[x]</m> be a collection of polynomials over <m>F</m>. Any two splitting fields of <m>\mathcal{P}</m> are isomorphic. 
             </p>
         </statement>
+        <proof>
+            <p>
+                Let <m>K/F</m> and <m>K'/F</m> be two splitting fields of <m>\mathcal{P}\subseteq F[x]</m>, and let <m>A_K</m> and <m>A_{K'}</m> be defined as 
+                <mdn>
+                    <mrow xml:id="eq_A_K">A_K \amp = \{\alpha\in K\colon f(\alpha)=0 \text{ for some } f\in \mathcal{P} \}</mrow>
+                    <mrow xml:id="eq_A_Kprime">A_{K'} \amp = \{\alpha\in K'\colon f(\alpha)=0 \text{ for some } f\in \mathcal{P} \}</mrow>
+                </mdn>.
+                In other words, <m>A_K</m> and <m>A_{K'}</m> are the sets of all roots of all elements of <m>\mathcal{P}</m> lying in <m>K</m>, respectively <m>K'</m>. Recall that, being splitting fields, <m>K</m> and <m>K'</m> are both algebraic over <m>F</m> and are generated over <m>F</m> by the roots of elements of <m>\mathcal{P}</m>: <ie/>, we have 
+                <md>
+                    <mrow>K\amp =F(A_K) \amp K'=F(A_{K'}) </mrow>
+                </md>.
+                Let <m>L/K'</m> be an algebraic closure of <m>K'</m>. Applying <xref ref="th_emb_ext_alg"/> to the inclusion map <m>i\colon F\hookrightarrow K'\leq L</m>, we get an <m>F</m>-embedding <m>\tau\colon K\rightarrow L</m>. 
+                <image xml:id="im_split_unique" width="30%">
+                    <shortdescription>Extension of inclusion to K</shortdescription>
+                    <latex-image>
+                        \begin{tikzcd}
+                        K\arrow[drr,dashed,"\exists\, \tau"]   \\ 
+                        F\arrow[dash,r]\arrow[dash,u]\arrow[rr, bend right=30, "i"']\amp K'\arrow[dash,r]\amp L
+                        \end{tikzcd}
+                    </latex-image>
+                </image>
+                We claim that in fact <m>\tau(K)=K'\leq L</m>, in which case restricting the codomain yields an isomorphism <m>\tau\colon K\rightarrow K'</m>. We use the generator descriptions <xref first="eq_A_K" last="eq_A_Kprime"/> to this end. Consider <m>\tau(A_K)</m> the image under <m>\tau</m> of the set of all roots of elements of <m>\mathcal{P}</m>. Since <m>\tau</m> is an <m>F</m>-embedding, it is easy to see that <m>\tau(A_K)\subseteq A_{K'}</m>. Indeed given <m>\alpha\in A_K</m>, if <m>\alpha</m> is a root of <m>f(x)=\anpoly\in \mathcal{P}</m>, then we have  
+                <md>
+                    <mrow>0=\tau(0)\amp=\tau(f(\alpha)) </mrow>
+                    <mrow> \amp = \tau(a_n\alpha^{n}+\cdots+a_1\alpha+a_0)</mrow>
+                    <mrow> \amp = a_n(\tau(\alpha))^n+\cdots +a_1\tau(\alpha)+a_0 \amp (\tau\in \Hom_F(K,L))</mrow>
+                </md>.
+            This argument shows, in general, that for any <m>f\in \mathcal{P}</m>, <m>\tau</m> maps the roots <m>R_{f,K}</m> of <m>f</m> in <m>K</m> to the roots <m>R_{f,K'}</m> of <m>f</m> in <m>K'</m>: <ie/>, restricting <m>\tau</m> to <m>R_{f,K}</m> yields an injective function <m>\tau\colon R_{f,K}\rightarrow R_{f,K'}</m>. In fact, this map is a bijection: since both <m>K</m> and <m>K'</m> split <m>f</m> completely, we have <m>\abs{R_{f,K}}=\abs{R_{f,K'}}&lt; \infty</m>, and thus since <m>\tau</m> is injective it is also surjective! We conclude that <m>\tau(R_{f,K})=R_{f,K'}</m> for all polynomials <m>f\in \mathcal{P}</m>, from whence it follows immediately that <m>\tau(A_K)=A_{K'}</m>. 
+            </p>
+            <p>
+                Lastly, using the fact that <m>K=F(A_K)</m>, we have 
+                <md>
+                    <mrow>\tau(K)\amp =\tau(F(A_K)) </mrow>
+                    <mrow> \amp = F(\tau(A_{K'}))</mrow>
+                    <mrow> \amp = F(A_{K'})</mrow>
+                    <mrow> \amp = K' </mrow>
+                </md>,
+                as claimed. The equality <m>\tau(F(A_K))=F(\tau(A_K))</m> above follows pretty much directly from the minimality property of generated fields: <eg/>, <m>\tau(F(A_K))</m> is a field containing <m>F</m> and <m>\tau(A_K)</m>, thus <m>F(\tau(A_K))\leq \tau(F_K(A_K)) </m> 
+            </p>
+        </proof>
     </corollary>
     
+    <corollary xml:id="cor_alg_closure_unique">
+        <title>Uniqueness of algebraic closure</title>
+        <statement>
+            <p>
+                Let <m>F</m> be a field. Any two algebraic closures of <m>F</m> are isomorphic. 
+            </p>
+        </statement>
+        <proof>
+            <p>
+                By <xref ref="cor_alg_closed_closure"/> any algebraic closure of <m>F</m> is a splitting field of <m>\mathcal{P}=F[x]</m>. The result now follows from <xref ref="cor_split_unique"/>. 
+            </p>
+        </proof>
+    </corollary>
+</subsection>
+    <subsection xml:id="ss_automorphisms">
+        <title>Automorphisms of fields</title>
+        <definition xml:id="d_automorphisms">
+            <title>Automorphisms</title>
+            <statement>
+                <p>
+                    A ring isomorphism <m>\sigma\colon R\rightarrow R</m> from a ring to itself is called an <term>automorphism</term>. 
+                </p>
+                <p>
+                    Given a field extension <m>K/F</m>, an <m>F</m>-embedding <m>\sigma\colon K\rightarrow K</m> that is also an automorphism is called an <term><m>F</m>-automorphism</term>. We denote by <m>\Aut_F(K)</m> the set of all <m>F</m>-automorphisms of <m>K</m>: <ie/>, 
+                    <me>
+                        \Aut_F(K)=\{\sigma\in \Hom_F(K,K)\colon \sigma \text{ an isomorphism}\}
+                    </me>.
+                </p>
+            </statement>
+        </definition>
+    <theorem xml:id="th_embed_isom">
+        <title>Automorphisms of algebraic extensions</title>
+        <statement>
+            <p>
+                Let <m>K/F</m> be an algebraic extension. If <m>\sigma\colon K\rightarrow K</m> is an <m>F</m>-embedding, then <m>\sigma</m> is an isomorphism. 
+            </p>
+        </statement>
+        <proof>
+            <p>
+                Homework exercise.
+            </p>
+        </proof>
+    </theorem>
+    
+    <example>
+        <title>Automorphism</title>
+        <p>
+            The condition that <m>K/F</m> be algebraic is indeed a necessary one for <xref ref="th_embed_isom"/>. Consider by contrast the transcendental extension <m>F(x)/F</m>, where as usual <m>F(x)</m> is the field of rational functions over <m>F</m>. It is easy to see that the map 
+            <md>
+                <mrow>\sigma\colon F(x) \amp \rightarrow F(x) </mrow>
+                <mrow>f(x)/g(x) \amp \mapsto f(x^2)/g(x^2)</mrow>
+            </md>
+            is an <m>F</m>-embedding, but is not surjective, hence not an automorphism.
+        </p>
+    </example>
+
+    <definition xml:id="d_normal">
+        <statement>
+            <p>
+                An field extension <m>K/F</m> is <term>normal</term> if <m>K</m> is the splitting field of a collection <m>\mathcal{P}\subseteq F[x]</m> of polynomials over <m>F</m>. 
+            </p>
+        </statement>
+    </definition>
+    <theorem xml:id="th_normal">
+        <title>Normal extensions</title>
+        <statement>
+            <p>
+                Let <m>K/F</m> be a field extension, and let <m>\overline{K}</m> be an algebraic closure of <m>K</m>. The following statements are equivalent. 
+                <ol>
+                    <li>
+                        <p>
+                            <m>K/F</m> is normal. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>K</m> is algebraic over <m>F</m>, and for all <m>\sigma\in \Hom_F(K,\overline{K})</m>, <m>\sigma(K)=K</m>: <ie/>, <m>\Hom_F(K,\overline{K})=\Aut_F(K)</m>. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>K</m> is algebraic over <m>F</m>, and for all <m>\alpha\in K</m> the minimal polynomial <m>m_{\alpha, F}(x)</m> splits completely over <m>F</m>. 
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+        <proof>
+            <p>
+                Homework exercise.
+            </p>
+        </proof>
+    </theorem>
+    
+</subsection>
+<subsection xml:id="ss_emb_ext_alg">
+<title>Zorn's lemma and proof of <xref ref="th_emb_ext_alg"/> </title>
+<p>
+    The proof of <xref ref="th_emb_ext_alg"/> makes us of Zorn's lemma, the statement of which requires some terminology about <em>partially ordered sets</em>. 
+</p>
+<definition xml:id="d_partial_order">
+    <title>Partial ordering axioms</title>  
+    <statement>
+        <p>
+        Let <m>R</m> denote a binary relation on the set <m>I</m>. We write <m>iRj</m> to assert that the relation <m>R</m> holds between elements <m>i,j\in I</m>. The relation <m>R</m> is a <term>partial ordering</term> if it satisfies the following three axioms.  
+        <ul>
+            <li>
+                <title>Reflexive (PO1)</title>
+                <p>
+                   For all <m>i\in I</m>, we have <m>iRi</m>. 
+                </p>
+            </li>
+            <li>
+                <title>Transitive (PO2)</title>
+                <p>
+                    For all <m>i,j,k\in I</m>, if <m>iRj</m> and <m>jRk</m>, then <m>iRk</m>. 
+                </p>
+            </li>
+            <li>
+                <title>Antisymmetric (PO3)</title>
+                <p>
+                   For all <m>i,j\in I</m>, if <m>iRj</m> and <m>jRi</m>, then <m>i=j</m>.
+                </p>
+            </li>
+        </ul>
+            A <term>partially ordered set</term> (POSET, for short) is a pair <m>(I,\leq)</m>, where <m>\leq</m> is a partial ordering on <m>I</m>.
+        </p>
+    </statement>
+</definition>
+<example xml:id="eg_poset">
+    <title>POSETS</title>
+    <p>
+        <ol>
+            <li>
+                <p>
+                    The usual <q>less than or equal to</q> relation <m>x\leq y</m> is a partial ordering on <m>\R</m>. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Let <m>X</m> be a set, and let <m>I=\mathcal{P}(X)</m> be the power set of of <m>X</m>. The relation <m>A\leq B \iff A\subseteq B</m> defines a partial ordering on <m>I</m>. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Let <m>X</m> be a set, and let <m>I=\mathcal{P}(X)</m> be the power set of of <m>X</m>. The relation <m>A\leq B \iff A\supseteq B</m> also defines a partial ordering on <m>I</m>. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Recall that an integer <m>m</m> divides an integer <m>n</m>, written <m>m\mid n</m>, if there is an integer <m>q</m> such that <m>n=mq</m>. The relation <m>m\leq n\iff m\mid n</m> defines a partial ordering on the set of nonnegative integers <m>\Z_{\geq 0}=\N</m>.
+                </p>
+            </li>
+        </ol>
+    </p>
+</example>
+<definition xml:id="d_chain">
+    <title>Upper bounds, maximal elements, chains</title>
+    <statement>
+        <p>
+            Let <m>(I, \leq)</m> be a partially ordered set. 
+        </p>
+        <p>
+            An <term>upper bound</term> on a subset <m>J\subseteq I</m> is an element <m>i\in I</m> such that <m>i\geq j</m> for all <m>j\in J</m>. 
+        </p>
+        <p>
+            An element <m>i\in I</m> is <term>maximal</term> if given any <m>i'\in I</m>, if <m>i\leq i'</m>, then <m>i=i'</m>. 
+        </p>
+        <p>
+            A subset <m>J\subseteq I</m> is a <term>chain</term> (or <term>totally ordered</term>) if for all <m>j, j'\in J</m> we have <m>j\leq j'</m> or <m>j'\leq j</m>. 
+        </p>
+    </statement>
+</definition>
+<theorem xml:id="th_Zorns_lemma">
+    <title>Zorn's lemma</title>
+    <statement>
+        <p>
+            Let <m>(I,\leq)</m> be a nonempty partially ordered set. If every chain <m>J\subseteq I</m> has an upper bound, then <m>I</m> has a maximal element: <ie/>, there is an <m>i\in I</m> such that for all <m>i'\in I</m>, if  <m>i\leq i'</m>, then <m>i=i'</m>. 
+        </p>
+    </statement>
+    <proof>
+        <p>
+            Zorn's lemma is equivalent to the axiom of choice. You can find a proof of this fact in most introductory set theory texts. We will not give a proof here. 
+        </p>
+    </proof>
+</theorem>
+<p>
+    We are ready at last to prove <xref ref="th_emb_ext_alg"/>. 
+</p>
+<proof>
+    <title>Proof of <xref ref="th_emb_ext_alg"/></title>
+    <p>
+        Assume <m>K/F</m> is algebraic and that <m>\sigma\colon F\rightarrow L</m> is an embedding, with <m>L</m> algebraically closed. We apply Zorn's lemma to the partially ordered set <m>(I,\leq)</m>, where <m>I</m> is the set of all pairs <m>(K',\tau_{K'})</m> consisting of a subextension <m>K'/F</m> of <m>K/F</m> and an extension <m>\tau_{K'}\colon K'\rightarrow L</m> of the embedding <m>\sigma\colon F\rightarrow L</m>, and where the partial ordering <m>\leq</m> is defined as follows
+        <md>
+            <mrow>(K',\tau_{K'})\leq (K'',\tau_{K''})\amp \iff K'\leq K'' \text{ and } \tau_{K''}\vert_{K'}=\tau_{K'} </mrow>
+        </md>.
+        It is straightforward to show that <m>\leq</m> as defined is a partial ordering of <m>I</m>.  Our steps are then as follows: 
+        <ol>
+            <li>
+                <p>
+                    Use Zorn's lemma to show that <m>I</m> contains a maximal elmenent <m>(K^*, \tau)</m> with respect to the defined ordering <m>\leq</m>. 
+                </p>
+            </li>
+            <li>
+                <p>
+                    Show that <m>K^*=K</m>. 
+                </p>
+            </li>
+        </ol>
+    </p>
+    <proof>
+        <title>Proof:<m>(I,\leq)</m> has maximal element </title>
+        <p>
+            First observe that <m>I</m> is nonempty. Indeed, the pair <m>(F,\sigma)</m> is an element of <m>I</m>. 
+        </p>
+        <p>Next, let <m>J\subseteq I</m> be a chain with respect to <m>\leq</m>. We must show that <m>J</m> has an upper bound in <m>I</m>. Define <m>(K^\dagger, \tau)</m> as follows: 
+            <md>
+                <mrow>K^\dagger \amp = \bigcup_{(K',\tau_{K'})\in J} K'</mrow>
+                <mrow>\tau \colon K^\dagger \amp\rightarrow L </mrow>
+                <mrow> \alpha \amp \mapsto \tau_{K'}(\alpha) \text{ for any } (K', \tau_{K'})\in J \text{ with } \alpha\in K'</mrow>
+            </md>.
+            It is not difficult to show that <m>K^\dagger</m> is a field (being a union of <em>nested</em> fields), that the map <m>\tau</m> is well-defined (<ie/>, it doesn't depend on the pair <m>(K',\tau_{K'})</m>), and is an extension of <m>\sigma\colon F\rightarrow L</m>. It follows essentially by definition of <m>(K^\dagger, \tau)</m> and <m>\leq</m> that <m>(K', \tau_{K'})\leq (K^\dagger, \tau)</m> for all <m>(K', \tau_{K'})\in J</m>. Thus <m>(K^\dagger, \tau)</m> is an upper bound of <m>J</m>. Since <m>J</m> was arbitrary, we conclude by Zorn's lemma that <m>I</m> has a maximal element <m>(K^*,\tau)</m>. 
+        </p>
+    </proof>
+    <proof>
+        <title>Proof: extension to <m>K</m> exists</title>
+        <p>
+            Let <m>(K^*, \tau)</m> be a maximal element of the partially ordered set <m>(I, \leq)</m>. We claim that <m>K^*=K</m>, in which case <m>\tau\colon K^*=K\rightarrow L</m> is our desired extension of <m>\sigma</m>. By definition, <m>K^*\leq K</m>. To prove the other inclusion, take any <m>\alpha\in K</m>. Since <m>K</m> is algebraic over <m>F</m>, it is also algebraic over <m>K^*</m>, in which case <m>K^*(\alpha)/K^*</m> is an algebraic simple extension. We apply <xref ref="th_embed_ext_simple"/> to the embedding <m>\tau\colon K^*\rightarrow L</m>. Let <m>f(x)=m_{\alpha,K^*}(x)\in K^*[x]</m>. Since <m>L</m> is algebraically closed, there is a root <m>\beta</m> of <m>f^\tau(x)\in L[x]</m>, and hence an extension <m>\tau'\colon K^*(\alpha)\rightarrow L</m>. Since <m>K^*\leq K^*(\alpha)</m>, and since <m>\tau'\vert_K^*=\tau</m> (by definition of embedding extensions), we see that 
+            <me>
+                (K^*, \tau)\leq (K^*(\alpha), \tau')
+            </me>.
+            Since <m>(K^*, \tau)</m> is maximal with respect to our partial ordering, we conclude that 
+            <me>
+                (K^*, \tau)= (K^*(\alpha), \tau')
+            </me>,
+            and hence <m>K^*=K^*(\alpha)</m>. In particular, we have <m>\alpha\in K^*</m>, as desired. 
+        </p>
+    </proof>
+</proof>
+</subsection>
 
 </section>
