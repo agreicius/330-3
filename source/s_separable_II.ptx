@@ -47,7 +47,7 @@
             <ol>
                 <li>
                     <p>
-                        If  <m>\character F=0</m>, then <m>K</m> is separable of <m>F</m>. 
+                        If  <m>\character F=0</m>, then <m>K</m> is separable over <m>F</m>. 
                     </p>
                 </li>
                 <li>
@@ -87,7 +87,7 @@
                 <li>
                     <title>Maximal separable degree</title>
                     <p>
-                        For any embedding <m>\sigma\colon F\rightarrow L</m> there are exactly <m>n=[K\colon F]</m> extension of <m>\sigma</m> to <m>K</m>. 
+                        For any embedding <m>\sigma\colon F\rightarrow L</m>, with <m>L</m> algebraically closed, there are exactly <m>n=[K\colon F]</m> extensions of <m>\sigma</m> to <m>K</m>. 
                     </p>
                 </li>
             </ol>
