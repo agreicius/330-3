@@ -2,7 +2,129 @@
 
 <section xml:id="s_separable_II" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Separable extensions</title>
+<definition xml:id="d_sep_ext">
+    <title>Separable extension</title>
+    <statement>
+        <p>
+            Let <m>K/F</m> be a field extension. An element <m>\alpha\in K</m> is <term>separable</term> over <m>F</m> if and only if it satisfies a separable polynomial <m>f\in F[x]</m>. 
+        </p>
+        <p>
+            The extension <m>K</m> is <term>separable</term> over <m>F</m> if all elements of <m>K</m> are separable over <m>F</m>. 
+        </p>
+    </statement>
+</definition>
+<remark>
+    <title>Separable is algebraic</title>
+    <p>
+        Observe that by definition a separable extension <m>K/F</m> is algebraic. 
+    </p>
+</remark>    
+<theorem xml:id="th_sep_min">
+    <title>Separable minimal polynomial</title>
+    <statement>
+        <p>
+            Let <m>K/F</m> be a field extension. An element <m>\alpha\in K</m> is separable over <m>F</m> if and only if its minimal polynomial is separable over <m>F</m>. Using logical shorthand: 
+            <me>
+                \alpha \text{ separable} \iff m_{\alpha, F}(x) \text{ separable}
+            </me>.
+        </p>
+    </statement>
+</theorem>
+<remark>
+    <title>Separable minimal polynomial</title>
+    <p>
+        <xref ref="th_sep_min"/> will come in handy in many theoretical contexts, but when it comes down to showing a given element <m>\alpha</m> of a field extension <m>K/F</m> is separable over <m>F</m>, the definition of separability can be more convenient. 
+    </p>
+    <p>
+        As an example, suppose <m>\alpha</m> satisfies the polynomial <m>f(x)=x^n-1\in F[x]</m>, where <m>\character F\nmid n</m>. Using <xref ref="th_sep_poly"/>, it is easy to see that <m>f</m> is separable, since <m>f'(x)=nx^{n-1}\ne 0</m>, and thus clearly <m>(f,f')=1</m>. If instead we tried to use <xref ref="th_sep_min"/>, we would have to hunt around for the minimal polynomial of <m>\alpha</m>, which in general is pretty tricky to find. 
+    </p>
+</remark>
+<theorem xml:id="th_sep_ext_egs">
+    <title>Separable families of extensions</title>
+    <statement>
+        <p>
+            Let <m>K/F</m> be an algebraic field extension. 
+            <ol>
+                <li>
+                    <p>
+                        If  <m>\character F=0</m>, then <m>K</m> is separable of <m>F</m>. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        If <m>\character F=p&gt; 0</m> and the Frobenius map <m>a\mapsto a^p</m> is surjective on <m>F</m>, then <m>K</m> is separable over <m>F</m>. 
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </statement>
+    <proof>
+        <p>
+            These are immediate consequences of <xref first="cor_sep_irr_char_0" last="cor_sep_irr_char_p"/>, <xref ref="d_sep_ext"/>, and <xref ref="th_sep_min"/>. 
+        </p>
+    </proof>
+</theorem>
 
-    
+<theorem xml:id="th_sep_fin_ext">
+    <title>Separable finite extensions</title>
+    <statement>
+        <p>
+            Let <m>K/F</m> be a finite field extension of degree <m>n=[K\colon F]</m>. The following statements are equivalent. 
+            <ol>
+                <li>
+                    <title>Separable</title>
+                    
+                    <p>
+                        <m>K/F</m> is separable. 
+                    </p>
+                </li>
+                <li>
+                    <title>Separably generated</title>
+                    <p>
+                        <m>K=F(\alpha_1,\alpha_2,\dots, \alpha_n)</m> where each <m>\alpha_i</m> is separable over <m>F</m>. 
+                    </p>
+                </li>
+                <li>
+                    <title>Maximal separable degree</title>
+                    <p>
+                        For any embedding <m>\sigma\colon F\rightarrow L</m> there are exactly <m>n=[K\colon F]</m> extension of <m>\sigma</m> to <m>K</m>. 
+                    </p>
+                </li>
+            </ol>
+        </p>
+    </statement>
+</theorem>
+<corollary xml:id="cor_sep_strong_trans">
+    <title>Separability is strongly transitive</title>
+    <statement>
+        <p>
+            Let <m>L/K/F</m> be a tower of algebraic field extensions. The extension <m>L/F</m> is separable if and only if <m>L/K</m> and <m>K/F</m> are both separable. Using logical shorthand: 
+            <me>
+                L/F \text{ separable} \iff L/K \text{ separable and } K/F \text{ separable}
+            </me>.
+        </p>
+    </statement>
+</corollary>
+<corollary xml:id="cor_sep_gen">
+    <title>Separable is separably generated</title>
+    <statement>
+        <p>
+        A field extension <m>K/F</m> is separable if and only if there is a set <m>A\subseteq K</m> of separable elements such that <m>K=F(A)</m>. In plain English: an extension is separable if and only if it is separably generated. 
+        </p>
+    </statement>
+</corollary>
+<theorem xml:id="th_sep_prim_elem">
+    <title>Primitive element theorem</title>
+    <statement>
+        <p>
+            Let <m>K/F</m> be a finite separable extension. There is an element <m>\alpha\in K</m> such that <m>K=F(\alpha)</m>. Using logical shorthand: 
+            <me>
+                K/F \text{ finite separable} \implies K=F(\alpha) \text{ simple}
+            </me>.
+            
+        </p>
+    </statement>
+</theorem>
+
 
 </section>

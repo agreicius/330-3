@@ -136,7 +136,7 @@
     </example>
     
     <theorem xml:id="th_sep_irr">
-        <title>Irreducible and separable</title>
+        <title>Separable irreducible</title>
         <statement>
             <p>
                 Let <m>F</m> be a field. An irreducible polynomial <m>f\in F[x]</m> is separable if and only if <m>f'\ne 0</m>. 
@@ -152,7 +152,7 @@
         </proof>
     </theorem>
     <corollary xml:id="cor_sep_irr_char_0">
-        <title>Separable in characteristic zero</title>
+        <title>Separable irreducible in characteristic zero</title>
         <statement>
             <p>
                Let <m>F</m> be a field of characteristic zero. If <m>f\in F[x]</m> is irreducible, then <m>f</m> is separable.  
@@ -165,7 +165,7 @@
         </proof>
     </corollary>
     <corollary xml:id="cor_sep_irr_char_p">
-        <title>Separable in characteristic <m>p</m></title>
+        <title>Separable irreducible in characteristic <m>p</m></title>
         <statement>
             <p>
                 Let <m>F</m> be a field of prime characteristic <m>p</m>. Assume further that the Frobenius morphism <m>\phi\colon F\rightarrow F</m> is surjective: <ie/>, for all <m>b\in F</m>, there is an <m>a\in F</m> such that <m>a^p=b</m>. 
@@ -178,24 +178,24 @@
             <p>
                 Let <m>f\in F[x]</m> be irreducible and suppose by contradiction that <m>f</m> is inseparable. By <xref ref="th_sep_irr"/>, we must have <m>f'=0</m>. Since <m>\character F=p</m>, for a positive integer <m>k</m> and <m>a\in F</m>, we have <m>k\cdot a=0</m> if and only if <m>a=0</m> or <m>p\mid k</m>. It follows that in order for <m>f'=0</m>, we must have 
                 <me>
-                    f(x)=b_{r}x^{p^r}+b_{r-1}x^{p^{r-1}}+\cdots+b_1x^p+b_0
+                    f(x)=b_{m}x^{mp}+b_{m-1}x^{(m-1)p}+\cdots+b_1x^p+b_0
                 </me>.
-                Since the Frobenius map is surjective, there are elements <m>a_j\in F</m> satisfying <m>a_j^p=b_j</m> for all <m>1\leq j\leq r</m>. But then we have 
+                Since the Frobenius map is surjective, there are elements <m>a_j\in F</m> satisfying <m>a_j^p=b_j</m> for all <m>1\leq j\leq m</m>. But then we have 
                 <md>
-                    <mrow> (a_{r}x^{p^{r-1}}+a_{r-1}x^{p^{r-2}}+\cdots+a_1x+a_0)^p\amp
-                        =a_{r}^p(x^{p^{r-1}})^p+\cdots+a_1^px^p+a_0^p \amp (\text{ first-year's dream}) </mrow>
-                        <mrow> \amp = b_{r}x^{p^r}+b_{r-1}x^{p^{r-1}}+\cdots+b_1x^p+b_0</mrow>
+                    <mrow> (a_{m}x^{(m-1)p}+a_{m-1}x^{(m-1)p}+\cdots+a_1x^p+a_0)^p\amp
+                        =a_{m}^p(x^{(m-1)p})^p+\cdots+a_1^px^p+a_0^p \amp (\text{ first-year's dream}) </mrow>
+                        <mrow> \amp = b_{m}x^{mp}+b_{m-1}x^{(m-1)p}+\cdots+b_1x^p+b_0</mrow>
                 </md>,
                 in which case 
                 <me>
-                    f(x)=(a_{r}x^{p^{r-1}}+a_{r-1}x^{p^{r-2}}+\cdots+a_1x+a_0)^p
+                    f(x)=(a_{m}x^{(m-1)p}+a_{m-1}x^{(m-1)p}+\cdots+a_1x^p+a_0)^p
                 </me>
                 is not irreducible. Contradiction! 
             </p>
         </proof>
     </corollary>
     <corollary xml:id="cor_sep_irr_finite">
-        <title>Separable in finite fields</title>
+        <title>Separable irreducible in finite fields</title>
         <statement>
             <p>
                 If <m>F=\F_{p^n}</m> is a finite field, then every irreducible polynomial <m>f\in F[x]</m> is separable.
