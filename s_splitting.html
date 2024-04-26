@@ -180,6 +180,7 @@ window.MathJax = {
   \DeclareMathOperator{\diver}{div}
   \DeclareMathOperator{\flux}{flux}
   \DeclareMathOperator{\Hom}{Hom}
+  \DeclareMathOperator{\Aut}{Aut}
   \DeclareMathOperator{\ab}{ab}
   \DeclareMathOperator{\character}{char}
 
@@ -304,6 +305,17 @@ window.MathJax = {
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="s_splitting.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Splitting fields</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="Untitled-1.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Algebraic closure</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_finite.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Finite fields</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_embeddings.html" class="internal"><span class="codenumber">1.10</span> <span class="title">Field embeddings</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_normal.html" class="internal"><span class="codenumber">1.11</span> <span class="title">Normal extensions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_normal.html#ss_split_unique" class="internal"><span class="title">Uniqueness of splitting fields and algebraic closures</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_normal.html#ss_automorphisms" class="internal"><span class="title">Automorphisms of fields</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_normal.html#ss_emb_ext_alg" class="internal"><span class="title">Zorn’s lemma and proof of Theorem 1.11.1</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_separable_I.html" class="internal"><span class="codenumber">1.12</span> <span class="title">Separability</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_separable_II.html" class="internal"><span class="codenumber">1.13</span> <span class="title">Separable extensions</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -347,17 +359,16 @@ f(x)=c(x-\alpha_1)(x-\alpha_2)\cdots (x-\alpha_n)\text{,}\tag{1.10}
 </div></li>
 </ol></div>
 <div class="solutions"><details id="eg_split_poly-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para" id="eg_split_poly-3-1"></div></div></details></div></article><article class="definition definition-like" id="d_splitting_field"><h3 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.7.4</span><span class="period">.</span>
-</h3>
-<div class="para logical" id="d_splitting_field-1-1">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.7.4</span><span class="period">.</span><span class="space"> </span><span class="title">Splitting field.</span>
+</h3> <div class="para logical" id="d_splitting_field-2-1">
 <div class="para">Let <span class="process-math">\(F\)</span> be a field, and let <span class="process-math">\(\mathcal{P}\subseteq F[x]\)</span> be a set of polynomials over <span class="process-math">\(F\text{.}\)</span> A field extension <span class="process-math">\(K/F\)</span> is called a <dfn class="terminology">splitting field</dfn> of the collection <span class="process-math">\(\mathcal{P}\)</span> if the following conditions hold.</div>
 <ol class="lower-roman">
-<li id="d_splitting_field-1-1-7-1">
-<span class="heading"><span class="title"><span class="process-math">\(K\)</span> splits <span class="process-math">\(\mathcal{P}\)</span>.</span></span><div class="para" id="d_splitting_field-1-1-7-1-2">For all <span class="process-math">\(f\in \mathcal{P}\text{,}\)</span> <span class="process-math">\(f\)</span> splits completely in <span class="process-math">\(K\text{.}\)</span>
+<li id="d_splitting_field-2-1-7-1">
+<span class="heading"><span class="title"><span class="process-math">\(K\)</span> splits <span class="process-math">\(\mathcal{P}\)</span>.</span></span><div class="para" id="d_splitting_field-2-1-7-1-2">For all <span class="process-math">\(f\in \mathcal{P}\text{,}\)</span> <span class="process-math">\(f\)</span> splits completely in <span class="process-math">\(K\text{.}\)</span>
 </div>
 </li>
-<li id="d_splitting_field-1-1-7-2">
-<span class="heading"><span class="title"><span class="process-math">\(K\)</span> minimal.</span></span><div class="para" id="d_splitting_field-1-1-7-2-2">If <span class="process-math">\(K'/F\)</span> is a subextension of <span class="process-math">\(K/F\)</span> such that <span class="process-math">\(f\)</span> splits completely in <span class="process-math">\(K'\)</span> for all <span class="process-math">\(f\in \mathcal{P}\text{,}\)</span> then <span class="process-math">\(K'=K\text{.}\)</span> In other words, there is no proper subextension of <span class="process-math">\(K;\)</span> that splits <span class="process-math">\(\mathcal{P}\text{.}\)</span>
+<li id="d_splitting_field-2-1-7-2">
+<span class="heading"><span class="title"><span class="process-math">\(K\)</span> minimal.</span></span><div class="para" id="d_splitting_field-2-1-7-2-2">If <span class="process-math">\(K'/F\)</span> is a subextension of <span class="process-math">\(K/F\)</span> such that <span class="process-math">\(f\)</span> splits completely in <span class="process-math">\(K'\)</span> for all <span class="process-math">\(f\in \mathcal{P}\text{,}\)</span> then <span class="process-math">\(K'=K\text{.}\)</span> In other words, there is no proper subextension of <span class="process-math">\(K;\)</span> that splits <span class="process-math">\(\mathcal{P}\text{.}\)</span>
 </div>
 </li>
 </ol>

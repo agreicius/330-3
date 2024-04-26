@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.12.7</span><span class="period">.</span><span class="space"> </span><span class="title">Separability and derivative.</span>
+</h3>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(F\)</span> be a field. A nonconstant polynomial <span class="process-math">\(f\)</span> is separable if and only if <span class="process-math">\(f\)</span> and <span class="process-math">\(f'\)</span> are relatively prime. Using logical shorthand:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f \text{ separable} \iff (f,f')=1\text{.}
+\end{equation*}
+</div>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para">We prove each implication separately. Let <span class="process-math">\(\overline{F}/F\)</span> be an algebraic closure of <span class="process-math">\(F\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">For the forward direction, assume <span class="process-math">\(f\)</span> is separable. We will show that <span class="process-math">\(f\)</span> and <span class="process-math">\(f'\)</span> have no common linear factor <span class="process-math">\((x-\alpha)\)</span> over <span class="process-math">\(\overline{F}\text{,}\)</span> from whence it follows that they have no common nonconstant factor over <span class="process-math">\(F\text{.}\)</span> To this end, suppose we have <span class="process-math">\(f(x)=(x-\alpha)g(x)\text{.}\)</span> Since <span class="process-math">\(f\)</span> is separable, the root <span class="process-math">\(\alpha\)</span> is simple, and hence <span class="process-math">\((x-\alpha)\nmid g(x)\text{.}\)</span> But then we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f'(x)=(x-\alpha)'g(x)+(x-\alpha)g'(x)=g(x)+(x-\alpha)g'(x),
+\end{equation*}
+</div>
+<div class="para">in which case <span class="process-math">\(f'(\alpha)=g(\alpha)+0=g(\alpha)\ne 0\text{,}\)</span> since <span class="process-math">\(\alpha\)</span> is not a root of <span class="process-math">\(g\text{.}\)</span> Thus <span class="process-math">\(f\)</span> and <span class="process-math">\(f'\)</span> have no common roots, and hence no common linear factor, as desired.</div>
+</div> <div class="para logical">
+<div class="para">For the reverse implication, assume <span class="process-math">\(f\)</span> and <span class="process-math">\(f'\)</span> are relatively prime. Recall that this is equivalent to <span class="process-math">\((f,f')=(1)\)</span> as ideals in <span class="process-math">\(F[x]\text{,}\)</span> in which case we have <span class="process-math">\(1=g(x)f(x)+h(x)f'(x)\)</span> for some <span class="process-math">\(g,h\in F[x]\text{.}\)</span> Suppose by contradiction that <span class="process-math">\(f\)</span> is not separable, and that <span class="process-math">\(\alpha\)</span> is a repeated root. We can factor <span class="process-math">\(f\)</span> over <span class="process-math">\(\overline{F}\)</span> as  <span class="process-math">\(f(x)=(x-\alpha)^2g(x)\)</span> for some <span class="process-math">\(g\in K[x]\text{,}\)</span> in which case</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f'(x)=2(x-\alpha)g(x)+(x-\alpha)g'(x)=(x-\alpha)(2g(x)+g'(x)).
+\end{equation*}
+</div>
+<div class="para">Thus <span class="process-math">\(\alpha\)</span> is a common root of <span class="process-math">\(f\)</span> and <span class="process-math">\(f'\)</span> over <span class="process-math">\(\overline{K}\text{.}\)</span> But this is a contradiction since then we’d have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+1=g(\alpha)f(\alpha)+h(\alpha)f'(\alpha)=0+0=0\text{.}
+\end{equation*}
+</div>
+<div class="para">We conclude that <span class="process-math">\(f\)</span> is separable, as desired.</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_separable_I.html#th_sep_poly">in-context</a></span>
+</body>
+</html>

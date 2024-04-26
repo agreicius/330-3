@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="corollary theorem-like"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.11.2</span><span class="period">.</span><span class="space"> </span><span class="title">Uniqueness of splitting fields.</span>
+</h4>
+<div class="para">Let <span class="process-math">\(F\)</span> be a field, and let <span class="process-math">\(\mathcal{P}\subseteq F[x]\)</span> be a collection of polynomials over <span class="process-math">\(F\text{.}\)</span> Any two splitting fields of <span class="process-math">\(\mathcal{P}\)</span> are isomorphic.</div></article><details class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical">
+<div class="para">Let <span class="process-math">\(K/F\)</span> and <span class="process-math">\(K'/F\)</span> be two splitting fields of <span class="process-math">\(\mathcal{P}\subseteq F[x]\text{,}\)</span> and let <span class="process-math">\(A_K\)</span> and <span class="process-math">\(A_{K'}\)</span> be defined as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_emb_ext_alg.html ">
+\begin{align}
+A_K \amp = \{\alpha\in K\colon f(\alpha)=0 \text{ for some } f\in \mathcal{P} \}\tag{1.21}\\
+A_{K'} \amp = \{\alpha\in K'\colon f(\alpha)=0 \text{ for some } f\in \mathcal{P} \}\text{.}\tag{1.22}
+\end{align}
+</div>
+<div class="para">In other words, <span class="process-math">\(A_K\)</span> and <span class="process-math">\(A_{K'}\)</span> are the sets of all roots of all elements of <span class="process-math">\(\mathcal{P}\)</span> lying in <span class="process-math">\(K\text{,}\)</span> respectively <span class="process-math">\(K'\text{.}\)</span> Recall that, being splitting fields, <span class="process-math">\(K\)</span> and <span class="process-math">\(K'\)</span> are both algebraic over <span class="process-math">\(F\)</span> and are generated over <span class="process-math">\(F\)</span> by the roots of elements of <span class="process-math">\(\mathcal{P}\text{:}\)</span> i.e., we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_emb_ext_alg.html ">
+\begin{align*}
+K\amp =F(A_K) \amp K'=F(A_{K'}) \text{.}
+\end{align*}
+</div>
+<div class="para">Let <span class="process-math">\(L/K'\)</span> be an algebraic closure of <span class="process-math">\(K'\text{.}\)</span> Applying <a href="" class="xref" data-knowl="./knowl/xref/th_emb_ext_alg.html" title="Theorem 1.11.1: Algebraic extensions of embeddings">Theorem 1.11.1</a> to the inclusion map <span class="process-math">\(i\colon F\hookrightarrow K'\leq L\text{,}\)</span> we get an <span class="process-math">\(F\)</span>-embedding <span class="process-math">\(\tau\colon K\rightarrow L\text{.}\)</span> <div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="generated/latex-image/im_split_unique.svg" role="img" class="contained" alt="Extension of inclusion to K"></div> We claim that in fact <span class="process-math">\(\tau(K)=K'\leq L\text{,}\)</span> in which case restricting the codomain yields an isomorphism <span class="process-math">\(\tau\colon K\rightarrow K'\text{.}\)</span> We use the generator descriptions <a href="" class="xref" data-knowl="./knowl/xref/eq_A_K.html" title="Equation 1.21">(1.21)–(1.22)</a> to this end. Consider <span class="process-math">\(\tau(A_K)\)</span> the image under <span class="process-math">\(\tau\)</span> of the set of all roots of elements of <span class="process-math">\(\mathcal{P}\text{.}\)</span> Since <span class="process-math">\(\tau\)</span> is an <span class="process-math">\(F\)</span>-embedding, it is easy to see that <span class="process-math">\(\tau(A_K)\subseteq A_{K'}\text{.}\)</span> Indeed given <span class="process-math">\(\alpha\in A_K\text{,}\)</span> if <span class="process-math">\(\alpha\)</span> is a root of <span class="process-math">\(f(x)=\anpoly\in \mathcal{P}\text{,}\)</span> then we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_emb_ext_alg.html ">
+\begin{align*}
+0=\tau(0)\amp=\tau(f(\alpha)) \\
+\amp = \tau(a_n\alpha^{n}+\cdots+a_1\alpha+a_0)\\
+\amp = a_n(\tau(\alpha))^n+\cdots +a_1\tau(\alpha)+a_0 \amp (\tau\in \Hom_F(K,L))\text{.}
+\end{align*}
+</div>
+<div class="para">This argument shows, in general, that for any <span class="process-math">\(f\in \mathcal{P}\text{,}\)</span> <span class="process-math">\(\tau\)</span> maps the roots <span class="process-math">\(R_{f,K}\)</span> of <span class="process-math">\(f\)</span> in <span class="process-math">\(K\)</span> to the roots <span class="process-math">\(R_{f,K'}\)</span> of <span class="process-math">\(f\)</span> in <span class="process-math">\(K'\text{:}\)</span> i.e., restricting <span class="process-math">\(\tau\)</span> to <span class="process-math">\(R_{f,K}\)</span> yields an injective function <span class="process-math">\(\tau\colon R_{f,K}\rightarrow R_{f,K'}\text{.}\)</span> In fact, this map is a bijection: since both <span class="process-math">\(K\)</span> and <span class="process-math">\(K'\)</span> split <span class="process-math">\(f\)</span> completely, we have <span class="process-math">\(\abs{R_{f,K}}=\abs{R_{f,K'}}&lt; \infty\text{,}\)</span> and thus since <span class="process-math">\(\tau\)</span> is injective it is also surjective! We conclude that <span class="process-math">\(\tau(R_{f,K})=R_{f,K'}\)</span> for all polynomials <span class="process-math">\(f\in \mathcal{P}\text{,}\)</span> from whence it follows immediately that <span class="process-math">\(\tau(A_K)=A_{K'}\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Lastly, using the fact that <span class="process-math">\(K=F(A_K)\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\tau(K)\amp =\tau(F(A_K)) \\
+\amp = F(\tau(A_{K'}))\\
+\amp = F(A_{K'})\\
+\amp = K' \text{,}
+\end{align*}
+</div>
+<div class="para">as claimed. The equality <span class="process-math">\(\tau(F(A_K))=F(\tau(A_K))\)</span> above follows pretty much directly from the minimality property of generated fields: e.g., <span class="process-math">\(\tau(F(A_K))\)</span> is a field containing <span class="process-math">\(F\)</span> and <span class="process-math">\(\tau(A_K)\text{,}\)</span> thus <span class="process-math">\(F(\tau(A_K))\leq \tau(F_K(A_K)) \)</span>
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_normal.html#cor_split_unique">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.10.6</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(\Q\)</span>-embeddings.</span>
+</h3>
+<div class="para logical">
+<div class="para">For each pair of extensions <span class="process-math">\(K/\Q\)</span> and <span class="process-math">\(L/\Q\)</span> compute <span class="process-math">\(\Hom_\Q(K,L)\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li><div class="para">
+<span class="process-math">\(K=\Q(\sqrt[3]{2})\text{,}\)</span> <span class="process-math">\(L=\R\text{.}\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(K=\Q(\sqrt[3]{2})\text{,}\)</span> <span class="process-math">\(L=\C\text{.}\)</span>
+</div></li>
+</ol>
+</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical">
+<div class="para">We use <a href="" class="xref" data-knowl="./knowl/xref/th_embed_ext_simple.html" title="Theorem 1.10.3: Extensions of embeddings: simple extension">Theorem 1.10.3</a> throughout.</div>
+<ol class="decimal">
+<li><div class="para logical">
+<div class="para">Let <span class="process-math">\(\sqrt[3]{2}\text{.}\)</span> We have <span class="process-math">\(m_{\sqrt[3]{2},\Q}(x)=x^3-2\text{.}\)</span> The only root of <span class="process-math">\(x^3-2\)</span> in <span class="process-math">\(\R\)</span> is <span class="process-math">\(\sqrt[3]{2}\text{,}\)</span> and thus the only element of <span class="process-math">\(\Hom_\Q(\Q(\sqrt[3]{2}),\R)\)</span> is the map <span class="process-math">\(\tau\)</span> defined as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\tau(a+b\sqrt[3]{2}+c\sqrt[3]{2})=a+b\sqrt[3]{2}+c\sqrt[3]{4},
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(a,b,c\in \Q\text{.}\)</span> We recognize this embedding as none other than the inclusion map <span class="process-math">\(i\colon \Q(\sqrt[3]{2})\hookrightarrow \R\text{.}\)</span>
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">As above, we have <span class="process-math">\(m_{\Q,\alpha}(x)=x^3-2\text{.}\)</span> The polynomial <span class="process-math">\(x^3-2\)</span> has three distinct roots <span class="process-math">\(\beta_1=\sqrt[3]{2}, \beta_2=\zeta\sqrt[3]{2}, \beta_3=\zeta^2\sqrt[3]{2}\)</span> in <span class="process-math">\(\C\text{,}\)</span> where <span class="process-math">\(\zeta=e^{2\pi i/3}\text{.}\)</span> These three roots give rise to exactly three <span class="process-math">\(\Q\)</span>-embeddings <span class="process-math">\(\tau_i\text{,}\)</span> <span class="process-math">\(1\leq i\leq 3\text{,}\)</span> defined as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\tau_i(a+b\alpha+c\alpha^2)=a+b\beta_i+c\beta_i^2,
+\end{equation*}
+</div>
+<div class="para">for all <span class="process-math">\(a,b,c\in \Q\text{.}\)</span> We conclude that <span class="process-math">\(\Hom_\Q(K, \R)=\{\tau_1,\tau_2,\tau_3\}\text{.}\)</span>
+</div>
+</div></li>
+</ol>
+</div></div></details></div></article><span class="incontext"><a class="internal" href="s_embeddings.html#s_embeddings-8">in-context</a></span>
+</body>
+</html>
