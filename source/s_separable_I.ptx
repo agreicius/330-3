@@ -41,7 +41,7 @@
             <md>
                 <mrow>x^2-1 \amp= (x-1)(x+1)\amp x^2+x+1=(x-e^{2\pi i/3})(x-e^{4\pi/3})</mrow>
             </md> 
-            over <m>\overline{Q}</m>. (Note: <m>e^{2\pi i/3}\ne e^{4\pi i/3}</m>.)
+            over <m>\overline{\Q}</m>. (Note: <m>e^{2\pi i/3}\ne e^{4\pi i/3}</m>.)
         </p>
         <p>
             The polynomial <m>x^2-4x+4</m> is not separable as it has a repeated root:
@@ -83,6 +83,30 @@
                 </me>.
             </p>
         </statement>
+        <proof>
+            <p>
+                We prove each implication separately. Let <m>\overline{F}/F</m> be an algebraic closure of <m>F</m>. 
+            </p>
+            <p>
+                For the forward direction, assume <m>f</m> is separable. We will show that <m>f</m> and <m>f'</m> have no common linear factor <m>(x-\alpha)</m> over <m>\overline{F}</m>, from whence it follows that they have no common nonconstant factor over <m>F</m>. To this end, suppose we have <m>f(x)=(x-\alpha)g(x)</m>. Since <m>f</m> is separable, the root <m>\alpha</m> is simple, and hence <m>(x-\alpha)\nmid g(x)</m>. But then we have 
+                <me>
+                    f'(x)=(x-\alpha)'g(x)+(x-\alpha)g'(x)=g(x)+(x-\alpha)g'(x),
+                </me>
+                in which case <m>f'(\alpha)=g(\alpha)+0=g(\alpha)\ne 0</m>, since <m>\alpha</m> is not a root of <m>g</m>. Thus <m>f</m> and <m>f'</m> have no common roots, and hence no common linear factor, as desired.   
+            </p>
+            <p>
+                For the reverse implication, assume <m>f</m> and <m>f'</m> are relatively prime. Recall that this is equivalent to <m>(f,f')=(1)</m> as ideals in <m>F[x]</m>, in which case we have <m>1=g(x)f(x)+h(x)f'(x)</m> for some <m>g,h\in F[x]</m>. Suppose by contradiction that <m>f</m> is not separable, and that <m>\alpha</m> is a repeated root. We can factor <m>f</m> over <m>\overline{F}</m> as  <m>f(x)=(x-\alpha)^2g(x)</m> for some <m>g\in K[x]</m>, in which case 
+                <me>
+                    f'(x)=2(x-\alpha)g(x)+(x-\alpha)g'(x)=(x-\alpha)(2g(x)+g'(x)).
+                </me>
+                Thus <m>\alpha</m> is a common root of <m>f</m> and <m>f'</m> over <m>\overline{K}</m>. But this is a contradiction since then we'd have 
+                <me>
+                    1=g(\alpha)f(\alpha)+h(\alpha)f'(\alpha)=0+0=0
+                </me>.
+                 We conclude that <m>f</m> is separable, as desired. 
+            </p>
+            
+        </proof>
     </theorem>
     <example>
         <title>Separability and derivative</title>
@@ -111,12 +135,77 @@
         </solution>
     </example>
     
-    <theorem xml:id="th_">
+    <theorem xml:id="th_sep_irr">
+        <title>Irreducible and separable</title>
         <statement>
             <p>
-                
+                Let <m>F</m> be a field. An irreducible polynomial <m>f\in F[x]</m> is separable if and only if <m>f'\ne 0</m>. 
             </p>
         </statement>
+        <proof>
+            <p>
+                By <xref ref="th_sep_poly"/>, <m>f</m> is separable if and only if <m>(f,f')=1</m>; so it suffices to show that for an <em>irreducible</em> polynomial, <m>(f,f')=1</m> if and only if <m>f'\ne 0</m>.   
+            </p>
+            <p>
+                Assume <m>f=\anpoly</m> is irreducible. Since <m>f'(x)=na_nx^{n-1}+\cdots 2a_2x+a_1</m>, we see that either <m>\deg f'&lt; \deg f</m>, or <m>f'=0</m>. Since the only factors of <m>f</m>, up to multiplication by units, are <m>f</m> and <m>1</m>, we see that <m>(f,f')=1</m> or <m>(f,f')=f</m>. Since <m>f'\ne 0</m> implies <m>\deg f'&lt; f</m>, we see that the second condition attains if and only if <m>f'=0</m>. Equivalently, <m>(f,f')=1</m> if and only if <m>f'=0</m>.
+            </p>
+        </proof>
     </theorem>
+    <corollary xml:id="cor_sep_irr_char_0">
+        <title>Separable in characteristic zero</title>
+        <statement>
+            <p>
+               Let <m>F</m> be a field of characteristic zero. If <m>f\in F[x]</m> is irreducible, then <m>f</m> is separable.  
+            </p>
+        </statement>
+        <proof>
+            <p>
+                If <m>f</m> is irreducible, we have <m>f(x)=\anpoly</m>, with <m>n\geq 1</m>, in which case <m>f'(x)=na_mx^{n-1}+\cdots +2a_2x+a_1\ne 0</m>. The result now follows from <xref ref="th_sep_irr"/>. 
+            </p>
+        </proof>
+    </corollary>
+    <corollary xml:id="cor_sep_irr_char_p">
+        <title>Separable in characteristic <m>p</m></title>
+        <statement>
+            <p>
+                Let <m>F</m> be a field of prime characteristic <m>p</m>. Assume further that the Frobenius morphism <m>\phi\colon F\rightarrow F</m> is surjective: <ie/>, for all <m>b\in F</m>, there is an <m>a\in F</m> such that <m>a^p=b</m>. 
+            </p>
+            <p>
+                If <m>f\in F[x]</m> is irreducible, then <m>f</m> is separable. 
+            </p>
+        </statement>
+        <proof>
+            <p>
+                Let <m>f\in F[x]</m> be irreducible and suppose by contradiction that <m>f</m> is inseparable. By <xref ref="th_sep_irr"/>, we must have <m>f'=0</m>. Since <m>\character F=p</m>, for a positive integer <m>k</m> and <m>a\in F</m>, we have <m>k\cdot a=0</m> if and only if <m>a=0</m> or <m>p\mid k</m>. It follows that in order for <m>f'=0</m>, we must have 
+                <me>
+                    f(x)=b_{r}x^{p^r}+b_{r-1}x^{p^{r-1}}+\cdots+b_1x^p+b_0
+                </me>.
+                Since the Frobenius map is surjective, there are elements <m>a_j\in F</m> satisfying <m>a_j^p=b_j</m> for all <m>1\leq j\leq r</m>. But then we have 
+                <md>
+                    <mrow> (a_{r}x^{p^{r-1}}+a_{r-1}x^{p^{r-2}}+\cdots+a_1x+a_0)^p\amp
+                        =a_{r}^p(x^{p^{r-1}})^p+\cdots+a_1^px^p+a_0^p \amp (\text{ first-year's dream}) </mrow>
+                        <mrow> \amp = b_{r}x^{p^r}+b_{r-1}x^{p^{r-1}}+\cdots+b_1x^p+b_0</mrow>
+                </md>,
+                in which case 
+                <me>
+                    f(x)=(a_{r}x^{p^{r-1}}+a_{r-1}x^{p^{r-2}}+\cdots+a_1x+a_0)^p
+                </me>
+                is not irreducible. Contradiction! 
+            </p>
+        </proof>
+    </corollary>
+    <corollary xml:id="cor_sep_irr_finite">
+        <title>Separable in finite fields</title>
+        <statement>
+            <p>
+                If <m>F=\F_{p^n}</m> is a finite field, then every irreducible polynomial <m>f\in F[x]</m> is separable.
+            </p>
+        </statement>
+        <proof>
+            <p>
+                We have seen that the Frobenius map <m>\phi\colon \F_{p^n}\rightarrow \F_{p^n}</m> is a field embedding, hence injective. Since <m>\abs{\F_{p^n}}=p^n&lt; \infty</m>, it follows automatically that <m>\phi</m> is surjective. The result now follows from <xref ref="cor_sep_irr_char_p"/>.
+            </p>
+        </proof>
+    </corollary>
     
 </section>
