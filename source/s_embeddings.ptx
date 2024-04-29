@@ -258,7 +258,7 @@
             </p>
             <figure xml:id="fig_Q_embed">
                 <caption><m>\Q</m>-embeddings and towers</caption>
-                <image xml:id="im_Q_embed" width="50%">
+                <image xml:id="im_Q_embed" width="25%">
                     <shortdescription><m>\Q</m>-embeddings and towers</shortdescription>
                     <latex-image>
                         \begin{tikzcd}
@@ -298,7 +298,19 @@
             <p>
                 Now, given any extension <m>\tau\colon K\rightarrow L</m> of <m>\sigma\colon F\rightarrow L</m>, its restriction <m>\tau'=\tau\vert_{F(\alpha)}\colon F(\alpha)\rightarrow L</m> is an extension of <m>\sigma</m> to <m>F(\alpha)</m>: and <m>\tau</m> itself is an extension of <m>\tau'</m> to <m>K</m>. According to <xref ref="th_embed_ext_simple"/>, there are at most <m>d=[F(\alpha)\colon F]</m>, possibilities for <m>\tau'=\tau\vert_{F(\alpha)}</m>; and by strong induction, for each such extension <m>\tau'\colon F(\alpha)\rightarrow L</m>, there are at most <m>k=[K\colon F(\alpha)]</m> extensions of <m>\tau'</m> to <m>K</m>. Thus <m>\tau</m> is one of at most <m>n=d\cdot k</m> extensions <m>\tau\colon K\rightarrow L</m> of <m>\sigma</m>, as desired. 
             </p>
-
+            <figure xml:id="fig_cor_embed_ext_finite">
+                <caption>Extensions in towers</caption>
+                <image xml:id="im_cor_embed_ext_finite" width="25%">
+                    <shortdescription>Strong induction diagram</shortdescription>
+                    <latex-image>
+                        \begin{tikzcd}
+                           K\arrow[ddr,"\tau"] \amp \\
+                           F(\alpha)\arrow[dr,"\tau'"']\arrow[dash,u]\amp \\
+                           F\arrow[r,"\sigma"']\arrow[dash,u]\amp L
+                        \end{tikzcd}
+                    </latex-image>
+                </image>
+            </figure>
         </proof>
     </corollary>
     
