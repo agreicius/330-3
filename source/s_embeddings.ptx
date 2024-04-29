@@ -40,15 +40,15 @@
         <title>Extensions of embeddings: simple extension</title>
         <statement>
             <p>
-                Let <m>F(\alpha)</m> be a simple algebraic extension of degree <m>n</m>, and let <m>f(x)=m_{\alpha,F}(x)</m>. Given a field embedding <m>\sigma\colon F\rightarrow K</m>, define 
+                Let <m>K=F(\alpha)</m> be a simple algebraic extension of degree <m>n</m>, and let <m>f(x)=m_{\alpha,F}(x)</m>. Given a field embedding <m>\sigma\colon F\rightarrow L</m>, define 
                 <me>
-                    X=\{\tau\colon F(\alpha)\rightarrow K\ \colon \tau \text{ an embedding}, \tau\vert_F=\sigma\}
+                    X=\{\tau\colon F(\alpha)\rightarrow L\ \colon \tau \text{ an embedding}, \tau\vert_F=\sigma\}
                 </me>,
                 and
                 <me>
-                    R=\{\beta\in K\colon f^\sigma(\beta)=0\}
+                    R=\{\beta\in L\colon f^\sigma(\beta)=0\}
                 </me>.
-                In other words, <m>X</m> is the set of all extensions of <m>\sigma</m> to <m>F(\alpha)</m>, and <m>R</m> is the set of all roots of <m>f^\sigma(x)</m> in <m>K</m>. 
+                In other words, <m>X</m> is the set of all extensions of <m>\sigma</m> to <m>F(\alpha)</m>, and <m>R</m> is the set of all roots of <m>f^\sigma(x)</m> in <m>L</m>. 
                 <ol>
                     <li>
                         <p>
@@ -66,17 +66,65 @@
                                 <mrow>X \amp \rightarrow R </mrow>
                                 <mrow>\tau \amp \mapsto \tau(\alpha)</mrow>
                             </md>
-                            defines a bijection between <m>X</m> and <m>R</m>. In other words, the distinct extensions of <m>\sigma</m> to <m>F(\alpha)</m> are in bijective correspondence with the roots of <m>f^\sigma(x)</m> in <m>K</m>. 
+                            defines a bijection between <m>X</m> and <m>R</m>. In other words, the distinct extensions of <m>\sigma</m> to <m>K=F(\alpha)</m> are in bijective correspondence with the roots of <m>f^\sigma(x)</m> in <m>L</m>. 
                         </p>
                     </li>
                     <li>
                         <p>
-                            We have <m>\abs{X}\leq n=\deg_F\alpha</m>. In other words, there are at most <m>n</m> extensions of <m>\sigma</m> to <m>F(\alpha)</m>. 
+                            We have <m>\abs{X}\leq n=\deg_F\alpha</m>. In other words, there are at most <m>n</m> extensions of <m>\sigma</m> to <m>K=F(\alpha)</m>. 
                         </p>
                     </li>
                 </ol>  
             </p>
         </statement>
+        <proof>
+            <p>
+                First observe that (3) follows from (2) since <m>f^\sigma\in L[x]</m> has <em>at most</em> <m>n=\deg f^\sigma=\deg f</m> roots in <m>L</m>. Thus <m>\abs{X}=\abs{R}\leq n</m>. 
+            </p>
+            <p>
+                Now consider statements (1)-(2). In the special case where <m>K=F[x]/(f)</m> is a quotient of a polynomial ring, both statements follow immediately from <xref ref="th_quot_poly"/>. We will reduce to this special case by noting that our simple extension <m>K=F(\alpha)</m> is <em>isomorphic</em> to the quotient ring <m>F[x]/(f)</m>, where <m>f(x)=m_{\alpha, F}(x)</m>, via the isomorphism
+                <md>
+                    <mrow>\phi\colon F[x]/(f) \amp \rightarrow F(\alpha)</mrow>
+                    <mrow>g(\overline{x}) \amp \mapsto g(\alpha)</mrow>
+                </md>.
+                The crucial idea will be that since <m>F(\alpha)</m> and <m>F[x]/(f)</m> are isomorphic, the set of extensions of <m>\sigma</m> to <m>F(\alpha)</m> is in bijection with the set of extensions of <m>\sigma</m> to <m>F[x]/(f)</m>. 
+            </p>
+            <p>In more detail, let <m>X</m> and <m>R</m> be as stated in the theorem, and let 
+                <me>
+                    X'=\{\tau'\colon F[x]/(f)\rightarrow L\ \colon \tau' \text{ an embedding}, \tau'\vert_F=\sigma\}
+                </me>,
+                the set of extensions of <m>\sigma</m> to <m>F[x]/(f)</m>. 
+                It is easy to see that the map 
+                <md>
+                    <mrow>X\amp\rightarrow X'</mrow>
+                    <mrow>\tau \amp\mapsto \tau'=\tau\circ \phi</mrow>
+                </md>
+                is a bijection (with inverse <m>\tau'\mapsto \tau'\circ\phi^{-1}</m>). Statement (1) of the theorem now follows since the map <m>\tau</m> described in <xref ref="eq_sigma_ext"/> is precisely <m>\tau'\circ \phi^{-1}</m>, where <m>\tau'\colon F[x]/(f)\rightarrow L</m> is the map 
+                <me>
+                    \tau'(a_0+a_1\overline{x}+\cdots +a_{n-1}\overline{x}^{n-1})=\sigma(a_0)+\sigma(a_1)\beta+\cdots +\sigma(a_{n-1})\beta^{n-1}
+                </me>,
+                which is an embedding by <xref ref="th_quot_poly"/>. 
+                Similarly, since the map 
+                <md>
+                    <mrow>X' \amp \rightarrow R</mrow>
+                    <mrow>\tau' \amp \mapsto \tau'(\overline{x})</mrow>
+                </md> 
+                is a bijection by <xref ref="th_quot_poly"/>, the composition 
+                <me>
+                    X\rightarrow X'\rightarrow R
+                </me>
+                is also a bijection; and furthermore this composition satisfies 
+                <me>
+                  \tau\in X \longmapsto \tau\circ\phi\in X' \longmapsto \tau(\phi(\overline{x}))=\tau(\alpha)   
+                </me>.
+                Thus the map 
+                <md>
+                    <mrow>X \amp \rightarrow R</mrow>
+                    <mrow>\tau \amp \mapsto \tau(\alpha)</mrow>
+                </md>
+                is a bijection, proving (2). 
+            </p>
+        </proof>
     </theorem>
     <definition xml:id="d_F_embedding">
         <title><m>F</m>-embedding</title>
@@ -86,25 +134,30 @@
                 <me>
                     \tau(a)=a
                 </me>
-                for all <m>a\in F</m>. In other words, an <m>F</m>-embedding of <m>K</m> is an extension to <m>K</m> of the inclusion map <m>i_L\colon F\hookrightarrow L</m>. We denote by <m>\Hom_F(K,L)</m> the set of all <m>F</m>-embeddings of <m>K</m> into <m>L</m>: <ie/>, 
+                for all <m>a\in F</m>. In other words, an <m>F</m>-embedding of <m>K</m> is an extension to <m>K</m> of the inclusion map <m>i\colon F\hookrightarrow L</m>. We denote by <m>\Hom_F(K,L)</m> the set of all <m>F</m>-embeddings of <m>K</m> into <m>L</m>: <ie/>, 
                 <men xml:id="eq_F_embedding">
-                    \Hom_F(K,L)=\{\sigma\colon K\rightarrow L\ \colon \sigma \text{ an embedding}, \sigma\vert_F=i_L\}
+                    \Hom_F(K,L)=\{\sigma\colon K\rightarrow L\ \colon \sigma \text{ an embedding}, \sigma\vert_F=i\}
                 </men>.
+            An <term><m>F</m>-isomorphism</term> is an <m>F</m>-embedding <m>\sigma\colon K\rightarrow L</m> that is an isomorphism. We also say <m>\sigma</m> is an <term>isomorphism over <m>F</m></term> in this case. 
             </p>
-            <figure xml:id="fig_F_embedding">
-                <caption>Diagram of an <m>F</m>-embedding</caption>
-                <image xml:id="im_F_embedding" width="20%">
-                    <shortdescription>Diagram of F-embedding</shortdescription>
-                    <latex-image>
-                        \begin{tikzcd}
-                        K\arrow[dr,"\sigma"] \amp \\
-                        F\arrow[u,dash]\arrow[r,dash,"i_L"']\amp L
-                        \end{tikzcd}
-                    </latex-image>
-                </image>
-            </figure>
+            
         </statement>
     </definition>
+<p>
+    Thus an <m>F</m>-embedding between field extensions <m>K/F</m> and <m>L/F</m> is just a special case of <xref ref="d_embed_ext"/>, where the starting embedding <m>F\rightarrow L</m> is the inclusion map <m>i\colon F\rightarrow L</m>. This is illustrated by the commutative diagram in <xref ref="fig_F_embedding"/>.  
+</p>
+<figure xml:id="fig_F_embedding">
+    <caption>Diagram of an <m>F</m>-embedding</caption>
+    <image xml:id="im_F_embedding" width="20%">
+        <shortdescription>Diagram of F-embedding</shortdescription>
+        <latex-image>
+            \begin{tikzcd}
+            K\arrow[dr,"\sigma"] \amp \\
+            F\arrow[u,dash]\arrow[r,dash,"i_L"']\amp L
+            \end{tikzcd}
+        </latex-image>
+    </image>
+</figure>
     <example>
         <title><m>\Q</m>-embeddings</title>
         <statement>
@@ -228,6 +281,25 @@
                 Let <m>K/F</m> be a field extension of degree <m>n</m>. Given a field embedding <m>\sigma\colon F\rightarrow L</m>, there are at most <m>n</m> extensions of <m>\sigma</m> to <m>K</m>. 
             </p>
         </statement>
+        <proof>
+            <p>
+                The proof is by strong induction on <m>n=[K\colon F]</m>. 
+            </p>
+            <p>
+                Base step: <m>n=1</m>. In this case <m>K=F</m>, and the only extension of <m>\sigma</m> to <m>K</m> is <m>\sigma</m> itself. Thus there are in fact exactly <m>n=1</m> extensions in this case. 
+            </p>
+            <p>
+                Strong induction step: let <m>n&gt; 1</m> and assume the result holds for all field extensions of degree <m>k</m> with <m>k&lt; n</m>. Since <m>n\geq 2</m>, we can find <m>\alpha\in K-F</m>, yielding a tower of extensions <m>F\leq F(\alpha)\leq K</m>.  Since 
+                <me>
+                    [K\colon F(\alpha)][F(\alpha)\colon F]=[K\colon F]=n
+                </me>, 
+                and <m>[F(\alpha)\colon F]=d&gt; 1</m>, we have <m>k=[K\colon F(\alpha)]&lt; n</m>.  
+            </p>
+            <p>
+                Now, given any extension <m>\tau\colon K\rightarrow L</m> of <m>\sigma\colon F\rightarrow L</m>, its restriction <m>\tau'=\tau\vert_{F(\alpha)}\colon F(\alpha)\rightarrow L</m> is an extension of <m>\sigma</m> to <m>F(\alpha)</m>: and <m>\tau</m> itself is an extension of <m>\tau'</m> to <m>K</m>. According to <xref ref="th_embed_ext_simple"/>, there are at most <m>d=[F(\alpha)\colon F]</m>, possibilities for <m>\tau'=\tau\vert_{F(\alpha)}</m>; and by strong induction, for each such extension <m>\tau'\colon F(\alpha)\rightarrow L</m>, there are at most <m>k=[K\colon F(\alpha)]</m> extensions of <m>\tau'</m> to <m>K</m>. Thus <m>\tau</m> is one of at most <m>n=d\cdot k</m> extensions <m>\tau\colon K\rightarrow L</m> of <m>\sigma</m>, as desired. 
+            </p>
+
+        </proof>
     </corollary>
     
     

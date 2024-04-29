@@ -160,16 +160,23 @@
 					<li>
 						<title>Mapping property</title>
 						<p>
-							Let <m>S</m> be a nonzero ring.
-							The set of all ring homomorphisms <m>\overline{\phi}\colon F[x]/(f)\rightarrow S</m> is in bijective correspondence with pairs <m>(\phi, s)</m> where <m>\phi\colon F\rightarrow S</m> is a ring homomorphism and <m>s\in S</m> is a root of
+							Let <m>S</m> be a nonzero ring, and let <m>\sigma\colon F\rightarrow S</m> be a ring homomorphism. Given any <m>s\in S</m> satisfying <m>f^\sigma(s)=0</m>, where 
 							<me>
-								f^\phi=\phi(a_n)x^n+\phi(a_{n-1})x^{n-1}+\cdots +\phi(a_1)x+\phi(a_0)
-							</me>.
-							Indeed, given such a pair <m>(\phi, s)</m>, we define
+								f^\sigma=\sigma(a_n)x^n+\sigma(a_{n-1})x^{n-1}+\cdots +\sigma(a_1)x+\sigma(a_0)
+							</me>,
+							the map 
 							<md>
-								<mrow>\overline{\phi}\colon F[x]/(f) \amp \longrightarrow S</mrow>
-								<mrow> b_m\overline{x}^m+b_{m-1}\overline{x}^{m-1}+\cdots +b_1\overline{x}+b_0 \amp\longmapsto \phi(b_m)s^m+\phi(b_{m-1})s^{m-1}+\cdots  +\phi(b_1)s+\phi(b_0) </mrow>
-							</md>.
+								<mrow>\tau\colon F[x]/(f) \amp \rightarrow S</mrow>
+								<mrow> b_m\overline{x}^m+b_{m-1}\overline{x}^{m-1}+\cdots +b_1\overline{x}+b_0 \amp\longmapsto \sigma(b_m)s^m+\sigma(b_{m-1})s^{m-1}+\cdots  +\sigma(b_1)s+\sigma(b_0) </mrow>
+							</md>
+							is a ring homomorphism. Furthermore, the map 
+							<me>
+								\tau\mapsto \tau(\overline{x})
+							</me>
+							is a bijection between the set of all ring homomorphisms <m>\tau\colon F[x]/(f)\rightarrow S</m> satisfying <m>\tau\vert_F=\sigma</m> and the set of elements of <m>s\in S</m> satisfying <m>f^\sigma(s)=0</m>. 
+						</p>
+						<p>
+							In other words, a ring homomorphism from <m>F[x]/(f)</m> to <m>S</m> extending <m>\sigma\colon F\rightarrow S</m> is uniquely determined by where it sends <m>\overline{x}</m>, and this image must be a root of the polynomial <m>f^\sigma</m>.  
 						</p>
 					</li>
 				</ol>
@@ -254,12 +261,12 @@
 				Since <m>f</m> is irreducible, the quotient <m>K=\R[x]/(f)</m> is a field.
 				Since <m>\deg f=2</m>, we have <m>K=\{r+s\overline{x}\colon r,s\in\R\}</m>.
 				Let <m>z_0\in \C</m> be a root of <m>f(x)</m>.
-				Using <xref ref="th_quot_poly"/>, the map <m>\phi\colon K\rightarrow \C</m> defined as <m>\phi(r+s\overline{x})=r+sz_0</m> is a ring homomorphism.
-				Furthermore, since <m>K</m> is a field, the map <m>\phi</m> is injective, and thus we have <m>K\cong \phi(K)\leq \C</m>.
-				We claim <m>\phi(K)=\C</m>.
-				This is a result of the fact that <m>\phi</m> is a linear transformation of <m>\R</m>-vector spaces: <ie/>, for any <m>r,s\in \R</m> and <m>\alpha=r_1+s_1\overline{x}, \beta=r_2+s_2\overline{x}</m>, we have <m>\phi(r\alpha+s\beta)=r\phi(\alpha)+s\phi(\beta)</m>, as you can easily check.
-				It then follows that <m>K\cong \phi(K)</m> as <m>\R</m>-vector spaces, and thus that <m>\dim_\R \phi(K)=2</m>.
-				Since <m>\phi(K)\leq \C</m> and <m>\dim_\R \phi(K)=\dim_\R \C=2</m>, we conclude that <m>\phi(K)=\C</m>.
+				Using <xref ref="th_quot_poly"/>, the map <m>\sigma\colon K\rightarrow \C</m> defined as <m>\sigma(r+s\overline{x})=r+sz_0</m> is a ring homomorphism.
+				Furthermore, since <m>K</m> is a field, the map <m>\sigma</m> is injective, and thus we have <m>K\cong \sigma(K)\leq \C</m>.
+				We claim <m>\sigma(K)=\C</m>.
+				This is a result of the fact that <m>\sigma</m> is a linear transformation of <m>\R</m>-vector spaces: <ie/>, for any <m>r,s\in \R</m> and <m>\alpha=r_1+s_1\overline{x}, \beta=r_2+s_2\overline{x}</m>, we have <m>\sigma(r\alpha+s\beta)=r\sigma(\alpha)+s\sigma(\beta)</m>, as you can easily check.
+				It then follows that <m>K\cong \sigma(K)</m> as <m>\R</m>-vector spaces, and thus that <m>\dim_\R \sigma(K)=2</m>.
+				Since <m>\sigma(K)\leq \C</m> and <m>\dim_\R \sigma(K)=\dim_\R \C=2</m>, we conclude that <m>\sigma(K)=\C</m>.
 			</p>
 		</solution>
 	</example>

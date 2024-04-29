@@ -37,7 +37,7 @@
         <title>Uniqueness of splitting fields</title>
         <statement>
             <p>
-                Let <m>F</m> be a field, and let <m>\mathcal{P}\subseteq F[x]</m> be a collection of polynomials over <m>F</m>. Any two splitting fields of <m>\mathcal{P}</m> are isomorphic. 
+                Let <m>F</m> be a field, and let <m>\mathcal{P}\subseteq F[x]</m> be a collection of polynomials over <m>F</m>. Given any splitting fields <m>K/F</m> and <m>K'/F</m> of <m>\mathcal{P}</m>, there is an <m>F</m>-isomorphism <m>\sigma\colon K\rightarrow K'</m>. In other words, any two splitting fields of <m>\mathcal{P}</m> are isomorphic over <m>F</m>. 
             </p>
         </statement>
         <proof>
@@ -86,7 +86,7 @@
         <title>Uniqueness of algebraic closure</title>
         <statement>
             <p>
-                Let <m>F</m> be a field. Any two algebraic closures of <m>F</m> are isomorphic. 
+                Let <m>F</m> be a field. Given any two algebraic closures <m>K/F</m> and <m>K'/F</m>, there is an <m>F</m>-isomorphism <m>\sigma\colon K\rightarrow K'</m>. In other words, any two algebraic closures of <m>F</m> are isomorphic over <m>F</m>.  
             </p>
         </statement>
         <proof>
