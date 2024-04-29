@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.10.11</span><span class="period">.</span><span class="space"> </span><span class="title">Extensions of embeddings: finite extension.</span>
+</h3>
+<div class="para">Let <span class="process-math">\(K/F\)</span> be a field extension of degree <span class="process-math">\(n\text{.}\)</span> Given a field embedding <span class="process-math">\(\sigma\colon F\rightarrow L\text{,}\)</span> there are at most <span class="process-math">\(n\)</span> extensions of <span class="process-math">\(\sigma\)</span> to <span class="process-math">\(K\text{.}\)</span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para">The proof is by strong induction on <span class="process-math">\(n=[K\colon F]\text{.}\)</span>
+</div> <div class="para">Base step: <span class="process-math">\(n=1\text{.}\)</span> In this case <span class="process-math">\(K=F\text{,}\)</span> and the only extension of <span class="process-math">\(\sigma\)</span> to <span class="process-math">\(K\)</span> is <span class="process-math">\(\sigma\)</span> itself. Thus there are in fact exactly <span class="process-math">\(n=1\)</span> extensions in this case.</div> <div class="para logical">
+<div class="para">Strong induction step: let <span class="process-math">\(n&gt; 1\)</span> and assume the result holds for all field extensions of degree <span class="process-math">\(k\)</span> with <span class="process-math">\(k&lt; n\text{.}\)</span> Since <span class="process-math">\(n\geq 2\text{,}\)</span> we can find <span class="process-math">\(\alpha\in K-F\text{,}\)</span> yielding a tower of extensions <span class="process-math">\(F\leq F(\alpha)\leq K\text{.}\)</span>  Since</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[K\colon F(\alpha)][F(\alpha)\colon F]=[K\colon F]=n\text{,}
+\end{equation*}
+</div>
+<div class="para">and <span class="process-math">\([F(\alpha)\colon F]=d&gt; 1\text{,}\)</span> we have <span class="process-math">\(k=[K\colon F(\alpha)]&lt; n\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Making use of the notation in <a href="" class="xref" data-knowl="./knowl/xref/lem_count_ext.html" title="Lemma 1.10.9: Counting extensions of embeddings">Lemma 1.10.9</a>, let <span class="process-math">\(X\)</span> be the set of extensions of <span class="process-math">\(\sigma\)</span> to <span class="process-math">\(K\text{,}\)</span> let <span class="process-math">\(X'\)</span> be the set of extensions of <span class="process-math">\(\sigma\)</span> to <span class="process-math">\(K'=F(\alpha)\text{,}\)</span> and for each <span class="process-math">\(\tau'\in X'\text{,}\)</span> let <span class="process-math">\(X_{\tau'}\)</span> be the set of all extensions of <span class="process-math">\(\tau'\)</span> to <span class="process-math">\(K\text{.}\)</span> Since <span class="process-math">\(K'=F(\alpha)\)</span> is simple, <a href="" class="xref" data-knowl="./knowl/xref/th_emb_ext_finite.html" title="Theorem 1.10.11: Extensions of embeddings: finite extension">Theorem 1.10.11</a> implies that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem_count_ext.html ./knowl/xref/th_emb_ext_finite.html ./knowl/xref/eq_count_ext.html">
+\begin{equation*}
+\abs{X'}\leq [K'\colon F]=d\text{.}
+\end{equation*}
+</div>
+<div class="para">Next using the induction hypothesis on the extension <span class="process-math">\(K/K'\)</span> of degree <span class="process-math">\([K\colon K']=k &lt; n\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem_count_ext.html ./knowl/xref/th_emb_ext_finite.html ./knowl/xref/eq_count_ext.html">
+\begin{equation*}
+\abs{X_{\tau'}}\leq [K\colon K']=k
+\end{equation*}
+</div>
+<div class="para">for each <span class="process-math">\(\tau'\in X'\text{.}\)</span> Finally using <a href="" class="xref" data-knowl="./knowl/xref/eq_count_ext.html" title="Equation 1.22">(1.22)</a>, we conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/lem_count_ext.html ./knowl/xref/th_emb_ext_finite.html ./knowl/xref/eq_count_ext.html">
+\begin{align*}
+\abs{X} \amp =\sum_{\tau'\in X'}\abs{X_{\tau'}}\\
+\amp \leq \sum_{\tau'\in X'}k\\
+\amp = k\abs{X'}\\
+\amp \leq kd\\
+\amp = n\text{,}
+\end{align*}
+</div>
+<div class="para">as desired.</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_embeddings.html#th_emb_ext_finite">in-context</a></span>
+</body>
+</html>

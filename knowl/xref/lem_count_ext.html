@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="lemma theorem-like"><h3 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">1.10.9</span><span class="period">.</span><span class="space"> </span><span class="title">Counting extensions of embeddings.</span>
+</h3>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(K/K'/F\)</span> be a tower of fields. Given a field embedding <span class="process-math">\(\sigma\colon F\rightarrow L\text{,}\)</span> let <span class="process-math">\(X\)</span> be the set of all extensions <span class="process-math">\(\tau\colon K\rightarrow L\)</span> of <span class="process-math">\(\sigma\)</span> to <span class="process-math">\(K\text{,}\)</span> let <span class="process-math">\(X'\)</span> be the set of all extensions <span class="process-math">\(\tau'\colon K'\rightarrow L\)</span> of <span class="process-math">\(\sigma\)</span> to <span class="process-math">\(K'\text{,}\)</span> and for each <span class="process-math">\(\tau'\in X'\text{,}\)</span> let <span class="process-math">\(X_{\tau'}\)</span> be the set of all extensions of <span class="process-math">\(\tau'\)</span> to <span class="process-math">\(K\text{.}\)</span> We have</div>
+<div class="displaymath process-math">
+\begin{equation}
+X=\bigcup_{\tau'\in X'}X_{\tau'}\text{.}\tag{1.21}
+\end{equation}
+</div>
+<div class="para">In particular, if the sets <span class="process-math">\(X'\)</span> and <span class="process-math">\(X_{\tau'}\)</span> are all finite, we have</div>
+<div class="displaymath process-math">
+\begin{equation}
+\abs{X}=\sum_{\tau'\in X'}\abs{X_{\tau'}}\text{.}\tag{1.22}
+\end{equation}
+</div>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical">
+<div class="para">First observe that if <span class="process-math">\(\tau\in X_{\tau'}\)</span> is an extension of <span class="process-math">\(\tau'\in X'\text{,}\)</span> then we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_count_ext_union.html">
+\begin{align*}
+\tau\vert_F \amp = (\tau\vert_{K'})\vert_F \amp (F\leq K')\\
+\amp =\tau'\vert_F\\
+\amp = \sigma
+\end{align*}
+</div>
+<div class="para">This proves <span class="process-math">\(X_{\tau'}\subseteq X\)</span> for all <span class="process-math">\(\tau'\in X'\text{,}\)</span> and hence</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_count_ext_union.html">
+\begin{equation*}
+\bigcup_{\tau'\in X'}X_{\tau'}\subseteq X \text{.}
+\end{equation*}
+</div>
+<div class="para">Similarly, given <span class="process-math">\(\tau\in X\text{,}\)</span> its restriction <span class="process-math">\(\tau'=\tau\vert_{K'}\)</span> satisfies</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_count_ext_union.html">
+\begin{equation*}
+\tau'\vert_F=(\tau\vert_{K'})\vert_F=\tau\vert_F=\sigma\text{.}
+\end{equation*}
+</div>
+<div class="para">Thus <span class="process-math">\(\tau\in X_{\tau'}\text{,}\)</span> where <span class="process-math">\(\tau'=\tau\vert_{K'}\text{.}\)</span> This proves</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_count_ext_union.html">
+\begin{equation*}
+X\subseteq \bigcup_{\tau'\in X'}X_{\tau'}\text{,}
+\end{equation*}
+</div>
+<div class="para">whence the equality <a href="" class="xref" data-knowl="./knowl/xref/eq_count_ext_union.html" title="Equation 1.21">(1.21)</a> follows.</div>
+</div> <div class="para logical">
+<div class="para">Next, observe that the sets <span class="process-math">\(X_{\tau'}\)</span> are disjoint: given <span class="process-math">\(X_{\tau'}\)</span> and <span class="process-math">\(X_{\rho'}\)</span> with <span class="process-math">\(\tau'\ne \rho'\text{,}\)</span> we cannot have an embedding <span class="process-math">\(\phi\in X_{\tau'}\cap X_{\rho'}\text{,}\)</span> since then we’d have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_count_ext.html">
+\begin{equation*}
+\tau'=\phi\vert_{K'}=\rho'\text{.}
+\end{equation*}
+</div>
+<div class="para">Thus, when <span class="process-math">\(X'\)</span> and the sets <span class="process-math">\(X_{\tau'}\)</span> are all finite, equation <a href="" class="xref" data-knowl="./knowl/xref/eq_count_ext.html" title="Equation 1.22">(1.22)</a> follows from a basic counting principle regarding unions of disjoint sets.</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_embeddings.html#lem_count_ext">in-context</a></span>
+</body>
+</html>
