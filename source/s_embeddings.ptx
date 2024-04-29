@@ -272,9 +272,73 @@
         </solution>
     </example>
     <p>
-        An argument very similar to the one used in <xref ref="eg_Q_embed_tower"/> can be used to prove the following result. 
+        Variants of the argument used in <xref ref="eg_Q_embed_tower"/> appear frequently when accounting for extensions of embeddings. To spare us having to justify our counting principle repeatedly, we enshrine this argument in our <em>counting extensions lemma</em>. 
     </p>
-    <corollary xml:id="cor_emb_ext_finite">
+    <lemma xml:id="lem_count_ext">
+        <title>Counting extensions of embeddings</title>
+        <statement>
+            <p>
+                Let <m>K/K'/F</m> be a tower of fields. Given a field embedding <m>\sigma\colon F\rightarrow L</m>, let <m>X</m> be the set of all extensions <m>\tau\colon K\rightarrow L</m> of <m>\sigma</m> to <m>K</m>, let <m>X'</m> be the set of all extensions <m>\tau'\colon K'\rightarrow L</m> of <m>\sigma</m> to <m>K'</m>, and for each <m>\tau'\in X'</m>, let <m>X_{\tau'}</m> be the set of all extensions of <m>\tau'</m> to <m>K</m>. We have 
+                <men xml:id="eq_count_ext_union">
+                    X=\bigcup_{\tau'\in X'}X_{\tau'}
+                </men>.
+                In particular, if the sets <m>X'</m> and <m>X_{\tau'}</m> are all finite, we have 
+                <men xml:id="eq_count_ext">
+                    \abs{X}=\sum_{\tau'\in X'}\abs{X_{\tau'}}
+                </men>.
+            </p>
+        </statement>
+        <proof>
+            <p>
+                First observe that if <m>\tau\in X_{\tau'}</m> is an extension of <m>\tau'\in X'</m>, then we have 
+                <md>
+                    <mrow>\tau\vert_F \amp = (\tau\vert_{K'})\vert_F \amp (F\leq K')</mrow>
+                    <mrow> \amp =\tau'\vert_F</mrow>
+                    <mrow> \amp = \sigma</mrow>
+                </md>
+                This proves <m>X_{\tau'}\subseteq X</m> for all <m>\tau'\in X'</m>, and hence 
+                <me>
+                    \bigcup_{\tau'\in X'}X_{\tau'}\subseteq X 
+                </me>.
+                Similarly, given <m>\tau\in X</m>, its restriction <m>\tau'=\tau\vert_{K'}</m> satisfies
+                <me>
+                    \tau'\vert_F=(\tau\vert_{K'})\vert_F=\tau\vert_F=\sigma
+                </me>.
+                Thus <m>\tau\in X_{\tau'}</m>, where <m>\tau'=\tau\vert_{K'}</m>. This proves 
+                <me>
+                    X\subseteq \bigcup_{\tau'\in X'}X_{\tau'}
+                </me>,
+                whence the equality <xref ref="eq_count_ext_union"/> follows. 
+            </p>
+            <p>
+                Next, observe that the sets <m>X_{\tau'}</m> are disjoint: given <m>X_{\tau'}</m> and <m>X_{\rho'}</m> with <m>\tau'\ne \rho'</m>, we cannot have an embedding <m>\phi\in X_{\tau'}\cap X_{\rho'}</m>, since then we'd have 
+                <me>
+                    \tau'=\phi\vert_{K'}=\rho'
+                </me>.
+                Thus, when <m>X'</m> and the sets <m>X_{\tau'}</m> are all finite, equation <xref ref="eq_count_ext"/> follows from a basic counting principle regarding unions of disjoint sets.   
+            </p>
+        </proof>
+    </lemma>
+    <p>
+        The counting principle articulated by <xref ref="lem_count_ext"/> is visually summarized by <xref ref="fig_cor_embed_ext_finite"/>.
+    </p>
+    <figure xml:id="fig_cor_embed_ext_finite">
+        <caption>Counting extensions of embeddings</caption>
+        <image xml:id="im_cor_embed_ext_finite" width="75%">
+            <shortdescription>Strong induction diagram</shortdescription>
+            <latex-image>
+                \begin{tikzcd}
+                   K\arrow[ddr,"\tau"] \amp \amp \tau\in X_{\tau'}=\{\tau\colon \tau\vert_{K'}=\tau'\} \\
+                   K'\arrow[dr,"\tau'"']\arrow[dash,u]\amp \amp \tau'\in X'=\{\tau'\colon \tau'\vert_F=\sigma\} \\
+                   F\arrow[r,"\sigma"']\arrow[dash,u]\amp L
+                \end{tikzcd}
+            </latex-image>
+        </image>
+    </figure>
+    <p>
+        Equipped with <xref ref="lem_count_ext"/>, we can now extend <xref ref="th_embed_ext_simple"/> to give a bound on the number of extensions of an embedding to a finite extension. 
+    </p>
+    <theorem xml:id="th_emb_ext_finite">
         <title>Extensions of embeddings: finite extension</title>
         <statement>
             <p>
@@ -296,23 +360,22 @@
                 and <m>[F(\alpha)\colon F]=d&gt; 1</m>, we have <m>k=[K\colon F(\alpha)]&lt; n</m>.  
             </p>
             <p>
-                Now, given any extension <m>\tau\colon K\rightarrow L</m> of <m>\sigma\colon F\rightarrow L</m>, its restriction <m>\tau'=\tau\vert_{F(\alpha)}\colon F(\alpha)\rightarrow L</m> is an extension of <m>\sigma</m> to <m>F(\alpha)</m>: and <m>\tau</m> itself is an extension of <m>\tau'</m> to <m>K</m>. According to <xref ref="th_embed_ext_simple"/>, there are at most <m>d=[F(\alpha)\colon F]</m>, possibilities for <m>\tau'=\tau\vert_{F(\alpha)}</m>; and by strong induction, for each such extension <m>\tau'\colon F(\alpha)\rightarrow L</m>, there are at most <m>k=[K\colon F(\alpha)]</m> extensions of <m>\tau'</m> to <m>K</m>. Thus <m>\tau</m> is one of at most <m>n=d\cdot k</m> extensions <m>\tau\colon K\rightarrow L</m> of <m>\sigma</m>, as desired. 
+                Making use of the notation in <xref ref="lem_count_ext"/>, let <m>X</m> be the set of extensions of <m>\sigma</m> to <m>K</m>, let <m>X'</m> be the set of extensions of <m>\sigma</m> to <m>K'=F(\alpha)</m>, and for each <m>\tau'\in X'</m>, let <m>X_{\tau'}</m> be the set of all extensions of <m>\tau'</m> to <m>K</m>. Since <m>K'=F(\alpha)</m> is simple, <xref ref="th_emb_ext_finite"/> implies that <me>\abs{X'}\leq [K'\colon F]=d</me>. Next using the induction hypothesis on the extension <m>K/K'</m> of degree <m>[K\colon K']=k &lt; n</m>, we have 
+                <me>
+                    \abs{X_{\tau'}}\leq [K\colon K']=k
+                </me>
+                for each <m>\tau'\in X'</m>. Finally using <xref ref="eq_count_ext"/>, we conclude that 
+                <md>
+                    <mrow>\abs{X} \amp =\sum_{\tau'\in X'}\abs{X_{\tau'}}</mrow>
+                    <mrow> \amp \leq \sum_{\tau'\in X'}k</mrow>
+                    <mrow> \amp = k\abs{X'}</mrow>
+                    <mrow> \amp \leq kd</mrow>
+                    <mrow> \amp = n</mrow>
+                </md>,
+                as desired. 
             </p>
-            <figure xml:id="fig_cor_embed_ext_finite">
-                <caption>Extensions in towers</caption>
-                <image xml:id="im_cor_embed_ext_finite" width="25%">
-                    <shortdescription>Strong induction diagram</shortdescription>
-                    <latex-image>
-                        \begin{tikzcd}
-                           K\arrow[ddr,"\tau"] \amp \\
-                           F(\alpha)\arrow[dr,"\tau'"']\arrow[dash,u]\amp \\
-                           F\arrow[r,"\sigma"']\arrow[dash,u]\amp L
-                        \end{tikzcd}
-                    </latex-image>
-                </image>
-            </figure>
         </proof>
-    </corollary>
+    </theorem>
     
     
     

@@ -65,66 +65,7 @@
     </proof>
 </theorem>
 
-<theorem xml:id="th_sep_fin_ext">
-    <title>Separable finite extensions</title>
-    <statement>
-        <p>
-            Let <m>K/F</m> be a finite field extension of degree <m>n=[K\colon F]</m>. The following statements are equivalent. 
-            <ol>
-                <li>
-                    <title>Separable</title>
-                    
-                    <p>
-                        <m>K/F</m> is separable. 
-                    </p>
-                </li>
-                <li>
-                    <title>Separably generated</title>
-                    <p>
-                        <m>K=F(\alpha_1,\alpha_2,\dots, \alpha_n)</m> where each <m>\alpha_i</m> is separable over <m>F</m>. 
-                    </p>
-                </li>
-                <li>
-                    <title>Maximal separable degree</title>
-                    <p>
-                        For any embedding <m>\sigma\colon F\rightarrow L</m>, with <m>L</m> algebraically closed, there are exactly <m>n=[K\colon F]</m> extensions of <m>\sigma</m> to <m>K</m>. 
-                    </p>
-                </li>
-            </ol>
-        </p>
-    </statement>
-</theorem>
-<corollary xml:id="cor_sep_strong_trans">
-    <title>Separability is strongly transitive</title>
-    <statement>
-        <p>
-            Let <m>L/K/F</m> be a tower of algebraic field extensions. The extension <m>L/F</m> is separable if and only if <m>L/K</m> and <m>K/F</m> are both separable. Using logical shorthand: 
-            <me>
-                L/F \text{ separable} \iff L/K \text{ separable and } K/F \text{ separable}
-            </me>.
-        </p>
-    </statement>
-</corollary>
-<corollary xml:id="cor_sep_gen">
-    <title>Separable is separably generated</title>
-    <statement>
-        <p>
-        A field extension <m>K/F</m> is separable if and only if there is a set <m>A\subseteq K</m> of separable elements such that <m>K=F(A)</m>. In plain English: an extension is separable if and only if it is separably generated. 
-        </p>
-    </statement>
-</corollary>
-<theorem xml:id="th_sep_prim_elem">
-    <title>Primitive element theorem</title>
-    <statement>
-        <p>
-            Let <m>K/F</m> be a finite separable extension. There is an element <m>\alpha\in K</m> such that <m>K=F(\alpha)</m>. Using logical shorthand: 
-            <me>
-                K/F \text{ finite separable} \implies K=F(\alpha) \text{ simple}
-            </me>.
-            
-        </p>
-    </statement>
-</theorem>
+
 
 
 </section>
