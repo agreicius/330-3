@@ -15,7 +15,7 @@
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">Quotients of polynomial rings.</span>
 </h3>
 <div class="para logical">
-<div class="para">Let <span class="process-math">\(F\)</span> be a field and let <span class="process-math">\(f(x)=\anpoly\)</span> be a nonconstant polynomial in <span class="process-math">\(F[x]\text{.}\)</span> Following <a href="" class="xref" data-knowl="./knowl/xref/not_quot_poly.html" title="Notation 1.4.5: Quotients of polynomial rings">Notation 1.4.5</a>, given <span class="process-math">\(g\in F[x]\text{,}\)</span> we denote by <span class="process-math">\(\overline{g}\)</span> its image in <span class="process-math">\(F[x]/(f)\)</span> under the quotient map.</div>
+<div class="para">Let <span class="process-math">\(F\)</span> be a field and let <span class="process-math">\(f(x)=\anpoly\)</span> be a nonconstant polynomial in <span class="process-math">\(F[x]\text{.}\)</span> Following <a href="s_simple_extension.html#not_quot_poly" class="xref" data-knowl="./knowl/xref/not_quot_poly.html" data-reveal-label="Reveal" data-close-label="Close" title="Notation 1.4.5: Quotients of polynomial rings">Notation 1.4.5</a>, given <span class="process-math">\(g\in F[x]\text{,}\)</span> we denote by <span class="process-math">\(\overline{g}\)</span> its image in <span class="process-math">\(F[x]/(f)\)</span> under the quotient map.</div>
 <ol class="decimal">
 <li>
 <span class="heading"><span class="title">Simply generated.</span></span><div class="para">We have <span class="process-math">\(F[x]/(f(x))=F[\overline{x}]\text{:}\)</span> i.e., <span class="process-math">\(F[x]/(f)\)</span> is generated over <span class="process-math">\(F\)</span> as a ring by <span class="process-math">\(\overline{x}\text{,}\)</span> the image of <span class="process-math">\(x\)</span> under the quotient map.</div>
@@ -26,22 +26,32 @@
 </li>
 <li>
 <span class="heading"><span class="title">Mapping property.</span></span><div class="para logical">
-<div class="para">Let <span class="process-math">\(S\)</span> be a nonzero ring. The set of all ring homomorphisms <span class="process-math">\(\overline{\phi}\colon F[x]/(f)\rightarrow S\)</span> is in bijective correspondence with pairs <span class="process-math">\((\phi, s)\)</span> where <span class="process-math">\(\phi\colon F\rightarrow S\)</span> is a ring homomorphism and <span class="process-math">\(s\in S\)</span> is a root of</div>
+<div class="para">Let <span class="process-math">\(S\)</span> be a nonzero ring, and let <span class="process-math">\(\sigma\colon F\rightarrow S\)</span> be a ring homomorphism. Given any <span class="process-math">\(s\in S\)</span> satisfying <span class="process-math">\(f^\sigma(s)=0\text{,}\)</span> where</div>
 <div class="displaymath process-math">
 \begin{equation*}
-f^\phi=\phi(a_n)x^n+\phi(a_{n-1})x^{n-1}+\cdots +\phi(a_1)x+\phi(a_0)\text{.}
+f^\sigma=\sigma(a_n)x^n+\sigma(a_{n-1})x^{n-1}+\cdots +\sigma(a_1)x+\sigma(a_0)\text{,}
 \end{equation*}
 </div>
-<div class="para">Indeed, given such a pair <span class="process-math">\((\phi, s)\text{,}\)</span> we define</div>
+<div class="para">the map</div>
 <div class="displaymath process-math">
 \begin{align*}
-\overline{\phi}\colon F[x]/(f) \amp \longrightarrow S\\
-b_m\overline{x}^m+b_{m-1}\overline{x}^{m-1}+\cdots +b_1\overline{x}+b_0 \amp\longmapsto \phi(b_m)s^m+\phi(b_{m-1})s^{m-1}+\cdots  +\phi(b_1)s+\phi(b_0) \text{.}
+\tau\colon F[x]/(f) \amp \rightarrow S\\
+b_m\overline{x}^m+b_{m-1}\overline{x}^{m-1}+\cdots +b_1\overline{x}+b_0 \amp\longmapsto \sigma(b_m)s^m+\sigma(b_{m-1})s^{m-1}+\cdots  +\sigma(b_1)s+\sigma(b_0) 
 \end{align*}
 </div>
+<div class="para">is a ring homomorphism. Furthermore, the map</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\tau\mapsto \tau(\overline{x})
+\end{equation*}
+</div>
+<div class="para">is a bijection between the set of all ring homomorphisms <span class="process-math">\(\tau\colon F[x]/(f)\rightarrow S\)</span> satisfying <span class="process-math">\(\tau\vert_F=\sigma\)</span> and the set of elements of <span class="process-math">\(s\in S\)</span> satisfying <span class="process-math">\(f^\sigma(s)=0\text{.}\)</span>
+</div>
+</div>
+<div class="para">In other words, a ring homomorphism from <span class="process-math">\(F[x]/(f)\)</span> to <span class="process-math">\(S\)</span> extending <span class="process-math">\(\sigma\colon F\rightarrow S\)</span> is uniquely determined by where it sends <span class="process-math">\(\overline{x}\text{,}\)</span> and this image must be a root of the polynomial <span class="process-math">\(f^\sigma\text{.}\)</span>
 </div>
 </li>
 </ol>
-</div></article><details class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para">The proof of this result relies on various bits of theory from general ring theory. It is left as an (excellent) exercises.</div></article></details><span class="incontext"><a class="internal" href="s_simple_extension.html#th_quot_poly">in-context</a></span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para">The proof of this result relies on various bits of theory from general ring theory. It is left as an (excellent) exercises.</div></article></details><span class="incontext"><a class="internal" href="s_simple_extension.html#th_quot_poly">in-context</a></span>
 </body>
 </html>
