@@ -92,6 +92,36 @@
             </case>
         
     </proof>
+<remark>
+    <title>Maximal separable degree</title>
+    <p>
+        Given a finite field extension <m>K/F</m> of degree <m>[K\colon F]=n</m>, its <em>separable degree</em> is defined as the the number of distinct extensions to <m>K</m> of any embedding <m>\sigma\colon F\rightarrow L</m>, where <m>L</m> is algebraically closed, and is denoted <m>[K\colon F]^s</m>. (You can show that this number is independent of the choice of algebraically closed field <m>L</m> and embedding <m>\sigma\colon F\rightarrow L</m>.) By <xref ref="th_emb_ext_finite"/> this number <m></m>of extensions is <em>at most</em> <m>n=[K\colon F]</m>. According to <xref ref="th_sep_fin_ext"/>, the extension <m>K/F</m> is separable if and only if the number of extensions is <em>equal</em> to <m>n=[K\colon F]</m>. Thus <m>K/F</m> is separable if and only if it has <q>maximal separable degree</q> <m>n=[K\colon F]</m>. 
+    </p>
+</remark>
+    <corollary xml:id="cor_sep_gen">
+        <title>Separable is separably generated</title>
+        <statement>
+            <p>
+            A field extension <m>K/F</m> is separable if and only if there is a set <m>A\subseteq K</m> of separable elements such that <m>K=F(A)</m>. In plain English: an extension is separable if and only if it is separably generated. 
+            </p>
+        </statement>
+        <proof>
+            <p>
+                The forward implication is easy: if <m>K/F</m> is separable, then all elements of <m>K</m> are separable over <m>F</m>, and we have <m>K=F(A)</m>, where <m>A=K</m>. 
+            </p>
+            <p>
+                Let's prove the reverse implication. Assume <m>A</m> is a collection of separable elements of <m>K</m> that generate <m>K</m> over <m>F</m>: <ie/>, such that <m>K=F(A)</m>. Recall that we have 
+                <me>
+                    K=F(A)=\bigcup_{\substack{A'\subseteq A\\ A' \text{ finit}}}F(A')
+                </me>
+                by <xref ref="th_fin_gen"/>. Thus, given <m>\alpha\in K</m>, we have 
+                <me>
+                    \alpha\in F(A')=F(\alpha_1,\alpha_2,\dots, \alpha_n)
+                </me>
+                for some finite set <m>A'=\{\alpha_1,\alpha_2,\dots, \alpha_n\}\subseteq A</m>. Since by assumption <m>A</m> consists of separable elements, the extension <m>F(A')/F</m> is finitely separably generated over <m>F</m>, and hence separable by <xref ref="th_sep_fin_ext"/>. It follows that <m>\alpha</m> is separable over <m>F</m>, as desired. 
+            </p>
+        </proof>
+    </corollary>
     <corollary xml:id="cor_sep_strong_trans">
         <title>Separability is strongly transitive</title>
         <statement>
@@ -102,15 +132,40 @@
                 </me>.
             </p>
         </statement>
-    </corollary>
-    <corollary xml:id="cor_sep_gen">
-        <title>Separable is separably generated</title>
-        <statement>
+        <proof>
             <p>
-            A field extension <m>K/F</m> is separable if and only if there is a set <m>A\subseteq K</m> of separable elements such that <m>K=F(A)</m>. In plain English: an extension is separable if and only if it is separably generated. 
+                We prove both implications separately. 
             </p>
-        </statement>
+            <case>
+            <title>Implication: <m>\implies</m></title>
+            <p>
+            Assume <m>L/F</m> is separable. Clearly then <m>K/F</m> is separable, since if <m>\alpha\in K</m>, then <m>\alpha\in L</m>, and hence satisfies a separable polynomial over <m>F</m> since <m>L/F</m> is separable. 
+            </p>
+            <p> Similarly, to see that <m>L/K</m> is separable, observe that given <m>\alpha\in L</m>, its minimal polynomial <m>m_{\alpha,F}(x)\in F[x]</m> is separable. Since <m>F\leq K</m>, we have <m>m_{\alpha, F}(x)\in K[x]</m>. Thus <m>\alpha</m> satisfies a separable polynomial over <m>K</m>.
+            </p>
+            </case>
+            <case>
+            <title>Implication: <m>\impliedby</m></title>
+            <p>
+            Assume <m>L/F</m> and <m>K/F</m> are both separable. Given <m>\alpha\in L</m>, its minimal polynomial <m>m_{\alpha,K}(x)=x^n+\alpha_{n-1}x^{n-1}+\cdots +\alpha_1 x+\alpha_0</m> over <m>K</m> is separable. Let 
+            <me>
+                K'=F(\alpha_0,\alpha_1,\dots, \alpha_{n-1}).
+            </me>
+            Since each <m>\alpha_i\in K</m> is separable over <m>F</m>, <m>K'</m> is separable (and finite) over <m>F</m> by <xref ref="th_sep_fin_ext"/>. Furthermore, <m>K'(\alpha)/K'</m> is algebraic since <m>\alpha</m> satisfies the separable polynomial <m>m_{\alpha,K}(x)\in K'[x]\leq K[x]</m>. Let <m>[K'(\alpha)\colon K']=e</m> and <m>[K'\colon F]=d</m> so that 
+            <me>
+                [K'(\alpha)\colon F]=[K'(\alpha)\colon K'][K'\colon F]=e\,d
+            </me>.
+            We will use condition (3) of <xref ref="th_sep_fin_ext"/> to prove <m>K'(\alpha)/F</m> is separable, which then implies <m>\alpha</m> is separable over <m>F</m>. Given an embedding <m>\sigma\colon F\rightarrow L</m>, where <m>L</m> is algebraically closed, since <m>K'/F</m> is separable, the set <m>X'</m> of extensions of <m>\sigma</m> to <m>K'</m> has cardinality <m>\abs{X'}=[K'\colon F]=d</m> by <xref ref="th_sep_fin_ext"/>. Similarly, since <m>K'(\alpha)/K'</m> is separable, for each <m>\tau'\in X'</m>, the set <m>X_{\tau'}</m> of extensions of <m>\tau'</m> to <m>K'(\alpha)</m> has cardinality <m>\abs{X_{\tau'}}=[K'(\alpha)\colon K']=e</m>. By <xref ref="lem_count_ext"/>, it follows that there are 
+            <me>
+                ed=[K'(\alpha)\colon F]
+            </me>
+             extensions of <m>\sigma\colon F\rightarrow L</m> to <m>K'(\alpha)</m>. We conclude from <xref ref="th_sep_fin_ext"/> that <m>K'(\alpha)/F</m> is separable, as desired.     
+            </p>
+            </case>
+            
+        </proof>
     </corollary>
+    
     <theorem xml:id="th_sep_prim_elem">
         <title>Primitive element theorem</title>
         <statement>
