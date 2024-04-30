@@ -2,6 +2,9 @@
 
 <section xml:id="s_separable_III" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Separable finite extensions</title>
+    <p>
+        In this section we re-cast the notion of separability in terms of extensions of embeddings. The two concepts seem quite removed from one another until you consider the special case of a simple algebraic extension <m>F(\alpha)/F</m>. Let <m>f(x)=m_{\alpha,F}(x)</m>, and let <m>n=\deg f</m>. As we saw in <xref ref="th_embed_ext_simple"/>, given an embedding <m>\sigma\colon F\rightarrow L</m>, the set of extensions of <m>\sigma</m> to <m>F(\alpha)</m> is in bijective correspondence with the set of roots of <m>f^\sigma(x)\in L[x]</m>. The number of these roots is at most <m>n</m> (since <m>\deg f^\sigma=\deg f=n</m>), and is equal to <m>n</m> exactly when <m>f</m> (and <m>f^\sigma</m>) have <m>n</m> distinct roots: <ie/>, when <m>f</m> is separable. This is the crucial idea behind the proof of <xref ref="th_sep_fin_ext"/>, which gives us a characterization of separability in terms of extensions of embeddings. This equivalent formulation, abstract as it might sound, is very useful as a means of verifying that a field extension is separable.  
+    </p>
     <theorem xml:id="th_sep_fin_ext">
         <title>Separable finite extensions</title>
         <statement>
@@ -172,12 +175,76 @@
             <p>
                 Let <m>K/F</m> be a finite separable extension. There is an element <m>\alpha\in K</m> such that <m>K=F(\alpha)</m>. Using logical shorthand: 
                 <me>
-                    K/F \text{ finite separable} \implies K=F(\alpha) \text{ simple}
+                    K/F \text{ finite separable} \implies K=F(\alpha) \text{ for some } \alpha\in K
                 </me>.
                 
             </p>
         </statement>
+        <proof>
+            <p>
+                First consider the case where <m>F</m>, and hence also <m>K</m>, is a finite field. Since <m>K</m> is finite, we have <m>K^*=\langle \alpha\rangle=\{1,\alpha,\alpha^2,\dots, \alpha^r\}</m> for some <m>\alpha</m>, in which case clearly <m>K=F(\alpha)</m>, as desired. 
+            </p>
+            <p>
+                From now on we assume <m>F</m> is infinite. Since <m>K/F</m> is finite, we can write <m>K=F(\alpha_1,\alpha_2,\dots, \alpha_n)</m>. We will show by induction on <m>n</m> that if <m>K</m> is separable, then <m>K=F(\alpha)</m> for some <m>\alpha\in K</m>.  The base case <m>n=1</m> is trivial. 
+            </p>
+            <p>
+                For the induction argument, given a separable extension <m>K=F(\alpha_1,\alpha_2,\dots, \alpha_n)</m>, by induction <m>F(\alpha_1,\dots, \alpha_{n-1})=F(\alpha)</m> for some <m>\alpha</m>, in which case <m>K=F(\alpha, \alpha_n)</m>. Thus, to complete the proof it suffices to show that if <m>K=F(\alpha,\beta)</m> is separable, then we have <m>K=F(\gamma)</m> for some <m>\gamma\in K</m>. In fact, we will show that we can pick <m>\gamma=\alpha+c\beta</m> for some <m>c\in F</m>, and this is precisely where we will use the fact that <m>F</m> is infinite. 
+                In more detail, we will show that the set of <m>c\in F</m> such that <m>F(\alpha+c\beta)\ne K</m> is finite, and thus, since <m>F</m> is infinite, there is a <m>c\in F</m> such that <m>F(\alpha+c\beta)=K</m>. 
+            </p>
+            <p>
+                Here is where we use the fact that <m>K=F(\alpha,\beta)</m> is separable over <m>F</m>. Let <m>[K\colon F]=n</m>, and let <m>X=\{\sigma_1,\sigma_2,\dots, \sigma_n\}</m> be the <m>n</m> extensions of the inclusion map <m>i\colon F\hookrightarrow \overline{F}</m>, for some algebraic closure <m>\overline{F}/F</m>. If <m>K'=F(\alpha+c\beta)\ne K</m>, then we have <m>[K\colon K']</m>.
+                Let <m>\sigma\colon K'\rightarrow \overline{F}</m> be any extension of the inclusion map <m>i\colon F\hookrightarrow \overline{F}</m>. By strong transitivity, <m>K/K'</m> is separable; and since <m>[K\colon K']&gt; 1</m>, there are <em>at least</em> two distinct extensions <m>\tau_i\ne \tau_j\in X</m> of <m>\sigma</m> to <m>K</m>. 
+                <image xml:id="im_prim_elem" width="50%">
+                    <shortdescription>Two extensions of sigma</shortdescription>
+                    <latex-image>
+                        \begin{tikzcd}
+                            K=F(\alpha,\beta) \arrow[ddrr,"\tau_i\ne\tau_j"]\amp \\
+                            K'=F(\alpha+c\beta)\arrow[drr,"\sigma"'] \arrow[u,dash]\amp \\
+                            F\arrow[rr,dash,"i"']\arrow[u,dash]\amp\amp \overline{F}
+                        \end{tikzcd}
+                    </latex-image>
+                </image>
+                Since <m>\tau_i\vert_{K'}=\tau_j\vert_{K'}=\sigma</m>, we have 
+                <me>
+                    \tau_i(\alpha+c\beta)=\tau_j(\alpha+c\beta)
+                </me>,
+                and thus
+                <me>
+                    \tau_i(\alpha)+c\tau_i(\beta)=\tau_j(\alpha)+c\tau_j(\beta)
+                </me>.
+                If <m>\tau_i(\beta)=\tau_j(\beta)</m>, then we'd also have <m>\tau_i(\alpha)=\tau_j(\alpha)</m>, in which case <m>\tau_i=\tau_j</m>, since <m>K=F(\alpha,\beta)</m>. This is a contradiction, as we assumed <m>\tau_i\ne \tau_j</m>. We conclude that <m>\tau_i(\beta)\ne \tau_j(\beta)</m>, in which case we can solve for <m>c</m> as 
+                <me>
+                    c=\frac{\tau_i(\alpha)-\tau_{j}(\alpha)}{\tau_i(\beta)-\tau_{j}(\beta)}
+                </me>.
+                This means that <m>c</m> must be an element of the <em>finite</em> set of elements 
+                <me>
+                    \left\{\frac{\tau(\alpha)-\tau'(\alpha)}{\tau(\beta)-\tau'(\beta)}\colon \tau\ne \tau'\in X, \tau(\beta)\ne\tau'(\beta) \right\}
+                </me>.
+                It follows that there are only finitely many such <m>c\in F</m> for which <m>F(\alpha+c\beta)\ne F(\alpha,\beta)</m>, as desired.
+            </p>
+        </proof>
     </theorem>
-    
+    <remark>
+        <title>Primitive element theorem</title>
+        <p>
+            Given a simple algebraic extension <m>K=F(\alpha)</m>, the simple generator <m>\alpha</m> is often called a <em>primitive element</em>. Thus the primitive element theorem can be summarized as follows: every finite separable extension has a primitive element.  
+        </p>
+    </remark>
+    <example xml:id="eg_prim_elem_degree_4">
+        <title>Primitive element theorem</title>
+        <statement>
+            <p>
+                Let <m>K=\Q(\sqrt{2},\sqrt{3})</m>. Show that <m>\alpha=\sqrt{2}+c\sqrt{3}</m> is a primitive element of <m>K</m> for any nonzero <m>c\in \Q</m>. 
+            </p>
+        </statement>
+    </example>
+    <example xml:id="eg_prim_elem_degree_6">
+        <title>Primitive element theorem</title>
+        <statement>
+            <p>
+                Let <m>K\leq \C</m> be a splitting field of <m>f(x)=x^3-2\in \Q</m>. Find a primitive element of <m>K/\Q</m>. 
+            </p>
+        </statement>
+    </example>
 
 </section>

@@ -29,6 +29,14 @@
             </me>.
         </p>
     </statement>
+    <proof>
+        <p>
+            The reverse direction is clear: if <m>m_{\alpha,F}(x)</m> is separable, then <m>\alpha</m> is separable, since <m>m_{\alpha,F}(\alpha)=0</m>. 
+        </p>
+        <p>
+            For the forward implication, assume <m>\alpha</m> is separable over <m>F</m>, in which it is the root of a separable polynomial <m>g(x)\in F[x]</m>. It follows from <xref ref="cor_min_poly"/> that <m>m_{\alpha,F}(x)\mid g(x)</m>. But then <m>m_{\alpha,F}(x)</m> must be separable. Indeed, <m>m_{\alpha,F}(x)</m> cannot have a repeated root: if <m>(x-\beta)^2\mid m_{\alpha,F}(x)</m> for some <m>\beta\in \overline{F}</m>, then <m>(x-\alpha)^2\mid g(x)</m>, which is impossible since <m>g</m> is separable. 
+        </p>
+    </proof>
 </theorem>
 <remark>
     <title>Separable minimal polynomial</title>
