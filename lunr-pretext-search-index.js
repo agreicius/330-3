@@ -1954,6 +1954,60 @@ var ptx_lunr_docs = [
   "body": " Primitive element theorem   Let be a splitting field of . Find a primitive element of .   "
 },
 {
+  "id": "s_Galois_ext",
+  "level": "1",
+  "url": "s_Galois_ext.html",
+  "type": "Section",
+  "number": "1.15",
+  "title": "Galois extensions",
+  "body": " Galois extensions     Galois extension   A field extension is Galois if it is normal and separable.     Galois extension  Note that in our definition of a Galois extension, we do not assume that the field extension is finite. Note further that any Galois extension is algebraic, as by definition any separable extension is algebraic.    Normal\/separable revisted   Let be an algebraic closure, and let be a subextension.    In general we have .     is normal if and only if if and only if splits completely over for all .    If is finite, then is separable if and only if .       Finite Galois extensions   Let be an algebraic closure, and let be a finite subextension. The following statements are equivalent.    is Galois.     .        Galois group    Galois group of     Galois group of    Let be a Galois extension. The Galois group  of over is defined as . If is an algebraic closure of , we often write simply for .    "
+},
+{
+  "id": "d_Galois_ext",
+  "level": "2",
+  "url": "s_Galois_ext.html#d_Galois_ext",
+  "type": "Definition",
+  "number": "1.15.1",
+  "title": "Galois extension.",
+  "body": " Galois extension   A field extension is Galois if it is normal and separable.   "
+},
+{
+  "id": "rm_Galois_ext",
+  "level": "2",
+  "url": "s_Galois_ext.html#rm_Galois_ext",
+  "type": "Remark",
+  "number": "1.15.2",
+  "title": "Galois extension.",
+  "body": " Galois extension  Note that in our definition of a Galois extension, we do not assume that the field extension is finite. Note further that any Galois extension is algebraic, as by definition any separable extension is algebraic.  "
+},
+{
+  "id": "th_norm_sep_comp",
+  "level": "2",
+  "url": "s_Galois_ext.html#th_norm_sep_comp",
+  "type": "Theorem",
+  "number": "1.15.3",
+  "title": "Normal\/separable revisted.",
+  "body": " Normal\/separable revisted   Let be an algebraic closure, and let be a subextension.    In general we have .     is normal if and only if if and only if splits completely over for all .    If is finite, then is separable if and only if .     "
+},
+{
+  "id": "th_Gal_fin",
+  "level": "2",
+  "url": "s_Galois_ext.html#th_Gal_fin",
+  "type": "Corollary",
+  "number": "1.15.4",
+  "title": "Finite Galois extensions.",
+  "body": " Finite Galois extensions   Let be an algebraic closure, and let be a finite subextension. The following statements are equivalent.    is Galois.     .      "
+},
+{
+  "id": "d_Gal_group",
+  "level": "2",
+  "url": "s_Galois_ext.html#d_Gal_group",
+  "type": "Definition",
+  "number": "1.15.5",
+  "title": "Galois group.",
+  "body": " Galois group    Galois group of     Galois group of    Let be a Galois extension. The Galois group  of over is defined as . If is an algebraic closure of , we often write simply for .   "
+},
+{
   "id": "appendix-notation",
   "level": "1",
   "url": "appendix-notation.html",
