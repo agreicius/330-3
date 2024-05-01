@@ -3,7 +3,7 @@
 <section xml:id="s_Galois_ext" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Galois extensions</title>
     <p>
-        
+        At least we meet the main players of our course: Galois extensions. 
     </p>
     <definition xml:id="d_Galois_ext">
         <title>Galois extension</title>
@@ -19,8 +19,11 @@
             Note that in our definition of a Galois extension, we do not assume that the field extension <m>K/F</m> is finite. Note further that any Galois extension is algebraic, as by definition any separable extension is algebraic. 
         </p>
     </remark>
+    <p>
+        Both notions involved in the definition of a Galois extension, normal and separable extensions, can be recast in terms of statements about extensions of field embeddings. The theorem below is a recap of some of these different formulations. The framing we use here, and which will be the default framing for the rest of the course, is to fix an algebraic closure <m>\overline{F}/F</m> and to consider only the extensions <m>K</m> of <m>F</m> lying within <m>\overline{F}</m>. By <xref ref="th_emb_ext_alg"/>, any algebraic extension of <m>F</m> can be embedded in <m>\overline{F}</m>, and so we do not lose anything (up to isomorphism) by restricting to this setup.  
+    </p>
     <theorem xml:id="th_norm_sep_comp">
-        <title>Normal/separable revisted</title>
+        <title>Normal/separable revisited</title>
         <statement>
             <p>
                 Let <m>\overline{F}/F</m> be an algebraic closure, and let <m>K/F</m> be a subextension. 
@@ -87,5 +90,19 @@
             </p>
         </statement>
     </definition>
+    <example>
+        <title>Galois group: quadratic extension</title>
+        <p>
+            Let <m>K=\Q(\sqrt{2})</m>. Show that <m>K/\Q</m> is Galois, describe explicitly the elements of <m>\Gal(K/\Q)</m>, and identify <m>\Gal(K/\Q)</m> as a familiar finite group. 
+        </p>
+        
+    </example>
+    <example>
+        <title>Galois group: quadratic extension</title>
+        <p>
+            Let <m>K=\Q(\sqrt{2})</m>. Show that <m>K/\Q</m> is Galois, describe explicitly the elements of <m>\Gal(K/\Q)</m>, and identify <m>\Gal(K/\Q)</m> as a familiar finite group. 
+        </p>
+        
+    </example>
 
 </section>
