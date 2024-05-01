@@ -163,7 +163,7 @@
                     </li>
                     <li>
                         <p>
-                            <m>K</m> is algebraic over <m>F</m>, and for all <m>\alpha\in K</m> the minimal polynomial <m>m_{\alpha, F}(x)</m> splits completely over <m>F</m>. 
+                            <m>K</m> is algebraic over <m>F</m>, and for all <m>\alpha\in K</m> the minimal polynomial <m>m_{\alpha, F}(x)</m> splits completely over <m>K</m>. 
                         </p>
                     </li>
                 </ol>

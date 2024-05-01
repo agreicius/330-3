@@ -90,6 +90,7 @@
       \DeclareMathOperator{\flux}{flux}
       \DeclareMathOperator{\Hom}{Hom}
       \DeclareMathOperator{\Aut}{Aut}
+      \DeclareMathOperator{\Gal}{Gal}
       \DeclareMathOperator{\ab}{ab}
       \DeclareMathOperator{\character}{char}
 

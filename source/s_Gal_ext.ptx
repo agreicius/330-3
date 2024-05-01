@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_Galois_ext" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Galois extensions</title>
+    <p>
+        
+    </p>
+    <definition xml:id="d_Galois_ext">
+        <title>Galois extension</title>
+        <statement>
+            <p>
+                A field extension <m>K/F</m> is <term>Galois</term> if it is normal and separable.
+            </p>
+        </statement>
+    </definition>
+    <remark xml:id="rm_Galois_ext">
+        <title>Galois extension</title>
+        <p>
+            Note that in our definition of a Galois extension, we do not assume that the field extension <m>K/F</m> is finite. Note further that any Galois extension is algebraic, as by definition any separable extension is algebraic. 
+        </p>
+    </remark>
+    <theorem xml:id="th_norm_sep_comp">
+        <title>Normal/separable revisted</title>
+        <statement>
+            <p>
+                Let <m>\overline{F}/F</m> be an algebraic closure, and let <m>K/F</m> be a subextension. 
+            </p>
+            <ol>
+                <li>
+                    <p>
+                        In general we have <m>\Aut_F(K)\subseteq \Hom_F(K,\overline{F})</m>. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <m>K/F</m> is normal if and only if <m>\Hom_F(K,\overline{F})=\Aut_F(K)</m> if and only if <m>m_{\alpha,F}(x)</m> splits completely over <m>K</m> for all <m>\alpha\in K</m>. 
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        If <m>K/F</m> is finite, then <m>K/F</m> is separable if and only if 
+                        <men xml:id="eqn_norm_sep_comp">
+                            \abs{\Hom_F(K,\overline{F})}=[K\colon F]
+                        </men>.
+                    </p>
+                </li>
+            </ol>
+        </statement>
+    </theorem>
+    <corollary xml:id="th_Gal_fin">
+        <title>Finite Galois extensions</title>
+        <statement>
+            <p>
+                Let <m>\overline{F}/F</m> be an algebraic closure, and let <m>K/F</m> be a finite subextension. The following statements are equivalent. 
+                <ol>
+                    <li>
+                        <p>
+                            <m>K/F</m> is Galois. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>\abs{\Aut_F(K)}=\abs{\Hom_F(K,\overline{F})}=[K\colon F]</m>.
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+    </corollary>
+    <definition xml:id="d_Gal_group">
+        <title>Galois group</title>
+        <notation>
+            <usage><m>\Gal(K/F)</m></usage>
+          <description>Galois group of <m>K/F</m></description>
+        </notation>
+        <notation>
+            <usage><m>G_F</m></usage>
+          <description>Galois group of <m>\overline{F}/F</m></description>
+        </notation>
+        <statement>
+            <p>
+                Let <m>K/F</m> be a Galois extension. The <term>Galois group</term> <m>\Gal(K/F)</m> of <m>K</m> over <m>F</m> is defined as 
+                <me>
+                    \Gal(K/F)=\Aut_F(K)
+                </me>.
+                If <m>K=\overline{F}</m> is an algebraic closure of <m>F</m>, we often write simply <m>G_F</m> for <m>\Gal(\overline{F}/F)</m>. 
+            </p>
+        </statement>
+    </definition>
+
+</section>

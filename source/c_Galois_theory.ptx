@@ -15,5 +15,6 @@
   <xi:include  href="s_separable_I.ptx"/>
   <xi:include  href="s_separable_II.ptx"/>
   <xi:include  href="s_separable_III.ptx"/>
+  <xi:include  href="s_Gal_ext.ptx"/>
 
 </chapter>
