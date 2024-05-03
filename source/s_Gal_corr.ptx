@@ -190,7 +190,7 @@
 		</statement>
 	</theorem>
 
-	<example>
+	<example xml:id="eg_Gal_cuberoot2">
 		<title>Galois correspondence</title>
 		<statement>
 			<p>
