@@ -90,19 +90,108 @@
             </p>
         </statement>
     </definition>
-    <example>
+    <example xml:id="eg_Gal_quad">
         <title>Galois group: quadratic extension</title>
-        <p>
-            Let <m>K=\Q(\sqrt{2})</m>. Show that <m>K/\Q</m> is Galois, describe explicitly the elements of <m>\Gal(K/\Q)</m>, and identify <m>\Gal(K/\Q)</m> as a familiar finite group. 
-        </p>
-        
+        <statement>
+            <p>
+                Let <m>K=\Q(\sqrt{2})</m>. Show that <m>K/\Q</m> is Galois, describe explicitly the elements of <m>\Gal(K/\Q)</m>, and identify <m>\Gal(K/\Q)</m> as a familiar finite group. 
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Since <m>\character \Q=0</m>, the extension is automatically separable. The extension is normal since <m>K</m> is the splitting field of <m>x^2-2</m>. 
+            </p>
+            <p>
+                Using <xref ref="th_embed_ext_simple"/>, we see that <m>\Aut_\Q(K)=\Hom_\Q(K,\overline{\Q})</m> has exactly two elements, corresponding to the two roots of <m>x^2-2</m> lying in <m>\overline{Q}</m>:
+                <md>
+                    <mrow>\sigma_1(a+b\sqrt{2}) \amp = a+b\sqrt{2}</mrow>
+                    <mrow>\sigma_2(a+b\sqrt{2}) \amp = a-b\sqrt{2}</mrow>
+                </md>.
+                Note that <m>\sigma_1=\id</m>, the identity map. Letting <m>\sigma=\sigma_2</m>, we have 
+                <me>
+                    \Gal(K/\Q)=\Aut_\Q(K)=\{\id, \sigma\}
+                </me>.
+                Since there is up to isomorphism one group of cardinality two, we have <m>\Gal(K/\Q)\cong \Z/2\Z</m>. 
+            </p>
+        </solution>    
     </example>
-    <example>
-        <title>Galois group: quadratic extension</title>
-        <p>
-            Let <m>K=\Q(\sqrt{2})</m>. Show that <m>K/\Q</m> is Galois, describe explicitly the elements of <m>\Gal(K/\Q)</m>, and identify <m>\Gal(K/\Q)</m> as a familiar finite group. 
-        </p>
-        
+    <example xml:base="eg_Gal_degree_8">
+        <title>Galois group: degree-8 extension</title>
+        <statement>
+            <p>
+                Let <m>K=\Q(\sqrt{2},\sqrt{3},\sqrt{5})</m>. Show that <m>K/\Q</m> is Galois, describe explicitly the elements of <m>\Gal(K/\Q)</m>, and identify <m>\Gal(K/\Q)</m> as a familiar finite group. 
+            </p>
+        </statement>
+        <solution>
+            <p>
+               The extension is automatically separable, and is the splitting field of <m>\{x^2-2, x^2-3, x^2-5\}</m>. Thus <m>K/\Q</m> is Galois.  
+            </p>
+            <p>
+                We have seen previously that <m>[K\colon \Q]=8</m>. Thus 
+                <me>
+                    \abs{\Gal(K/\Q)}=\abs{\Aut_\Q(K)}=\abs{\Hom_\Q(K,\Qbar)}=[K\colon \Q]=8
+                </me>.
+                We claim that 
+                <me>
+                    \Gal(K/\Q)\cong \Z/2\Z\times \Z/2\Z\times \Z/2\Z\cong \{\pm 1\}\times \{\pm 1\} \times \{\pm 1\}
+                </me>,
+                where the group operation on <m>\{\pm 1\}</m> is multiplication (as integers). 
+            </p>
+            <p>
+                To see why this is true, first observe that if <m>\sigma</m> is a <m>\Q</m>-automorphism of <m>K</m> then it must satisfy 
+                <md>
+                    <mrow>\sigma(\sqrt{2}) \amp =\pm \sqrt{2}</mrow>
+                    <mrow>\sigma(\sqrt{3}) \amp =\pm \sqrt{3}</mrow>
+                    <mrow>\sigma(\sqrt{5}) \amp =\pm \sqrt{5}</mrow>
+                </md>.
+                These are <em>necessary</em> conditions for <m>\sigma</m> to be a <m>\Q</m>-embedding. Since a <m>\Q</m>-embedding of <m>K</m> is completely determined by where it sends <m>\sqrt{2}</m>, <m>\sqrt{3}</m>, and <m>\sqrt{5}</m>, the equations above tell us there are <em>at most</em> <m>8=2\cdot 2\cdot 2</m> different elements of <m>\Gal(K/\Q)</m>. Since <m>\abs{\Gal(K/\Q)}=8</m>, we see in this case that these necessary conditions are in fact sufficient: <ie/>, each of the eight choices of where the generators are sent actually gives rise a unique <m>\Q</m>-embedding <m>\sigma\colon K\rightarrow K</m>. 
+            </p>
+            <p>
+                We will exploit the fact that an element <m>\sigma\in \Gal(K/\Q)</m> is determined by its action on the three generators in order to get a grip on the group structure. For example, it is easy to see that <m>\sigma^2=\id</m> for all <m>\sigma\in \Gal(K/\Q)</m>. Indeed, if we have 
+                <mdn>
+                    <mrow xml:id="eq_Gal_1">\sigma(\sqrt{2}) \amp = (-1)^{n_1}\sqrt{2}</mrow>
+                    <mrow xml:id="eq_Gal_2">\sigma(\sqrt{3}) \amp = (-1)^{n_2}\sqrt{3}</mrow>
+                    <mrow xml:id="eq_Gal_3">\sigma(\sqrt{5}) \amp = (-1)^{n_3}\sqrt{5}</mrow>
+                </mdn>,
+                then <m>\sigma^2</m> satisfies 
+                <md>
+                    <mrow>\sigma^2(\sqrt{2}) \amp = \sigma((-1)^{n_1}\sqrt{2})</mrow>
+                    <mrow> \amp = (-1)^{2n_1}\sqrt{2}=\sqrt{2}</mrow>
+                    <mrow>\sigma^2(\sqrt{3}) \amp = \sigma((-1)^{n_2}\sqrt{3})</mrow>
+                    <mrow> \amp = (-1)^{2n_2}\sqrt{3}=\sqrt{3}</mrow>
+                    <mrow>\sigma^2(\sqrt{5}) \amp = \sigma((-1)^{n_3}\sqrt{5})</mrow>
+                    <mrow> \amp = (-1)^{2n_3}\sqrt{5}=\sqrt{5}</mrow>
+                </md>.
+                Since <m>\sigma^2</m> fixes each of the generators, we have <m>\sigma^2=\id</m>, as claimed. It now follows that <m>\Gal(K/\Q)</m> is abelian. Indeed, in general if a group <m>G</m> satisfies <m>g^2=e</m> for all <m>g\in G</m>, then <m>G</m> is abelian. (This is a classic exercise in elementary group theory.) Finally, we can use the structure theorem of finite abelian groups to conclude that 
+                <me>
+                    \Gal(K/\Q)\cong (\Z/2\Z)^3
+                </me>,
+                as up to isomorphism, this is the only abelian group of cardinality <m>8</m>, all of whose elements have order at most 2. 
+            </p>
+            <p>
+                Alternatively, we can take a more direct approach. Define a map 
+                <md>
+                    <mrow>\phi\colon \Gal(K/\Q) \amp \rightarrow \{\pm 1\}\times \{\pm 1\}\times \{\pm 1\}</mrow>
+                    <mrow>\sigma \amp \mapsto \left((-1)^{n_1},(-1)^{n_2},(-1)^{n_3}\right)</mrow>
+                </md>,
+                where <m>\sigma</m> satisfies equations <xref first="eq_Gal_1" last="eq_Gal_3"/>. This is an injective map since <m>\sigma\in \Gal(K/\Q)</m> is uniquely determined by where it sends the three generators. Since it is injective and the two groups both have cardinality equal to 8, it is bijective. To see that <m>\phi</m> is a group homomorphism, we argue again using the three generators of <m>K</m>: suppose <m>\phi(\sigma)=((-1)^{n_1},(-1)^{n_2},(-1)^{n_3})</m> and <m>\phi(\tau)=((-1)^{m_1},(-1)^{m_2},(-1)^{m_3})</m>; then we have 
+                <md>
+                    <mrow>(\sigma\tau)(\sqrt{2}) \amp =\sigma((-1)^{m_1}\sqrt{2}) </mrow>
+                    <mrow> \amp = (-1)^{n_1+m_1}\sqrt{2}</mrow>
+                    <mrow>(\sigma\tau)(\sqrt{3}) \amp =\sigma((-1)^{m_2}\sqrt{3}) </mrow>
+                    <mrow> \amp = (-1)^{n_2+m_2}\sqrt{3}</mrow>
+                    <mrow>(\sigma\tau)(\sqrt{5}) \amp =\sigma((-1)^{m_3}\sqrt{5}) </mrow>
+                    <mrow> \amp = (-1)^{n_3+m_3}\sqrt{5}</mrow>
+                </md>,
+                whence, by definition of <m>\phi</m>,  
+                <md>
+                    <mrow>\phi(\sigma\tau) \amp = ((-1)^{n_1+m_1},(-1)^{n_2+m_2},(-1)^{n_3+m_3})</mrow>
+                    <mrow> \amp =((-1)^{n_1},(-1)^{n_2},(-1)^{n_3})((-1)^{m_1},(-1)^{m_2},(-1)^{m_3})</mrow>
+                    <mrow> \amp =\phi(\sigma)\phi(\tau)</mrow>
+                </md>,
+                as desired. 
+            </p>
+        </solution>
     </example>
 
 </section>

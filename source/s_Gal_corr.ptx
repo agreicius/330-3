@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="s_Gal_corr" xmlns:xi="http://www.w3.org/2001/XInclude">
+	<title>Galois correspondence</title>
+	<p>
+		The <em>Galois correspondence</em> for a finite Galois extension <m>L/F</m> is a bijection between the set of all intermediate fields of <m>L/F</m> and the set of all subgroups of <m>\Gal(L/F)</m>.
+		This correspondence associates to a subgroup <m>H\leq \Gal(L/K)</m> an intermediate field <m>K</m> called the <em>fixed field</em> of <m>H</m>, which we now define in a slightly more general setting.
+	</p>
+
+	<definition xml:id="d_fixed_field">
+		<title>Fixed field</title>
+		<notation>
+		<usage><m>L^H</m></usage>
+		<description>Fixed field of <m>H</m></description>
+		</notation>
+
+		<statement>
+			<p>
+				Let <m>L</m> be a field, and let <m>H</m> be a group of automorphisms of <m>L</m>.
+				The <term>fixed field</term> of <m>H</m>, denoted <m>L^H</m>, is the set of all elements of <m>L</m> fixed by all elements of <m>H</m>: <ie/>,
+				<me>
+					L^H=\{\alpha\in L\colon \sigma(\alpha)=\alpha \text{ for all } \sigma\in H\}
+				</me>.
+			</p>
+		</statement>
+    </definition>
+		<theorem xml:id="th_fix_field">
+			<title>Fixed fields</title>
+			<statement>
+				<p>
+					Let <m>L</m> be a field, and let <m>H</m> be a group of automorphisms of <m>L</m>.
+					The set <m>L^H</m> is a subfield of <m>L</m>.
+				</p>
+			</statement>
+
+
+			<proof>
+				<p>
+					Since the elements of <m>H</m> are field automorphisms of <m>L</m>, we see that <m>\sigma(0)=0</m> and <m>\sigma(1)=1</m> for all <m>\sigma\in H</m>.
+					Thus <m>0,1\in L^H</m>.
+					Furthermore, if <m>\alpha,\beta\in L^H</m>, then for all <m>\sigma\in H</m> we have
+					<md>
+						<mrow>\sigma(\alpha +\beta) \amp = \sigma(\alpha)+\sigma(\beta)</mrow>
+						<mrow> \amp = \alpha+\beta</mrow>
+						<mrow>\sigma(-\alpha) \amp =-\sigma(\alpha)</mrow>
+						<mrow> \amp = -\alpha</mrow>
+						<mrow>\sigma(\alpha\, \beta) \amp =\sigma(\alpha)\sigma(\beta)</mrow>
+						<mrow> \amp = \alpha\, \beta</mrow>
+					</md>,
+					showing that <m>\alpha+\beta</m>, <m>-\alpha</m>, and <m>\alpha\,\beta</m> are also elements of <m>L^H</m>.
+					Lastly, if <m>\alpha\in L^H</m> is nonzero, then
+					<me>
+						\sigma(\alpha^{-1})=(\sigma(\alpha))^{-1}=\alpha^{-1}
+					</me>,
+					showing that <m>\alpha^{-1}</m> is also in <m>L^H</m>.
+					This proves <m>L^H</m> is a subfield of <m>L</m>.
+				</p>
+			</proof>
+		</theorem>
+        <p>
+            Given a finite Galois extension <m>L/F</m>, the map <m>H\mapsto L^H</m> associates to each subgroup of <m>\Gal(L/F)</m> an intermediate field <m>K=L^H</m> of <m>L/F</m>. The next result allows us to define a map going the other way. 
+        </p>
+        <theorem xml:id="th_">
+            <statement>
+                <p>
+                    Let <m>L/F</m> be a Galois extension, and let <m>K</m> be an intermediate field of this extension: <ie/>, we have the tower of extensions <m>L/K/F</m>. 
+                    <ol>
+                        <li>
+                            <p>
+                                The extension <m>L/K</m> is Galois. 
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                <m>\Aut_K(L)=\Gal(L/K)=\{\sigma\in \Gal(L/F)\colon \sigma\vert_K=\id\}.</m>
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+            <proof>
+                <p>
+                    <ol>
+                        <li>
+                            <p>
+                                Since <m>L/F</m> is separable, so is <m>L/K</m> by <xref ref="cor_sep_strong_trans" text="custom">strong transitivity</xref>.  Since <m>L/F</m> is normal, we have <m>L=F(A)</m>, where <m>A</m> is the set of all roots of a collection of polynomials <m>\mathcal{P}\subseteq F[x]</m>. But since <m>F\leq K</m>, we have <m>\mathcal{P}\subseteq K[x]</m>; and since <m>F(A)=K(A)=L</m>, we see that <m>L</m> is also a splitting field of <m>\mathcal{P}</m> over <m>K</m>. Thus <m>L/K</m> is normal. 
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                We have 
+                                <md>
+                                    <mrow>\Gal(L/K) \amp = \Aut_K(L)</mrow>
+                                    <mrow> \amp = \{\sigma\in \Aut(L)\colon \sigma\vert_K=\id\}</mrow>
+                                    <mrow> \amp = \{\sigma\in \Aut_F(L)\colon \sigma\vert_K=\id\} \amp (F\leq K)</mrow>
+                                    <mrow> \amp=\{\sigma\in \Gal(L/F)\colon \sigma\vert_K=\id\} </mrow>
+                                </md>.
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </proof>
+        </theorem>
+        <p>
+            We now have all the necessary definitions and results to define the Galois correspondence. 
+        </p>
+        <definition xml:id="d_Galois_corr">
+            <title>Galois correspondence</title>
+            <statement>
+                <p>
+                    Let <m>L/F</m> be a Galois extension. Let <m>\mathcal{F}</m> be the set of all intermediate fields of <m>L/F</m>, and let <m>\mathcal{S}</m> be the set of all subgroups of <m>\Gal(L/F)</m>. The <term>Galois correspondence</term> of <m>L/F</m> is the pair of maps 
+                    <md>
+                        <mrow>\mathcal{F} \amp \rightarrow \mathcal{S} \amp \mathcal{S}\amp \rightarrow \mathcal{F}</mrow>
+                        <mrow>K \amp \longmapsto \Aut_K(L) \amp H\amp\longmapsto L^H</mrow>
+                    </md>.
+                </p>
+            </statement>
+        </definition>
+        <p>
+            The Galois correspondence theorem for finite groups tells us that the two maps of the Galois correspondence are inverses of one another. 
+        </p>
+        <theorem xml:id="th_Galois_corr">
+            <title>Galois correspondence</title>
+            <statement>
+                <p>
+                    Let <m>L/F</m> be a finite Galois extension. 
+                    <ol>
+                        <li>
+                            <p>
+                                The two maps of the Galois correspondence for <m>L/F</m> are inverses of one another, defining a bijection between the set of intermediate fields of <m>L/F</m> and the set of subgroups of <m>\Gal(L/F)</m>. 
+                                <image xml:id="im_Gal_corr" width="75%">
+                                    <shortdescription>Galois correspondence diagram</shortdescription>
+                                    <latex-image>
+                                        \begin{tikzcd}
+                                        \underset{\text{inter. fields}}{\underbrace{\{K\colon F\leq K\leq L \}}} \arrow[r,leftrightarrow]\amp\underset{\text{subgroups}}{\underbrace{\{H\colon H\leq \Gal(L/F)\}}}\\
+                                        K \arrow[r, mapsto]\amp \Aut_{K}(L)\\
+                                        L^H \arrow[r,mapsfrom] \amp H
+                                      \end{tikzcd}
+                                    </latex-image>
+                                </image>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Given an intermediate field <m>K</m>, the extension <m>L/K</m> is Galois and <m>\Aut_K(L)=\Gal(L/K)</m>. 
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Given a subgroup <m>H\leq \Gal(L/F)</m>, we have <m>[L\colon L^H]=\abs{H}</m> and <m>[L^H\colon F]=[\Gal(L/F)\colon H]</m>.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                The Galois correspondence is inclusion reversing. In more detail, we have 
+                                <me>
+                                    K\leq K' \iff \Aut_{K'}(L)\leq \Aut_K(L)
+                                </me>
+                                for all intermediate fields <m>K</m> and <m>K'</m>, and 
+                                <me>
+                                    H\leq H' \iff L^{H'}\leq L^H
+                                </me>,
+                                for all subgroups <m>H</m> and <m>H'</m>. 
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+        </theorem>
+        <example>
+            <title>Galois correspondence</title>
+            <statement>
+                <p>
+                    Let <m>K\leq \C</m> be the splitting field of <m>x^3-2</m> over <m>\Q</m>. 
+                    <ol>
+                        <li>
+                            <p>
+                                Show that <m>K/\Q</m> is Galois, describe explicitly the elements of <m>\Gal(K/\Q)</m>, and identify <m>\Gal(K/\Q)</m> as a familiar finite group. 
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Produce the lattice of subgroups of <m>\Gal(K/\Q)</m> and provide generators for all subgroups involved.  
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Use the above and the Galois correspondence to produce the lattice of intermediate fields of <m>K/\Q</m>. 
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    <ol>
+                        <li>
+                            <p>
+                                By definition <m>K/\Q</m> is a splitting field, hence normal. Since all algebraic extensions of <m>\Q</m> are separable, we conclude that <m>K/\Q</m> is Galois. 
+                            </p>
+                            <p>Let <m>\zeta=e^{2\pi i/3}</m>, and let 
+                                <md>
+                                    <mrow>\alpha_1 \amp = \sqrt[3]{2}\amp \alpha_2\amp=\sqrt[3]{2}\,\zeta \amp \alpha_3\amp =\sqrt[3]{2}\,\zeta^2</mrow>
+                                </md>
+                                be the three roots of <m>x^3-2</m>. We have shown elsewhere that
+                                <me>
+                                    K=\Q(\sqrt[3]{2},\zeta)=\Q(\alpha_1,\alpha_2,\alpha_3)
+                                </me>
+                                is an extension of degree <m>6</m> over <m>\Q</m>. Thus <m>\Gal(K/\Q)</m> is a group of order <m>6</m>. Let <m>R=\{\alpha_1,\alpha_2,\alpha_3\}</m>. We claim that <m>\Gal(K/\Q)\cong S_R\cong S_3</m>. Indeed, since any <m>\sigma\in \Gal(K/\Q)=\Aut_\Q(K)</m> must send a root of <m>x^3-2</m> to a root of <m>x^3-2</m>, it defines via restriction a map <m>\sigma\vert_R\colon R\rightarrow R</m>, which must be bijective, since <m>\sigma</m> is injective. Define the map 
+                                <md>
+                                    <mrow>\phi\colon \Gal(K/\Q) \amp \rightarrow S_R</mrow>
+                                    <mrow>\sigma \amp \mapsto \sigma\vert_R</mrow>
+                                </md>.
+                                Since the <m>\alpha_i</m> generate <m>K</m> over <m>\Q</m>, a <m>\Q</m>-automorphism is completely determined by where it sends each <m>\alpha_i</m>; this implies that the map <m>\phi</m> is injective. Since <m>\abs{\Gal(K/\Q)}=\abs{S_R}=6</m>, <m>\phi</m> must in fact be bijective. Lastly, since the group operations for both <m>\Gal(K/\Q)</m> and <m>S_R</m> is composition of functions, <m>\phi</m> is clearly a group homomorphism. We conclude that <m>\phi</m> is an isomorphism.
+                            </p>
+                            <p> The table below provides two descriptions of the elements of <m>\Gal(K/\Q)</m> in terms of their action on a set of generators of <m>K</m> over <m>\Q</m>. The first column gives a cycle notation description of the action of <m>\sigma</m> on the generating set <m>R=\{\alpha_1,\alpha_2,\alpha_3\}</m>. The second column describes <m>\sigma</m> in terms of its action on the generating set <m>\{\sqrt[3]{2}, \zeta\}</m>. 
+                                <md>
+                                    <mrow>(1) \amp \amp \sqrt[3]{2}\amp\mapsto \sqrt[3]{2}</mrow>
+                                    <mrow> \amp \amp\zeta\amp\mapsto \zeta</mrow>
+                                    <mrow>(12) \amp \amp \sqrt[3]{2}\amp\mapsto \sqrt[3]{2}\,\zeta</mrow>
+                                    <mrow> \amp\amp \zeta\amp\mapsto \zeta^2</mrow>
+                                    <mrow>(13) \amp \amp \sqrt[3]{2}\amp\mapsto \sqrt[3]{2}\,\zeta^2</mrow>
+                                    <mrow> \amp\amp \zeta\amp\mapsto \zeta^2</mrow>
+                                    <mrow>(23) \amp \amp \sqrt[3]{2}\amp\mapsto \sqrt[3]{2}</mrow>
+                                    <mrow> \amp \amp\zeta\amp\mapsto \zeta^2</mrow>
+                                    <mrow>(123) \amp \amp \sqrt[3]{2}\amp\mapsto \sqrt[3]{2}\,\zeta</mrow>
+                                    <mrow> \amp \amp\zeta\amp\mapsto \zeta</mrow>
+                                    <mrow>(132) \amp \amp \sqrt[3]{2}\amp\mapsto \sqrt[3]{2}\,\zeta^2</mrow>
+                                    <mrow> \amp\amp \zeta\amp\mapsto \zeta</mrow>
+                                </md>
+                                As usual, we should think of the descriptions above as giving a <q>summary</q> of an automorphism <m>\sigma</m> based on what it does to the elements of a generating set. This information determines <m>\sigma</m> uniquely, but one needs to do a little algebra to then figure out what <m>\sigma</m> does to an arbitrary element of the form 
+                                <me>
+                                    a+b\sqrt[3]{2}+c\sqrt[3]{4}+d\zeta+e\sqrt[3]{2}\,\zeta+f\sqrt[3]{4}\, \zeta
+                                </me>. 
+                            </p>
+                        </li>
+                        <li>
+
+                        </li>
+                    </ol>
+                </p>
+            </solution>
+            
+            
+        </example>
+        
+	
+</section>

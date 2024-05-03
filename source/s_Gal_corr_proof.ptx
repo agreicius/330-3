@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_Gal_corr_proof" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Galois correspondence: proof</title>
+    <theorem xml:id="th_Artin">
+        <title>Artin's theorem</title>
+        <statement>
+            <p>
+                Let <m>L</m> be a field, and let <m>H</m> be a finite group of automorphisms of <m>L</m>. 
+                The extension <m>L/L^H</m> is a finite Galois extension, and <m>\Aut_{L^H}(L)=H</m>. In particular, we have <m>[L\colon L^H]=\abs{H}</m>. 
+            </p>
+        </statement>
+        <proof>
+            <p>
+                
+            </p>
+        </proof>
+
+</section>
