@@ -1960,7 +1960,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.15",
   "title": "Galois extensions",
-  "body": " Galois extensions     Galois extension   A field extension is Galois if it is normal and separable.     Galois extension  Note that in our definition of a Galois extension, we do not assume that the field extension is finite. Note further that any Galois extension is algebraic, as by definition any separable extension is algebraic.    Normal\/separable revisted   Let be an algebraic closure, and let be a subextension.    In general we have .     is normal if and only if if and only if splits completely over for all .    If is finite, then is separable if and only if .       Finite Galois extensions   Let be an algebraic closure, and let be a finite subextension. The following statements are equivalent.    is Galois.     .        Galois group    Galois group of     Galois group of    Let be a Galois extension. The Galois group  of over is defined as . If is an algebraic closure of , we often write simply for .    "
+  "body": " Galois extensions  At least we meet the main players of our course: Galois extensions.   Galois extension   A field extension is Galois if it is normal and separable.     Galois extension  Note that in our definition of a Galois extension, we do not assume that the field extension is finite. Note further that any Galois extension is algebraic, as by definition any separable extension is algebraic.   Both notions involved in the definition of a Galois extension, normal and separable extensions, can be recast in terms of statements about extensions of field embeddings. The theorem below is a recap of some of these different formulations. The framing we use here, and which will be the default framing for the rest of the course, is to fix an algebraic closure and to consider only the extensions of lying within . By , any algebraic extension of can be embedded in , and so we do not lose anything (up to isomorphism) by restricting to this setup.   Normal\/separable revisited   Let be an algebraic closure, and let be a subextension.    In general we have .     is normal if and only if if and only if splits completely over for all .    If is finite, then is separable if and only if .       Finite Galois extensions   Let be an algebraic closure, and let be a finite subextension. The following statements are equivalent.    is Galois.     .        Galois group    Galois group of     Galois group of    Let be a Galois extension. The Galois group  of over is defined as . If is an algebraic closure of , we often write simply for .     Galois group: quadratic extension   Let . Show that is Galois, describe explicitly the elements of , and identify as a familiar finite group.    Since , the extension is automatically separable. The extension is normal since is the splitting field of .  Using , we see that has exactly two elements, corresponding to the two roots of lying in : . Note that , the identity map. Letting , we have . Since there is up to isomorphism one group of cardinality two, we have .     Galois group: degree-8 extension   Let . Show that is Galois, describe explicitly the elements of , and identify as a familiar finite group.    The extension is automatically separable, and is the splitting field of . Thus is Galois.  We have seen previously that . Thus . We claim that , where the group operation on is multiplication (as integers).  To see why this is true, first observe that if is a -automorphism of then it must satisfy . These are necessary conditions for to be a -embedding. Since a -embedding of is completely determined by where it sends , , and , the equations above tell us there are at most  different elements of . Since , we see in this case that these necessary conditions are in fact sufficient: , each of the eight choices of where the generators are sent actually gives rise a unique -embedding .  We will exploit the fact that an element is determined by its action on the three generators in order to get a grip on the group structure. For example, it is easy to see that for all . Indeed, if we have , then satisfies . Since fixes each of the generators, we have , as claimed. It now follows that is abelian. Indeed, in general if a group satisfies for all , then is abelian. (This is a classic exercise in elementary group theory.) Finally, we can use the structure theorem of finite abelian groups to conclude that , as up to isomorphism, this is the only abelian group of cardinality , all of whose elements have order at most 2.  Alternatively, we can take a more direct approach. Define a map , where satisfies equations . This is an injective map since is uniquely determined by where it sends the three generators. Since it is injective and the two groups both have cardinality equal to 8, it is bijective. To see that is a group homomorphism, we argue again using the three generators of : suppose and ; then we have , whence, by definition of , , as desired.    "
 },
 {
   "id": "d_Galois_ext",
@@ -1986,8 +1986,8 @@ var ptx_lunr_docs = [
   "url": "s_Galois_ext.html#th_norm_sep_comp",
   "type": "Theorem",
   "number": "1.15.3",
-  "title": "Normal\/separable revisted.",
-  "body": " Normal\/separable revisted   Let be an algebraic closure, and let be a subextension.    In general we have .     is normal if and only if if and only if splits completely over for all .    If is finite, then is separable if and only if .     "
+  "title": "Normal\/separable revisited.",
+  "body": " Normal\/separable revisited   Let be an algebraic closure, and let be a subextension.    In general we have .     is normal if and only if if and only if splits completely over for all .    If is finite, then is separable if and only if .     "
 },
 {
   "id": "th_Gal_fin",
@@ -2006,6 +2006,87 @@ var ptx_lunr_docs = [
   "number": "1.15.5",
   "title": "Galois group.",
   "body": " Galois group    Galois group of     Galois group of    Let be a Galois extension. The Galois group  of over is defined as . If is an algebraic closure of , we often write simply for .   "
+},
+{
+  "id": "eg_Gal_quad",
+  "level": "2",
+  "url": "s_Galois_ext.html#eg_Gal_quad",
+  "type": "Example",
+  "number": "1.15.6",
+  "title": "Galois group: quadratic extension.",
+  "body": " Galois group: quadratic extension   Let . Show that is Galois, describe explicitly the elements of , and identify as a familiar finite group.    Since , the extension is automatically separable. The extension is normal since is the splitting field of .  Using , we see that has exactly two elements, corresponding to the two roots of lying in : . Note that , the identity map. Letting , we have . Since there is up to isomorphism one group of cardinality two, we have .   "
+},
+{
+  "id": "s_Galois_ext-10",
+  "level": "2",
+  "url": "s_Galois_ext.html#s_Galois_ext-10",
+  "type": "Example",
+  "number": "1.15.7",
+  "title": "Galois group: degree-8 extension.",
+  "body": " Galois group: degree-8 extension   Let . Show that is Galois, describe explicitly the elements of , and identify as a familiar finite group.    The extension is automatically separable, and is the splitting field of . Thus is Galois.  We have seen previously that . Thus . We claim that , where the group operation on is multiplication (as integers).  To see why this is true, first observe that if is a -automorphism of then it must satisfy . These are necessary conditions for to be a -embedding. Since a -embedding of is completely determined by where it sends , , and , the equations above tell us there are at most  different elements of . Since , we see in this case that these necessary conditions are in fact sufficient: , each of the eight choices of where the generators are sent actually gives rise a unique -embedding .  We will exploit the fact that an element is determined by its action on the three generators in order to get a grip on the group structure. For example, it is easy to see that for all . Indeed, if we have , then satisfies . Since fixes each of the generators, we have , as claimed. It now follows that is abelian. Indeed, in general if a group satisfies for all , then is abelian. (This is a classic exercise in elementary group theory.) Finally, we can use the structure theorem of finite abelian groups to conclude that , as up to isomorphism, this is the only abelian group of cardinality , all of whose elements have order at most 2.  Alternatively, we can take a more direct approach. Define a map , where satisfies equations . This is an injective map since is uniquely determined by where it sends the three generators. Since it is injective and the two groups both have cardinality equal to 8, it is bijective. To see that is a group homomorphism, we argue again using the three generators of : suppose and ; then we have , whence, by definition of , , as desired.   "
+},
+{
+  "id": "s_Gal_corr",
+  "level": "1",
+  "url": "s_Gal_corr.html",
+  "type": "Section",
+  "number": "1.16",
+  "title": "Galois correspondence",
+  "body": " Galois correspondence  The Galois correspondence for a Galois extension is a dictionary of sorts that relates in a vert precise manner the set of all intermediate fields of and the set of all subgroups of . One of the fundamental results of Galois theory is articulated in , which states among other things that when is a finite Galois extension, the intermediate fields of and the subgroups of are in bijective correspondence. One half of this correspondence is a map that associates to a subgroup an intermediate field called the fixed field of , which we now define in a slightly more general setting.   Fixed field    Fixed field of    Let be a field, and let be a group of automorphisms of . The fixed field of , denoted , is the set of all elements of fixed by all elements of : , .     Fixed fields   Let be a field, and let be a group of automorphisms of . The set is a subfield of .    Since the elements of are field automorphisms of , we see that and for all . Thus . Furthermore, if , then for all we have , showing that , , and are also elements of . Lastly, if is nonzero, then , showing that is also in . This proves is a subfield of .    Given a finite Galois extension , the map associates to each subgroup of an intermediate field of . The next result allows us to define a map going the other way.    Let be a Galois extension, and let be an intermediate field of this extension: , we have the tower of extensions .   The extension is Galois.               Since is separable, so is by strong transitivity . Since is normal, we have , where is the set of all roots of a collection of polynomials . But since , we have ; and since , we see that is also a splitting field of over . Thus is normal.    We have .       We now have all the necessary definitions and results to define the Galois correspondence.   Galois correspondence   Let be a Galois extension. Let be the set of all intermediate fields of , and let be the set of all subgroups of . The Galois correspondence of is the pair of maps .    The Galois correspondence theorem for finite groups tells us that the two maps of the Galois correspondence are inverses of one another.   Galois correspondence   Let be a finite Galois extension.   The two maps of the Galois correspondence for are inverses of one another, defining a bijection between the set of intermediate fields of and the set of subgroups of .  Galois correspondence diagram       Given an intermediate field , the extension is Galois and .    Given a subgroup , we have and .    The Galois correspondence is inclusion reversing. In more detail, we have for all intermediate fields and , and , for all subgroups and .        Galois correspondence   Let be the splitting field of over .   Show that is Galois, describe explicitly the elements of , and identify as a familiar finite group.    Produce the lattice of subgroups of and provide generators for all subgroups involved.    Use the above and the Galois correspondence to produce the lattice of intermediate fields of .          By definition is a splitting field, hence normal. Since all algebraic extensions of are separable, we conclude that is Galois.  Let , and let be the three roots of . We have shown elsewhere that is an extension of degree over . Thus is a group of order . Let . We claim that . Indeed, since any must send a root of to a root of , it defines via restriction a map , which must be bijective, since is injective. Define the map . Since the generate over , a -automorphism is completely determined by where it sends each ; this implies that the map is injective. Since , must in fact be bijective. Lastly, since the group operations for both and is composition of functions, is clearly a group homomorphism. We conclude that is an isomorphism.  The table below provides two descriptions of the elements of in terms of their action on a set of generators of over . The first column gives a cycle notation description of the action of on the generating set . The second column describes in terms of its action on the generating set . As usual, we should think of the descriptions above as giving a summary of an automorphism based on what it does to the elements of a generating set. This information determines uniquely, but one needs to do a little algebra to then figure out what does to an arbitrary element of the form .         "
+},
+{
+  "id": "d_fixed_field",
+  "level": "2",
+  "url": "s_Gal_corr.html#d_fixed_field",
+  "type": "Definition",
+  "number": "1.16.1",
+  "title": "Fixed field.",
+  "body": " Fixed field    Fixed field of    Let be a field, and let be a group of automorphisms of . The fixed field of , denoted , is the set of all elements of fixed by all elements of : , .   "
+},
+{
+  "id": "th_fix_field",
+  "level": "2",
+  "url": "s_Gal_corr.html#th_fix_field",
+  "type": "Theorem",
+  "number": "1.16.2",
+  "title": "Fixed fields.",
+  "body": " Fixed fields   Let be a field, and let be a group of automorphisms of . The set is a subfield of .    Since the elements of are field automorphisms of , we see that and for all . Thus . Furthermore, if , then for all we have , showing that , , and are also elements of . Lastly, if is nonzero, then , showing that is also in . This proves is a subfield of .   "
+},
+{
+  "id": "th_",
+  "level": "2",
+  "url": "s_Gal_corr.html#th_",
+  "type": "Theorem",
+  "number": "1.16.3",
+  "title": "",
+  "body": "  Let be a Galois extension, and let be an intermediate field of this extension: , we have the tower of extensions .   The extension is Galois.               Since is separable, so is by strong transitivity . Since is normal, we have , where is the set of all roots of a collection of polynomials . But since , we have ; and since , we see that is also a splitting field of over . Thus is normal.    We have .      "
+},
+{
+  "id": "d_Galois_corr",
+  "level": "2",
+  "url": "s_Gal_corr.html#d_Galois_corr",
+  "type": "Definition",
+  "number": "1.16.4",
+  "title": "Galois correspondence.",
+  "body": " Galois correspondence   Let be a Galois extension. Let be the set of all intermediate fields of , and let be the set of all subgroups of . The Galois correspondence of is the pair of maps .   "
+},
+{
+  "id": "th_Galois_corr",
+  "level": "2",
+  "url": "s_Gal_corr.html#th_Galois_corr",
+  "type": "Theorem",
+  "number": "1.16.5",
+  "title": "Galois correspondence.",
+  "body": " Galois correspondence   Let be a finite Galois extension.   The two maps of the Galois correspondence for are inverses of one another, defining a bijection between the set of intermediate fields of and the set of subgroups of .  Galois correspondence diagram       Given an intermediate field , the extension is Galois and .    Given a subgroup , we have and .    The Galois correspondence is inclusion reversing. In more detail, we have for all intermediate fields and , and , for all subgroups and .      "
+},
+{
+  "id": "s_Gal_corr-11",
+  "level": "2",
+  "url": "s_Gal_corr.html#s_Gal_corr-11",
+  "type": "Example",
+  "number": "1.16.6",
+  "title": "Galois correspondence.",
+  "body": " Galois correspondence   Let be the splitting field of over .   Show that is Galois, describe explicitly the elements of , and identify as a familiar finite group.    Produce the lattice of subgroups of and provide generators for all subgroups involved.    Use the above and the Galois correspondence to produce the lattice of intermediate fields of .          By definition is a splitting field, hence normal. Since all algebraic extensions of are separable, we conclude that is Galois.  Let , and let be the three roots of . We have shown elsewhere that is an extension of degree over . Thus is a group of order . Let . We claim that . Indeed, since any must send a root of to a root of , it defines via restriction a map , which must be bijective, since is injective. Define the map . Since the generate over , a -automorphism is completely determined by where it sends each ; this implies that the map is injective. Since , must in fact be bijective. Lastly, since the group operations for both and is composition of functions, is clearly a group homomorphism. We conclude that is an isomorphism.  The table below provides two descriptions of the elements of in terms of their action on a set of generators of over . The first column gives a cycle notation description of the action of on the generating set . The second column describes in terms of its action on the generating set . As usual, we should think of the descriptions above as giving a summary of an automorphism based on what it does to the elements of a generating set. This information determines uniquely, but one needs to do a little algebra to then figure out what does to an arbitrary element of the form .        "
 },
 {
   "id": "appendix-notation",

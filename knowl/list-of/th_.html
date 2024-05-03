@@ -12,8 +12,28 @@
 </head>
 <body class="ignore-math">
 <article class="theorem theorem-like"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.12.9</span><span class="period">.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.16.3</span><span class="period">.</span>
 </h3>
-<div class="para"></div></article><span class="incontext"><a class="internal" href="s_separable_I.html#th_">in-context</a></span>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(L/F\)</span> be a Galois extension, and let <span class="process-math">\(K\)</span> be an intermediate field of this extension: i.e., we have the tower of extensions <span class="process-math">\(L/K/F\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li><div class="para">The extension <span class="process-math">\(L/K\)</span> is Galois.</div></li>
+<li><div class="para"><span class="process-math">\(\displaystyle \Aut_K(L)=\Gal(L/K)=\{\sigma\in \Gal(L/F)\colon \sigma\vert_K=\id\}.\)</span></div></li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical"><ol class="decimal">
+<li><div class="para">Since <span class="process-math">\(L/F\)</span> is separable, so is <span class="process-math">\(L/K\)</span> by <a href="" class="xref" data-knowl="./knowl/xref/cor_sep_strong_trans.html" title="Corollary 1.14.4: Separability is strongly transitive">strong transitivity</a>.  Since <span class="process-math">\(L/F\)</span> is normal, we have <span class="process-math">\(L=F(A)\text{,}\)</span> where <span class="process-math">\(A\)</span> is the set of all roots of a collection of polynomials <span class="process-math">\(\mathcal{P}\subseteq F[x]\text{.}\)</span> But since <span class="process-math">\(F\leq K\text{,}\)</span> we have <span class="process-math">\(\mathcal{P}\subseteq K[x]\text{;}\)</span> and since <span class="process-math">\(F(A)=K(A)=L\text{,}\)</span> we see that <span class="process-math">\(L\)</span> is also a splitting field of <span class="process-math">\(\mathcal{P}\)</span> over <span class="process-math">\(K\text{.}\)</span> Thus <span class="process-math">\(L/K\)</span> is normal.</div></li>
+<li><div class="para logical">
+<div class="para">We have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\Gal(L/K) \amp = \Aut_K(L)\\
+\amp = \{\sigma\in \Aut(L)\colon \sigma\vert_K=\id\}\\
+\amp = \{\sigma\in \Aut_F(L)\colon \sigma\vert_K=\id\} \amp (F\leq K)\\
+\amp=\{\sigma\in \Gal(L/F)\colon \sigma\vert_K=\id\} \text{.}
+\end{align*}
+</div>
+</div></li>
+</ol></div></article></details><span class="incontext"><a class="internal" href="s_Gal_corr.html#th_">in-context</a></span>
 </body>
 </html>

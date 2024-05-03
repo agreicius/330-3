@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.15.7</span><span class="period">.</span><span class="space"> </span><span class="title">Galois group: degree-8 extension.</span>
+</h3>
+<div class="para">Let <span class="process-math">\(K=\Q(\sqrt{2},\sqrt{3},\sqrt{5})\text{.}\)</span> Show that <span class="process-math">\(K/\Q\)</span> is Galois, describe explicitly the elements of <span class="process-math">\(\Gal(K/\Q)\text{,}\)</span> and identify <span class="process-math">\(\Gal(K/\Q)\)</span> as a familiar finite group.</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para">The extension is automatically separable, and is the splitting field of <span class="process-math">\(\{x^2-2, x^2-3, x^2-5\}\text{.}\)</span> Thus <span class="process-math">\(K/\Q\)</span> is Galois.</div> <div class="para logical">
+<div class="para">We have seen previously that <span class="process-math">\([K\colon \Q]=8\text{.}\)</span> Thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\abs{\Gal(K/\Q)}=\abs{\Aut_\Q(K)}=\abs{\Hom_\Q(K,\Qbar)}=[K\colon \Q]=8\text{.}
+\end{equation*}
+</div>
+<div class="para">We claim that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Gal(K/\Q)\cong \Z/2\Z\times \Z/2\Z\times \Z/2\Z\cong \{\pm 1\}\times \{\pm 1\} \times \{\pm 1\}\text{,}
+\end{equation*}
+</div>
+<div class="para">where the group operation on <span class="process-math">\(\{\pm 1\}\)</span> is multiplication (as integers).</div>
+</div> <div class="para logical">
+<div class="para">To see why this is true, first observe that if <span class="process-math">\(\sigma\)</span> is a <span class="process-math">\(\Q\)</span>-automorphism of <span class="process-math">\(K\)</span> then it must satisfy</div>
+<div class="displaymath process-math">
+\begin{align*}
+\sigma(\sqrt{2}) \amp =\pm \sqrt{2}\\
+\sigma(\sqrt{3}) \amp =\pm \sqrt{3}\\
+\sigma(\sqrt{5}) \amp =\pm \sqrt{5}\text{.}
+\end{align*}
+</div>
+<div class="para">These are <em class="emphasis">necessary</em> conditions for <span class="process-math">\(\sigma\)</span> to be a <span class="process-math">\(\Q\)</span>-embedding. Since a <span class="process-math">\(\Q\)</span>-embedding of <span class="process-math">\(K\)</span> is completely determined by where it sends <span class="process-math">\(\sqrt{2}\text{,}\)</span> <span class="process-math">\(\sqrt{3}\text{,}\)</span> and <span class="process-math">\(\sqrt{5}\text{,}\)</span> the equations above tell us there are <em class="emphasis">at most</em> <span class="process-math">\(8=2\cdot 2\cdot 2\)</span> different elements of <span class="process-math">\(\Gal(K/\Q)\text{.}\)</span> Since <span class="process-math">\(\abs{\Gal(K/\Q)}=8\text{,}\)</span> we see in this case that these necessary conditions are in fact sufficient: i.e., each of the eight choices of where the generators are sent actually gives rise a unique <span class="process-math">\(\Q\)</span>-embedding <span class="process-math">\(\sigma\colon K\rightarrow K\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">We will exploit the fact that an element <span class="process-math">\(\sigma\in \Gal(K/\Q)\)</span> is determined by its action on the three generators in order to get a grip on the group structure. For example, it is easy to see that <span class="process-math">\(\sigma^2=\id\)</span> for all <span class="process-math">\(\sigma\in \Gal(K/\Q)\text{.}\)</span> Indeed, if we have</div>
+<div class="displaymath process-math">
+\begin{align}
+\sigma(\sqrt{2}) \amp = (-1)^{n_1}\sqrt{2}\tag{1.27}\\
+\sigma(\sqrt{3}) \amp = (-1)^{n_2}\sqrt{3}\tag{1.28}\\
+\sigma(\sqrt{5}) \amp = (-1)^{n_3}\sqrt{5}\text{,}\tag{1.29}
+\end{align}
+</div>
+<div class="para">then <span class="process-math">\(\sigma^2\)</span> satisfies</div>
+<div class="displaymath process-math">
+\begin{align*}
+\sigma^2(\sqrt{2}) \amp = \sigma((-1)^{n_1}\sqrt{2})\\
+\amp = (-1)^{2n_1}\sqrt{2}=\sqrt{2}\\
+\sigma^2(\sqrt{3}) \amp = \sigma((-1)^{n_2}\sqrt{3})\\
+\amp = (-1)^{2n_2}\sqrt{3}=\sqrt{3}\\
+\sigma^2(\sqrt{5}) \amp = \sigma((-1)^{n_3}\sqrt{5})\\
+\amp = (-1)^{2n_3}\sqrt{5}=\sqrt{5}\text{.}
+\end{align*}
+</div>
+<div class="para">Since <span class="process-math">\(\sigma^2\)</span> fixes each of the generators, we have <span class="process-math">\(\sigma^2=\id\text{,}\)</span> as claimed. It now follows that <span class="process-math">\(\Gal(K/\Q)\)</span> is abelian. Indeed, in general if a group <span class="process-math">\(G\)</span> satisfies <span class="process-math">\(g^2=e\)</span> for all <span class="process-math">\(g\in G\text{,}\)</span> then <span class="process-math">\(G\)</span> is abelian. (This is a classic exercise in elementary group theory.) Finally, we can use the structure theorem of finite abelian groups to conclude that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Gal(K/\Q)\cong (\Z/2\Z)^3\text{,}
+\end{equation*}
+</div>
+<div class="para">as up to isomorphism, this is the only abelian group of cardinality <span class="process-math">\(8\text{,}\)</span> all of whose elements have order at most 2.</div>
+</div> <div class="para logical">
+<div class="para">Alternatively, we can take a more direct approach. Define a map</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\phi\colon \Gal(K/\Q) \amp \rightarrow \{\pm 1\}\times \{\pm 1\}\times \{\pm 1\}\\
+\sigma \amp \mapsto \left((-1)^{n_1},(-1)^{n_2},(-1)^{n_3}\right)\text{,}
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(\sigma\)</span> satisfies equations <a href="" class="xref" data-knowl="./knowl/xref/eq_Gal_1.html" title="Equation 1.27">(1.27)–(1.29)</a>. This is an injective map since <span class="process-math">\(\sigma\in \Gal(K/\Q)\)</span> is uniquely determined by where it sends the three generators. Since it is injective and the two groups both have cardinality equal to 8, it is bijective. To see that <span class="process-math">\(\phi\)</span> is a group homomorphism, we argue again using the three generators of <span class="process-math">\(K\text{:}\)</span> suppose <span class="process-math">\(\phi(\sigma)=((-1)^{n_1},(-1)^{n_2},(-1)^{n_3})\)</span> and <span class="process-math">\(\phi(\tau)=((-1)^{m_1},(-1)^{m_2},(-1)^{m_3})\text{;}\)</span> then we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+(\sigma\tau)(\sqrt{2}) \amp =\sigma((-1)^{m_1}\sqrt{2}) \\
+\amp = (-1)^{n_1+m_1}\sqrt{2}\\
+(\sigma\tau)(\sqrt{3}) \amp =\sigma((-1)^{m_2}\sqrt{3}) \\
+\amp = (-1)^{n_2+m_2}\sqrt{3}\\
+(\sigma\tau)(\sqrt{5}) \amp =\sigma((-1)^{m_3}\sqrt{5}) \\
+\amp = (-1)^{n_3+m_3}\sqrt{5}\text{,}
+\end{align*}
+</div>
+<div class="para">whence, by definition of <span class="process-math">\(\phi\text{,}\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="">
+\begin{align*}
+\phi(\sigma\tau) \amp = ((-1)^{n_1+m_1},(-1)^{n_2+m_2},(-1)^{n_3+m_3})\\
+\amp =((-1)^{n_1},(-1)^{n_2},(-1)^{n_3})((-1)^{m_1},(-1)^{m_2},(-1)^{m_3})\\
+\amp =\phi(\sigma)\phi(\tau)\text{,}
+\end{align*}
+</div>
+<div class="para">as desired.</div>
+</div>
+</div></details></div></article><span class="incontext"><a class="internal" href="s_Galois_ext.html#s_Galois_ext-10">in-context</a></span>
+</body>
+</html>
