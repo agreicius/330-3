@@ -1,19 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <section xml:id="s_Gal_corr_proof" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Galois correspondence: proof</title>
-    <theorem xml:id="th_Artin">
-        <title>Artin's theorem</title>
-        <statement>
-            <p>
-                Let <m>L</m> be a field, and let <m>H</m> be a finite group of automorphisms of <m>L</m>. 
-                The extension <m>L/L^H</m> is a finite Galois extension, and <m>\Aut_{L^H}(L)=H</m>. In particular, we have <m>[L\colon L^H]=\abs{H}</m>. 
-            </p>
-        </statement>
-        <proof>
-            <p>
-                
-            </p>
-        </proof>
+	<title>Galois correspondence: proof</title>
+	<p>
+		Our proof of <xref ref="th_Galois_corr"/> will rely on the following classic result of Emil Artin, which is useful in its own right. Additionally the proof of Artin's theorem reveals an important relationship between the minimal polynomial of elements in a finite Galois extension <m>L/F</m> and the action of the Galois group on <m>L</m>. The proof is a wonderfully winding one, and well worth internalizing. 
+	</p>
 
+	<theorem xml:id="th_Artin">
+		<title>Artin's theorem</title>
+		<statement>
+			<p>
+				Let <m>L</m> be a field, and let <m>H</m> be a finite group of automorphisms of <m>L</m>.
+				The extension <m>L/L^H</m> is a finite Galois extension, and <m>\Aut_{L^H}(L)=H</m>.
+				In particular, we have <m>[L\colon L^H]=\abs{H}</m>.
+			</p>
+		</statement>
+
+
+		<proof>
+			<p>
+				Given <m>\alpha\in L</m>, let
+				<me>
+					O_\alpha=\{\sigma(\alpha)\colon \sigma\in H\}
+				</me>,
+				the set of all images of <m>\alpha</m> under elements of <m>H</m>.
+				(In the theory of <em>group actions</em>, the set <m>O_\alpha</m> is called the <em>orbit</em> of <m>\alpha</m> under <m>H</m>).
+				Note that any <m>\sigma\in H</m> maps <m>O_\alpha</m> to itself, since if <m>\beta=\tau(\alpha)</m> for some <m>\tau\in H</m>, then <m>\sigma(\beta)=\sigma(\tau(\alpha))=(\sigma\tau)(\alpha)\in O_\alpha</m>, since <m>\sigma\tau\in H</m>. Since each element of <m>H</m> is injective as a map, and since <m>O_\alpha</m> is finite, it follows that 
+                <me>
+                    \sigma\vert_{O_\alpha}\colon O_\alpha\rightarrow O_\alpha
+                </me>
+                is a bijection for all <m>\sigma\in H</m>.
+            </p>
+            <p>
+				Let <m>\alpha=\alpha_1,\alpha_2,\dots, \alpha_d</m> be the distinct elements of <m>O_\alpha</m>.
+				We claim that
+				<men xml:id="eq_Artin_thm">
+					f(x)=\prod_{j=1}^d(x-\alpha_j)
+				</men>
+				has coefficients in <m>L^H</m>, and that in fact <m>f(x)=m_{\alpha, L^H}(x)</m> is the minimal polynomial of <m>\alpha</m> over <m>L^H</m>.
+				From this it follows that <m>L/L^H</m> is normal, since the minimal polynomial of any element splits completely in <m>L</m>, and separable, since this minimal polynomial as defined in <xref ref="eq_Artin_thm"/> has no repeated roots.
+			</p>
+
+			<p>
+				Let <m>f(x)=\anmonic</m>.  To see why <m>a_j\in L^H[x]</m> for all <m>1\leq j\leq n-1</m>, observe that we have
+				<md>
+					<mrow>f^\sigma \amp = \sigma(\prod_{j=1}^d(x-\alpha_j))</mrow>
+					<mrow> \amp = \prod_{j=1}^d(x-\sigma(\alpha_i))</mrow>
+					<mrow> \amp = \prod_{j=1}^d(x-\alpha_i) \amp (\sigma \text{ permutes } O_\alpha)</mrow>
+                    <mrow> \amp =f(x)</mrow>
+				</md>
+				for all <m>\sigma\in H</m>. On the other hand, we have 
+                <me>
+                    f^\sigma(x)=x^n+\sigma(a_{n-1})x^{n-1}+\cdots +\sigma(a_1)x+\sigma(a_0)
+                </me>
+                for any <m>\sigma\in H</m>. Thus we see that <m>f^\sigma=f</m> for all <m>\sigma\in H</m> implies <m>\sigma(a_j)=a_j</m> for all <m>1\leq j\leq n-1</m> for all <m>\sigma\in H</m>, which implies <m>a_j\in L^H</m> for all <m>1\leq j\leq n-1</m>, as desired. 
+            </p>
+            <p>
+                We now show that <m>f</m> as defined in <xref ref="eq_Artin_thm"/> is the minimal polynomial of <m>\alpha</m> over <m>L^H</m>. Since <m>f(\alpha)=0</m> and <m>f\in L^H[x]</m>, we have <m>m_{\alpha,L^H}(x)\mid f(x)</m>. To show we have an equality, it suffices to show that <m>f\mid m_{\alpha, L^H}(x)</m>; and for this it suffices to show that <m>(x-\alpha_j)\mid m_{\alpha,L^H}(x)
+                </m> for the distinct (simple) roots <m>\alpha_j</m> of <m>f(x)</m>. Fix an element <m>\alpha_j\in O_\alpha</m>. By definition we have <m>\alpha_j=\sigma(\alpha)</m> for some <m>\sigma\in H</m>, in which case 
+                <md>
+                    <mrow>m_{\alpha,L^H}(\alpha_j) \amp =m_{\alpha,L^H}(\sigma(\alpha)) </mrow>
+                    <mrow> \amp = m_{\alpha,L^H}^\sigma(\sigma(\alpha) \amp (m_{\alpha,L^H}(x)\in L^H[x])</mrow>
+                    <mrow> \amp = \sigma(m_{\alpha,L^H}(\alpha)) \amp (\sigma \text{ ring homo.})</mrow>
+                    <mrow> \amp =\sigma(0)</mrow>
+                    <mrow> \amp =0</mrow>
+                </md>.
+            We now know that <m>L/L^H</m> is Galois. It remains to show that <m>L/L^H</m> is finite and <m>\Aut(L/L^H)=H</m>. Let <m>\abs{H}=n</m>. As we saw above, for any <m>\alpha\in L</m> the polynomial <m>f(x)=\prod_{\beta\in O_{\alpha}}(x-\beta)</m> is the minimal polynomial of <m>\alpha</m> over <m>L^H</m>. It follows that for all <m>\alpha\in L</m>, we have 
+            <men xml:id="ineq_Artin">
+                \deg_{L^H}\alpha=\deg f=\abs{O_\alpha}\leq \abs{H}=n
+            </men>. Thus for all <m>\alpha\in L</m>, the subextension <m>L^H(\alpha)</m> has degree <m>[L^H(\alpha)\colon L]\leq n</m>. We claim this implies that <m>[L\colon L^H]\leq n</m>. Indeed, otherwise we could find a subextension <m>K/L^H</m> with <m>[K\colon L^H]=m &gt; n</m>. But since <m>L/L^H</m> is separable (shown above), so is <m>K/L^H</m>, and by the primitive element theorem, we have <m>K=L^H(\beta)</m> for some <m>\beta\in K</m>. This contradicts <xref ref="ineq_Artin"/> since then 
+            <me>\deg_{L^H}\beta=[K\colon L^H]=m&gt; n</me>.
+            Lastly, we show that <m>[L\colon L^H]=n</m>  and <m>\Gal(L/L^H)=\Aut_{L^H}(L)=H</m>.  We showed above that  <m>[L\colon L^H]\leq n</m>. Since <m>H\leq \Aut_{L^H}(L)</m>, and since <m>\abs{\Aut_{L^H}(L)}=[L\colon L^H]</m> (<m>L/L^H</m> is a finite Galois extension), we have 
+            <me>
+                n=\abs{H}\leq \abs{\Aut_{L^H}(L)}=[L\colon L^H]\leq n
+            </me>.
+            It follows that 
+            <m>
+                n=\abs{H}=\abs{\Aut_{L^H}(L)}=[L\colon L^H]
+            </m>
+            and <m>H=\Aut_{L^H}(L)=\Gal(L/L^H)</m>. 
+            </p>
+
+		</proof>
+	</theorem>
 </section>
