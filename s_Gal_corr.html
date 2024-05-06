@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s_Galois_ext.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_Galois_theory.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s_Galois_ext.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_Galois_theory.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_Gal_corr_proof.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
   \newcommand{\Q}{{\mathbb Q}}
   \newcommand{\R}{{\mathbb R}}
   \newcommand{\C}{{\mathbb C}}
@@ -164,6 +164,7 @@ window.MathJax = {
   \DeclareMathOperator{\nullity}{nullity}
   \DeclareMathOperator{\sign}{sign}
   \DeclareMathOperator{\Fix}{Fix}
+  \DeclareMathOperator{\Stab}{Stab}
   \DeclareMathOperator{\Aff}{Aff}
   \DeclareMathOperator{\Frac}{Frac}
   \DeclareMathOperator{\Ann}{Ann}
@@ -320,6 +321,21 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_separable_III.html" class="internal"><span class="codenumber">1.14</span> <span class="title">Separable finite extensions</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_Galois_ext.html" class="internal"><span class="codenumber">1.15</span> <span class="title">Galois extensions</span></a></div></li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="s_Gal_corr.html" class="internal"><span class="codenumber">1.16</span> <span class="title">Galois correspondence</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_Gal_corr_proof.html" class="internal"><span class="codenumber">1.17</span> <span class="title">Galois correspondence: proof</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_Gal_corr_proof.html#ss_Gal_corr_proof" class="internal"><span class="title">Proof of the Galois correspondence theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_Gal_corr_proof.html#sss_1" class="internal"><span class="title">Proof of statement (1)</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_Gal_corr_proof.html#sss_2" class="internal"><span class="title">Proof of (2)</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_Gal_corr_proof.html#sss_3" class="internal"><span class="title">Proof of (3)</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_Gal_corr_proof.html#sss_4" class="internal"><span class="title">Proof of (4)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_Gal_corr_proof.html#ss_Artin_th" class="internal"><span class="title">Artin’s theorem</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -373,21 +389,21 @@ L^H=\{\alpha\in L\colon \sigma(\alpha)=\alpha \text{ for all } \sigma\in H\}\tex
 <div class="para">showing that <span class="process-math">\(\alpha^{-1}\)</span> is also in <span class="process-math">\(L^H\text{.}\)</span> This proves <span class="process-math">\(L^H\)</span> is a subfield of <span class="process-math">\(L\text{.}\)</span>
 </div>
 </div></article></details><div class="para" id="s_Gal_corr-5">Given a finite Galois extension <span class="process-math">\(L/F\text{,}\)</span> the map <span class="process-math">\(H\mapsto L^H\)</span> associates to each subgroup of <span class="process-math">\(\Gal(L/F)\)</span> an intermediate field <span class="process-math">\(K=L^H\)</span> of <span class="process-math">\(L/F\text{.}\)</span> The next result allows us to define a map going the other way.</div>
-<article class="theorem theorem-like" id="th_"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.16.3</span><span class="period">.</span>
+<article class="theorem theorem-like" id="th_Gal_intermed"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.16.3</span><span class="period">.</span><span class="space"> </span><span class="title">Galois group of intermediate field.</span>
 </h3>
-<div class="para logical" id="th_-1-1">
+<div class="para logical" id="th_Gal_intermed-2-1">
 <div class="para">Let <span class="process-math">\(L/F\)</span> be a Galois extension, and let <span class="process-math">\(K\)</span> be an intermediate field of this extension: i.e., we have the tower of extensions <span class="process-math">\(L/K/F\text{.}\)</span>
 </div>
 <ol class="decimal">
-<li id="th_-1-1-5-1"><div class="para" id="th_-1-1-5-1-1">The extension <span class="process-math">\(L/K\)</span> is Galois.</div></li>
-<li id="th_-1-1-5-2"><div class="para" id="th_-1-1-5-2-1"><span class="process-math">\(\displaystyle \Aut_K(L)=\Gal(L/K)=\{\sigma\in \Gal(L/F)\colon \sigma\vert_K=\id\}.\)</span></div></li>
+<li id="th_Gal_intermed-2-1-5-1"><div class="para" id="th_Gal_intermed-2-1-5-1-1">The extension <span class="process-math">\(L/K\)</span> is Galois.</div></li>
+<li id="th_Gal_intermed-2-1-5-2"><div class="para" id="th_Gal_intermed-2-1-5-2-1"><span class="process-math">\(\displaystyle \Aut_K(L)=\Gal(L/K)=\{\sigma\in \Gal(L/F)\colon \sigma\vert_K=\id\}.\)</span></div></li>
 </ol>
-</div></article><details id="th_-2" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="th_-2-1"><ol class="decimal">
-<li id="th_-2-1-1-1"><div class="para" id="th_-2-1-1-1-1">Since <span class="process-math">\(L/F\)</span> is separable, so is <span class="process-math">\(L/K\)</span> by <a href="" class="xref" data-knowl="./knowl/xref/cor_sep_strong_trans.html" title="Corollary 1.14.4: Separability is strongly transitive">strong transitivity</a>. Since <span class="process-math">\(L/F\)</span> is normal, we have <span class="process-math">\(L=F(A)\text{,}\)</span> where <span class="process-math">\(A\)</span> is the set of all roots of a collection of polynomials <span class="process-math">\(\mathcal{P}\subseteq F[x]\text{.}\)</span> But since <span class="process-math">\(F\leq K\text{,}\)</span> we have <span class="process-math">\(\mathcal{P}\subseteq K[x]\text{;}\)</span> and since <span class="process-math">\(F(A)=K(A)=L\text{,}\)</span> we see that <span class="process-math">\(L\)</span> is also a splitting field of <span class="process-math">\(\mathcal{P}\)</span> over <span class="process-math">\(K\text{.}\)</span> Thus <span class="process-math">\(L/K\)</span> is normal.</div></li>
-<li id="th_-2-1-1-2"><div class="para logical" id="th_-2-1-1-2-1">
+</div></article><details id="th_Gal_intermed-3" class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical" id="th_Gal_intermed-3-1"><ol class="decimal">
+<li id="th_Gal_intermed-3-1-1-1"><div class="para" id="th_Gal_intermed-3-1-1-1-1">Since <span class="process-math">\(L/F\)</span> is separable, so is <span class="process-math">\(L/K\)</span> by <a href="" class="xref" data-knowl="./knowl/xref/cor_sep_strong_trans.html" title="Corollary 1.14.4: Separability is strongly transitive">strong transitivity</a>. Since <span class="process-math">\(L/F\)</span> is normal, we have <span class="process-math">\(L=F(A)\text{,}\)</span> where <span class="process-math">\(A\)</span> is the set of all roots of a collection of polynomials <span class="process-math">\(\mathcal{P}\subseteq F[x]\text{.}\)</span> But since <span class="process-math">\(F\leq K\text{,}\)</span> we have <span class="process-math">\(\mathcal{P}\subseteq K[x]\text{;}\)</span> and since <span class="process-math">\(F(A)=K(A)=L\text{,}\)</span> we see that <span class="process-math">\(L\)</span> is also a splitting field of <span class="process-math">\(\mathcal{P}\)</span> over <span class="process-math">\(K\text{.}\)</span> Thus <span class="process-math">\(L/K\)</span> is normal.</div></li>
+<li id="th_Gal_intermed-3-1-1-2"><div class="para logical" id="th_Gal_intermed-3-1-1-2-1">
 <div class="para">We have</div>
-<div class="displaymath process-math" id="th_-2-1-1-2-1-1">
+<div class="displaymath process-math" id="th_Gal_intermed-3-1-1-2-1-1">
 \begin{align*}
 \Gal(L/K) \amp = \Aut_K(L)\\
 \amp = \{\sigma\in \Aut(L)\colon \sigma\vert_K=\id\}\\
@@ -437,23 +453,23 @@ H\leq H' \iff L^{H'}\leq L^H\text{,}
 </div>
 </div></li>
 </ol>
-</div></article><article class="example example-like" id="s_Gal_corr-11"><h3 class="heading">
+</div></article><article class="example example-like" id="eg_Gal_cuberoot2"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.16.6</span><span class="period">.</span><span class="space"> </span><span class="title">Galois correspondence.</span>
 </h3>
-<div class="para logical" id="s_Gal_corr-11-2-1">
+<div class="para logical" id="eg_Gal_cuberoot2-2-1">
 <div class="para">Let <span class="process-math">\(K\leq \C\)</span> be the splitting field of <span class="process-math">\(x^3-2\)</span> over <span class="process-math">\(\Q\text{.}\)</span>
 </div>
 <ol class="decimal">
-<li id="s_Gal_corr-11-2-1-4-1"><div class="para" id="s_Gal_corr-11-2-1-4-1-1">Show that <span class="process-math">\(K/\Q\)</span> is Galois, describe explicitly the elements of <span class="process-math">\(\Gal(K/\Q)\text{,}\)</span> and identify <span class="process-math">\(\Gal(K/\Q)\)</span> as a familiar finite group.</div></li>
-<li id="s_Gal_corr-11-2-1-4-2"><div class="para" id="s_Gal_corr-11-2-1-4-2-1">Produce the lattice of subgroups of <span class="process-math">\(\Gal(K/\Q)\)</span> and provide generators for all subgroups involved.</div></li>
-<li id="s_Gal_corr-11-2-1-4-3"><div class="para" id="s_Gal_corr-11-2-1-4-3-1">Use the above and the Galois correspondence to produce the lattice of intermediate fields of <span class="process-math">\(K/\Q\text{.}\)</span>
+<li id="eg_Gal_cuberoot2-2-1-4-1"><div class="para" id="eg_Gal_cuberoot2-2-1-4-1-1">Show that <span class="process-math">\(K/\Q\)</span> is Galois, describe explicitly the elements of <span class="process-math">\(\Gal(K/\Q)\text{,}\)</span> and identify <span class="process-math">\(\Gal(K/\Q)\)</span> as a familiar finite group.</div></li>
+<li id="eg_Gal_cuberoot2-2-1-4-2"><div class="para" id="eg_Gal_cuberoot2-2-1-4-2-1">Produce the lattice of subgroups of <span class="process-math">\(\Gal(K/\Q)\)</span> and provide generators for all subgroups involved.</div></li>
+<li id="eg_Gal_cuberoot2-2-1-4-3"><div class="para" id="eg_Gal_cuberoot2-2-1-4-3-1">Use the above and the Galois correspondence to produce the lattice of intermediate fields of <span class="process-math">\(K/\Q\text{.}\)</span>
 </div></li>
 </ol>
 </div>
-<div class="solutions"><details id="s_Gal_corr-11-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para" id="s_Gal_corr-11-3-1">By definition <span class="process-math">\(K/\Q\)</span> is a splitting field, hence normal. Since all algebraic extensions of <span class="process-math">\(\Q\)</span> are separable, we conclude that <span class="process-math">\(K/\Q\)</span> is Galois.</div> <div class="para logical" id="s_Gal_corr-11-3-2">
+<div class="solutions"><details id="eg_Gal_cuberoot2-3" class="solution solution-like born-hidden-knowl"><summary><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="eg_Gal_cuberoot2-3-1">By definition <span class="process-math">\(K/\Q\)</span> is a splitting field, hence normal. Since all algebraic extensions of <span class="process-math">\(\Q\)</span> are separable, we conclude that <span class="process-math">\(K/\Q\)</span> is Galois.</div> <div class="para logical" id="eg_Gal_cuberoot2-3-2">
 <div class="para">Let <span class="process-math">\(\zeta=e^{2\pi i/3}\text{,}\)</span> and let</div>
-<div class="displaymath process-math" id="s_Gal_corr-11-3-2-2">
+<div class="displaymath process-math" id="eg_Gal_cuberoot2-3-2-2">
 \begin{align*}
 \alpha_1 \amp = \sqrt[3]{2}\amp \alpha_2\amp=\sqrt[3]{2}\,\zeta \amp \alpha_3\amp =\sqrt[3]{2}\,\zeta^2
 \end{align*}
@@ -465,17 +481,17 @@ K=\Q(\sqrt[3]{2},\zeta)=\Q(\alpha_1,\alpha_2,\alpha_3)
 \end{equation*}
 </div>
 <div class="para">is an extension of degree <span class="process-math">\(6\)</span> over <span class="process-math">\(\Q\text{.}\)</span> Thus <span class="process-math">\(\Gal(K/\Q)\)</span> is a group of order <span class="process-math">\(6\text{.}\)</span> Let <span class="process-math">\(R=\{\alpha_1,\alpha_2,\alpha_3\}\text{.}\)</span> We claim that <span class="process-math">\(\Gal(K/\Q)\cong S_R\cong S_3\text{.}\)</span> Indeed, since any <span class="process-math">\(\sigma\in \Gal(K/\Q)=\Aut_\Q(K)\)</span> must send a root of <span class="process-math">\(x^3-2\)</span> to a root of <span class="process-math">\(x^3-2\text{,}\)</span> it defines via restriction a map <span class="process-math">\(\sigma\vert_R\colon R\rightarrow R\text{,}\)</span> which must be bijective, since <span class="process-math">\(\sigma\)</span> is injective. Define the map</div>
-<div class="displaymath process-math" id="s_Gal_corr-11-3-2-16">
+<div class="displaymath process-math" id="eg_Gal_cuberoot2-3-2-16">
 \begin{align*}
 \phi\colon \Gal(K/\Q) \amp \rightarrow S_R\\
 \sigma \amp \mapsto \sigma\vert_R\text{.}
 \end{align*}
 </div>
 <div class="para">Since the <span class="process-math">\(\alpha_i\)</span> generate <span class="process-math">\(K\)</span> over <span class="process-math">\(\Q\text{,}\)</span> a <span class="process-math">\(\Q\)</span>-automorphism is completely determined by where it sends each <span class="process-math">\(\alpha_i\text{;}\)</span> this implies that the map <span class="process-math">\(\phi\)</span> is injective. Since <span class="process-math">\(\abs{\Gal(K/\Q)}=\abs{S_R}=6\text{,}\)</span> <span class="process-math">\(\phi\)</span> must in fact be bijective. Lastly, since the group operation for both <span class="process-math">\(\Gal(K/\Q)\)</span> and <span class="process-math">\(S_R\)</span> is composition of functions, <span class="process-math">\(\phi\)</span> is clearly a group homomorphism. We conclude that <span class="process-math">\(\phi\)</span> is an isomorphism.</div>
-</div> <div class="para logical" id="s_Gal_corr-11-3-3">
+</div> <div class="para logical" id="eg_Gal_cuberoot2-3-3">
 <div class="para">The table below provides two descriptions of the elements of <span class="process-math">\(\Gal(K/\Q)\)</span> in terms of their action on a set of generators of <span class="process-math">\(K\)</span> over <span class="process-math">\(\Q\text{.}\)</span> The first column gives a cycle notation description of the action of <span class="process-math">\(\sigma\)</span> on the generating set <span class="process-math">\(R=\{\alpha_1,\alpha_2,\alpha_3\}\text{.}\)</span> The second column describes <span class="process-math">\(\sigma\)</span> in terms of its action on the generating set <span class="process-math">\(\{\sqrt[3]{2}, \zeta\}\text{.}\)</span>
 </div>
-<div class="displaymath process-math" id="s_Gal_corr-11-3-3-8">
+<div class="displaymath process-math" id="eg_Gal_cuberoot2-3-3-8">
 \begin{align*}
 (1)=\id \amp \amp \sqrt[3]{2}\amp\mapsto \sqrt[3]{2}\\
 \amp \amp\zeta\amp\mapsto \zeta\\
@@ -497,13 +513,13 @@ K=\Q(\sqrt[3]{2},\zeta)=\Q(\alpha_1,\alpha_2,\alpha_3)
 a+b\sqrt[3]{2}+c\sqrt[3]{4}+d\zeta+e\sqrt[3]{2}\,\zeta+f\sqrt[3]{4}\, \zeta, a,b,c,d,e,f\in \Q\text{.}
 \end{equation*}
 </div>
-</div> <div class="para" id="s_Gal_corr-11-3-4">For notational ease, let <span class="process-math">\(G=\Gal(K/\Q)\text{.}\)</span> We will use the cycle permutation representation of <span class="process-math">\(G\)</span> given in the table above. The lattice of subgroups of <span class="process-math">\(G\cong S_3\)</span> is something we have computed elsewhere. We provide it hear, along with a choice of generators of each subgroup. Note that our lattice is upside down: given two subgroups connected by an edge, the higher subgroup is a subgroup of the lower. <div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/im_lattice_S3.svg" role="img" class="contained" alt="Lattice of subgroups of \(S_3\)"></div> Applying the Galois correspondence to this lattice results in the complete lattice of intermediate fields of <span class="process-math">\(K/\Q\text{,}\)</span> oriented in the usual right-side up fashion. <div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/im_lattice_cuberoot2.svg" role="img" class="contained" alt="Lattice of intermediate fields of \(K/\Q\)"></div> We’ve gone ahead and computed <span class="process-math">\(K^{\{\id\}}=K\)</span> and <span class="process-math">\(K^{S_3}=\Q\text{.}\)</span> The first equality is obvious: every element of <span class="process-math">\(K\)</span> is fixed by the identity automorphism <span class="process-math">\(\id\colon K\rightarrow K\text{.}\)</span> The second equality follows from the fact that the two maps of the Galois correspondence are inverses of one another: since <span class="process-math">\(\Q\mapsto \Aut_\Q(K)=G\text{,}\)</span> we must have <span class="process-math">\(G\mapsto K^G=\Q\text{.}\)</span>
-</div> <div class="para" id="s_Gal_corr-11-3-5">We’ve also added some information about the degrees of all the relevant extensions. The degrees of the extensions leading up to <span class="process-math">\(K\)</span> are equal to the cardinality of the corresponding subgroup <span class="process-math">\(H_i\text{.}\)</span> The degrees of the extensions leading down to <span class="process-math">\(\Q\)</span> are given by the index <span class="process-math">\([G\colon H_i]\)</span> of the corresponding subgroup. Alternatively, these degrees can be computed using the tower law.</div> <div class="para" id="s_Gal_corr-11-3-6">It remains to explicitly compute the various extensions <span class="process-math">\(K^{H_i}\text{.}\)</span> We can use what we already know about <span class="process-math">\(K/\Q\)</span> to help us along. For example, according to the diagram, there is exactly one subextension <span class="process-math">\(K^{H_5}/\Q\)</span> of degree <span class="process-math">\(2\text{.}\)</span> Since <span class="process-math">\(\Q(\zeta)/\Q\)</span> is such a subextension, we must have <span class="process-math">\(K^{H_5}=\Q(\zeta)\text{.}\)</span>
-</div> <div class="para" id="s_Gal_corr-11-3-7">Next, according to the diagram, the three extensions <span class="process-math">\(K^{H_i}/\Q\text{,}\)</span> <span class="process-math">\(i\in \{2,3,4\}\text{,}\)</span> are the three subextensions of <span class="process-math">\(K\)</span> of degree <span class="process-math">\(3\text{.}\)</span> Thus they must be the three cubic extensions <span class="process-math">\(\Q(\alpha_1), \Q(\alpha_2), \Q(\alpha_3)\text{.}\)</span> But which is which? The subgroup <span class="process-math">\(H_2\)</span> is generated by the <span class="process-math">\(\sigma\)</span> with permutation representation <span class="process-math">\((12)\text{.}\)</span> Since by definition this permutation fixes <span class="process-math">\(\alpha_3=\text{,}\)</span> and does not fix <span class="process-math">\(\alpha_1\)</span> or <span class="process-math">\(\alpha_2\text{,}\)</span> we conclude that we must have <span class="process-math">\(K^{H_2}=\Q(\alpha_3)=\Q(\sqrt[3]{2}\, \zeta^2\text{.}\)</span> Similar reasoning allows us to match the other degree-3 extensions, yielding the following completed lattice. <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/im_lattice_cuberoot2_complete.svg" role="img" class="contained" alt="Lattice of intermediate fields of \(K/\Q\)"></div>
+</div> <div class="para" id="eg_Gal_cuberoot2-3-4">For notational ease, let <span class="process-math">\(G=\Gal(K/\Q)\text{.}\)</span> We will use the cycle permutation representation of <span class="process-math">\(G\)</span> given in the table above. The lattice of subgroups of <span class="process-math">\(G\cong S_3\)</span> is something we have computed elsewhere. We provide it hear, along with a choice of generators of each subgroup. Note that our lattice is upside down: given two subgroups connected by an edge, the higher subgroup is a subgroup of the lower. <div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/im_lattice_S3.svg" role="img" class="contained" alt="Lattice of subgroups of \(S_3\)"></div> Applying the Galois correspondence to this lattice results in the complete lattice of intermediate fields of <span class="process-math">\(K/\Q\text{,}\)</span> oriented in the usual right-side up fashion. <div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="generated/latex-image/im_lattice_cuberoot2.svg" role="img" class="contained" alt="Lattice of intermediate fields of \(K/\Q\)"></div> We’ve gone ahead and computed <span class="process-math">\(K^{\{\id\}}=K\)</span> and <span class="process-math">\(K^{S_3}=\Q\text{.}\)</span> The first equality is obvious: every element of <span class="process-math">\(K\)</span> is fixed by the identity automorphism <span class="process-math">\(\id\colon K\rightarrow K\text{.}\)</span> The second equality follows from the fact that the two maps of the Galois correspondence are inverses of one another: since <span class="process-math">\(\Q\mapsto \Aut_\Q(K)=G\text{,}\)</span> we must have <span class="process-math">\(G\mapsto K^G=\Q\text{.}\)</span>
+</div> <div class="para" id="eg_Gal_cuberoot2-3-5">We’ve also added some information about the degrees of all the relevant extensions. The degrees of the extensions leading up to <span class="process-math">\(K\)</span> are equal to the cardinality of the corresponding subgroup <span class="process-math">\(H_i\text{.}\)</span> The degrees of the extensions leading down to <span class="process-math">\(\Q\)</span> are given by the index <span class="process-math">\([G\colon H_i]\)</span> of the corresponding subgroup. Alternatively, these degrees can be computed using the tower law.</div> <div class="para" id="eg_Gal_cuberoot2-3-6">It remains to explicitly compute the various extensions <span class="process-math">\(K^{H_i}\text{.}\)</span> We can use what we already know about <span class="process-math">\(K/\Q\)</span> to help us along. For example, according to the diagram, there is exactly one subextension <span class="process-math">\(K^{H_5}/\Q\)</span> of degree <span class="process-math">\(2\text{.}\)</span> Since <span class="process-math">\(\Q(\zeta)/\Q\)</span> is such a subextension, we must have <span class="process-math">\(K^{H_5}=\Q(\zeta)\text{.}\)</span>
+</div> <div class="para" id="eg_Gal_cuberoot2-3-7">Next, according to the diagram, the three extensions <span class="process-math">\(K^{H_i}/\Q\text{,}\)</span> <span class="process-math">\(i\in \{2,3,4\}\text{,}\)</span> are the three subextensions of <span class="process-math">\(K\)</span> of degree <span class="process-math">\(3\text{.}\)</span> Thus they must be the three cubic extensions <span class="process-math">\(\Q(\alpha_1), \Q(\alpha_2), \Q(\alpha_3)\text{.}\)</span> But which is which? The subgroup <span class="process-math">\(H_2\)</span> is generated by the <span class="process-math">\(\sigma\)</span> with permutation representation <span class="process-math">\((12)\text{.}\)</span> Since by definition this permutation fixes <span class="process-math">\(\alpha_3=\text{,}\)</span> and does not fix <span class="process-math">\(\alpha_1\)</span> or <span class="process-math">\(\alpha_2\text{,}\)</span> we conclude that we must have <span class="process-math">\(K^{H_2}=\Q(\alpha_3)=\Q(\sqrt[3]{2}\, \zeta^2\text{.}\)</span> Similar reasoning allows us to match the other degree-3 extensions, yielding the following completed lattice. <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/im_lattice_cuberoot2_complete.svg" role="img" class="contained" alt="Lattice of intermediate fields of \(K/\Q\)"></div>
 </div>
 </div></details></div></article></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="s_Galois_ext.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s_Galois_ext.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_Gal_corr_proof.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

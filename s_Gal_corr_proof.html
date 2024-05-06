@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Galois correspondence: proof</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="Math 330-3">
+<meta property="book:author" content="Aaron Greicius">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.33/pretext_search.js"></script><link href="https://pretextbook.org/css/0.83/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.33</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.33/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.33/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.33/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.83/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.83/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="kursobjekt.html"><span class="title">Math 330-3:</span> <span class="subtitle">Kursobjekt</span></a></h1>
+<p class="byline">Aaron Greicius</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="kursobjekt-6-7.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s_Gal_corr.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_Galois_theory.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
+  \newcommand{\Q}{{\mathbb Q}}
+  \newcommand{\R}{{\mathbb R}}
+  \newcommand{\C}{{\mathbb C}}
+  \newcommand{\T}{{\mathbb T}}
+  \newcommand{\F}{{\mathbb F}}
+  \newcommand{\PP}{{\mathbb P}}
+  \newcommand{\HH}{{\mathbb H}}
+  \newcommand{\Fpbar}{\overline{\F_p}}
+  \newcommand{\Qbar}{\overline{\Q}}
+  \newcommand{\Fbar}{\overline{F}}
+  \newcommand{\Kbar}{\overline{K}}
+  \newcommand{\Lbar}{\overline{L}}
+  \newcommand{\compose}{\circ}
+  \newcommand{\bolda}{{\mathbf a}}
+  \newcommand{\boldb}{{\mathbf b}}
+  \newcommand{\boldc}{{\mathbf c}}
+  \newcommand{\boldd}{{\mathbf d}}
+  \newcommand{\bolde}{{\mathbf e}}
+  \newcommand{\boldi}{{\mathbf i}}
+  \newcommand{\boldj}{{\mathbf j}}
+  \newcommand{\boldk}{{\mathbf k}}
+  \newcommand{\boldn}{{\mathbf n}}
+  \newcommand{\boldp}{{\mathbf p}}
+  \newcommand{\boldq}{{\mathbf q}}
+  \newcommand{\boldr}{{\mathbf r}}
+  \newcommand{\bolds}{{\mathbf s}}
+  \newcommand{\boldt}{{\mathbf t}}
+  \newcommand{\boldu}{{\mathbf u}}
+  \newcommand{\boldv}{{\mathbf v}}
+  \newcommand{\boldw}{{\mathbf w}}
+  \newcommand{\boldx}{{\mathbf x}}
+  \newcommand{\boldy}{{\mathbf y}}
+  \newcommand{\boldz}{{\mathbf z}}
+  \newcommand{\boldzero}{{\mathbf 0}}
+  \newcommand{\boldmod}{\boldsymbol{ \bmod }}
+  \newcommand{\boldT}{{\mathbf T}}
+  \newcommand{\boldN}{{\mathbf N}}
+  \newcommand{\boldB}{{\mathbf B}}
+  \newcommand{\boldF}{{\mathbf F}}
+  \newcommand{\boldS}{{\mathbf S}}
+  \newcommand{\boldE}{{\mathbf E}}
+  \newcommand{\boldG}{{\mathbf G}}
+  \newcommand{\boldK}{{\mathbf K}}
+  \newcommand{\boldL}{{\mathbf L}}
+  \DeclareMathOperator{\lns}{lns}
+  \DeclareMathOperator{\lcm}{lcm}
+  \DeclareMathOperator{\Span}{span}
+  \DeclareMathOperator{\tr}{tr}
+  \DeclareMathOperator{\NS}{null}
+  \DeclareMathOperator{\RS}{row}
+  \DeclareMathOperator{\CS}{col}
+  \DeclareMathOperator{\im}{im}
+  \DeclareMathOperator{\range}{range}
+  \DeclareMathOperator{\rank}{rank}
+  \DeclareMathOperator{\nullity}{nullity}
+  \DeclareMathOperator{\sign}{sign}
+  \DeclareMathOperator{\Fix}{Fix}
+  \DeclareMathOperator{\Stab}{Stab}
+  \DeclareMathOperator{\Aff}{Aff}
+  \DeclareMathOperator{\Frac}{Frac}
+  \DeclareMathOperator{\Ann}{Ann}
+  \DeclareMathOperator{\Tor}{Tor}
+  \DeclareMathOperator{\id}{id}
+  \DeclareMathOperator{\mdeg}{mdeg}
+  \DeclareMathOperator{\Lt}{Lt}
+  \DeclareMathOperator{\Lc}{Lc}
+  \DeclareMathOperator{\disc}{disc}
+  \DeclareMathOperator{\Frob}{Frob}
+  \DeclareMathOperator{\adj}{adj}
+  \DeclareMathOperator{\curl}{curl}
+  \DeclareMathOperator{\grad}{grad}
+  \DeclareMathOperator{\diver}{div}
+  \DeclareMathOperator{\flux}{flux}
+  \DeclareMathOperator{\Hom}{Hom}
+  \DeclareMathOperator{\Aut}{Aut}
+  \DeclareMathOperator{\Gal}{Gal}
+  \DeclareMathOperator{\ab}{ab}
+  \DeclareMathOperator{\character}{char}
+
+
+  \newcommand{\surjects}{\twoheadrightarrow}
+  \newcommand{\injects}{\hookrightarrow}
+  \newcommand{\bijects}{\leftrightarrow}
+  \newcommand{\isomto}{\overset{\sim}{\rightarrow}}
+  \newcommand{\floor}[1]{\lfloor#1\rfloor}
+  \newcommand{\ceiling}[1]{\left\lceil#1\right\rceil}
+  \newcommand{\mclass}[2][m]{[#2]_{#1}}
+  \newcommand{\val}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\abs}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\valuation}[2][]{\left\lvert #2\right\rvert_{#1}}
+  \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+  \newcommand{\anpoly}{a_nx^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+  \newcommand{\anmonic}{x^n+a_{n-1}x^{n-1}\cdots +a_1x+a_0}
+  \newcommand{\bmpoly}{b_mx^m+b_{m-1}x^{m-1}\cdots +b_1x+b_0}
+  \newcommand{\pder}[2]{\frac{\partial#1}{\partial#2}}
+  \newcommand{\normalin}{\trianglelefteq}
+  \newcommand{\angvec}[1]{\langle #1\rangle}
+  \newcommand{\varpoly}[2]{#1_{#2}x^{#2}+#1_{#2-1}x^{#2-1}\cdots +#1_1x+#1_0}
+  \newcommand{\varpower}[1][a]{#1_0+#1_1x+#1_1x^2+\cdots}
+  \newcommand{\limasto}[2][x]{\lim_{#1\rightarrow #2}}
+  \newenvironment{linsys}[2][m]{
+  \begin{array}[#1]{@{}*{#2}{rc}r@{}}
+  }{
+  \end{array}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="meta_frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="c_foundations.html" class="internal"><span class="codenumber">0</span> <span class="title">Foundations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_sets_functions.html" class="internal"><span class="codenumber">0.1</span> <span class="title">Sets and functions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_functions.html#ss_sets" class="internal"><span class="title">Sets</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_functions.html#ss_functions" class="internal"><span class="title">Functions</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_sets_functions.html#subsec-" class="internal"><span class="title">Cardinality and countability</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_logic.html" class="internal"><span class="codenumber">0.2</span> <span class="title">Logic</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_propositional_calculus" class="internal"><span class="title">Propositional logic</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_logic.html#ss_predicate_logic" class="internal"><span class="title">Predicate logic</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_proof_technique.html" class="internal"><span class="codenumber">0.3</span> <span class="title">Proof techniques</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_logical_structure" class="internal"><span class="title">Logical structure</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_implication" class="internal"><span class="title">Implication</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_disjunction" class="internal"><span class="title">Disjunction</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_equivalence" class="internal"><span class="title">Equivalence</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_logical_chains" class="internal"><span class="title">Chains of implications/equivalences</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_proof_by_contradiction" class="internal"><span class="title">Proof by contradiction</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_Equalities" class="internal"><span class="title">Equalities</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_chain_equalities" class="internal"><span class="title">Chain of equalities</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_set_properties" class="internal"><span class="title">Basic set properties</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_inclusion" class="internal"><span class="title">Set inclusion</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_set_equality" class="internal"><span class="title">Set equality</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_function_properties" class="internal"><span class="title">Basic function properties</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_function_equality" class="internal"><span class="title">Function equality</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_injective_surjective_bijective" class="internal"><span class="title">Injective, surjective, bijective</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_proof_technique.html#ss_mathematical_induction" class="internal"><span class="title">Mathematical induction</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_weak_induction" class="internal"><span class="title">Proof by induction</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_proof_technique.html#sss_strong_induction" class="internal"><span class="title">Proof by strong induction</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="c_Galois_theory.html" class="internal"><span class="codenumber">1</span> <span class="title">Galois theory</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_intro.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Introduction to Galois theory</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_intro.html#ss_intro" class="internal"><span class="title">Finding roots of polynomials</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_intro.html#ss_field_extensions" class="internal"><span class="title">Fields</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_field_extension.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Field extension</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_field_extension.html#ss_field_extension" class="internal"><span class="title">Field extensions</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_degree.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Degree of a field extension</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_degree.html#ss_vector_spaces" class="internal"><span class="title">Vector spaces</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_degree.html#ss_degree" class="internal"><span class="title">Degree of an extension</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_simple_extension.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Simple extensions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_algebraic.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Algebraic extensions: definition</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_alg_finite_ext.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Algebraic extensions: theory</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_splitting.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Splitting fields</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="Untitled-1.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Algebraic closure</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_finite.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Finite fields</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_embeddings.html" class="internal"><span class="codenumber">1.10</span> <span class="title">Field embeddings</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_normal.html" class="internal"><span class="codenumber">1.11</span> <span class="title">Normal extensions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_normal.html#ss_split_unique" class="internal"><span class="title">Uniqueness of splitting fields and algebraic closures</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_normal.html#ss_automorphisms" class="internal"><span class="title">Automorphisms of fields</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_normal.html#ss_emb_ext_alg" class="internal"><span class="title">Zorn’s lemma and proof of Theorem 1.11.1</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_separable_I.html" class="internal"><span class="codenumber">1.12</span> <span class="title">Separability</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_separable_II.html" class="internal"><span class="codenumber">1.13</span> <span class="title">Separable extensions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_separable_III.html" class="internal"><span class="codenumber">1.14</span> <span class="title">Separable finite extensions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_Galois_ext.html" class="internal"><span class="codenumber">1.15</span> <span class="title">Galois extensions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_Gal_corr.html" class="internal"><span class="codenumber">1.16</span> <span class="title">Galois correspondence</span></a></div></li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="s_Gal_corr_proof.html" class="internal"><span class="codenumber">1.17</span> <span class="title">Galois correspondence: proof</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection">
+<div class="toc-title-box"><a href="s_Gal_corr_proof.html#ss_Gal_corr_proof" class="internal"><span class="title">Proof of the Galois correspondence theorem</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_Gal_corr_proof.html#sss_1" class="internal"><span class="title">Proof of statement (1)</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_Gal_corr_proof.html#sss_2" class="internal"><span class="title">Proof of (2)</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_Gal_corr_proof.html#sss_3" class="internal"><span class="title">Proof of (3)</span></a></div></li>
+<li class="toc-item toc-subsubsection"><div class="toc-title-box"><a href="s_Gal_corr_proof.html#sss_4" class="internal"><span class="title">Proof of (4)</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_Gal_corr_proof.html#ss_Artin_th" class="internal"><span class="title">Artin’s theorem</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="kursobjekt-6.html" class="internal"><span class="title">Back Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-notation.html" class="internal"><span class="codenumber">A</span> <span class="title">Notation</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-defs.html" class="internal"><span class="codenumber">B</span> <span class="title">Definitions</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-thms.html" class="internal"><span class="codenumber">C</span> <span class="title">Theory</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-procs.html" class="internal"><span class="codenumber">D</span> <span class="title">Procedures</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-egs.html" class="internal"><span class="codenumber">E</span> <span class="title">Examples</span></a></div></li>
+<li class="toc-item toc-appendix"><div class="toc-title-box"><a href="appendix-fiats.html" class="internal"><span class="codenumber">F</span> <span class="title">Mantras and fiats</span></a></div></li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="kursobjekt-6-7.html" class="internal"><span class="title">Index</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="s_Gal_corr_proof"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.17</span><span class="space"> </span><span class="title">Galois correspondence: proof</span>
+</h2>
+<section class="introduction" id="s_Gal_corr_proof-2"><div class="para" id="s_Gal_corr_proof-2-1">We now set about proving <a href="" class="xref" data-knowl="./knowl/xref/th_Galois_corr.html" title="Theorem 1.16.5: Galois correspondence">Theorem 1.16.5</a>. The main work here goes into proving the first statement of that theorem: that the two maps of the Galois correspondence are in fact inverses of one another. One of the directions of that proof is essentially the statement of <a href="" class="xref" data-knowl="./knowl/xref/th_Artin.html" title="Theorem 1.17.1: Artin’s theorem">Artin’s theorem</a>, a classic result of Emil Artin that is very important in its own right. We state and prove that theorem at the end of the section.</div></section><section class="subsection" id="ss_Gal_corr_proof"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Proof of the Galois correspondence theorem</span>
+</h3>
+<section class="introduction" id="ss_Gal_corr_proof-2"><div class="para" id="ss_Gal_corr_proof-2-1">Recall the setup of <a href="" class="xref" data-knowl="./knowl/xref/th_Galois_corr.html" title="Theorem 1.16.5: Galois correspondence">Theorem 1.16.5</a>. We assume <span class="process-math">\(L/F\)</span> is a finite Galois extension with Galois group <span class="process-math">\(G=\Gal(L/F)=\Aut_F(L)\text{.}\)</span> For notational convenience, we name the two maps of the Galois correspondence <span class="process-math">\(\Gamma\)</span> and <span class="process-math">\(\Delta\text{:}\)</span> <div class="image-box" style="width: 65%; margin-left: 17.5%; margin-right: 17.5%;"><img src="generated/latex-image/im_Gal_corr_proof.svg" role="img" class="contained" alt="Recap of Galois correspondence"></div>
+</div></section><section class="subsubsection" id="sss_1"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Proof of statement (1)</span>
+</h4>
+<div class="para logical" id="sss_1-2">
+<div class="para">Using the notation introduced above, the proof of statement (1) of <a href="" class="xref" data-knowl="./knowl/xref/th_Galois_corr.html" title="Theorem 1.16.5: Galois correspondence">Theorem 1.16.5</a> amounts to  showing the following equalities of maps:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_Galois_corr.html" id="sss_1-2-2">
+\begin{align*}
+\Gamma\circ \Delta \amp =  \id\\
+\Delta\circ \Gamma \amp = \id \text{.}
+\end{align*}
+</div>
+<div class="para">We prove each in turn.</div>
+</div>
+<details id="sss_1-3" class="hiddenproof born-hidden-knowl"><summary><h5 class="heading"><span class="title">Proof: <span class="process-math">\(\Gamma\circ \Delta=\id\)</span>.</span></h5></summary><article class="hiddenproof"> <div class="para logical" id="sss_1-3-2">
+<div class="para">Given <span class="process-math">\(H\leq G\)</span> we must show that the composition</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_Artin.html">
+\begin{equation*}
+H\mapsto L^H \mapsto \Aut_{L^H}(L)
+\end{equation*}
+</div>
+<div class="para">is the identity: equivalently, that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_Artin.html">
+\begin{equation*}
+\Aut_{L^H}(L)=H\text{.}
+\end{equation*}
+</div>
+<div class="para">This follows directly from <a href="" class="xref" data-knowl="./knowl/xref/th_Artin.html" title="Theorem 1.17.1: Artin’s theorem">Artin’s theorem</a>.</div>
+</div></article></details><details id="sss_1-4" class="hiddenproof born-hidden-knowl"><summary><h5 class="heading"><span class="title">Proof: <span class="process-math">\(\Delta\circ\Gamma =\id\)</span>.</span></h5></summary><article class="hiddenproof"> <div class="para logical" id="sss_1-4-2">
+<div class="para">Given an intermediate field <span class="process-math">\(K\text{,}\)</span> we must show that the composition</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_sep_fin_ext.html">
+\begin{equation*}
+K\mapsto H=\Aut_K(L)\mapsto L^H
+\end{equation*}
+</div>
+<div class="para">is the identity: equivalently, that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_sep_fin_ext.html">
+\begin{equation*}
+K=L^H, \hspace{5pt} H=\Aut_K(L) \text{.}
+\end{equation*}
+</div>
+<div class="para">By definition, each element of <span class="process-math">\(K\)</span> is fixed by <span class="process-math">\(H=\Aut_K(L)\text{.}\)</span> Thus <span class="process-math">\(K\leq L^H\text{.}\)</span> To show that we have equality, we will show that <span class="process-math">\(L^H/K\)</span> is an extension of degree one. Since <span class="process-math">\(L/F\)</span> is separable, strong transitivity implies <span class="process-math">\(L/K\)</span> is separable; another application of strong transitivity implies <span class="process-math">\(L^H/K\)</span> is separable. Let <span class="process-math">\(\overline{L}/L\)</span> be an algebraic closure of <span class="process-math">\(L\text{.}\)</span> By <a href="" class="xref" data-knowl="./knowl/xref/th_sep_fin_ext.html" title="Theorem 1.14.1: Separable finite extensions">Theorem 1.14.1</a> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_sep_fin_ext.html">
+\begin{equation*}
+[L^H\colon K]=\abs{\Hom_K(\overline{L})}\text{.}
+\end{equation*}
+</div>
+<div class="para">Thus we need only show that <span class="process-math">\(\abs{\Hom_K(\overline{L})}=1\text{.}\)</span> To this end, let <span class="process-math">\(\sigma\colon L^H\rightarrow \overline{L}\)</span> be a <span class="process-math">\(K\)</span>-embedding. Since <span class="process-math">\(L/L^H\)</span> is algebraic, there is an extension <span class="process-math">\(\tau\colon L\rightarrow \overline{L}\)</span> of <span class="process-math">\(\sigma\text{.}\)</span> Since <span class="process-math">\(L/K\)</span> is Galois and <span class="process-math">\(\tau\)</span> is a <span class="process-math">\(K\)</span>-embedding, we have <span class="process-math">\(\tau(L)=L\text{,}\)</span> and thus <span class="process-math">\(\tau\in\Aut_K(L)\text{.}\)</span> But since <span class="process-math">\(H=\Aut_K(L)\text{,}\)</span> we see that <span class="process-math">\(\tau\in H\text{,}\)</span> and hence <span class="process-math">\(\sigma=\tau\vert_{L^H}=\id\text{.}\)</span> This proves that the only element of <span class="process-math">\(\Hom_K(L^H,\Lbar)=\{i\}\text{,}\)</span> where <span class="process-math">\(i\colon L^H\hookrightarrow \Lbar\)</span> is the inclusion map. We conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_sep_fin_ext.html">
+\begin{equation*}
+[L^H\colon K]=\abs{\Hom_{K}(L^H,\Lbar)}=1\text{,}
+\end{equation*}
+</div>
+<div class="para">as desired.</div>
+</div></article></details></section><section class="subsubsection" id="sss_2"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Proof of (2)</span>
+</h4>
+<div class="para" id="sss_2-2">Statement (2) is simply a re-statement of <a href="" class="xref" data-knowl="./knowl/xref/th_Gal_intermed.html" title="Theorem 1.16.3: Galois group of intermediate field">Theorem 1.16.3</a>.</div></section><section class="subsubsection" id="sss_3"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Proof of (3)</span>
+</h4>
+<div class="para logical" id="sss_3-2">
+<div class="para">To see why statement (3) is true, take <span class="process-math">\(H\leq G\text{.}\)</span> Since <span class="process-math">\(\Gamma(\Delta(H))=H\text{,}\)</span> we have <span class="process-math">\(\Aut_{L^H}(L)=H\text{.}\)</span> Since <span class="process-math">\(L/L^H\)</span> is Galois, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[L\colon L^H]=\abs{\Aut_{L^H}(L)}=\abs{H}\text{.}
+\end{equation*}
+</div>
+<div class="para">Next, since <span class="process-math">\([L\colon F]=\abs{G}=\abs{\Aut_F(L)}\text{,}\)</span> the tower law implies</div>
+<div class="displaymath process-math">
+\begin{equation*}
+[L^H\colon F]=[L\colon F]/[L\colon L^H]=\abs{G}/\abs{H}=[G\colon H]\text{.}
+\end{equation*}
+</div>
+</div></section><section class="subsubsection" id="sss_4"><h4 class="heading hide-type">
+<span class="type">Subsubsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Proof of (4)</span>
+</h4>
+<div class="para logical" id="sss_4-2">
+<div class="para">Lastly, we consider the inclusion reversing claims of statement (4) of <a href="" class="xref" data-knowl="./knowl/xref/th_Galois_corr.html" title="Theorem 1.16.5: Galois correspondence">Theorem 1.16.5</a>. We first prove the equivalence</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_Galois_corr.html ./knowl/xref/th_Galois_corr.html" id="eq_equiv_1">
+\begin{equation}
+K\leq K'\iff \Aut_{K'}(L)\leq \Aut_{K}(L)\text{.}\tag{1.30}
+\end{equation}
+</div>
+<div class="para">Clearly, if <span class="process-math">\(K\leq K'\text{,}\)</span> then <span class="process-math">\(\Aut_{K'}(L)\leq \Aut_{K}(L)\text{:}\)</span> if <span class="process-math">\(\sigma\in \Aut_F(L)\)</span> fixes <span class="process-math">\(K'\text{,}\)</span> it certainly fixes <span class="process-math">\(K\text{.}\)</span> Now  consider the reverse implication</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_Galois_corr.html ./knowl/xref/th_Galois_corr.html">
+\begin{equation*}
+\Aut_{K'}(L)\leq \Aut_{K}(L)\implies K\leq K'\text{.}
+\end{equation*}
+</div>
+<div class="para">Let <span class="process-math">\(H_K=\Aut_{K}(L)\)</span> and <span class="process-math">\(H_{K'}=\Aut_{K'}(L)\text{.}\)</span> Since</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_Galois_corr.html ./knowl/xref/th_Galois_corr.html">
+\begin{equation*}
+H_{K'}=\Aut_{K'}(L)\leq H_{K}=\Aut_{K}(L)\text{,}
+\end{equation*}
+</div>
+<div class="para">it clear that <span class="process-math">\(L^{H_K}\leq L^{H_{K'}}
+\text{:}\)</span> if a field element is fixed by the subgroup <span class="process-math">\(H_{K}\text{,}\)</span> it is certainly fixed by the smaller subgroup <span class="process-math">\(H_{K'}\text{.}\)</span> But by statement (1) of <a href="" class="xref" data-knowl="./knowl/xref/th_Galois_corr.html" title="Theorem 1.16.5: Galois correspondence">Theorem 1.16.5</a>, we have <span class="process-math">\(K=L^{H_K}\)</span> and <span class="process-math">\(K'=L^{H_{K'}}\text{,}\)</span> and thus</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_Galois_corr.html ./knowl/xref/th_Galois_corr.html">
+\begin{equation*}
+K=L^{H_K}\leq K'=L^{H_{K'}}\text{,}
+\end{equation*}
+</div>
+<div class="para">as desired.</div>
+</div>
+<div class="para logical" id="sss_4-3">
+<div class="para">Lastly, we will derive the equivalence</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_equiv_1.html ./knowl/xref/eq_equiv_1.html">
+\begin{equation*}
+H\leq H' \iff L^{H'}=L^{H}
+\end{equation*}
+</div>
+<div class="para">for subgroups <span class="process-math">\(H,H'\leq G\text{,}\)</span> from the equivalence <a href="" class="xref" data-knowl="./knowl/xref/eq_equiv_1.html" title="Equation 1.30">(1.30)</a>. By (1), we have <span class="process-math">\(H=\Aut_K(L)\)</span> and <span class="process-math">\(H'=\Aut_{K'}(L)\text{,}\)</span> for the fields <span class="process-math">\(K=L^H\)</span> and <span class="process-math">\(K'=L^{H'}\text{.}\)</span> But then we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_equiv_1.html ./knowl/xref/eq_equiv_1.html" id="sss_4-3-8">
+\begin{align*}
+H\leq H'\amp \iff \Aut_K(L)\leq \Aut_{K'}(L) \\
+\amp \iff K'\leq K \amp \knowl{./knowl/xref/eq_equiv_1.html}{\text{(1.30)}}\\
+\amp \iff L^{H'}\leq L^H\text{,}
+\end{align*}
+</div>
+<div class="para">as desired.</div>
+</div></section></section><section class="subsection" id="ss_Artin_th"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Artin’s theorem</span>
+</h3>
+<div class="para" id="ss_Artin_th-2">We conclude with the statement and proof of <a href="" class="xref" data-knowl="./knowl/xref/th_Artin.html" title="Theorem 1.17.1: Artin’s theorem">Artin’s theorem</a>. The argument is a wonderfully winding one, and well worth internalizing. In particular, the proof introduces group action theory to the study of Galois field extensions, and by so doing reveals an important relationship between the minimal polynomial of elements of a finite Galois extension <span class="process-math">\(L/F\)</span> and the action of the Galois group on <span class="process-math">\(L\text{.}\)</span> We enshrine these group action perspectives in <a href="" class="xref" data-knowl="./knowl/xref/cor_Gal_corr.html" title="Corollary 1.17.3: Simple subfields of Galois extensions">Corollary 1.17.3</a>, which will come in handy when computing examples.</div>
+<article class="theorem theorem-like" id="th_Artin"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.17.1</span><span class="period">.</span><span class="space"> </span><span class="title">Artin’s theorem.</span>
+</h4>
+<div class="para" id="th_Artin-2-1">Let <span class="process-math">\(L\)</span> be a field, and let <span class="process-math">\(H\)</span> be a finite group of automorphisms of <span class="process-math">\(L\text{.}\)</span> The extension <span class="process-math">\(L/L^H\)</span> is a finite Galois extension, and <span class="process-math">\(\Aut_{L^H}(L)=H\text{.}\)</span> In particular, we have <span class="process-math">\([L\colon L^H]=\abs{H}\text{.}\)</span>
+</div></article><details id="th_Artin-3" class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical" id="th_Artin-3-1">
+<div class="para">Given <span class="process-math">\(\alpha\in L\text{,}\)</span> let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+O_\alpha=\{\sigma(\alpha)\colon \sigma\in H\}\text{,}
+\end{equation*}
+</div>
+<div class="para">the set of all images of <span class="process-math">\(\alpha\)</span> under elements of <span class="process-math">\(H\text{.}\)</span> (In the theory of <em class="emphasis">group actions</em>, the set <span class="process-math">\(O_\alpha\)</span> is called the <em class="emphasis">orbit</em> of <span class="process-math">\(\alpha\)</span> under <span class="process-math">\(H\)</span>). Note that any <span class="process-math">\(\sigma\in H\)</span> maps <span class="process-math">\(O_\alpha\)</span> to itself, since if <span class="process-math">\(\beta=\tau(\alpha)\)</span> for some <span class="process-math">\(\tau\in H\text{,}\)</span> then <span class="process-math">\(\sigma(\beta)=\sigma(\tau(\alpha))=(\sigma\tau)(\alpha)\in O_\alpha\text{,}\)</span> since <span class="process-math">\(\sigma\tau\in H\text{.}\)</span> Since each element of <span class="process-math">\(H\)</span> is injective as a map, and since <span class="process-math">\(O_\alpha\)</span> is finite, it follows that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sigma\vert_{O_\alpha}\colon O_\alpha\rightarrow O_\alpha
+\end{equation*}
+</div>
+<div class="para">is a bijection for all <span class="process-math">\(\sigma\in H\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="th_Artin-3-2">
+<div class="para">Let <span class="process-math">\(\alpha=\alpha_1,\alpha_2,\dots, \alpha_d\)</span> be the distinct elements of <span class="process-math">\(O_\alpha\text{.}\)</span> We claim that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_Artin_thm.html" id="eq_Artin_thm">
+\begin{equation}
+f(x)=\prod_{j=1}^d(x-\alpha_j)\tag{1.31}
+\end{equation}
+</div>
+<div class="para">has coefficients in <span class="process-math">\(L^H\text{,}\)</span> and that in fact <span class="process-math">\(f(x)=m_{\alpha, L^H}(x)\)</span> is the minimal polynomial of <span class="process-math">\(\alpha\)</span> over <span class="process-math">\(L^H\text{.}\)</span> From this it follows that <span class="process-math">\(L/L^H\)</span> is normal, since the minimal polynomial of any element splits completely in <span class="process-math">\(L\text{,}\)</span> and separable, since this minimal polynomial as defined in <a href="" class="xref" data-knowl="./knowl/xref/eq_Artin_thm.html" title="Equation 1.31">(1.31)</a> has no repeated roots.</div>
+</div> <div class="para logical" id="th_Artin-3-3">
+<div class="para">Let <span class="process-math">\(f(x)=\anmonic\text{.}\)</span>  To see why <span class="process-math">\(a_j\in L^H[x]\)</span> for all <span class="process-math">\(1\leq j\leq n-1\text{,}\)</span> observe that we have</div>
+<div class="displaymath process-math" id="th_Artin-3-3-4">
+\begin{align*}
+f^\sigma \amp = \sigma(\prod_{j=1}^d(x-\alpha_j))\\
+\amp = \prod_{j=1}^d(x-\sigma(\alpha_i))\\
+\amp = \prod_{j=1}^d(x-\alpha_i) \amp (\sigma \text{ permutes } O_\alpha)\\
+\amp =f(x)
+\end{align*}
+</div>
+<div class="para">for all <span class="process-math">\(\sigma\in H\text{.}\)</span> On the other hand, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f^\sigma(x)=x^n+\sigma(a_{n-1})x^{n-1}+\cdots +\sigma(a_1)x+\sigma(a_0)
+\end{equation*}
+</div>
+<div class="para">for any <span class="process-math">\(\sigma\in H\text{.}\)</span> Thus we see that <span class="process-math">\(f^\sigma=f\)</span> for all <span class="process-math">\(\sigma\in H\)</span> implies <span class="process-math">\(\sigma(a_j)=a_j\)</span> for all <span class="process-math">\(1\leq j\leq n-1\)</span> for all <span class="process-math">\(\sigma\in H\text{,}\)</span> which implies <span class="process-math">\(a_j\in L^H\)</span> for all <span class="process-math">\(1\leq j\leq n-1\text{,}\)</span> as desired.</div>
+</div> <div class="para logical" id="th_Artin-3-4">
+<div class="para">We now show that <span class="process-math">\(f\)</span> as defined in <a href="" class="xref" data-knowl="./knowl/xref/eq_Artin_thm.html" title="Equation 1.31">(1.31)</a> is the minimal polynomial of <span class="process-math">\(\alpha\)</span> over <span class="process-math">\(L^H\text{.}\)</span> Since <span class="process-math">\(f(\alpha)=0\)</span> and <span class="process-math">\(f\in L^H[x]\text{,}\)</span> we have <span class="process-math">\(m_{\alpha,L^H}(x)\mid f(x)\text{.}\)</span> To show we have an equality, it suffices to show that <span class="process-math">\(f\mid m_{\alpha, L^H}(x)\text{;}\)</span> and for this it suffices to show that <span class="process-math">\((x-\alpha_j)\mid m_{\alpha,L^H}(x)\)</span> for the distinct (simple) roots <span class="process-math">\(\alpha_j\)</span> of <span class="process-math">\(f(x)\text{.}\)</span> Fix an element <span class="process-math">\(\alpha_j\in O_\alpha\text{.}\)</span> By definition we have <span class="process-math">\(\alpha_j=\sigma(\alpha)\)</span> for some <span class="process-math">\(\sigma\in H\text{,}\)</span> in which case</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_Artin_thm.html ./knowl/xref/ineq_Artin.html" id="th_Artin-3-4-15">
+\begin{align*}
+m_{\alpha,L^H}(\alpha_j) \amp =m_{\alpha,L^H}(\sigma(\alpha)) \\
+\amp = m_{\alpha,L^H}^\sigma(\sigma(\alpha) \amp (m_{\alpha,L^H}(x)\in L^H[x])\\
+\amp = \sigma(m_{\alpha,L^H}(\alpha)) \amp (\sigma \text{ ring homo.})\\
+\amp =\sigma(0)\\
+\amp =0\text{.}
+\end{align*}
+</div>
+<div class="para">We now know that <span class="process-math">\(L/L^H\)</span> is Galois. It remains to show that <span class="process-math">\(L/L^H\)</span> is finite and <span class="process-math">\(\Aut(L/L^H)=H\text{.}\)</span> Let <span class="process-math">\(\abs{H}=n\text{.}\)</span> As we saw above, for any <span class="process-math">\(\alpha\in L\)</span> the polynomial <span class="process-math">\(f(x)=\prod_{\beta\in O_{\alpha}}(x-\beta)\)</span> is the minimal polynomial of <span class="process-math">\(\alpha\)</span> over <span class="process-math">\(L^H\text{.}\)</span> It follows that for all <span class="process-math">\(\alpha\in L\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_Artin_thm.html ./knowl/xref/ineq_Artin.html" id="ineq_Artin">
+\begin{equation}
+\deg_{L^H}\alpha=\deg f=\abs{O_\alpha}\leq \abs{H}=n\text{.}\tag{1.32}
+\end{equation}
+</div>
+<div class="para">Thus for all <span class="process-math">\(\alpha\in L\text{,}\)</span> the subextension <span class="process-math">\(L^H(\alpha)\)</span> has degree <span class="process-math">\([L^H(\alpha)\colon L]\leq n\text{.}\)</span> We claim this implies that <span class="process-math">\([L\colon L^H]\leq n\text{.}\)</span> Indeed, otherwise we could find a subextension <span class="process-math">\(K/L^H\)</span> with <span class="process-math">\([K\colon L^H]=m &gt; n\text{.}\)</span> But since <span class="process-math">\(L/L^H\)</span> is separable (shown above), so is <span class="process-math">\(K/L^H\text{,}\)</span> and by the primitive element theorem, we have <span class="process-math">\(K=L^H(\beta)\)</span> for some <span class="process-math">\(\beta\in K\text{.}\)</span> This contradicts <a href="" class="xref" data-knowl="./knowl/xref/ineq_Artin.html" title="Equation 1.32">(1.32)</a> since then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_Artin_thm.html ./knowl/xref/ineq_Artin.html">
+\begin{equation*}
+\deg_{L^H}\beta=[K\colon L^H]=m&gt; n\text{.}
+\end{equation*}
+</div>
+<div class="para">Lastly, we show that <span class="process-math">\([L\colon L^H]=n\)</span>  and <span class="process-math">\(\Gal(L/L^H)=\Aut_{L^H}(L)=H\text{.}\)</span>  We showed above that  <span class="process-math">\([L\colon L^H]\leq n\text{.}\)</span> Since <span class="process-math">\(H\leq \Aut_{L^H}(L)\text{,}\)</span> and since <span class="process-math">\(\abs{\Aut_{L^H}(L)}=[L\colon L^H]\)</span> (<span class="process-math">\(L/L^H\)</span> is a finite Galois extension), we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_Artin_thm.html ./knowl/xref/ineq_Artin.html">
+\begin{equation*}
+n=\abs{H}\leq \abs{\Aut_{L^H}(L)}=[L\colon L^H]\leq n\text{.}
+\end{equation*}
+</div>
+<div class="para">It follows that <span class="process-math">\(n=\abs{H}=\abs{\Aut_{L^H}(L)}=[L\colon L^H]\)</span> and <span class="process-math">\(H=\Aut_{L^H}(L)=\Gal(L/L^H)\text{.}\)</span>
+</div>
+</div></article></details><div class="para" id="ss_Artin_th-4">The following corollary is a consequence of <a href="" class="xref" data-knowl="./knowl/xref/th_Galois_corr.html" title="Theorem 1.16.5: Galois correspondence">Theorem 1.16.5</a> and some of the arguments from the proof of <a href="" class="xref" data-knowl="./knowl/xref/th_Artin.html" title="Theorem 1.17.1: Artin’s theorem">Artin’s theorem</a>. We first introduce some terminology around the action of the Galois group <span class="process-math">\(\Gal(L/F)\)</span> on the field <span class="process-math">\(L\text{.}\)</span>
+</div>
+<article class="definition definition-like" id="d_conjugates"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.17.2</span><span class="period">.</span><span class="space"> </span><span class="title">Galois conjugates and fix subgroups.</span>
+</h4> <div class="para logical" id="d_conjugates-2-1">
+<div class="para">Let <span class="process-math">\(L/F\)</span> be a finite Galois extension, and let <span class="process-math">\(G=\Gal(L/F)\text{.}\)</span> Given <span class="process-math">\(\alpha\in L\text{,}\)</span> a <dfn class="terminology">Galois conjugate</dfn> (or just <dfn class="terminology">conjugate</dfn>) of <span class="process-math">\(\alpha\)</span> is an element of the form <span class="process-math">\(\sigma(\alpha)\text{,}\)</span> where <span class="process-math">\(\sigma\in G\text{.}\)</span> We denote by <span class="process-math">\(O_\alpha\)</span> the set of all conjugates of <span class="process-math">\(\alpha\text{:}\)</span> i.e.,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+O_\alpha=\{\sigma(\alpha)\colon \sigma\in G\}\text{.}
+\end{equation*}
+</div>
+<div class="para">The <dfn class="terminology">stabilizer subgroup</dfn> of <span class="process-math">\(\alpha\text{,}\)</span> denoted <span class="process-math">\(\Stab_G(\alpha)\text{,}\)</span> is the set of all elements of <span class="process-math">\(G\)</span> that fix <span class="process-math">\(\alpha\text{:}\)</span> i.e.,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Stab_G(\alpha)=\{\sigma\in G\colon \sigma(\alpha)=\alpha\}\text{.}
+\end{equation*}
+</div>
+</div></article><article class="corollary theorem-like" id="cor_Gal_corr"><h4 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.17.3</span><span class="period">.</span><span class="space"> </span><span class="title">Simple subfields of Galois extensions.</span>
+</h4>
+<div class="para logical" id="cor_Gal_corr-2-1">
+<div class="para">Let <span class="process-math">\(L/F\)</span> be a finite Galois extension with Galois group <span class="process-math">\(G=\Gal(L/F)\text{,}\)</span> let <span class="process-math">\(\alpha\)</span> be an element of <span class="process-math">\(L\text{,}\)</span> and let <span class="process-math">\(O_{\alpha}=\{\sigma(\alpha)\colon \sigma\in G\}\)</span> be the set of Galois conjugates of <span class="process-math">\(\alpha\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li id="cor_Gal_corr-2-1-7-1"><div class="para" id="cor_Gal_corr-2-1-7-1-1"><span class="process-math">\(\displaystyle \Aut_{F(\alpha)}(L)=\Stab_G(\alpha)\)</span></div></li>
+<li id="cor_Gal_corr-2-1-7-2"><div class="para" id="p-derived-cor_Gal_corr-2-1-7-2"><span class="process-math">\(m_{\alpha,F}(x)=\prod_{\beta\in O_\alpha}(x-\beta)
+\text{.}\)</span></div></li>
+<li id="cor_Gal_corr-2-1-7-3"><div class="para" id="p-derived-cor_Gal_corr-2-1-7-3"><span class="process-math">\([F(\alpha)\colon F]=\deg_F \alpha=\abs{O_{\alpha}}=[G\colon O_{\alpha}]
+\text{.}\)</span></div></li>
+<li id="cor_Gal_corr-2-1-7-4">
+<div class="para" id="cor_Gal_corr-2-1-7-4-1">Given an intermediate field <span class="process-math">\(K\text{,}\)</span> we have <span class="process-math">\(\alpha\in K\)</span> if and only if <span class="process-math">\(\sigma(\alpha)=\alpha\)</span> for all <span class="process-math">\(\sigma\in \Aut_{K}(L)\text{.}\)</span>
+</div>
+<div class="para" id="cor_Gal_corr-2-1-7-4-2">In particular, <span class="process-math">\(\alpha\in F\)</span> if and only if <span class="process-math">\(\sigma(\alpha)=\alpha\)</span> for all <span class="process-math">\(\sigma\in G\text{.}\)</span>
+</div>
+</li>
+<li id="cor_Gal_corr-2-1-7-5">
+<div class="para" id="cor_Gal_corr-2-1-7-5-1">Given an intermediate field <span class="process-math">\(K\)</span> we have <span class="process-math">\(F(\alpha)=K\)</span> if and only if <span class="process-math">\(\Aut_{K}(L)=\Stab_G(\alpha)\text{.}\)</span>
+</div>
+<div class="para" id="cor_Gal_corr-2-1-7-5-2">In particular, we have <span class="process-math">\(F(\alpha)=L\)</span> if and only if <span class="process-math">\(\Stab_{G}(\alpha)=\{\id\}\text{.}\)</span>
+</div>
+</li>
+</ol>
+</div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="s_Gal_corr.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

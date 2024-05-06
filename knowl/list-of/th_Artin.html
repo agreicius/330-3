@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.17.1</span><span class="period">.</span><span class="space"> </span><span class="title">Artin’s theorem.</span>
+</h4>
+<div class="para">Let <span class="process-math">\(L\)</span> be a field, and let <span class="process-math">\(H\)</span> be a finite group of automorphisms of <span class="process-math">\(L\text{.}\)</span> The extension <span class="process-math">\(L/L^H\)</span> is a finite Galois extension, and <span class="process-math">\(\Aut_{L^H}(L)=H\text{.}\)</span> In particular, we have <span class="process-math">\([L\colon L^H]=\abs{H}\text{.}\)</span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof"><div class="para logical">
+<div class="para">Given <span class="process-math">\(\alpha\in L\text{,}\)</span> let</div>
+<div class="displaymath process-math">
+\begin{equation*}
+O_\alpha=\{\sigma(\alpha)\colon \sigma\in H\}\text{,}
+\end{equation*}
+</div>
+<div class="para">the set of all images of <span class="process-math">\(\alpha\)</span> under elements of <span class="process-math">\(H\text{.}\)</span> (In the theory of <em class="emphasis">group actions</em>, the set <span class="process-math">\(O_\alpha\)</span> is called the <em class="emphasis">orbit</em> of <span class="process-math">\(\alpha\)</span> under <span class="process-math">\(H\)</span>). Note that any <span class="process-math">\(\sigma\in H\)</span> maps <span class="process-math">\(O_\alpha\)</span> to itself, since if <span class="process-math">\(\beta=\tau(\alpha)\)</span> for some <span class="process-math">\(\tau\in H\text{,}\)</span> then <span class="process-math">\(\sigma(\beta)=\sigma(\tau(\alpha))=(\sigma\tau)(\alpha)\in O_\alpha\text{,}\)</span> since <span class="process-math">\(\sigma\tau\in H\text{.}\)</span> Since each element of <span class="process-math">\(H\)</span> is injective as a map, and since <span class="process-math">\(O_\alpha\)</span> is finite, it follows that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sigma\vert_{O_\alpha}\colon O_\alpha\rightarrow O_\alpha
+\end{equation*}
+</div>
+<div class="para">is a bijection for all <span class="process-math">\(\sigma\in H\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Let <span class="process-math">\(\alpha=\alpha_1,\alpha_2,\dots, \alpha_d\)</span> be the distinct elements of <span class="process-math">\(O_\alpha\text{.}\)</span> We claim that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_Artin_thm.html">
+\begin{equation}
+f(x)=\prod_{j=1}^d(x-\alpha_j)\tag{1.31}
+\end{equation}
+</div>
+<div class="para">has coefficients in <span class="process-math">\(L^H\text{,}\)</span> and that in fact <span class="process-math">\(f(x)=m_{\alpha, L^H}(x)\)</span> is the minimal polynomial of <span class="process-math">\(\alpha\)</span> over <span class="process-math">\(L^H\text{.}\)</span> From this it follows that <span class="process-math">\(L/L^H\)</span> is normal, since the minimal polynomial of any element splits completely in <span class="process-math">\(L\text{,}\)</span> and separable, since this minimal polynomial as defined in <a href="" class="xref" data-knowl="./knowl/xref/eq_Artin_thm.html" title="Equation 1.31">(1.31)</a> has no repeated roots.</div>
+</div> <div class="para logical">
+<div class="para">Let <span class="process-math">\(f(x)=\anmonic\text{.}\)</span>  To see why <span class="process-math">\(a_j\in L^H[x]\)</span> for all <span class="process-math">\(1\leq j\leq n-1\text{,}\)</span> observe that we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+f^\sigma \amp = \sigma(\prod_{j=1}^d(x-\alpha_j))\\
+\amp = \prod_{j=1}^d(x-\sigma(\alpha_i))\\
+\amp = \prod_{j=1}^d(x-\alpha_i) \amp (\sigma \text{ permutes } O_\alpha)\\
+\amp =f(x)
+\end{align*}
+</div>
+<div class="para">for all <span class="process-math">\(\sigma\in H\text{.}\)</span> On the other hand, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f^\sigma(x)=x^n+\sigma(a_{n-1})x^{n-1}+\cdots +\sigma(a_1)x+\sigma(a_0)
+\end{equation*}
+</div>
+<div class="para">for any <span class="process-math">\(\sigma\in H\text{.}\)</span> Thus we see that <span class="process-math">\(f^\sigma=f\)</span> for all <span class="process-math">\(\sigma\in H\)</span> implies <span class="process-math">\(\sigma(a_j)=a_j\)</span> for all <span class="process-math">\(1\leq j\leq n-1\)</span> for all <span class="process-math">\(\sigma\in H\text{,}\)</span> which implies <span class="process-math">\(a_j\in L^H\)</span> for all <span class="process-math">\(1\leq j\leq n-1\text{,}\)</span> as desired.</div>
+</div> <div class="para logical">
+<div class="para">We now show that <span class="process-math">\(f\)</span> as defined in <a href="" class="xref" data-knowl="./knowl/xref/eq_Artin_thm.html" title="Equation 1.31">(1.31)</a> is the minimal polynomial of <span class="process-math">\(\alpha\)</span> over <span class="process-math">\(L^H\text{.}\)</span> Since <span class="process-math">\(f(\alpha)=0\)</span> and <span class="process-math">\(f\in L^H[x]\text{,}\)</span> we have <span class="process-math">\(m_{\alpha,L^H}(x)\mid f(x)\text{.}\)</span> To show we have an equality, it suffices to show that <span class="process-math">\(f\mid m_{\alpha, L^H}(x)\text{;}\)</span> and for this it suffices to show that <span class="process-math">\((x-\alpha_j)\mid m_{\alpha,L^H}(x)\)</span> for the distinct (simple) roots <span class="process-math">\(\alpha_j\)</span> of <span class="process-math">\(f(x)\text{.}\)</span> Fix an element <span class="process-math">\(\alpha_j\in O_\alpha\text{.}\)</span> By definition we have <span class="process-math">\(\alpha_j=\sigma(\alpha)\)</span> for some <span class="process-math">\(\sigma\in H\text{,}\)</span> in which case</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_Artin_thm.html ./knowl/xref/ineq_Artin.html">
+\begin{align*}
+m_{\alpha,L^H}(\alpha_j) \amp =m_{\alpha,L^H}(\sigma(\alpha)) \\
+\amp = m_{\alpha,L^H}^\sigma(\sigma(\alpha) \amp (m_{\alpha,L^H}(x)\in L^H[x])\\
+\amp = \sigma(m_{\alpha,L^H}(\alpha)) \amp (\sigma \text{ ring homo.})\\
+\amp =\sigma(0)\\
+\amp =0\text{.}
+\end{align*}
+</div>
+<div class="para">We now know that <span class="process-math">\(L/L^H\)</span> is Galois. It remains to show that <span class="process-math">\(L/L^H\)</span> is finite and <span class="process-math">\(\Aut(L/L^H)=H\text{.}\)</span> Let <span class="process-math">\(\abs{H}=n\text{.}\)</span> As we saw above, for any <span class="process-math">\(\alpha\in L\)</span> the polynomial <span class="process-math">\(f(x)=\prod_{\beta\in O_{\alpha}}(x-\beta)\)</span> is the minimal polynomial of <span class="process-math">\(\alpha\)</span> over <span class="process-math">\(L^H\text{.}\)</span> It follows that for all <span class="process-math">\(\alpha\in L\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_Artin_thm.html ./knowl/xref/ineq_Artin.html">
+\begin{equation}
+\deg_{L^H}\alpha=\deg f=\abs{O_\alpha}\leq \abs{H}=n\text{.}\tag{1.32}
+\end{equation}
+</div>
+<div class="para">Thus for all <span class="process-math">\(\alpha\in L\text{,}\)</span> the subextension <span class="process-math">\(L^H(\alpha)\)</span> has degree <span class="process-math">\([L^H(\alpha)\colon L]\leq n\text{.}\)</span> We claim this implies that <span class="process-math">\([L\colon L^H]\leq n\text{.}\)</span> Indeed, otherwise we could find a subextension <span class="process-math">\(K/L^H\)</span> with <span class="process-math">\([K\colon L^H]=m &gt; n\text{.}\)</span> But since <span class="process-math">\(L/L^H\)</span> is separable (shown above), so is <span class="process-math">\(K/L^H\text{,}\)</span> and by the primitive element theorem, we have <span class="process-math">\(K=L^H(\beta)\)</span> for some <span class="process-math">\(\beta\in K\text{.}\)</span> This contradicts <a href="" class="xref" data-knowl="./knowl/xref/ineq_Artin.html" title="Equation 1.32">(1.32)</a> since then</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_Artin_thm.html ./knowl/xref/ineq_Artin.html">
+\begin{equation*}
+\deg_{L^H}\beta=[K\colon L^H]=m&gt; n\text{.}
+\end{equation*}
+</div>
+<div class="para">Lastly, we show that <span class="process-math">\([L\colon L^H]=n\)</span>  and <span class="process-math">\(\Gal(L/L^H)=\Aut_{L^H}(L)=H\text{.}\)</span>  We showed above that  <span class="process-math">\([L\colon L^H]\leq n\text{.}\)</span> Since <span class="process-math">\(H\leq \Aut_{L^H}(L)\text{,}\)</span> and since <span class="process-math">\(\abs{\Aut_{L^H}(L)}=[L\colon L^H]\)</span> (<span class="process-math">\(L/L^H\)</span> is a finite Galois extension), we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_Artin_thm.html ./knowl/xref/ineq_Artin.html">
+\begin{equation*}
+n=\abs{H}\leq \abs{\Aut_{L^H}(L)}=[L\colon L^H]\leq n\text{.}
+\end{equation*}
+</div>
+<div class="para">It follows that <span class="process-math">\(n=\abs{H}=\abs{\Aut_{L^H}(L)}=[L\colon L^H]\)</span> and <span class="process-math">\(H=\Aut_{L^H}(L)=\Gal(L/L^H)\text{.}\)</span>
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_Gal_corr_proof.html#th_Artin">in-context</a></span>
+</body>
+</html>
