@@ -18,6 +18,5 @@
   <xi:include  href="s_Gal_ext.ptx"/>
   <xi:include  href="s_Gal_corr.ptx"/>
   <xi:include  href="s_Gal_corr_proof.ptx"/>
-
-
+  <xi:include  href="s_Gal_normal.ptx"/>
 </chapter>

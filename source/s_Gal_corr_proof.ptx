@@ -139,7 +139,7 @@
 <subsection xml:id="ss_Artin_th">
     <title>Artin's theorem</title>
     <p>
-    We conclude with the statement and proof of <xref ref="th_Artin" text="title"/>. The argument is a wonderfully winding one, and well worth internalizing. In particular, the proof introduces group action theory to the study of Galois field extensions, and by so doing reveals an important relationship between the minimal polynomial of elements of a finite Galois extension <m>L/F</m> and the action of the Galois group on <m>L</m>. We enshrine these group action perspectives in <xref ref="cor_Gal_corr"/>, which will come in handy when computing examples.
+    We conclude with the statement and proof of <xref ref="th_Artin" text="title"/>. The argument is a wonderfully winding one, and well worth internalizing. In particular, the proof introduces group actions to the study of Galois field extensions, and by so doing reveals an important relationship between the minimal polynomial of elements of a finite Galois extension <m>L/F</m> and the action of the Galois group on <m>L</m>. We enshrine some of these group action observations in <xref ref="cor_Gal_corr"/>, which will come in handy when computing examples.
     </p>
 	<theorem xml:id="th_Artin">
 		<title>Artin's theorem</title>
@@ -222,7 +222,11 @@
     The following corollary is a consequence of <xref ref="th_Galois_corr"/> and some of the arguments from the proof of <xref ref="th_Artin" text="custom">Artin's theorem</xref>. We first introduce some terminology around the action of the Galois group <m>\Gal(L/F)</m> on the field <m>L</m>. 
     </p>
     <definition xml:id="d_conjugates">
-        <title>Galois conjugates and fix subgroups</title>
+        <title>Galois conjugates of elements</title>
+        <notation>
+            <usage><m>\Stab_G(\alpha)</m></usage>
+          <description>Galois stabilizer subgroup of field element </description>
+        </notation>
         <statement>
             <p>
                 Let <m>L/F</m> be a finite Galois extension, and let <m>G=\Gal(L/F)</m>. Given <m>\alpha\in L</m>, a <term>Galois conjugate</term> (or just <term>conjugate</term>) of <m>\alpha</m> is an element of the form <m>\sigma(\alpha)</m>, where <m>\sigma\in G</m>. We denote by <m>O_\alpha</m> the set of all conjugates of <m>\alpha</m>: <ie/>, 

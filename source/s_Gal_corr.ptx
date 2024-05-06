@@ -2,7 +2,7 @@
 <section xml:id="s_Gal_corr" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Galois correspondence</title>
 	<p>
-		The <em>Galois correspondence</em> for a Galois extension <m>L/F</m> is a dictionary of sorts that relates in a vert precise manner the set of all intermediate fields of <m>L/F</m> and the set of all subgroups of <m>\Gal(L/F)</m>.
+		The <em>Galois correspondence</em> for a Galois extension <m>L/F</m> is a dictionary of sorts that relates in a very precise manner the set of all intermediate fields of <m>L/F</m> and the set of all subgroups of <m>\Gal(L/F)</m>.
 		One of the fundamental results of Galois theory is articulated in <xref ref="th_Galois_corr"/>, which states among other things that when <m>L/K</m> is a finite Galois extension, the intermediate fields of <m>L/F</m> and the subgroups of <m>\Gal(K/F)</m> are in bijective correspondence.
 		One half of this correspondence is a map that associates to a subgroup <m>H\leq \Gal(L/K)</m> an intermediate field <m>K</m> called the <em>fixed field</em> of <m>H</m>, which we now define in a slightly more general setting.
 	</p>
