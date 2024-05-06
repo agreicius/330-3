@@ -1,10 +1,146 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="s_Gal_corr_proof" xmlns:xi="http://www.w3.org/2001/XInclude">
 	<title>Galois correspondence: proof</title>
-	<p>
-		Our proof of <xref ref="th_Galois_corr"/> will rely on the following classic result of Emil Artin, which is useful in its own right. Additionally the proof of Artin's theorem reveals an important relationship between the minimal polynomial of elements in a finite Galois extension <m>L/F</m> and the action of the Galois group on <m>L</m>. The proof is a wonderfully winding one, and well worth internalizing. 
-	</p>
-
+	<introduction>
+        <p>
+            We now set about proving <xref ref="th_Galois_corr"/>. The main work here goes into proving the first statement of that theorem: that the two maps of the Galois correspondence are in fact inverses of one another. One of the directions of that proof is essentially the statement of <xref ref="th_Artin" text="custom">Artin's theorem</xref>, a classic result of Emil Artin that is very important in its own right. We state and prove that theorem at the end of the section. 
+        </p>
+    </introduction>
+    <subsection xml:id="ss_Gal_corr_proof">
+        <title>Proof of the Galois correspondence theorem</title>
+        <introduction>
+            <p>
+                Recall the setup of <xref ref="th_Galois_corr"/>. We assume <m>L/F</m> is a finite Galois extension with Galois group <m>G=\Gal(L/F)=\Aut_F(L)</m>. For notational convenience, we name the two maps of the Galois correspondence <m>\Gamma</m> and <m>\Delta</m>:
+                <image xml:id="im_Gal_corr_proof" width="65%">
+                    <shortdescription>Recap of Galois correspondence</shortdescription>
+                    <latex-image>
+                        \begin{tikzcd}
+                        \underset{\text{inter.
+                        fields}}{\underbrace{\{K\colon F\leq K\leq L \}}} \arrow[r,leftrightarrow]\amp\underset{\text{subgroups}}{\underbrace{\{H\colon H\leq \Gal(L/F)\}}}\\
+                        K \arrow[r, mapsto,"\Gamma"]\amp \Aut_{K}(L)\\
+                        L^H \arrow[r,mapsfrom, "\Delta"] \amp H
+                        \end{tikzcd}
+                        </latex-image>
+                </image> 
+            </p>
+        </introduction>
+        <subsubsection xml:id="sss_1">
+            <title>Proof of statement (1)</title>
+           <p> Using the notation introduced above, the proof of statement (1) of <xref ref="th_Galois_corr"/> amounts to  showing the following equalities of maps: 
+        <md>
+            <mrow>\Gamma\circ \Delta \amp =  \id</mrow>
+            <mrow>\Delta\circ \Gamma \amp = \id </mrow>  
+        </md>.
+        We prove each in turn. 
+    </p>
+    <proof>
+        <title>Proof: <m>\Gamma\circ \Delta=\id</m></title>
+        
+        
+        <p>
+           Given <m>H\leq G</m> we must show that the composition 
+           <me>
+            H\mapsto L^H \mapsto \Aut_{L^H}(L)
+           </me>
+           is the identity: equivalently, that 
+           <me>
+            \Aut_{L^H}(L)=H
+           </me>.
+           This follows directly from <xref ref="th_Artin" text="custom">Artin's theorem</xref>.
+        </p>
+    </proof>
+    <proof>
+        <title>Proof: <m>\Delta\circ\Gamma =\id</m></title>
+        <p>
+           Given an intermediate field <m>K</m>, we must show that the composition 
+           <me>
+            K\mapsto H=\Aut_K(L)\mapsto L^H
+           </me>
+           is the identity: equivalently, that 
+           <me>
+            K=L^H, \hspace{5pt} H=\Aut_K(L) 
+           </me>.
+           By definition, each element of <m>K</m> is fixed by <m>H=\Aut_K(L)</m>. Thus <m>K\leq L^H</m>. To show that we have equality, we will show that <m>L^H/K</m> is an extension of degree one. Since <m>L/F</m> is separable, strong transitivity implies <m>L/K</m> is separable; another application of strong transitivity implies <m>L^H/K</m> is separable. Let <m>\overline{L}/L</m> be an algebraic closure of <m>L</m>. By <xref ref="th_sep_fin_ext"/> we have 
+           <me>
+            [L^H\colon K]=\abs{\Hom_K(\overline{L})}
+           </me>.
+           Thus we need only show that <m>\abs{\Hom_K(\overline{L})}=1</m>. To this end, let <m>\sigma\colon L^H\rightarrow \overline{L}</m> be a <m>K</m>-embedding. Since <m>L/L^H</m> is algebraic, there is an extension <m>\tau\colon L\rightarrow \overline{L}</m> of <m>\sigma</m>. Since <m>L/K</m> is Galois and <m>\tau</m> is a <m>K</m>-embedding, we have <m>\tau(L)=L</m>, and thus <m>\tau\in\Aut_K(L)</m>. But since <m>H=\Aut_K(L)</m>, we see that <m>\tau\in H</m>, and hence <m>\sigma=\tau\vert_{L^H}=\id</m>. This proves that the only element of <m>\Hom_K(L^H,\Lbar)=\{i\}</m>, where <m>i\colon L^H\hookrightarrow \Lbar</m> is the inclusion map. We conclude that 
+           <me>
+            [L^H\colon K]=\abs{\Hom_{K}(L^H,\Lbar)}=1
+           </me>,
+           as desired. 
+        </p>
+    </proof>
+        </subsubsection>
+     <subsubsection xml:id="sss_2">
+        <title>Proof of (2)</title>
+        <p>
+            Statement (2) is simply a re-statement of <xref ref="th_Gal_intermed"/>. 
+        </p>
+     </subsubsection>   
+        <subsubsection xml:id="sss_3">
+            <title>Proof of (3)</title>
+            <p>
+                To see why statement (3) is true, take <m>H\leq G</m>. Since <m>\Gamma(\Delta(H))=H</m>, we have <m>\Aut_{L^H}(L)=H</m>. Since <m>L/L^H</m> is Galois, we have 
+                <me>
+                    [L\colon L^H]=\abs{\Aut_{L^H}(L)}=\abs{H}
+                </me>.
+                Next, since <m>[L\colon F]=\abs{G}=\abs{\Aut_F(L)}</m>, the tower law implies 
+                <me>
+                    [L^H\colon F]=[L\colon F]/[L\colon L^H]=\abs{G}/\abs{H}=[G\colon H]
+                </me>.
+            </p>
+        </subsubsection>
+    <subsubsection xml:id="sss_4">
+        <title>Proof of (4)</title>
+        <p>
+            Lastly, we consider the inclusion reversing claims of statement (4) of <xref ref="th_Galois_corr"/>. We first prove the equivalence 
+            <men xml:id="eq_equiv_1">
+                K\leq K'\iff \Aut_{K'}(L)\leq \Aut_{K}(L)
+            </men>.
+            Clearly, if <m>K\leq K'</m>, then <m>\Aut_{K'}(L)\leq \Aut_{K}(L)</m>: if <m>\sigma\in \Aut_F(L)</m> fixes <m>K'</m>, it certainly fixes <m>K</m>. Now  consider the reverse implication 
+            <me>
+                \Aut_{K'}(L)\leq \Aut_{K}(L)\implies K\leq K'
+            </me>.
+            Let <m>H_K=\Aut_{K}(L)</m> and <m>H_{K'}=\Aut_{K'}(L)</m>. Since
+            <me>
+                H_{K'}=\Aut_{K'}(L)\leq H_{K}=\Aut_{K}(L)
+            </me>,
+            it clear that 
+            <m>
+                L^{H_K}\leq L^{H_{K'}}
+            </m>: if a field element is fixed by the subgroup <m>H_{K}</m>, it is certainly fixed by the smaller subgroup <m>H_{K'}</m>. But by statement (1) of <xref ref="th_Galois_corr"/>, we have 
+            <m>K=L^{H_K}</m> and <m>K'=L^{H_{K'}}</m>, and thus
+            <me>
+                K=L^{H_K}\leq K'=L^{H_{K'}}
+            </me>,
+            as desired. 
+        </p>
+        <p>
+            Lastly, we will derive the equivalence 
+            <me>
+                H\leq H' \iff L^{H'}=L^{H}
+            </me>
+            for subgroups <m>H,H'\leq G</m>, from the equivalence <xref ref="eq_equiv_1"/>. By (1), we have <m>H=\Aut_K(L)</m> and <m>H'=\Aut_{K'}(L)</m>, for the fields <m>K=L^H</m> and <m>K'=L^{H'}</m>. But then we have 
+            <md>
+                <mrow> H\leq H'\amp \iff \Aut_K(L)\leq \Aut_{K'}(L) </mrow>
+                <mrow> \amp \iff K'\leq K \amp <xref ref="eq_equiv_1"/></mrow>
+                <mrow> \amp \iff L^{H'}\leq L^H</mrow>
+            </md>,
+            as desired. 
+        </p>
+    </subsubsection>
+    
+    
+    
+    </subsection>
+    
+    
+<subsection xml:id="ss_Artin_th">
+    <title>Artin's theorem</title>
+    <p>
+    We conclude with the statement and proof of <xref ref="th_Artin" text="title"/>. The argument is a wonderfully winding one, and well worth internalizing. In particular, the proof introduces group action theory to the study of Galois field extensions, and by so doing reveals an important relationship between the minimal polynomial of elements of a finite Galois extension <m>L/F</m> and the action of the Galois group on <m>L</m>. We enshrine these group action perspectives in <xref ref="cor_Gal_corr"/>, which will come in handy when computing examples.
+    </p>
 	<theorem xml:id="th_Artin">
 		<title>Artin's theorem</title>
 		<statement>
@@ -82,4 +218,66 @@
 
 		</proof>
 	</theorem>
+    <p>
+    The following corollary is a consequence of <xref ref="th_Galois_corr"/> and some of the arguments from the proof of <xref ref="th_Artin" text="custom">Artin's theorem</xref>. We first introduce some terminology around the action of the Galois group <m>\Gal(L/F)</m> on the field <m>L</m>. 
+    </p>
+    <definition xml:id="d_conjugates">
+        <title>Galois conjugates and fix subgroups</title>
+        <statement>
+            <p>
+                Let <m>L/F</m> be a finite Galois extension, and let <m>G=\Gal(L/F)</m>. Given <m>\alpha\in L</m>, a <term>Galois conjugate</term> (or just <term>conjugate</term>) of <m>\alpha</m> is an element of the form <m>\sigma(\alpha)</m>, where <m>\sigma\in G</m>. We denote by <m>O_\alpha</m> the set of all conjugates of <m>\alpha</m>: <ie/>, 
+                <me>
+                    O_\alpha=\{\sigma(\alpha)\colon \sigma\in G\}
+                </me>.
+                The <term>stabilizer subgroup</term> of <m>\alpha</m>, denoted <m>\Stab_G(\alpha)</m>, is the set of all elements of <m>G</m> that fix <m>\alpha</m>: <ie/>, 
+                <me>
+                    \Stab_G(\alpha)=\{\sigma\in G\colon \sigma(\alpha)=\alpha\}
+                </me>.
+            </p>
+        </statement>
+    </definition>
+    <corollary xml:id="cor_Gal_corr">
+        <title>Simple subfields of Galois extensions</title>
+        <statement>
+            <p>
+                Let <m>L/F</m> be a finite Galois extension with Galois group <m>G=\Gal(L/F)</m>, let <m>\alpha</m> be an element of <m>L</m>, and let <m>O_{\alpha}=\{\sigma(\alpha)\colon \sigma\in G\}</m> be the set of Galois conjugates of <m>\alpha</m>. 
+                <ol>
+                    <li>
+                        <p>
+                            <m>\Aut_{F(\alpha)}(L)=\Stab_G(\alpha)</m>
+                        </p>
+                    </li>
+                    <li>
+                        <m>
+                            m_{\alpha,F}(x)=\prod_{\beta\in O_\alpha}(x-\beta)
+                        </m>.
+                    </li>
+                    <li>
+                        <m>
+                           [F(\alpha)\colon F]=\deg_F \alpha=\abs{O_{\alpha}}=[G\colon O_{\alpha}]
+                        </m>.
+                    </li>
+                    
+                    <li>
+                        <p>
+                            Given an intermediate field <m>K</m>, we have <m>\alpha\in K</m> if and only if <m>\sigma(\alpha)=\alpha</m> for all <m>\sigma\in \Aut_{K}(L)</m>. 
+                        </p>
+                        <p>
+                            In particular, <m>\alpha\in F</m> if and only if <m>\sigma(\alpha)=\alpha</m> for all <m>\sigma\in G</m>. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Given an intermediate field <m>K</m> we have <m>F(\alpha)=K</m> if and only if <m>\Aut_{K}(L)=\Stab_G(\alpha)</m>. 
+                        </p>
+                        <p>
+                            In particular, we have <m>F(\alpha)=L</m> if and only if <m>\Stab_{G}(\alpha)=\{\id\}</m>. 
+                        </p>
+                    </li>
+                    
+                </ol>
+            </p>
+        </statement>
+    </corollary>
+    </subsection>
 </section>

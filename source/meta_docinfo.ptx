@@ -73,6 +73,7 @@
       \DeclareMathOperator{\nullity}{nullity}
       \DeclareMathOperator{\sign}{sign}
       \DeclareMathOperator{\Fix}{Fix}
+      \DeclareMathOperator{\Stab}{Stab}
       \DeclareMathOperator{\Aff}{Aff}
       \DeclareMathOperator{\Frac}{Frac}
       \DeclareMathOperator{\Ann}{Ann}

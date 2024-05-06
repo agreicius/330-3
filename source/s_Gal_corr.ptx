@@ -64,7 +64,10 @@
 		The next result allows us to define a map going the other way.
 	</p>
 
-	<theorem xml:id="th_">
+	<theorem xml:id="th_Gal_intermed">
+		<title>Galois group of intermediate field</title>
+		
+		
 		<statement>
 			<p>
 				Let <m>L/F</m> be a Galois extension, and let <m>K</m> be an intermediate field of this extension: <ie/>, we have the tower of extensions <m>L/K/F</m>.
