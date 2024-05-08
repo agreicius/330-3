@@ -139,7 +139,7 @@
 <subsection xml:id="ss_Artin_th">
     <title>Artin's theorem</title>
     <p>
-    We conclude with the statement and proof of <xref ref="th_Artin" text="title"/>. The argument is a wonderfully winding one, and well worth internalizing. In particular, the proof introduces group actions to the study of Galois field extensions, and by so doing reveals an important relationship between the minimal polynomial of elements of a finite Galois extension <m>L/F</m> and the action of the Galois group on <m>L</m>. We enshrine some of these group action observations in <xref ref="cor_Gal_corr"/>, which will come in handy when computing examples.
+    We conclude with the statement and proof of <xref ref="th_Artin" text="title"/>. The argument is a wonderfully winding one, and well worth internalizing. In particular, the proof introduces group actions to the study of Galois field extensions, and by so doing reveals an important relationship between the minimal polynomial of elements of a finite Galois extension <m>L/F</m> and the action of the Galois group on <m>L</m>. We enshrine some of these group action observations in <xref ref="th_Gal_action_L"/>, which will come in handy when computing examples.
     </p>
 	<theorem xml:id="th_Artin">
 		<title>Artin's theorem</title>
@@ -218,70 +218,7 @@
 
 		</proof>
 	</theorem>
-    <p>
-    The following corollary is a consequence of <xref ref="th_Galois_corr"/> and some of the arguments from the proof of <xref ref="th_Artin" text="custom">Artin's theorem</xref>. We first introduce some terminology around the action of the Galois group <m>\Gal(L/F)</m> on the field <m>L</m>. 
-    </p>
-    <definition xml:id="d_conjugates">
-        <title>Galois conjugates of elements</title>
-        <notation>
-            <usage><m>\Stab_G(\alpha)</m></usage>
-          <description>Galois stabilizer subgroup of field element </description>
-        </notation>
-        <statement>
-            <p>
-                Let <m>L/F</m> be a finite Galois extension, and let <m>G=\Gal(L/F)</m>. Given <m>\alpha\in L</m>, a <term>Galois conjugate</term> (or just <term>conjugate</term>) of <m>\alpha</m> is an element of the form <m>\sigma(\alpha)</m>, where <m>\sigma\in G</m>. We denote by <m>O_\alpha</m> the set of all conjugates of <m>\alpha</m>: <ie/>, 
-                <me>
-                    O_\alpha=\{\sigma(\alpha)\colon \sigma\in G\}
-                </me>.
-                The <term>stabilizer subgroup</term> of <m>\alpha</m>, denoted <m>\Stab_G(\alpha)</m>, is the set of all elements of <m>G</m> that fix <m>\alpha</m>: <ie/>, 
-                <me>
-                    \Stab_G(\alpha)=\{\sigma\in G\colon \sigma(\alpha)=\alpha\}
-                </me>.
-            </p>
-        </statement>
-    </definition>
-    <corollary xml:id="cor_Gal_corr">
-        <title>Simple subfields of Galois extensions</title>
-        <statement>
-            <p>
-                Let <m>L/F</m> be a finite Galois extension with Galois group <m>G=\Gal(L/F)</m>, let <m>\alpha</m> be an element of <m>L</m>, and let <m>O_{\alpha}=\{\sigma(\alpha)\colon \sigma\in G\}</m> be the set of Galois conjugates of <m>\alpha</m>. 
-                <ol>
-                    <li>
-                        <p>
-                            <m>\Aut_{F(\alpha)}(L)=\Stab_G(\alpha)</m>
-                        </p>
-                    </li>
-                    <li>
-                        <m>
-                            m_{\alpha,F}(x)=\prod_{\beta\in O_\alpha}(x-\beta)
-                        </m>.
-                    </li>
-                    <li>
-                        <m>
-                           [F(\alpha)\colon F]=\deg_F \alpha=\abs{O_{\alpha}}=[G\colon O_{\alpha}]
-                        </m>.
-                    </li>
-                    
-                    <li>
-                        <p>
-                            Given an intermediate field <m>K</m>, we have <m>\alpha\in K</m> if and only if <m>\sigma(\alpha)=\alpha</m> for all <m>\sigma\in \Aut_{K}(L)</m>. 
-                        </p>
-                        <p>
-                            In particular, <m>\alpha\in F</m> if and only if <m>\sigma(\alpha)=\alpha</m> for all <m>\sigma\in G</m>. 
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Given an intermediate field <m>K</m> we have <m>F(\alpha)=K</m> if and only if <m>\Aut_{K}(L)=\Stab_G(\alpha)</m>. 
-                        </p>
-                        <p>
-                            In particular, we have <m>F(\alpha)=L</m> if and only if <m>\Stab_{G}(\alpha)=\{\id\}</m>. 
-                        </p>
-                    </li>
-                    
-                </ol>
-            </p>
-        </statement>
-    </corollary>
+    
+    
     </subsection>
 </section>

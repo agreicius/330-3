@@ -1,67 +1,151 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="s_Gal_normal" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Galois correspondence: normality</title>
-    <p>
-        We continue to exploit the Galois correspondence for everything it's worth. As we shall see, the correspondence not only captures the identical lattice structure of subextensions of a finite Galois extension <m>L/F</m> on the one hand and subgroups of <m>G=\Gal(L/F)</m> on the other, it also identifies the normal subextensions of <m>L/F</m> precisely with the normal subgroups of <m>G</m>. 
-    </p>
-    <definition xml:id="d_conjugate_field">
-        <title>Galois conjugates of fields</title>
-        <statement>
-            <p>
-                Let <m>L/F</m> be a Galois extension and let <m>G=\Gal(L/F)</m>. Given an intermediate field <m>K</m> we have <m>K\cong \sigma(K)\leq L</m>. We call <m>\sigma(K)</m> a <term>Galois conjugate</term> of <m>K</m>. 
-            </p>
-        </statement>
-    </definition>
-    <theorem xml:id="th_Gal_corr_normal">
-        <title>Galois correspondence: normality</title>
-        <statement>
-            <p>
-               Let <m>L/F</m> be a finite Galois extension, and let <m>G=\Gal(L/F)</m>. Suppose the intermediate field <m>K\leq L</m> corresponds to the subgroup <m>H\leq G</m> under the Galois correspondence: <ie/>, we have 
-               <md>
-                <mrow>K \amp = L^H \amp H\amp =\Aut_K(L)</mrow>
-               </md>.
-               <ol>
-                <li>
-                    <p>
-                        Given <m>\sigma\in G</m>, the Galois conjugate <m>K'=\sigma(K)</m> corresponds to <m>H'=\sigma H \sigma^{-1}</m>, the conjugate of <m>H</m> by <m>\sigma</m>: <ie/>, we have 
-                        <md>
-                         <mrow> \sigma(K)\amp =L^{\sigma H\sigma^{-1}} \amp \sigma H \sigma^{-1}=\Aut_{\sigma(K)}(L) </mrow>
-                        </md>  
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        The extension <m>K/F</m> is normal if and only if <m>H</m> is a normal subgroup of <m>G</m>. Using logical shorthand: 
-                        <men xml:id="eq_Gal_normal_equiv">
-                          K/F \text{ normal} \iff H\normalin G  
-                        </men>.
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        Assume <m>K/F</m> is normal, and write <m>N=\Aut_{K}(L)</m>. The map 
-                        <md>
-                        <mrow>\sigma\colon G\amp \rightarrow \Gal(K/F)</mrow>
-                        <mrow>\sigma \amp \mapsto \sigma\vert_K</mrow>
-                        </md>
-                        gives rise to an isomorphism 
-                        <md>
-                            <mrow>G/N \amp \isomto \Gal(K/F)</mrow>
-                            <mrow>\sigma N \amp \mapsto \sigma\vert_{K}</mrow>
-                        </md>.
-                        In particular, the Galois group of <m>K/F</m> is isomorphic to <m>G/N</m>: <ie/>, 
-                        <men xml:id="eq_Gal_quot">
-                            \Gal(K/F)\cong G/N
-                        </men>.  
-                    </p>
-                </li>
-               </ol>
-               
-               
-            </p>
-        </statement>
-    </theorem>
+    <title>Galois correspondence: two group actions</title>
+    <introduction>
+        <p>
+            There are a number of layers of depth to the Galois correspondence. On its surface, it simply establishes a bijective correspondence between the set <m>\mathcal{F}</m> of intermediate fields of a finite Galois extension <m>L/F</m> and the set <m>\mathcal{S}</m> of subgroups of its Galois group <m>G=\Gal(L/F)</m>. Moving one layer deeper, we see that it further captures the identical lattice structure of, on the one hand, subextensions of <m>L/F</m>, and on the other, subgroups of <m>G</m>. We now go even deeper and reveal that the Galois correspondence respects natural group actions of <m>G</m> on <m>\mathcal{F}</m> and <m>\mathcal{S}</m>. An important consequence of this is that normal subextensions of <m>L/F</m> get identified under the Galois correspondence precisely with the normal subgroups of <m>G</m>. 
+        </p>
+        <p>Accordingly, in this section we will introduce some group action theory into our study of Galois actions. Specifically, we will study two different group actions of <m>G</m> (an action on the field <m>L</m>, and an action on <m>\mathcal{F}</m>), and will relate these group actions to field extension properties.         
+        </p>
+    </introduction>
+    <subsection xml:id="ss_Gal_action_L">
+        <title>Galois action on <m>L</m></title>
+        <p>
+            Let <m>L/F</m> be a finite Galois extension with Galois group <m>G=\Gal(L/F)</m>. It is easy to see that the operation <m>\sigma\cdot \alpha=\sigma(\alpha)</m> defines a group action of <m>G</m> on <m>L</m>. <xref ref="th_Gal_action_L"/> articulates how this <m>G</m>-action relates to field properties of elements of <m>L</m>. With the exception of statement (3) of the theorem, which was derived during the proof of <xref ref="th_Artin" text="title"/>,  the theorem is essentially a restatement of portions of <xref ref="th_Galois_corr"/> using the language of group actions. To this end, we first introduce some terminology around the action of the Galois group on <m>L</m>. 
+        </p>
+        <definition xml:id="d_conjugates">
+            <title>Galois conjugates of elements</title>
+            <notation>
+                <usage><m>\Stab_G(\alpha)</m></usage>
+              <description>Galois stabilizer subgroup of field element </description>
+            </notation>
+            <statement>
+                <p>
+                    Let <m>L/F</m> be a finite Galois extension, and let <m>G=\Gal(L/F)</m>. Given <m>\alpha\in L</m>, a <term>Galois conjugate</term> (or just <term>conjugate</term>) of <m>\alpha</m> is an element of the form <m>\sigma(\alpha)</m>, where <m>\sigma\in G</m>. We denote by <m>O_\alpha</m> the orbit of <m>\alpha</m> under <m>G</m>: <ie/>, <m>O_{\alpha}</m>    is the set
+                    <me>
+                        O_\alpha=\{\sigma(\alpha)\colon \sigma\in G\}
+                    </me>
+                    of all conjugates of <m>\alpha</m>. 
+                </p>
+                <p>
+                    The <term>stabilizer subgroup</term> of <m>\alpha</m>, denoted <m>\Stab_G(\alpha)</m>, is the set of all elements of <m>G</m> that fix <m>\alpha</m>: <ie/>, 
+                    <me>
+                        \Stab_G(\alpha)=\{\sigma\in G\colon \sigma(\alpha)=\alpha\}
+                    </me>.
+                </p>
+            </statement>
+        </definition>
+        <theorem xml:id="th_Gal_action_L">
+            <title>Galois action on <m>L</m></title>
+            <statement>
+                <p>
+                    Let <m>L/F</m> be a finite Galois extension with Galois group <m>G=\Gal(L/F)</m>, let <m>\alpha</m> be an element of <m>L</m>, and let <m>O_{\alpha}=\{\sigma(\alpha)\colon \sigma\in G\}</m> be the set of Galois conjugates of <m>\alpha</m>. 
+                    <ol>
+                        <li>
+                            <p>
+                                <m>\Aut_{F(\alpha)}(L)=\Stab_G(\alpha)</m>
+                            </p>
+                        </li>
+                        <li>
+                            <m>
+                                m_{\alpha,F}(x)=\prod_{\beta\in O_\alpha}(x-\beta)
+                            </m>.
+                        </li>
+                        <li>
+                            <m>
+                               [F(\alpha)\colon F]=\deg_F \alpha=\abs{O_{\alpha}}=[G\colon \Stab_G(\alpha)]
+                            </m>.
+                        </li>
+                        
+                        <li>
+                            <p>
+                                Given an intermediate field <m>K</m>, we have <m>\alpha\in K</m> if and only if <m>\sigma(\alpha)=\alpha</m> for all <m>\sigma\in \Aut_{K}(L)</m>. 
+                            </p>
+                            <p>
+                                In particular, <m>\alpha\in F</m> if and only if <m>\sigma(\alpha)=\alpha</m> for all <m>\sigma\in G</m>. 
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Given an intermediate field <m>K</m> we have <m>F(\alpha)=K</m> if and only if <m>\Aut_{K}(L)=\Stab_G(\alpha)</m>. 
+                            </p>
+                            <p>
+                                In particular, we have <m>F(\alpha)=L</m> if and only if <m>\Stab_{G}(\alpha)=\{\id\}</m>. 
+                            </p>
+                        </li>
+                        
+                    </ol>
+                </p>
+            </statement>
+        </theorem>
+    </subsection>
+    <subsection xml:id="ss_Gal_action_fields">
+        <title>Galois action on intermediate fields</title>
+        <p>
+            Next we will study the action of <m>\Gal(L/F)</m> on the set 
+            <me>\mathcal{F}=\{K\colon F\leq K\leq L\}</me>
+            of intermediate fields of a finite Galois extension <m>L/F</m>. Given an intermediate field <m>K\in \mathcal{F}</m> and automorphism <m>\sigma\in \Gal(L/F)=\Aut_F(L)</m>, <m>\sigma</m> maps <m>K</m> isomorphically onto <m>\sigma(K)</m>. Since <m>\sigma\in \Aut_F(L)</m> we have <m>F\leq \sigma(K)\leq L</m>, and thus <m>\sigma(K)\in \mathcal{F}</m>. It is then easy to see that the operation defined as <m>\sigma\cdot K=\sigma(K)</m> defines a group action of <m>G=\Gal(L/F)</m> on <m>\mathcal{F}</m>.  
+        </p>
+        <definition xml:id="d_conjugate_field">
+            <title>Galois conjugates of fields</title>
+            <statement>
+                <p>
+                    Let <m>L/F</m> be a Galois extension and let <m>G=\Gal(L/F)</m>. Given an intermediate field <m>K</m> and automorphism <m>\sigma\in G</m>, the field <m>\sigma(K)</m> is called a <term>Galois conjugate</term> (or simply <term>conjugate</term>) of <m>K</m>. 
+                </p>
+            </statement>
+        </definition>
+        <theorem xml:id="th_Gal_corr_normal">
+            <title>Galois correspondence: normality</title>
+            <statement>
+                <p>
+                   Let <m>L/F</m> be a finite Galois extension, and let <m>G=\Gal(L/F)</m>. Suppose the intermediate field <m>K\leq L</m> corresponds to the subgroup <m>H\leq G</m> under the Galois correspondence: <ie/>, we have 
+                   <md>
+                    <mrow>K \amp = L^H \amp H\amp =\Aut_K(L)</mrow>
+                   </md>.
+                   <ol>
+                    <li>
+                        <p>
+                            Given <m>\sigma\in G</m>, the Galois conjugate <m>K'=\sigma(K)</m> corresponds to <m>H'=\sigma H \sigma^{-1}</m>, the conjugate of <m>H</m> by <m>\sigma</m>: <ie/>, we have 
+                            <md>
+                             <mrow> \sigma(K)\amp =L^{\sigma H\sigma^{-1}} \amp \sigma H \sigma^{-1}=\Aut_{\sigma(K)}(L) </mrow>
+                            </md>  
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The extension <m>K/F</m> is normal if and only if <m>H</m> is a normal subgroup of <m>G</m>. Using logical shorthand: 
+                            <men xml:id="eq_Gal_normal_equiv">
+                              K/F \text{ normal} \iff H\normalin G  
+                            </men>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Assume <m>K/F</m> is normal, and write <m>N=\Aut_{K}(L)</m>. The map 
+                            <md>
+                            <mrow>\sigma\colon G\amp \rightarrow \Gal(K/F)</mrow>
+                            <mrow>\sigma \amp \mapsto \sigma\vert_K</mrow>
+                            </md>
+                            gives rise to an isomorphism 
+                            <md>
+                                <mrow>G/N \amp \isomto \Gal(K/F)</mrow>
+                                <mrow>\sigma N \amp \mapsto \sigma\vert_{K}</mrow>
+                            </md>.
+                            In particular, the Galois group of <m>K/F</m> is isomorphic to <m>G/N</m>: <ie/>, 
+                            <men xml:id="eq_Gal_quot">
+                                \Gal(K/F)\cong G/N
+                            </men>.  
+                        </p>
+                    </li>
+                   </ol>
+                   
+                   
+                </p>
+            </statement>
+        </theorem>
+    </subsection>
+    
     
     
 
