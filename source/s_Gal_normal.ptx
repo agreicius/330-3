@@ -3,7 +3,7 @@
 <section xml:id="s_Gal_normal" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Galois correspondence: normality</title>
     <p>
-        We continue to exploit the Galois correspondence for everything it's worth. As we shall see, the correspondence not only captures the identical lattice structure of subextensions of a finite Galois extension <m>L/F</m> on the one hand and subgroups of <m>G=\Gal(L/F)</m> on the other, it also identifies the normal subextensions of <m>L/F</m> precisely with the normal subgroups of <m>G</m>.   and It should come as no great surprise that under the Galois correspondence for a finite Galois extension <m>L/F</m> the normal subgroups <m>N\normalin G=\Gal(K/F)</m> correspond precisely to the normal subextensions <m>K/F</m>. 
+        We continue to exploit the Galois correspondence for everything it's worth. As we shall see, the correspondence not only captures the identical lattice structure of subextensions of a finite Galois extension <m>L/F</m> on the one hand and subgroups of <m>G=\Gal(L/F)</m> on the other, it also identifies the normal subextensions of <m>L/F</m> precisely with the normal subgroups of <m>G</m>. 
     </p>
     <definition xml:id="d_conjugate_field">
         <title>Galois conjugates of fields</title>
