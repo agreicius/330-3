@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s_Gal_corr.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_Galois_theory.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s_Gal_corr.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_Galois_theory.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_Gal_normal.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
   \newcommand{\Q}{{\mathbb Q}}
   \newcommand{\R}{{\mathbb R}}
   \newcommand{\C}{{\mathbb C}}
@@ -336,6 +336,13 @@ window.MathJax = {
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_Gal_corr_proof.html#ss_Artin_th" class="internal"><span class="title">Artin’s theorem</span></a></div></li>
 </ul>
 </li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_Gal_normal.html" class="internal"><span class="codenumber">1.18</span> <span class="title">Galois correspondence: two group actions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_Gal_normal.html#ss_Gal_action_L" class="internal"><span class="title">Galois action on <span class="process-math">\(L\)</span></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_Gal_normal.html#ss_Gal_action_fields" class="internal"><span class="title">Galois action on intermediate fields</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -480,7 +487,7 @@ H\leq H'\amp \iff \Aut_K(L)\leq \Aut_{K'}(L) \\
 </div></section></section><section class="subsection" id="ss_Artin_th"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Artin’s theorem</span>
 </h3>
-<div class="para" id="ss_Artin_th-2">We conclude with the statement and proof of <a href="" class="xref" data-knowl="./knowl/xref/th_Artin.html" title="Theorem 1.17.1: Artin’s theorem">Artin’s theorem</a>. The argument is a wonderfully winding one, and well worth internalizing. In particular, the proof introduces group action theory to the study of Galois field extensions, and by so doing reveals an important relationship between the minimal polynomial of elements of a finite Galois extension <span class="process-math">\(L/F\)</span> and the action of the Galois group on <span class="process-math">\(L\text{.}\)</span> We enshrine these group action perspectives in <a href="" class="xref" data-knowl="./knowl/xref/cor_Gal_corr.html" title="Corollary 1.17.3: Simple subfields of Galois extensions">Corollary 1.17.3</a>, which will come in handy when computing examples.</div>
+<div class="para" id="ss_Artin_th-2">We conclude with the statement and proof of <a href="" class="xref" data-knowl="./knowl/xref/th_Artin.html" title="Theorem 1.17.1: Artin’s theorem">Artin’s theorem</a>. The argument is a wonderfully winding one, and well worth internalizing. In particular, the proof introduces group actions to the study of Galois field extensions, and by so doing reveals an important relationship between the minimal polynomial of elements of a finite Galois extension <span class="process-math">\(L/F\)</span> and the action of the Galois group on <span class="process-math">\(L\text{.}\)</span> We enshrine some of these group action observations in <a href="" class="xref" data-knowl="./knowl/xref/th_Gal_action_L.html" title="Theorem 1.18.2: Galois action on L">Theorem 1.18.2</a>, which will come in handy when computing examples.</div>
 <article class="theorem theorem-like" id="th_Artin"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.17.1</span><span class="period">.</span><span class="space"> </span><span class="title">Artin’s theorem.</span>
 </h4>
@@ -556,51 +563,9 @@ n=\abs{H}\leq \abs{\Aut_{L^H}(L)}=[L\colon L^H]\leq n\text{.}
 </div>
 <div class="para">It follows that <span class="process-math">\(n=\abs{H}=\abs{\Aut_{L^H}(L)}=[L\colon L^H]\)</span> and <span class="process-math">\(H=\Aut_{L^H}(L)=\Gal(L/L^H)\text{.}\)</span>
 </div>
-</div></article></details><div class="para" id="ss_Artin_th-4">The following corollary is a consequence of <a href="" class="xref" data-knowl="./knowl/xref/th_Galois_corr.html" title="Theorem 1.16.5: Galois correspondence">Theorem 1.16.5</a> and some of the arguments from the proof of <a href="" class="xref" data-knowl="./knowl/xref/th_Artin.html" title="Theorem 1.17.1: Artin’s theorem">Artin’s theorem</a>. We first introduce some terminology around the action of the Galois group <span class="process-math">\(\Gal(L/F)\)</span> on the field <span class="process-math">\(L\text{.}\)</span>
-</div>
-<article class="definition definition-like" id="d_conjugates"><h4 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.17.2</span><span class="period">.</span><span class="space"> </span><span class="title">Galois conjugates and fix subgroups.</span>
-</h4> <div class="para logical" id="d_conjugates-2-1">
-<div class="para">Let <span class="process-math">\(L/F\)</span> be a finite Galois extension, and let <span class="process-math">\(G=\Gal(L/F)\text{.}\)</span> Given <span class="process-math">\(\alpha\in L\text{,}\)</span> a <dfn class="terminology">Galois conjugate</dfn> (or just <dfn class="terminology">conjugate</dfn>) of <span class="process-math">\(\alpha\)</span> is an element of the form <span class="process-math">\(\sigma(\alpha)\text{,}\)</span> where <span class="process-math">\(\sigma\in G\text{.}\)</span> We denote by <span class="process-math">\(O_\alpha\)</span> the set of all conjugates of <span class="process-math">\(\alpha\text{:}\)</span> i.e.,</div>
-<div class="displaymath process-math">
-\begin{equation*}
-O_\alpha=\{\sigma(\alpha)\colon \sigma\in G\}\text{.}
-\end{equation*}
-</div>
-<div class="para">The <dfn class="terminology">stabilizer subgroup</dfn> of <span class="process-math">\(\alpha\text{,}\)</span> denoted <span class="process-math">\(\Stab_G(\alpha)\text{,}\)</span> is the set of all elements of <span class="process-math">\(G\)</span> that fix <span class="process-math">\(\alpha\text{:}\)</span> i.e.,</div>
-<div class="displaymath process-math">
-\begin{equation*}
-\Stab_G(\alpha)=\{\sigma\in G\colon \sigma(\alpha)=\alpha\}\text{.}
-\end{equation*}
-</div>
-</div></article><article class="corollary theorem-like" id="cor_Gal_corr"><h4 class="heading">
-<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.17.3</span><span class="period">.</span><span class="space"> </span><span class="title">Simple subfields of Galois extensions.</span>
-</h4>
-<div class="para logical" id="cor_Gal_corr-2-1">
-<div class="para">Let <span class="process-math">\(L/F\)</span> be a finite Galois extension with Galois group <span class="process-math">\(G=\Gal(L/F)\text{,}\)</span> let <span class="process-math">\(\alpha\)</span> be an element of <span class="process-math">\(L\text{,}\)</span> and let <span class="process-math">\(O_{\alpha}=\{\sigma(\alpha)\colon \sigma\in G\}\)</span> be the set of Galois conjugates of <span class="process-math">\(\alpha\text{.}\)</span>
-</div>
-<ol class="decimal">
-<li id="cor_Gal_corr-2-1-7-1"><div class="para" id="cor_Gal_corr-2-1-7-1-1"><span class="process-math">\(\displaystyle \Aut_{F(\alpha)}(L)=\Stab_G(\alpha)\)</span></div></li>
-<li id="cor_Gal_corr-2-1-7-2"><div class="para" id="p-derived-cor_Gal_corr-2-1-7-2"><span class="process-math">\(m_{\alpha,F}(x)=\prod_{\beta\in O_\alpha}(x-\beta)
-\text{.}\)</span></div></li>
-<li id="cor_Gal_corr-2-1-7-3"><div class="para" id="p-derived-cor_Gal_corr-2-1-7-3"><span class="process-math">\([F(\alpha)\colon F]=\deg_F \alpha=\abs{O_{\alpha}}=[G\colon O_{\alpha}]
-\text{.}\)</span></div></li>
-<li id="cor_Gal_corr-2-1-7-4">
-<div class="para" id="cor_Gal_corr-2-1-7-4-1">Given an intermediate field <span class="process-math">\(K\text{,}\)</span> we have <span class="process-math">\(\alpha\in K\)</span> if and only if <span class="process-math">\(\sigma(\alpha)=\alpha\)</span> for all <span class="process-math">\(\sigma\in \Aut_{K}(L)\text{.}\)</span>
-</div>
-<div class="para" id="cor_Gal_corr-2-1-7-4-2">In particular, <span class="process-math">\(\alpha\in F\)</span> if and only if <span class="process-math">\(\sigma(\alpha)=\alpha\)</span> for all <span class="process-math">\(\sigma\in G\text{.}\)</span>
-</div>
-</li>
-<li id="cor_Gal_corr-2-1-7-5">
-<div class="para" id="cor_Gal_corr-2-1-7-5-1">Given an intermediate field <span class="process-math">\(K\)</span> we have <span class="process-math">\(F(\alpha)=K\)</span> if and only if <span class="process-math">\(\Aut_{K}(L)=\Stab_G(\alpha)\text{.}\)</span>
-</div>
-<div class="para" id="cor_Gal_corr-2-1-7-5-2">In particular, we have <span class="process-math">\(F(\alpha)=L\)</span> if and only if <span class="process-math">\(\Stab_{G}(\alpha)=\{\id\}\text{.}\)</span>
-</div>
-</li>
-</ol>
-</div></article></section></section></div>
+</div></article></details></section></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="s_Gal_corr.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s_Gal_corr.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_Gal_normal.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
