@@ -4,4 +4,5 @@
   <xi:include  href="s_sets_functions.ptx"/>
   <xi:include  href="s_logic.ptx"/>
   <xi:include  href="s_proof_technique.ptx"/>
+  <xi:include  href="s_groups.ptx"/>
 </chapter>
