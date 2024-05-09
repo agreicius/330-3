@@ -133,7 +133,7 @@
                 </p>
             </statement>
         </theorem>
-        <example xml:base="eg_groups_d3_s3">
+        <example xml:id="eg_groups_d3_s3">
             <title><m>D_3</m> is isomorphic to <m>S_3</m></title>
             <statement>
                 <p>
