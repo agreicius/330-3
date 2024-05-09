@@ -54,9 +54,9 @@ X \amp \rightarrow R \\
 <li><div class="para">We have <span class="process-math">\(\abs{X}\leq n=\deg_F\alpha\text{.}\)</span> In other words, there are at most <span class="process-math">\(n\)</span> extensions of <span class="process-math">\(\sigma\)</span> to <span class="process-math">\(K=F(\alpha)\text{.}\)</span>
 </div></li>
 </ol>
-</div></article><details class="hiddenproof born-hidden-knowl"><summary><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para">First observe that (3) follows from (2) since <span class="process-math">\(f^\sigma\in L[x]\)</span> has <em class="emphasis">at most</em> <span class="process-math">\(n=\deg f^\sigma=\deg f\)</span> roots in <span class="process-math">\(L\text{.}\)</span> Thus <span class="process-math">\(\abs{X}=\abs{R}\leq n\text{.}\)</span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para">First observe that (3) follows from (2) since <span class="process-math">\(f^\sigma\in L[x]\)</span> has <em class="emphasis">at most</em> <span class="process-math">\(n=\deg f^\sigma=\deg f\)</span> roots in <span class="process-math">\(L\text{.}\)</span> Thus <span class="process-math">\(\abs{X}=\abs{R}\leq n\text{.}\)</span>
 </div> <div class="para logical">
-<div class="para">Now consider statements (1)-(2). In the special case where <span class="process-math">\(K=F[x]/(f)\)</span> is a quotient of a polynomial ring, both statements follow immediately from <a href="" class="xref" data-knowl="./knowl/xref/th_quot_poly.html" title="Theorem 1.4.7: Quotients of polynomial rings">Theorem 1.4.7</a>. We will reduce to this special case by noting that our simple extension <span class="process-math">\(K=F(\alpha)\)</span> is <em class="emphasis">isomorphic</em> to the quotient ring <span class="process-math">\(F[x]/(f)\text{,}\)</span> where <span class="process-math">\(f(x)=m_{\alpha, F}(x)\text{,}\)</span> via the isomorphism</div>
+<div class="para">Now consider statements (1)-(2). In the special case where <span class="process-math">\(K=F[x]/(f)\)</span> is a quotient of a polynomial ring, both statements follow immediately from <a href="s_simple_extension.html#th_quot_poly" class="xref" data-knowl="./knowl/xref/th_quot_poly.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.4.7: Quotients of polynomial rings">Theorem 1.4.7</a>. We will reduce to this special case by noting that our simple extension <span class="process-math">\(K=F(\alpha)\)</span> is <em class="emphasis">isomorphic</em> to the quotient ring <span class="process-math">\(F[x]/(f)\text{,}\)</span> where <span class="process-math">\(f(x)=m_{\alpha, F}(x)\text{,}\)</span> via the isomorphism</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_quot_poly.html">
 \begin{align*}
 \phi\colon F[x]/(f) \amp \rightarrow F(\alpha)\\
@@ -79,20 +79,20 @@ X\amp\rightarrow X'\\
 \tau \amp\mapsto \tau'=\tau\circ \phi
 \end{align*}
 </div>
-<div class="para">is a bijection (with inverse <span class="process-math">\(\tau'\mapsto \tau'\circ\phi^{-1}\)</span>). Statement (1) of the theorem now follows since the map <span class="process-math">\(\tau\)</span> described in <a href="" class="xref" data-knowl="./knowl/xref/eq_sigma_ext.html" title="Equation 1.19">(1.19)</a> is precisely <span class="process-math">\(\tau'\circ \phi^{-1}\text{,}\)</span> where <span class="process-math">\(\tau'\colon F[x]/(f)\rightarrow L\)</span> is the map</div>
+<div class="para">is a bijection (with inverse <span class="process-math">\(\tau'\mapsto \tau'\circ\phi^{-1}\)</span>). Statement (1) of the theorem now follows since the map <span class="process-math">\(\tau\)</span> described in <a href="s_embeddings.html#eq_sigma_ext" class="xref" data-knowl="./knowl/xref/eq_sigma_ext.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.19">(1.19)</a> is precisely <span class="process-math">\(\tau'\circ \phi^{-1}\text{,}\)</span> where <span class="process-math">\(\tau'\colon F[x]/(f)\rightarrow L\)</span> is the map</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_sigma_ext.html ./knowl/xref/th_quot_poly.html ./knowl/xref/th_quot_poly.html">
 \begin{equation*}
 \tau'(a_0+a_1\overline{x}+\cdots +a_{n-1}\overline{x}^{n-1})=\sigma(a_0)+\sigma(a_1)\beta+\cdots +\sigma(a_{n-1})\beta^{n-1}\text{,}
 \end{equation*}
 </div>
-<div class="para">which is an embedding by <a href="" class="xref" data-knowl="./knowl/xref/th_quot_poly.html" title="Theorem 1.4.7: Quotients of polynomial rings">Theorem 1.4.7</a>. Similarly, since the map</div>
+<div class="para">which is an embedding by <a href="s_simple_extension.html#th_quot_poly" class="xref" data-knowl="./knowl/xref/th_quot_poly.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.4.7: Quotients of polynomial rings">Theorem 1.4.7</a>. Similarly, since the map</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_sigma_ext.html ./knowl/xref/th_quot_poly.html ./knowl/xref/th_quot_poly.html">
 \begin{align*}
 X' \amp \rightarrow R\\
 \tau' \amp \mapsto \tau'(\overline{x})
 \end{align*}
 </div>
-<div class="para">is a bijection by <a href="" class="xref" data-knowl="./knowl/xref/th_quot_poly.html" title="Theorem 1.4.7: Quotients of polynomial rings">Theorem 1.4.7</a>, the composition</div>
+<div class="para">is a bijection by <a href="s_simple_extension.html#th_quot_poly" class="xref" data-knowl="./knowl/xref/th_quot_poly.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.4.7: Quotients of polynomial rings">Theorem 1.4.7</a>, the composition</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_sigma_ext.html ./knowl/xref/th_quot_poly.html ./knowl/xref/th_quot_poly.html">
 \begin{equation*}
 X\rightarrow X'\rightarrow R
