@@ -152,6 +152,75 @@
             </solution>
         </example>
     </subsection>
-    
+    <subsection xml:id="subsec-euler-function-and-groups-of-units">
+        <title>Euler function and groups of units</title>
+       <definition xml:id="d_Euler_totient">
+        <title>Euler totient function</title>
+        <statement>
+            <p>
+                The <term>Euler totient function</term> is the function <m>\phi\colon \Z_+\rightarrow \Z_+</m> defined as 
+                <me>
+                    \phi(n)=\abs{\{k\in \{1,2,\dots, n\}\colon \gcd(k,n)=1\}}
+                </me>.
+                In other words, <m>\phi(n)</m> is the number of integers between <m>1</m> and <m>n</m> that are relatively prime to <m>n</m>. 
+            </p>
+        </statement>
+       </definition>     
+       <theorem xml:id="th_Euler_totient">
+        <statement>
+            <p>
+                The Euler totient function <m>\phi</m> satisfies the following properties. 
+                <ol>
+                    <li>
+                        <p>
+                            If <m>\gcd(a,b)=1</m>, then <m>\phi(ab)=\phi(a)\phi(b)</m>. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            If <m>p</m> is a prime integer, then 
+                            <md>
+                                <mrow>\phi(p) \amp = p-1</mrow>
+                                <mrow>\phi(p^{n}) \amp = p^n-p^{n-1}=p^{n-1}(p-1)</mrow>
+                            </md>.
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+       </theorem>
+       <theorem xml:id="th_unit_groups">
+        <title>Unit groups modulo <m>n</m></title>
+        <statement>
+            <p>
+                Let <m>m</m> be a positive integer, and let <m>(Z/m\Z)^*</m> be the group of multiplicative units of <m>\Z/m\Z</m>. 
+                <ol>
+                    <li>
+                        <p>
+                            <m>\abs{(\Z/m\Z)^*}=\phi(m)</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            If <m>\gcd(a,b)=1</m>, then <m>(\Z/ab\Z)^*\cong (\Z/a\Z)^*\times (\Z/b\Z)^*</m>. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            If <m>p</m> is an odd prime, then <m>(\Z/p^n\Z)^*</m> is a cyclic group of cardinality <m>p^{n-1}(p-1)</m>. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            For <m>p=2</m>, we have <m>\Z/2\Z\cong \Z/4\Z\cong \angvec{-1}</m>, and <m>\Z/2^n\Z\cong \angvec{-1}\times \angvec{5}</m>. In particular,  <m>\angvec{5}</m> is a cyclic group of cardinality <m>2^{n-2}</m>. 
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+       </theorem>
+       
+       
+    </subsection>
 
 </section>

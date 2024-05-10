@@ -94,6 +94,7 @@
       \DeclareMathOperator{\Gal}{Gal}
       \DeclareMathOperator{\ab}{ab}
       \DeclareMathOperator{\character}{char}
+      \DeclareMathOperator{\ord}{ord}
 
 
       \newcommand{\surjects}{\twoheadrightarrow}
