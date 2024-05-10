@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.19.7</span><span class="period">.</span><span class="space"> </span><span class="title">Computing cyclotomic polynomials.</span>
+</h3>
+<div class="para logical">
+<div class="para">Given a positive integer <span class="process-math">\(n\text{,}\)</span> let <span class="process-math">\(\Phi_n(x)\)</span> denote the <span class="process-math">\(n\)</span>-th cyclotomic polynomial.</div>
+<ol class="decimal">
+<li><div class="para"><span class="process-math">\(x^n-1=\prod_{d\mid n}\Phi_d(x)\text{.}\)</span></div></li>
+<li><div class="para logical">
+<div class="para">If <span class="process-math">\(n&gt; 2\)</span> is odd, then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Phi_{2n}(x)=\Phi_n(-x)\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">If <span class="process-math">\(p\)</span> is prime, then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Phi_{p^r}(x)=\Phi_p(x^{p^{r-1}})\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">If <span class="process-math">\(p\)</span> is a prime and <span class="process-math">\((p,m)=1\text{,}\)</span> then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Phi_{p^rm}(x)=\Phi_m(x^{p^r})/\Phi_m(x^{p^{r-1}})\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">If <span class="process-math">\(p_1,p_2,\dots, p_r\)</span> are distinct primes, then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Phi_{p_1^{n_1}p_2^{n_2}\cdots p_{r}^{n_r}}(x)=\Phi_{p_1p_2\dots p_n}(x^{p_1^{n_1-1}p_2^{n_2-1}\cdots p_r^{n_r-1}})\text{.}
+\end{equation*}
+</div>
+</div></li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para">Statement (1) was proved as part of the proof of <a href="s_cyclotomic.html#th_cyc_polys" class="xref" data-knowl="./knowl/xref/th_cyc_polys.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.19.5: Cyclotomic poylnomials">Theorem 1.19.5</a>.</div> <div class="para">The remaining statements can be proved using the following argument: if <span class="process-math">\(f(x)\)</span> and <span class="process-math">\(g(x)\)</span> are (a) monic, (b) separable, and (c) have the same degree, then <span class="process-math">\(f=g\)</span> if and only if they have the same roots. Note that for all <span class="process-math">\(n\in \Z_+\text{,}\)</span> since <span class="process-math">\(\Phi_n(x)\)</span> is irreducible and <span class="process-math">\(\character \Q=-\text{,}\)</span> <span class="process-math">\(\Phi_n(x)\)</span> is separable.</div> <div class="para logical">
+<div class="para">For example, consider (2). First observe that since <span class="process-math">\(n\)</span> is odd, we have <span class="process-math">\(\phi(2n)=\phi(2)\phi(n)=\phi(n)\text{.}\)</span> Thus <span class="process-math">\(\deg \Phi_{2n}(x)=\deg \Phi_n(-x)\text{.}\)</span> Furthermore, since <span class="process-math">\(n&gt; 2\text{,}\)</span> <span class="process-math">\(\phi(n)\)</span> is even. Thus <span class="process-math">\(\Phi_n(-x)\)</span> is monic. Lastly, the roots of <span class="process-math">\(\Phi_n(-x)\)</span> are precisely the negatives of the roots of <span class="process-math">\(\Phi_n(x)\text{.}\)</span> Suppose <span class="process-math">\(\zeta\)</span> is a primitive <span class="process-math">\(n\)</span>-th root of unity. Since <span class="process-math">\(n\)</span> is odd, we cannot have <span class="process-math">\(\zeta^j=-1\text{.}\)</span> It follows that</div>
+<div class="displaymath process-math">
+\begin{align*}
+(-\zeta)^j=(-1)^j \zeta^j=1 \amp \iff j\text{ even and } \zeta^j=1 \\
+\amp \iff 2\mid j \text{ and } n\mid j \amp (\ord \zeta=n)\\
+\amp \iff 2n\mid j\text{.}
+\end{align*}
+</div>
+<div class="para">This shows that <span class="process-math">\(\ord(-\zeta)=2n\text{.}\)</span> We conclude that the <span class="process-math">\(\phi(n)\)</span> roots of <span class="process-math">\(\Phi_n(-x)\)</span> are precisely the distinct primitive <span class="process-math">\(2n\)</span>-th roots of unity. It follows that both polynomials are separable, and we have  <span class="process-math">\(\Phi_{2n}(x)=\Phi_n(-x)\)</span>
+</div>
+</div> <div class="para">The proofs of the rest of the statements are left as an exercise.</div></article></details><span class="incontext"><a class="internal" href="s_cyclotomic.html#th_cyc_polys_comp">in-context</a></span>
+</body>
+</html>
