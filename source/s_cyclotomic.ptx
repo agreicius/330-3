@@ -59,9 +59,11 @@
 	</p>
 
 	<definition xml:id="d_cyclotomoic_poly">
+		<title>Cyclotomic polynomial</title>
+		
 		<statement>
 			<p>
-				Let <m>\overline{Q}</m> be an algebraic closure of <m>\Q</m>.
+				Let <m>\overline{\Q}</m> be an algebraic closure of <m>\Q</m>.
 				Given a positive integer <m>n</m> the <term><m>n</m>-th cyclotomic polynomial</term> is the polynomial  <m>\Phi_n(x)\in \Qbar[x]</m> defined as follows:
 				<me>
 					\Phi_{n}(x)=\prod_{\substack{\alpha\in \mu_n\\ \ord \alpha=n}}(x-\alpha)=\prod_{\substack{1\leq j\leq n\\ (j,n)=1}}(x-\zeta^j)
@@ -101,7 +103,7 @@
 	</p>
 
 	<theorem xml:id="th_cyc_polys">
-		<title>Cyclotomic poylnomials</title>
+		<title>Cyclotomic polynomials</title>
 		<statement>
 			<p>
 				Let <m>n</m> be a positive integer.
@@ -221,6 +223,51 @@
 			</p>
 		</proof>
 	</theorem>
+	<p>
+		It should not be forgotten that complex conjugation <m>a+bi\mapsto a-bi</m> is a <m>\Q</m>-automorphism of any Galois extension <m>K/\Q</m>. The corollary below identifies which element of <m>(\Z/n\Z)^*</m> complex conjugation corresponds to when <m>K</m> is a cyclotomic extension. 
+	</p>
+	<corollary xml:id="cor_cyc_ext_complex_conj">
+		<title>Complex conjugation</title>
+		<statement>
+			<p>
+				Let <m>K=\Q(\zeta)</m>, where <m>\zeta\in \C</m> is a primitive <m>n</m>-th root of unity, and let <m>\sigma\colon K\rightarrow K</m> be the restriction of the complex conjugation operation on <m>\C</m> to <m>K</m>.
+				<ol>
+					<li>
+						<p>
+							Under the isomorphism described in <xref ref="th_cyc_ext"/>, <m>\sigma</m> corresponds to the element <m>\overline{-1}\in (\Z/n\Z)^*</m>. 
+						</p>
+					</li>
+					<li>
+						<p>
+							Identifying <m>G</m> with <m>(\Z/n\Z)^*</m>, we have 
+							<me>K^{\angvec{\overline{-1}}}=\Q(\zeta+\zeta^{-1})=\Q(\zeta+\overline{\zeta})=\Q(\operatorname{Re} \zeta)</me>,
+							where <m>\operatorname{Re} \zeta=\frac{1}{2}(\zeta+\overline{\zeta})</m> is the real part of <m>\zeta</m>. 
+						</p>
+					</li>
+				</ol> 
+				
+			</p>
+		</statement>
+		<proof>
+			<p>
+				<ol>
+					<li>
+						<p>
+							Since <m>\zeta^n=1</m>, we have <m>\abs{\zeta}=1</m> and hence, using some complex arithmetic 
+							<me>
+								\zeta^{-1}=\frac{1}{\abs{\zeta}^2}\overline{\zeta}=\overline{\zeta}=\sigma(\zeta)
+							</me>.
+						</p>
+					</li>
+					<li>
+						<p>
+							This is a homework exercise. 
+						</p>
+					</li>
+				</ol>
+			</p>
+		</proof>
+	</corollary>
     <p>
         Thanks to <xref ref="th_cyc_ext"/> and our thorough understanding of the modular unit groups <m>(\Z/n\Z)^*</m> (see <xref ref="th_unit_groups"/>), the family of cyclotomic extensions of <m>\Q</m> furnish us with a wonderful testing ground for Galois theory. Note that since the Galois groups of a cyclotomic extension <m>\Q(\zeta)/\Q</m> are <em>abelian</em>, all subgroups are normal, and hence all subextensions of <m>\Q(\zeta)/\Q</m> are Galois. As such, cyclotomic examples are not particularly revealing with regard to the issue of normal versus non-normal subextensions. That said, they do give rise to interesting and computable lattices of subfields.   
     </p>
@@ -270,6 +317,11 @@
                         </me>.
                     </p>
                 </li>
+				<li>
+					<p>
+						<m>\Phi_n(x)=x^\phi(n)\Phi_n(1/x)</m>. As a result, cyclotomic polynomials are palindromic: <ie/>, if <m>\Phi_n(x)=a_dx^d+a_{d-1}x^{d-1}+\cdots +a_1x+a_0</m>, then <m>a_k=a_{d-k}</m> for all <m>0\leq k\leq d</m>. 
+					</p>
+				</li>
             </ol>
             </p>
         </statement>
@@ -294,5 +346,198 @@
             </p>
         </proof>
     </theorem>
-    
+    <example xml:id="eg_9th_cyc">
+		<title><m>9</m>-th cyclotomic extension</title>
+		<statement>
+			<p>
+				Let <m>K=\Q(\zeta)</m>, where <m>\zeta=e^{2\pi i/9}</m>, a primitive <m>9</m>-th root of unity. Let <m>G=\Gal(K/\Q)</m>. 
+				<ol>
+					<li>
+						<p>
+							Compute <m>\Phi_9(x)</m>. 
+						</p>
+					</li>
+					<li>
+						<p>
+							Compute the lattice of subgroups of <m>G</m>.  
+						</p>
+					</li>
+					<li>
+						<p>
+							Compute the lattice of intermediate fields of <m>K/\Q</m> and describe each field in the form <m>\Q(\alpha)</m>, where <m>\alpha</m> is written as a polynomial expression in <m>\zeta</m> and <m>\zeta^{-1}</m>. 
+						</p>
+					</li>
+				</ol>
+			</p>
+		</statement>
+		<solution>
+			<p>
+				<ol>
+					<li>
+						<p>
+							Using <xref ref="th_cyc_polys_comp"/>, we have 
+							<md>
+								<mrow>\Phi_9(x) \amp =\Phi_{3^2}(x)</mrow>
+								<mrow> \amp = \Phi_3(x^3)</mrow>
+								<mrow> \amp = x^6+x^3+1</mrow>
+							</md>.
+						Alternatively, we have 
+					<me>
+						x^9-1=\Phi_9(x)\Phi_3(x)\Phi_1(x)=\Phi_9(x)(x^3-1)
+					</me>
+					and thus <m>\Phi_9(x)=x^9-1/(x^3-1)=x^6+x^3+1</m>. 
+					</p>
+					</li>
+					<li>
+						<p>
+							By <xref ref="th_cyc_ext"/> we have 
+							<me>
+								G\cong (\Z/9\Z)^*
+							</me>.
+							For notational ease we will henceforth identify these two groups. Furthermore, we will write <m>n</m> instead of <m>\overline{n}</m> for elements of <m>(\Z/9\Z)^*</m>. 
+							Since <m>9=3^2</m>, <m>G</m> is cyclic (<xref ref="th_unit_groups" text="global"/>), of cardinality <m>6</m>. A simple inspection of elements of <m>G</m> reveals that <m>(\Z/9\Z)^*=\angvec{2}</m>.  
+							Since the <m>G</m> is cyclic, there is a unique subgroup for each <m>d</m> dividing <m>9</m>, and this subgroup is cyclic. It is easy to see that <m>\angvec{-1}</m> is the unique subgroup of cardinality <m>2</m>, and <m>\angvec{4}</m> is the unique subgroup of cardinality <m>3</m>. We thus have the following lattice of subgroups: 
+							<image width="50%" xml:id="im_subgrp_ninth">
+								<shortdescription>Lattice of subgroups</shortdescription>
+								<latex-image>
+								\begin{tikzcd}
+								\amp \{1\} \\
+								\angvec{-1}\arrow[ur,dash,"2"] \amp \\
+								\amp \amp \angvec{4} \arrow[uul,dash,"3"']\\
+								\amp G=(\Z/9\Z)^*\arrow[uul,dash]\arrow[ur,dash]
+								\end{tikzcd}
+								</latex-image>
+							</image>
+						</p>
+					</li>
+					<li>
+						<p>
+							Using the Galois correspondence, we derive the following lattice of subfields. 
+							<image width="70%" xml:id="im_subfld_ninth">
+								<shortdescription>Lattice of subfields</shortdescription>
+								<latex-image>
+								\begin{tikzcd}
+								\amp K \\
+								K^{\angvec{-1}}=\Q(\zeta+\zeta^{-1})\arrow[ur,dash,"2"] \amp \\
+								\amp \amp K^{\angvec{4}}=\Q(\zeta^3) \arrow[uul,dash,"3"']\\
+								\amp \Q \arrow[uul,dash, "3"]\arrow[ur,dash,"2"']
+								\end{tikzcd}
+								</latex-image>
+							</image>
+							Note that <m>\zeta^3</m> is a primitive cube-root of unity, and we know already that <m>\Q(\zeta^3)</m> is a degree-2 extension of <m>\Q</m>. Since <m>K^{\angvec{4}}/\Q</m> is the unique degree-2 subextension, we must have <m>K^{\angvec{4}}=\Q(\zeta^3)</m>. Alternatively, we could proceed more directly. The automorphism <m>\sigma_4</m> corresponding to <m>4\in (\Z/9\Z)^*</m> is summarized as 
+							<me>
+								\zeta\xmapsto{\sigma_4}\zeta^4
+							</me>.
+							It follows that
+							<me>
+								\sigma_4(\zeta^3)=\zeta^{12}=\zeta^3
+							</me>,
+							showing that <m>\angvec{4}\leq \Aut_{\Q(\zeta^3)}(K)</m> and thus <m>\Q(\zeta^3)\leq K^{\angvec{4}}</m>. We get equality by comparing degrees. 
+						</p>
+						<p>
+							By <xref ref="cor_cyc_ext_complex_conj"/>, we know that <m>-1</m> corresponds to the complex conjugation automorphism, and we have 
+							<me>
+								K^{\angvec{-1}}=\Q(\zeta+\zeta^{-1})=\Q(\operatorname{Re} \zeta)=\Q(\cos(2\pi/9))
+							</me>.
+							
+						</p>
+					</li>
+				</ol>
+			</p>
+		</solution>
+	</example>
+	<example xml:id="eg_15th_cyc">
+		<title><m>15</m>-th cyclotomic extension</title>
+		<statement>
+			<p>
+				Let <m>K=\Q(\zeta)</m>, where <m>\zeta\in \C</m> is a primitive <m>15</m>-th root of unity. Let <m>G=\Gal(K/\Q)</m>. 
+				<ol>
+					<li>
+						<p>
+							Compute <m>\Phi_{15}(x)</m>. 
+						</p>
+					</li>
+					<li>
+						<p>
+							Compute the lattice of subgroups of <m>G</m>.  
+						</p>
+					</li>
+					<li>
+						<p>
+							Compute the lattice of intermediate fields of <m>K/\Q</m> and describe each field either in the form <m>\Q(\alpha)</m>, where <m>\alpha</m> is written as a polynomial expression in <m>\zeta</m> and <m>\zeta^{-1}</m>, or in the form <m>\Q(\sqrt{m})</m> for some integer <m>m</m>. 
+						</p>
+					</li>
+				</ol>
+			</p>
+		</statement>
+		<solution>
+			<p>
+				<ol>
+					<li>
+						<p>
+							Using <xref ref="th_cyc_polys_comp"/>, we have 
+							<md>
+								<mrow>\Phi_{15}(x) \amp =\Phi_{3}(x^5)/\Phi_3(x)</mrow>
+								<mrow> \amp =(x^{10}+x^5+1)/(x^2+x+1)</mrow>
+								<mrow> \amp = x^8-x^7+x^5+x^4+x^3-x+1</mrow>
+							</md>.
+					</p>
+					</li>
+					<li>
+						<p>
+							By <xref ref="th_cyc_ext"/> and <xref ref="th_unit_groups"/> we have 
+							<me>
+								G\cong (\Z/15\Z)^*\cong (\Z/3\Z)^*\times (\Z/5\Z)^*\cong \Z/2\Z\times \Z/4\Z
+							</me>.
+							The last isomorphic description of <m>G</m> helps us see that in fact we have <m>G=\angvec{-1}\times \angvec{2}</m>. Proper subgroups of <m>G</m> will be of cardinality <m>2</m> and <m>4</m>, and hence are either cyclic, or of the form <m>\angvec{a,b}</m> for elements <m>a</m> and <m>b</m> of order <m>2</m>. Using the description <m>G=\angvec{-1}\times \angvec{2}</m>, we see that there are exactly 3 elements of order <m>2</m>, and thus <m>\angvec{-1}, \angvec{4},\angvec{-4}</m> are the three subgroups of cardinality 2. Next it is easy to see that the elements of order 4 are <m>\pm 2</m> and <m>\pm 2^3=\pm 8</m>, giving rise to the two <em>cyclic</em> subgroups <m>\angvec{2}</m> and <m>\angvec{-2}</m> of cardinality <m>4</m>. Lastly, the only possibility for a <em>non-cyclic</em> subgroup of cardinality <m>4</m> is 
+							<me>
+								\{1,-1,4,-4\}=\angvec{-1,4}
+							</me>.
+							In all we have the following lattice of subgroups. 
+							<image width="50%" xml:id="im_subgrp_15th">
+								<shortdescription>Lattice of subgroups</shortdescription>
+								<latex-image>
+								\begin{tikzcd}
+								\amp \{1\} \\
+								\angvec{-1}\arrow[ur,dash,"2"] \amp \angvec{4}\arrow[u,dash,"2"] \amp \angvec{-4}\arrow[ul,dash,"2"']\\
+								\angvec{2}\arrow[ur,dash]\amp \angvec{-1,4}\arrow[ul,dash]\arrow[u,dash]\arrow[ur,dash] \amp \angvec{-2} \arrow[ul,dash]\\
+								\amp G=(\Z/15\Z)^*\arrow[ul,dash]\arrow[u,dash]\arrow[ur,dash] 
+								\end{tikzcd}
+								</latex-image>
+							</image>
+						</p>
+					</li>
+					<li>
+						<p>
+							Using the Galois correspondence, we derive the following lattice of subfields. 
+							<image width="100%" xml:id="im_subfld_15th">
+								<shortdescription>Lattice of subfields</shortdescription>
+								<latex-image>
+								\begin{tikzcd}
+								\amp K \\
+								K^{\angvec{-1}}=\Q(\zeta+\zeta^{-1})\arrow[ur,dash,"2"] \amp K^{\angvec{4}}=\Q(\zeta^3+\zeta^{-3}+\zeta^{5}+\zeta^{-5})\arrow[u,dash,"2"] \amp K^{\angvec{-4}}=\Q(\zeta^{3})\arrow[ul,dash,"2"']\\
+								K^{\angvec{2}}=\Q(\sqrt{-15})\arrow[ur,dash]\amp K^{\angvec{-1,4}}=\Q(\zeta^3+\zeta^{-3})=\Q(\sqrt{5})\arrow[ul,dash]\arrow[u,dash]\arrow[ur,dash] \amp K^{\angvec{-2}}=\Q(\zeta^5)=\Q(\sqrt{-3}) \arrow[ul,dash]\\
+								\amp \Q \arrow[ul,dash]\arrow[u,dash]\arrow[ur,dash] 
+								\end{tikzcd}
+								</latex-image>
+							</image>
+							Now to explain some of the computations above. Note that <m>\zeta^3</m> is a primitive <m>5</m>-th root of unity, and we know already that <m>\Q(\zeta^3)</m> is a degree-4 extension of <m>\Q</m>. Since <m>\sigma_{-4}(\zeta^3)=\zeta^{-12}=\zeta^3</m>, we see that <m>\Q(\zeta^3)\leq K^{\angvec{-4}}</m>; since the degrees match, we have equality. Note that the field <m>K^{\angvec{-1,4}}</m> must be the unique quadratic subextension of <m>\Q(\zeta^3)/\Q</m>. We have seen elsewhere that this is <m>\Q(\sqrt{5})=\Q(\zeta^3+\zeta^{-3})</m>. 
+						</p>
+						<p>
+							Next, since <m>\zeta^5</m> is a primitive cube-root of unity that is fixed by <m>\sigma_{-2}</m>, we see that <m>K^{\angvec{-2}}=\Q(\zeta^5)=\Q(\sqrt{-3})</m>. It now follows that the third quadratic extension must be <m>\Q(\sqrt{-15})</m>. 
+						</p>
+						<p>
+							Lastly, using the lattice diagram, we see that 
+							<md>
+								<mrow> K^{\angvec{4}}\amp =\Q(\sqrt{5},\sqrt{-3}) </mrow>
+								<mrow> \amp =\Q(-1+\sqrt{5}+2\sqrt{-3}) \amp (\text{not fixed by any automorphism})</mrow>
+								<mrow> \amp = \Q(\zeta^3+\zeta^{-3}+\zeta^{5}+\zeta^{-5})</mrow>
+							</md>.
+						</p> 
+
+					</li>
+				</ol>
+			</p>
+		</solution>
+	</example>
 </section>
