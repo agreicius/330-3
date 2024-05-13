@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.19.9</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(9\)</span>-th cyclotomic extension.</span>
+</h3>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(K=\Q(\zeta)\text{,}\)</span> where <span class="process-math">\(\zeta=e^{2\pi i/9}\text{,}\)</span> a primitive <span class="process-math">\(9\)</span>-th root of unity. Let <span class="process-math">\(G=\Gal(K/\Q)\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li><div class="para">Compute <span class="process-math">\(\Phi_9(x)\text{.}\)</span>
+</div></li>
+<li><div class="para">Compute the lattice of subgroups of <span class="process-math">\(G\text{.}\)</span>
+</div></li>
+<li><div class="para">Compute the lattice of intermediate fields of <span class="process-math">\(K/\Q\)</span> and describe each field in the form <span class="process-math">\(\Q(\alpha)\text{,}\)</span> where <span class="process-math">\(\alpha\)</span> is written as a polynomial expression in <span class="process-math">\(\zeta\)</span> and <span class="process-math">\(\zeta^{-1}\text{.}\)</span>
+</div></li>
+</ol>
+</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical"><ol class="decimal">
+<li><div class="para logical">
+<div class="para">Using <a href="s_cyclotomic.html#th_cyc_polys_comp" class="xref" data-knowl="./knowl/xref/th_cyc_polys_comp.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.19.8: Computing cyclotomic polynomials">Theorem 1.19.8</a>, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_cyc_polys_comp.html">
+\begin{align*}
+\Phi_9(x) \amp =\Phi_{3^2}(x)\\
+\amp = \Phi_3(x^3)\\
+\amp = x^6+x^3+1\text{.}
+\end{align*}
+</div>
+<div class="para">Alternatively, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_cyc_polys_comp.html">
+\begin{equation*}
+x^9-1=\Phi_9(x)\Phi_3(x)\Phi_1(x)=\Phi_9(x)(x^3-1)
+\end{equation*}
+</div>
+<div class="para">and thus <span class="process-math">\(\Phi_9(x)=x^9-1/(x^3-1)=x^6+x^3+1\text{.}\)</span>
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">By <a href="s_cyclotomic.html#th_cyc_ext" class="xref" data-knowl="./knowl/xref/th_cyc_ext.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.19.6: Cyclotomic extensions of \Q">Theorem 1.19.6</a> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_cyc_ext.html ./knowl/xref/th_unit_groups.html">
+\begin{equation*}
+G\cong (\Z/9\Z)^*\text{.}
+\end{equation*}
+</div>
+<div class="para">For notational ease we will henceforth identify these two groups. Furthermore, we will write <span class="process-math">\(n\)</span> instead of <span class="process-math">\(\overline{n}\)</span> for elements of <span class="process-math">\((\Z/9\Z)^*\text{.}\)</span> Since <span class="process-math">\(9=3^2\text{,}\)</span> <span class="process-math">\(G\)</span> is cyclic (<a href="s_group_theory.html#th_unit_groups" class="xref" data-knowl="./knowl/xref/th_unit_groups.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 0.4.6: Unit groups modulo n">0.4.6</a>), of cardinality <span class="process-math">\(6\text{.}\)</span> A simple inspection of elements of <span class="process-math">\(G\)</span> reveals that <span class="process-math">\((\Z/9\Z)^*=\angvec{2}\text{.}\)</span> Since the <span class="process-math">\(G\)</span> is cyclic, there is a unique subgroup for each <span class="process-math">\(d\)</span> dividing <span class="process-math">\(9\text{,}\)</span> and this subgroup is cyclic. It is easy to see that <span class="process-math">\(\angvec{-1}\)</span> is the unique subgroup of cardinality <span class="process-math">\(2\text{,}\)</span> and <span class="process-math">\(\angvec{4}\)</span> is the unique subgroup of cardinality <span class="process-math">\(3\text{.}\)</span> We thus have the following lattice of subgroups: <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/im_subgrp_ninth.svg" role="img" class="contained" alt="Lattice of subgroups"></div>
+</div>
+</div></li>
+<li>
+<div class="para logical">
+<div class="para">Using the Galois correspondence, we derive the following lattice of subfields. <div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="generated/latex-image/im_subfld_ninth.svg" role="img" class="contained" alt="Lattice of subfields"></div> Note that <span class="process-math">\(\zeta^3\)</span> is a primitive cube-root of unity, and we know already that <span class="process-math">\(\Q(\zeta^3)\)</span> is a degree-2 extension of <span class="process-math">\(\Q\text{.}\)</span> Since <span class="process-math">\(K^{\angvec{4}}/\Q\)</span> is the unique degree-2 subextension, we must have <span class="process-math">\(K^{\angvec{4}}=\Q(\zeta^3)\text{.}\)</span> Alternatively, we could proceed more directly. The automorphism <span class="process-math">\(\sigma_4\)</span> corresponding to <span class="process-math">\(4\in (\Z/9\Z)^*\)</span> is summarized as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\zeta\xmapsto{\sigma_4}\zeta^4\text{.}
+\end{equation*}
+</div>
+<div class="para">It follows that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sigma_4(\zeta^3)=\zeta^{12}=\zeta^3\text{,}
+\end{equation*}
+</div>
+<div class="para">showing that <span class="process-math">\(\angvec{4}\leq \Aut_{\Q(\zeta^3)}(K)\)</span> and thus <span class="process-math">\(\Q(\zeta^3)\leq K^{\angvec{4}}\text{.}\)</span> We get equality by comparing degrees.</div>
+</div>
+<div class="para logical">
+<div class="para">By <a href="s_cyclotomic.html#cor_cyc_ext_complex_conj" class="xref" data-knowl="./knowl/xref/cor_cyc_ext_complex_conj.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.19.7: Complex conjugation">Corollary 1.19.7</a>, we know that <span class="process-math">\(-1\)</span> corresponds to the complex conjugation automorphism, and we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_cyc_ext_complex_conj.html">
+\begin{equation*}
+K^{\angvec{-1}}=\Q(\zeta+\zeta^{-1})=\Q(\operatorname{Re} \zeta)=\Q(\cos(2\pi/9))\text{.}
+\end{equation*}
+</div>
+</div>
+</li>
+</ol></div></div></details></div></article><span class="incontext"><a class="internal" href="s_cyclotomic.html#eg_9th_cyc">in-context</a></span>
+</body>
+</html>

@@ -398,10 +398,9 @@ window.MathJax = {
 <div class="para">where <span class="process-math">\(\zeta\in \Qbar\)</span> is any fixed primitive <span class="process-math">\(n\)</span>-th root of unity. (We often take <span class="process-math">\(\zeta=e^{2\pi i/n}\in \C\text{.}\)</span>) Furthermore, the other primitive <span class="process-math">\(n\)</span>-th roots of unity are precisely the powers <span class="process-math">\(\zeta^i\text{,}\)</span> where <span class="process-math">\(1\leq i\leq n\)</span> and <span class="process-math">\((i,n)=1\text{.}\)</span> Thus, there are exactly <span class="process-math">\(\phi(n)\)</span> distinct primitive <span class="process-math">\(n\)</span>-th roots of unity, where <span class="process-math">\(\phi\)</span> is the <a href="s_group_theory.html#d_Euler_totient" class="xref" data-knowl="./knowl/xref/d_Euler_totient.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 0.4.4: Euler totient function">Euler totient function</a>.</div>
 </div>
 <article class="definition definition-like" id="d_cyclotomoic_poly"><h3 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.19.3</span><span class="period">.</span>
-</h3>
-<div class="para logical" id="d_cyclotomoic_poly-1-1">
-<div class="para">Let <span class="process-math">\(\overline{Q}\)</span> be an algebraic closure of <span class="process-math">\(\Q\text{.}\)</span> Given a positive integer <span class="process-math">\(n\)</span> the <dfn class="terminology"><span class="process-math">\(n\)</span>-th cyclotomic polynomial</dfn> is the polynomial  <span class="process-math">\(\Phi_n(x)\in \Qbar[x]\)</span> defined as follows:</div>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.19.3</span><span class="period">.</span><span class="space"> </span><span class="title">Cyclotomic polynomial.</span>
+</h3> <div class="para logical" id="d_cyclotomoic_poly-2-1">
+<div class="para">Let <span class="process-math">\(\overline{\Q}\)</span> be an algebraic closure of <span class="process-math">\(\Q\text{.}\)</span> Given a positive integer <span class="process-math">\(n\)</span> the <dfn class="terminology"><span class="process-math">\(n\)</span>-th cyclotomic polynomial</dfn> is the polynomial  <span class="process-math">\(\Phi_n(x)\in \Qbar[x]\)</span> defined as follows:</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \Phi_{n}(x)=\prod_{\substack{\alpha\in \mu_n\\ \ord \alpha=n}}(x-\alpha)=\prod_{\substack{1\leq j\leq n\\ (j,n)=1}}(x-\zeta^j)\text{,}
@@ -433,7 +432,7 @@ window.MathJax = {
 </div>
 </div></article><div class="para" id="s_cyclotomic-7">Looking at the cyclotomic polynomials in <a href="s_cyclotomic.html#eg_cyc_polys" class="xref" data-knowl="./knowl/xref/eg_cyc_polys.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.19.4: Cyclotomic polynomials">Example 1.19.4</a>, we notice two things (beyond the fact that <span class="process-math">\(\deg \Phi_n(x)=\phi(n)\)</span>): <span class="process-math">\(\Phi_n(x)\in \Z[x]\text{,}\)</span> and <span class="process-math">\(\Phi_n(x)\)</span> is irreducible over <span class="process-math">\(\Q\text{.}\)</span> This is no accident.</div>
 <article class="theorem theorem-like" id="th_cyc_polys"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.19.5</span><span class="period">.</span><span class="space"> </span><span class="title">Cyclotomic poylnomials.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.19.5</span><span class="period">.</span><span class="space"> </span><span class="title">Cyclotomic polynomials.</span>
 </h3>
 <div class="para logical" id="th_cyc_polys-2-1">
 <div class="para">Let <span class="process-math">\(n\)</span> be a positive integer.</div>
@@ -445,7 +444,7 @@ window.MathJax = {
 </ol>
 </div></article><div class="para logical" id="s_cyclotomic-9">
 <div class="para">
-<a href="s_cyclotomic.html#th_cyc_polys" class="xref" data-knowl="./knowl/xref/th_cyc_polys.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.19.5: Cyclotomic poylnomials">Theorem 1.19.5</a> has some important consequences for cyclotomic field extensions of <span class="process-math">\(\Q\text{.}\)</span> Let <span class="process-math">\(\zeta\in \Qbar\)</span> be a primitive <span class="process-math">\(n\)</span>-th root of unity for some positive integer <span class="process-math">\(n\text{.}\)</span> The extension <span class="process-math">\(K=\Q(\zeta)\)</span> is Galois over <span class="process-math">\(\Q\text{,}\)</span> as it is the splitting field of <span class="process-math">\(x^n-1\text{.}\)</span> (As usual, separability is automatic over a characteristic zero field.) Since <span class="process-math">\(\zeta\)</span> is a root of <span class="process-math">\(\Phi_n(x)\text{,}\)</span> which is irreducible by <a href="s_cyclotomic.html#th_cyc_polys" class="xref" data-knowl="./knowl/xref/th_cyc_polys.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.19.5: Cyclotomic poylnomials">Theorem 1.19.5</a>, we have <span class="process-math">\(m_{\zeta,\Q}(x)=\Phi_n(x)\text{.}\)</span> It follows that</div>
+<a href="s_cyclotomic.html#th_cyc_polys" class="xref" data-knowl="./knowl/xref/th_cyc_polys.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.19.5: Cyclotomic polynomials">Theorem 1.19.5</a> has some important consequences for cyclotomic field extensions of <span class="process-math">\(\Q\text{.}\)</span> Let <span class="process-math">\(\zeta\in \Qbar\)</span> be a primitive <span class="process-math">\(n\)</span>-th root of unity for some positive integer <span class="process-math">\(n\text{.}\)</span> The extension <span class="process-math">\(K=\Q(\zeta)\)</span> is Galois over <span class="process-math">\(\Q\text{,}\)</span> as it is the splitting field of <span class="process-math">\(x^n-1\text{.}\)</span> (As usual, separability is automatic over a characteristic zero field.) Since <span class="process-math">\(\zeta\)</span> is a root of <span class="process-math">\(\Phi_n(x)\text{,}\)</span> which is irreducible by <a href="s_cyclotomic.html#th_cyc_polys" class="xref" data-knowl="./knowl/xref/th_cyc_polys.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.19.5: Cyclotomic polynomials">Theorem 1.19.5</a>, we have <span class="process-math">\(m_{\zeta,\Q}(x)=\Phi_n(x)\text{.}\)</span> It follows that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_cyc_polys.html ./knowl/xref/th_cyc_polys.html ./knowl/xref/th_unit_groups.html">
 \begin{equation*}
 [\Q(\zeta)\colon \Q]=\deg \Phi_n(x)=\phi(n)\text{.}
@@ -524,10 +523,41 @@ window.MathJax = {
 <div class="para">Thus <span class="process-math">\(\phi\)</span> is a group homomorphism. Lastly, since <span class="process-math">\(\phi\)</span> is injective, and since <span class="process-math">\(\abs{G}=\abs{(\Z/n\Z)^*}=\phi(n)\text{,}\)</span> we conclude that <span class="process-math">\(\phi\)</span> is also surjective, and hence a group isomorphism.</div>
 </div>
 </li>
-</ol></div></article></details><div class="para" id="s_cyclotomic-11">Thanks to <a href="s_cyclotomic.html#th_cyc_ext" class="xref" data-knowl="./knowl/xref/th_cyc_ext.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.19.6: Cyclotomic extensions of \Q">Theorem 1.19.6</a> and our thorough understanding of the modular unit groups <span class="process-math">\((\Z/n\Z)^*\)</span> (see <a href="s_group_theory.html#th_unit_groups" class="xref" data-knowl="./knowl/xref/th_unit_groups.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 0.4.6: Unit groups modulo n">Theorem 0.4.6</a>), the family of cyclotomic extensions of <span class="process-math">\(\Q\)</span> furnish us with a wonderful testing ground for Galois theory. Note that since the Galois groups of a cyclotomic extension <span class="process-math">\(\Q(\zeta)/\Q\)</span> are <em class="emphasis">abelian</em>, all subgroups are normal, and hence all subextensions of <span class="process-math">\(\Q(\zeta)/\Q\)</span> are Galois. As such, cyclotomic examples are not particularly revealing with regard to the issue of normal versus non-normal subextensions. That said, they do give rise to interesting and computable lattices of subfields.</div>
-<div class="para" id="s_cyclotomic-12">Before getting into examples, we record some fascinating and useful properties of cyclotomic polynomials that allow us to compute their expanded form in a recursive manner.</div>
+</ol></div></article></details><div class="para" id="s_cyclotomic-11">It should not be forgotten that complex conjugation <span class="process-math">\(a+bi\mapsto a-bi\)</span> is a <span class="process-math">\(\Q\)</span>-automorphism of any Galois extension <span class="process-math">\(K/\Q\text{.}\)</span> The corollary below identifies which element of <span class="process-math">\((\Z/n\Z)^*\)</span> complex conjugation corresponds to when <span class="process-math">\(K\)</span> is a cyclotomic extension.</div>
+<article class="corollary theorem-like" id="cor_cyc_ext_complex_conj"><h3 class="heading">
+<span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.19.7</span><span class="period">.</span><span class="space"> </span><span class="title">Complex conjugation.</span>
+</h3>
+<div class="para logical" id="cor_cyc_ext_complex_conj-2-1">
+<div class="para">Let <span class="process-math">\(K=\Q(\zeta)\text{,}\)</span> where <span class="process-math">\(\zeta\in \C\)</span> is a primitive <span class="process-math">\(n\)</span>-th root of unity, and let <span class="process-math">\(\sigma\colon K\rightarrow K\)</span> be the restriction of the complex conjugation operation on <span class="process-math">\(\C\)</span> to <span class="process-math">\(K\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li id="cor_cyc_ext_complex_conj-2-1-7-1"><div class="para" id="cor_cyc_ext_complex_conj-2-1-7-1-1">Under the isomorphism described in <a href="s_cyclotomic.html#th_cyc_ext" class="xref" data-knowl="./knowl/xref/th_cyc_ext.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.19.6: Cyclotomic extensions of \Q">Theorem 1.19.6</a>, <span class="process-math">\(\sigma\)</span> corresponds to the element <span class="process-math">\(\overline{-1}\in (\Z/n\Z)^*\text{.}\)</span>
+</div></li>
+<li id="cor_cyc_ext_complex_conj-2-1-7-2"><div class="para logical" id="cor_cyc_ext_complex_conj-2-1-7-2-1">
+<div class="para">Identifying <span class="process-math">\(G\)</span> with <span class="process-math">\((\Z/n\Z)^*\text{,}\)</span> we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+K^{\angvec{\overline{-1}}}=\Q(\zeta+\zeta^{-1})=\Q(\zeta+\overline{\zeta})=\Q(\operatorname{Re} \zeta)\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(\operatorname{Re} \zeta=\frac{1}{2}(\zeta+\overline{\zeta})\)</span> is the real part of <span class="process-math">\(\zeta\text{.}\)</span>
+</div>
+</div></li>
+</ol>
+</div></article><details id="cor_cyc_ext_complex_conj-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="cor_cyc_ext_complex_conj-3-1"><ol class="decimal">
+<li id="cor_cyc_ext_complex_conj-3-1-1-1"><div class="para logical" id="cor_cyc_ext_complex_conj-3-1-1-1-1">
+<div class="para">Since <span class="process-math">\(\zeta^n=1\text{,}\)</span> we have <span class="process-math">\(\abs{\zeta}=1\)</span> and hence, using some complex arithmetic</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\zeta^{-1}=\frac{1}{\abs{\zeta}^2}\overline{\zeta}=\overline{\zeta}=\sigma(\zeta)\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li id="cor_cyc_ext_complex_conj-3-1-1-2"><div class="para" id="cor_cyc_ext_complex_conj-3-1-1-2-1">This is a homework exercise.</div></li>
+</ol></div></article></details><div class="para" id="s_cyclotomic-13">Thanks to <a href="s_cyclotomic.html#th_cyc_ext" class="xref" data-knowl="./knowl/xref/th_cyc_ext.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.19.6: Cyclotomic extensions of \Q">Theorem 1.19.6</a> and our thorough understanding of the modular unit groups <span class="process-math">\((\Z/n\Z)^*\)</span> (see <a href="s_group_theory.html#th_unit_groups" class="xref" data-knowl="./knowl/xref/th_unit_groups.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 0.4.6: Unit groups modulo n">Theorem 0.4.6</a>), the family of cyclotomic extensions of <span class="process-math">\(\Q\)</span> furnish us with a wonderful testing ground for Galois theory. Note that since the Galois groups of a cyclotomic extension <span class="process-math">\(\Q(\zeta)/\Q\)</span> are <em class="emphasis">abelian</em>, all subgroups are normal, and hence all subextensions of <span class="process-math">\(\Q(\zeta)/\Q\)</span> are Galois. As such, cyclotomic examples are not particularly revealing with regard to the issue of normal versus non-normal subextensions. That said, they do give rise to interesting and computable lattices of subfields.</div>
+<div class="para" id="s_cyclotomic-14">Before getting into examples, we record some fascinating and useful properties of cyclotomic polynomials that allow us to compute their expanded form in a recursive manner.</div>
 <article class="theorem theorem-like" id="th_cyc_polys_comp"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.19.7</span><span class="period">.</span><span class="space"> </span><span class="title">Computing cyclotomic polynomials.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.19.8</span><span class="period">.</span><span class="space"> </span><span class="title">Computing cyclotomic polynomials.</span>
 </h3>
 <div class="para logical" id="th_cyc_polys_comp-2-1">
 <div class="para">Given a positive integer <span class="process-math">\(n\text{,}\)</span> let <span class="process-math">\(\Phi_n(x)\)</span> denote the <span class="process-math">\(n\)</span>-th cyclotomic polynomial.</div>
@@ -565,8 +595,11 @@ window.MathJax = {
 \end{equation*}
 </div>
 </div></li>
+<li id="th_cyc_polys_comp-2-1-4-6"><div class="para" id="th_cyc_polys_comp-2-1-4-6-1">
+<span class="process-math">\(\Phi_n(x)=x^\phi(n)\Phi_n(1/x)\text{.}\)</span> As a result, cyclotomic polynomials are palindromic: i.e., if <span class="process-math">\(\Phi_n(x)=a_dx^d+a_{d-1}x^{d-1}+\cdots +a_1x+a_0\text{,}\)</span> then <span class="process-math">\(a_k=a_{d-k}\)</span> for all <span class="process-math">\(0\leq k\leq d\text{.}\)</span>
+</div></li>
 </ol>
-</div></article><details id="th_cyc_polys_comp-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_cyc_polys_comp-3-1">Statement (1) was proved as part of the proof of <a href="s_cyclotomic.html#th_cyc_polys" class="xref" data-knowl="./knowl/xref/th_cyc_polys.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.19.5: Cyclotomic poylnomials">Theorem 1.19.5</a>.</div> <div class="para" id="th_cyc_polys_comp-3-2">The remaining statements can be proved using the following argument: if <span class="process-math">\(f(x)\)</span> and <span class="process-math">\(g(x)\)</span> are (a) monic, (b) separable, and (c) have the same degree, then <span class="process-math">\(f=g\)</span> if and only if they have the same roots. Note that for all <span class="process-math">\(n\in \Z_+\text{,}\)</span> since <span class="process-math">\(\Phi_n(x)\)</span> is irreducible and <span class="process-math">\(\character \Q=-\text{,}\)</span> <span class="process-math">\(\Phi_n(x)\)</span> is separable.</div> <div class="para logical" id="th_cyc_polys_comp-3-3">
+</div></article><details id="th_cyc_polys_comp-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_cyc_polys_comp-3-1">Statement (1) was proved as part of the proof of <a href="s_cyclotomic.html#th_cyc_polys" class="xref" data-knowl="./knowl/xref/th_cyc_polys.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.19.5: Cyclotomic polynomials">Theorem 1.19.5</a>.</div> <div class="para" id="th_cyc_polys_comp-3-2">The remaining statements can be proved using the following argument: if <span class="process-math">\(f(x)\)</span> and <span class="process-math">\(g(x)\)</span> are (a) monic, (b) separable, and (c) have the same degree, then <span class="process-math">\(f=g\)</span> if and only if they have the same roots. Note that for all <span class="process-math">\(n\in \Z_+\text{,}\)</span> since <span class="process-math">\(\Phi_n(x)\)</span> is irreducible and <span class="process-math">\(\character \Q=-\text{,}\)</span> <span class="process-math">\(\Phi_n(x)\)</span> is separable.</div> <div class="para logical" id="th_cyc_polys_comp-3-3">
 <div class="para">For example, consider (2). First observe that since <span class="process-math">\(n\)</span> is odd, we have <span class="process-math">\(\phi(2n)=\phi(2)\phi(n)=\phi(n)\text{.}\)</span> Thus <span class="process-math">\(\deg \Phi_{2n}(x)=\deg \Phi_n(-x)\text{.}\)</span> Furthermore, since <span class="process-math">\(n&gt; 2\text{,}\)</span> <span class="process-math">\(\phi(n)\)</span> is even. Thus <span class="process-math">\(\Phi_n(-x)\)</span> is monic. Lastly, the roots of <span class="process-math">\(\Phi_n(-x)\)</span> are precisely the negatives of the roots of <span class="process-math">\(\Phi_n(x)\text{.}\)</span> Suppose <span class="process-math">\(\zeta\)</span> is a primitive <span class="process-math">\(n\)</span>-th root of unity. Since <span class="process-math">\(n\)</span> is odd, we cannot have <span class="process-math">\(\zeta^j=-1\text{.}\)</span> It follows that</div>
 <div class="displaymath process-math" id="th_cyc_polys_comp-3-3-13">
 \begin{align*}
@@ -577,7 +610,134 @@ window.MathJax = {
 </div>
 <div class="para">This shows that <span class="process-math">\(\ord(-\zeta)=2n\text{.}\)</span> We conclude that the <span class="process-math">\(\phi(n)\)</span> roots of <span class="process-math">\(\Phi_n(-x)\)</span> are precisely the distinct primitive <span class="process-math">\(2n\)</span>-th roots of unity. It follows that both polynomials are separable, and we have  <span class="process-math">\(\Phi_{2n}(x)=\Phi_n(-x)\)</span>
 </div>
-</div> <div class="para" id="th_cyc_polys_comp-3-4">The proofs of the rest of the statements are left as an exercise.</div></article></details></section></div>
+</div> <div class="para" id="th_cyc_polys_comp-3-4">The proofs of the rest of the statements are left as an exercise.</div></article></details><article class="example example-like" id="eg_9th_cyc"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.19.9</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(9\)</span>-th cyclotomic extension.</span>
+</h3>
+<div class="para logical" id="eg_9th_cyc-2-1">
+<div class="para">Let <span class="process-math">\(K=\Q(\zeta)\text{,}\)</span> where <span class="process-math">\(\zeta=e^{2\pi i/9}\text{,}\)</span> a primitive <span class="process-math">\(9\)</span>-th root of unity. Let <span class="process-math">\(G=\Gal(K/\Q)\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li id="eg_9th_cyc-2-1-5-1"><div class="para" id="eg_9th_cyc-2-1-5-1-1">Compute <span class="process-math">\(\Phi_9(x)\text{.}\)</span>
+</div></li>
+<li id="eg_9th_cyc-2-1-5-2"><div class="para" id="eg_9th_cyc-2-1-5-2-1">Compute the lattice of subgroups of <span class="process-math">\(G\text{.}\)</span>
+</div></li>
+<li id="eg_9th_cyc-2-1-5-3"><div class="para" id="eg_9th_cyc-2-1-5-3-1">Compute the lattice of intermediate fields of <span class="process-math">\(K/\Q\)</span> and describe each field in the form <span class="process-math">\(\Q(\alpha)\text{,}\)</span> where <span class="process-math">\(\alpha\)</span> is written as a polynomial expression in <span class="process-math">\(\zeta\)</span> and <span class="process-math">\(\zeta^{-1}\text{.}\)</span>
+</div></li>
+</ol>
+</div>
+<div class="solutions"><details id="eg_9th_cyc-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_9th_cyc-3-1"><ol class="decimal">
+<li id="eg_9th_cyc-3-1-1-1"><div class="para logical" id="eg_9th_cyc-3-1-1-1-1">
+<div class="para">Using <a href="s_cyclotomic.html#th_cyc_polys_comp" class="xref" data-knowl="./knowl/xref/th_cyc_polys_comp.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.19.8: Computing cyclotomic polynomials">Theorem 1.19.8</a>, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_cyc_polys_comp.html" id="eg_9th_cyc-3-1-1-1-1-2">
+\begin{align*}
+\Phi_9(x) \amp =\Phi_{3^2}(x)\\
+\amp = \Phi_3(x^3)\\
+\amp = x^6+x^3+1\text{.}
+\end{align*}
+</div>
+<div class="para">Alternatively, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_cyc_polys_comp.html">
+\begin{equation*}
+x^9-1=\Phi_9(x)\Phi_3(x)\Phi_1(x)=\Phi_9(x)(x^3-1)
+\end{equation*}
+</div>
+<div class="para">and thus <span class="process-math">\(\Phi_9(x)=x^9-1/(x^3-1)=x^6+x^3+1\text{.}\)</span>
+</div>
+</div></li>
+<li id="eg_9th_cyc-3-1-1-2"><div class="para logical" id="eg_9th_cyc-3-1-1-2-1">
+<div class="para">By <a href="s_cyclotomic.html#th_cyc_ext" class="xref" data-knowl="./knowl/xref/th_cyc_ext.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.19.6: Cyclotomic extensions of \Q">Theorem 1.19.6</a> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_cyc_ext.html ./knowl/xref/th_unit_groups.html">
+\begin{equation*}
+G\cong (\Z/9\Z)^*\text{.}
+\end{equation*}
+</div>
+<div class="para">For notational ease we will henceforth identify these two groups. Furthermore, we will write <span class="process-math">\(n\)</span> instead of <span class="process-math">\(\overline{n}\)</span> for elements of <span class="process-math">\((\Z/9\Z)^*\text{.}\)</span> Since <span class="process-math">\(9=3^2\text{,}\)</span> <span class="process-math">\(G\)</span> is cyclic (<a href="s_group_theory.html#th_unit_groups" class="xref" data-knowl="./knowl/xref/th_unit_groups.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 0.4.6: Unit groups modulo n">0.4.6</a>), of cardinality <span class="process-math">\(6\text{.}\)</span> A simple inspection of elements of <span class="process-math">\(G\)</span> reveals that <span class="process-math">\((\Z/9\Z)^*=\angvec{2}\text{.}\)</span> Since the <span class="process-math">\(G\)</span> is cyclic, there is a unique subgroup for each <span class="process-math">\(d\)</span> dividing <span class="process-math">\(9\text{,}\)</span> and this subgroup is cyclic. It is easy to see that <span class="process-math">\(\angvec{-1}\)</span> is the unique subgroup of cardinality <span class="process-math">\(2\text{,}\)</span> and <span class="process-math">\(\angvec{4}\)</span> is the unique subgroup of cardinality <span class="process-math">\(3\text{.}\)</span> We thus have the following lattice of subgroups: <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/im_subgrp_ninth.svg" role="img" class="contained" alt="Lattice of subgroups"></div>
+</div>
+</div></li>
+<li id="eg_9th_cyc-3-1-1-3">
+<div class="para logical" id="eg_9th_cyc-3-1-1-3-1">
+<div class="para">Using the Galois correspondence, we derive the following lattice of subfields. <div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="generated/latex-image/im_subfld_ninth.svg" role="img" class="contained" alt="Lattice of subfields"></div> Note that <span class="process-math">\(\zeta^3\)</span> is a primitive cube-root of unity, and we know already that <span class="process-math">\(\Q(\zeta^3)\)</span> is a degree-2 extension of <span class="process-math">\(\Q\text{.}\)</span> Since <span class="process-math">\(K^{\angvec{4}}/\Q\)</span> is the unique degree-2 subextension, we must have <span class="process-math">\(K^{\angvec{4}}=\Q(\zeta^3)\text{.}\)</span> Alternatively, we could proceed more directly. The automorphism <span class="process-math">\(\sigma_4\)</span> corresponding to <span class="process-math">\(4\in (\Z/9\Z)^*\)</span> is summarized as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\zeta\xmapsto{\sigma_4}\zeta^4\text{.}
+\end{equation*}
+</div>
+<div class="para">It follows that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sigma_4(\zeta^3)=\zeta^{12}=\zeta^3\text{,}
+\end{equation*}
+</div>
+<div class="para">showing that <span class="process-math">\(\angvec{4}\leq \Aut_{\Q(\zeta^3)}(K)\)</span> and thus <span class="process-math">\(\Q(\zeta^3)\leq K^{\angvec{4}}\text{.}\)</span> We get equality by comparing degrees.</div>
+</div>
+<div class="para logical" id="eg_9th_cyc-3-1-1-3-2">
+<div class="para">By <a href="s_cyclotomic.html#cor_cyc_ext_complex_conj" class="xref" data-knowl="./knowl/xref/cor_cyc_ext_complex_conj.html" data-reveal-label="Reveal" data-close-label="Close" title="Corollary 1.19.7: Complex conjugation">Corollary 1.19.7</a>, we know that <span class="process-math">\(-1\)</span> corresponds to the complex conjugation automorphism, and we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/cor_cyc_ext_complex_conj.html">
+\begin{equation*}
+K^{\angvec{-1}}=\Q(\zeta+\zeta^{-1})=\Q(\operatorname{Re} \zeta)=\Q(\cos(2\pi/9))\text{.}
+\end{equation*}
+</div>
+</div>
+</li>
+</ol></div></div></details></div></article><article class="example example-like" id="eg_15th_cyc"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.19.10</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(15\)</span>-th cyclotomic extension.</span>
+</h3>
+<div class="para logical" id="eg_15th_cyc-2-1">
+<div class="para">Let <span class="process-math">\(K=\Q(\zeta)\text{,}\)</span> where <span class="process-math">\(\zeta\in \C\)</span> is a primitive <span class="process-math">\(15\)</span>-th root of unity. Let <span class="process-math">\(G=\Gal(K/\Q)\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li id="eg_15th_cyc-2-1-5-1"><div class="para" id="eg_15th_cyc-2-1-5-1-1">Compute <span class="process-math">\(\Phi_{15}(x)\text{.}\)</span>
+</div></li>
+<li id="eg_15th_cyc-2-1-5-2"><div class="para" id="eg_15th_cyc-2-1-5-2-1">Compute the lattice of subgroups of <span class="process-math">\(G\text{.}\)</span>
+</div></li>
+<li id="eg_15th_cyc-2-1-5-3"><div class="para" id="eg_15th_cyc-2-1-5-3-1">Compute the lattice of intermediate fields of <span class="process-math">\(K/\Q\)</span> and describe each field either in the form <span class="process-math">\(\Q(\alpha)\text{,}\)</span> where <span class="process-math">\(\alpha\)</span> is written as a polynomial expression in <span class="process-math">\(\zeta\)</span> and <span class="process-math">\(\zeta^{-1}\text{,}\)</span> or in the form <span class="process-math">\(\Q(\sqrt{m})\)</span> for some integer <span class="process-math">\(m\text{.}\)</span>
+</div></li>
+</ol>
+</div>
+<div class="solutions"><details id="eg_15th_cyc-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para logical" id="eg_15th_cyc-3-1"><ol class="decimal">
+<li id="eg_15th_cyc-3-1-1-1"><div class="para logical" id="eg_15th_cyc-3-1-1-1-1">
+<div class="para">Using <a href="s_cyclotomic.html#th_cyc_polys_comp" class="xref" data-knowl="./knowl/xref/th_cyc_polys_comp.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.19.8: Computing cyclotomic polynomials">Theorem 1.19.8</a>, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_cyc_polys_comp.html" id="eg_15th_cyc-3-1-1-1-1-2">
+\begin{align*}
+\Phi_{15}(x) \amp =\Phi_{3}(x^5)/\Phi_3(x)\\
+\amp =(x^{10}+x^5+1)/(x^2+x+1)\\
+\amp = x^8-x^7+x^5+x^4+x^3-x+1\text{.}
+\end{align*}
+</div>
+</div></li>
+<li id="eg_15th_cyc-3-1-1-2"><div class="para logical" id="eg_15th_cyc-3-1-1-2-1">
+<div class="para">By <a href="s_cyclotomic.html#th_cyc_ext" class="xref" data-knowl="./knowl/xref/th_cyc_ext.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.19.6: Cyclotomic extensions of \Q">Theorem 1.19.6</a> and <a href="s_group_theory.html#th_unit_groups" class="xref" data-knowl="./knowl/xref/th_unit_groups.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 0.4.6: Unit groups modulo n">Theorem 0.4.6</a> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_cyc_ext.html ./knowl/xref/th_unit_groups.html">
+\begin{equation*}
+G\cong (\Z/15\Z)^*\cong (\Z/3\Z)^*\times (\Z/5\Z)^*\cong \Z/2\Z\times \Z/4\Z\text{.}
+\end{equation*}
+</div>
+<div class="para">The last isomorphic description of <span class="process-math">\(G\)</span> helps us see that in fact we have <span class="process-math">\(G=\angvec{-1}\times \angvec{2}\text{.}\)</span> Proper subgroups of <span class="process-math">\(G\)</span> will be of cardinality <span class="process-math">\(2\)</span> and <span class="process-math">\(4\text{,}\)</span> and hence are either cyclic, or of the form <span class="process-math">\(\angvec{a,b}\)</span> for elements <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> of order <span class="process-math">\(2\text{.}\)</span> Using the description <span class="process-math">\(G=\angvec{-1}\times \angvec{2}\text{,}\)</span> we see that there are exactly 3 elements of order <span class="process-math">\(2\text{,}\)</span> and thus <span class="process-math">\(\angvec{-1}, \angvec{4},\angvec{-4}\)</span> are the three subgroups of cardinality 2. Next it is easy to see that the elements of order 4 are <span class="process-math">\(\pm 2\)</span> and <span class="process-math">\(\pm 2^3=\pm 8\text{,}\)</span> giving rise to the two <em class="emphasis">cyclic</em> subgroups <span class="process-math">\(\angvec{2}\)</span> and <span class="process-math">\(\angvec{-2}\)</span> of cardinality <span class="process-math">\(4\text{.}\)</span> Lastly, the only possibility for a <em class="emphasis">non-cyclic</em> subgroup of cardinality <span class="process-math">\(4\)</span> is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_cyc_ext.html ./knowl/xref/th_unit_groups.html">
+\begin{equation*}
+\{1,-1,4,-4\}=\angvec{-1,4}\text{.}
+\end{equation*}
+</div>
+<div class="para">In all we have the following lattice of subgroups. <div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/im_subgrp_15th.svg" role="img" class="contained" alt="Lattice of subgroups"></div>
+</div>
+</div></li>
+<li id="eg_15th_cyc-3-1-1-3">
+<div class="para" id="eg_15th_cyc-3-1-1-3-1">Using the Galois correspondence, we derive the following lattice of subfields. <div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="generated/latex-image/im_subfld_15th.svg" role="img" class="contained" alt="Lattice of subfields"></div> Now to explain some of the computations above. Note that <span class="process-math">\(\zeta^3\)</span> is a primitive <span class="process-math">\(5\)</span>-th root of unity, and we know already that <span class="process-math">\(\Q(\zeta^3)\)</span> is a degree-4 extension of <span class="process-math">\(\Q\text{.}\)</span> Since <span class="process-math">\(\sigma_{-4}(\zeta^3)=\zeta^{-12}=\zeta^3\text{,}\)</span> we see that <span class="process-math">\(\Q(\zeta^3)\leq K^{\angvec{-4}}\text{;}\)</span> since the degrees match, we have equality. Note that the field <span class="process-math">\(K^{\angvec{-1,4}}\)</span> must be the unique quadratic subextension of <span class="process-math">\(\Q(\zeta^3)/\Q\text{.}\)</span> We have seen elsewhere that this is <span class="process-math">\(\Q(\sqrt{5})=\Q(\zeta^3+\zeta^{-3})\text{.}\)</span>
+</div>
+<div class="para" id="eg_15th_cyc-3-1-1-3-2">Next, since <span class="process-math">\(\zeta^5\)</span> is a primitive cube-root of unity that is fixed by <span class="process-math">\(\sigma_{-2}\text{,}\)</span> we see that <span class="process-math">\(K^{\angvec{-2}}=\Q(\zeta^5)=\Q(\sqrt{-3})\text{.}\)</span> It now follows that the third quadratic extension must be <span class="process-math">\(\Q(\sqrt{-15})\text{.}\)</span>
+</div>
+<div class="para logical" id="eg_15th_cyc-3-1-1-3-3">
+<div class="para">Lastly, using the lattice diagram, we see that</div>
+<div class="displaymath process-math" id="eg_15th_cyc-3-1-1-3-3-1">
+\begin{align*}
+K^{\angvec{4}}\amp =\Q(\sqrt{5},\sqrt{-3}) \\
+\amp =\Q(-1+\sqrt{5}+2\sqrt{-3}) \amp (\text{not fixed by any automorphism})\\
+\amp = \Q(\zeta^3+\zeta^{-3}+\zeta^{5}+\zeta^{-5})\text{.}
+\end{align*}
+</div>
+</div>
+</li>
+</ol></div></div></details></div></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_Gal_normal.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
