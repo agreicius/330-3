@@ -122,6 +122,21 @@
 				</ol>
 			</p>
 		</statement>
+		<proof>
+			<p>
+				<ol>
+					<li>
+						<p>
+							We first prove that for all positive integers <m>n</m> we have 
+							<md>
+								<mrow>x^n-1 \amp =\prod_{d\mid n}\Phi_d(x)</mrow>
+							</md>. 
+							This result is made official in <xref ref="th_cyc_polys_comp"/>. The proof is by strong induction. The base case <m>n=1</m> is true as <m>\zeta=1</m> is the only primitive first root of unity, and thus <m>\Phi_1(x)=(x-1)=x^1-1</m>. 
+						</p>
+					</li>
+				</ol>
+			</p>
+		</proof>
 	</theorem>
 
 	<p>
