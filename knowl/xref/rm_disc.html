@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="remark remark-like"><h3 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.20.11</span><span class="period">.</span><span class="space"> </span><span class="title">Discriminant and symmetric polynomials.</span>
+</h3> <div class="para logical">
+<div class="para">The expression <a href="s_Gal_poly.html#eq_disc" class="xref" data-knowl="./knowl/xref/eq_disc.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.36">(1.36)</a> defining the discriminant is symmetric in the roots <span class="process-math">\(\alpha_i\text{.}\)</span> More precisely, and more generally, a polynomial <span class="process-math">\(f(x_1,x_2,\dots, x_n)\in F[x_1,x_2,\dots, x_n]\)</span> in the variables <span class="process-math">\(x_1,x_2,\dots, x_n\)</span> is symmetric if for all <span class="process-math">\(\sigma\in S_n\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_disc.html">
+\begin{equation*}
+f(x_{\sigma(1)},x_{\sigma(2)},\dots, x_{\sigma(n)})=f(x_1,x_2,\dots, x_n)\text{.}
+\end{equation*}
+</div>
+<div class="para">There is a rich, wonderful theory of symmetric polynomials that we do not have time to go into. However, it is worth pointing out the so-called <em class="emphasis">elementary symmetric polynomials</em>, a list of <span class="process-math">\(n\)</span> specific symmetric polynomials <span class="process-math">\(s_k(x_1,x_2,\dots, x_n)\text{,}\)</span> <span class="process-math">\(1\leq k\leq n\text{.}\)</span> These are defined in the following manner. Consider the polynomial <span class="process-math">\(G(x,x_1,x_2,\dots, x_n)\)</span> in the <span class="process-math">\(n+1\)</span> variables <span class="process-math">\(x,x_1,\dots, x_n\)</span> defined as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_disc.html">
+\begin{equation}
+G(x,x_1,\dots, x_n)=(x-x_1)(x-x_2)\cdots (x-x_n)\text{.}\tag{1.37}
+\end{equation}
+</div>
+<div class="para">Expanding <span class="process-math">\(G\)</span> out as a polynomial in <span class="process-math">\(x\)</span> with coefficients in <span class="process-math">\(F[x_1,x_2,\dots, x_n]\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_disc.html">
+\begin{align*}
+G \amp = x^n-(x_1+x_2+\cdots +x_n)x^{n-1}+\cdots+(-1)^n(x_1x_2\cdots x_n)\\
+\amp = x^n-s_1(x_1,x_2,\dots, x_n)x^{n-1}+s_2(x_1,x_2,\dots, x_n)x^{n-2}+\cdots +(-1)^{n-1}s_{n-1}(x_1,x_2,\dots, x_n)+(-1)^{n}s_n(x_1,x_2,\dots, x_n)\\
+\amp = x^n+\sum_{k=1}^n(-1)^ks_k(x_1,x_2,\dots, x_n)x^k\text{.}
+\end{align*}
+</div>
+<div class="para">Each polynomial <span class="process-math">\(s_k(x_1,x_2,\dots, x_n)\)</span> is a symmetric polynomial in <span class="process-math">\(x_1,x_2,\dots, x_n\text{,}\)</span> and we call these the elementary symmetric polynomials for <span class="process-math">\(n\text{.}\)</span> When <span class="process-math">\(n=3\text{,}\)</span> for example, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_disc.html">
+\begin{align*}
+s_1 \amp =x_1+x_2+x_3 \amp s_2\amp = x_1x_2+x_1x_3+x_2x_3 \amp s_3\amp=x_1x_2x_3 \text{.}
+\end{align*}
+</div>
+<div class="para">Amazingly, any symmetric polynomial can be written as a polynomial expression of the elementary polynomials <span class="process-math">\(s_k\text{.}\)</span> In other words, if <span class="process-math">\(g(x_1,x_2,\dots, x_n)\)</span> is a symmetric polynomial, then we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_disc.html">
+\begin{equation*}
+g=H(s_1,s_2,\dots, s_n)
+\end{equation*}
+</div>
+<div class="para">for some polynomial <span class="process-math">\(H(x_1,x_2,\dots, x_n)\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Returning at last to the discriminant, with the setup as in <a href="s_Gal_poly.html#d_discriminant" class="xref" data-knowl="./knowl/xref/d_discriminant.html" data-reveal-label="Reveal" data-close-label="Close" title="Definition 1.20.4: Discriminant of polynomial">Definition 1.20.4</a>, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_discriminant.html ./knowl/xref/eq_sym.html">
+\begin{equation*}
+\Delta_f=g(\alpha_1,\alpha_2,\dots, \alpha_n)\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(g\)</span> is the symmetric polynomial</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_discriminant.html ./knowl/xref/eq_sym.html">
+\begin{equation*}
+g(x_1,x_2,\dots, x_n)=\prod_{1\leq i&lt; j\leq n}(x_j-x_i)^2\text{.}
+\end{equation*}
+</div>
+<div class="para">By above we have <span class="process-math">\(g=H(s_1,s_2,\dots, s_n)\)</span> for some polynomial <span class="process-math">\(H\text{,}\)</span> in which case</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_discriminant.html ./knowl/xref/eq_sym.html">
+\begin{align*}
+\Delta_f \amp= g(\alpha_1,\dots, \alpha_n)\\
+\amp = H(s_1(\alpha_1,\dots, \alpha_n),\dots, s_n(\alpha_1,\dots, \alpha_n))\text{.}
+\end{align*}
+</div>
+<div class="para">Furthermore, since <span class="process-math">\(f(x)=G(x,\alpha_1,\alpha_2,\dots, \alpha_n)\text{,}\)</span> where <span class="process-math">\(G\)</span> is as in <a href="s_Gal_poly.html#eq_sym" class="xref" data-knowl="./knowl/xref/eq_sym.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.37">(1.37)</a>, we see that by definition</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_discriminant.html ./knowl/xref/eq_sym.html">
+\begin{align*}
+s_k(\alpha_1,\alpha_2,\dots, \alpha_n) \amp = (-1)^ka_{n-k}\text{.}
+\end{align*}
+</div>
+<div class="para">Thus we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/d_discriminant.html ./knowl/xref/eq_sym.html">
+\begin{align*}
+\Delta_f\amp=H(s_1(\alpha_1,\dots, \alpha_n),\dots, s_n(\alpha_1,\dots, \alpha_n))\\
+\amp=H(-a_{n-1},a_{n-2},-a_{n-3}, \dots, (-1)^n\, a_0)\text{,}
+\end{align*}
+</div>
+<div class="para">from whence it follows that <span class="process-math">\(\Delta_f\)</span> is a polynomial expression in the coefficients <span class="process-math">\(a_k\)</span> of <span class="process-math">\(f\text{.}\)</span>
+</div>
+</div></article><span class="incontext"><a class="internal" href="s_Gal_poly.html#rm_disc">in-context</a></span>
+</body>
+</html>

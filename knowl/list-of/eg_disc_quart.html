@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.20.6</span><span class="period">.</span><span class="space"> </span><span class="title">Discriminant of quartic.</span>
+</h3> <div class="para logical">
+<div class="para">Let <span class="process-math">\(f(x)=x^4+1\in \Q[x]\text{.}\)</span> We recognize <span class="process-math">\(f\)</span> as the <span class="process-math">\(4\)</span>-th cyclotomic polynomial <span class="process-math">\(\Phi_4(x)\text{.}\)</span> Thus the roots of <span class="process-math">\(f\)</span> are the primitive <span class="process-math">\(4\)</span>-th roots of unity. In other words, letting <span class="process-math">\(\zeta=e^{2\pi i/8}\text{,}\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/table_disc.html">
+\begin{equation*}
+f(x)=(x-\zeta)(x-\zeta^3)(x-\zeta^5)(x-\zeta^7)\text{.}
+\end{equation*}
+</div>
+<div class="para">The discriminant of <span class="process-math">\(f\)</span> is thus</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/table_disc.html">
+\begin{align*}
+\Delta_f \amp = [(\zeta^3-\zeta)(\zeta^5-\zeta^3)(\zeta^7-\zeta^5)(\zeta^7-\zeta)(\zeta^7-\zeta^3)(\zeta^5-\zeta)]^2 ]\\
+\amp = [(-\sqrt{2})(-\sqrt{2}i)(\sqrt{2})(-\sqrt{2}i)(2\zeta^7)(-2\zeta)]^2 \amp (\zeta^7=-\zeta^3, \zeta^5=-\zeta)\\
+\amp = 2^8i^4\zeta^8\\
+\amp = 256\text{.}
+\end{align*}
+</div>
+<div class="para">You can verify our answer with <a href="s_Gal_poly.html#table_disc" class="xref" data-knowl="./knowl/xref/table_disc.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.20.10: Discriminant formulas">Table 1.20.10</a>.</div>
+</div></article><span class="incontext"><a class="internal" href="s_Gal_poly.html#eg_disc_quart">in-context</a></span>
+</body>
+</html>

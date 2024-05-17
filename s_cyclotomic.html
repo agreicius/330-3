@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s_Gal_normal.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_Galois_theory.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s_Gal_normal.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_Galois_theory.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_Gal_poly.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
   \newcommand{\Q}{{\mathbb Q}}
   \newcommand{\R}{{\mathbb R}}
   \newcommand{\C}{{\mathbb C}}
@@ -186,6 +186,7 @@ window.MathJax = {
   \DeclareMathOperator{\ab}{ab}
   \DeclareMathOperator{\character}{char}
   \DeclareMathOperator{\ord}{ord}
+  \DeclareMathOperator{\sgn}{sgn}
 
 
   \newcommand{\surjects}{\twoheadrightarrow}
@@ -352,6 +353,7 @@ window.MathJax = {
 </ul>
 </li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="s_cyclotomic.html" class="internal"><span class="codenumber">1.19</span> <span class="title">Cyclotomic extensions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_Gal_poly.html" class="internal"><span class="codenumber">1.20</span> <span class="title">Galois groups of polynomials</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -442,7 +444,16 @@ window.MathJax = {
 <span class="process-math">\(\Phi_n(x)\)</span> is irreducible over <span class="process-math">\(\Q\text{.}\)</span>
 </div></li>
 </ol>
-</div></article><div class="para logical" id="s_cyclotomic-9">
+</div></article><details id="th_cyc_polys-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_cyc_polys-3-1"><ol class="decimal"><li id="th_cyc_polys-3-1-1-1"><div class="para logical" id="th_cyc_polys-3-1-1-1-1">
+<div class="para">We first prove that for all positive integers <span class="process-math">\(n\)</span> we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_cyc_polys_comp.html" id="th_cyc_polys-3-1-1-1-1-2">
+\begin{align*}
+x^n-1 \amp =\prod_{d\mid n}\Phi_d(x)\text{.}
+\end{align*}
+</div>
+<div class="para">This result is made official in <a href="s_cyclotomic.html#th_cyc_polys_comp" class="xref" data-knowl="./knowl/xref/th_cyc_polys_comp.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.19.8: Computing cyclotomic polynomials">Theorem 1.19.8</a>. The proof is by strong induction. The base case <span class="process-math">\(n=1\)</span> is true as <span class="process-math">\(\zeta=1\)</span> is the only primitive first root of unity, and thus <span class="process-math">\(\Phi_1(x)=(x-1)=x^1-1\text{.}\)</span>
+</div>
+</div></li></ol></div></article></details><div class="para logical" id="s_cyclotomic-9">
 <div class="para">
 <a href="s_cyclotomic.html#th_cyc_polys" class="xref" data-knowl="./knowl/xref/th_cyc_polys.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.19.5: Cyclotomic polynomials">Theorem 1.19.5</a> has some important consequences for cyclotomic field extensions of <span class="process-math">\(\Q\text{.}\)</span> Let <span class="process-math">\(\zeta\in \Qbar\)</span> be a primitive <span class="process-math">\(n\)</span>-th root of unity for some positive integer <span class="process-math">\(n\text{.}\)</span> The extension <span class="process-math">\(K=\Q(\zeta)\)</span> is Galois over <span class="process-math">\(\Q\text{,}\)</span> as it is the splitting field of <span class="process-math">\(x^n-1\text{.}\)</span> (As usual, separability is automatic over a characteristic zero field.) Since <span class="process-math">\(\zeta\)</span> is a root of <span class="process-math">\(\Phi_n(x)\text{,}\)</span> which is irreducible by <a href="s_cyclotomic.html#th_cyc_polys" class="xref" data-knowl="./knowl/xref/th_cyc_polys.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.19.5: Cyclotomic polynomials">Theorem 1.19.5</a>, we have <span class="process-math">\(m_{\zeta,\Q}(x)=\Phi_n(x)\text{.}\)</span> It follows that</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_cyc_polys.html ./knowl/xref/th_cyc_polys.html ./knowl/xref/th_unit_groups.html">
@@ -730,16 +741,16 @@ G\cong (\Z/15\Z)^*\cong (\Z/3\Z)^*\times (\Z/5\Z)^*\cong \Z/2\Z\times \Z/4\Z\tex
 <div class="para">Lastly, using the lattice diagram, we see that</div>
 <div class="displaymath process-math" id="eg_15th_cyc-3-1-1-3-3-1">
 \begin{align*}
-K^{\angvec{4}}\amp =\Q(\sqrt{5},\sqrt{-3}) \\
-\amp =\Q(-1+\sqrt{5}+2\sqrt{-3}) \amp (\text{not fixed by any automorphism})\\
-\amp = \Q(\zeta^3+\zeta^{-3}+\zeta^{5}+\zeta^{-5})\text{.}
+K^{\angvec{4}}\amp =\Q(\zeta^3+\zeta^{-3},\zeta^{5}) \\
+\amp =\Q(\zeta^3+\zeta^{-3}+\zeta^5) \text{,}
 \end{align*}
 </div>
+<div class="para">where the last line follows from the fact that <span class="process-math">\(\zeta^3+\zeta^{-3}+\zeta^5\)</span> is not fixed by any of the four <span class="process-math">\(\Q\)</span>-automorphisms of <span class="process-math">\(K^{\angvec{4}}\text{.}\)</span> (You can verify this last claim by writing all the elements involved in terms of the basis <span class="process-math">\(\{1,\sqrt{5}, \sqrt{3}i, \sqrt{15}i\}\text{.}\)</span>)</div>
 </div>
 </li>
 </ol></div></div></details></div></article></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="s_Gal_normal.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s_Gal_normal.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_Gal_poly.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
