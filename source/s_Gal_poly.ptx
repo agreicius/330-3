@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_Gal_poly" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Galois groups of polynomials</title>
+    <definition xml:id="d_Gal_poly">
+        <title>Galois group of polynomial</title>
+        <statement>
+            <p>
+                Let <m>f(x)\in F[x]</m> be a separable polynomial, and let <m>\Fbar/F</m> be an algebraic closure. Denote by <m>K_f</m> the splitting field of <m>f</m>: <ie/>, we have 
+                <me>K=F(\alpha_1,\alpha_2,\dots, \alpha_n)\leq \overline{F}</me>,
+                where <m>\alpha_1,\alpha_2,\dots, \alpha_n</m> are the roots of <m>f</m> over <m>\overline{F}</m>. We call <m>\Gal(K_f/F)</m> the <term>Galois group of <m>f</m></term>, and write <m>G_f=\Gal(K_f/F)</m>. 
+            </p>
+        </statement>
+    </definition>
+    <definition xml:id="d_permutation_group">
+        <title>Permutation group</title>
+        <statement>
+            <p>
+                Let <m>X=\{1,2,\dots, n\}</m> and let <m>S_n=S_X</m>, the group of permutations of <m>X</m>. A <term>permutation group</term> is a subgroup <m>H</m> of <m>S_n</m>. A permutation group <m>H\leq S_n</m> is <term>transitive</term> if for any pair <m>i\ne j\in X</m> there is a <m>\sigma\in H</m> such that <m>\sigma(i)=j</m>: <ie/>, if the action of <m>H</m> on <m>X</m> is transitive. 
+            </p>
+        </statement>
+    </definition>
+    <theorem xml:id="th_Gal_poly_perm">
+        <title>Galois group as permutation group</title>
+        <statement>
+            <p>
+                Let <m>f(x)\in F[x]</m> be a separable irreducible polynomial of degree <m>n</m>, let <m>\Fbar/F</m>, and let <m>R=\{\alpha_1,\alpha_2,\dots, \alpha_n\}\subseteq \Fbar</m> be the roots of <m>f</m>.
+                <ol>
+                    <li>
+                        <p>
+                            Each <m>\sigma\in G_f</m> defines a permutation 
+                            <md>
+                                <mrow>
+                                    \sigma\colon R \amp \rightarrow R</mrow>
+                                    <mrow>\alpha_i \amp\mapsto \sigma(\alpha_i)=\alpha_{i'} </mrow>
+                            </md>.
+                            There is an injective group homomorphism 
+                            <md>
+                                <mrow>\phi\colon G_f \amp \rightarrow S_n</mrow>
+                            </md>
+                            defined as follows: <m>\phi(\sigma)</m> is the permutation
+                            <md>
+                                <mrow>\{1,2,\dots, n\} \amp \xrightarrow{\ \phi(\sigma)\ } \{1,2,\dots, n\}</mrow>
+                                <mrow>i \amp \xmapsto{\hspace{20pt}} i'</mrow>
+                            </md>,
+                            where <m>\sigma(\alpha_i)=\alpha_{i'}</m>. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The image <m>\im \phi=\phi(G_f)</m> is a transitive subgroup of <m>S_n</m> satisfying 
+                            <me>
+                                n\mid \abs{\phi(G_f)}
+                            </me>.
+                            In other words, <m>G_f</m> is isomorphic to a transitive subgroup of <m>S_n</m> whose cardinality is a multiple of <m>n</m>. 
+                        </p>
+                    </li>
+                </ol> 
+            </p>
+        </statement>
+    </theorem>
+    <p>
+        According to theorem <xref ref="th_Gal_poly_perm"/>, we can identify <m>G_f</m> with a transitive subgroup of <m>S_n</m> whose cardinality is a multiple of <m>n</m>. We now introduce tools that help us narrow down the possibilities even further, the first of which is the discriminant. 
+    </p>
+    <definition xml:id="d_discriminant">
+        <title>Discriminant of polynomial</title>
+        <statement>
+            <p>
+                Let <m>f(x)\in F[x]</m> be a polynomial of degree <m>n</m>, let <m>\Fbar/F</m> be an algebraic closure, and assume <m>f</m> factors over <m>\Fbar</m> as 
+                <me>
+                    f(x)=(x-\alpha_1)(x-\alpha_2)\cdots (x-\alpha_n)
+                </me>.
+                The <term>discriminant of <m>f</m></term>, denoted <m>\Delta_f</m> is defined as 
+                <men xml:id="eq_disc">
+                    \Delta_f=\prod_{1\leq i&lt; j\leq n}(\alpha_j-\alpha_i)^2
+                </men>.
+            </p>
+        </statement>
+    </definition>
+    <p>
+        Looking at the defining expression <xref ref="eq_disc"/>, we see that the discriminant <m>\Delta_f</m> of a polynomial <m>f</m> lives somewhere in the algebraic closure, or more specifically, in the splitting field of <m>f</m>. Somewhat surprisingly, as we will see in <xref ref="th_disc"/>, the discriminant is in fact an element of the base field <m>F</m>. Even more surprisingly, the discriminant can be expressed as a polynomial expression in the coefficients of <m>f</m>. (See <xref ref="rm_disc"/> for an explanation of why this is the case.) <xref ref="th_disc_table"/> provides some examples of this phenomenon for a few types of small-degree polynomial. In the meantime, it is worth computing a few actual examples directly, if only to see why it is not obvious that the discriminant lies in the base field <m>F</m>.  
+    </p>
+    <example xml:base="eg_disc_quad">
+        <title>Discriminant of quadratic</title>
+        <p>
+            Let <m>F</m> be any field, and consider a general monic quadratic polynomial <m>f(x)=x^2+bx+c\in F[x]</m>. Factor <m>f(x)=(x-\alpha)(x-\beta)</m> over an algebraic closure <m>\overline{F}</m>. Expanding out this factorization we see that 
+            <md>
+                <mrow>b \amp =-(\alpha+\beta)</mrow>
+                <mrow>c \amp = \alpha\beta</mrow>
+            </md>.
+            It follows from a little algebra that 
+            <md>
+                <mrow>\Delta_f \amp = (\beta-\alpha)^2</mrow>
+                <mrow> \amp = (\alpha+\beta)^2-4\alpha\beta</mrow>
+                <mrow> \amp = b^2-4c</mrow>
+            </md>.
+            In particular, since <m>b,c\in F</m>, we have <m>\Delta_f\in F</m>.  You can verify our answer with <xref ref="table_disc"/>.
+        </p>
+    </example>
+    <example xml:id="eg_disc_quart">
+        <title>Discriminant of quartic</title>
+        <p>
+            Let <m>f(x)=x^4+1\in \Q[x]</m>. We recognize <m>f</m> as the <m>4</m>-th cyclotomic polynomial <m>\Phi_4(x)</m>. Thus the roots of <m>f</m> are the primitive <m>4</m>-th roots of unity. In other words, letting <m>\zeta=e^{2\pi i/8}</m>, we have 
+            <me>
+                f(x)=(x-\zeta)(x-\zeta^3)(x-\zeta^5)(x-\zeta^7)
+            </me>.
+            The discriminant of <m>f</m> is thus 
+            <md>
+                <mrow>\Delta_f \amp = [(\zeta^3-\zeta)(\zeta^5-\zeta^3)(\zeta^7-\zeta^5)(\zeta^7-\zeta)(\zeta^7-\zeta^3)(\zeta^5-\zeta)]^2 ]</mrow>
+                <mrow> \amp = [(-\sqrt{2})(-\sqrt{2}i)(\sqrt{2})(-\sqrt{2}i)(2\zeta^7)(-2\zeta)]^2 \amp (\zeta^7=-\zeta^3, \zeta^5=-\zeta)</mrow>
+                <mrow> \amp = 2^8i^4\zeta^8</mrow>
+                <mrow> \amp = 256</mrow>
+            </md>.
+            You can verify our answer with <xref ref="table_disc"/>.
+        </p>
+        
+    </example>
+    <p>
+        As we will see, the discriminant <m>\Delta_f</m> detects whether or not <m>G_f</m>, identified as a subgroup of <m>S_n</m>, lies within the alternating subgroup <m>A_n</m>. 
+    </p>
+    <definition xml:id="d_alternating_group">
+        <title>Alternating group</title>
+        <statement>
+            <p>
+                Given <m>\sigma\in S_n</m>, its <term>sign</term> (or <term>parity</term>), denoted <m>\sgn \sigma</m>, is defined as <m>\sgn \sigma=(-1)^n</m>, where <m>\sigma</m> can be written as a product of <m>n</m> <m>2</m>-cycles. The map 
+                <md>
+                    <mrow>\sgn\colon S_n \amp\rightarrow \{\pm 1\}</mrow>
+                    <mrow>\sigma \amp \mapsto \sgn \sigma</mrow>
+                </md> 
+                is a surjective group homomorphism. We define the <term>alternating subgroup</term> of <m>S_n</m>, denoted <m>A_n</m>,  to be the kernel of <m>\sgn</m>: <ie/>, 
+                <me>
+                    A_n=\ker\sgn=\{\sigma\in S_n\colon \sgn \sigma=1\}
+                </me>.
+            </p>
+        </statement>
+    </definition>
+    
+    
+    <theorem xml:id="th_disc">
+        <title>Discriminant and alternating group</title>
+        <statement>
+            <p>
+                Let <m>f(x)\in F[x]</m> be a separable irreducible polynomial. Denote by <m>\sqrt{\Delta_f}</m> a square-root of <m>\Delta_f</m> lying in an algebraic closure <m>\overline{F}</m>. 
+                <ol>
+                    <li>
+                        <p>
+                            <m>\Delta_f\in F</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Assume <m>\character F\ne 2</m>. Let <m>H=\phi(G_f)</m> be the isomorphic image of <m>G_f</m> in <m>S_n</m> under the homomorphism <m>\phi</m> of <xref ref="th_Gal_poly_perm"/>. We have 
+                            <me>
+                                \sqrt{\Delta_f}\in F \iff H\leq A_n
+                            </me>.
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+    </theorem>
+    
+    <theorem xml:id="th_disc_table">
+        <title>Discriminant table</title>
+        <statement>
+            <p>
+                Let <m>F</m> be a field. The table below gives formulas for the discriminant <m>\Delta_f</m> of various types of monic functions <m>f(x)\in F[x]</m>. 
+                <table xml:id="table_disc">
+                    <title>Discriminant formulas</title>
+                    <tabular halign="center">
+                        <row header="yes" bottom="minor">
+                            <cell><m>f</m></cell> <cell><m>\Delta_f</m></cell>
+                        </row>
+                        <row>
+                            <cell><m>x^2+bx+c</m></cell> <cell><m>b^2-4ac</m></cell>
+                        </row>
+                        <row>
+                            <cell><m>x^3+ax+b</m></cell> <cell><m>-4a^3-27b^2</m></cell>
+                        </row>
+                        <row>
+                            <cell><m>x^4+ax+b</m></cell> <cell><m>-27a^4+256b^3</m></cell>
+                        </row>
+                        <row>
+                            <cell><m>x^4+ax^2+b</m></cell> <cell><m>16b(a^2-4b^2)^2</m></cell>
+                        </row>
+                    </tabular>
+                </table>
+            </p>
+        </statement>
+    </theorem>
+    <remark xml:id="rm_disc">
+        <title>Discriminant and symmetric polynomials</title>
+        <p>
+            The expression <xref ref="eq_disc"/> defining the discriminant is symmetric in the roots <m>\alpha_i</m>. More precisely, and more generally, a polynomial <m>f(x_1,x_2,\dots, x_n)\in F[x_1,x_2,\dots, x_n]</m> in the variables <m>x_1,x_2,\dots, x_n</m> is symmetric if for all <m>\sigma\in S_n</m> we have 
+            <me>
+                f(x_{\sigma(1)},x_{\sigma(2)},\dots, x_{\sigma(n)})=f(x_1,x_2,\dots, x_n)
+            </me>.
+            There is a rich, wonderful theory of symmetric polynomials that we do not have time to go into. However, it is worth pointing out the so-called <em>elementary symmetric polynomials</em>, a list of <m>n</m> specific symmetric polynomials <m>s_k(x_1,x_2,\dots, x_n)</m>, <m>1\leq k\leq n</m>. These are defined in the following manner. Consider the polynomial <m>G(x,x_1,x_2,\dots, x_n)</m> in the <m>n+1</m> variables <m>x,x_1,\dots, x_n</m> defined as 
+            <men xml:id="eq_sym">
+                G(x,x_1,\dots, x_n)=(x-x_1)(x-x_2)\cdots (x-x_n)
+            </men>.
+            Expanding <m>G</m> out as a polynomial in <m>x</m> with coefficients in <m>F[x_1,x_2,\dots, x_n]</m>, we have 
+            <md>
+                <mrow>G \amp = x^n-(x_1+x_2+\cdots +x_n)x^{n-1}+\cdots+(-1)^n(x_1x_2\cdots x_n)</mrow>
+                <mrow> \amp = x^n-s_1(x_1,x_2,\dots, x_n)x^{n-1}+s_2(x_1,x_2,\dots, x_n)x^{n-2}+\cdots +(-1)^{n-1}s_{n-1}(x_1,x_2,\dots, x_n)+(-1)^{n}s_n(x_1,x_2,\dots, x_n)</mrow>
+                <mrow> \amp = x^n+\sum_{k=1}^n(-1)^ks_k(x_1,x_2,\dots, x_n)x^k</mrow>
+            </md>.
+            Each polynomial <m>s_k(x_1,x_2,\dots, x_n)</m> is a symmetric polynomial in <m>x_1,x_2,\dots, x_n</m>, and we call these the elementary symmetric polynomials for <m>n</m>. When <m>n=3</m>, for example, we have 
+            <md>
+                <mrow>s_1 \amp =x_1+x_2+x_3 \amp s_2\amp = x_1x_2+x_1x_3+x_2x_3 \amp s_3\amp=x_1x_2x_3 </mrow>
+            </md>.
+            Amazingly, any symmetric polynomial can be written as a polynomial expression of the elementary polynomials <m>s_k</m>. In other words, if <m>g(x_1,x_2,\dots, x_n)</m> is a symmetric polynomial, then we have 
+            <me>
+                g=H(s_1,s_2,\dots, s_n)
+            </me>
+            for some polynomial <m>H(x_1,x_2,\dots, x_n)</m>.
+        </p>
+        <p>
+            Returning at last to the discriminant, with the setup as in <xref ref="d_discriminant"/>, we have 
+            <me>
+                \Delta_f=g(\alpha_1,\alpha_2,\dots, \alpha_n)
+            </me>,
+            where <m>g</m> is the symmetric polynomial  
+            <me>
+                g(x_1,x_2,\dots, x_n)=\prod_{1\leq i&lt; j\leq n}(x_j-x_i)^2
+            </me>.
+            By above we have <m>g=H(s_1,s_2,\dots, s_n)</m> for some polynomial <m>H</m>, in which case
+            <md>
+                <mrow>\Delta_f \amp= g(\alpha_1,\dots, \alpha_n)</mrow>
+                <mrow> \amp = H(s_1(\alpha_1,\dots, \alpha_n),\dots, s_n(\alpha_1,\dots, \alpha_n))</mrow>
+            </md>.
+            Furthermore, since <m>f(x)=G(x,\alpha_1,\alpha_2,\dots, \alpha_n)</m>, where <m>G</m> is as in <xref ref="eq_sym"/>, we see that by definition
+            <md>
+                <mrow>s_k(\alpha_1,\alpha_2,\dots, \alpha_n) \amp = (-1)^ka_{n-k}</mrow>
+            </md>.
+            Thus we have 
+            <md>
+                <mrow>\Delta_f\amp=H(s_1(\alpha_1,\dots, \alpha_n),\dots, s_n(\alpha_1,\dots, \alpha_n))</mrow>
+                <mrow>\amp=H(-a_{n-1},a_{n-2},-a_{n-3}, \dots, (-1)^n\, a_0)</mrow>
+            </md>,
+             from whence it follows that <m>\Delta_f</m> is a polynomial expression in the coefficients <m>a_k</m> of <m>f</m>.
+        </p>
+        
+    </remark>
+
+</section>

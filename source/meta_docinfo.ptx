@@ -95,6 +95,7 @@
       \DeclareMathOperator{\ab}{ab}
       \DeclareMathOperator{\character}{char}
       \DeclareMathOperator{\ord}{ord}
+      \DeclareMathOperator{\sgn}{sgn}
 
 
       \newcommand{\surjects}{\twoheadrightarrow}

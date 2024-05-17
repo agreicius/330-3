@@ -530,7 +530,7 @@
 								<latex-image>
 								\begin{tikzcd}
 								\amp K \\
-								K^{\angvec{-1}}=\Q(\zeta+\zeta^{-1})\arrow[ur,dash,"2"] \amp K^{\angvec{4}}=\Q(\zeta^3+\zeta^{-3}+\zeta^{5}+\zeta^{-5})\arrow[u,dash,"2"] \amp K^{\angvec{-4}}=\Q(\zeta^{3})\arrow[ul,dash,"2"']\\
+								K^{\angvec{-1}}=\Q(\zeta+\zeta^{-1})\arrow[ur,dash,"2"] \amp K^{\angvec{4}}=\Q(\zeta^3+\zeta^{-3}+\zeta^5)\arrow[u,dash,"2"] \amp K^{\angvec{-4}}=\Q(\zeta^{3})\arrow[ul,dash,"2"']\\
 								K^{\angvec{2}}=\Q(\sqrt{-15})\arrow[ur,dash]\amp K^{\angvec{-1,4}}=\Q(\zeta^3+\zeta^{-3})=\Q(\sqrt{5})\arrow[ul,dash]\arrow[u,dash]\arrow[ur,dash] \amp K^{\angvec{-2}}=\Q(\zeta^5)=\Q(\sqrt{-3}) \arrow[ul,dash]\\
 								\amp \Q \arrow[ul,dash]\arrow[u,dash]\arrow[ur,dash] 
 								\end{tikzcd}
@@ -544,10 +544,10 @@
 						<p>
 							Lastly, using the lattice diagram, we see that 
 							<md>
-								<mrow> K^{\angvec{4}}\amp =\Q(\sqrt{5},\sqrt{-3}) </mrow>
-								<mrow> \amp =\Q(-1+\sqrt{5}+2\sqrt{-3}) \amp (\text{not fixed by any automorphism})</mrow>
-								<mrow> \amp = \Q(\zeta^3+\zeta^{-3}+\zeta^{5}+\zeta^{-5})</mrow>
-							</md>.
+								<mrow> K^{\angvec{4}}\amp =\Q(\zeta^3+\zeta^{-3},\zeta^{5}) </mrow>
+								<mrow> \amp =\Q(\zeta^3+\zeta^{-3}+\zeta^5) </mrow>
+							</md>,
+							where the last line follows from the fact that <m>\zeta^3+\zeta^{-3}+\zeta^5</m> is not fixed by any of the four <m>\Q</m>-automorphisms of <m>K^{\angvec{4}}</m>. (You can verify this last claim by writing all the elements involved in terms of the basis <m>\{1,\sqrt{5}, \sqrt{3}i, \sqrt{15}i\}</m>.)
 						</p> 
 
 					</li>

@@ -20,4 +20,5 @@
   <xi:include  href="s_Gal_corr_proof.ptx"/>
   <xi:include  href="s_Gal_normal.ptx"/>
   <xi:include  href="s_cyclotomic.ptx"/>
+  <xi:include  href="s_Gal_poly.ptx"/>
 </chapter>
