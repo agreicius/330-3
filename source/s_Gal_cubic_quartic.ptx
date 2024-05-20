@@ -79,7 +79,8 @@
     </example>
     <p>
         For degree-4 irreducible polynomials we need to first take a closer look at the subgroup structure of <m>S_4</m>. According to <xref ref="th_Gal_poly_perm"/> the Galois group <m>G_f</m> of an separable irreducible quartic polynomial is isomorphic to a <em>transitive</em> subgroup of <m>S_4</m>, with cardinality divisible by <m>4</m>. We now set about describing all such subgroups. First we look inside <m>A_4</m>, which has subgroup lattice 
-        <image>
+    </p>
+    <image>
             <shortdescription>Subgroup lattice of A4</shortdescription>
             <latex-image>
             \begin{tikzcd}
@@ -91,8 +92,136 @@
             \arrow[ul,dash]\arrow[u,dash]\arrow[ur,dash]
             \end{tikzcd}
             </latex-image>
-        </image> 
+    </image> 
+    <p>
+        Note that the only <em>transitive</em> subgroups of <m>A_4</m> are the Klein-4 group <m>V</m> and <m>A_4</m> itself. Next we catalogue the transitive subgroups of <m>S_4</m> that do not lie within <m>A_4</m>. The odd permutations of <m>S_4</m> consist of the six 2-cycles of the the form <m>(a\, b)</m> and the the six 4-cycles of the form <m>(a\, b\, \,c \, d)</m>. The <m>4</m>-cycles generate three transitive cyclic subgroups of cardinality <m>4</m>: 
+        <md>
+            <mrow>\angvec{(1234)} \amp=\angvec{(1432)} </mrow>
+            <mrow>\angvec{(1243)} \amp =\angvec{(1342)}</mrow>
+            <mrow>\angvec{(1324)} \amp =\angvec{(1423)}</mrow>
+        </md>.
+        The <m>2</m>-cycles generate non-transitive cyclic subgroups of cardinality two, which can be combined to generate three <em>non-transitive</em> subgroups isomorphic to the Klein-4 group of the form 
+        <me>
+            \{1, (ab),(cd),(ab)(cd)\}
+        </me>,
+        where <m>\{a,b\}\cap \{c,d\}=\emptyset</m>. It is not difficult to show that any two non-disjoint <m>2</m>-cycles generate all of <m>S_4</m>.
     </p>
+    <theorem xml:id="th_S4_trans">
+        <title>Transitive subgroups of <m>S_4</m></title>
+        <statement>
+            <p>
+                The following is a complete list of the transitive subgroups of <m>S_4</m>. 
+                <ol>
+                    <li>
+                        <title>Permutation group <m>S_4</m></title>
+                        <p>
+                            The entire group <m>S_4</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <title>Alternating subgroup <m>A_4</m></title>
+                        <p>
+                            The alternating subgroup <m>A_4</m>, which is normal in <m>S_4</m>. 
+                        </p>
+                    </li>
+                    <li>
+                        <title>Klein-4 group <m>V\normalin A_4</m></title>
+                        <p>
+                            A unique isomorphic copy of the Klein-4 group of the form <m>V=\angvec{(12)(34),(13)(24)}</m>, which is a normal subgroup of <m>A_4</m>. 
+                        </p>
+                    </li>
+                    <li>
+                        <title>Cyclic group <m>C_4</m></title>
+                        <p>
+                            Three isomorphic copies of the cyclic group <m>C_4</m> of the form <m>\angvec{(abcd)}</m>, all of which are conjugate to one another. 
+                        </p>
+                    </li>
+                    <li>
+                        <title>Dihedral group <m>D_4</m></title>
+                        <p>
+                            Three isomorphic copies of <m>D_4</m> of the form <m>\angvec{(abcd),(bd)}</m>, all of which are conjugate to one another. 
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+    </theorem>
+    <definition xml:id="d_resultant">
+        <title>Cubic resolvent</title>
+        <statement>
+            <p>
+                Let <m>f(x)\in F[x]</m> be a degree-4 polynomial that factors over an algebraic closure <m>\overline{F}</m> as 
+                <me>
+                    f(x)=(x-r_1)(x-r_2)(x-r_3)(x-r_4)
+                </me>.
+                Define  
+                <md>
+                    <mrow>\theta_1 \amp =r_1r_2+r_3r_4 </mrow>
+                    <mrow>\theta_2 \amp =r_1r_3+r_2r_4</mrow>
+                    <mrow>\theta_3 \amp =r_1r_4+r_2r_3</mrow>
+                </md>.
+                The <term>cubic resolvent</term> of <m>f</m>, denoted <m>R_f(x)</m>, is the polynomial 
+                <me>
+                    R_f(x)=(x-\theta_1)(x-\theta_2)(x-\theta_3)
+                </me>.
+            </p>
+        </statement>
+    </definition>
+    <theorem xml:id="th_cubic_resolvent">
+        <title>Cubic resolvent</title>
+        <statement>
+            <p>
+                Let <m>f(x)=x^4+ax^3+bx+c\in F[x]</m> be a degree-4 polynomial,
+                and let <m>R_f(x)</m> be its cubic resolvent. 
+                <ol>
+                    <li>
+                        <p>
+                            <m>R_f(x)\in F[x]</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>R_f(x)=x^3-bx^2+(ac-4d)x-(a^2d+c^2-4bd)</m>. In particular, we have the special case
+                            <men>
+                                f(x)=x^4+cx+d \implies R_f(x)=x^3-4dx-c^2
+                            </men>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            The discriminant of <m>R_f(x)</m> is equal to the discriminant of <m>f(x)</m>. In particular, <m>R_f(x)</m> has no repeated roots if and only if <m>f(x)</m> has no repeated roots. 
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+    </theorem>
+    <theorem xml:id="th_Gal_quartic">
+        <title>Galois group of quartic</title>
+        <statement>
+            <p>
+                Let <m>F</m> be a field of characteristic not equal to <m>2</m>, and let <m>f(x)</m> be a separable irreducible polynomial of degree <m>4</m>. Using the notation of <xref ref="th_S4_trans"/>, we have the following equivalences: 
+                <mdn>
+                    <mrow>G_f\cong S_4 \amp \iff \sqrt{\Delta_f}\notin F \text{ and } R_f(x) \text{ is irreducible}</mrow>
+                    <mrow>G_f\cong A_4 \amp \iff \sqrt{\Delta_f}\in F \text{ and } R_f(x) \text{ is irreducible}</mrow>
+                    <mrow>G_f\cong C_4 \text{ or } G_f\cong D_4 \amp \iff \sqrt{\Delta_f}\notin F \text{ and } R_f(x) \text{ is reducible} </mrow>
+                    <mrow>G_f\cong V \amp \iff \sqrt{\Delta_f}\in F \text{ and } R_f(x) \text{ is reducible}</mrow>
+                </mdn>
+            </p>
+        </statement>
+    </theorem>
+    <theorem xml:id="th_D4_or_C4">
+        <title><m>D_4</m> or <m>C_4</m>: partial check</title>
+        <statement>
+            <p>
+                Let <m>f(x)\in \Q[x]</m> be a separable irreducible polynomial of degree <m>4</m>. Using the notation of <xref ref="th_S4_trans"/>, if <m>G_f\cong C_4</m>, then <m>\Delta_f&gt; 0</m>. 
+            </p>
+        </statement>
+    </theorem>
+    
+    
+    
+    
     
 
 </section>
