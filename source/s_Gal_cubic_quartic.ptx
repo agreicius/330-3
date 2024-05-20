@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s_Gal_cubic_quartic" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Cubic and quartic polynomials</title>
+    <p>
+        Let <m>f(x)\in F[x]</m> be a separable irreducible polynomial of degree <m>n\in \{3,4\}</m>. In this section we will introduce means of determining precisely which subgroup of <m>S_n</m> the Galois group <m>G_f</m> is isomorphic to. When <m>n=3</m>, the subgroup structure of <m>S_3</m> is simple enough that the discriminant <m>\Delta_f</m> tells the whole story.  
+    </p>
+    <theorem xml:id="th_Gal_cubic">
+        <title>Galois group of cubics</title>
+        <statement>
+            <p>
+                Let <m>f(x)\in F[x]</m> be a separable irreducible polynomial of degree <m>3</m>. 
+                <ol>
+                    <li>
+                        <p>
+                            <m>G_f\cong A_3</m> or <m>G_f\cong S_3</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>G_f\cong A_3</m> if and only if <m>\sqrt{\Delta_f}\in F</m>. 
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+        <proof>
+            <p>
+                The result follows directly from <xref ref="th_Gal_poly_perm"/> and <xref ref="th_disc"/>.
+            </p>
+        </proof>
+    </theorem>
+    <example>
+        <title>Cubic polynomials</title>
+        <statement>
+            <p>
+                For each cubic polynomial <m>f</m>, identify a subgroup of <m>S_3</m> that <m>G_f</m> is isomorphic to.
+                <ol>
+                    <li>
+                        <p>
+                            <m>f(x)=x^3-x-1</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>f(x)=x^3-3x-1</m>
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>f(x)=x^3-4x-1</m>
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+    </example>
+    <example>
+        <title>Family of <m>A_3</m> cubics</title>
+        <statement>
+            <p>
+             Let <m>k</m> be any integer, and define <m>a=k^2+k+7</m>. Show that the polynomial <m>f(x)=x^3-ax-a</m> is irreducible over <m>\Q</m> and that its Galois group <m>G_f</m> is isomorphic to <m>A_3</m>. 
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Note that <m>k^2+k=k(k+1)</m> is even, and hence <m>a</m> is odd. It follows that <m>f(x)\equiv x^3+x+1</m> modulo <m>2</m>, which is irreducible. It follows that <m>f</m> is irreducible over <m>Z</m>, and hence <m>\Q</m>. 
+            </p>
+            <p>
+                The discriminant of <m>f</m> is 
+                <md>
+                    <mrow>\Delta_f \amp = -4(-a)^3-27(-a)^2=a^2(4a-27)</mrow>
+                    <mrow> \amp = a^2(4k^2+4k+1)</mrow>
+                    <mrow> \amp = \left(a(2k+1)^2\right)^2</mrow>
+                </md>.
+                Thus <m>\sqrt{\Delta_f}\in \Q</m>, and we have <m>G_f\cong A_3</m>. 
+            </p>
+        </solution>
+    </example>
+    <p>
+        For degree-4 irreducible polynomials we need to first take a closer look at the subgroup structure of <m>S_4</m>. According to <xref ref="th_Gal_poly_perm"/> the Galois group <m>G_f</m> of an separable irreducible quartic polynomial is isomorphic to a <em>transitive</em> subgroup of <m>S_4</m>, with cardinality divisible by <m>4</m>. We now set about describing all such subgroups. First we look inside <m>A_4</m>, which has subgroup lattice 
+        <image>
+            <shortdescription>Subgroup lattice of A4</shortdescription>
+            <latex-image>
+            \begin{tikzcd}
+             \amp \amp A_4\\
+             \amp \amp V=\angvec{(12)(34),(13)(24),(14)(23)}\arrow[u,dash] \\
+             \angvec{(123)} \arrow[uurr,dash] \amp \angvec{(124)}\arrow[uur,dash]\amp \amp \angvec{(134)}\arrow[uul,dash]\amp \angvec{(234)}\arrow[uull,dash]\\ 
+            \amp \angvec{(12)(34)}\arrow[uur,dash] \amp \angvec{(13)(24)}\arrow[uu,dash] \amp \angvec{(14)(23)}\arrow[uul,dash] \\
+            \amp \amp \{1\}\arrow[uull,dash]\arrow[uul,dash]\arrow[uur,dash]\arrow[uurr,dash]
+            \arrow[ul,dash]\arrow[u,dash]\arrow[ur,dash]
+            \end{tikzcd}
+            </latex-image>
+        </image> 
+    </p>
+    
+
+</section>

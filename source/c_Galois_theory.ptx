@@ -21,4 +21,5 @@
   <xi:include  href="s_Gal_normal.ptx"/>
   <xi:include  href="s_cyclotomic.ptx"/>
   <xi:include  href="s_Gal_poly.ptx"/>
+  <xi:include  href="s_Gal_cubic_quartic.ptx"/>
 </chapter>
