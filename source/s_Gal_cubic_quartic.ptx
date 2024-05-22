@@ -318,9 +318,14 @@
                 Let <m>f(x)\in \Q[x]</m> be a monic separable irreducible polynomial of degree <m>4</m>. Using the notation of <xref ref="th_S4_trans"/>, if <m>G_f\cong C_4</m>, then <m>\Delta_f&gt; 0</m>. 
             </p>
         </statement>
+        <proof>
+            <p>
+                Assume that <m>G_f\cong C_4</m>. By <xref ref="th_V_D4_C4_splitting"/> the resolvent <m>R_f(x)</m> has a unique root over <m>\Q</m>. 
+            </p>
+        </proof>
     </theorem>
-    <example>
-        <title><m>C_4</m> or <m>D_4</m></title>
+    <example xml:id="eg_D4_C4_partial">
+        <title><m>C_4</m> or <m>D_4</m>: partial check</title>
         <statement>
             <p>
                 Let <m>f(x)=x^4+4x^2-2</m>. Identify a subgroup of <m>S_4</m> that is isomorphic to <m>G_f</m>.
@@ -328,13 +333,13 @@
             <p>
                 You may take for granted that <m>\Delta_f=-18432</m> and <m>R_f(x)=x^3-4x^2+8x-32</m>. 
             </p>
-            <solution>
-                <p>
-
-                </p>
-            </solution>
+            
         </statement>
-        
+        <solution>
+            <p>
+
+            </p>
+        </solution>
     </example>
     <theorem xml:id="th_D4_C4">
         <title><m>D_4</m> or <m>C_4</m></title>
@@ -349,7 +354,26 @@
             </p>
         </statement>
     </theorem>
-    
+    <example xml:id="eg_D4_C4">
+        <title><m>D_4</m> or <m>C_4</m></title>
+        <statement>
+            <p>
+                Prove that the given quartic polynomial <m>f(x)\in \Q[x]</m> is irreducible and determine a subgroup of <m>S_4</m> that is isomorphic to <m>G_f</m>. We have provided the discriminant and cubic resolvent. 
+                <ol>
+                    <li>
+                        <p>
+                            <m>f(x)=x^4+3x+3</m>, <m>\Delta_f=21\cdot 15^2</m>, <m>R_f(x)=x^3-12x-9</m>. 
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>f(x)=x^5+5x+5</m>, <m>\Delta_f=5\cdot 55^2</m>, <m>R_f(x)=x^3-20x-25</m>. 
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+    </example>
     
     
     
