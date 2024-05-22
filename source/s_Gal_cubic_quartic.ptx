@@ -320,7 +320,21 @@
         </statement>
         <proof>
             <p>
-                Assume that <m>G_f\cong C_4</m>. By <xref ref="th_V_D4_C4_splitting"/> the resolvent <m>R_f(x)</m> has a unique root over <m>\Q</m>. 
+                We take <m>\overline{\Q}</m> to be the algebraic closure of <m>\Q</m> in <m>\C</m>. Assume that <m>G_f\cong C_4</m>. Let <m>\alpha</m> be a root of <m>f(x)</m>. Since <m>[K_f\colon \Q]=[\Q(\alpha)\colon \Q]=4</m>, we have <m>K_f=\Q(\alpha)</m>, and thus all roots of <m>f</m> lie in <m>\Q(\alpha)</m>. 
+            </p>
+            <p>
+                If <m>\alpha</m> is real, then since every other root of <m>f</m> is an element of <m>\Q(\alpha)</m>, all roots of <m>f</m> are real. It follows easily in this case that <m>\Delta_f&gt; 0</m>. 
+            </p>
+            <p>
+                The only other possibility is that all the roots are imaginary, in which case the distinct roots can be described as <m>\alpha,\overline{\alpha},\beta,\overline{\beta}</m>, and we have 
+                <md>
+                    <mrow>\Delta_f \amp = (\alpha-\overline{\alpha})^2(\beta-\overline{\beta})^2
+                        (\alpha-\beta)^2(\overline{\alpha}-\overline{\beta})^2(\alpha-\overline{\beta})^2(\overline{\alpha}-\beta)^2</mrow>
+                        <mrow> \amp= (2i\operatorname{Im} \alpha)^2(2i\operatorname{Im} \beta)^2[(\alpha-\beta)(\overline{\alpha-\beta})]^2[(\alpha-\overline{\beta})(\overline{\alpha-\overline{\beta}})]^2</mrow>
+                        <mrow> \amp= (2i\operatorname{Im} \alpha)^2(2i\operatorname{Im} \beta)^2\abs{\alpha-\beta}^4\abs{\alpha-\overline{\beta}}^4</mrow>
+                        <mrow> \amp = 4(\operatorname{Im} \alpha)^2(\operatorname{Im} \beta)^2\abs{\alpha-\beta}^4\abs{\alpha-\overline{\beta}}^4</mrow>
+                        <mrow> \amp &gt; 0</mrow>
+                </md>.
             </p>
         </proof>
     </theorem>
