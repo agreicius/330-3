@@ -6,10 +6,10 @@
         Let <m>f(x)\in F[x]</m> be a separable irreducible polynomial of degree <m>n\in \{3,4\}</m>. In this section we will introduce means of determining precisely which subgroup of <m>S_n</m> the Galois group <m>G_f</m> is isomorphic to. When <m>n=3</m>, the subgroup structure of <m>S_3</m> is simple enough that the discriminant <m>\Delta_f</m> tells the whole story.  
     </p>
     <theorem xml:id="th_Gal_cubic">
-        <title>Galois group of cubics</title>
+        <title>Galois group of cubic</title>
         <statement>
             <p>
-                Let <m>f(x)\in F[x]</m> be a separable irreducible polynomial of degree <m>3</m>. 
+                Let <m>F</m> be a field of cardinality not equal to <m>2</m>, and let <m>f(x)\in F[x]</m> be a separable irreducible polynomial of degree <m>3</m>. 
                 <ol>
                     <li>
                         <p>
@@ -26,10 +26,11 @@
         </statement>
         <proof>
             <p>
-                The result follows directly from <xref ref="th_Gal_poly_perm"/> and <xref ref="th_disc"/>.
+                The result follows directly from <xref ref="th_Gal_poly_perm"/>, <xref ref="th_disc"/>, and the fact that the only transitive subgroups of <m>S_3</m> are <m>A_3</m> and <m>S_3</m>.
             </p>
         </proof>
     </theorem>
+    
     <example>
         <title>Cubic polynomials</title>
         <statement>
@@ -78,34 +79,104 @@
         </solution>
     </example>
     <p>
-        For degree-4 irreducible polynomials we need to first take a closer look at the subgroup structure of <m>S_4</m>. According to <xref ref="th_Gal_poly_perm"/> the Galois group <m>G_f</m> of an separable irreducible quartic polynomial is isomorphic to a <em>transitive</em> subgroup of <m>S_4</m>, with cardinality divisible by <m>4</m>. We now set about describing all such subgroups. First we look inside <m>A_4</m>, which has subgroup lattice 
+        For degree-4 irreducible polynomials we need to first take a closer look at the subgroup structure of <m>S_4</m>. According to <xref ref="th_Gal_poly_perm"/> the Galois group <m>G_f</m> of an separable irreducible quartic polynomial is isomorphic to a <em>transitive</em> subgroup of <m>S_4</m>, with cardinality divisible by <m>4</m>. We now set about describing all such subgroups. First we look inside <m>A_4</m>, whose subgroup lattice is depicted in <xref ref="fig_A4_lattice"/>. The transitive subgroups here are <m>A_4</m> itself and the subgroup 
+        <me>
+            V=\angvec{(12)(34),(13)(24)}=\{e,(12)(34),(13)(24),(14)(23)\}
+        </me>,
+        which is isomorphic to the Klein-4 group <m>\Z/2\Z\times\Z/2\Z</m>. (The <sq>V</sq> stands for <foreign>vier</foreign>, German for <q>four</q>.)
     </p>
-    <image>
-            <shortdescription>Subgroup lattice of A4</shortdescription>
-            <latex-image>
-            \begin{tikzcd}
-             \amp \amp A_4\\
-             \amp \amp V=\angvec{(12)(34),(13)(24),(14)(23)}\arrow[u,dash] \\
-             \angvec{(123)} \arrow[uurr,dash] \amp \angvec{(124)}\arrow[uur,dash]\amp \amp \angvec{(134)}\arrow[uul,dash]\amp \angvec{(234)}\arrow[uull,dash]\\ 
-            \amp \angvec{(12)(34)}\arrow[uur,dash] \amp \angvec{(13)(24)}\arrow[uu,dash] \amp \angvec{(14)(23)}\arrow[uul,dash] \\
-            \amp \amp \{1\}\arrow[uull,dash]\arrow[uul,dash]\arrow[uur,dash]\arrow[uurr,dash]
-            \arrow[ul,dash]\arrow[u,dash]\arrow[ur,dash]
-            \end{tikzcd}
-            </latex-image>
+    <figure xml:id="fig_A4_lattice">
+        <caption>Subgroup lattice of <m>A_4</m></caption>
+    <image xml:id="im_A4_lattice">
+        <shortdescription>Subgroup lattice of A4</shortdescription>
+        <latex-image>
+            \begin{tikzpicture}[node distance=2cm]
+            \node(A4)                           {$A_4$};
+            \node(V4)       [below right=1cm and 1.5cm of A4] {$V$};
+            \node(C31)      [below left=1.75cm and 0cm of A4]  {$\angvec{(123)}$};
+            \node(C32)      [left=.2cm of C31]       {$\angvec{(124)}$};
+            \node(C33)      [left=.2cm of C32]       {$\angvec{(134)}$};
+            \node(C34)      [left=.2cm of C33]       {$\angvec{(234)}$};
+            \node(C22)      [below=1cm of V4]       {$\angvec{(12)(34)}$};
+            \node(C21)      [left=.2cm of C22]       {$\angvec{(12)(34)}$};
+            \node(C23)      [right=.2cm of C22]      {$\angvec{(12)(34)}$};
+            \node(1)            [below=5cm of A4]     {$\left\{1\right\}$};
+            \draw(A4)       -- (V4);
+            \foreach \x\y in {1,2,3,4} {
+                \draw (A4) -- (C3\x) ; %node [midway, fill=white] {3}
+                \draw (C3\x) -- (1);
+            
+            }
+            \foreach \x\y in {1/2,2/3,3/4} {
+                \draw(V4) -- (C2\x); % node [midway, fill=white] {2}
+            %\draw (C3\x) -- (C3\y);
+            \draw (C2\x) -- (1);
+            }
+            %\draw(C21)      -- (C22);
+            %\draw(C22)      -- (C23);
+            \end{tikzpicture}
+        <!-- \begin{tikzcd}
+         \amp \amp A_4\\
+         \amp \amp V=\angvec{(12)(34),(13)(24),(14)(23)}\arrow[u,dash] \\
+         \angvec{(123)} \arrow[uurr,dash] \amp \angvec{(124)}\arrow[uur,dash]\amp \amp \angvec{(134)}\arrow[uul,dash]\amp \angvec{(234)}\arrow[uull,dash]\\ 
+        \amp \angvec{(12)(34)}\arrow[uur,dash] \amp \angvec{(13)(24)}\arrow[uu,dash] \amp \angvec{(14)(23)}\arrow[uul,dash] \\
+        \amp \amp \{1\}\arrow[uull,dash]\arrow[uul,dash]\arrow[uur,dash]\arrow[uurr,dash]
+        \arrow[ul,dash]\arrow[u,dash]\arrow[ur,dash]
+        \end{tikzcd} -->
+        </latex-image>
     </image> 
+</figure>
     <p>
-        Note that the only <em>transitive</em> subgroups of <m>A_4</m> are the Klein-4 group <m>V</m> and <m>A_4</m> itself. Next we catalogue the transitive subgroups of <m>S_4</m> that do not lie within <m>A_4</m>. The odd permutations of <m>S_4</m> consist of the six 2-cycles of the the form <m>(a\, b)</m> and the the six 4-cycles of the form <m>(a\, b\, \,c \, d)</m>. The <m>4</m>-cycles generate three transitive cyclic subgroups of cardinality <m>4</m>: 
+         Next we catalogue the transitive subgroups of <m>S_4</m> that do not lie within <m>A_4</m>. The odd permutations of <m>S_4</m> consist of the six 2-cycles of the the form <m>(a\, b)</m> and the the six 4-cycles of the form <m>(a\, b\, \,c \, d)</m>. The <m>4</m>-cycles generate three transitive cyclic subgroups of cardinality <m>4</m>: 
         <md>
             <mrow>\angvec{(1234)} \amp=\angvec{(1432)} </mrow>
             <mrow>\angvec{(1243)} \amp =\angvec{(1342)}</mrow>
             <mrow>\angvec{(1324)} \amp =\angvec{(1423)}</mrow>
         </md>.
-        The <m>2</m>-cycles generate non-transitive cyclic subgroups of cardinality two, which can be combined to generate three <em>non-transitive</em> subgroups isomorphic to the Klein-4 group of the form 
+        For each of these isomorphic copies of <m>C_4</m>, adding a judicious choice of <m>2</m>-cycle yields a subgroup of cardinality <m>8</m> that is isomorphic to <m>D_4</m>. There are three of these copies of <m>D_4</m> and they are each conjugate:
+        <md>
+            <mrow>\angvec{(1234),(13)} \amp=\angvec{(1234),(24)}=\angvec{(1234)} </mrow>
+            <mrow>\angvec{(1243),(14)} \amp =\angvec{(1243),(23)}</mrow>
+            <mrow>\angvec{(1324),(12)} \amp =\angvec{(1324),(34)}</mrow>
+        </md>.
+        It is not difficult to show that these are all the proper transitive subgroups of <m>S_4</m> that do not lie within <m>A_4</m>. In fact you can show that the remaining proper subgroups of <m>S_4</m> not lying within <m>A_4</m> are the six cyclic groups of the form <m>\angvec{(ab)}</m>, the three further copies of the Klein-4 group of the form 
         <me>
             \{1, (ab),(cd),(ab)(cd)\}
         </me>,
-        where <m>\{a,b\}\cap \{c,d\}=\emptyset</m>. It is not difficult to show that any two non-disjoint <m>2</m>-cycles generate all of <m>S_4</m>.
+        where <m>\{a,b\}\cap \{c,d\}=\emptyset</m>,  and four copies of <m>S_3</m> of the form 
+        <me>
+            \angvec{(abc),(ab)}
+        </me>,
+        and none of these subgroups is transitive. <xref ref="fig_S4_trans"/> summarizes the transitive subgroups of <m>S_4</m> not lying within <m>A_4</m>. Together with our analysis of <m>A_4</m>, we have more or less justified the complete description of the transitive subgroups of <m>S_4</m> given in <xref ref="th_S4_trans"/>. 
     </p>
+    <figure xml:id="fig_S4_trans">
+        <caption>Transitive subgroups of <m>S_4</m> lying outside of <m>A_4</m></caption>
+        <image xml:id="im_S4_trans" width="75%">
+            <shortdescription>Transitive subgroups of S4</shortdescription>
+            <latex-image>
+                \begin{tikzpicture}[node distance=1cm]
+\node(S4)                           {$S_4$};
+\node(A4)   	[below right=2cm and 1.5cm of S4] 	{$A_4$};
+\node(D1)		[below left=1.5cm and 1cm of S4]		{$\angvec{(1243),(14)}$};
+\node(D2)		[left=.1cm of D1]		{$\angvec{(1234),(13)}$};
+\node(D3)		[right=.1cm of D1]		{$\angvec{(1324),(12)}$};
+\node(C1)		[below=1cm of D1]		{$\angvec{(1243)}$};
+\node(C2)		[below=1cm of D2]		{$\angvec{(1234)}$};
+\node(C3)		[below=1cm of D3]		{$\angvec{(1324)}$};
+\node(id)		[below=3cm of D3]		{$\{1\}$};
+\foreach \x in {1,2,3} {
+    \draw (S4) -- (D\x) ; %node [midway, fill=white] {3}
+    \draw (D\x) -- (C\x);
+}
+\foreach \x in {1,2,3} {
+    \draw (C\x) -- (id);
+}
+\draw (S4) -- (A4);
+\draw (A4) -- (id);
+\end{tikzpicture}
+            </latex-image>
+        </image>
+    </figure>
     <theorem xml:id="th_S4_trans">
         <title>Transitive subgroups of <m>S_4</m></title>
         <statement>
@@ -139,7 +210,7 @@
                     <li>
                         <title>Dihedral group <m>D_4</m></title>
                         <p>
-                            Three isomorphic copies of <m>D_4</m> of the form <m>\angvec{(abcd),(bd)}</m>, all of which are conjugate to one another. 
+                            Three isomorphic copies of <m>D_4</m> of the form <m>\angvec{(abcd),(ac)}</m>, all of which are conjugate to one another. 
                         </p>
                     </li>
                 </ol>
@@ -200,7 +271,7 @@
         <title>Galois group of quartic</title>
         <statement>
             <p>
-                Let <m>F</m> be a field of characteristic not equal to <m>2</m>, and let <m>f(x)</m> be a separable irreducible polynomial of degree <m>4</m>. Using the notation of <xref ref="th_S4_trans"/>, we have the following equivalences: 
+                Let <m>F</m> be a field of characteristic not equal to <m>2</m>, and let <m>f(x)</m> be a monic separable irreducible polynomial of degree <m>4</m>. Using the notation of <xref ref="th_S4_trans"/>, we have the following equivalences: 
                 <mdn>
                     <mrow>G_f\cong S_4 \amp \iff \sqrt{\Delta_f}\notin F \text{ and } R_f(x) \text{ is irreducible}</mrow>
                     <mrow>G_f\cong A_4 \amp \iff \sqrt{\Delta_f}\in F \text{ and } R_f(x) \text{ is irreducible}</mrow>
@@ -210,11 +281,71 @@
             </p>
         </statement>
     </theorem>
-    <theorem xml:id="th_D4_or_C4">
-        <title><m>D_4</m> or <m>C_4</m>: partial check</title>
+    
+    <corollary xml:id="th_V_D4_C4_splitting">
+        <title>Splitting behavior of resolvent</title>
+        
         <statement>
             <p>
-                Let <m>f(x)\in \Q[x]</m> be a separable irreducible polynomial of degree <m>4</m>. Using the notation of <xref ref="th_S4_trans"/>, if <m>G_f\cong C_4</m>, then <m>\Delta_f&gt; 0</m>. 
+                Let <m>F</m> be a field of characteristic not equal to <m>2</m>, and let <m>f(x)</m> be a monic separable irreducible polynomial of degree <m>4</m>. Using the notation of <xref ref="th_S4_trans"/>, we have the following equivalences: 
+                <ol>
+                    <li>
+                        <p>
+                            <m>G_f\cong V</m> if and only if <m>R_f(x)</m> splits completely over <m>F</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <m>G_f\cong C_4</m> or <m>G_f\cong D_4</m> if and only if <m>R_f(x)</m> has a unique root in <m>F</m>. 
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+        <proof>
+            <p>
+                This is a homework exercise. 
+            </p>
+        </proof>
+    </corollary>
+    <p>
+        You will notice that so far our theory gives us no means of distinguishing between the case <m>G_f\cong C_4</m> and <m>G_f\cong D_4</m>. <xref ref="th_D4_C4_disc"/> provides us a partial test over the base field <m>\Q</m>; and <xref ref="th_D4_C4"/> gives us a complete, if somewhat involved test that works over a general base field of characteristic not equal to <m>2</m>.
+    </p>
+    <theorem xml:id="th_D4_C4_disc">
+        <title><m>C_4</m> or <m>D_4</m>: partial check</title>
+        <statement>
+            <p>
+                Let <m>f(x)\in \Q[x]</m> be a monic separable irreducible polynomial of degree <m>4</m>. Using the notation of <xref ref="th_S4_trans"/>, if <m>G_f\cong C_4</m>, then <m>\Delta_f&gt; 0</m>. 
+            </p>
+        </statement>
+    </theorem>
+    <example>
+        <title><m>C_4</m> or <m>D_4</m></title>
+        <statement>
+            <p>
+                Let <m>f(x)=x^4+4x^2-2</m>. Identify a subgroup of <m>S_4</m> that is isomorphic to <m>G_f</m>.
+            </p>
+            <p>
+                You may take for granted that <m>\Delta_f=-18432</m> and <m>R_f(x)=x^3-4x^2+8x-32</m>. 
+            </p>
+            <solution>
+                <p>
+
+                </p>
+            </solution>
+        </statement>
+        
+    </example>
+    <theorem xml:id="th_D4_C4">
+        <title><m>D_4</m> or <m>C_4</m></title>
+        <statement>
+            <p>
+                Let <m>F</m> be a field of characteristic not equal to <m>2</m>, and let <m>f(x)</m> be a monic separable irreducible polynomial of degree <m>4</m>. Suppose that <m>\sqrt{\Delta_f}\notin F</m> and that <m>R_f(x)</m> has a unique root <m>r\in F</m>. Letting <m>f(x)=x^4+ax^3+bx^2+c</m>, and using the notation of <xref ref="th_S4_trans"/>, we have 
+                <men>
+                    G_f\cong \begin{cases}C_4 \amp \text{if } x^2+ax+(b-r) \text{ and } x^2-rx+d \text{ split over } K(\sqrt{\Delta_f}) \\
+                    D_4 \amp \text{otherwise.}
+                    \end{cases}
+                </men>
             </p>
         </statement>
     </theorem>
