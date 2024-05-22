@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s_cyclotomic.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_Galois_theory.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s_cyclotomic.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_Galois_theory.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_Gal_cubic_quartic.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
   \newcommand{\Q}{{\mathbb Q}}
   \newcommand{\R}{{\mathbb R}}
   \newcommand{\C}{{\mathbb C}}
@@ -354,6 +354,7 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_cyclotomic.html" class="internal"><span class="codenumber">1.19</span> <span class="title">Cyclotomic extensions</span></a></div></li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="s_Gal_poly.html" class="internal"><span class="codenumber">1.20</span> <span class="title">Galois groups of polynomials</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="s_Gal_cubic_quartic.html" class="internal"><span class="codenumber">1.21</span> <span class="title">Cubic and quartic polynomials</span></a></div></li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -431,7 +432,7 @@ n\mid \abs{\phi(G_f)}\text{.}
 <article class="definition definition-like" id="d_discriminant"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.20.4</span><span class="period">.</span><span class="space"> </span><span class="title">Discriminant of polynomial.</span>
 </h3> <div class="para logical" id="d_discriminant-2-1">
-<div class="para">Let <span class="process-math">\(f(x)\in F[x]\)</span> be a polynomial of degree <span class="process-math">\(n\text{,}\)</span> let <span class="process-math">\(\Fbar/F\)</span> be an algebraic closure, and assume <span class="process-math">\(f\)</span> factors over <span class="process-math">\(\Fbar\)</span> as</div>
+<div class="para">Let <span class="process-math">\(f(x)\in F[x]\)</span> be a monic polynomial of degree <span class="process-math">\(n\text{,}\)</span> let <span class="process-math">\(\Fbar/F\)</span> be an algebraic closure, and assume <span class="process-math">\(f\)</span> factors over <span class="process-math">\(\Fbar\)</span> as</div>
 <div class="displaymath process-math">
 \begin{equation*}
 f(x)=(x-\alpha_1)(x-\alpha_2)\cdots (x-\alpha_n)\text{.}
@@ -443,29 +444,80 @@ f(x)=(x-\alpha_1)(x-\alpha_2)\cdots (x-\alpha_n)\text{.}
 \Delta_f=\prod_{1\leq i&lt; j\leq n}(\alpha_j-\alpha_i)^2\text{.}\tag{1.36}
 \end{equation}
 </div>
-</div></article><div class="para" id="s_Gal_poly-7">Looking at the defining expression <a href="s_Gal_poly.html#eq_disc" class="xref" data-knowl="./knowl/xref/eq_disc.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.36">(1.36)</a>, we see that the discriminant <span class="process-math">\(\Delta_f\)</span> of a polynomial <span class="process-math">\(f\)</span> lives somewhere in the algebraic closure, or more specifically, in the splitting field of <span class="process-math">\(f\text{.}\)</span> Somewhat surprisingly, as we will see in <a href="s_Gal_poly.html#th_disc" class="xref" data-knowl="./knowl/xref/th_disc.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.20.8: Discriminant and alternating group">Theorem 1.20.8</a>, the discriminant is in fact an element of the base field <span class="process-math">\(F\text{.}\)</span> Even more surprisingly, the discriminant can be expressed as a polynomial expression in the coefficients of <span class="process-math">\(f\text{.}\)</span> (See <a href="s_Gal_poly.html#rm_disc" class="xref" data-knowl="./knowl/xref/rm_disc.html" data-reveal-label="Reveal" data-close-label="Close" title="Remark 1.20.11: Discriminant and symmetric polynomials">Remark 1.20.11</a> for an explanation of why this is the case.) <a href="s_Gal_poly.html#th_disc_table" class="xref" data-knowl="./knowl/xref/th_disc_table.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.20.9: Discriminant table">Theorem 1.20.9</a> provides some examples of this phenomenon for a few types of small-degree polynomial. In the meantime, it is worth computing a few actual examples directly, if only to see why it is not obvious that the discriminant lies in the base field <span class="process-math">\(F\text{.}\)</span>
+</div></article><div class="para" id="s_Gal_poly-7">Looking at the defining expression <a href="s_Gal_poly.html#eq_disc" class="xref" data-knowl="./knowl/xref/eq_disc.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.36">(1.36)</a>, we see that the discriminant <span class="process-math">\(\Delta_f\)</span> of a polynomial <span class="process-math">\(f\)</span> lives somewhere in the algebraic closure, or more specifically, in the splitting field of <span class="process-math">\(f\text{.}\)</span> Somewhat surprisingly, as we will see in <a href="s_Gal_poly.html#th_disc" class="xref" data-knowl="./knowl/xref/th_disc.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.20.9: Discriminant and alternating group">Theorem 1.20.9</a>, the discriminant is in fact an element of the base field <span class="process-math">\(F\text{.}\)</span> Even more surprisingly, the discriminant can be expressed as a polynomial expression in the coefficients of <span class="process-math">\(f\text{.}\)</span> (See <a href="s_Gal_poly.html#rm_disc" class="xref" data-knowl="./knowl/xref/rm_disc.html" data-reveal-label="Reveal" data-close-label="Close" title="Remark 1.20.12: Discriminant and symmetric polynomials">Remark 1.20.12</a> for an explanation of why this is the case.) <a href="s_Gal_poly.html#th_disc_table" class="xref" data-knowl="./knowl/xref/th_disc_table.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.20.10: Discriminant table">Theorem 1.20.10</a> provides some examples of this phenomenon for a few types of small-degree polynomial. In the meantime, it is worth computing a few actual examples directly, if only to see why it is not obvious that the discriminant lies in the base field <span class="process-math">\(F\text{.}\)</span>
 </div>
-<article class="example example-like" id="s_Gal_poly-8"><h3 class="heading">
+<article class="example example-like" id="eg_disc_quad"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.20.5</span><span class="period">.</span><span class="space"> </span><span class="title">Discriminant of quadratic.</span>
-</h3> <div class="para logical" id="s_Gal_poly-8-2">
+</h3> <div class="para logical" id="eg_disc_quad-2">
 <div class="para">Let <span class="process-math">\(F\)</span> be any field, and consider a general monic quadratic polynomial <span class="process-math">\(f(x)=x^2+bx+c\in F[x]\text{.}\)</span> Factor <span class="process-math">\(f(x)=(x-\alpha)(x-\beta)\)</span> over an algebraic closure <span class="process-math">\(\overline{F}\text{.}\)</span> Expanding out this factorization we see that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/table_disc.html" id="s_Gal_poly-8-2-5">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/table_disc.html" id="eg_disc_quad-2-5">
 \begin{align*}
 b \amp =-(\alpha+\beta)\\
 c \amp = \alpha\beta\text{.}
 \end{align*}
 </div>
 <div class="para">It follows from a little algebra that</div>
-<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/table_disc.html" id="s_Gal_poly-8-2-6">
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/table_disc.html" id="eg_disc_quad-2-6">
 \begin{align*}
 \Delta_f \amp = (\beta-\alpha)^2\\
-\amp = (\alpha+\beta)^2-4\alpha\beta\\
+\amp = (a\alpha+\beta)^2-4\alpha\beta\\
 \amp = b^2-4c\text{.}
 \end{align*}
 </div>
-<div class="para">In particular, since <span class="process-math">\(b,c\in F\text{,}\)</span> we have <span class="process-math">\(\Delta_f\in F\text{.}\)</span>  You can verify our answer with <a href="s_Gal_poly.html#table_disc" class="xref" data-knowl="./knowl/xref/table_disc.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.20.10: Discriminant formulas">Table 1.20.10</a>.</div>
-</div></article><article class="example example-like" id="eg_disc_quart"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.20.6</span><span class="period">.</span><span class="space"> </span><span class="title">Discriminant of quartic.</span>
+<div class="para">In particular, since <span class="process-math">\(b,c\in F\text{,}\)</span> we have <span class="process-math">\(\Delta_f\in F\text{.}\)</span> You can verify our answer with <a href="s_Gal_poly.html#table_disc" class="xref" data-knowl="./knowl/xref/table_disc.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.20.11: Discriminant formulas">Table 1.20.11</a>.</div>
+</div></article><article class="theorem theorem-like" id="th_cubic_split"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.20.6</span><span class="period">.</span><span class="space"> </span><span class="title">Splitting fields of quadratics and cubics.</span>
+</h3>
+<div class="para logical" id="th_cubic_split-2-1">
+<div class="para">Let <span class="process-math">\(F\)</span> be a field of cardinality not equal to <span class="process-math">\(2\text{,}\)</span> let <span class="process-math">\(f(x)\in F[x]\)</span> be a monic but not necessarily irreducible polynomial, and let <span class="process-math">\(\sqrt{\Delta_f}\in \overline{F}\)</span> be a square-root of <span class="process-math">\(\Delta_f\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li id="th_cubic_split-2-1-6-1"><div class="para" id="th_cubic_split-2-1-6-1-1">If <span class="process-math">\(\deg f=2\text{,}\)</span> then <span class="process-math">\(K_f=F(\sqrt{\Delta_f})\)</span>
+</div></li>
+<li id="th_cubic_split-2-1-6-2"><div class="para" id="th_cubic_split-2-1-6-2-1">If <span class="process-math">\(\deg f=3\text{,}\)</span> then <span class="process-math">\(K_f=F(\alpha, \sqrt{\Delta_f})\text{,}\)</span> where <span class="process-math">\(\alpha\in \overline{F}\)</span> is any root of <span class="process-math">\(f\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details id="th_cubic_split-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_cubic_split-3-1"><ol class="decimal">
+<li id="th_cubic_split-3-1-1-1"><div class="para logical" id="th_cubic_split-3-1-1-1-1">
+<div class="para">Let <span class="process-math">\(f(x)=x^2+ax+b=(x-\alpha)(x-\beta)\text{.}\)</span> We saw in <a href="s_Gal_poly.html#eg_disc_quad" class="xref" data-knowl="./knowl/xref/eg_disc_quad.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.20.5: Discriminant of quadratic">Example 1.20.5</a> that <span class="process-math">\(\Delta_f=b^2-4ac\text{.}\)</span> Since <span class="process-math">\(\character F\ne 2\text{,}\)</span> the quadratic formula applies, and we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_disc_quad.html" id="th_cubic_split-3-1-1-1-1-5">
+\begin{align*}
+\{\alpha,\beta\} \amp =\left\{\frac{-b+\sqrt{b^2-4c}}{2}, \frac{-b-\sqrt{b^2-4c}}{2}\right\} \\
+\amp =\left\{\frac{-b+\sqrt{\Delta_f}}{2},\frac{-b-\sqrt{\Delta_f}}{2}\right\}\text{.}
+\end{align*}
+</div>
+<div class="para">It follows that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_disc_quad.html">
+\begin{equation*}
+K_f=F(\alpha,\beta)=F(\sqrt{\Delta_f})\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li id="th_cubic_split-3-1-1-2"><div class="para logical" id="th_cubic_split-3-1-1-2-1">
+<div class="para">Let <span class="process-math">\(\alpha,\beta,\gamma\)</span> be the roots of <span class="process-math">\(f\text{,}\)</span> and write <span class="process-math">\(f(x)=(x-\alpha)g(x)\text{,}\)</span> where <span class="process-math">\(g(x)=(x-\beta)(x-\gamma)\)</span> and <span class="process-math">\(g(x)\in F(\alpha)[x]\text{.}\)</span> By (1), we have</div>
+<div class="displaymath process-math" id="th_cubic_split-3-1-1-2-1-6">
+\begin{align*}
+K_f \amp =F(\alpha,\beta,\gamma)\\
+\amp =F(\alpha)(\beta,\gamma)\\
+\amp =F(\alpha)(\sqrt{\Delta_g})\text{,}
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(\sqrt{\Delta_g}\in \overline{F}\)</span> is a square-root of <span class="process-math">\(\Delta_g=(\gamma-\beta)^2\text{.}\)</span> Since</div>
+<div class="displaymath process-math" id="th_cubic_split-3-1-1-2-1-9">
+\begin{align*}
+\Delta_f\amp= (\alpha-\beta)^2(\alpha-\gamma)^2(\gamma-\beta)^2 \\
+\amp = g(\alpha)^2\Delta_g\text{,}
+\end{align*}
+</div>
+<div class="para">we see that <span class="process-math">\(\sqrt{\Delta_f}/g(\alpha)=\sqrt{\Delta_g}\text{,}\)</span> and since <span class="process-math">\(g(\alpha)\in F(\alpha)\text{,}\)</span> we conclude that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+K_f=F(\alpha,\sqrt{\Delta_g})=F(\alpha,\sqrt{\Delta_f}/g(\alpha))=F(\alpha,\sqrt{\Delta_f})\text{.}
+\end{equation*}
+</div>
+</div></li>
+</ol></div></article></details><article class="example example-like" id="eg_disc_quart"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.20.7</span><span class="period">.</span><span class="space"> </span><span class="title">Discriminant of quartic.</span>
 </h3> <div class="para logical" id="eg_disc_quart-2">
 <div class="para">Let <span class="process-math">\(f(x)=x^4+1\in \Q[x]\text{.}\)</span> We recognize <span class="process-math">\(f\)</span> as the <span class="process-math">\(4\)</span>-th cyclotomic polynomial <span class="process-math">\(\Phi_4(x)\text{.}\)</span> Thus the roots of <span class="process-math">\(f\)</span> are the primitive <span class="process-math">\(4\)</span>-th roots of unity. In other words, letting <span class="process-math">\(\zeta=e^{2\pi i/8}\text{,}\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/table_disc.html">
@@ -482,11 +534,11 @@ f(x)=(x-\zeta)(x-\zeta^3)(x-\zeta^5)(x-\zeta^7)\text{.}
 \amp = 256\text{.}
 \end{align*}
 </div>
-<div class="para">You can verify our answer with <a href="s_Gal_poly.html#table_disc" class="xref" data-knowl="./knowl/xref/table_disc.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.20.10: Discriminant formulas">Table 1.20.10</a>.</div>
-</div></article><div class="para" id="s_Gal_poly-10">As we will see, the discriminant <span class="process-math">\(\Delta_f\)</span> detects whether or not <span class="process-math">\(G_f\text{,}\)</span> identified as a subgroup of <span class="process-math">\(S_n\text{,}\)</span> lies within the alternating subgroup <span class="process-math">\(A_n\text{.}\)</span>
+<div class="para">You can verify our answer with <a href="s_Gal_poly.html#table_disc" class="xref" data-knowl="./knowl/xref/table_disc.html" data-reveal-label="Reveal" data-close-label="Close" title="Table 1.20.11: Discriminant formulas">Table 1.20.11</a>.</div>
+</div></article><div class="para" id="s_Gal_poly-11">As we will see, the discriminant <span class="process-math">\(\Delta_f\)</span> detects whether or not <span class="process-math">\(G_f\text{,}\)</span> identified as a subgroup of <span class="process-math">\(S_n\text{,}\)</span> lies within the alternating subgroup <span class="process-math">\(A_n\text{.}\)</span>
 </div>
 <article class="definition definition-like" id="d_alternating_group"><h3 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.20.7</span><span class="period">.</span><span class="space"> </span><span class="title">Alternating group.</span>
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.20.8</span><span class="period">.</span><span class="space"> </span><span class="title">Alternating group.</span>
 </h3> <div class="para logical" id="d_alternating_group-2-1">
 <div class="para">Given <span class="process-math">\(\sigma\in S_n\text{,}\)</span> its <dfn class="terminology">sign</dfn> (or <dfn class="terminology">parity</dfn>), denoted <span class="process-math">\(\sgn \sigma\text{,}\)</span> is defined as <span class="process-math">\(\sgn \sigma=(-1)^n\text{,}\)</span> where <span class="process-math">\(\sigma\)</span> can be written as a product of <span class="process-math">\(n\)</span> <span class="process-math">\(2\)</span>-cycles. The map</div>
 <div class="displaymath process-math" id="d_alternating_group-2-1-9">
@@ -502,7 +554,7 @@ A_n=\ker\sgn=\{\sigma\in S_n\colon \sgn \sigma=1\}\text{.}
 \end{equation*}
 </div>
 </div></article><article class="theorem theorem-like" id="th_disc"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.20.8</span><span class="period">.</span><span class="space"> </span><span class="title">Discriminant and alternating group.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.20.9</span><span class="period">.</span><span class="space"> </span><span class="title">Discriminant and alternating group.</span>
 </h3>
 <div class="para logical" id="th_disc-2-1">
 <div class="para">Let <span class="process-math">\(f(x)\in F[x]\)</span> be a separable irreducible polynomial. Denote by <span class="process-math">\(\sqrt{\Delta_f}\)</span> a square-root of <span class="process-math">\(\Delta_f\)</span> lying in an algebraic closure <span class="process-math">\(\overline{F}\text{.}\)</span>
@@ -519,9 +571,9 @@ A_n=\ker\sgn=\{\sigma\in S_n\colon \sgn \sigma=1\}\text{.}
 </div></li>
 </ol>
 </div></article><article class="theorem theorem-like" id="th_disc_table"><h3 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.20.9</span><span class="period">.</span><span class="space"> </span><span class="title">Discriminant table.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.20.10</span><span class="period">.</span><span class="space"> </span><span class="title">Discriminant table.</span>
 </h3>
-<div class="para" id="th_disc_table-2-1">Let <span class="process-math">\(F\)</span> be a field. The table below gives formulas for the discriminant <span class="process-math">\(\Delta_f\)</span> of various types of monic functions <span class="process-math">\(f(x)\in F[x]\text{.}\)</span> <figure class="table table-like" id="table_disc"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.20.10<span class="period">.</span></span><span class="space"> </span>Discriminant formulas</figcaption><div class="tabular-box natural-width"><table class="tabular">
+<div class="para" id="th_disc_table-2-1">Let <span class="process-math">\(F\)</span> be a field. The table below gives formulas for the discriminant <span class="process-math">\(\Delta_f\)</span> of various types of monic functions <span class="process-math">\(f(x)\in F[x]\text{.}\)</span> <figure class="table table-like" id="table_disc"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.20.11<span class="period">.</span></span><span class="space"> </span>Discriminant formulas</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr class="header-horizontal">
 <th scope="col" class="c m b1 r0 l0 t0 lines"><span class="process-math">\(f\)</span></th>
 <th scope="col" class="c m b1 r0 l0 t0 lines"><span class="process-math">\(\Delta_f\)</span></th>
@@ -544,7 +596,7 @@ A_n=\ker\sgn=\{\sigma\in S_n\colon \sgn \sigma=1\}\text{.}
 </tr>
 </table></div></figure>
 </div></article><article class="remark remark-like" id="rm_disc"><h3 class="heading">
-<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.20.11</span><span class="period">.</span><span class="space"> </span><span class="title">Discriminant and symmetric polynomials.</span>
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.20.12</span><span class="period">.</span><span class="space"> </span><span class="title">Discriminant and symmetric polynomials.</span>
 </h3> <div class="para logical" id="rm_disc-2">
 <div class="para">The expression <a href="s_Gal_poly.html#eq_disc" class="xref" data-knowl="./knowl/xref/eq_disc.html" data-reveal-label="Reveal" data-close-label="Close" title="Equation 1.36">(1.36)</a> defining the discriminant is symmetric in the roots <span class="process-math">\(\alpha_i\text{.}\)</span> More precisely, and more generally, a polynomial <span class="process-math">\(f(x_1,x_2,\dots, x_n)\in F[x_1,x_2,\dots, x_n]\)</span> in the variables <span class="process-math">\(x_1,x_2,\dots, x_n\)</span> is symmetric if for all <span class="process-math">\(\sigma\in S_n\)</span> we have</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eq_disc.html">
@@ -617,7 +669,7 @@ s_k(\alpha_1,\alpha_2,\dots, \alpha_n) \amp = (-1)^ka_{n-k}\text{.}
 </div>
 </div></article></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="s_cyclotomic.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s_cyclotomic.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_Gal_cubic_quartic.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.20.6</span><span class="period">.</span><span class="space"> </span><span class="title">Splitting fields of quadratics and cubics.</span>
+</h3>
+<div class="para logical">
+<div class="para">Let <span class="process-math">\(F\)</span> be a field of cardinality not equal to <span class="process-math">\(2\text{,}\)</span> let <span class="process-math">\(f(x)\in F[x]\)</span> be a monic but not necessarily irreducible polynomial, and let <span class="process-math">\(\sqrt{\Delta_f}\in \overline{F}\)</span> be a square-root of <span class="process-math">\(\Delta_f\text{.}\)</span>
+</div>
+<ol class="decimal">
+<li><div class="para">If <span class="process-math">\(\deg f=2\text{,}\)</span> then <span class="process-math">\(K_f=F(\sqrt{\Delta_f})\)</span>
+</div></li>
+<li><div class="para">If <span class="process-math">\(\deg f=3\text{,}\)</span> then <span class="process-math">\(K_f=F(\alpha, \sqrt{\Delta_f})\text{,}\)</span> where <span class="process-math">\(\alpha\in \overline{F}\)</span> is any root of <span class="process-math">\(f\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical"><ol class="decimal">
+<li><div class="para logical">
+<div class="para">Let <span class="process-math">\(f(x)=x^2+ax+b=(x-\alpha)(x-\beta)\text{.}\)</span> We saw in <a href="s_Gal_poly.html#eg_disc_quad" class="xref" data-knowl="./knowl/xref/eg_disc_quad.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.20.5: Discriminant of quadratic">Example 1.20.5</a> that <span class="process-math">\(\Delta_f=b^2-4ac\text{.}\)</span> Since <span class="process-math">\(\character F\ne 2\text{,}\)</span> the quadratic formula applies, and we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_disc_quad.html">
+\begin{align*}
+\{\alpha,\beta\} \amp =\left\{\frac{-b+\sqrt{b^2-4c}}{2}, \frac{-b-\sqrt{b^2-4c}}{2}\right\} \\
+\amp =\left\{\frac{-b+\sqrt{\Delta_f}}{2},\frac{-b-\sqrt{\Delta_f}}{2}\right\}\text{.}
+\end{align*}
+</div>
+<div class="para">It follows that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/eg_disc_quad.html">
+\begin{equation*}
+K_f=F(\alpha,\beta)=F(\sqrt{\Delta_f})\text{.}
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para logical">
+<div class="para">Let <span class="process-math">\(\alpha,\beta,\gamma\)</span> be the roots of <span class="process-math">\(f\text{,}\)</span> and write <span class="process-math">\(f(x)=(x-\alpha)g(x)\text{,}\)</span> where <span class="process-math">\(g(x)=(x-\beta)(x-\gamma)\)</span> and <span class="process-math">\(g(x)\in F(\alpha)[x]\text{.}\)</span> By (1), we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+K_f \amp =F(\alpha,\beta,\gamma)\\
+\amp =F(\alpha)(\beta,\gamma)\\
+\amp =F(\alpha)(\sqrt{\Delta_g})\text{,}
+\end{align*}
+</div>
+<div class="para">where <span class="process-math">\(\sqrt{\Delta_g}\in \overline{F}\)</span> is a square-root of <span class="process-math">\(\Delta_g=(\gamma-\beta)^2\text{.}\)</span> Since</div>
+<div class="displaymath process-math">
+\begin{align*}
+\Delta_f\amp= (\alpha-\beta)^2(\alpha-\gamma)^2(\gamma-\beta)^2 \\
+\amp = g(\alpha)^2\Delta_g\text{,}
+\end{align*}
+</div>
+<div class="para">we see that <span class="process-math">\(\sqrt{\Delta_f}/g(\alpha)=\sqrt{\Delta_g}\text{,}\)</span> and since <span class="process-math">\(g(\alpha)\in F(\alpha)\text{,}\)</span> we conclude that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+K_f=F(\alpha,\sqrt{\Delta_g})=F(\alpha,\sqrt{\Delta_f}/g(\alpha))=F(\alpha,\sqrt{\Delta_f})\text{.}
+\end{equation*}
+</div>
+</div></li>
+</ol></div></article></details><span class="incontext"><a class="internal" href="s_Gal_poly.html#th_cubic_split">in-context</a></span>
+</body>
+</html>

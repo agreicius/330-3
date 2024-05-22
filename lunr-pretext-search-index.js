@@ -2338,7 +2338,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.20",
   "title": "Galois groups of polynomials",
-  "body": " Galois groups of polynomials   Galois group of polynomial   Let be a separable polynomial, and let be an algebraic closure. Denote by the splitting field of : , we have , where are the roots of over . We call the Galois group of , and write .     Permutation group   Let and let , the group of permutations of . A permutation group is a subgroup of . A permutation group is transitive if for any pair there is a such that : , if the action of on is transitive.     Galois group as permutation group   Let be a separable irreducible polynomial of degree , let , and let be the roots of .   Each defines a permutation . There is an injective group homomorphism defined as follows: is the permutation , where .    The image is a transitive subgroup of satisfying . In other words, is isomorphic to a transitive subgroup of whose cardinality is a multiple of .       According to theorem , we can identify with a transitive subgroup of whose cardinality is a multiple of . We now introduce tools that help us narrow down the possibilities even further, the first of which is the discriminant.   Discriminant of polynomial   Let be a polynomial of degree , let be an algebraic closure, and assume factors over as . The discriminant of , denoted is defined as .    Looking at the defining expression , we see that the discriminant of a polynomial lives somewhere in the algebraic closure, or more specifically, in the splitting field of . Somewhat surprisingly, as we will see in , the discriminant is in fact an element of the base field . Even more surprisingly, the discriminant can be expressed as a polynomial expression in the coefficients of . (See for an explanation of why this is the case.) provides some examples of this phenomenon for a few types of small-degree polynomial. In the meantime, it is worth computing a few actual examples directly, if only to see why it is not obvious that the discriminant lies in the base field .   Discriminant of quadratic  Let be any field, and consider a general monic quadratic polynomial . Factor over an algebraic closure . Expanding out this factorization we see that . It follows from a little algebra that . In particular, since , we have . You can verify our answer with .    Discriminant of quartic  Let . We recognize as the -th cyclotomic polynomial . Thus the roots of are the primitive -th roots of unity. In other words, letting , we have . The discriminant of is thus . You can verify our answer with .   As we will see, the discriminant detects whether or not , identified as a subgroup of , lies within the alternating subgroup .   Alternating group   Given , its sign (or parity ), denoted , is defined as , where can be written as a product of  -cycles. The map is a surjective group homomorphism. We define the alternating subgroup of , denoted , to be the kernel of : , .     Discriminant and alternating group   Let be a separable irreducible polynomial. Denote by a square-root of lying in an algebraic closure .        Assume . Let be the isomorphic image of in under the homomorphism of . We have .        Discriminant table   Let be a field. The table below gives formulas for the discriminant of various types of monic functions .  Discriminant formulas                             Discriminant and symmetric polynomials  The expression defining the discriminant is symmetric in the roots . More precisely, and more generally, a polynomial in the variables is symmetric if for all we have . There is a rich, wonderful theory of symmetric polynomials that we do not have time to go into. However, it is worth pointing out the so-called elementary symmetric polynomials , a list of specific symmetric polynomials , . These are defined in the following manner. Consider the polynomial in the variables defined as . Expanding out as a polynomial in with coefficients in , we have . Each polynomial is a symmetric polynomial in , and we call these the elementary symmetric polynomials for . When , for example, we have . Amazingly, any symmetric polynomial can be written as a polynomial expression of the elementary polynomials . In other words, if is a symmetric polynomial, then we have for some polynomial .  Returning at last to the discriminant, with the setup as in , we have , where is the symmetric polynomial . By above we have for some polynomial , in which case . Furthermore, since , where is as in , we see that by definition . Thus we have , from whence it follows that is a polynomial expression in the coefficients of .   "
+  "body": " Galois groups of polynomials   Galois group of polynomial   Let be a separable polynomial, and let be an algebraic closure. Denote by the splitting field of : , we have , where are the roots of over . We call the Galois group of , and write .     Permutation group   Let and let , the group of permutations of . A permutation group is a subgroup of . A permutation group is transitive if for any pair there is a such that : , if the action of on is transitive.     Galois group as permutation group   Let be a separable irreducible polynomial of degree , let , and let be the roots of .   Each defines a permutation . There is an injective group homomorphism defined as follows: is the permutation , where .    The image is a transitive subgroup of satisfying . In other words, is isomorphic to a transitive subgroup of whose cardinality is a multiple of .       According to theorem , we can identify with a transitive subgroup of whose cardinality is a multiple of . We now introduce tools that help us narrow down the possibilities even further, the first of which is the discriminant.   Discriminant of polynomial   Let be a monic polynomial of degree , let be an algebraic closure, and assume factors over as . The discriminant of , denoted is defined as .    Looking at the defining expression , we see that the discriminant of a polynomial lives somewhere in the algebraic closure, or more specifically, in the splitting field of . Somewhat surprisingly, as we will see in , the discriminant is in fact an element of the base field . Even more surprisingly, the discriminant can be expressed as a polynomial expression in the coefficients of . (See for an explanation of why this is the case.) provides some examples of this phenomenon for a few types of small-degree polynomial. In the meantime, it is worth computing a few actual examples directly, if only to see why it is not obvious that the discriminant lies in the base field .   Discriminant of quadratic  Let be any field, and consider a general monic quadratic polynomial . Factor over an algebraic closure . Expanding out this factorization we see that . It follows from a little algebra that . In particular, since , we have . You can verify our answer with .    Splitting fields of quadratics and cubics   Let be a field of cardinality not equal to , let be a monic but not necessarily irreducible polynomial, and let be a square-root of .   If , then     If , then , where is any root of .          Let . We saw in that . Since , the quadratic formula applies, and we have . It follows that .    Let be the roots of , and write , where and . By (1), we have , where is a square-root of . Since , we see that , and since , we conclude that .        Discriminant of quartic  Let . We recognize as the -th cyclotomic polynomial . Thus the roots of are the primitive -th roots of unity. In other words, letting , we have . The discriminant of is thus . You can verify our answer with .   As we will see, the discriminant detects whether or not , identified as a subgroup of , lies within the alternating subgroup .   Alternating group   Given , its sign (or parity ), denoted , is defined as , where can be written as a product of  -cycles. The map is a surjective group homomorphism. We define the alternating subgroup of , denoted , to be the kernel of : , .     Discriminant and alternating group   Let be a separable irreducible polynomial. Denote by a square-root of lying in an algebraic closure .        Assume . Let be the isomorphic image of in under the homomorphism of . We have .        Discriminant table   Let be a field. The table below gives formulas for the discriminant of various types of monic functions .  Discriminant formulas                             Discriminant and symmetric polynomials  The expression defining the discriminant is symmetric in the roots . More precisely, and more generally, a polynomial in the variables is symmetric if for all we have . There is a rich, wonderful theory of symmetric polynomials that we do not have time to go into. However, it is worth pointing out the so-called elementary symmetric polynomials , a list of specific symmetric polynomials , . These are defined in the following manner. Consider the polynomial in the variables defined as . Expanding out as a polynomial in with coefficients in , we have . Each polynomial is a symmetric polynomial in , and we call these the elementary symmetric polynomials for . When , for example, we have . Amazingly, any symmetric polynomial can be written as a polynomial expression of the elementary polynomials . In other words, if is a symmetric polynomial, then we have for some polynomial .  Returning at last to the discriminant, with the setup as in , we have , where is the symmetric polynomial . By above we have for some polynomial , in which case . Furthermore, since , where is as in , we see that by definition . Thus we have , from whence it follows that is a polynomial expression in the coefficients of .   "
 },
 {
   "id": "d_Gal_poly",
@@ -2374,23 +2374,32 @@ var ptx_lunr_docs = [
   "type": "Definition",
   "number": "1.20.4",
   "title": "Discriminant of polynomial.",
-  "body": " Discriminant of polynomial   Let be a polynomial of degree , let be an algebraic closure, and assume factors over as . The discriminant of , denoted is defined as .   "
+  "body": " Discriminant of polynomial   Let be a monic polynomial of degree , let be an algebraic closure, and assume factors over as . The discriminant of , denoted is defined as .   "
 },
 {
-  "id": "s_Gal_poly-8",
+  "id": "eg_disc_quad",
   "level": "2",
-  "url": "s_Gal_poly.html#s_Gal_poly-8",
+  "url": "s_Gal_poly.html#eg_disc_quad",
   "type": "Example",
   "number": "1.20.5",
   "title": "Discriminant of quadratic.",
   "body": " Discriminant of quadratic  Let be any field, and consider a general monic quadratic polynomial . Factor over an algebraic closure . Expanding out this factorization we see that . It follows from a little algebra that . In particular, since , we have . You can verify our answer with .  "
 },
 {
+  "id": "th_cubic_split",
+  "level": "2",
+  "url": "s_Gal_poly.html#th_cubic_split",
+  "type": "Theorem",
+  "number": "1.20.6",
+  "title": "Splitting fields of quadratics and cubics.",
+  "body": " Splitting fields of quadratics and cubics   Let be a field of cardinality not equal to , let be a monic but not necessarily irreducible polynomial, and let be a square-root of .   If , then     If , then , where is any root of .          Let . We saw in that . Since , the quadratic formula applies, and we have . It follows that .    Let be the roots of , and write , where and . By (1), we have , where is a square-root of . Since , we see that , and since , we conclude that .      "
+},
+{
   "id": "eg_disc_quart",
   "level": "2",
   "url": "s_Gal_poly.html#eg_disc_quart",
   "type": "Example",
-  "number": "1.20.6",
+  "number": "1.20.7",
   "title": "Discriminant of quartic.",
   "body": " Discriminant of quartic  Let . We recognize as the -th cyclotomic polynomial . Thus the roots of are the primitive -th roots of unity. In other words, letting , we have . The discriminant of is thus . You can verify our answer with .  "
 },
@@ -2399,7 +2408,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_Gal_poly.html#d_alternating_group",
   "type": "Definition",
-  "number": "1.20.7",
+  "number": "1.20.8",
   "title": "Alternating group.",
   "body": " Alternating group   Given , its sign (or parity ), denoted , is defined as , where can be written as a product of  -cycles. The map is a surjective group homomorphism. We define the alternating subgroup of , denoted , to be the kernel of : , .   "
 },
@@ -2408,7 +2417,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_Gal_poly.html#th_disc",
   "type": "Theorem",
-  "number": "1.20.8",
+  "number": "1.20.9",
   "title": "Discriminant and alternating group.",
   "body": " Discriminant and alternating group   Let be a separable irreducible polynomial. Denote by a square-root of lying in an algebraic closure .        Assume . Let be the isomorphic image of in under the homomorphism of . We have .      "
 },
@@ -2417,7 +2426,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_Gal_poly.html#th_disc_table",
   "type": "Theorem",
-  "number": "1.20.9",
+  "number": "1.20.10",
   "title": "Discriminant table.",
   "body": " Discriminant table   Let be a field. The table below gives formulas for the discriminant of various types of monic functions .  Discriminant formulas                           "
 },
@@ -2426,9 +2435,135 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "s_Gal_poly.html#rm_disc",
   "type": "Remark",
-  "number": "1.20.11",
+  "number": "1.20.12",
   "title": "Discriminant and symmetric polynomials.",
   "body": " Discriminant and symmetric polynomials  The expression defining the discriminant is symmetric in the roots . More precisely, and more generally, a polynomial in the variables is symmetric if for all we have . There is a rich, wonderful theory of symmetric polynomials that we do not have time to go into. However, it is worth pointing out the so-called elementary symmetric polynomials , a list of specific symmetric polynomials , . These are defined in the following manner. Consider the polynomial in the variables defined as . Expanding out as a polynomial in with coefficients in , we have . Each polynomial is a symmetric polynomial in , and we call these the elementary symmetric polynomials for . When , for example, we have . Amazingly, any symmetric polynomial can be written as a polynomial expression of the elementary polynomials . In other words, if is a symmetric polynomial, then we have for some polynomial .  Returning at last to the discriminant, with the setup as in , we have , where is the symmetric polynomial . By above we have for some polynomial , in which case . Furthermore, since , where is as in , we see that by definition . Thus we have , from whence it follows that is a polynomial expression in the coefficients of .  "
+},
+{
+  "id": "s_Gal_cubic_quartic",
+  "level": "1",
+  "url": "s_Gal_cubic_quartic.html",
+  "type": "Section",
+  "number": "1.21",
+  "title": "Cubic and quartic polynomials",
+  "body": " Cubic and quartic polynomials  Let be a separable irreducible polynomial of degree . In this section we will introduce means of determining precisely which subgroup of the Galois group is isomorphic to. When , the subgroup structure of is simple enough that the discriminant tells the whole story.   Galois group of cubic   Let be a field of cardinality not equal to , and let be a separable irreducible polynomial of degree .    or .     if and only if .       The result follows directly from , , and the fact that the only transitive subgroups of are and .     Cubic polynomials   For each cubic polynomial , identify a subgroup of that is isomorphic to.                      Family of cubics   Let be any integer, and define . Show that the polynomial is irreducible over and that its Galois group is isomorphic to .    Note that is even, and hence is odd. It follows that modulo , which is irreducible. It follows that is irreducible over , and hence .  The discriminant of is . Thus , and we have .    For degree-4 irreducible polynomials we need to first take a closer look at the subgroup structure of . According to the Galois group of an separable irreducible quartic polynomial is isomorphic to a transitive subgroup of , with cardinality divisible by . We now set about describing all such subgroups. First we look inside , whose subgroup lattice is depicted in . The transitive subgroups here are itself and the subgroup , which is isomorphic to the Klein-4 group . (The V stands for vier , German for four .)   Subgroup lattice of   Subgroup lattice of A4     Next we catalogue the transitive subgroups of that do not lie within . The odd permutations of consist of the six 2-cycles of the the form and the the six 4-cycles of the form . The -cycles generate three transitive cyclic subgroups of cardinality : . For each of these isomorphic copies of , adding a judicious choice of -cycle yields a subgroup of cardinality that is isomorphic to . There are three of these copies of and they are each conjugate: . It is not difficult to show that these are all the proper transitive subgroups of that do not lie within . In fact you can show that the remaining proper subgroups of not lying within are the six cyclic groups of the form , the three further copies of the Klein-4 group of the form , where , and four copies of of the form , and none of these subgroups is transitive. summarizes the transitive subgroups of not lying within . Together with our analysis of , we have more or less justified the complete description of the transitive subgroups of given in .   Transitive subgroups of lying outside of   Transitive subgroups of S4      Transitive subgroups of   The following is a complete list of the transitive subgroups of .   Permutation group  The entire group .    Alternating subgroup  The alternating subgroup , which is normal in .    Klein-4 group  A unique isomorphic copy of the Klein-4 group of the form , which is a normal subgroup of .    Cyclic group  Three isomorphic copies of the cyclic group of the form , all of which are conjugate to one another.    Dihedral group  Three isomorphic copies of of the form , all of which are conjugate to one another.        Cubic resolvent   Let be a degree-4 polynomial that factors over an algebraic closure as . Define . The cubic resolvent of , denoted , is the polynomial .     Cubic resolvent   Let be a degree-4 polynomial, and let be its cubic resolvent.    .     . In particular, we have the special case .    The discriminant of is equal to the discriminant of . In particular, has no repeated roots if and only if has no repeated roots.        Galois group of quartic   Let be a field of characteristic not equal to , and let be a monic separable irreducible polynomial of degree . Using the notation of , we have the following equivalences:      Splitting behavior of resolvent   Let be a field of characteristic not equal to , and let be a monic separable irreducible polynomial of degree . Using the notation of , we have the following equivalences:    if and only if splits completely over .     or if and only if has a unique root in .       This is a homework exercise.    You will notice that so far our theory gives us no means of distinguishing between the case and . provides us a partial test over the base field ; and gives us a complete, if somewhat involved test that works over a general base field of characteristic not equal to .   or : partial check   Let be a monic separable irreducible polynomial of degree . Using the notation of , if , then .     or   Let . Identify a subgroup of that is isomorphic to .  You may take for granted that and .         or   Let be a field of characteristic not equal to , and let be a monic separable irreducible polynomial of degree . Suppose that and that has a unique root . Letting , and using the notation of , we have     "
+},
+{
+  "id": "th_Gal_cubic",
+  "level": "2",
+  "url": "s_Gal_cubic_quartic.html#th_Gal_cubic",
+  "type": "Theorem",
+  "number": "1.21.1",
+  "title": "Galois group of cubic.",
+  "body": " Galois group of cubic   Let be a field of cardinality not equal to , and let be a separable irreducible polynomial of degree .    or .     if and only if .       The result follows directly from , , and the fact that the only transitive subgroups of are and .   "
+},
+{
+  "id": "s_Gal_cubic_quartic-4",
+  "level": "2",
+  "url": "s_Gal_cubic_quartic.html#s_Gal_cubic_quartic-4",
+  "type": "Example",
+  "number": "1.21.2",
+  "title": "Cubic polynomials.",
+  "body": " Cubic polynomials   For each cubic polynomial , identify a subgroup of that is isomorphic to.                    "
+},
+{
+  "id": "s_Gal_cubic_quartic-5",
+  "level": "2",
+  "url": "s_Gal_cubic_quartic.html#s_Gal_cubic_quartic-5",
+  "type": "Example",
+  "number": "1.21.3",
+  "title": "Family of <span class=\"process-math\">\\(A_3\\)<\/span> cubics.",
+  "body": " Family of cubics   Let be any integer, and define . Show that the polynomial is irreducible over and that its Galois group is isomorphic to .    Note that is even, and hence is odd. It follows that modulo , which is irreducible. It follows that is irreducible over , and hence .  The discriminant of is . Thus , and we have .   "
+},
+{
+  "id": "fig_A4_lattice",
+  "level": "2",
+  "url": "s_Gal_cubic_quartic.html#fig_A4_lattice",
+  "type": "Figure",
+  "number": "1.21.4",
+  "title": "",
+  "body": " Subgroup lattice of   Subgroup lattice of A4    "
+},
+{
+  "id": "fig_S4_trans",
+  "level": "2",
+  "url": "s_Gal_cubic_quartic.html#fig_S4_trans",
+  "type": "Figure",
+  "number": "1.21.5",
+  "title": "",
+  "body": " Transitive subgroups of lying outside of   Transitive subgroups of S4    "
+},
+{
+  "id": "th_S4_trans",
+  "level": "2",
+  "url": "s_Gal_cubic_quartic.html#th_S4_trans",
+  "type": "Theorem",
+  "number": "1.21.6",
+  "title": "Transitive subgroups of <span class=\"process-math\">\\(S_4\\)<\/span>.",
+  "body": " Transitive subgroups of   The following is a complete list of the transitive subgroups of .   Permutation group  The entire group .    Alternating subgroup  The alternating subgroup , which is normal in .    Klein-4 group  A unique isomorphic copy of the Klein-4 group of the form , which is a normal subgroup of .    Cyclic group  Three isomorphic copies of the cyclic group of the form , all of which are conjugate to one another.    Dihedral group  Three isomorphic copies of of the form , all of which are conjugate to one another.      "
+},
+{
+  "id": "d_resultant",
+  "level": "2",
+  "url": "s_Gal_cubic_quartic.html#d_resultant",
+  "type": "Definition",
+  "number": "1.21.7",
+  "title": "Cubic resolvent.",
+  "body": " Cubic resolvent   Let be a degree-4 polynomial that factors over an algebraic closure as . Define . The cubic resolvent of , denoted , is the polynomial .   "
+},
+{
+  "id": "th_cubic_resolvent",
+  "level": "2",
+  "url": "s_Gal_cubic_quartic.html#th_cubic_resolvent",
+  "type": "Theorem",
+  "number": "1.21.8",
+  "title": "Cubic resolvent.",
+  "body": " Cubic resolvent   Let be a degree-4 polynomial, and let be its cubic resolvent.    .     . In particular, we have the special case .    The discriminant of is equal to the discriminant of . In particular, has no repeated roots if and only if has no repeated roots.      "
+},
+{
+  "id": "th_Gal_quartic",
+  "level": "2",
+  "url": "s_Gal_cubic_quartic.html#th_Gal_quartic",
+  "type": "Theorem",
+  "number": "1.21.9",
+  "title": "Galois group of quartic.",
+  "body": " Galois group of quartic   Let be a field of characteristic not equal to , and let be a monic separable irreducible polynomial of degree . Using the notation of , we have the following equivalences:    "
+},
+{
+  "id": "th_V_D4_C4_splitting",
+  "level": "2",
+  "url": "s_Gal_cubic_quartic.html#th_V_D4_C4_splitting",
+  "type": "Corollary",
+  "number": "1.21.10",
+  "title": "Splitting behavior of resolvent.",
+  "body": " Splitting behavior of resolvent   Let be a field of characteristic not equal to , and let be a monic separable irreducible polynomial of degree . Using the notation of , we have the following equivalences:    if and only if splits completely over .     or if and only if has a unique root in .       This is a homework exercise.   "
+},
+{
+  "id": "th_D4_C4_disc",
+  "level": "2",
+  "url": "s_Gal_cubic_quartic.html#th_D4_C4_disc",
+  "type": "Theorem",
+  "number": "1.21.11",
+  "title": "<span class=\"process-math\">\\(C_4\\)<\/span> or <span class=\"process-math\">\\(D_4\\text{:}\\)<\/span> partial check.",
+  "body": " or : partial check   Let be a monic separable irreducible polynomial of degree . Using the notation of , if , then .   "
+},
+{
+  "id": "s_Gal_cubic_quartic-17",
+  "level": "2",
+  "url": "s_Gal_cubic_quartic.html#s_Gal_cubic_quartic-17",
+  "type": "Example",
+  "number": "1.21.12",
+  "title": "<span class=\"process-math\">\\(C_4\\)<\/span> or <span class=\"process-math\">\\(D_4\\)<\/span>.",
+  "body": " or   Let . Identify a subgroup of that is isomorphic to .  You may take for granted that and .       "
+},
+{
+  "id": "th_D4_C4",
+  "level": "2",
+  "url": "s_Gal_cubic_quartic.html#th_D4_C4",
+  "type": "Theorem",
+  "number": "1.21.13",
+  "title": "<span class=\"process-math\">\\(D_4\\)<\/span> or <span class=\"process-math\">\\(C_4\\)<\/span>.",
+  "body": " or   Let be a field of characteristic not equal to , and let be a monic separable irreducible polynomial of degree . Suppose that and that has a unique root . Letting , and using the notation of , we have    "
 },
 {
   "id": "appendix-notation",
