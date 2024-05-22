@@ -560,12 +560,27 @@ G_f\cong V \amp \iff \sqrt{\Delta_f}\in F \text{ and } R_f(x) \text{ is reducibl
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.21.11</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(C_4\)</span> or <span class="process-math">\(D_4\text{:}\)</span> partial check.</span>
 </h3>
 <div class="para" id="th_D4_C4_disc-2-1">Let <span class="process-math">\(f(x)\in \Q[x]\)</span> be a monic separable irreducible polynomial of degree <span class="process-math">\(4\text{.}\)</span> Using the notation of <a href="s_Gal_cubic_quartic.html#th_S4_trans" class="xref" data-knowl="./knowl/xref/th_S4_trans.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.21.6: Transitive subgroups of S_4">Theorem 1.21.6</a>, if <span class="process-math">\(G_f\cong C_4\text{,}\)</span> then <span class="process-math">\(\Delta_f&gt; 0\text{.}\)</span>
-</div></article><article class="example example-like" id="s_Gal_cubic_quartic-17"><h3 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.21.12</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(C_4\)</span> or <span class="process-math">\(D_4\)</span>.</span>
+</div></article><details id="th_D4_C4_disc-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_D4_C4_disc-3-1">We take <span class="process-math">\(\overline{\Q}\)</span> to be the algebraic closure of <span class="process-math">\(\Q\)</span> in <span class="process-math">\(\C\text{.}\)</span> Assume that <span class="process-math">\(G_f\cong C_4\text{.}\)</span> Let <span class="process-math">\(\alpha\)</span> be a root of <span class="process-math">\(f(x)\text{.}\)</span> Since <span class="process-math">\([K_f\colon \Q]=[\Q(\alpha)\colon \Q]=4\text{,}\)</span> we have <span class="process-math">\(K_f=\Q(\alpha)\text{,}\)</span> and thus all roots of <span class="process-math">\(f\)</span> lie in <span class="process-math">\(\Q(\alpha)\text{.}\)</span>
+</div> <div class="para" id="th_D4_C4_disc-3-2">If <span class="process-math">\(\alpha\)</span> is real, then since every other root of <span class="process-math">\(f\)</span> is an element of <span class="process-math">\(\Q(\alpha)\text{,}\)</span> all roots of <span class="process-math">\(f\)</span> are real. It follows easily in this case that <span class="process-math">\(\Delta_f&gt; 0\text{.}\)</span>
+</div> <div class="para logical" id="th_D4_C4_disc-3-3">
+<div class="para">The only other possibility is that all the roots are imaginary, in which case the distinct roots can be described as <span class="process-math">\(\alpha,\overline{\alpha},\beta,\overline{\beta}\text{,}\)</span> and we have</div>
+<div class="displaymath process-math" id="th_D4_C4_disc-3-3-2">
+\begin{align*}
+\Delta_f \amp = (\alpha-\overline{\alpha})^2(\beta-\overline{\beta})^2
+(\alpha-\beta)^2(\overline{\alpha}-\overline{\beta})^2(\alpha-\overline{\beta})^2(\overline{\alpha}-\beta)^2\\
+\amp= (2i\operatorname{Im} \alpha)^2(2i\operatorname{Im} \beta)^2[(\alpha-\beta)(\overline{\alpha-\beta})]^2[(\alpha-\overline{\beta})(\overline{\alpha-\overline{\beta}})]^2\\
+\amp= (2i\operatorname{Im} \alpha)^2(2i\operatorname{Im} \beta)^2\abs{\alpha-\beta}^4\abs{\alpha-\overline{\beta}}^4\\
+\amp = 4(\operatorname{Im} \alpha)^2(\operatorname{Im} \beta)^2\abs{\alpha-\beta}^4\abs{\alpha-\overline{\beta}}^4\\
+\amp &gt; 0\text{.}
+\end{align*}
+</div>
+</div></article></details><article class="example example-like" id="eg_D4_C4_partial"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.21.12</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(C_4\)</span> or <span class="process-math">\(D_4\text{:}\)</span> partial check.</span>
 </h3>
-<div class="para" id="s_Gal_cubic_quartic-17-2-1">Let <span class="process-math">\(f(x)=x^4+4x^2-2\text{.}\)</span> Identify a subgroup of <span class="process-math">\(S_4\)</span> that is isomorphic to <span class="process-math">\(G_f\text{.}\)</span>
-</div> <div class="para" id="s_Gal_cubic_quartic-17-2-2">You may take for granted that <span class="process-math">\(\Delta_f=-18432\)</span> and <span class="process-math">\(R_f(x)=x^3-4x^2+8x-32\text{.}\)</span>
-</div> <details id="s_Gal_cubic_quartic-17-2-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="s_Gal_cubic_quartic-17-2-3-1"></div></div></details></article><article class="theorem theorem-like" id="th_D4_C4"><h3 class="heading">
+<div class="para" id="eg_D4_C4_partial-2-1">Let <span class="process-math">\(f(x)=x^4+4x^2-2\text{.}\)</span> Identify a subgroup of <span class="process-math">\(S_4\)</span> that is isomorphic to <span class="process-math">\(G_f\text{.}\)</span>
+</div> <div class="para" id="eg_D4_C4_partial-2-2">You may take for granted that <span class="process-math">\(\Delta_f=-18432\)</span> and <span class="process-math">\(R_f(x)=x^3-4x^2+8x-32\text{.}\)</span>
+</div>
+<div class="solutions"><details id="eg_D4_C4_partial-3" class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content"><div class="para" id="eg_D4_C4_partial-3-1"></div></div></details></div></article><article class="theorem theorem-like" id="th_D4_C4"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.21.13</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(D_4\)</span> or <span class="process-math">\(C_4\)</span>.</span>
 </h3>
 <div class="para logical" id="th_D4_C4-2-1">
@@ -577,6 +592,19 @@ D_4 \amp \text{otherwise.}
 \end{cases}\tag{1.43}
 \end{equation}
 </div>
+</div></article><article class="example example-like" id="eg_D4_C4"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.21.14</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(D_4\)</span> or <span class="process-math">\(C_4\)</span>.</span>
+</h3>
+<div class="para logical" id="eg_D4_C4-2-1">
+<div class="para">Prove that the given quartic polynomial <span class="process-math">\(f(x)\in \Q[x]\)</span> is irreducible and determine a subgroup of <span class="process-math">\(S_4\)</span> that is isomorphic to <span class="process-math">\(G_f\text{.}\)</span> We have provided the discriminant and cubic resolvent.</div>
+<ol class="decimal">
+<li id="eg_D4_C4-2-1-4-1"><div class="para" id="eg_D4_C4-2-1-4-1-1">
+<span class="process-math">\(f(x)=x^4+3x+3\text{,}\)</span> <span class="process-math">\(\Delta_f=21\cdot 15^2\text{,}\)</span> <span class="process-math">\(R_f(x)=x^3-12x-9\text{.}\)</span>
+</div></li>
+<li id="eg_D4_C4-2-1-4-2"><div class="para" id="eg_D4_C4-2-1-4-2-1">
+<span class="process-math">\(f(x)=x^5+5x+5\text{,}\)</span> <span class="process-math">\(\Delta_f=5\cdot 55^2\text{,}\)</span> <span class="process-math">\(R_f(x)=x^3-20x-25\text{.}\)</span>
+</div></li>
+</ol>
 </div></article></section></div>
 <div class="ptx-content-footer">
 <a class="previous-button button" href="s_Gal_poly.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>

@@ -15,6 +15,20 @@
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.21.11</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(C_4\)</span> or <span class="process-math">\(D_4\text{:}\)</span> partial check.</span>
 </h3>
 <div class="para">Let <span class="process-math">\(f(x)\in \Q[x]\)</span> be a monic separable irreducible polynomial of degree <span class="process-math">\(4\text{.}\)</span> Using the notation of <a href="s_Gal_cubic_quartic.html#th_S4_trans" class="xref" data-knowl="./knowl/xref/th_S4_trans.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.21.6: Transitive subgroups of S_4">Theorem 1.21.6</a>, if <span class="process-math">\(G_f\cong C_4\text{,}\)</span> then <span class="process-math">\(\Delta_f&gt; 0\text{.}\)</span>
-</div></article><span class="incontext"><a class="internal" href="s_Gal_cubic_quartic.html#th_D4_C4_disc">in-context</a></span>
+</div></article><details class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para">We take <span class="process-math">\(\overline{\Q}\)</span> to be the algebraic closure of <span class="process-math">\(\Q\)</span> in <span class="process-math">\(\C\text{.}\)</span> Assume that <span class="process-math">\(G_f\cong C_4\text{.}\)</span> Let <span class="process-math">\(\alpha\)</span> be a root of <span class="process-math">\(f(x)\text{.}\)</span> Since <span class="process-math">\([K_f\colon \Q]=[\Q(\alpha)\colon \Q]=4\text{,}\)</span> we have <span class="process-math">\(K_f=\Q(\alpha)\text{,}\)</span> and thus all roots of <span class="process-math">\(f\)</span> lie in <span class="process-math">\(\Q(\alpha)\text{.}\)</span>
+</div> <div class="para">If <span class="process-math">\(\alpha\)</span> is real, then since every other root of <span class="process-math">\(f\)</span> is an element of <span class="process-math">\(\Q(\alpha)\text{,}\)</span> all roots of <span class="process-math">\(f\)</span> are real. It follows easily in this case that <span class="process-math">\(\Delta_f&gt; 0\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">The only other possibility is that all the roots are imaginary, in which case the distinct roots can be described as <span class="process-math">\(\alpha,\overline{\alpha},\beta,\overline{\beta}\text{,}\)</span> and we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\Delta_f \amp = (\alpha-\overline{\alpha})^2(\beta-\overline{\beta})^2
+(\alpha-\beta)^2(\overline{\alpha}-\overline{\beta})^2(\alpha-\overline{\beta})^2(\overline{\alpha}-\beta)^2\\
+\amp= (2i\operatorname{Im} \alpha)^2(2i\operatorname{Im} \beta)^2[(\alpha-\beta)(\overline{\alpha-\beta})]^2[(\alpha-\overline{\beta})(\overline{\alpha-\overline{\beta}})]^2\\
+\amp= (2i\operatorname{Im} \alpha)^2(2i\operatorname{Im} \beta)^2\abs{\alpha-\beta}^4\abs{\alpha-\overline{\beta}}^4\\
+\amp = 4(\operatorname{Im} \alpha)^2(\operatorname{Im} \beta)^2\abs{\alpha-\beta}^4\abs{\alpha-\overline{\beta}}^4\\
+\amp &gt; 0\text{.}
+\end{align*}
+</div>
+</div></article></details><span class="incontext"><a class="internal" href="s_Gal_cubic_quartic.html#th_D4_C4_disc">in-context</a></span>
 </body>
 </html>
