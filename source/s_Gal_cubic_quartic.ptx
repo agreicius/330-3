@@ -217,6 +217,9 @@
             </p>
         </statement>
     </theorem>
+    <p>
+        Surveying the landscape of transitive subgroups of <m>S_4</m> described in <xref ref="th_S4_trans"/>, we observe that <m>S_4</m> and <m>A_4</m> are the only subgroups whose cardinality is divisible by <m>3</m>. This means that for <m>G_f</m> to be isomorphic to <m>S_4</m> or <m>A_4</m>, it must contain an automorphism that, when considered as a permutation of the roots of <m>f</m>, acts like a 3-cycle. The <em>cubic resolvent</em> gives us a means of testing whether such an automorphism exists. 
+    </p>
     <definition xml:id="d_resultant">
         <title>Cubic resolvent</title>
         <statement>
@@ -267,6 +270,29 @@
             </p>
         </statement>
     </theorem>
+    <p>
+        Let <m>F</m> be a field of characteristic not equal to <m>2</m>, let <m>f(x)</m> be a monic separable irreducible polynomial of degree <m>4</m>, and let <m>r_1,r_2,r_3,r_4</m> be the roots of <m>f</m>. The permutation group <m>S_n</m> acts on the set <m>X=\{\theta_1,\theta_2,\theta_3\}</m> of roots of <m>R_f(x)</m> as follows: 
+        <me>
+            \sigma(r_ir_j+r_kr_l)=r_{\sigma(i)}r_{\sigma(j)}+r_{\sigma(k)}r_{\sigma(l)}
+        </me>.
+        It is easy to see that this action is transitive (in fact any <m>3</m>-cycle acts transitively on <m>X</m>), and that the stabilizer subgroups are  
+        <md>
+          <mrow>\Stab_{S_n}(r_1r_2+r_3r_4)\amp =\angvec{(1324),(12)}</mrow>
+          <mrow>\Stab_{S_n}(r_1r_3+r_2r_4)\amp =\angvec{(1234),(13)}</mrow>
+          <mrow>\Stab_{S_n}(r_1r_4+r_2r_3)\amp =\angvec{(1243),(14)}</mrow>
+        </md>.
+        It follows that a <em>transitive</em> subgroup <m>H\leq S_4</m> contains a <m>3</m>-cycle if and only if its action on <m>X=\{\theta_1,\theta_2,\theta_3\}</m> is transitive. Thus our Galois group <m>G_f</m> has cardinality divisible by <m>3</m> if and only if it acts transitively on <m>X=\{\theta_1,\theta_2,\theta_3\}</m>, the three roots of <m>R_f(x)</m>. Since 
+        <me>
+            m_{\theta_1,F}(x)=\prod_{\beta\in O_{\theta_1}}(x-\beta)
+        </me>,
+        where <m>O_{\theta_1}=\{\sigma(\theta_1)\colon \sigma\in G_f\}</m>, the orbit of <m>\theta_1</m> under <m>G_f</m> (see <xref ref="th_Gal_action_L" text="global"/>), we conclude that 
+        <md>
+            <mrow>3\mid \abs{G_f} \amp \iff m_{\theta_1,F}(x)=(x-\theta_1)(x-\theta_2)(x-\theta_3)</mrow>
+            <mrow> \amp \iff m_{\theta_1,F}(x)=R_f(x)</mrow>
+            <mrow> \amp \iff R_f(x) \text{ is irreducible}</mrow>
+        </md>.
+        The theorem below now follows from this observation about the irreducibility of <m>R_f(x)</m>, the observation that <m>G_f</m> is isomorphic to a subgroup of <m>A_4</m> if and only if <m>\sqrt{\Delta_f}\in F</m>, and our catalogue of transitive subgroups of <m>S_4</m>.
+    </p>
     <theorem xml:id="th_Gal_quartic">
         <title>Galois group of quartic</title>
         <statement>
@@ -280,6 +306,11 @@
                 </mdn>
             </p>
         </statement>
+        <proof>
+            <p>
+               Let <m>G_f\cong H\leq S_4</m> via the map in <xref ref="th_Gal_poly_perm"/>. As remarked above, <m>3\mid \abs{H}</m> if and only if <m>R_f(x)</m> is irreducible over <m>F</m>. Since furthermore <m>H\leq A_4</m> if and only if <m>\sqrt{\Delta_f}\in F</m>, the four cases in the theorem follow simply by sorting the transitive subgroups of <m>S_4</m> as described in <xref ref="th_S4_trans"/>. 
+            </p>
+        </proof>
     </theorem>
     
     <corollary xml:id="th_V_D4_C4_splitting">
