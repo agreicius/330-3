@@ -70,7 +70,6 @@
         <title>Cyclic and radical extensions</title>
         <definition xml:id="d_simple_radical">
             <title>Simple radical extension</title>
-            
             <statement>
                 <p>
                     A <term>simple radical extension</term> is a field extension <m>K/F</m> where <m>K=F(\sqrt[n]{a})</m> for some <m>a\in F</m>. In other words, <m>K</m> is the result of adjoining an <m>n</m>-th root of unity of some element of <m>F</m>. 
@@ -85,6 +84,9 @@
                 </p>
             </statement>
         </definition>
+        <p>
+            Note well that whereas by definition a cyclic extension is Galois, a radical extension need not by: as a familiar example, consider the non-Galois simple radical extension <m>\Q(\sqrt[3]{2})/\Q</m>.  As a consequence of the next theorem, however, we see that this issue disappears if our ground field has enough cyclotomic elements of the right order. More precisely, if <m>\character F\nmid n</m>, and if <m>F</m> contains a primitive <m>n</m>-th root of unity, then for all <m>d\mid n</m>, a degree-<m>d</m> extension of <m>F</m> is radical if and only if it is cyclic. 
+        </p>
         <theorem xml:id="th_cyclic">
             <title>Cyclic extensions</title>
             <statement>
@@ -93,20 +95,73 @@
                     <ol>
                         <li>
                             <p>
-                                Given any <m>a\in F</m>, the extension <m>F(\sqrt[n]{a})/F</m> obtained by adjoining an <m>n</m>-th root of <m>F</m> is cyclic. 
+                                Given any <m>a\in F</m>, the simple radical extension <m>F(\sqrt[n]{a})/F</m> is cyclic and <m>[F(\sqrt[n]{a})\colon F]\mid n</m>. 
                             </p>
                         </li>
                         <li>
                             <p>
-                                If <m>K/F</m> is cyclic, then there is an element <m>a\in F</m> such that 
+                                If <m>K/F</m> is a degree-<m>n</m> cyclic extension, then there is an element <m>a\in F</m> such that <m>K=F(\sqrt[n]{a})</m>.
+                            </p>
+                        </li>
+                    </ol>
+                    
+                </p>
+            </statement>
+            <proof>
+                <p>
+                    <ol>
+                        <li>
+                            <p>
+                                Let <m>K=F(\alpha)</m>, where <m>\alpha=\sqrt[n]{a}</m> is an <m>n</m>-th root of an element <m>a\in F</m>. We must show that <m>K/F</m> is Galois, and that its Galois group is cyclic. If <m>a=0</m>, then <m>K=F</m>, in which case both claims are obvious. Assume henceforth that <m>a\ne 0</m>. 
+                            </p>
+                            <p>
+                                 Let <m>f(x)=x^n-a</m>. We claim that <m>K=K_f</m>: <ie/>, <m>K</m> is the splitting field of <m>x^n-a</m>. Since clearly <m>K\leq K_f</m>, it suffices to show (by minimality) that <m>f</m> splits completely in <m>K</m>. But if <m>\beta</m> is a root of <m>f</m>, then <m>\alpha^n=\beta^n=a</m>, in which case <m>(\alpha/\beta)^n=1</m>. Thus <m>\alpha/\beta\in \mu_n=\angvec{\zeta}</m>, showing that <m>\alpha/\beta=\zeta^k</m> for some <m>k</m>, and hence <m>\beta=\alpha\zeta^{-k}\in K</m>, since <m>\zeta\in F</m>. Thus <m>f</m> splits completely in <m>K</m>, as desired. 
+                            </p>
+                            <p>
+                              To see that <m>K/F</m> is separable, note that <m>f'(x)=nx^{n-1}</m>. Since <m>\character F\nmid n</m>, <m>f'(x)</m> is a nonzero polynomial whose only irreducible factor is <m>x</m>. Since <m>x</m> is not a factor <m>f(x)</m>, we see that <m>(f,f')=1</m>, and hence that <m>f</m> is a separable polynomial. Since <m>K=K_f</m> is generated over <m>F</m> by the roots of <m>f</m>, we conclude that <m>K/F</m> is separable. 
+                            </p>
+                            <p>
+                                Lastly, we show that <m>G=\Gal(K/F)</m> is cyclic. The usual argument shows that for any <m>\sigma\in G</m>, we must have 
+                                <me>
+                                    \alpha\xmapsto{\ \sigma \ } \alpha \zeta_\sigma
+                                </me>
+                                for a unique <m>n</m>-th root of unity <m>\zeta_\sigma\in \mu_n=\angvec{\zeta}</m>, and further more that <m>\sigma</m> is uniquely determined by this value <m>\sigma(\alpha)=\zeta_\sigma</m>. It follows that the map 
+                                <md>
+                                    <mrow>\phi\colon G \amp \rightarrow \mu_n</mrow>
+                                    <mrow>\sigma \amp \mapsto \zeta_\sigma</mrow>
+                                </md> 
+                                is injective. It is not difficult to show, using the usual arguments, that <m>\phi</m> is a group homomorphism. Thus <m>G</m> is isomorphic to its image <m>\phi(G)\leq \mu_n</m>. Since <m>\mu_n</m> is cyclic of cardinality <m>n</m>, and since all subgroups of cyclic groups are cyclic, we conclude that <m>G\cong \phi(G)</m> is cyclic. Furthermore since <m>\phi(G)</m> is a subgroup of <m>\mu_n</m>, we have <m>\abs{G}\mid n</m>, and thus <m>[K\colon F]=\abs{G}</m> divides <m>n</m>. 
                             </p>
                         </li>
                     </ol>
                 </p>
-            </statement>
+            </proof>
         </theorem>
         
     </subsection>
-    
+    <subsection xml:id="ss_radical_solvable">
+        <title>Radical and solvable extensions</title>
+        <p>
+            Our next definition is a convenient field-theoretic formulation of what it means for an element to be <q>solvable by radicals</q>. 
+        </p>
+        <definition xml:id="d_radical_tower">
+            <title>Radical towers</title>
+            <statement>
+                <p>
+                    A <term>radical tower</term> over <m>F</m> is a tower of fields 
+                    <men xml:id="eq_rad_tower">
+                        F=F_0\leq F_1\leq \cdots \leq F_n=L
+                    </men>
+                    where for all <m>1\leq k\leq n</m>, <m>F_k/F_{k-1}</m> is a simple radical extension. 
+                </p>
+                <p>
+                    A <term>root extension</term> over <m>F</m> is a field extension <m>L/F</m> containing a radical tower as in <xref ref="eq_rad_tower"/>.  
+                </p>
+                <p>
+                    An element <m>\alpha\in \overline{F}</m> is <term>solvable by radicals</term> over <m>F</m> if <m>\alpha\in L</m> for some root  extension <m>L/F</m>. An extension <m>L/F</m> is <term>solvable by radicals</term> over <m>F</m> if we have <m>K\leq L</m> for some root extension <m>L/F</m>. 
+                </p>
+            </statement>
+        </definition>
+    </subsection>
 
 </section>
