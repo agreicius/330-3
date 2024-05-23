@@ -241,6 +241,9 @@
             </p>
         </statement>
     </definition>
+    <p>
+        The coefficients of <m>R_f(x)</m> are symmetric polynomial expressions in the <m>r_i</m>. It follows (see <xref ref="rm_disc"/>) that these coefficients are in turn polynomial expressions of the elementary symmetric polynomials in <m>r_i</m>, which are precisely the coefficients of <m>f(x)</m>. <xref ref="th_cubic_resolvent"/> makes this more precise. 
+    </p>
     <theorem xml:id="th_cubic_resolvent">
         <title>Cubic resolvent</title>
         <statement>
@@ -269,6 +272,11 @@
                 </ol>
             </p>
         </statement>
+        <proof>
+            <p>
+                Statement (1) follows from (2), which can be proved using symmetric polynomial techniques that are outside the scope of this course. Statement (3) follows from the definition of the discriminant, and is left as an exercise. 
+            </p>
+        </proof>
     </theorem>
     <p>
         Let <m>F</m> be a field of characteristic not equal to <m>2</m>, let <m>f(x)</m> be a monic separable irreducible polynomial of degree <m>4</m>, and let <m>r_1,r_2,r_3,r_4</m> be the roots of <m>f</m>. The permutation group <m>S_n</m> acts on the set <m>X=\{\theta_1,\theta_2,\theta_3\}</m> of roots of <m>R_f(x)</m> as follows: 
@@ -308,14 +316,18 @@
         </statement>
         <proof>
             <p>
-               Let <m>G_f\cong H\leq S_4</m> via the map in <xref ref="th_Gal_poly_perm"/>. As remarked above, <m>3\mid \abs{H}</m> if and only if <m>R_f(x)</m> is irreducible over <m>F</m>. Since furthermore <m>H\leq A_4</m> if and only if <m>\sqrt{\Delta_f}\in F</m>, the four cases in the theorem follow simply by sorting the transitive subgroups of <m>S_4</m> as described in <xref ref="th_S4_trans"/>. 
+               Let <m>G_f\cong H\leq S_4</m> via the map in <xref ref="th_Gal_poly_perm"/>. Summarizing our discussion above, we have 
+               <md>
+                <mrow>H\in \{S_4,A_4} \amp \iff 3\mid \abs{H} </mrow>
+                <mrow> \amp \iff R_f(x) \text{ irreducible}</mrow>
+               </md>.
+               This, coupled with the equivalence <m>H\leq A_4</m> if and only if <m>\sqrt{\Delta_f}\in F</m>, yields the first two equivalences of the theorem. The last two statements follow in a similar manner. 
             </p>
         </proof>
     </theorem>
     
     <corollary xml:id="th_V_D4_C4_splitting">
         <title>Splitting behavior of resolvent</title>
-        
         <statement>
             <p>
                 Let <m>F</m> be a field of characteristic not equal to <m>2</m>, and let <m>f(x)</m> be a monic separable irreducible polynomial of degree <m>4</m>. Using the notation of <xref ref="th_S4_trans"/>, we have the following equivalences: 
