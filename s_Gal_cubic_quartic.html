@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s_Gal_poly.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_Galois_theory.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="s_Gal_poly.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="c_Galois_theory.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="s_solvable.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\Z}{{\mathbb Z}}
   \newcommand{\Q}{{\mathbb Q}}
   \newcommand{\R}{{\mathbb R}}
   \newcommand{\C}{{\mathbb C}}
@@ -355,6 +355,10 @@ window.MathJax = {
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_cyclotomic.html" class="internal"><span class="codenumber">1.19</span> <span class="title">Cyclotomic extensions</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="s_Gal_poly.html" class="internal"><span class="codenumber">1.20</span> <span class="title">Galois groups of polynomials</span></a></div></li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="s_Gal_cubic_quartic.html" class="internal"><span class="codenumber">1.21</span> <span class="title">Cubic and quartic polynomials</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="s_solvable.html" class="internal"><span class="codenumber">1.22</span> <span class="title">Solvability</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-subsection"><div class="toc-title-box"><a href="s_solvable.html#ss_cyclic" class="internal"><span class="title">Cyclic and radical extensions</span></a></div></li></ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-backmatter">
@@ -487,7 +491,8 @@ V=\angvec{(12)(34),(13)(24)}=\{e,(12)(34),(13)(24),(14)(23)\}\text{,}
 <span class="heading"><span class="title">Dihedral group <span class="process-math">\(D_4\)</span>.</span></span><div class="para" id="th_S4_trans-2-1-2-5-2">Three isomorphic copies of <span class="process-math">\(D_4\)</span> of the form <span class="process-math">\(\angvec{(abcd),(ac)}\text{,}\)</span> all of which are conjugate to one another.</div>
 </li>
 </ol>
-</div></article><article class="definition definition-like" id="d_resultant"><h3 class="heading">
+</div></article><div class="para" id="s_Gal_cubic_quartic-11">Surveying the landscape of transitive subgroups of <span class="process-math">\(S_4\)</span> described in <a href="s_Gal_cubic_quartic.html#th_S4_trans" class="xref" data-knowl="./knowl/xref/th_S4_trans.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.21.6: Transitive subgroups of S_4">Theorem 1.21.6</a>, we observe that <span class="process-math">\(S_4\)</span> and <span class="process-math">\(A_4\)</span> are the only subgroups whose cardinality is divisible by <span class="process-math">\(3\text{.}\)</span> This means that for <span class="process-math">\(G_f\)</span> to be isomorphic to <span class="process-math">\(S_4\)</span> or <span class="process-math">\(A_4\text{,}\)</span> it must contain an automorphism that, when considered as a permutation of the roots of <span class="process-math">\(f\text{,}\)</span> acts like a 3-cycle. The <em class="emphasis">cubic resolvent</em> gives us a means of testing whether such an automorphism exists.</div>
+<article class="definition definition-like" id="d_resultant"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.21.7</span><span class="period">.</span><span class="space"> </span><span class="title">Cubic resolvent.</span>
 </h3> <div class="para logical" id="d_resultant-2-1">
 <div class="para">Let <span class="process-math">\(f(x)\in F[x]\)</span> be a degree-4 polynomial that factors over an algebraic closure <span class="process-math">\(\overline{F}\)</span> as</div>
@@ -510,7 +515,8 @@ f(x)=(x-r_1)(x-r_2)(x-r_3)(x-r_4)\text{.}
 R_f(x)=(x-\theta_1)(x-\theta_2)(x-\theta_3)\text{.}
 \end{equation*}
 </div>
-</div></article><article class="theorem theorem-like" id="th_cubic_resolvent"><h3 class="heading">
+</div></article><div class="para" id="s_Gal_cubic_quartic-13">The coefficients of <span class="process-math">\(R_f(x)\)</span> are symmetric polynomial expressions in the <span class="process-math">\(r_i\text{.}\)</span> It follows (see <a href="s_Gal_poly.html#rm_disc" class="xref" data-knowl="./knowl/xref/rm_disc.html" data-reveal-label="Reveal" data-close-label="Close" title="Remark 1.20.12: Discriminant and symmetric polynomials">Remark 1.20.12</a>) that these coefficients are in turn polynomial expressions of the elementary symmetric polynomials in <span class="process-math">\(r_i\text{,}\)</span> which are precisely the coefficients of <span class="process-math">\(f(x)\text{.}\)</span> <a href="s_Gal_cubic_quartic.html#th_cubic_resolvent" class="xref" data-knowl="./knowl/xref/th_cubic_resolvent.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.21.8: Cubic resolvent">Theorem 1.21.8</a> makes this more precise.</div>
+<article class="theorem theorem-like" id="th_cubic_resolvent"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.21.8</span><span class="period">.</span><span class="space"> </span><span class="title">Cubic resolvent.</span>
 </h3>
 <div class="para logical" id="th_cubic_resolvent-2-1">
@@ -528,7 +534,39 @@ f(x)=x^4+cx+d \implies R_f(x)=x^3-4dx-c^2\text{.}\tag{1.38}
 </div></li>
 <li id="th_cubic_resolvent-2-1-3-3"><div class="para" id="th_cubic_resolvent-2-1-3-3-1">The discriminant of <span class="process-math">\(R_f(x)\)</span> is equal to the discriminant of <span class="process-math">\(f(x)\text{.}\)</span> In particular, <span class="process-math">\(R_f(x)\)</span> has no repeated roots if and only if <span class="process-math">\(f(x)\)</span> has no repeated roots.</div></li>
 </ol>
-</div></article><article class="theorem theorem-like" id="th_Gal_quartic"><h3 class="heading">
+</div></article><details id="th_cubic_resolvent-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_cubic_resolvent-3-1">Statement (1) follows from (2), which can be proved using symmetric polynomial techniques that are outside the scope of this course. Statement (3) follows from the definition of the discriminant, and is left as an exercise.</div></article></details><div class="para logical" id="s_Gal_cubic_quartic-15">
+<div class="para">Let <span class="process-math">\(F\)</span> be a field of characteristic not equal to <span class="process-math">\(2\text{,}\)</span> let <span class="process-math">\(f(x)\)</span> be a monic separable irreducible polynomial of degree <span class="process-math">\(4\text{,}\)</span> and let <span class="process-math">\(r_1,r_2,r_3,r_4\)</span> be the roots of <span class="process-math">\(f\text{.}\)</span> The permutation group <span class="process-math">\(S_n\)</span> acts on the set <span class="process-math">\(X=\{\theta_1,\theta_2,\theta_3\}\)</span> of roots of <span class="process-math">\(R_f(x)\)</span> as follows:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_Gal_action_L.html">
+\begin{equation*}
+\sigma(r_ir_j+r_kr_l)=r_{\sigma(i)}r_{\sigma(j)}+r_{\sigma(k)}r_{\sigma(l)}\text{.}
+\end{equation*}
+</div>
+<div class="para">It is easy to see that this action is transitive (in fact any <span class="process-math">\(3\)</span>-cycle acts transitively on <span class="process-math">\(X\)</span>), and that the stabilizer subgroups are</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_Gal_action_L.html" id="s_Gal_cubic_quartic-15-13">
+\begin{align*}
+\Stab_{S_n}(r_1r_2+r_3r_4)\amp =\angvec{(1324),(12)}\\
+\Stab_{S_n}(r_1r_3+r_2r_4)\amp =\angvec{(1234),(13)}\\
+\Stab_{S_n}(r_1r_4+r_2r_3)\amp =\angvec{(1243),(14)}\text{.}
+\end{align*}
+</div>
+<div class="para">It follows that a <em class="emphasis">transitive</em> subgroup <span class="process-math">\(H\leq S_4\)</span> contains a <span class="process-math">\(3\)</span>-cycle if and only if its action on <span class="process-math">\(X=\{\theta_1,\theta_2,\theta_3\}\)</span> is transitive. Thus our Galois group <span class="process-math">\(G_f\)</span> has cardinality divisible by <span class="process-math">\(3\)</span> if and only if it acts transitively on <span class="process-math">\(X=\{\theta_1,\theta_2,\theta_3\}\text{,}\)</span> the three roots of <span class="process-math">\(R_f(x)\text{.}\)</span> Since</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_Gal_action_L.html">
+\begin{equation*}
+m_{\theta_1,F}(x)=\prod_{\beta\in O_{\theta_1}}(x-\beta)\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(O_{\theta_1}=\{\sigma(\theta_1)\colon \sigma\in G_f\}\text{,}\)</span> the orbit of <span class="process-math">\(\theta_1\)</span> under <span class="process-math">\(G_f\)</span> (see <a href="s_Gal_normal.html#th_Gal_action_L" class="xref" data-knowl="./knowl/xref/th_Gal_action_L.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.18.2: Galois action on L">1.18.2</a>), we conclude that</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_Gal_action_L.html" id="s_Gal_cubic_quartic-15-27">
+\begin{align*}
+3\mid \abs{G_f} \amp \iff m_{\theta_1,F}(x)=(x-\theta_1)(x-\theta_2)(x-\theta_3)\\
+\amp \iff m_{\theta_1,F}(x)=R_f(x)\\
+\amp \iff R_f(x) \text{ is irreducible}\text{.}
+\end{align*}
+</div>
+<div class="para">The theorem below now follows from this observation about the irreducibility of <span class="process-math">\(R_f(x)\text{,}\)</span> the observation that <span class="process-math">\(G_f\)</span> is isomorphic to a subgroup of <span class="process-math">\(A_4\)</span> if and only if <span class="process-math">\(\sqrt{\Delta_f}\in F\text{,}\)</span> and our catalogue of transitive subgroups of <span class="process-math">\(S_4\text{.}\)</span>
+</div>
+</div>
+<article class="theorem theorem-like" id="th_Gal_quartic"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.21.9</span><span class="period">.</span><span class="space"> </span><span class="title">Galois group of quartic.</span>
 </h3>
 <div class="para logical" id="th_Gal_quartic-2-1">
@@ -541,7 +579,16 @@ G_f\cong C_4 \text{ or } G_f\cong D_4 \amp \iff \sqrt{\Delta_f}\notin F \text{ a
 G_f\cong V \amp \iff \sqrt{\Delta_f}\in F \text{ and } R_f(x) \text{ is reducible}\tag{1.42}
 \end{align}
 </div>
-</div></article><article class="corollary theorem-like" id="th_V_D4_C4_splitting"><h3 class="heading">
+</div></article><details id="th_Gal_quartic-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_Gal_quartic-3-1">
+<div class="para">Let <span class="process-math">\(G_f\cong H\leq S_4\)</span> via the map in <a href="s_Gal_poly.html#th_Gal_poly_perm" class="xref" data-knowl="./knowl/xref/th_Gal_poly_perm.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.20.3: Galois group as permutation group">Theorem 1.20.3</a>. Summarizing our discussion above, we have</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_Gal_poly_perm.html" id="th_Gal_quartic-3-1-3">
+\begin{align*}
+H\in \{S_4,A_4} \amp \iff 3\mid \abs{H} \\
+\amp \iff R_f(x) \text{ irreducible}\text{.}
+\end{align*}
+</div>
+<div class="para">This, coupled with the equivalence <span class="process-math">\(H\leq A_4\)</span> if and only if <span class="process-math">\(\sqrt{\Delta_f}\in F\text{,}\)</span> yields the first two equivalences of the theorem. The last two statements follow in a similar manner.</div>
+</div></article></details><article class="corollary theorem-like" id="th_V_D4_C4_splitting"><h3 class="heading">
 <span class="type">Corollary</span><span class="space"> </span><span class="codenumber">1.21.10</span><span class="period">.</span><span class="space"> </span><span class="title">Splitting behavior of resolvent.</span>
 </h3>
 <div class="para logical" id="th_V_D4_C4_splitting-2-1">
@@ -554,7 +601,7 @@ G_f\cong V \amp \iff \sqrt{\Delta_f}\in F \text{ and } R_f(x) \text{ is reducibl
 <span class="process-math">\(G_f\cong C_4\)</span> or <span class="process-math">\(G_f\cong D_4\)</span> if and only if <span class="process-math">\(R_f(x)\)</span> has a unique root in <span class="process-math">\(F\text{.}\)</span>
 </div></li>
 </ol>
-</div></article><details id="th_V_D4_C4_splitting-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_V_D4_C4_splitting-3-1">This is a homework exercise.</div></article></details><div class="para" id="s_Gal_cubic_quartic-15">You will notice that so far our theory gives us no means of distinguishing between the case <span class="process-math">\(G_f\cong C_4\)</span> and <span class="process-math">\(G_f\cong D_4\text{.}\)</span> <a href="s_Gal_cubic_quartic.html#th_D4_C4_disc" class="xref" data-knowl="./knowl/xref/th_D4_C4_disc.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.21.11: C_4 or D_4 partial check">Theorem 1.21.11</a> provides us a partial test over the base field <span class="process-math">\(\Q\text{;}\)</span> and <a href="s_Gal_cubic_quartic.html#th_D4_C4" class="xref" data-knowl="./knowl/xref/th_D4_C4.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.21.13: D_4 or C_4">Theorem 1.21.13</a> gives us a complete, if somewhat involved test that works over a general base field of characteristic not equal to <span class="process-math">\(2\text{.}\)</span>
+</div></article><details id="th_V_D4_C4_splitting-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para" id="th_V_D4_C4_splitting-3-1">This is a homework exercise.</div></article></details><div class="para" id="s_Gal_cubic_quartic-18">You will notice that so far our theory gives us no means of distinguishing between the case <span class="process-math">\(G_f\cong C_4\)</span> and <span class="process-math">\(G_f\cong D_4\text{.}\)</span> <a href="s_Gal_cubic_quartic.html#th_D4_C4_disc" class="xref" data-knowl="./knowl/xref/th_D4_C4_disc.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.21.11: C_4 or D_4 partial check">Theorem 1.21.11</a> provides us a partial test over the base field <span class="process-math">\(\Q\text{;}\)</span> and <a href="s_Gal_cubic_quartic.html#th_D4_C4" class="xref" data-knowl="./knowl/xref/th_D4_C4.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.21.13: D_4 or C_4">Theorem 1.21.13</a> gives us a complete, if somewhat involved test that works over a general base field of characteristic not equal to <span class="process-math">\(2\text{.}\)</span>
 </div>
 <article class="theorem theorem-like" id="th_D4_C4_disc"><h3 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.21.11</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(C_4\)</span> or <span class="process-math">\(D_4\text{:}\)</span> partial check.</span>
@@ -607,7 +654,7 @@ D_4 \amp \text{otherwise.}
 </ol>
 </div></article></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="s_Gal_poly.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="kursobjekt-6.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="s_Gal_poly.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="s_solvable.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
