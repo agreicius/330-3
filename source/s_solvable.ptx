@@ -162,6 +162,27 @@
                 </p>
             </statement>
         </definition>
+        <definition xml:id="d_solvable_group">
+            <title>Solvable group</title>
+            <statement>
+                <p>
+                    A finite group <m>G</m> is <term>solvable</term> if there exists a sequence of subgroups 
+                    <me>
+                        \{1\}=G_0\normalin G_1\normalin \dots \normalin G_n=G
+                    </me>
+                    where for all <m>1\leq k\leq n</m> the subgroup <m>G_{k-1}</m> is normal in <m>G_k</m> and the quotient group <m>G_k/G_{k-1}</m> is abelian.
+                </p>
+            </statement>
+        </definition>
+        <!-- <theorem xml:id="th_solvable_group">
+            <title>Solvable groups</title>
+            <statement>
+                <p>
+                    Let <m>G</m> be a finite group. 
+                </p>
+            </statement>
+        </theorem> -->
+        
     </subsection>
 
 </section>
