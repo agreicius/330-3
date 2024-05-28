@@ -5,6 +5,7 @@
     <introduction>
         <p>
             Consider the Cardano formula for finding roots of a cubic polynomial. 
+        </p>
             <theorem xml:id="th_Cardano">
                 <title>Cardano's formula</title>
                 <statement>
@@ -36,7 +37,8 @@
                     </p>
                 </statement>
             </theorem>
-            We will not give the proof of Cardano's theorem here. Instead we will (a) try and better understand the particular nature of an expression like <xref ref="eq_Cardano_summary"/>, and (b) ask why we would even hope for an expression like this for the roots of a polynomial. In this spirit, let's first zoom out from the details of Cardano's formula and locate where this expression lives inside a field extension diagram. According to <xref ref="th_cubic_split"/>, the splitting field of <m>f</m> is <m>K_f=F(\alpha, \sqrt{\Delta_f})</m>, as summarized by the following field diagram.
+           <p>
+             We will not give the proof of Cardano's theorem here. Instead we will (a) try and better understand the particular nature of an expression like <xref ref="eq_Cardano_summary"/>, and (b) ask why we would even hope for an expression like this for the roots of a polynomial. In this spirit, let's first zoom out from the details of Cardano's formula and locate where this expression lives inside a field extension diagram. According to <xref ref="th_cubic_split"/>, the splitting field of <m>f</m> is <m>K_f=F(\alpha, \sqrt{\Delta_f})</m>, as summarized by the following field diagram.
         </p>
         <image xml:id="im_split_cubic" width="50%">
             <shortdescription>Splitting field of cubic</shortdescription>
@@ -148,7 +150,7 @@
             <title>Radical towers</title>
             <statement>
                 <p>
-                    A <term>radical tower</term> over <m>F</m> is a tower of fields 
+                    Let <m>F</m> be a field. A <term>radical tower</term> over <m>F</m> is a tower of fields 
                     <men xml:id="eq_rad_tower">
                         F=F_0\leq F_1\leq \cdots \leq F_n=L
                     </men>
@@ -157,8 +159,13 @@
                 <p>
                     A <term>root extension</term> over <m>F</m> is a field extension <m>L/F</m> containing a radical tower as in <xref ref="eq_rad_tower"/>.  
                 </p>
+            </statement>
+        </definition>
+        <definition xml:id="d_solvable_radical">
+            <title>Solvable by radicals</title>
+            <statement>
                 <p>
-                    An element <m>\alpha\in \overline{F}</m> is <term>solvable by radicals</term> over <m>F</m> if <m>\alpha\in L</m> for some root  extension <m>L/F</m>. An extension <m>L/F</m> is <term>solvable by radicals</term> over <m>F</m> if we have <m>K\leq L</m> for some root extension <m>L/F</m>. 
+                    Let <m>F</m> be a field. An element <m>\alpha\in \overline{F}</m> is <term>solvable by radicals</term> over <m>F</m> if <m>\alpha\in L</m> for some root  extension <m>L/F</m>. A polynomial <m>f(x)\in F[x]</m> is solvable by radicals if all roots of <m>f</m> are solvable by radicals over <m>F</m>. An extension <m>K/F</m> is solvable by radicals over <m>F</m> if we have <m>K\leq L</m> for some root extension <m>L/F</m>. 
                 </p>
             </statement>
         </definition>
@@ -174,14 +181,45 @@
                 </p>
             </statement>
         </definition>
-        <!-- <theorem xml:id="th_solvable_group">
+        <theorem xml:id="th_solvable_group">
             <title>Solvable groups</title>
             <statement>
                 <p>
-                    Let <m>G</m> be a finite group. 
+                    We gather some general facts about solvable groups. In what follows all groups are assumed to be finite. 
+                    <ol>
+                        <li>
+                            <p>
+                             If <m>G</m> is solvable, then all subgroups of <m>G</m> are solvable. 
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                               Let <m>N</m> be a normal subgroup of <m>G</m>. We have <m>G</m> solvable if and only if <m>N</m> and <m>G/N</m> are normal. In particular, quotients of solvable groups are solvable.  
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                               If <m>G\cong \prod_{i=1}^n G_i </m>, then <m>G</m> is solvable if and only if <m>G_i</m> is solvable for all <m>1\leq i\leq n</m>.  
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                For all <m>n\geq 5</m> the alternating subgroup <m>A_n</m> is simple and nonabelian. As a result, <m>A_n</m> and <m>S_n</m> are solvable if and only if <m>n\leq 4</m>. 
+                            </p>
+                        </li>
+                    </ol>
                 </p>
             </statement>
-        </theorem> -->
+        </theorem>
+        <theorem xml:id="th_solvability">
+            <title>Solvability</title>
+            <statement>
+                <p>
+                    Let <m>F</m> be a field, and let <m>n</m> be a positive integer such that <m>\character F\nmid n!</m>. A separable polynomial <m>f(x)\in F[x]</m> of degree <m>n</m> is solvable by radicals if and only if <m>G_f=\Gal(K_f/F)</m> is a solvable group. 
+                </p>
+            </statement>
+        </theorem>
+        
         
     </subsection>
 

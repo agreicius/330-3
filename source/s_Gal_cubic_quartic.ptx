@@ -318,7 +318,7 @@
             <p>
                Let <m>G_f\cong H\leq S_4</m> via the map in <xref ref="th_Gal_poly_perm"/>. Summarizing our discussion above, we have 
                <md>
-                <mrow>H\in \{S_4,A_4} \amp \iff 3\mid \abs{H} </mrow>
+                <mrow>H\in \{S_4,A_4\} \amp \iff 3\mid \abs{H} </mrow>
                 <mrow> \amp \iff R_f(x) \text{ irreducible}</mrow>
                </md>.
                This, coupled with the equivalence <m>H\leq A_4</m> if and only if <m>\sqrt{\Delta_f}\in F</m>, yields the first two equivalences of the theorem. The last two statements follow in a similar manner. 
