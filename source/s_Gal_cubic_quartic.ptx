@@ -248,7 +248,7 @@
         <title>Cubic resolvent</title>
         <statement>
             <p>
-                Let <m>f(x)=x^4+ax^3+bx+c\in F[x]</m> be a degree-4 polynomial,
+                Let <m>f(x)=x^4+ax^3+bx^2+cx+d\in F[x]</m> be a degree-4 polynomial,
                 and let <m>R_f(x)</m> be its cubic resolvent. 
                 <ol>
                     <li>
@@ -258,10 +258,11 @@
                     </li>
                     <li>
                         <p>
-                            <m>R_f(x)=x^3-bx^2+(ac-4d)x-(a^2d+c^2-4bd)</m>. In particular, we have the special case
-                            <men>
-                                f(x)=x^4+cx+d \implies R_f(x)=x^3-4dx-c^2
-                            </men>.
+                            <m>R_f(x)=x^3-bx^2+(ac-4d)x-(a^2d+c^2-4bd)</m>. In particular, we have the special cases
+                            <mdn>
+                                <mrow>f(x)=x^4+cx+d \amp \implies R_f(x)=x^3-4dx-c^2</mrow>
+                                <mrow>f(x)=x^4+bx^2+d \amp \implies R_f(x)=x^3-bx^2-4d+4bd</mrow>
+                            </mdn>.
                         </p>
                     </li>
                     <li>
