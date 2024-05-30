@@ -523,17 +523,16 @@ R_f(x)=(x-\theta_1)(x-\theta_2)(x-\theta_3)\text{.}
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.21.8</span><span class="period">.</span><span class="space"> </span><span class="title">Cubic resolvent.</span>
 </h3>
 <div class="para logical" id="th_cubic_resolvent-2-1">
-<div class="para">Let <span class="process-math">\(f(x)=x^4+ax^3+bx^2+cx+d\in F[x]\)</span> be a degree-4 polynomial, and let <span class="process-math">\(R_f(x)\)</span> be its cubic resolvent.</div>
+<div class="para">Let <span class="process-math">\(f(x)=x^4+ax^3+bx+c\in F[x]\)</span> be a degree-4 polynomial, and let <span class="process-math">\(R_f(x)\)</span> be its cubic resolvent.</div>
 <ol class="decimal">
 <li id="th_cubic_resolvent-2-1-3-1"><div class="para" id="th_cubic_resolvent-2-1-3-1-1"><span class="process-math">\(R_f(x)\in F[x]\text{.}\)</span></div></li>
 <li id="th_cubic_resolvent-2-1-3-2"><div class="para logical" id="th_cubic_resolvent-2-1-3-2-1">
 <div class="para">
-<span class="process-math">\(R_f(x)=x^3-bx^2+(ac-4d)x-(a^2d+c^2-4bd)\text{.}\)</span> In particular, we have the special cases</div>
+<span class="process-math">\(R_f(x)=x^3-bx^2+(ac-4d)x-(a^2d+c^2-4bd)\text{.}\)</span> In particular, we have the special case</div>
 <div class="displaymath process-math" id="th_cubic_resolvent-2-1-3-2-1-2">
-\begin{align}
-f(x)=x^4+cx+d \amp \implies R_f(x)=x^3-4dx-c^2\tag{1.38}\\
-f(x)=x^4+bx^2+d \amp \implies R_f(x)=x^3-bx^2-4d+4bd\text{.}\tag{1.39}
-\end{align}
+\begin{equation}
+f(x)=x^4+cx+d \implies R_f(x)=x^3-4dx-c^2\text{.}\tag{1.38}
+\end{equation}
 </div>
 </div></li>
 <li id="th_cubic_resolvent-2-1-3-3"><div class="para" id="th_cubic_resolvent-2-1-3-3-1">The discriminant of <span class="process-math">\(R_f(x)\)</span> is equal to the discriminant of <span class="process-math">\(f(x)\text{.}\)</span> In particular, <span class="process-math">\(R_f(x)\)</span> has no repeated roots if and only if <span class="process-math">\(f(x)\)</span> has no repeated roots.</div></li>
@@ -577,10 +576,10 @@ m_{\theta_1,F}(x)=\prod_{\beta\in O_{\theta_1}}(x-\beta)\text{,}
 <div class="para">Let <span class="process-math">\(F\)</span> be a field of characteristic not equal to <span class="process-math">\(2\text{,}\)</span> and let <span class="process-math">\(f(x)\)</span> be a monic separable irreducible polynomial of degree <span class="process-math">\(4\text{.}\)</span> Using the notation of <a href="s_Gal_cubic_quartic.html#th_S4_trans" class="xref" data-knowl="./knowl/xref/th_S4_trans.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.21.6: Transitive subgroups of S_4">Theorem 1.21.6</a>, we have the following equivalences:</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th_S4_trans.html" id="th_Gal_quartic-2-1-6">
 \begin{align}
-G_f\cong S_4 \amp \iff \sqrt{\Delta_f}\notin F \text{ and } R_f(x) \text{ is irreducible}\tag{1.40}\\
-G_f\cong A_4 \amp \iff \sqrt{\Delta_f}\in F \text{ and } R_f(x) \text{ is irreducible}\tag{1.41}\\
-G_f\cong C_4 \text{ or } G_f\cong D_4 \amp \iff \sqrt{\Delta_f}\notin F \text{ and } R_f(x) \text{ is reducible} \tag{1.42}\\
-G_f\cong V \amp \iff \sqrt{\Delta_f}\in F \text{ and } R_f(x) \text{ is reducible}\tag{1.43}
+G_f\cong S_4 \amp \iff \sqrt{\Delta_f}\notin F \text{ and } R_f(x) \text{ is irreducible}\tag{1.39}\\
+G_f\cong A_4 \amp \iff \sqrt{\Delta_f}\in F \text{ and } R_f(x) \text{ is irreducible}\tag{1.40}\\
+G_f\cong C_4 \text{ or } G_f\cong D_4 \amp \iff \sqrt{\Delta_f}\notin F \text{ and } R_f(x) \text{ is reducible} \tag{1.41}\\
+G_f\cong V \amp \iff \sqrt{\Delta_f}\in F \text{ and } R_f(x) \text{ is reducible}\tag{1.42}
 \end{align}
 </div>
 </div></article><details id="th_Gal_quartic-3" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h3 class="heading"><span class="type">Proof<span class="period">.</span></span></h3></summary><article class="hiddenproof knowl__content"><div class="para logical" id="th_Gal_quartic-3-1">
@@ -640,7 +639,7 @@ H\in \{S_4,A_4\} \amp \iff 3\mid \abs{H} \\
 \begin{equation}
 G_f\cong \begin{cases}C_4 \amp \text{if } x^2+ax+(b-r) \text{ and } x^2-rx+d \text{ split over } K(\sqrt{\Delta_f}) \\
 D_4 \amp \text{otherwise.}
-\end{cases}\tag{1.44}
+\end{cases}\tag{1.43}
 \end{equation}
 </div>
 </div></article><article class="example example-like" id="eg_D4_C4"><h3 class="heading">
