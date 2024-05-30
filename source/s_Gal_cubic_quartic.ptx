@@ -403,7 +403,7 @@
         <title><m>D_4</m> or <m>C_4</m></title>
         <statement>
             <p>
-                Let <m>F</m> be a field of characteristic not equal to <m>2</m>, and let <m>f(x)</m> be a monic separable irreducible polynomial of degree <m>4</m>. Suppose that <m>\sqrt{\Delta_f}\notin F</m> and that <m>R_f(x)</m> has a unique root <m>r\in F</m>. Letting <m>f(x)=x^4+ax^3+bx^2+c</m>, and using the notation of <xref ref="th_S4_trans"/>, we have 
+                Let <m>F</m> be a field of characteristic not equal to <m>2</m>, and let <m>f(x)</m> be a monic separable irreducible polynomial of degree <m>4</m>. Suppose that <m>\sqrt{\Delta_f}\notin F</m> and that <m>R_f(x)</m> has a unique root <m>r\in F</m>. Letting <m>f(x)=x^4+ax^3+bx^2+cx+d</m>, and using the notation of <xref ref="th_S4_trans"/>, we have 
                 <men>
                     G_f\cong \begin{cases}C_4 \amp \text{if } x^2+ax+(b-r) \text{ and } x^2-rx+d \text{ split over } K(\sqrt{\Delta_f}) \\
                     D_4 \amp \text{otherwise.}
@@ -425,7 +425,7 @@
                     </li>
                     <li>
                         <p>
-                            <m>f(x)=x^5+5x+5</m>, <m>\Delta_f=5\cdot 55^2</m>, <m>R_f(x)=x^3-20x-25</m>. 
+                            <m>f(x)=x^4+5x+5</m>, <m>\Delta_f=5\cdot 55^2</m>, <m>R_f(x)=x^3-20x-25</m>. 
                         </p>
                     </li>
                 </ol>
