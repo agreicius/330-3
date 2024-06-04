@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.10.7</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(\Q\)</span>-embeddings in towers.</span>
+</h3>
+<div class="para">Compute <span class="process-math">\(\Hom_\Q(\Q(\sqrt{2},\sqrt{3}),\R)\text{.}\)</span>
+</div>
+<div class="solutions"><details class="solution solution-like born-hidden-knowl"><summary class="knowl__link"><span class="type">Solution</span><span class="period">.</span></summary><div class="solution solution-like knowl__content">
+<div class="para">We break the extension <span class="process-math">\(\Q(\sqrt{2},\sqrt{3})/\Q\)</span> into two simple towers <span class="process-math">\(\Q\leq \Q(\sqrt{2})\leq K=\Q(\sqrt{2})(\sqrt{3})\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">We have <span class="process-math">\(m_{\sqrt{2},\Q}(x)=x^2-2\text{,}\)</span> which has two roots <span class="process-math">\(\pm \sqrt{2}\)</span> in <span class="process-math">\(\R\text{.}\)</span> It follows that <span class="process-math">\(\Hom_\Q(\Q(\sqrt{2}), \R)=\{\tau_1,\tau_2\}\text{,}\)</span> where</div>
+<div class="displaymath process-math">
+\begin{align*}
+\tau_1(a+b\sqrt{2}) \amp = a+b\sqrt{2}\\
+\tau_2(a+b\sqrt{2}) \amp = a-b\sqrt{2}\text{,}
+\end{align*}
+</div>
+<div class="para">for all <span class="process-math">\(a,b\in \Q\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Now look at the second subextension <span class="process-math">\(\Q(\sqrt{2})(\sqrt{3})/\Q(\sqrt{2})\text{.}\)</span> Since <span class="process-math">\(m_{\sqrt{3},\Q(\sqrt{2})}(x)=x^2-3\text{,}\)</span> and since <span class="process-math">\(x^2-3\)</span> has two roots <span class="process-math">\(\pm\sqrt{3}\)</span> in <span class="process-math">\(\R\text{,}\)</span> for each <span class="process-math">\(1\leq i\leq 2\)</span> the embedding <span class="process-math">\(\tau_i\colon \Q(\sqrt{2})\rightarrow \R\)</span> has two extensions to <span class="process-math">\(K=\Q(\sqrt{2})(\sqrt{3})\text{:}\)</span> namely <span class="process-math">\(\tau_{i,1}\)</span> and <span class="process-math">\(\tau_{i,2}\)</span> defined as</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/fig_Q_embed.html">
+\begin{align*}
+\tau_{i1}(\alpha+\beta\sqrt{3}) \amp = \tau_{i}(\alpha)+\tau_i(\beta)\sqrt{3}\\
+\tau_{i2}(\alpha+\beta\sqrt{3}) \amp = \tau_{i}(\alpha)-\tau_i(\beta)\sqrt{3}\text{,}
+\end{align*}
+</div>
+<div class="para">for all <span class="process-math">\(\alpha,\beta\in \Q(\sqrt{2})\text{.}\)</span> See <a href="s_embeddings.html#fig_Q_embed" class="xref" data-knowl="./knowl/xref/fig_Q_embed.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.10.8">Figure 1.10.8</a> for a nice visual synopsis of this argument.</div>
+</div> <div class="para logical">
+<div class="para">The four embeddings <span class="process-math">\(\tau_{i,j}\text{,}\)</span> <span class="process-math">\(1\leq i,j\leq 2\)</span> are easily seen to be distinct. (Compare their values at <span class="process-math">\(\sqrt{2}\)</span> and <span class="process-math">\(\sqrt{3}\text{.}\)</span>) Furthermore, since <span class="process-math">\(\tau_{i,j}\)</span> is an extension of <span class="process-math">\(\tau_i\text{,}\)</span> and <span class="process-math">\(\tau_i\)</span> is a <span class="process-math">\(\Q\)</span>-embedding, we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\tau_{i,j}\vert_\Q=\tau_i\vert_\Q=i\text{,}
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(i\colon \Q\hookrightarrow \R\)</span> is the inclusion map. Thus each <span class="process-math">\(\tau_{i,j}\)</span> is a <span class="process-math">\(\Q\)</span>-embedding of <span class="process-math">\(K=\Q(\sqrt{2},\sqrt{3})\)</span> into <span class="process-math">\(\R\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Lastly, we prove that if <span class="process-math">\(\tau\in \Hom_\Q(K,\R)\)</span> is a <span class="process-math">\(\Q\)</span>-embedding, then <span class="process-math">\(\tau=\tau_{i,j}\)</span> for some <span class="process-math">\(1\leq i,j\leq 2\text{,}\)</span> in which case we have</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Hom_\Q(K,\R)=\{\tau_{1,1},\tau_{1,2}, \tau_{2,1}, \tau_{2,2}\}\text{.}
+\end{equation*}
+</div>
+<div class="para">Given <span class="process-math">\(\tau\in \Hom_\Q(K,\R)\text{,}\)</span> its restriction <span class="process-math">\(\tau\vert_{\Q(\sqrt{2})}\)</span> is a <span class="process-math">\(\Q\)</span>-embedding of <span class="process-math">\(\Q(\sqrt{2})\)</span> into <span class="process-math">\(\R\text{:}\)</span> i.e., <span class="process-math">\(\tau\vert_{\Q(\sqrt{2})}\in \Hom_{\Q}(\Q(\sqrt{2}), \R)\text{.}\)</span> Since <span class="process-math">\(\Hom_{\Q}(\Q(\sqrt{2}),\R)=\{\tau_1,\tau_2\}\text{,}\)</span> we have <span class="process-math">\(\tau\vert_{\Q(\sqrt{2})}=\tau_i\)</span> for some <span class="process-math">\(1\leq i\leq 2\text{.}\)</span> Next, since <span class="process-math">\(\tau\)</span> is an extension of <span class="process-math">\(\tau\vert_{\Q(\sqrt{2}}\)</span> to <span class="process-math">\(K\text{,}\)</span> and since <span class="process-math">\(\Hom_{\Q(\sqrt{2})}(K,\R)=\{\tau_{i,j}\colon 1\leq i,j\leq 2\}\text{,}\)</span> we must have <span class="process-math">\(\tau=\tau_{i,j}\)</span> for some <span class="process-math">\(1\leq i,j\leq 2\text{,}\)</span> as claimed.</div>
+</div> <div class="para logical">
+<div class="para">Unpacking the definitions of the <span class="process-math">\(\tau_{i,j}\)</span> and using the fact that these maps are ring homomorphisms, we find that</div>
+<div class="displaymath process-math">
+\begin{align*}
+\tau_{1,1}(a+b\sqrt{2}+c\sqrt{3}+d\sqrt{6}) \amp= a+b\sqrt{2}+c\sqrt{3}+d\sqrt{6}\\
+\tau_{1,2}(a+b\sqrt{2}+c\sqrt{3}+d\sqrt{6}) \amp= a+b\sqrt{2}-c\sqrt{3}-d\sqrt{6}\\
+\tau_{2,1}(a+b\sqrt{2}+c\sqrt{3}+d\sqrt{6}) \amp= a-b\sqrt{2}+c\sqrt{3}-d\sqrt{6}\\
+\tau_{2,2}(a+b\sqrt{2}+c\sqrt{3}+d\sqrt{6}) \amp= a-b\sqrt{2}-c\sqrt{3}+d\sqrt{6}\text{.}
+\end{align*}
+</div>
+</div> <figure class="figure figure-like"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="generated/latex-image/im_Q_embed.svg" role="img" class="contained" alt="\(\Q\)-embeddings and towers"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.10.8<span class="period">.</span></span><span class="space"> </span><span class="process-math">\(\Q\)</span>-embeddings and towers</figcaption></figure>
+</div></details></div></article><span class="incontext"><a class="internal" href="s_embeddings.html#eg_Q_emb_tower">in-context</a></span>
+</body>
+</html>
