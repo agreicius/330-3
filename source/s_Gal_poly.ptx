@@ -280,7 +280,7 @@
 						<cell><m>x^4+ax+b</m></cell> <cell><m>-27a^4+256b^3</m></cell>
 						</row>
 						<row>
-						<cell><m>x^4+ax^2+b</m></cell> <cell><m>16b(a^2-4b^2)^2</m></cell>
+						<cell><m>x^4+ax^2+b</m></cell> <cell><m>16b(a^2-4b)^2</m></cell>
 						</row>
 					</tabular>
 				</table>
